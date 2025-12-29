@@ -36,3 +36,12 @@ IE103 Project Report (Typst)
 * Trình bày thông tin (Menu, Form, Report, Help).
 * Các chức năng của hệ thống (Từ phần phân tích)
 * **Lưu ý:** Demo cho các chức năng (Trên nền tảng Web, Desktop, Mobile, ...)
+
+## Công Cụ
+
+- ERD:
+  - Chen Notation:
+    - PlantUML: text-based; commit vào git được.
+    - Visual Diagram (như ví dụ): quản lý theo project, tập trung nhiều loại diagram; binary, không commit vào git được.
+
+![visual-diagram-example](assets/visual-diagram-example.png)
