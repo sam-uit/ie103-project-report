@@ -1,15 +1,9 @@
-# ie103-project-report
+# ĐỒ ÁN MÔN HỌC QUẢN LÝ THÔNG TIN
 
-IE103 Project Report (Typst)
+* Phân tích, thiết kế CSDL cho một bài toán quản lý.
+* Bài toán quản lý do sinh viên tự chọn.
 
-## Quy Cách Tổ Chức
-
-- `noi-dung`: các tài liệu của các phần báo cáo được lưu trữ ở đây, tương đương với thư mục [`noi-dung`](https://drive.google.com/drive/folders/1e9e2FMezlBpznZvsrrtDtkm6hDfzODi0?usp=drive_link) trên GDrive.
-- `report`: thư mục chứa mã nguồn soạn thảo báo cáo.
-
-## Nội Dung
-
-- Bám sát hướng dẫn về Yêu Cầu [ĐỒ ÁN MÔN HỌC QUẢN LÝ THÔNG TIN](noi-dung/FinalProject_GUIDE-Yeu_Cau.md).
+## Yêu cầu
 
 ### 1. Mô tả bài toán
 
