@@ -41,7 +41,9 @@ IE103 Project Report (Typst)
 
 - ERD:
   - Chen Notation:
-    - PlantUML: text-based; commit vào git được. https://plantuml.com/er-diagram
+    - PlantUML: text-based; commit vào git được.
+      - Guide: https://plantuml.com/er-diagram
+      - Editor: https://www.planttext.com/
     - Visual Diagram (như ví dụ): quản lý theo project, tập trung nhiều loại diagram; binary, không commit vào git được.
 
 ![visual-diagram-example](assets/visual-diagram-example.png)
