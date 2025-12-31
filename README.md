@@ -1,4 +1,4 @@
-# ie103-project-report
+# IE103 Project Report
 
 - IE103 Project Report.
 - Deadline: 28/01/2026.
@@ -42,35 +42,41 @@
 ### 3. Cài đặt
 
 * **Cài đặt mô hình dữ liệu** trên một hệ quản trị CSDL (Trong loại mô hình dữ liệu đã lựa chọn) gồm: tạo bảng, tạo khoá chính, khoá ngoại, các ràng buộc (nếu có).
-* **Tạo dữ liệu mẫu** hoặc thu thập dữ liệu trong thực tế (10 - 20 dòng cho một quan hệ; **đảm bảo dữ liệu bao quát nhiều trường hợp**) .
+* **Tạo dữ liệu mẫu** hoặc thu thập dữ liệu trong thực tế (**10 - 20 dòng** cho một quan hệ; **đảm bảo dữ liệu bao quát nhiều trường hợp**) .
 
 ### 4. Quản lý thông tin
 
-* **Xử lý thông tin**
-  * Stored Procedure: 5
-  * Trigger: 5
-  * Function: 3
-  * Cursor: 2.
+1. **Xử lý thông tin**
+   * Stored Procedure: 5
+   * Trigger: 5
+   * Function: 3
+   * Cursor: 2.
 
-* **An toàn thông tin**
-  * Xác thực
-  * Phân quyền
-  * Import
-  * Export
-  * Backup
-  * Restore.
+2. **An toàn thông tin**
+   * (Bảo mật)
+   * Xác thực
+     * JWT
 
-* **Trình bày thông tin** (đủ độ khó, đủ số lượng)
-  * Menu
-  * Form
-  * Report
-  * Help.
+   * Phân quyền
+     * [RBAC](https://whitehat.vn/threads/kiem-soat-truy-cap-dua-tren-vai-tro-role-based-access-control-la-gi.17301/)
+     * Xét duyệt REFUNDS
 
-* **Các chức năng** của hệ thống (Từ phần phân tích)
-  * Mô tả dạng văn bản. Không cần đemo.
+   * Import
+   * Export
+   * Backup
+   * Restore.
 
-* Lưu ý: **Demo** cho các chức năng (Trên nền tảng Web, Desktop, Mobile, ...)
-  * Demo các mục được trình bày ở phần Xử lý thông tin, An toàn thông tin, vv..
+3. **Trình bày thông tin** (đủ độ khó, đủ số lượng)
+   * Menu
+   * Form
+   * Report
+   * Help.
+
+4. **Các chức năng** của hệ thống (Từ phần phân tích)
+   * Mô tả dạng văn bản. Không cần đemo.
+
+5. Lưu ý: **Demo** cho các chức năng (Trên nền tảng Web, Desktop, Mobile, ...)
+   * Demo các mục được trình bày ở phần Xử lý thông tin, An toàn thông tin, vv..
 
 
 ## Phạm vi chức năng
@@ -113,3 +119,4 @@
     - Visual Diagram (như ví dụ): quản lý theo project, tập trung nhiều loại diagram; binary, không commit vào git được.
 
 ![visual-diagram-example](assets/visual-diagram-example.png)
+
