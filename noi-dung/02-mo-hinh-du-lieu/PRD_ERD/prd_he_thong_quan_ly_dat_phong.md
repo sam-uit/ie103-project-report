@@ -6,7 +6,7 @@
 
 ### 1.1 Tên sản phẩm
 
-**Booking Management System (BMS)**
+- **Booking Management System (BMS)**
 
 ### 1.2 Mục đích
 
