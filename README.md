@@ -1,7 +1,20 @@
 # ie103-project-report
 
-- IE103 Project Report (Typst)
+- IE103 Project Report.
 - Deadline: 28/01/2026.
+- Files:
+  - 1 File báo cáo văn bản, PDF.
+  - 1 File Slides, PDF.
+  - 1 File Video Demo: 15-20 phút.
+  - Source Code
+    - SQL
+    - Demo
+    - Report (PDF)
+    - vv…
+- KHÔNG CÒN BÁO CÁO TRỰC TIẾP TẠI LỚP. TẤT CẢ NỘP LẠI FILES.
+- Cách nộp bài: Sẽ có hướng dẫn nộp sau.
+  - Files báo cáo/mã nguồn: Elearning.
+  - File video demo: gdrive/onedrive.
 
 ## Quy Cách Tổ Chức
 
