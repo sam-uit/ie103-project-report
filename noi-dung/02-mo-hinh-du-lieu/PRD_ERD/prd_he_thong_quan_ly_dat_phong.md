@@ -131,7 +131,7 @@ Là **Staff**, tôi muốn ghi nhận thanh toán và hoàn tiền cho một đ�
 
 ### 7.2 Quan hệ giữa các thực thể
 
-```
+```verilog
 LOAIPHONG 1 --- n PHONG
 KHACHHANG 1 --- n DATPHONG
 DATPHONG 1 --- n CT_DATPHONG
