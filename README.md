@@ -21,8 +21,8 @@ IE103 Project Report (Typst)
 * Liệt kê và mô tả các chức năng của hệ thống.
 * Các đối tượng nào cần quản lý, mối quan hệ giữa các đối tượng (Tức chi tiết các thực thể cần quản lý, các thuộc tính cần có và mối quan hệ giữa chúng).
 * Trình bày các ràng buộc trên các đối tượng (nếu có).
-* Vẽ mô hình mức quan niệm cho mối quan hệ giữa các thực thể tương ứng với loại mô hình dữ liệu lựa chọn (VD: Sơ đồ ERD cho Mô hình quan hệ, Đồ thị quan hệ cho mô hình Đồ thị-Graph, ...).
-* Thiết kế CSDL cho bài toán tương ứng với loại mô hình dữ liệu lựa chọn (Tức chuyển sang mô hình mức logic). Lưu ý kèm theo các giải thích cho các bảng trong CSDL (Tân từ).
+* Vẽ **mô hình mức quan niệm** cho mối quan hệ giữa các thực thể tương ứng với loại mô hình dữ liệu lựa chọn (VD: Sơ đồ ERD cho Mô hình quan hệ, Đồ thị quan hệ cho mô hình Đồ thị-Graph, ...).
+* Thiết kế CSDL cho bài toán tương ứng với loại mô hình dữ liệu lựa chọn (Tức chuyển sang **mô hình mức logic**). Lưu ý kèm theo các giải thích cho các bảng trong CSDL (Tân từ).
 
 ### 3. Cài đặt
 
@@ -37,9 +37,33 @@ IE103 Project Report (Typst)
 * Các chức năng của hệ thống (Từ phần phân tích)
 * **Lưu ý:** Demo cho các chức năng (Trên nền tảng Web, Desktop, Mobile, ...)
 
+## Phạm vi chức năng
+
+-  Chi tiết tại [prd_he_thong_quan_ly_dat_phong.md](noi-dung/02-mo-hinh-du-lieu/PRD_ERD/prd_he_thong_quan_ly_dat_phong.md) 
+
+### In Scope
+
+1. Quản lý phòng và loại phòng (BMS)
+2. Quản lý khách hàng (BMS)
+3. Quản lý đặt phòng (BMS)
+4. Kiểm tra phòng trống (BMS & User Application)
+5. Đặt phòng và hủy đặt phòng (User Application)
+6. Thanh toán trực tuyến (mô phỏng)
+7. Hoàn tiền và hủy giao dịch theo chính sách
+8. Quản lý và phân quyền người dùng (Admin / Staff / End User)
+9. Hiển thị trạng thái đặt phòng và thanh toán (User Application)
+10. Ứng dụng web hoặc mobile hoàn chỉnh phục vụ thao tác đặt phòng
+
+### Out of Scope
+
+1. Tích hợp cổng thanh toán thực tế (VNPay, Stripe, PayPal)
+2. Hệ thống kế toán hoặc xuất hóa đơn điện tử
+3. Tối ưu hiệu năng cho quy mô lớn (high traffic)
+4. Tích hợp bên thứ ba (OTA như Booking, Agoda)
+
 ## Công Cụ
 
-- ERD:
+- Vẽ ERD:
   - Chen Notation:
     - PlantUML: text-based; commit vào git được.
       - Guide: https://plantuml.com/er-diagram
