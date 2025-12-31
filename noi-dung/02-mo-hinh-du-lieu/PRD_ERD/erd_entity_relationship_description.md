@@ -178,6 +178,8 @@ Tài liệu này mô tả ý nghĩa của từng **thực thể (Entity)** trong
 
 ## 5. Ghi chú thiết kế
 
-- Các quan hệ N–N đều được xử lý bằng bảng trung gian.
+- **Các quan hệ N–N đều được xử lý bằng bảng trung gian.**
+  - Sẽ được biểu diễn trong ER Chen notation.
+
 - Phù hợp triển khai ràng buộc khóa ngoại, trigger và procedure trong SQL.
 
