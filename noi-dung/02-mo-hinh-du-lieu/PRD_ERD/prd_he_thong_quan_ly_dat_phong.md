@@ -169,9 +169,9 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 
 ### 9.2 Trạng thái thanh toán
 
-- PAID: Đã thanh toán
-- UNPAID: Chưa thanh toán
-- REFUNDED: Đã hoàn tiền
+- `PAID`: Đã thanh toán
+- `UNPAID`: Chưa thanh toán
+- `REFUNDED`: Đã hoàn tiền
 
 ### 9.3 Chính sách hoàn tiền (Refund Policy)
 
@@ -182,8 +182,8 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 ### 9.4 Dữ liệu lưu trữ
 
 - Số tiền đã trả
-- Phương thức thanh toán (Tiền mặt / Chuyển khoản)
-- Trạng thái thanh toán (PAID / UNPAID / REFUNDED)
+- Phương thức thanh toán (Tiền mặt (`TM`) / Chuyển khoản (`CK`))
+- Trạng thái thanh toán (`PAID` / `UNPAID` / `REFUNDED`)
 - Ngày thanh toán
 - Ngày hoàn tiền (nếu có)
 
@@ -245,10 +245,10 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 - Không tích hợp cổng thanh toán thực tế
 - Mỗi đơn đặt phòng có thể có nhiều giao dịch thanh toán (mở rộng)
 - Trạng thái thanh toán:
-  - PENDING
-  - SUCCESS
-  - FAILED
-  - CANCELLED
+  - `PENDING`
+  - `SUCCESS`
+  - `FAILED`
+  - `CANCELLED`
 
 ---
 
@@ -258,10 +258,10 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 - Admin duyệt hoàn tiền
 - Hỗ trợ hoàn tiền toàn phần hoặc một phần
 - Trạng thái hoàn tiền:
-  - REQUESTED
-  - APPROVED
-  - REJECTED
-  - COMPLETED
+  - `REQUESTED`
+  - `APPROVED`
+  - `REJECTED`
+  - `COMPLETED`
 
 ---
 
