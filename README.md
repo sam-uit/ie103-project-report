@@ -28,15 +28,36 @@ IE103 Project Report (Typst)
 ### 3. Cài đặt
 
 * **Cài đặt mô hình dữ liệu** trên một hệ quản trị CSDL (Trong loại mô hình dữ liệu đã lựa chọn) gồm: tạo bảng, tạo khoá chính, khoá ngoại, các ràng buộc (nếu có).
-* **Tạo dữ liệu mẫu** hoặc thu thập dữ liệu trong thực tế.
+* **Tạo dữ liệu mẫu** hoặc thu thập dữ liệu trong thực tế (10 - 20 dòng cho một quan hệ; **đảm bảo dữ liệu bao quát nhiều trường hợp**) .
 
 ### 4. Quản lý thông tin
 
-* **Xử lý thông tin** (Stored Procedure, Trigger, Function, Cursor).
-* **An toàn thông tin** (Xác thực, Phân quyền, Import, Export, Backup, Restore).
-* **Trình bày thông tin** (Menu, Form, Report, Help).
+* **Xử lý thông tin**
+  * Stored Procedure: 5
+  * Trigger: 5
+  * Function: 3
+  * Cursor: 2.
+
+* **An toàn thông tin**
+  * Xác thực
+  * Phân quyền
+  * Import
+  * Export
+  * Backup
+  * Restore.
+
+* **Trình bày thông tin** (đủ độ khó, đủ số lượng)
+  * Menu
+  * Form
+  * Report
+  * Help.
+
 * **Các chức năng** của hệ thống (Từ phần phân tích)
+  * Mô tả dạng văn bản. Không cần đemo.
+
 * Lưu ý: **Demo** cho các chức năng (Trên nền tảng Web, Desktop, Mobile, ...)
+  * Demo các mục được trình bày ở phần Xử lý thông tin, An toàn thông tin, vv..
+
 
 ## Phạm vi chức năng
 
