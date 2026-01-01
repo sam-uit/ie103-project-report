@@ -1,2 +1,11 @@
 * text=auto eol=lf
 
+**/node_modules/
+*.log export-ignore
+.DS_Store export-ignore
+.vscode/ export-ignore
+.idea/ export-ignore
+dist/ export-ignore
+build/ export-ignore
+.env export-ignore
+.env.* export-ignore

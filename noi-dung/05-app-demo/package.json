@@ -1,0 +1,32 @@
+{
+  "name": "booking-management-system",
+  "version": "1.0.0",
+  "description": "Hệ thống quản lý đặt phòng - Full Stack Application",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:all": "npm run dev",
+    "start": "npm run dev",
+    "build": "npm run build --workspaces",
+    "build:frontend": "npm run build --workspace=frontend",
+    "build:backend": "npm run build --workspace=backend",
+    "build:all": "npm run build",
+    "preview": "npm run preview --workspace=frontend",
+    "setup": "npm install",
+    "seed": "npm run seed --workspace=backend",
+    "db:create": "npm run db:create --workspace=backend",
+    "test": "npm test --workspaces",
+    "clean": "rm -rf node_modules frontend/node_modules backend/node_modules",
+    "reinstall": "npm run clean && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
