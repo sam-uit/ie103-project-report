@@ -27,7 +27,7 @@ Tasks:
 | 25410321 | Nguyễn Điền Triết     | Stored Procedure: 3        |               |
 | 25410204 | Trương Xuân Hậu       | Trigger: 5                 |               |
 | 25410338 | Lê Anh Vũ             | Stored Procedure: 2        | Các bảng mới. |
-| 25410176 | Trần Sơn Bình         |                            |               |
+| 25410176 | Trần Sơn Bình         | Function: 3                |               |
 | 25410247 | Lê Kim Long           | ERD/Data Seed              |               |
 | 25410337 | La Anh Vũ             |                            |               |
 | 25410209 | Lê Ngọc Hiệp          |                            |               |
@@ -72,7 +72,7 @@ Kế hoạch:
 1. **Xử lý thông tin**
    1. ~~Stored Procedure: 5~~
    2. ~~Trigger: 5~~
-   3. Function: 3
+   3. ~~Function: 3~~
    4. ~~Cursor: 2.~~
 
 2. **An toàn thông tin**
