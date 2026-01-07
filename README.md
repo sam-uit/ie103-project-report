@@ -5,7 +5,7 @@
 - Files:
   - 1 File báo cáo văn bản, PDF.
   - 1 File Slides, PDF.
-  - 1 File Video Demo: 15-20 phút.
+  - 1 File Video Trình bày + Demo: 15-20 phút.
   - Source Code
     - SQL
     - Demo
@@ -15,6 +15,21 @@
 - Cách nộp bài: Sẽ có hướng dẫn nộp sau.
   - Files báo cáo/mã nguồn: Elearning.
   - File video demo: gdrive/onedrive.
+
+Tasks:
+
+| MSSV     | Họ và Tên             | Tasks                      |
+| -------- | --------------------- | -------------------------- |
+| 25410291 | Đinh Xuân Sâm         | Report/Demo Video/ERD Chen |
+| 25410319 | Đặng Hữu Toàn         | Cursor: 2                  |
+| 25410321 | Nguyễn Điền Triết     | Stored Procedure: 3        |
+| 25410204 | Trương Xuân Hậu       |                            |
+| 25410338 | Lê Anh Vũ             | Stored Procedure: 2        |
+| 25410176 | Trần Sơn Bình         |                            |
+| 25410247 | Lê Kim Long           | ERD/Data Seed              |
+| 25410337 | La Anh Vũ             |                            |
+| 25410209 | Lê Ngọc Hiệp          |                            |
+| 25410271 | Nguyễn Thị Ngọc Nhung |                            |
 
 ## Quy Cách Tổ Chức
 
@@ -52,7 +67,7 @@
    1. Stored Procedure: 5
    2. Trigger: 5
    3. Function: 3
-   4. Cursor: 2.
+   4. ~~Cursor: 2.~~
 
 2. **An toàn thông tin**
    1. (Bảo mật)
