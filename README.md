@@ -25,13 +25,17 @@ Tasks:
 | 25410291 | Đinh Xuân Sâm         | Report/Demo Video/ERD Chen |               |
 | 25410319 | Đặng Hữu Toàn         | Cursor: 2                  |               |
 | 25410321 | Nguyễn Điền Triết     | Stored Procedure: 3        |               |
-| 25410204 | Trương Xuân Hậu       |                            |               |
+| 25410204 | Trương Xuân Hậu       | Trigger: 5                 |               |
 | 25410338 | Lê Anh Vũ             | Stored Procedure: 2        | Các bảng mới. |
 | 25410176 | Trần Sơn Bình         |                            |               |
 | 25410247 | Lê Kim Long           | ERD/Data Seed              |               |
 | 25410337 | La Anh Vũ             |                            |               |
 | 25410209 | Lê Ngọc Hiệp          |                            |               |
 | 25410271 | Nguyễn Thị Ngọc Nhung |                            |               |
+
+Kế hoạch:
+
+- 
 
 ## Quy Cách Tổ Chức
 
@@ -61,13 +65,13 @@ Tasks:
 ### 3. Cài đặt
 
 * **Cài đặt mô hình dữ liệu** trên một hệ quản trị CSDL (Trong loại mô hình dữ liệu đã lựa chọn) gồm: tạo bảng, tạo khoá chính, khoá ngoại, các ràng buộc (nếu có).
-* **Tạo dữ liệu mẫu** hoặc thu thập dữ liệu trong thực tế (**10 - 20 dòng** cho một quan hệ; **đảm bảo dữ liệu bao quát nhiều trường hợp**) .
+* **Tạo dữ liệu mẫu** hoặc thu thập dữ liệu trong thực tế (**10 - 20 dòng** cho một quan hệ; **đảm bảo dữ liệu bao quát nhiều trường hợp**).
 
 ### 4. Quản lý thông tin
 
 1. **Xử lý thông tin**
-   1. Stored Procedure: 5
-   2. Trigger: 5
+   1. ~~Stored Procedure: 5~~
+   2. ~~Trigger: 5~~
    3. Function: 3
    4. ~~Cursor: 2.~~
 
