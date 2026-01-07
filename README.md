@@ -82,7 +82,7 @@ Kế hoạch:
 2. ~~Xác thực~~
 
 3. Phân quyền
-   1. RBAC](https://whitehat.vn/threads/kiem-soat-truy-cap-dua-tren-vai-tro-role-based-access-control-la-gi.17301/)
+   1. [RBAC](https://whitehat.vn/threads/kiem-soat-truy-cap-dua-tren-vai-tro-role-based-access-control-la-gi.17301/)
    2. Xét duyệt REFUNDS
 
 4. Import
