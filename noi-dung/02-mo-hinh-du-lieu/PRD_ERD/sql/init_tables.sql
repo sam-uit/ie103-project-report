@@ -4,6 +4,12 @@
 -- Phiên bản đầy đủ với CHECK constraints
 -- ============================================
 
+-- Tạo database nếu chưa tồn tại
+CREATE DATABASE IF NOT EXISTS ROOM_BOOKING_SYSTEM;
+GO
+USE ROOM_BOOKING_SYSTEM;
+GO
+
 -- ===== NGƯỜI DÙNG & PHÂN QUYỀN =====
 
 CREATE TABLE ADMINS (
