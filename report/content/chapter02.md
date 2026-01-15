@@ -54,24 +54,34 @@
 
 ### Các Đối Tượng Chính
 
-| STT | Tên Thực Thể | Loại | Mô tả |
-| --- | --- | --- | --- |
-| 1 | `ADMIN_ROLES` | Quan hệ | Quan hệ giữa admin và role |
-| 2 | `ADMINS` | Thực thể | Admin và staff |
-| 3 | `CT_DATPHONG` | Thực thể | Chi tiết đặt phòng |
-| 4 | `CT_SUDUNG_DV` | Thực thể | Chi tiết sử dụng dịch vụ |
-| 5 | `DATPHONG` | Thực thể | Đặt phòng |
-| 6 | `DICHVU` | Thực thể | Dịch vụ đi kèm |
-| 7 | `LOAIPHONG` | Thực thể | Loại phòng |
-| 8 | `PAYMENTS` | Thực thể | Thanh toán |
-| 9 | `PERMISSIONS` | Quan hệ | Quan hệ giữa permission và role |
-| 10 | `PHONG` | Thực thể | Phòng |
-| 11 | `REFUNDS` | Thực thể | Hoàn tiền |
-| 12 | `REVIEWS` | Thực thể | Đánh giá & phản hồi |
-| 13 | `ROLE_PERMISSIONS` | Quan hệ | Quan hệ giữa role và permission |
-| 14 | `ROLES` | Thực thể | Role |
-| 15 | `USERS` | Thực thể | End User |
-| 16 | `VOUCHERS` | Thực thể | Mã giảm giá |
+```{=typst}
+#figure(
+  table(
+    columns: (10%, 30%, 15%, 45%),
+    align: (right, left, left, left),
+    [**STT**], [**Tên Thực Thể**], [**Loại**], [**Mô tả**],
+    [1], [`ADMIN_ROLES`], [Quan hệ], [Quan hệ giữa admin và role],
+    [2], [`ADMINS`], [Thực thể], [Admin và staff],
+    [3], [`CT_DATPHONG`], [Thực thể], [Chi tiết đặt phòng],
+    [4], [`CT_SUDUNG_DV`], [Thực thể], [Chi tiết sử dụng dịch vụ],
+    [5], [`DATPHONG`], [Thực thể], [Đặt phòng],
+    [6], [`DICHVU`], [Thực thể], [Dịch vụ đi kèm],
+    [7], [`LOAIPHONG`], [Thực thể], [Loại phòng],
+    [8], [`PAYMENTS`], [Thực thể], [Thanh toán],
+    [9], [`PERMISSIONS`], [Quan hệ], [Quan hệ giữa permission và role],
+    [10], [`PHONG`], [Thực thể], [Phòng],
+    [11], [`REFUNDS`], [Thực thể], [Hoàn tiền],
+    [12], [`REVIEWS`], [Thực thể], [Đánh giá & phản hồi],
+    [13], [`ROLE_PERMISSIONS`], [Quan hệ], [Quan hệ giữa role và permission],
+    [14], [`ROLES`], [Thực thể], [Role],
+    [15], [`USERS`], [Thực thể], [End User],
+    [16], [`VOUCHERS`], [Thực thể], [Mã giảm giá],
+  ),
+  caption: [
+    Các Đối Tượng Chính
+  ],
+)
+```
 
 ### Quan Hệ Giữa Các Đối Tượng
 
