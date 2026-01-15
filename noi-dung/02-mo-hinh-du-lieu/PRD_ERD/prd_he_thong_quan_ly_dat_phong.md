@@ -134,23 +134,23 @@ Là **End User**, tôi muốn xem điểm trung bình và các đánh giá của
 
 ### 7.1 Các thực thể chính
 
-- LOAIPHONG
-- PHONG
-- KHACHHANG
-- DATPHONG
-- CT\_DATPHONG
-- USERS (End User)
-- ADMINS (Admin / Staff)
-- ROLES
-- PERMISSIONS
-- ADMIN\_ROLES
-- ROLE\_PERMISSIONS
-- PAYMENTS
-- REFUNDS
-- **VOUCHERS** (Mã giảm giá)
-- **DICHVU** (Dịch vụ đi kèm)
-- **CT\_SUDUNG\_DV** (Chi tiết sử dụng dịch vụ)
-- **REVIEWS** (Đánh giá & phản hồi)
+- `LOAIPHONG`
+- `PHONG`
+- `KHACHHANG`
+- `DATPHONG`
+- `CT_DATPHONG`
+- `USERS` (End User)
+- `ADMINS` (Admin / Staff)
+- `ROLES`
+- `PERMISSIONS`
+- `ADMIN_ROLES`
+- `ROLE_PERMISSIONS`
+- `PAYMENTS`
+- `REFUNDS`
+- `VOUCHERS` (Mã giảm giá)
+- `DICHVU` (Dịch vụ đi kèm)
+- `CT_SUDUNG_DV` (Chi tiết sử dụng dịch vụ)
+- `REVIEWS` (Đánh giá & phản hồi)
 
 ### 7.2 Quan hệ giữa các thực thể
 
