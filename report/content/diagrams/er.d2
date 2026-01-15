@@ -89,13 +89,12 @@ CT_SUDUNG_DV: {class: rel}
 ADMIN_ROLES: {class: rel}
 ROLE_PERMISSIONS: {class: rel}
 thuc_hien: {class: rel}
-chi_tiet: {class: rel}
 
 USERS -- thuc_hien: 1
 thuc_hien -- DATPHONG: n
 
-DATPHONG -- chi_tiet: 1
-chi_tiet -- PHONG: n
+DATPHONG -- CT_DATPHONG: 1
+CT_DATPHONG -- PHONG: n
 
 # === AUTH SYSTEM ===
 # admins: {class: entity}
