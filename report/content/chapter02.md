@@ -29,6 +29,28 @@
 
 ![Mô Hình Thực Thể Quan Hệ](diagrams/er.svg)
 
+### Các thực thể chính
+
+- `LOAIPHONG`
+- `PHONG`
+- `KHACHHANG`
+- `DATPHONG`
+- `CT_DATPHONG`
+- `USERS` (End User)
+- `ADMINS` (Admin / Staff)
+- `ROLES`
+- `PERMISSIONS`
+- `ADMIN_ROLES`
+- `ROLE_PERMISSIONS`
+- `PAYMENTS`
+- `REFUNDS`
+- `VOUCHERS` (Mã giảm giá)
+- `DICHVU` (Dịch vụ đi kèm)
+- `CT_SUDUNG_DV` (Chi tiết sử dụng dịch vụ)
+- `REVIEWS` (Đánh giá & phản hồi)
+
+
+
 ## Mô Hình Mức Quan Niệm
 
 ## Thiết Kế Cơ Sở Dữ Liệu
