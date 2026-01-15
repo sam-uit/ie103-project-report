@@ -50,4 +50,3 @@ Việc quản lý đặt phòng thủ công hoặc bằng bảng tính gặp nhi
 | Admin    | Quản lý phòng, loại phòng, giá phòng                            |
 | Staff    | Quản lý đặt phòng, xác nhận / hủy đặt, ghi nhận thanh toán      |
 | End User | Tìm kiếm phòng, đặt phòng, hủy đặt phòng và theo dõi thanh toán |
-
