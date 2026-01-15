@@ -54,23 +54,23 @@
 
 ### Các thực thể chính
 
-- `LOAIPHONG`
-- `PHONG`
-- `KHACHHANG`
-- `DATPHONG`
-- `CT_DATPHONG`
-- `USERS` (End User)
-- `ADMINS` (Admin / Staff)
-- `ROLES`
-- `PERMISSIONS`
 - `ADMIN_ROLES`
-- `ROLE_PERMISSIONS`
-- `PAYMENTS`
-- `REFUNDS`
-- `VOUCHERS` (Mã giảm giá)
-- `DICHVU` (Dịch vụ đi kèm)
+- `ADMINS` (Admin / Staff)
+- `CT_DATPHONG`
 - `CT_SUDUNG_DV` (Chi tiết sử dụng dịch vụ)
+- `DATPHONG`
+- `DICHVU` (Dịch vụ đi kèm)
+- `KHACHHANG`
+- `LOAIPHONG`
+- `PAYMENTS`
+- `PERMISSIONS`
+- `PHONG`
+- `REFUNDS`
 - `REVIEWS` (Đánh giá & phản hồi)
+- `ROLE_PERMISSIONS`
+- `ROLES`
+- `USERS` (End User)
+- `VOUCHERS` (Mã giảm giá)
 
 ### Quan Hệ Giữa Các Thực Thể
 
