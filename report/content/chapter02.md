@@ -60,7 +60,6 @@
 - `CT_SUDUNG_DV` (Chi tiết sử dụng dịch vụ)
 - `DATPHONG`
 - `DICHVU` (Dịch vụ đi kèm)
-- `KHACHHANG`
 - `LOAIPHONG`
 - `PAYMENTS`
 - `PERMISSIONS`
@@ -80,7 +79,7 @@
 - `DATPHONG 1 --- n CT_SUDUNG_DV`: Một đặt phòng có thể sử dụng nhiều dịch vụ.
 - `DATPHONG 1 --- n PAYMENTS`: Một đặt phòng có thể có nhiều thanh toán.
 - `DICHVU 1 --- n CT_SUDUNG_DV`: Một dịch vụ có thể được sử dụng nhiều lần.
-- `KHACHHANG 1 --- n DATPHONG`: Một khách hàng có thể có nhiều đặt phòng.
+- `USERS 1 --- n DATPHONG`: Một user có thể có nhiều đặt phòng.
 - `LOAIPHONG 1 --- n PHONG`: Một loại phòng có thể có nhiều phòng.
 - `PAYMENTS 1 --- n REFUNDS`: Một thanh toán có thể có nhiều hoàn tiền.
 - `PERMISSIONS 1 --- n ROLE_PERMISSIONS`: Một permission có thể thuộc nhiều role.
