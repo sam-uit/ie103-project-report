@@ -25,6 +25,10 @@
 - Tối ưu hiệu năng cho quy mô lớn (high traffic).
 - Tích hợp bên thứ ba (OTA như Booking, Agoda).
 
+## Đối Tượng và Mối Quan Hệ
+
+![Mô Hình Thực Thể Quan Hệ](diagrams/er.svg)
+
 ### User Stories
 
 - US-01: Quản lý phòng
@@ -47,10 +51,6 @@
     - Là **End User**, tôi muốn đánh giá và để lại phản hồi về phòng sau khi hoàn tất thanh toán và trả phòng để chia sẻ trải nghiệm của mình.
 - US-10: Xem đánh giá phòng
     - Là **End User**, tôi muốn xem điểm trung bình và các đánh giá của từng loại phòng để đưa ra quyết định đặt phòng phù hợp.
-
-## Đối Tượng và Mối Quan Hệ
-
-![Mô Hình Thực Thể Quan Hệ](diagrams/er.svg)
 
 ### Các thực thể chính
 
