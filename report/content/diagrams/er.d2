@@ -145,9 +145,10 @@ PAYMENTS -- hoan_tien: 1
 hoan_tien -- REFUNDS: n
 
 # User & Admin liên quan đến Refund
-# USERS -- yeu_cau -- REFUNDS (Implicit via Payment or explicit?)
-# ADMINS -- duoc_duyet: 1
-# duoc_duyet -- REFUNDS: n
+USERS -- yeu_cau -- REFUNDS
+# (Implicit via Payment or explicit?)
+ADMINS -- duoc_duyet: 1
+duoc_duyet -- REFUNDS: n
 
 # --- Nhóm Review ---
 # SQL: Reviews references User, Phong, DatPhong (Unique)
