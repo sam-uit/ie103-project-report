@@ -59,7 +59,7 @@
   table(
     columns: (10%, 30%, 15%, 45%),
     align: (right, left, left, left),
-    [**STT**], [**Tên Thực Thể**], [**Loại**], [**Mô tả**],
+    [#strong("STT")], [#strong("Tên Thực Thể")], [#strong("Loại")], [#strong("Mô tả")],
     [1], [`ADMIN_ROLES`], [Quan hệ], [Quan hệ giữa admin và role],
     [2], [`ADMINS`], [Thực thể], [Admin và staff],
     [3], [`CT_DATPHONG`], [Thực thể], [Chi tiết đặt phòng],
