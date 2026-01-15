@@ -96,8 +96,8 @@ thuoc_loai: {class: rel; label: "Thuộc Loại"}
 ap_dung: {class: rel; label: "Áp Dụng"}
 thanh_toan: {class: rel; label: "Thanh Toán"}
 hoan_tien: {class: rel; label: "Hoàn Tiền"}
+yeu_cau: {class: rel; label: "Yêu Cầu"}
 duoc_duyet: {class: rel; label: "Được Duyệt"}
-
 tao_review: {class: rel; label: "Viết"}
 review_cho: {class: rel; label: "Review Cho"}
 review_cua: {class: rel; label: "Của Đơn"}
@@ -145,8 +145,8 @@ PAYMENTS -- hoan_tien: 1
 hoan_tien -- REFUNDS: n
 
 # User & Admin liên quan đến Refund
-USERS -- yeu_cau -- REFUNDS
-# (Implicit via Payment or explicit?)
+USERS -- yeu_cau: 1
+yeu_cau -- REFUNDS: n
 ADMINS -- duoc_duyet: 1
 duoc_duyet -- REFUNDS: n
 
