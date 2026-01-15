@@ -34,6 +34,8 @@ Các hạng mục công việc:
 - [x] 4.1.3.b fn_KiemTraPhongTrong: Kiểm tra phòng trống
 - [x] 4.1.3.c fn_TaoMaDatPhong: Tạo mã đặt phòng
 - [x] 4.1.4 Cursors
+- [/] 4.1.4.a cur_BaoTriVoucher: Kiểm tra và cập nhật trạng thái Voucher
+- [/] 4.1.4.b cur_ThongKeDoanhThu: Thống kê doanh thu đặt phòng
 - [/] 4.2 An Toàn Thông Tin
 - [ ] 4.2.1 Backup
 - [ ] 4.2.2 Restore
