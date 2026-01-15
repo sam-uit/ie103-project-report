@@ -18,6 +18,9 @@ Các hạng mục công việc:
 - [x] 4. Quản Lý Thông Tin
 - [x] 4.1 Xử Lý Thông Tin
 - [x] 4.1.1 Stored Procedures
+- [x] 4.1.1.a SP_TAO_DANH_GIA: Tạo đánh giá cho đặt phòng sau khi đã thanh toán và trả phòng
+- [x] 4.1.1.b SP_AP_DUNG_VOUCHER: Áp dụng voucher cho một đặt phòng
+- [x] 4.1.1.c SP_SU_DUNG_DICH_VU: Sử dụng dịch vụ đi kèm trong thời gian lưu trú
 - [x] 4.1.2 Triggers
 - [x] 4.1.3 Functions
 - [x] 4.1.4 Cursors
