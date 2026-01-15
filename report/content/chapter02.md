@@ -51,26 +51,16 @@
 
 ### Quan Hệ Giữa Các Thực Thể
 
-- Nhóm 1:
-
-```
-LOAIPHONG 1 --- n PHONG
-KHACHHANG 1 --- n DATPHONG
-DATPHONG 1 --- n CT_DATPHONG
-PHONG 1 --- n CT_DATPHONG
-DATPHONG 1 --- n PAYMENTS
-PAYMENTS 1 --- n REFUNDS
-```
-
-- Nhóm 2:
-
-```
-ADMINS 1 --- n ADMIN_ROLES
-ROLES 1 --- n ADMIN_ROLES
-ROLES 1 --- n ROLE_PERMISSIONS
-PERMISSIONS 1 --- n ROLE_PERMISSIONS
-```
-
+- `LOAIPHONG 1 --- n PHONG`: Một loại phòng có thể có nhiều phòng.
+- `KHACHHANG 1 --- n DATPHONG`: Một khách hàng có thể có nhiều đặt phòng.
+- `DATPHONG 1 --- n CT_DATPHONG`: Một đặt phòng có thể có nhiều chi tiết đặt phòng.
+- `PHONG 1 --- n CT_DATPHONG`: Một phòng có thể có nhiều chi tiết đặt phòng.
+- `DATPHONG 1 --- n PAYMENTS`: Một đặt phòng có thể có nhiều thanh toán.
+- `PAYMENTS 1 --- n REFUNDS`: Một thanh toán có thể có nhiều hoàn tiền.
+- `ADMINS 1 --- n ADMIN_ROLES`: Một admin có thể có nhiều admin role.
+- `ROLES 1 --- n ADMIN_ROLES`: Một role có thể có nhiều admin roles.
+- `ROLES 1 --- n ROLE_PERMISSIONS`: Một role có thể có nhiều role permission.
+- `PERMISSIONS 1 --- n ROLE_PERMISSIONS`: Một permission có thể thuộc nhiều role.
 - `VOUCHERS 1 --- n DATPHONG`: Một voucher có thể được dùng cho nhiều đặt phòng.
 - `DATPHONG 1 --- n CT_SUDUNG_DV`: Một đặt phòng có thể sử dụng nhiều dịch vụ.
 - `DICHVU 1 --- n CT_SUDUNG_DV`: Một dịch vụ có thể được sử dụng nhiều lần.
