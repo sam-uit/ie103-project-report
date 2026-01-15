@@ -25,7 +25,7 @@
 - Tối ưu hiệu năng cho quy mô lớn (high traffic).
 - Tích hợp bên thứ ba (OTA như Booking, Agoda).
 
-## Đối Tượng và Mối Quan Hệ
+## Đối Tượng Và Mối Quan Hệ
 
 ![Mô Hình Thực Thể Quan Hệ](diagrams/er.svg)
 
@@ -54,26 +54,26 @@
 
 ### Các Đối Tượng Chính
 
-| STT | Tên Thực Thể | Mô tả |
-| --- | --- | --- |
-| 1 | `ADMIN_ROLES` | Quan hệ giữa admin và role |
-| 2 | `ADMINS` | Admin và staff |
-| 3 | `CT_DATPHONG` | Chi tiết đặt phòng |
-| 4 | `CT_SUDUNG_DV` | Chi tiết sử dụng dịch vụ |
-| 5 | `DATPHONG` | Đặt phòng |
-| 6 | `DICHVU` | Dịch vụ đi kèm |
-| 7 | `LOAIPHONG` | Loại phòng |
-| 8 | `PAYMENTS` | Thanh toán |
-| 9 | `PERMISSIONS` | Quan hệ giữa permission và role |
-| 10 | `PHONG` | Phòng |
-| 11 | `REFUNDS` | Hoàn tiền |
-| 12 | `REVIEWS` | Đánh giá & phản hồi |
-| 13 | `ROLE_PERMISSIONS` | Quan hệ giữa role và permission |
-| 14 | `ROLES` | Role |
-| 15 | `USERS` | End User |
-| 16 | `VOUCHERS` | Mã giảm giá |
+| STT | Tên Thực Thể | Loại | Mô tả |
+| --- | --- | --- | --- |
+| 1 | `ADMIN_ROLES` | Quan hệ | Quan hệ giữa admin và role |
+| 2 | `ADMINS` | Thực thể | Admin và staff |
+| 3 | `CT_DATPHONG` | Thực thể | Chi tiết đặt phòng |
+| 4 | `CT_SUDUNG_DV` | Thực thể | Chi tiết sử dụng dịch vụ |
+| 5 | `DATPHONG` | Thực thể | Đặt phòng |
+| 6 | `DICHVU` | Thực thể | Dịch vụ đi kèm |
+| 7 | `LOAIPHONG` | Thực thể | Loại phòng |
+| 8 | `PAYMENTS` | Thực thể | Thanh toán |
+| 9 | `PERMISSIONS` | Quan hệ | Quan hệ giữa permission và role |
+| 10 | `PHONG` | Thực thể | Phòng |
+| 11 | `REFUNDS` | Thực thể | Hoàn tiền |
+| 12 | `REVIEWS` | Thực thể | Đánh giá & phản hồi |
+| 13 | `ROLE_PERMISSIONS` | Quan hệ | Quan hệ giữa role và permission |
+| 14 | `ROLES` | Thực thể | Role |
+| 15 | `USERS` | Thực thể | End User |
+| 16 | `VOUCHERS` | Thực thể | Mã giảm giá |
 
-### Quan Hệ Giữa Các Thực Thể
+### Quan Hệ Giữa Các Đối Tượng
 
 - `ADMINS 1 --- n ADMIN_ROLES`: Một admin có thể có nhiều admin role.
 - `DATPHONG 1 --- 1 REVIEWS`: Một đặt phòng có thể có một đánh giá.
@@ -91,7 +91,6 @@
 - `USERS 1 --- n DATPHONG`: Một user có thể có nhiều đặt phòng.
 - `USERS 1 --- n REVIEWS`: Một user có thể đánh giá nhiều phòng.
 - `VOUCHERS 1 --- n DATPHONG`: Một voucher có thể được dùng cho nhiều đặt phòng.
-
 
 ## Mô Hình Mức Quan Niệm
 
