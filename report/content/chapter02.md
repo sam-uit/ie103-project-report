@@ -54,22 +54,24 @@
 
 ### Các thực thể chính
 
-- `ADMIN_ROLES`
-- `ADMINS` (Admin / Staff)
-- `CT_DATPHONG`
-- `CT_SUDUNG_DV` (Chi tiết sử dụng dịch vụ)
-- `DATPHONG`
-- `DICHVU` (Dịch vụ đi kèm)
-- `LOAIPHONG`
-- `PAYMENTS`
-- `PERMISSIONS`
-- `PHONG`
-- `REFUNDS`
-- `REVIEWS` (Đánh giá & phản hồi)
-- `ROLE_PERMISSIONS`
-- `ROLES`
-- `USERS` (End User)
-- `VOUCHERS` (Mã giảm giá)
+| Tên Thực Thể | Mô tả |
+| --- | --- |
+| `ADMIN_ROLES` | Quan hệ giữa admin và role |
+| `ADMINS` | Admin và staff |
+| `CT_DATPHONG` | Chi tiết đặt phòng |
+| `CT_SUDUNG_DV` | Chi tiết sử dụng dịch vụ |
+| `DATPHONG` | Đặt phòng |
+| `DICHVU` | Dịch vụ đi kèm |
+| `LOAIPHONG` | Loại phòng |
+| `PAYMENTS` | Thanh toán |
+| `PERMISSIONS` | Quan hệ giữa permission và role |
+| `PHONG` | Phòng |
+| `REFUNDS` | Hoàn tiền |
+| `REVIEWS` | Đánh giá & phản hồi |
+| `ROLE_PERMISSIONS` | Quan hệ giữa role và permission |
+| `ROLES` | Role |
+| `USERS` | End User |
+| `VOUCHERS` | Mã giảm giá |
 
 ### Quan Hệ Giữa Các Thực Thể
 
