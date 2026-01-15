@@ -27,6 +27,8 @@ Các hạng mục công việc:
 - [x] 4.1.2.a trg_DATPHONG_CheckTime: Kiểm tra thời gian đặt phòng (DATPHONG)
 - [x] 4.1.2.b trg_CTDP_Insert_ValidatePrice: Chèn chi tiết đặt phòng + tự động đơn giá (CT_DATPHONG)
 - [x] 4.1.2.c trg_CTDP_SyncRoomStatus: Đồng bộ trạng thái phòng theo CT_DATPHONG
+- [x] 4.1.2.d trg_REFUNDS_Insert_CheckAndUpdate: Kiểm tra Hoàn Tiền + Cập nhật lại giao dịch
+- [x] 4.1.2.e trg_PAYMENTS_Insert_CheckAndPaid: Kiểm tra thanh toán + Cập nhật lại giao dịch
 - [x] 4.1.3 Functions
 - [x] 4.1.4 Cursors
 - [/] 4.2 An Toàn Thông Tin
