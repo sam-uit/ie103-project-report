@@ -70,10 +70,7 @@ classes: {
 
 # --- 2. DATA MODEL ---
 
-ADMIN_ROLES: {class: entity}
 ADMINS: {class: entity}
-CT_DATPHONG: {class: entity}
-CT_SUDUNG_DV: {class: entity}
 DATPHONG: {class: entity}
 DICHVU: {class: entity}
 KHACHHANG: {class: entity}
@@ -87,6 +84,9 @@ ROLES: {class: entity}
 USERS: {class: entity}
 VOUCHERS: {class: entity}
 
+CT_DATPHONG: {class: rel}
+CT_SUDUNG_DV: {class: rel}
+ADMIN_ROLES: {class: rel}
 ROLE_PERMISSIONS: {class: rel}
 thuc_hien: {class: rel}
 chi_tiet: {class: rel}
