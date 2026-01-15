@@ -2,21 +2,21 @@
 
 ## Động Lực, Mục Tiêu, Ý Nghĩa của Đề Tài
 
-### Tên sản phẩm
+### Tên Sản Phẩm
 
 - **Booking Management System (BMS)**
 
-### Mục đích
+### Mục Tiêu
 
 Hệ thống Quản lý Đặt phòng (BMS) được xây dựng nhằm hỗ trợ quản lý thông tin phòng, khách hàng, đặt phòng và thanh toán ở mức cơ bản. Hệ thống tập trung vào quản lý dữ liệu bằng cơ sở dữ liệu quan hệ, phục vụ cho việc học tập và thực hành SQL trong môn Quản lý thông tin.
 
-### Đối tượng sử dụng
+### Đối Tượng Sử Dụng
 
 - Quản trị viên (Admin).
 - Nhân viên (Staff).
 - Người dùng cuối (End User) - Khách hàng.
 
-### Phạm vi áp dụng
+### Phạm Vi Áp Dụng
 
 - Khách sạn, nhà nghỉ, homestay quy mô nhỏ và vừa.
 - Có giao diện quản lý (BMS) cho Admin/Staff.
