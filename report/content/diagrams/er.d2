@@ -37,7 +37,17 @@ classes: {
     }
   }
 
-  # Thuộc tính: Oval màu xanh nhạt
+  # Quan hệ (Relationship): Hình thoi
+  rel: {
+    shape: diamond
+    style: {
+      fill: "#F2F2F7"
+      stroke: "#8E8E93"
+      stroke-width: 2
+    }
+  }
+
+  # Thuộc tính: Oval (chưa dùng nhiều để tránh rối)
   attr: {
     shape: oval
     width: 60
@@ -49,199 +59,107 @@ classes: {
       font-size: 12
     }
   }
-
-  # Quan hệ: Hình thoi
-  rel: {
-    shape: diamond
-    style: {
-      fill: "#F2F2F7"
-      stroke: "#8E8E93"
-    }
-  }
-
-  # Đường nối thuộc tính: Màu nhạt
-  link_attr: {
-    style: {
-      stroke: "#3a3838"
-      stroke-width: 1
-    }
-  }
 }
 
-# --- 2. DATA MODEL ---
+# --- 2. ENTITIES (THỰC THỂ) ---
+# Dựa trên init_tables.sql và tài liệu mô tả
 
-ADMINS: {class: entity}
-DATPHONG: {class: entity}
-DICHVU: {class: entity}
-LOAIPHONG: {class: entity}
-PAYMENTS: {class: entity}
-PERMISSIONS: {class: entity}
-PHONG: {class: entity}
-REFUNDS: {class: entity}
-REVIEWS: {class: entity}
-ROLES: {class: entity}
-USERS: {class: entity}
-VOUCHERS: {class: entity}
+ADMINS: {class: entity; label: "ADMINS"}
+ROLES: {class: entity; label: "ROLES"}
+PERMISSIONS: {class: entity; label: "PERMISSIONS"}
 
-CT_DATPHONG: {class: rel}
-CT_SUDUNG_DV: {class: rel}
-ADMIN_ROLES: {class: rel}
-ROLE_PERMISSIONS: {class: rel}
-thuc_hien: {class: rel}
-thuoc_loai: {class: rel}
-duoc_review: {class: rel}
-danh_gia: {class: rel}
-thanh_toan: {class: rel}
-hoan_tien: {class: rel}
+USERS: {class: entity; label: "USERS"}
+VOUCHERS: {class: entity; label: "VOUCHERS"}
 
+DATPHONG: {class: entity; label: "DATPHONG"}
+LOAIPHONG: {class: entity; label: "LOAIPHONG"}
+PHONG: {class: entity; label: "PHONG"}
+DICHVU: {class: entity; label: "DICHVU"}
+
+PAYMENTS: {class: entity; label: "PAYMENTS"}
+REFUNDS: {class: entity; label: "REFUNDS"}
+REVIEWS: {class: entity; label: "REVIEWS"}
+
+# --- 3. RELATIONSHIPS (MỐI QUAN HỆ) ---
+# Phân biệt rõ đâu là quan hệ. 
+# Các bảng trung gian N-N trong SQL được coi là Quan Hệ trong ERD.
+
+# Quan hệ N-N (Từ bảng trung gian)
+ADMIN_ROLES: {class: rel; label: "Được Gán\nADMIN_ROLES"}
+ROLE_PERMISSIONS: {class: rel; label: "Bao Gồm\nROLE_PERMISSIONS"}
+CT_DATPHONG: {class: rel; label: "Chi Tiết Đặt\nCT_DATPHONG"}
+CT_SUDUNG_DV: {class: rel; label: "Chi Tiết DV\nCT_SUDUNG_DV"}
+
+# Quan hệ 1-N / 1-1 (Logical)
+thuc_hien: {class: rel; label: "Thực Hiện"}
+thuoc_loai: {class: rel; label: "Thuộc Loại"}
+ap_dung: {class: rel; label: "Áp Dụng"}
+thanh_toan: {class: rel; label: "Thanh Toán"}
+hoan_tien: {class: rel; label: "Hoàn Tiền"}
+duoc_duyet: {class: rel; label: "Được Duyệt"}
+
+tao_review: {class: rel; label: "Viết"}
+review_cho: {class: rel; label: "Review Cho"}
+review_cua: {class: rel; label: "Của Đơn"}
+
+# --- 4. CONNECTIONS (CARDINALITY) ---
+
+# --- Nhóm User & Authorization ---
+# N-N: Admin - Roles
+ADMINS -- ADMIN_ROLES: m
+ADMIN_ROLES -- ROLES: n
+
+# N-N: Roles - Permissions
+ROLES -- ROLE_PERMISSIONS: m
+ROLE_PERMISSIONS -- PERMISSIONS: n
+
+# --- Nhóm Booking & Room ---
+# 1-N: User - DatPhong
 USERS -- thuc_hien: 1
 thuc_hien -- DATPHONG: n
 
-DATPHONG -- CT_DATPHONG: n
+# N-N: DatPhong - Phong (thông qua CT_DATPHONG)
+DATPHONG -- CT_DATPHONG: m
 CT_DATPHONG -- PHONG: n
 
+# 1-N: LoaiPhong - Phong
 PHONG -- thuoc_loai: n
 thuoc_loai -- LOAIPHONG: 1
 
-# DATPHONG -- duoc_review: 1
-# duoc_review -- REVIEWS: n
+# 1-N: Voucher - DatPhong
+VOUCHERS -- ap_dung: 1
+ap_dung -- DATPHONG: n
 
-PHONG -- duoc_review: 1
-duoc_review -- REVIEWS: n
-
-USERS -- danh_gia: 1
-danh_gia -- REVIEWS: n
-
-DATPHONG -- CT_SUDUNG_DV: n
+# N-N: DatPhong - DichVu (thông qua CT_SUDUNG_DV)
+DATPHONG -- CT_SUDUNG_DV: m
 CT_SUDUNG_DV -- DICHVU: n
 
+# --- Nhóm Payment & Refund ---
+# 1-N: DatPhong - Payments (Một đơn có thể có nhiều giao dịch?)
+# SQL: Payment references Booking.
 DATPHONG -- thanh_toan: 1
 thanh_toan -- PAYMENTS: n
 
+# 1-N: Payments - Refunds
 PAYMENTS -- hoan_tien: 1
 hoan_tien -- REFUNDS: n
 
-# === AUTH SYSTEM ===
-# admins: {class: entity}
-# Attributes
-# admin_id: {class: attr; label: |md <u>id</u> |}
-# admin_mail: {class: attr; label: email}
-# admin_pass: {class: attr; label: pass}
-# admin_name: {class: attr; label: name}
-# # Connections
-# admins -- admin_id: {class: link_attr}
-# admins -- admin_mail: {class: link_attr}
-# admins -- admin_pass: {class: link_attr}
-# admins -- admin_name: {class: link_attr}
+# User & Admin liên quan đến Refund
+# USERS -- yeu_cau -- REFUNDS (Implicit via Payment or explicit?)
+# ADMINS -- duoc_duyet: 1
+# duoc_duyet -- REFUNDS: n
 
-# roles: {class: entity}
-# role_id: {class: attr; label: |md <u>id</u> |}
-# role_code: {class: attr; label: code}
-# role_name: {class: attr; label: name}
-# roles -- role_id: {class: link_attr}
-# roles -- role_code: {class: link_attr}
-# roles -- role_name: {class: link_attr}
+# --- Nhóm Review ---
+# SQL: Reviews references User, Phong, DatPhong (Unique)
 
-# perms: {class: entity; label: PERMISSIONS}
-# perm_id: {class: attr; label: |md <u>id</u> |}
-# perm_code: {class: attr; label: code}
-# perms -- perm_id: {class: link_attr}
-# perms -- perm_code: {class: link_attr}
+# 1-N: User - Reviews
+USERS -- tao_review: 1
+tao_review -- REVIEWS: n
 
-# === BOOKING SYSTEM ===
-# users: {class: entity}
-# user_id: {class: attr; label: |md <u>id</u> |}
-# user_mail: {class: attr; label: email}
-# user_phn: {class: attr; label: phone}
-# users -- user_id: {class: link_attr}
-# users -- user_mail: {class: link_attr}
-# users -- user_phn: {class: link_attr}
+# 1-N: Phong - Reviews
+PHONG -- review_cho: 1
+review_cho -- REVIEWS: n
 
-# datphong: {class: entity}
-# dp_id: {class: attr; label: |md <u>id</u> |}
-# dp_in: {class: attr; label: check_in}
-# dp_out: {class: attr; label: check_out}
-# dp_stt: {class: attr; label: status}
-# datphong -- dp_id: {class: link_attr}
-# datphong -- dp_in: {class: link_attr}
-# datphong -- dp_out: {class: link_attr}
-# datphong -- dp_stt: {class: link_attr}
-
-# phong: {class: entity}
-# p_id: {class: attr; label: |md <u>id</u> |}
-# p_num: {class: attr; label: number}
-# p_stt: {class: attr; label: status}
-# phong -- p_id: {class: link_attr}
-# phong -- p_num: {class: link_attr}
-# phong -- p_stt: {class: link_attr}
-
-# loaiphong: {class: entity}
-# lp_id: {class: attr; label: |md <u>id</u> |}
-# lp_name: {class: attr; label: name}
-# lp_price: {class: attr; label: price}
-# loaiphong -- lp_id: {class: link_attr}
-# loaiphong -- lp_name: {class: link_attr}
-# loaiphong -- lp_price: {class: link_attr}
-
-# === FINANCE SYSTEM ===
-# payments: {class: entity}
-# pay_id: {class: attr; label: |md <u>id</u> |}
-# pay_amt: {class: attr; label: amt}
-# pay_mth: {class: attr; label: method}
-# payments -- pay_id: {class: link_attr}
-# payments -- pay_amt: {class: link_attr}
-# payments -- pay_mth: {class: link_attr}
-
-# refunds: {class: entity}
-# rf_id: {class: attr; label: |md <u>id</u> |}
-# rf_amt: {class: attr; label: amt}
-# rf_rsn: {class: attr; label: reason}
-# refunds -- rf_id: {class: link_attr}
-# refunds -- rf_amt: {class: link_attr}
-# refunds -- rf_rsn: {class: link_attr}
-
-# --- 3. RELATIONSHIPS ---
-
-# phan_quyen: {class: rel; label: PHAN_QUYEN}
-# gan_quyen: {class: rel; label: GAN_QUYEN}
-# thuc_hien: {class: rel; label: THUC_HIEN}
-# chi_tiet: {class: rel; label: CHI_TIET}
-# thuoc_loai: {class: rel; label: THUOC_LOAI}
-# thanh_toan: {class: rel; label: THANH_TOAN}
-# hoan_tien: {class: rel; label: HOAN_TIEN}
-# duyet_hoan: {class: rel; label: DUYET_HOAN}
-
-# Attribute of Relationship
-# attr_dongia: {class: attr; label: don_gia; style: {stroke-dash: 3}}
-# chi_tiet -- attr_dongia: {class: link_attr}
-
-# --- 4. CONNECTIONS ---
-
-# Admin Flow
-# admins -- phan_quyen: 1
-# phan_quyen -- roles: n
-
-# roles -- gan_quyen: 1
-# gan_quyen -- perms: n
-
-# User Flow
-# users -- thuc_hien: 1
-# thuc_hien -- datphong: n
-
-# Room Flow
-# datphong -- chi_tiet: 1
-# chi_tiet -- phong: n
-
-# phong -- thuoc_loai: n
-# thuoc_loai -- loaiphong: 1
-
-# Payment Flow
-# datphong -- thanh_toan: 1
-# thanh_toan -- payments: n
-
-# payments -- hoan_tien: 1
-# hoan_tien -- refunds: n
-
-# Approval Flow
-# admins -- duyet_hoan: 1
-# duyet_hoan -- refunds: n
+# 1-1: DatPhong - Reviews (Mỗi đơn 1 review)
+DATPHONG -- review_cua: 1
+review_cua -- REVIEWS: 1
