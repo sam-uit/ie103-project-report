@@ -83,10 +83,19 @@ PERMISSIONS: {class: entity}
 PHONG: {class: entity}
 REFUNDS: {class: entity}
 REVIEWS: {class: entity}
-ROLE_PERMISSIONS: {class: entity}
 ROLES: {class: entity}
 USERS: {class: entity}
 VOUCHERS: {class: entity}
+
+ROLE_PERMISSIONS: {class: rel}
+thuc_hien: {class: rel}
+chi_tiet: {class: rel}
+
+USERS -- thuc_hien: 1
+thuc_hien -- DATPHONG: n
+
+DATPHONG -- chi_tiet: 1
+chi_tiet -- PHONG: n
 
 # === AUTH SYSTEM ===
 # admins: {class: entity}
