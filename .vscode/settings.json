@@ -9,6 +9,6 @@
     "editor.tabCompletion": "on",
     "makefile.configureOnOpen": false,
     "D2.updateOnSave": true,
-    "D2.previewLayout": "elk",
+    "D2.previewLayout": "dagre",
     "D2.previewSketch": false
 }
