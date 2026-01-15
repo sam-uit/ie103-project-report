@@ -92,6 +92,8 @@ thuc_hien: {class: rel}
 thuoc_loai: {class: rel}
 duoc_review: {class: rel}
 danh_gia: {class: rel}
+thanh_toan: {class: rel}
+hoan_tien: {class: rel}
 
 USERS -- thuc_hien: 1
 thuc_hien -- DATPHONG: n
@@ -113,6 +115,12 @@ danh_gia -- REVIEWS: n
 
 DATPHONG -- CT_SUDUNG_DV: n
 CT_SUDUNG_DV -- DICHVU: n
+
+DATPHONG -- thanh_toan: 1
+thanh_toan -- PAYMENTS: n
+
+PAYMENTS -- hoan_tien: 1
+hoan_tien -- REFUNDS: n
 
 # === AUTH SYSTEM ===
 # admins: {class: entity}
