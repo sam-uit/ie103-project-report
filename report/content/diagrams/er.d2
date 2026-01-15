@@ -91,6 +91,7 @@ ROLE_PERMISSIONS: {class: rel}
 thuc_hien: {class: rel}
 thuoc_loai: {class: rel}
 duoc_review: {class: rel}
+danh_gia: {class: rel}
 
 USERS -- thuc_hien: 1
 thuc_hien -- DATPHONG: n
@@ -101,11 +102,14 @@ CT_DATPHONG -- PHONG: n
 PHONG -- thuoc_loai: n
 thuoc_loai -- LOAIPHONG: 1
 
-DATPHONG -- duoc_review: 1
-duoc_review -- REVIEWS: n
+# DATPHONG -- duoc_review: 1
+# duoc_review -- REVIEWS: n
 
 PHONG -- duoc_review: 1
 duoc_review -- REVIEWS: n
+
+USERS -- danh_gia: 1
+danh_gia -- REVIEWS: n
 
 # === AUTH SYSTEM ===
 # admins: {class: entity}
