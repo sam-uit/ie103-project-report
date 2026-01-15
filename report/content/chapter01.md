@@ -26,7 +26,7 @@ Hệ thống Quản lý Đặt phòng (BMS) được xây dựng nhằm hỗ tr�
 
 ## Quy Trình Thực Tế Liên Quan Đến Đề Tài
 
-### Vấn đề cần giải quyết
+### Vấn Đề Cần Giải Quyết
 
 Việc quản lý đặt phòng thủ công hoặc bằng bảng tính gặp nhiều hạn chế:
 
@@ -36,7 +36,7 @@ Việc quản lý đặt phòng thủ công hoặc bằng bảng tính gặp nhi
 - Khó tổng hợp báo cáo và thống kê doanh thu.
 - Dữ liệu có thể được sao lưu tự động và bảo mật.
 
-### Mục tiêu sản phẩm
+### Mục Tiêu Sản Phẩm
 
 - Quản lý dữ liệu tập trung bằng cơ sở dữ liệu quan hệ.
 - Đảm bảo toàn vẹn và nhất quán dữ liệu.
