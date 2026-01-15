@@ -1,0 +1,196 @@
+# Template: D2
+# Author: Sam Dinh
+# Mục đích: Tạo ER Diagram Chen Notation.
+# Trang nguồn: https://d2lang.com/
+# VSCode extension: Terrastruct.d2
+
+direction: right
+
+# Tiêu đề: căn góc trên-giữa
+title: |md
+  # Mô Hình Thực Thể Quan Hệ (ER Diagram Chen Notation)
+| {near: top-center}
+
+title.style: {
+  font-size: 20
+  # font: "mono"
+}
+
+# --- 0. STYLES ---
+style: {
+  # font: "mono"
+  fill: "#dcdcdc"
+  stroke: "orange"
+  stroke-width: 5
+}
+
+# --- 1. CSS STYLES (THEME) ---
+classes: {
+  # Thực thể: Chữ nhật bo góc Apple style
+  entity: {
+    shape: rectangle
+    style: {
+      border-radius: 15
+      stroke-width: 2
+      fill: "#FFFFFF"
+      stroke: "#333333"
+    }
+  }
+
+  # Thuộc tính: Oval màu xanh nhạt
+  attr: {
+    shape: oval
+    width: 60
+    height: 40
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      font-size: 12
+    }
+  }
+
+  # Quan hệ: Hình thoi
+  rel: {
+    shape: diamond
+    style: {
+      fill: "#F2F2F7"
+      stroke: "#8E8E93"
+    }
+  }
+
+  # Đường nối thuộc tính: Màu nhạt
+  link_attr: {
+    style: {
+      stroke: "#3a3838"
+      stroke-width: 1
+    }
+  }
+}
+
+# --- 2. DATA MODEL ---
+
+# === AUTH SYSTEM ===
+admins: {class: entity}
+# Attributes
+admin_id: {class: attr; label: |md <u>id</u> |}
+admin_mail: {class: attr; label: email}
+admin_pass: {class: attr; label: pass}
+admin_name: {class: attr; label: name}
+# Connections
+admins -- admin_id: {class: link_attr}
+admins -- admin_mail: {class: link_attr}
+admins -- admin_pass: {class: link_attr}
+admins -- admin_name: {class: link_attr}
+
+roles: {class: entity}
+role_id: {class: attr; label: |md <u>id</u> |}
+role_code: {class: attr; label: code}
+role_name: {class: attr; label: name}
+roles -- role_id: {class: link_attr}
+roles -- role_code: {class: link_attr}
+roles -- role_name: {class: link_attr}
+
+perms: {class: entity; label: PERMISSIONS}
+perm_id: {class: attr; label: |md <u>id</u> |}
+perm_code: {class: attr; label: code}
+perms -- perm_id: {class: link_attr}
+perms -- perm_code: {class: link_attr}
+
+# === BOOKING SYSTEM ===
+users: {class: entity}
+user_id: {class: attr; label: |md <u>id</u> |}
+user_mail: {class: attr; label: email}
+user_phn: {class: attr; label: phone}
+users -- user_id: {class: link_attr}
+users -- user_mail: {class: link_attr}
+users -- user_phn: {class: link_attr}
+
+datphong: {class: entity}
+dp_id: {class: attr; label: |md <u>id</u> |}
+dp_in: {class: attr; label: check_in}
+dp_out: {class: attr; label: check_out}
+dp_stt: {class: attr; label: status}
+datphong -- dp_id: {class: link_attr}
+datphong -- dp_in: {class: link_attr}
+datphong -- dp_out: {class: link_attr}
+datphong -- dp_stt: {class: link_attr}
+
+phong: {class: entity}
+p_id: {class: attr; label: |md <u>id</u> |}
+p_num: {class: attr; label: number}
+p_stt: {class: attr; label: status}
+phong -- p_id: {class: link_attr}
+phong -- p_num: {class: link_attr}
+phong -- p_stt: {class: link_attr}
+
+loaiphong: {class: entity}
+lp_id: {class: attr; label: |md <u>id</u> |}
+lp_name: {class: attr; label: name}
+lp_price: {class: attr; label: price}
+loaiphong -- lp_id: {class: link_attr}
+loaiphong -- lp_name: {class: link_attr}
+loaiphong -- lp_price: {class: link_attr}
+
+# === FINANCE SYSTEM ===
+payments: {class: entity}
+pay_id: {class: attr; label: |md <u>id</u> |}
+pay_amt: {class: attr; label: amt}
+pay_mth: {class: attr; label: method}
+payments -- pay_id: {class: link_attr}
+payments -- pay_amt: {class: link_attr}
+payments -- pay_mth: {class: link_attr}
+
+refunds: {class: entity}
+rf_id: {class: attr; label: |md <u>id</u> |}
+rf_amt: {class: attr; label: amt}
+rf_rsn: {class: attr; label: reason}
+refunds -- rf_id: {class: link_attr}
+refunds -- rf_amt: {class: link_attr}
+refunds -- rf_rsn: {class: link_attr}
+
+# --- 3. RELATIONSHIPS ---
+
+phan_quyen: {class: rel; label: PHAN_QUYEN}
+gan_quyen: {class: rel; label: GAN_QUYEN}
+thuc_hien: {class: rel; label: THUC_HIEN}
+chi_tiet: {class: rel; label: CHI_TIET}
+thuoc_loai: {class: rel; label: THUOC_LOAI}
+thanh_toan: {class: rel; label: THANH_TOAN}
+hoan_tien: {class: rel; label: HOAN_TIEN}
+duyet_hoan: {class: rel; label: DUYET_HOAN}
+
+# Attribute of Relationship
+attr_dongia: {class: attr; label: don_gia; style: {stroke-dash: 3}}
+chi_tiet -- attr_dongia: {class: link_attr}
+
+# --- 4. CONNECTIONS ---
+
+# Admin Flow
+admins -- phan_quyen: 1
+phan_quyen -- roles: n
+
+roles -- gan_quyen: 1
+gan_quyen -- perms: n
+
+# User Flow
+users -- thuc_hien: 1
+thuc_hien -- datphong: n
+
+# Room Flow
+datphong -- chi_tiet: 1
+chi_tiet -- phong: n
+
+phong -- thuoc_loai: n
+thuoc_loai -- loaiphong: 1
+
+# Payment Flow
+datphong -- thanh_toan: 1
+thanh_toan -- payments: n
+
+payments -- hoan_tien: 1
+hoan_tien -- refunds: n
+
+# Approval Flow
+admins -- duyet_hoan: 1
+duyet_hoan -- refunds: n

@@ -1,0 +1,151 @@
+digraph HotelCMS_Chen {
+  # --- 1. CẤU HÌNH GIAO DIỆN "APPLE STYLE" ---
+  rankdir=LR;              # Dàn trang ngang (Landscape)
+  splines=curved;          # Đường nối cong lượn mềm mại
+  bgcolor="white";
+
+  # Cấu hình Font
+  node [fontname="Iosevka, Helvetica, Arial", fontsize=11];
+  edge [fontname="Iosevka, Helvetica, Arial", fontsize=10, color="#555555"];
+
+  # 1.1 Style cho Thực thể (Entities): Hình chữ nhật bo tròn góc
+  node [shape=box, style="rounded,filled", fillcolor="#FFFFFF", color="#333333", penwidth=1.5, height=0.6, fixedsize=false];
+
+  # 1.2 Style cho Thuộc tính (Attributes): Hình Oval
+  # Dùng class 'attr' để định nghĩa sau
+
+  # 1.3 Style cho Quan hệ (Relationships): Hình Thoi bo nhẹ (nếu graphviz hỗ trợ) hoặc chuẩn
+  # Graphviz hình thoi khó bo tròn, ta giữ nguyên shape diamond nhưng fill màu nhẹ
+
+  # --- 2. ĐỊNH NGHĨA CÁC NÚT (NODES) ---
+
+  # === THỰC THỂ ===
+  ADMINS      [label="ADMINS", fontsize=12, fontcolor="black"];
+  ROLES       [label="ROLES", fontsize=12];
+  PERMISSIONS [label="PERMISSIONS", fontsize=12];
+  USERS       [label="USERS", fontsize=12];
+  DATPHONG    [label="DATPHONG", fontsize=12];
+  PHONG       [label="PHONG", fontsize=12];
+  LOAIPHONG   [label="LOAIPHONG", fontsize=12];
+  PAYMENTS    [label="PAYMENTS", fontsize=12];
+  REFUNDS     [label="REFUNDS", fontsize=12];
+
+  # === QUAN HỆ ===
+  node [shape=diamond, style=filled, fillcolor="#F2F2F7", color="#8E8E93", penwidth=1, height=0.7];
+  PHAN_QUYEN   [label="Phân\nQuyền"];
+  GAN_QUYEN    [label="Gán\nQuyền"];
+  THUC_HIEN    [label="Thực\nHiện"];
+  CHI_TIET     [label="Chi\nTiết"];
+  THUOC_LOAI   [label="Thuộc\nLoại"];
+  THANH_TOAN   [label="Thanh\nToán"];
+  HOAN_TIEN    [label="Hoàn\nTiền"];
+  DUYET_HOAN   [label="Duyệt\nHoàn"];
+
+  # === THUỘC TÍNH (ATTRIBUTES - OVALS) ===
+  node [shape=ellipse, style=filled, fillcolor="#E5F9FF", color="#007AFF", penwidth=0.5, width=0.8, height=0.5];
+
+  # Attributes for ADMINS
+  a_admin_id      [label=<<u>id</u>>];
+  a_admin_email   [label="email"];
+  a_admin_pass    [label="password"];
+  a_admin_name    [label="full_name"];
+  a_admin_stt     [label="status"];
+
+  # Attributes for ROLES
+  a_role_id       [label=<<u>id</u>>];
+  a_role_code     [label="code"];
+  a_role_name     [label="name"];
+
+  # Attributes for PERMISSIONS
+  a_perm_id       [label=<<u>id</u>>];
+  a_perm_code     [label="code"];
+  a_perm_desc     [label="desc"];
+
+  # Attributes for USERS
+  a_user_id       [label=<<u>id</u>>];
+  a_user_email    [label="email"];
+  a_user_phone    [label="phone"];
+  a_user_name     [label="full_name"];
+
+  # Attributes for DATPHONG
+  a_dp_id         [label=<<u>id</u>>];
+  a_dp_in         [label="check_in"];
+  a_dp_out        [label="check_out"];
+  a_dp_stt        [label="status"];
+  a_dp_cre        [label="created_at"];
+
+  # Attributes for PHONG
+  a_phong_id      [label=<<u>id</u>>];
+  a_phong_num     [label="so_phong"];
+  a_phong_stt     [label="status"];
+
+  # Attributes for LOAIPHONG
+  a_lp_id         [label=<<u>id</u>>];
+  a_lp_name       [label="ten_loai"];
+  a_lp_price      [label="gia_ban"];
+
+  # Attributes for PAYMENTS
+  a_pay_id        [label=<<u>id</u>>];
+  a_pay_amt       [label="amount"];
+  a_pay_mth       [label="method"];
+  a_pay_stt       [label="status"];
+
+  # Attributes for REFUNDS
+  a_rf_id         [label=<<u>id</u>>];
+  a_rf_amt        [label="refund_amt"];
+  a_rf_rsn        [label="reason"];
+
+  # Thuộc tính riêng của quan hệ (Chi tiết)
+  node [fillcolor="#FFEFD5", color="#FF9500"]; # Màu cam nhạt cho highlight
+  a_ct_dongia     [label="don_gia"];
+
+  # --- 3. LIÊN KẾT (CONNECTIONS) ---
+  # Mẹo: Dùng len (length) ngắn cho thuộc tính để nó bám sát thực thể
+
+  # Link Entities to Attributes
+  edge [dir=none, color="#AAAAAA", weight=2];
+
+  ADMINS -> {a_admin_id; a_admin_email; a_admin_pass; a_admin_name; a_admin_stt}
+  ROLES  -> {a_role_id; a_role_code; a_role_name}
+  PERMISSIONS -> {a_perm_id; a_perm_code; a_perm_desc}
+  USERS  -> {a_user_id; a_user_email; a_user_phone; a_user_name}
+  DATPHONG -> {a_dp_id; a_dp_in; a_dp_out; a_dp_stt; a_dp_cre}
+  PHONG -> {a_phong_id; a_phong_num; a_phong_stt}
+  LOAIPHONG -> {a_lp_id; a_lp_name; a_lp_price}
+  PAYMENTS -> {a_pay_id; a_pay_amt; a_pay_mth; a_pay_stt}
+  REFUNDS -> {a_rf_id; a_rf_amt; a_rf_rsn}
+
+  # Link Attribute to Relationship
+  CHI_TIET -> a_ct_dongia [style=dashed];
+
+  # Link Entities to Relationships (Main Flow)
+  edge [color="#000000", weight=1, penwidth=1.2];
+
+  # Auth Flow
+  ADMINS -> PHAN_QUYEN [label="1"];
+  PHAN_QUYEN -> ROLES  [label="N"];
+
+  ROLES -> GAN_QUYEN   [label="1"];
+  GAN_QUYEN -> PERMISSIONS [label="N"];
+
+  # Booking Flow
+  USERS -> THUC_HIEN   [label="1"];
+  THUC_HIEN -> DATPHONG [label="N"];
+
+  DATPHONG -> CHI_TIET [label="1"];
+  CHI_TIET -> PHONG    [label="N"];
+
+  PHONG -> THUOC_LOAI  [label="N"];
+  THUOC_LOAI -> LOAIPHONG [label="1"];
+
+  # Payment Flow
+  DATPHONG -> THANH_TOAN [label="1"];
+  THANH_TOAN -> PAYMENTS [label="N"];
+
+  PAYMENTS -> HOAN_TIEN  [label="1"];
+  HOAN_TIEN -> REFUNDS   [label="N"];
+
+  # Admin Process
+  ADMINS -> DUYET_HOAN   [label="1"];
+  DUYET_HOAN -> REFUNDS  [label="N"];
+}
