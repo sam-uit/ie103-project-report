@@ -74,22 +74,22 @@
 
 ### Quan Hệ Giữa Các Thực Thể
 
-- `LOAIPHONG 1 --- n PHONG`: Một loại phòng có thể có nhiều phòng.
-- `KHACHHANG 1 --- n DATPHONG`: Một khách hàng có thể có nhiều đặt phòng.
-- `DATPHONG 1 --- n CT_DATPHONG`: Một đặt phòng có thể có nhiều chi tiết đặt phòng.
-- `PHONG 1 --- n CT_DATPHONG`: Một phòng có thể có nhiều chi tiết đặt phòng.
-- `DATPHONG 1 --- n PAYMENTS`: Một đặt phòng có thể có nhiều thanh toán.
-- `PAYMENTS 1 --- n REFUNDS`: Một thanh toán có thể có nhiều hoàn tiền.
 - `ADMINS 1 --- n ADMIN_ROLES`: Một admin có thể có nhiều admin role.
+- `DATPHONG 1 --- 1 REVIEWS`: Một đặt phòng có thể có một đánh giá.
+- `DATPHONG 1 --- n CT_DATPHONG`: Một đặt phòng có thể có nhiều chi tiết đặt phòng.
+- `DATPHONG 1 --- n CT_SUDUNG_DV`: Một đặt phòng có thể sử dụng nhiều dịch vụ.
+- `DATPHONG 1 --- n PAYMENTS`: Một đặt phòng có thể có nhiều thanh toán.
+- `DICHVU 1 --- n CT_SUDUNG_DV`: Một dịch vụ có thể được sử dụng nhiều lần.
+- `KHACHHANG 1 --- n DATPHONG`: Một khách hàng có thể có nhiều đặt phòng.
+- `LOAIPHONG 1 --- n PHONG`: Một loại phòng có thể có nhiều phòng.
+- `PAYMENTS 1 --- n REFUNDS`: Một thanh toán có thể có nhiều hoàn tiền.
+- `PERMISSIONS 1 --- n ROLE_PERMISSIONS`: Một permission có thể thuộc nhiều role.
+- `PHONG 1 --- n CT_DATPHONG`: Một phòng có thể có nhiều chi tiết đặt phòng.
+- `PHONG 1 --- n REVIEWS`: Một phòng có thể có nhiều đánh giá.
 - `ROLES 1 --- n ADMIN_ROLES`: Một role có thể có nhiều admin roles.
 - `ROLES 1 --- n ROLE_PERMISSIONS`: Một role có thể có nhiều role permission.
-- `PERMISSIONS 1 --- n ROLE_PERMISSIONS`: Một permission có thể thuộc nhiều role.
-- `VOUCHERS 1 --- n DATPHONG`: Một voucher có thể được dùng cho nhiều đặt phòng.
-- `DATPHONG 1 --- n CT_SUDUNG_DV`: Một đặt phòng có thể sử dụng nhiều dịch vụ.
-- `DICHVU 1 --- n CT_SUDUNG_DV`: Một dịch vụ có thể được sử dụng nhiều lần.
 - `USERS 1 --- n REVIEWS`: Một user có thể đánh giá nhiều phòng.
-- `PHONG 1 --- n REVIEWS`: Một phòng có thể có nhiều đánh giá.
-- `DATPHONG 1 --- 1 REVIEWS`: Một đặt phòng có thể có một đánh giá.
+- `VOUCHERS 1 --- n DATPHONG`: Một voucher có thể được dùng cho nhiều đặt phòng.
 
 
 ## Mô Hình Mức Quan Niệm
