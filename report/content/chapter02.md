@@ -49,6 +49,38 @@
 - `CT_SUDUNG_DV` (Chi tiết sử dụng dịch vụ)
 - `REVIEWS` (Đánh giá & phản hồi)
 
+### Quan Hệ Giữa Các Thực Thể
+
+- Nhóm 1:
+
+```
+LOAIPHONG 1 --- n PHONG
+KHACHHANG 1 --- n DATPHONG
+DATPHONG 1 --- n CT_DATPHONG
+PHONG 1 --- n CT_DATPHONG
+DATPHONG 1 --- n PAYMENTS
+PAYMENTS 1 --- n REFUNDS
+```
+
+- Nhóm 2:
+
+```
+ADMINS 1 --- n ADMIN_ROLES
+ROLES 1 --- n ADMIN_ROLES
+ROLES 1 --- n ROLE_PERMISSIONS
+PERMISSIONS 1 --- n ROLE_PERMISSIONS
+```
+
+- Nhóm 3:
+
+```
+VOUCHERS 1 --- n DATPHONG (Một voucher có thể được dùng cho nhiều đặt phòng)
+DATPHONG 1 --- n CT_SUDUNG_DV (Một đặt phòng có thể sử dụng nhiều dịch vụ)
+DICHVU 1 --- n CT_SUDUNG_DV (Một dịch vụ có thể được sử dụng nhiều lần)
+USERS 1 --- n REVIEWS (Một user có thể đánh giá nhiều phòng)
+PHONG 1 --- n REVIEWS (Một phòng có thể có nhiều đánh giá)
+DATPHONG 1 --- 1 REVIEWS (Một đặt phòng có thể có một đánh giá)
+```
 
 
 ## Mô Hình Mức Quan Niệm
