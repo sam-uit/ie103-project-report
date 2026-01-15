@@ -1,6 +1,6 @@
 # HỆ THỐNG QUẢN LÝ ĐẶT PHÒNG
 
----
+
 
 ## 1. Tổng quan sản phẩm
 
@@ -26,7 +26,7 @@ Hệ thống Quản lý Đặt phòng (BMS) được xây dựng nhằm hỗ tr�
 - Có triển khai ứng dụng web hoặc mobile ở mức hoàn chỉnh cho mục đích demo và đồ án
 - Có tích hợp thanh toán trực tuyến ở mức mô phỏng
 
----
+
 
 ## 2. Vấn đề cần giải quyết
 
@@ -38,7 +38,7 @@ Việc quản lý đặt phòng thủ công hoặc bằng bảng tính gặp nhi
 - Khó tổng hợp báo cáo và thống kê doanh thu
 - Dữ liệu có thể được sao lưu tự động và bảo mật
 
----
+
 
 ## 3. Mục tiêu sản phẩm
 
@@ -47,7 +47,7 @@ Việc quản lý đặt phòng thủ công hoặc bằng bảng tính gặp nhi
 - Hỗ trợ truy vấn và thống kê hiệu quả bằng SQL
 - Phù hợp để triển khai các ràng buộc, trigger và procedure, cursor
 
----
+
 
 ## 4. Stakeholders
 
@@ -57,7 +57,7 @@ Việc quản lý đặt phòng thủ công hoặc bằng bảng tính gặp nhi
 | Staff    | Quản lý đặt phòng, xác nhận / hủy đặt, ghi nhận thanh toán      |
 | End User | Tìm kiếm phòng, đặt phòng, hủy đặt phòng và theo dõi thanh toán |
 
----
+
 
 ## 5. Phạm vi chức năng
 
@@ -84,7 +84,7 @@ Việc quản lý đặt phòng thủ công hoặc bằng bảng tính gặp nhi
 - Tối ưu hiệu năng cho quy mô lớn (high traffic)
 - Tích hợp bên thứ ba (OTA như Booking, Agoda)
 
----
+
 
 ## 6. User Stories
 
@@ -128,7 +128,7 @@ Là **End User**, tôi muốn đánh giá và để lại phản hồi về phò
 
 Là **End User**, tôi muốn xem điểm trung bình và các đánh giá của từng loại phòng để đưa ra quyết định đặt phòng phù hợp.
 
----
+
 
 ## 7. Yêu cầu dữ liệu (Data Requirements)
 
@@ -175,7 +175,7 @@ PHONG 1 --- n REVIEWS (Một phòng có thể có nhiều đánh giá)
 DATPHONG 1 --- 1 REVIEWS (Một đặt phòng có thể có một đánh giá)
 ```
 
----
+
 
 ## 8. Business Rules
 
@@ -195,7 +195,7 @@ DATPHONG 1 --- 1 REVIEWS (Một đặt phòng có thể có một đánh giá)
 14. **Mỗi đặt phòng chỉ được đánh giá một lần**
 15. **Số sao đánh giá phải từ 1 đến 5**
 
----
+
 
 ## 9. Yêu cầu thanh toán (Phiên bản đơn giản)
 
@@ -223,7 +223,7 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 - Ngày thanh toán
 - Ngày hoàn tiền (nếu có)
 
----
+
 
 ## 10. Yêu cầu SQL (Deliverables cho đồ án)
 
@@ -254,7 +254,7 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 - **Stored Procedure tổng hợp hóa đơn cuối cùng (phòng + dịch vụ - giảm giá)**
 - **View tính điểm trung bình Rating cho mỗi LOAIPHONG**
 
----
+
 
 ## 11. Non-Functional Requirements
 
@@ -262,7 +262,7 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 - Truy vấn hiệu quả với dữ liệu mẫu
 - Dễ dàng mở rộng thêm chức năng
 
----
+
 
 ## 12. Các tính năng mở rộng
 
@@ -355,7 +355,7 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 - Số sao phải từ 1 đến 5 (CHECK constraint)
 - Admin có thể duyệt hoặc từ chối đánh giá
 
----
+
 
 ## 13. Tiêu chí đánh giá đồ án
 
@@ -364,7 +364,7 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 - Có sử dụng constraint và trigger, cursor, stored procedures
 - Truy vấn phản ánh đúng nghiệp vụ
 
----
+
 
 ## 14. Bổ sung: Quản lý người dùng, Thanh toán & ERD
 
@@ -375,7 +375,7 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 - Một Admin có thể có nhiều Role
 - Mỗi Role gồm nhiều Permission (CRUD phòng, duyệt hoàn tiền, xem báo cáo...)
 
----
+
 
 ### 14.2 Thanh toán trực tuyến (mô phỏng)
 
@@ -388,7 +388,7 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
   - FAILED
   - CANCELLED
 
----
+
 
 ### 14.3 Hoàn tiền & Hủy giao dịch
 
@@ -401,7 +401,7 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
   - REJECTED
   - COMPLETED
 
----
+
 
 ### 14.4 ERD – Text Definition
 
@@ -409,7 +409,7 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 
 ```text
 admins
----------
+------
 id (PK)
 email (UNIQUE)
 password_hash
@@ -421,7 +421,7 @@ updated_at
 
 ```text
 roles
------
+--
 id (PK)
 code
 name
@@ -430,7 +430,7 @@ description
 
 ```text
 permissions
------------
+--------
 id (PK)
 code
 description
@@ -438,25 +438,25 @@ description
 
 ```text
 admin_roles
---------------
+-----------
 admin_id (FK -> admins.id)
 role_id (FK -> roles.id)
 ```
 
 ```text
 role_permissions
-----------------
+-------------
 role_id (FK -> roles.id)
 permission_id (FK -> permissions.id)
 ```
 
----
+
 
 #### End Users
 
 ```text
 users
------
+--
 id (PK)
 email
 phone
@@ -467,13 +467,13 @@ created_at
 updated_at
 ```
 
----
+
 
 #### Payments
 
 ```text
 payments
---------
+-----
 id (PK)
 user_id (FK -> users.id)
 booking_id (FK -> datphong.id)
@@ -487,13 +487,13 @@ created_at
 updated_at
 ```
 
----
+
 
 #### Refunds
 
 ```text
 refunds
--------
+----
 id (PK)
 payment_id (FK -> payments.id)
 refund_amount
@@ -505,13 +505,13 @@ created_at
 updated_at
 ```
 
----
+
 
 #### Vouchers
 
 ```text
 vouchers
---------
+-----
 id (PK)
 code (UNIQUE)
 discount_percent
@@ -524,13 +524,13 @@ created_at
 updated_at
 ```
 
----
+
 
 #### Services & Service Usage
 
 ```text
 dichvu
-------
+---
 id (PK)
 ten_dich_vu
 don_gia
@@ -542,7 +542,7 @@ updated_at
 
 ```text
 ct_sudung_dv
-------------
+---------
 id (PK)
 datphong_id (FK -> datphong.id)
 dichvu_id (FK -> dichvu.id)
@@ -553,13 +553,13 @@ ghi_chu
 created_at
 ```
 
----
+
 
 #### Reviews & Ratings
 
 ```text
 reviews
--------
+----
 id (PK)
 user_id (FK -> users.id)
 phong_id (FK -> phong.id)
@@ -572,7 +572,7 @@ created_at
 updated_at
 ```
 
----
+
 
 ### 14.5 ERD – Mermaid Diagram (Flow-based)
 
@@ -598,7 +598,7 @@ erDiagram
     ADMINS ||--o{ REFUNDS : approves
 ```
 
----
+
 
 #### 14.5.3 Vouchers, Services & Reviews
 
@@ -613,7 +613,7 @@ erDiagram
     DATPHONG ||--o| REVIEWS : generates
 ```
 
----
+
 
 ### 14.6 ERD tổng thể hệ thống (User, Booking, Payment, Admin & Authorization)
 
