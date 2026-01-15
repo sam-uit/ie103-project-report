@@ -52,7 +52,7 @@
 - US-10: Xem đánh giá phòng
     - Là **End User**, tôi muốn xem điểm trung bình và các đánh giá của từng loại phòng để đưa ra quyết định đặt phòng phù hợp.
 
-### Các thực thể chính
+### Các Đối Tượng Chính
 
 | STT | Tên Thực Thể | Mô tả |
 | --- | --- | --- |
