@@ -30,6 +30,9 @@ Các hạng mục công việc:
 - [x] 4.1.2.d trg_REFUNDS_Insert_CheckAndUpdate: Kiểm tra Hoàn Tiền + Cập nhật lại giao dịch
 - [x] 4.1.2.e trg_PAYMENTS_Insert_CheckAndPaid: Kiểm tra thanh toán + Cập nhật lại giao dịch
 - [x] 4.1.3 Functions
+- [x] 4.1.3.a fn_TinhTongTien: Tính tổng tiền
+- [x] 4.1.3.b fn_KiemTraPhongTrong: Kiểm tra phòng trống
+- [x] 4.1.3.c fn_TaoMaDatPhong: Tạo mã đặt phòng
 - [x] 4.1.4 Cursors
 - [/] 4.2 An Toàn Thông Tin
 - [ ] 4.2.1 Backup
