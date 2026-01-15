@@ -104,5 +104,9 @@
 
 ## Mô Hình Mức Quan Niệm
 
+### Nhóm Bảng Thực Thể
+
+### Nhóm Bảng Mối Quan Hệ
+
 ## Thiết Kế Cơ Sở Dữ Liệu
 
