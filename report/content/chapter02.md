@@ -54,24 +54,24 @@
 
 ### Các thực thể chính
 
-| Tên Thực Thể | Mô tả |
-| --- | --- |
-| `ADMIN_ROLES` | Quan hệ giữa admin và role |
-| `ADMINS` | Admin và staff |
-| `CT_DATPHONG` | Chi tiết đặt phòng |
-| `CT_SUDUNG_DV` | Chi tiết sử dụng dịch vụ |
-| `DATPHONG` | Đặt phòng |
-| `DICHVU` | Dịch vụ đi kèm |
-| `LOAIPHONG` | Loại phòng |
-| `PAYMENTS` | Thanh toán |
-| `PERMISSIONS` | Quan hệ giữa permission và role |
-| `PHONG` | Phòng |
-| `REFUNDS` | Hoàn tiền |
-| `REVIEWS` | Đánh giá & phản hồi |
-| `ROLE_PERMISSIONS` | Quan hệ giữa role và permission |
-| `ROLES` | Role |
-| `USERS` | End User |
-| `VOUCHERS` | Mã giảm giá |
+| STT | Tên Thực Thể | Mô tả |
+| --- | --- | --- |
+| 1 | `ADMIN_ROLES` | Quan hệ giữa admin và role |
+| 2 | `ADMINS` | Admin và staff |
+| 3 | `CT_DATPHONG` | Chi tiết đặt phòng |
+| 4 | `CT_SUDUNG_DV` | Chi tiết sử dụng dịch vụ |
+| 5 | `DATPHONG` | Đặt phòng |
+| 6 | `DICHVU` | Dịch vụ đi kèm |
+| 7 | `LOAIPHONG` | Loại phòng |
+| 8 | `PAYMENTS` | Thanh toán |
+| 9 | `PERMISSIONS` | Quan hệ giữa permission và role |
+| 10 | `PHONG` | Phòng |
+| 11 | `REFUNDS` | Hoàn tiền |
+| 12 | `REVIEWS` | Đánh giá & phản hồi |
+| 13 | `ROLE_PERMISSIONS` | Quan hệ giữa role và permission |
+| 14 | `ROLES` | Role |
+| 15 | `USERS` | End User |
+| 16 | `VOUCHERS` | Mã giảm giá |
 
 ### Quan Hệ Giữa Các Thực Thể
 
