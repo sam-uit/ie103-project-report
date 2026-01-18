@@ -8,7 +8,7 @@ import HtmlViewer from '../components/HtmlViewer';
 import TableSnapshot from '../components/TableSnapshot';
 import DiffView from '../components/DiffView';
 import {
-      Play, RotateCcw, ChevronRight, Loader2, Database, ArrowRight, ArrowDown, RefreshCcw, AlertCircle, ChevronUp, ChevronDown, FileText, Code
+      Play, RotateCcw, ChevronRight, Loader2, Database, ArrowRight, AlertCircle, ChevronUp, ChevronDown, FileText, Code
 } from 'lucide-react';
 
 const ScenarioDetail: React.FC = () => {
@@ -108,7 +108,7 @@ const ScenarioDetail: React.FC = () => {
                   }
 
                   // Don't load table data automatically - wait for user to click \"Show Tables\"
-                  // fetchInitialData(meta);
+
             }
 
             // Cleanup function to prevent double execution in StrictMode
@@ -195,7 +195,12 @@ const ScenarioDetail: React.FC = () => {
                   if (meta.separateTables) {
                         const results: Record<string, any[]> = {};
                         for (const table of meta.separateTables) {
-                              const initialQuery = table.sqlBefore.replace(/WHERE.*$/i, '');
+                              // User Logic: sqlFetchInitial OR sqlBefore (stripping WHERE for preview) 
+                              let initialQuery = table.sqlFetchInitial;
+                              if (!initialQuery) {
+                                    initialQuery = table.sqlBefore.replace(/WHERE.*$/i, '');
+                              }
+
                               const data = await api.runQuery(initialQuery, []);
                               results[table.name] = data;
                         }
@@ -217,8 +222,12 @@ const ScenarioDetail: React.FC = () => {
             if (!backendOnline) return;
 
             try {
-                  // Remove WHERE clause from sqlBefore to get all data initially
-                  const initialQuery = tableDef.sqlBefore.replace(/WHERE.*$/i, '');
+                  // User Logic: sqlFetchInitial OR sqlBefore (stripping WHERE) for lazy load
+                  let initialQuery = tableDef.sqlFetchInitial;
+                  if (!initialQuery) {
+                        initialQuery = tableDef.sqlBefore.replace(/WHERE.*$/i, '');
+                  }
+
                   const data = await api.runQuery(initialQuery, []);
                   setSeparateTablesInitial(prev => ({ ...prev, [tableDef.name]: data }));
             } catch (e) {
@@ -367,10 +376,17 @@ const ScenarioDetail: React.FC = () => {
                   // Use separateTables if configured
                   if (scenarioMeta.separateTables) {
                         for (const table of scenarioMeta.separateTables) {
-                              if (table.sqlBefore) {
+                              // User Logic: Send sqlFetchBefore (if exists) or sqlBefore
+                              if (table.sqlFetchBefore) {
+                                    beforeQueries.push({ name: table.name, query: table.sqlFetchBefore });
+                              } else if (table.sqlBefore) {
                                     beforeQueries.push({ name: table.name, query: table.sqlBefore });
                               }
-                              if (table.sqlAfter) {
+
+                              // User Logic: Send sqlFetchAfter (if exists) or sqlAfter
+                              if (table.sqlFetchAfter) {
+                                    afterQueries.push({ name: table.name, query: table.sqlFetchAfter });
+                              } else if (table.sqlAfter) {
                                     afterQueries.push({ name: table.name, query: table.sqlAfter });
                               }
                         }
@@ -466,7 +482,9 @@ const ScenarioDetail: React.FC = () => {
       if (loading) return <div className="p-8">Loading configuration...</div>;
       if (!scenarioMeta) return <div className="p-8">Scenario not found in config.json</div>;
 
-      const pkField = scenarioMeta.columns?.find((c: any) => c.isPk)?.key || scenarioMeta.columns[0]?.key;
+      // Safe extraction of PK field (fallback to separateTables columns if root columns missing)
+      const effectiveColumns = scenarioMeta.columns || scenarioMeta.separateTables?.[0]?.columns || [];
+      const pkField = effectiveColumns.find((c: any) => c.isPk)?.key || effectiveColumns[0]?.key;
 
       return (
             <div className="flex flex-col h-full bg-slate-50 dark:bg-dark-bg">
@@ -803,20 +821,21 @@ const ScenarioDetail: React.FC = () => {
                                                                                           data={separateTablesAfter[tableDef.name] || []}
                                                                                           columns={tableDef.columns}
                                                                                           title={`${tableDef.label} - After Execution`}
-                                                                                          className="border-green-300"
+                                                                                          className="border-slate-300"
                                                                                     />
                                                                               );
                                                                         }
-
-                                                                        // Default / Initial State
+                                                                        // Default: Show Initial State (before execution when "Show Tables" clicked)
                                                                         return (
                                                                               <TableSnapshot
                                                                                     key={tableDef.name}
                                                                                     data={separateTablesInitial[tableDef.name] || []}
                                                                                     columns={tableDef.columns}
-                                                                                    title={`${tableDef.label} - Current Data`}
+                                                                                    title={`${tableDef.label} - Initial State`}
+                                                                                    className="border-slate-300"
                                                                               />
                                                                         );
+
                                                                   })}
                                                             </div>
                                                       )}
@@ -832,25 +851,25 @@ const ScenarioDetail: React.FC = () => {
                                                             <DiffView
                                                                   before={beforeData}
                                                                   after={afterData}
-                                                                  columns={scenarioMeta.columns}
+                                                                  columns={effectiveColumns}
                                                                   pk={pkField}
                                                             />
                                                       ) : hasExecuted && activeResultTab === 'before' ? (
                                                             <TableSnapshot
                                                                   data={beforeData}
-                                                                  columns={scenarioMeta.columns}
+                                                                  columns={effectiveColumns}
                                                                   title="Table State (Before)"
                                                             />
                                                       ) : hasExecuted && activeResultTab === 'after' ? (
                                                             <TableSnapshot
                                                                   data={afterData}
-                                                                  columns={scenarioMeta.columns}
+                                                                  columns={effectiveColumns}
                                                                   title="Table State (After)"
                                                             />
                                                       ) : (
                                                             <TableSnapshot
                                                                   data={initialData}
-                                                                  columns={scenarioMeta.columns}
+                                                                  columns={effectiveColumns}
                                                                   title="Current Table State"
                                                             />
                                                       )}

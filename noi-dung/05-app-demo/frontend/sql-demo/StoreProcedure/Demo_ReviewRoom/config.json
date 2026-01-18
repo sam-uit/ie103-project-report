@@ -5,16 +5,13 @@
       "shortDesc": "Stored Procedure để khách hàng đánh giá phòng sau khi check-out",
       "mdFile": "StoreProcedure/Demo_ReviewRoom/problem.html",
       "sqlFile": "StoreProcedure/Demo_ReviewRoom/sp_ReviewRoom.sql",
-      "tables": [
-            "REVIEWS",
-            "DATPHONG"
-      ],
       "separateTables": [
             {
                   "name": "REVIEWS",
                   "label": "⭐ Bảng Đánh Giá",
                   "sqlBefore": "SELECT r.id, r.user_id, r.datphong_id, r.so_sao AS rating, LEFT(r.binh_luan, 50) as comment FROM REVIEWS r WHERE r.datphong_id = @BookingID",
                   "sqlAfter": "SELECT r.id, r.user_id, r.datphong_id, r.so_sao AS rating, LEFT(r.binh_luan, 50) as comment FROM REVIEWS r WHERE r.datphong_id = @BookingID",
+                  "sqlFetchInitial": "SELECT TOP 20 r.id, r.user_id, r.datphong_id, r.so_sao AS rating, r.binh_luan AS comment, r.created_at FROM REVIEWS r ORDER BY r.created_at DESC",
                   "columns": [
                         {
                               "key": "id",
@@ -38,36 +35,6 @@
                               "label": "⚡ Nhận Xét"
                         }
                   ]
-            }
-      ],
-      "sqlFetchInitial": "SELECT TOP 20 r.id, r.user_id, r.datphong_id, r.so_sao AS rating, r.binh_luan AS comment, r.created_at FROM REVIEWS r ORDER BY r.created_at DESC",
-      "sqlFetchBefore": "SELECT d.id AS booking_id, d.user_id, r.id AS review_id, r.so_sao FROM DATPHONG d LEFT JOIN REVIEWS r ON d.id = r.datphong_id WHERE d.id = @DatPhongId",
-      "sqlFetchAfter": "SELECT d.id AS booking_id, d.user_id, r.id AS review_id, r.so_sao FROM DATPHONG d LEFT JOIN REVIEWS r ON d.id = r.datphong_id WHERE d.id = @DatPhongId",
-      "columns": [
-            {
-                  "key": "id",
-                  "label": "Review ID",
-                  "isPk": true
-            },
-            {
-                  "key": "user_id",
-                  "label": "User ID"
-            },
-            {
-                  "key": "datphong_id",
-                  "label": "Booking ID"
-            },
-            {
-                  "key": "rating",
-                  "label": "Đánh Giá"
-            },
-            {
-                  "key": "comment",
-                  "label": "Nhận Xét"
-            },
-            {
-                  "key": "created_at",
-                  "label": "Ngày Tạo"
             }
       ],
       "params": [

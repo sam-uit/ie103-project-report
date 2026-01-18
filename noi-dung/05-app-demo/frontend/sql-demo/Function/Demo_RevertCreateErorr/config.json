@@ -5,16 +5,13 @@
       "shortDesc": "Function để revert các thay đổi khi tạo booking bị lỗi",
       "mdFile": "Function/Demo_RevertCreateErorr/problem.html",
       "sqlFile": "Function/Demo_RevertCreateErorr/fn_RevertCreateError.sql",
-      "tables": [
-            "DATPHONG",
-            "CT_DATPHONG"
-      ],
       "separateTables": [
             {
                   "name": "DATPHONG",
                   "label": "📋 Bảng Đặt Phòng",
-                  "sqlBefore": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = @BookingID",
-                  "sqlAfter": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = @BookingID",
+                  "sqlBefore": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = @DatPhongID",
+                  "sqlAfter": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = @DatPhongID",
+                  "sqlFetchInitial": "SELECT TOP 20 id, user_id, trang_thai FROM DATPHONG ORDER BY created_at DESC",
                   "columns": [
                         {
                               "key": "id",
@@ -30,24 +27,6 @@
                               "label": "⚡ Trạng Thái"
                         }
                   ]
-            }
-      ],
-      "sqlFetchInitial": "SELECT TOP 20 id, user_id, trang_thai FROM DATPHONG ORDER BY created_at DESC",
-      "sqlFetchBefore": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = @DatPhongID",
-      "sqlFetchAfter": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = @DatPhongID",
-      "columns": [
-            {
-                  "key": "id",
-                  "label": "Booking ID",
-                  "isPk": true
-            },
-            {
-                  "key": "user_id",
-                  "label": "User ID"
-            },
-            {
-                  "key": "trang_thai",
-                  "label": "Trạng Thái"
             }
       ],
       "params": [

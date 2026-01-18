@@ -1,20 +1,17 @@
 {
       "id": "sp-payment",
-      "title": "SP 2: Thanh Toán",
+      "title": "SP 5: Thanh Toán",
       "type": "Stored Procedure",
-      "shortDesc": "Stored Procedure xử lý thanh toán cho booking",
+      "shortDesc": "Stored Procedure để ghi nhận thanh toán và cập nhật trạng thái booking",
       "mdFile": "StoreProcedure/Demo_Payment/problem.html",
       "sqlFile": "StoreProcedure/Demo_Payment/sp_Payment.sql",
-      "tables": [
-            "PAYMENTS",
-            "DATPHONG"
-      ],
       "separateTables": [
             {
                   "name": "PAYMENTS",
                   "label": "💰 Bảng Thanh Toán",
-                  "sqlBefore": "SELECT id, booking_id, so_tien AS amount, method, trang_thai FROM PAYMENTS WHERE booking_id = @BookingID",
-                  "sqlAfter": "SELECT id, booking_id, so_tien AS amount, method, trang_thai FROM PAYMENTS WHERE booking_id = @BookingID",
+                  "sqlBefore": "SELECT id, booking_id, so_tien AS amount, phuong_thuc AS method, trang_thai FROM PAYMENTS WHERE booking_id = @BookingID",
+                  "sqlAfter": "SELECT id, booking_id, so_tien AS amount, phuong_thuc AS method, trang_thai FROM PAYMENTS WHERE booking_id = @BookingID",
+                  "sqlFetchInitial": "SELECT TOP 20 id, booking_id, so_tien AS amount, phuong_thuc AS method, trang_thai FROM PAYMENTS ORDER BY created_at DESC",
                   "columns": [
                         {
                               "key": "id",
@@ -44,6 +41,7 @@
                   "label": "📋 Bảng Đặt Phòng",
                   "sqlBefore": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = @BookingID",
                   "sqlAfter": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = @BookingID",
+                  "sqlFetchInitial": "SELECT TOP 20 id, user_id, trang_thai FROM DATPHONG ORDER BY created_at DESC",
                   "columns": [
                         {
                               "key": "id",
@@ -59,36 +57,6 @@
                               "label": "⚡ Trạng Thái"
                         }
                   ]
-            }
-      ],
-      "sqlFetchInitial": "SELECT TOP 20 p.id, p.booking_id, p.so_tien AS amount, p.phuong_thuc AS method, p.trang_thai AS status, d.trang_thai FROM PAYMENTS p LEFT JOIN DATPHONG d ON d.id = p.booking_id ORDER BY p.created_at DESC",
-      "sqlFetchBefore": "SELECT p.id, p.booking_id, p.so_tien AS amount, p.trang_thai FROM PAYMENTS p WHERE p.booking_id = @BookingID",
-      "sqlFetchAfter": "SELECT p.id, p.booking_id, p.so_tien AS amount, p.trang_thai FROM PAYMENTS p WHERE p.booking_id = @BookingID",
-      "columns": [
-            {
-                  "key": "id",
-                  "label": "Payment ID",
-                  "isPk": true
-            },
-            {
-                  "key": "booking_id",
-                  "label": "Booking ID"
-            },
-            {
-                  "key": "amount",
-                  "label": "Số Tiền"
-            },
-            {
-                  "key": "method",
-                  "label": "Phương Thức"
-            },
-            {
-                  "key": "status",
-                  "label": "Trạng Thái"
-            },
-            {
-                  "key": "trang_thai",
-                  "label": "Trạng Thái Booking"
             }
       ],
       "params": [

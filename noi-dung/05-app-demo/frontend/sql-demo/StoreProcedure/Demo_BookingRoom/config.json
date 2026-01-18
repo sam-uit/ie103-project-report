@@ -5,11 +5,6 @@
       "shortDesc": "Stored Procedure để tạo booking mới và thêm chi tiết phòng",
       "mdFile": "StoreProcedure/Demo_BookingRoom/sp_BookingRoom.html",
       "sqlFile": "StoreProcedure/Demo_BookingRoom/sp_BookingRoom.sql",
-      "tables": [
-            "DATPHONG",
-            "CT_DATPHONG",
-            "PHONG"
-      ],
       "separateTables": [
             {
                   "name": "DATPHONG",
@@ -68,40 +63,6 @@
                               "label": "Đơn Giá"
                         }
                   ]
-            }
-      ],
-      "sqlFetchInitial": "SELECT TOP 20 dp.id, dp.user_id, dp.check_in, dp.check_out, dp.trang_thai, ct.phong_id, ct.don_gia FROM DATPHONG dp LEFT JOIN CT_DATPHONG ct ON ct.datphong_id = dp.id ORDER BY dp.created_at DESC",
-      "sqlFetchBefore": "SELECT dp.id, dp.user_id, dp.check_in, dp.check_out, dp.trang_thai FROM DATPHONG dp WHERE dp.user_id = @UserID ORDER BY dp.created_at DESC",
-      "sqlFetchAfter": "SELECT dp.id, dp.user_id, dp.check_in, dp.check_out, dp.trang_thai, ct.phong_id, ct.don_gia FROM DATPHONG dp LEFT JOIN CT_DATPHONG ct ON ct.datphong_id = dp.id WHERE dp.user_id = @UserID ORDER BY dp.created_at DESC",
-      "columns": [
-            {
-                  "key": "id",
-                  "label": "Booking ID",
-                  "isPk": true
-            },
-            {
-                  "key": "user_id",
-                  "label": "User ID"
-            },
-            {
-                  "key": "phong_id",
-                  "label": "Phòng ID"
-            },
-            {
-                  "key": "check_in",
-                  "label": "Check In"
-            },
-            {
-                  "key": "check_out",
-                  "label": "Check Out"
-            },
-            {
-                  "key": "don_gia",
-                  "label": "Đơn Giá"
-            },
-            {
-                  "key": "trang_thai",
-                  "label": "Trạng Thái"
             }
       ],
       "params": [

@@ -5,16 +5,39 @@
       "shortDesc": "Cursor tính toán doanh thu từ các dịch vụ theo từng loại",
       "mdFile": "Cursor/Demo_ReportRevenueService/problem.html",
       "sqlFile": "Cursor/Demo_ReportRevenueService/cs_ReportRevenueService.sql",
-      "tables": [
-            "DICHVU",
-            "CT_SUDUNG_DV"
-      ],
       "separateTables": [
+            {
+                  "name": "REPORT",
+                  "label": "📊 Báo Cáo Doanh Thu",
+                  "sqlBefore": "SELECT dv.id, dv.ten_dich_vu, COUNT(ct.id) as so_lan_su_dung, SUM(ct.so_luong * ct.don_gia) as tong_doanh_thu FROM DICHVU dv LEFT JOIN CT_SUDUNG_DV ct ON ct.dichvu_id = dv.id GROUP BY dv.id, dv.ten_dich_vu",
+                  "sqlAfter": "SELECT dv.id, dv.ten_dich_vu, COUNT(ct.id) as so_lan_su_dung, SUM(ct.so_luong * ct.don_gia) as tong_doanh_thu FROM DICHVU dv LEFT JOIN CT_SUDUNG_DV ct ON ct.dichvu_id = dv.id GROUP BY dv.id, dv.ten_dich_vu",
+                  "sqlFetchInitial": "SELECT dv.id, dv.ten_dich_vu, COUNT(ct.id) as so_lan_su_dung, SUM(ct.so_luong * ct.don_gia) as tong_doanh_thu FROM DICHVU dv LEFT JOIN CT_SUDUNG_DV ct ON ct.dichvu_id = dv.id GROUP BY dv.id, dv.ten_dich_vu",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "Dịch Vụ ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "ten_dich_vu",
+                              "label": "Tên Dịch Vụ"
+                        },
+                        {
+                              "key": "so_lan_su_dung",
+                              "label": "Số Lần Sử Dụng"
+                        },
+                        {
+                              "key": "tong_doanh_thu",
+                              "label": "Tổng Doanh Thu"
+                        }
+                  ]
+            },
             {
                   "name": "DICHVU",
                   "label": "📦 Bảng Dịch Vụ",
                   "sqlBefore": "SELECT id, ten_dich_vu, don_gia FROM DICHVU",
                   "sqlAfter": "SELECT id, ten_dich_vu, don_gia FROM DICHVU",
+                  "sqlFetchInitial": "SELECT TOP 20 id, ten_dich_vu, don_gia FROM DICHVU",
                   "columns": [
                         {
                               "key": "id",
@@ -36,6 +59,7 @@
                   "label": "🛎️ Chi Tiết Sử Dụng",
                   "sqlBefore": "SELECT id, dich_vu_id, so_luong, don_gia FROM CT_SUDUNG_DV",
                   "sqlAfter": "SELECT id, dich_vu_id, so_luong, don_gia FROM CT_SUDUNG_DV",
+                  "sqlFetchInitial": "SELECT TOP 20 id, dich_vu_id, so_luong, don_gia FROM CT_SUDUNG_DV ORDER BY created_at DESC",
                   "columns": [
                         {
                               "key": "id",
@@ -57,57 +81,9 @@
                   ]
             }
       ],
-      "sqlFetchInitial": "SELECT dv.id, dv.ten_dich_vu, COUNT(ct.id) as so_lan_su_dung, SUM(ct.so_luong * ct.don_gia) as tong_doanh_thu FROM DICHVU dv LEFT JOIN CT_SUDUNG_DV ct ON ct.dichvu_id = dv.id GROUP BY dv.id, dv.ten_dich_vu",
-      "sqlFetchBefore": "SELECT dv.id, dv.ten_dich_vu, COUNT(ct.id) as so_lan_su_dung, SUM(ct.so_luong * ct.don_gia) as tong_doanh_thu FROM DICHVU dv LEFT JOIN CT_SUDUNG_DV ct ON ct.dichvu_id = dv.id GROUP BY dv.id, dv.ten_dich_vu",
-      "sqlFetchAfter": "SELECT dv.id, dv.ten_dich_vu, COUNT(ct.id) as so_lan_su_dung, SUM(ct.so_luong * ct.don_gia) as tong_doanh_thu FROM DICHVU dv LEFT JOIN CT_SUDUNG_DV ct ON ct.dichvu_id = dv.id GROUP BY dv.id, dv.ten_dich_vu",
-      "columns": [
-            {
-                  "key": "id",
-                  "label": "Dịch Vụ ID",
-                  "isPk": true
-            },
-            {
-                  "key": "ten_dich_vu",
-                  "label": "Tên Dịch Vụ"
-            },
-            {
-                  "key": "so_lan_su_dung",
-                  "label": "Số Lần Sử Dụng"
-            },
-            {
-                  "key": "tong_doanh_thu",
-                  "label": "Tổng Doanh Thu"
-            }
-      ],
       "params": [],
       "mockData": {
-            "before": [
-                  {
-                        "id": 1,
-                        "ten_dich_vu": "Spa",
-                        "so_lan_su_dung": 0,
-                        "tong_doanh_thu": 0
-                  },
-                  {
-                        "id": 2,
-                        "ten_dich_vu": "Gym",
-                        "so_lan_su_dung": 0,
-                        "tong_doanh_thu": 0
-                  }
-            ],
-            "after": [
-                  {
-                        "id": 1,
-                        "ten_dich_vu": "Spa",
-                        "so_lan_su_dung": 5,
-                        "tong_doanh_thu": 2500000
-                  },
-                  {
-                        "id": 2,
-                        "ten_dich_vu": "Gym",
-                        "so_lan_su_dung": 3,
-                        "tong_doanh_thu": 900000
-                  }
-            ]
+            "before": [],
+            "after": []
       }
 }

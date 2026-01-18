@@ -5,15 +5,13 @@
       "shortDesc": "Đảm bảo thời gian trả phòng phải lớn hơn hoặc bằng thời gian nhận phòng",
       "mdFile": "Trigger/Demo_CheckTime/problem.html",
       "sqlFile": "Trigger/Demo_CheckTime/trg_CheckTime.sql",
-      "tables": [
-            "DATPHONG"
-      ],
       "separateTables": [
             {
                   "name": "DATPHONG",
                   "label": "📋 Bảng Đặt Phòng",
                   "sqlBefore": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG ORDER BY created_at DESC",
                   "sqlAfter": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG ORDER BY created_at DESC",
+                  "sqlFetchInitial": "SELECT TOP 20 id, user_id, check_in, check_out, trang_thai, created_at FROM DATPHONG ORDER BY created_at DESC",
                   "columns": [
                         {
                               "key": "id",
@@ -37,36 +35,6 @@
                               "label": "Trạng Thái"
                         }
                   ]
-            }
-      ],
-      "sqlFetchInitial": "SELECT TOP 20 id, user_id, check_in, check_out, trang_thai, created_at FROM DATPHONG ORDER BY created_at DESC",
-      "sqlFetchBefore": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG WHERE user_id = 1 ORDER BY id DESC",
-      "sqlFetchAfter": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG WHERE user_id = 1 ORDER BY id DESC",
-      "columns": [
-            {
-                  "key": "id",
-                  "label": "ID",
-                  "isPk": true
-            },
-            {
-                  "key": "user_id",
-                  "label": "User ID"
-            },
-            {
-                  "key": "check_in",
-                  "label": "Check In"
-            },
-            {
-                  "key": "check_out",
-                  "label": "Check Out"
-            },
-            {
-                  "key": "trang_thai",
-                  "label": "Trạng Thái"
-            },
-            {
-                  "key": "created_at",
-                  "label": "Created At"
             }
       ],
       "params": [],

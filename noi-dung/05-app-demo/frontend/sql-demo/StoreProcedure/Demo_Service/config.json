@@ -1,20 +1,17 @@
 {
-      "id": "sp-service",
+      "id": "sp-service-usage",
       "title": "SP 4: Sử Dụng Dịch Vụ",
       "type": "Stored Procedure",
       "shortDesc": "Stored Procedure để thêm dịch vụ cho booking",
       "mdFile": "StoreProcedure/Demo_Service/problem.html",
       "sqlFile": "StoreProcedure/Demo_Service/sp_Service.sql",
-      "tables": [
-            "CT_SUDUNG_DV",
-            "DICHVU"
-      ],
       "separateTables": [
             {
                   "name": "CT_SUDUNG_DV",
                   "label": "🛎️ Sử Dụng Dịch Vụ",
-                  "sqlBefore": "SELECT ct.id, ct.datphong_id AS booking_id, ct.dichvu_id AS dich_vu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id WHERE ct.datphong_id = @BookingID",
-                  "sqlAfter": "SELECT ct.id, ct.datphong_id AS booking_id, ct.dichvu_id AS dich_vu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id WHERE ct.datphong_id = @BookingID",
+                  "sqlBefore": "SELECT ct.id, ct.datphong_id AS booking_id, ct.dichvu_id AS dich_vu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id WHERE ct.datphong_id = @DatPhongId",
+                  "sqlAfter": "SELECT ct.id, ct.datphong_id AS booking_id, ct.dichvu_id AS dich_vu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id WHERE ct.datphong_id = @DatPhongId",
+                  "sqlFetchInitial": "SELECT TOP 20 ct.id, ct.datphong_id AS booking_id, ct.dichvu_id AS dich_vu_id, ct.so_luong, ct.don_gia FROM CT_SUDUNG_DV ct ORDER BY ct.created_at DESC",
                   "columns": [
                         {
                               "key": "id",
@@ -42,32 +39,6 @@
                               "label": "Đơn Giá"
                         }
                   ]
-            }
-      ],
-      "sqlFetchInitial": "SELECT TOP 20 ct.id, ct.datphong_id AS booking_id, ct.dichvu_id AS dich_vu_id, ct.so_luong, ct.don_gia FROM CT_SUDUNG_DV ct ORDER BY ct.created_at DESC",
-      "sqlFetchBefore": "SELECT d.id AS booking_id, d.trang_thai, ct.id AS service_usage_id, ct.dichvu_id FROM DATPHONG d LEFT JOIN CT_SUDUNG_DV ct ON d.id = ct.datphong_id WHERE d.id = @DatPhongId",
-      "sqlFetchAfter": "SELECT d.id AS booking_id, d.trang_thai, ct.id AS service_usage_id, ct.dichvu_id FROM DATPHONG d LEFT JOIN CT_SUDUNG_DV ct ON d.id = ct.datphong_id WHERE d.id = @DatPhongId",
-      "columns": [
-            {
-                  "key": "id",
-                  "label": "ID",
-                  "isPk": true
-            },
-            {
-                  "key": "booking_id",
-                  "label": "Booking ID"
-            },
-            {
-                  "key": "dich_vu_id",
-                  "label": "Dịch Vụ ID"
-            },
-            {
-                  "key": "so_luong",
-                  "label": "Số Lượng"
-            },
-            {
-                  "key": "don_gia",
-                  "label": "Đơn Giá"
             }
       ],
       "params": [

@@ -33,6 +33,18 @@ export interface Scenario {
   // New fields for dynamic state fetching
   sqlFetchBefore?: string; // Query to get "Before" state
   sqlFetchAfter?: string;  // Query to get "After" state
+  sqlFetchInitial?: string; // Query to get Initial state
+
+  mdFile?: string; // Relative path to markdown/html file
+
+  separateTables?: {
+    name: string;
+    label: string;
+    sqlBefore: string;
+    sqlAfter?: string;
+    sqlFetchInitial?: string; // Query for specific table initial state
+    columns: TableColumn[];
+  }[];
 
   tables: string[];
   params?: Parameter[];

@@ -5,10 +5,6 @@
       "shortDesc": "Function kiểm tra xem phòng có available trong khoảng thời gian không",
       "mdFile": "Function/Demo_CheckRoomAvailable/problem.html",
       "sqlFile": "Function/Demo_CheckRoomAvailable/fn_CheckRoomAvailable.sql",
-      "tables": [
-            "PHONG",
-            "CT_DATPHONG"
-      ],
       "separateTables": [
             {
                   "name": "PHONG",
@@ -30,24 +26,6 @@
                               "label": "Trạng Thái"
                         }
                   ]
-            }
-      ],
-      "sqlFetchInitial": "SELECT TOP 20 p.id, p.so_phong AS ten_phong, p.trang_thai FROM PHONG p",
-      "sqlFetchBefore": "SELECT id, so_phong AS ten_phong, trang_thai FROM PHONG WHERE id = @PhongID",
-      "sqlFetchAfter": "SELECT id, so_phong AS ten_phong, trang_thai FROM PHONG WHERE id = @PhongID",
-      "columns": [
-            {
-                  "key": "id",
-                  "label": "Phòng ID",
-                  "isPk": true
-            },
-            {
-                  "key": "ten_phong",
-                  "label": "Tên Phòng"
-            },
-            {
-                  "key": "trang_thai",
-                  "label": "Trạng Thái"
             }
       ],
       "params": [

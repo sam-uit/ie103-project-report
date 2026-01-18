@@ -1,20 +1,17 @@
 {
       "id": "sp-apply-voucher",
-      "title": "SP 5: Áp Dụng Voucher",
+      "title": "SP 2: Áp Dụng Voucher",
       "type": "Stored Procedure",
-      "shortDesc": "Stored Procedure để áp dụng mã giảm giá cho booking",
+      "shortDesc": "Stored Procedure để kiểm tra và áp dụng voucher giảm giá",
       "mdFile": "StoreProcedure/Demo_ApplyVoucher/problem.html",
       "sqlFile": "StoreProcedure/Demo_ApplyVoucher/sp_ApplyVoucher.sql",
-      "tables": [
-            "DATPHONG",
-            "VOUCHERS"
-      ],
       "separateTables": [
             {
                   "name": "DATPHONG",
                   "label": "📋 Bảng Đặt Phòng",
-                  "sqlBefore": "SELECT id, user_id, voucher_id, trang_thai FROM DATPHONG WHERE id = @BookingID",
-                  "sqlAfter": "SELECT id, user_id, voucher_id, trang_thai FROM DATPHONG WHERE id = @BookingID",
+                  "sqlBefore": "SELECT id, user_id, voucher_code, trang_thai FROM DATPHONG WHERE id = @DatPhongId",
+                  "sqlAfter": "SELECT id, user_id, voucher_code, trang_thai FROM DATPHONG WHERE id = @DatPhongId",
+                  "sqlFetchInitial": "SELECT TOP 20 dp.id, dp.user_id, dp.voucher_code, dp.trang_thai FROM DATPHONG dp ORDER BY dp.created_at DESC",
                   "columns": [
                         {
                               "key": "id",
@@ -40,6 +37,7 @@
                   "label": "🎟️ Bảng Vouchers",
                   "sqlBefore": "SELECT id, ma_code, phan_tram_giam, so_lan_da_dung, trang_thai FROM VOUCHERS WHERE ma_code = @VoucherCode",
                   "sqlAfter": "SELECT id, ma_code, phan_tram_giam, so_lan_da_dung, trang_thai FROM VOUCHERS WHERE ma_code = @VoucherCode",
+                  "sqlFetchInitial": "SELECT TOP 20 id, ma_code, phan_tram_giam, so_lan_da_dung, trang_thai FROM VOUCHERS",
                   "columns": [
                         {
                               "key": "id",
@@ -63,28 +61,6 @@
                               "label": "Trạng Thái"
                         }
                   ]
-            }
-      ],
-      "sqlFetchInitial": "SELECT TOP 20 dp.id, dp.user_id, dp.voucher_id FROM DATPHONG dp ORDER BY dp.created_at DESC",
-      "sqlFetchBefore": "SELECT id, user_id, voucher_id FROM DATPHONG WHERE id = @DatPhongId",
-      "sqlFetchAfter": "SELECT id, user_id, voucher_id FROM DATPHONG WHERE id = @DatPhongId",
-      "columns": [
-            {
-                  "key": "id",
-                  "label": "Booking ID",
-                  "isPk": true
-            },
-            {
-                  "key": "user_id",
-                  "label": "User ID"
-            },
-            {
-                  "key": "voucher_code",
-                  "label": "Mã Voucher"
-            },
-            {
-                  "key": "trang_thai",
-                  "label": "Trạng Thái"
             }
       ],
       "params": [

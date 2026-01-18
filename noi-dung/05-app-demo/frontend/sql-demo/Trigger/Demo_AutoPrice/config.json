@@ -1,21 +1,17 @@
 {
       "id": "trg-auto-price",
-      "title": "Trigger 2: Tự Động Đơn Giá",
+      "title": "Trigger 2: Tự Động Tính Giá Phòng",
       "type": "Trigger",
-      "shortDesc": "Tự động lấy đơn giá từ LOAIPHONG và kiểm tra trạng thái phòng khi đặt",
+      "shortDesc": "Tự động tính toán đơn giá chi tiết đặt phòng dựa trên loại phòng",
       "mdFile": "Trigger/Demo_AutoPrice/problem.html",
       "sqlFile": "Trigger/Demo_AutoPrice/trg_AutoPrice.sql",
-      "tables": [
-            "CT_DATPHONG",
-            "PHONG",
-            "LOAIPHONG"
-      ],
       "separateTables": [
             {
                   "name": "CT_DATPHONG",
                   "label": "🏨 Chi Tiết Đặt Phòng",
-                  "sqlBefore": "SELECT ct.id, ct.datphong_id, ct.phong_id, p.so_phong AS ten_phong, ct.don_gia FROM CT_DATPHONG ct LEFT JOIN PHONG p ON p.id = ct.phong_id ORDER BY ct.id DESC",
-                  "sqlAfter": "SELECT ct.id, ct.datphong_id, ct.phong_id, p.so_phong AS ten_phong, ct.don_gia FROM CT_DATPHONG ct LEFT JOIN PHONG p ON p.id = ct.phong_id ORDER BY ct.id DESC",
+                  "sqlBefore": "SELECT id, datphong_id, phong_id, don_gia FROM CT_DATPHONG WHERE id = (SELECT MAX(id) FROM CT_DATPHONG)",
+                  "sqlAfter": "SELECT id, datphong_id, phong_id, don_gia FROM CT_DATPHONG WHERE id = (SELECT MAX(id) FROM CT_DATPHONG)",
+                  "sqlFetchInitial": "SELECT TOP 20 id, datphong_id, phong_id, don_gia FROM CT_DATPHONG ORDER BY id DESC",
                   "columns": [
                         {
                               "key": "id",
@@ -24,15 +20,11 @@
                         },
                         {
                               "key": "datphong_id",
-                              "label": "Đặt Phòng ID"
+                              "label": "Booking ID"
                         },
                         {
                               "key": "phong_id",
                               "label": "Phòng ID"
-                        },
-                        {
-                              "key": "ten_phong",
-                              "label": "Tên Phòng"
                         },
                         {
                               "key": "don_gia",
@@ -41,10 +33,11 @@
                   ]
             },
             {
-                  "name": "PHONG",
-                  "label": "🚪 Bảng Phòng",
-                  "sqlBefore": "SELECT id, so_phong AS ten_phong, loai_phong_id, trang_thai FROM PHONG",
-                  "sqlAfter": "SELECT id, so_phong AS ten_phong, loai_phong_id, trang_thai FROM PHONG",
+                  "name": "LOAIPHONG",
+                  "label": "🏷️ Loại Phòng",
+                  "sqlBefore": "SELECT id, ten_loai, gia_co_ban FROM LOAIPHONG",
+                  "sqlAfter": "SELECT id, ten_loai, gia_co_ban FROM LOAIPHONG",
+                  "sqlFetchInitial": "SELECT id, ten_loai, gia_co_ban FROM LOAIPHONG",
                   "columns": [
                         {
                               "key": "id",
@@ -52,60 +45,19 @@
                               "isPk": true
                         },
                         {
-                              "key": "ten_phong",
-                              "label": "Tên Phòng"
-                        },
-                        {
-                              "key": "loai_phong_id",
+                              "key": "ten_loai",
                               "label": "Loại Phòng"
                         },
                         {
-                              "key": "trang_thai",
-                              "label": "⚡ Trạng Thái"
+                              "key": "gia_co_ban",
+                              "label": "Giá Cơ Bản"
                         }
                   ]
-            }
-      ],
-      "sqlFetchInitial": "SELECT TOP 20 ct.id, ct.datphong_id, ct.phong_id, p.so_phong AS ten_phong, ct.don_gia, p.trang_thai FROM CT_DATPHONG ct LEFT JOIN PHONG p ON p.id = ct.phong_id ORDER BY ct.id DESC",
-      "sqlFetchBefore": "SELECT ct.id, ct.datphong_id, ct.phong_id, ct.don_gia FROM CT_DATPHONG ct WHERE datphong_id = 2",
-      "sqlFetchAfter": "SELECT ct.id, ct.datphong_id, ct.phong_id, ct.don_gia FROM CT_DATPHONG ct WHERE datphong_id = 2",
-      "columns": [
-            {
-                  "key": "id",
-                  "label": "ID",
-                  "isPk": true
-            },
-            {
-                  "key": "datphong_id",
-                  "label": "Đặt Phòng ID"
-            },
-            {
-                  "key": "phong_id",
-                  "label": "Phòng ID"
-            },
-            {
-                  "key": "ten_phong",
-                  "label": "Tên Phòng"
-            },
-            {
-                  "key": "don_gia",
-                  "label": "Đơn Giá"
-            },
-            {
-                  "key": "trang_thai",
-                  "label": "Trạng Thái Phòng"
             }
       ],
       "params": [],
       "mockData": {
             "before": [],
-            "after": [
-                  {
-                        "id": 1,
-                        "datphong_id": 1,
-                        "phong_id": 1,
-                        "don_gia": 500000
-                  }
-            ]
+            "after": []
       }
 }

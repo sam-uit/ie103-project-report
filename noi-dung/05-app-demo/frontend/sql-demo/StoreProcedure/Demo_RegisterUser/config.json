@@ -11,6 +11,7 @@
                   "label": "Danh Sách Users",
                   "sqlBefore": "SELECT id, full_name, email, phone, status, created_at FROM USERS ORDER BY id DESC",
                   "sqlAfter": "SELECT id, full_name, email, phone, status, created_at FROM USERS ORDER BY id DESC",
+                  "sqlFetchInitial": "SELECT TOP 20 id, full_name, email, phone, status, created_at FROM USERS ORDER BY created_at DESC",
                   "columns": [
                         {
                               "key": "id",
@@ -40,33 +41,6 @@
                   ]
             }
       ],
-      "columns": [
-            {
-                  "key": "id",
-                  "label": "ID",
-                  "isPk": true
-            },
-            {
-                  "key": "full_name",
-                  "label": "Họ Tên"
-            },
-            {
-                  "key": "email",
-                  "label": "Email"
-            },
-            {
-                  "key": "phone",
-                  "label": "SĐT"
-            },
-            {
-                  "key": "status",
-                  "label": "Trạng Thái"
-            },
-            {
-                  "key": "created_at",
-                  "label": "Ngày Tạo"
-            }
-      ],
       "params": [
             {
                   "name": "@Email",
@@ -88,6 +62,5 @@
                   "type": "string",
                   "defaultValue": "password123"
             }
-      ],
-      "sqlContent": "-- Check if email exists\nIF EXISTS (SELECT 1 FROM USERS WHERE email = @Email)\nBEGIN\n    RAISERROR(N'Email đã tồn tại!', 16, 1);\n    RETURN;\nEND\n\n-- Insert new user\nINSERT INTO USERS (email, phone, password_hash, full_name, status, created_at)\nVALUES (@Email, @Phone, @Password, @FullName, 'ACTIVE', GETDATE());\n\nPRINT N'Đăng ký thành công!';"
+      ]
 }
