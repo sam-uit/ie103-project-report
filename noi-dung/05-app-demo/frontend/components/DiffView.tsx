@@ -42,18 +42,18 @@ const DiffView: React.FC<DiffViewProps> = ({ before, after, columns, pk }) => {
 
   if (diffs.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center h-full text-slate-400 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-850 dark:to-slate-800 rounded-xl border-2 border-dashed border-slate-300/60 dark:border-slate-700/40 shadow-inner">
+      <div className="flex flex-col items-center justify-center h-full text-slate-400 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-850 dark:to-slate-800 rounded-xl border-2 border-dashed border-slate-300/60 dark:border-dark-border/40 shadow-inner">
         <div className="text-7xl mb-5 opacity-15 animate-pulse">✨</div>
-        <span className="text-base font-bold text-slate-600 dark:text-slate-300">No Changes Detected</span>
+        <span className="text-base font-bold text-slate-600 dark:text-dark-text-secondary">No Changes Detected</span>
         <span className="text-sm mt-2 opacity-70 text-center max-w-md px-4">The operation completed successfully but did not modify any rows in the database.</span>
       </div>
     )
   }
 
   return (
-    <div className="flex flex-col h-full bg-white dark:bg-dark-surface border border-slate-200/80 dark:border-slate-700/60 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
+    <div className="flex flex-col h-full bg-white dark:bg-dark-surface border border-slate-200/80 dark:border-dark-border/60 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
       <div className="px-6 py-4 bg-gradient-to-r from-purple-50 via-blue-50 to-indigo-50 dark:from-purple-900/20 dark:via-blue-900/20 dark:to-indigo-900/20 border-b border-purple-200/60 dark:border-purple-800/40 flex items-center justify-between">
-        <h3 className="font-bold text-sm text-slate-800 dark:text-slate-100 tracking-tight flex items-center gap-2.5">
+        <h3 className="font-bold text-sm text-slate-800 dark:text-dark-text-primary tracking-tight flex items-center gap-2.5">
           <span className="w-1.5 h-6 bg-gradient-to-b from-purple-500 to-purple-600 rounded-full shadow-sm"></span>
           <ArrowRight className="text-purple-500 dark:text-purple-400" size={17} />
           <span>Changes Summary</span>
@@ -73,15 +73,15 @@ const DiffView: React.FC<DiffViewProps> = ({ before, after, columns, pk }) => {
 
       <div className="flex-1 overflow-auto scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600">
         <table className="w-full text-left text-xs font-mono border-collapse">
-          <thead className="bg-gradient-to-b from-slate-100 via-slate-50 to-white dark:from-slate-900 dark:via-slate-850 dark:to-slate-800 text-slate-700 dark:text-slate-300 sticky top-0 z-10 shadow-md">
+          <thead className="bg-gradient-to-b from-slate-100 via-slate-50 to-white dark:from-slate-900 dark:via-slate-850 dark:to-slate-800 text-slate-700 dark:text-dark-text-secondary sticky top-0 z-10 shadow-md">
             <tr>
-              <th className="px-5 py-4 w-24 border-b border-slate-200/80 dark:border-slate-600/60 font-bold uppercase text-[11px] tracking-wider bg-slate-50/50 dark:bg-slate-900/30">
+              <th className="px-5 py-4 w-24 border-b border-slate-200/80 dark:border-dark-border/60 font-bold uppercase text-[11px] tracking-wider bg-slate-50/50 dark:bg-dark-surface/30">
                 <span className="flex items-center gap-1.5">
                   🔄 <span>Type</span>
                 </span>
               </th>
               {columns.map(c => (
-                <th key={c.key} className="px-5 py-4 border-b border-r border-slate-200/60 dark:border-slate-600/40 last:border-r-0 whitespace-nowrap font-bold uppercase text-[11px] tracking-wider hover:bg-blue-50/30 dark:hover:bg-blue-900/10 transition-colors">
+                <th key={c.key} className="px-5 py-4 border-b border-r border-slate-200/60 dark:border-dark-border/40 last:border-r-0 whitespace-nowrap font-bold uppercase text-[11px] tracking-wider hover:bg-blue-50/30 dark:hover:bg-blue-900/10 transition-colors">
                   {c.label}
                 </th>
               ))}
@@ -103,7 +103,7 @@ const DiffView: React.FC<DiffViewProps> = ({ before, after, columns, pk }) => {
                       const valAfter = diff.after[col.key];
                       const changed = JSON.stringify(valBefore) !== JSON.stringify(valAfter);
                       return (
-                        <td key={col.key} className="px-5 py-4 align-top border-r border-slate-200/40 dark:border-slate-700/30 last:border-r-0">
+                        <td key={col.key} className="px-5 py-4 align-top border-r border-slate-200/40 dark:border-dark-border/30 last:border-r-0">
                           {changed ? (
                             <div className="flex flex-col gap-2">
                               <div className="flex items-center gap-2">
@@ -113,14 +113,14 @@ const DiffView: React.FC<DiffViewProps> = ({ before, after, columns, pk }) => {
                                 </span>
                               </div>
                               <div className="flex items-center gap-2 ml-5">
-                                <span className="text-[9px] text-slate-500 dark:text-slate-500 font-semibold">was:</span>
-                                <span className="text-slate-500 dark:text-slate-400 line-through text-[10px] opacity-60">
+                                <span className="text-[9px] text-slate-500 dark:text-dark-text-muted font-semibold">was:</span>
+                                <span className="text-slate-500 dark:text-dark-text-secondary line-through text-[10px] opacity-60">
                                   {valBefore === null ? <span className="italic">NULL</span> : valBefore}
                                 </span>
                               </div>
                             </div>
                           ) : (
-                            <span className="text-slate-600 dark:text-slate-400 opacity-40">
+                            <span className="text-slate-600 dark:text-dark-text-secondary opacity-40">
                               {valAfter === null ? <span className="italic text-[10px]">NULL</span> : valAfter}
                             </span>
                           )}
@@ -140,7 +140,7 @@ const DiffView: React.FC<DiffViewProps> = ({ before, after, columns, pk }) => {
                       </div>
                     </td>
                     {columns.map(col => (
-                      <td key={col.key} className="px-5 py-4 text-slate-800 dark:text-slate-200 font-semibold border-r border-slate-200/40 dark:border-slate-700/30 last:border-r-0">
+                      <td key={col.key} className="px-5 py-4 text-slate-800 dark:text-dark-text-primary font-semibold border-r border-slate-200/40 dark:border-dark-border/30 last:border-r-0">
                         {diff.data[col.key] === null ? <span className="italic text-[10px] text-slate-400">NULL</span> : diff.data[col.key]}
                       </td>
                     ))}
@@ -150,14 +150,14 @@ const DiffView: React.FC<DiffViewProps> = ({ before, after, columns, pk }) => {
               // DELETE
               return (
                 <tr key={i} className="bg-gradient-to-r from-red-50/60 via-rose-50/40 to-transparent hover:from-red-100/70 hover:via-rose-100/50 hover:to-red-50/20 dark:from-red-900/8 dark:via-rose-900/5 dark:to-transparent dark:hover:from-red-900/15 dark:hover:via-rose-900/10 dark:hover:to-red-900/5 transition-all duration-200 group">
-                  <td className="px-5 py-4 font-black text-red-700 dark:text-red-400 border-l-4 border-red-500 dark:border-red-600 shadow-inner bg-red-100/40 dark:bg-red-900/20">
+                  <td className="px-5 py-4 font-black text-red-700 dark:text-accent-orange-400 border-l-4 border-red-500 dark:border-red-600 shadow-inner bg-red-100/40 dark:bg-red-900/20">
                     <div className="flex items-center gap-2">
                       <Minus size={15} strokeWidth={3} className="group-hover:scale-110 transition-transform" />
                       <span className="text-[11px] tracking-wide">DEL</span>
                     </div>
                   </td>
                   {columns.map(col => (
-                    <td key={col.key} className="px-5 py-4 line-through text-red-600 dark:text-red-400/70 opacity-70 border-r border-slate-200/40 dark:border-slate-700/30 last:border-r-0">
+                    <td key={col.key} className="px-5 py-4 line-through text-red-600 dark:text-accent-orange-400/70 opacity-70 border-r border-slate-200/40 dark:border-dark-border/30 last:border-r-0">
                       {diff.data[col.key] === null ? <span className="italic text-[10px]">NULL</span> : diff.data[col.key]}
                     </td>
                   ))}

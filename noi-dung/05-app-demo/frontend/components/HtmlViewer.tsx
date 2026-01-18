@@ -82,7 +82,7 @@ const HtmlViewer: React.FC<HtmlViewerProps> = ({
 
       if (loading) {
             return (
-                  <div className={`bg-white dark:bg-dark-surface border border-slate-300 dark:border-slate-700 rounded-lg p-6 ${className}`}>
+                  <div className={`bg-white dark:bg-dark-surface border border-slate-300 dark:border-dark-border rounded-lg p-6 ${className}`}>
                         <div className="flex items-center justify-center gap-3 text-slate-500">
                               <Loader2 className="animate-spin" size={20} />
                               <span className="text-sm">Loading problem description...</span>
@@ -95,10 +95,10 @@ const HtmlViewer: React.FC<HtmlViewerProps> = ({
             return (
                   <div className={`bg-red-50 dark:bg-red-900/20 border border-red-300 dark:border-red-800 rounded-lg p-6 ${className}`}>
                         <div className="flex items-start gap-3">
-                              <FileText className="text-red-500 flex-shrink-0 mt-1" size={20} />
+                              <FileText className="text-accent-orange-500 flex-shrink-0 mt-1" size={20} />
                               <div>
                                     <h3 className="text-sm font-semibold text-red-800 dark:text-red-300">Error Loading HTML</h3>
-                                    <p className="text-xs text-red-600 dark:text-red-400 mt-1">{error}</p>
+                                    <p className="text-xs text-red-600 dark:text-accent-orange-400 mt-1">{error}</p>
                               </div>
                         </div>
                   </div>

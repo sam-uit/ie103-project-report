@@ -487,38 +487,62 @@ const ScenarioDetail: React.FC = () => {
       const pkField = effectiveColumns.find((c: any) => c.isPk)?.key || effectiveColumns[0]?.key;
 
       return (
-            <div className="flex flex-col h-full bg-slate-50 dark:bg-dark-bg">
-                  {/* 1. Header Bar */}
-                  <div className="flex-none px-4 py-2 border-b border-slate-200 dark:border-dark-border bg-white dark:bg-[#16181a] flex justify-between items-center shadow-sm z-30">
-                        <div className="flex flex-col">
-                              <div className="flex items-center gap-2 text-[10px] text-slate-500 uppercase tracking-wider font-bold">
-                                    <span className="text-primary-600">{scenarioMeta.type}</span>
-                                    <ChevronRight size={10} />
-                                    <span>{scenarioMeta.id}</span>
+            <div className="flex flex-col h-full bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg">
+                  {/* Modern Header with Glassmorphism */}
+                  <div className="flex-none relative z-30">
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-accent-purple-500/10 to-accent-cyan-500/10 dark:from-primary-500/5 dark:via-accent-purple-500/5 dark:to-accent-cyan-500/5"></div>
+
+                        <div className="relative backdrop-blur-xl bg-white/80 dark:bg-dark-surface/80 border-b border-slate-200/50 dark:border-dark-border/50 shadow-lg px-6 py-4">
+                              <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-4">
+                                          {/* Icon Badge */}
+                                          <div className="p-3 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg shadow-primary-500/30">
+                                                <Database className="text-white" size={24} strokeWidth={2.5} />
+                                          </div>
+
+                                          <div>
+                                                {/* Breadcrumb */}
+                                                <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-dark-text-muted uppercase tracking-wider font-bold mb-1">
+                                                      <span className="px-2 py-0.5 rounded-md bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-sm">{scenarioMeta.type}</span>
+                                                      <ChevronRight size={12} />
+                                                      <span>{scenarioMeta.id}</span>
+                                                </div>
+                                                {/* Title */}
+                                                <h1 className="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-dark-text-primary dark:to-dark-text-secondary bg-clip-text text-transparent">
+                                                      {scenarioMeta.title}
+                                                </h1>
+                                          </div>
+                                    </div>
                               </div>
-                              <h1 className="text-sm font-bold text-slate-800 dark:text-slate-100">{scenarioMeta.title}</h1>
                         </div>
-                        {/* Buttons removed - moved to SQL tab */}
                   </div>
 
-                  {/* Error Alert */}
+                  {/* Modern Error Alert */}
                   {errorMessage && (
-                        <div className="flex-none mx-4 mt-2 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
-                              <div className="flex items-start gap-3">
-                                    <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400 mt-0.5 flex-shrink-0" />
-                                    <div className="flex-1">
-                                          <h3 className="text-sm font-semibold text-red-800 dark:text-red-300">Lỗi thực thi</h3>
-                                          <p className="mt-1 text-sm text-red-700 dark:text-red-400">{errorMessage}</p>
+                        <div className="flex-none mx-4 mt-4 relative">
+                              {/* Glow Effect */}
+                              <div className="absolute inset-0 bg-gradient-to-r from-accent-pink-500/20 to-accent-orange-500/20 blur-xl rounded-2xl"></div>
+
+                              <div className="relative backdrop-blur-xl bg-gradient-to-r from-red-50/90 to-orange-50/90 dark:from-accent-pink-500/10 dark:to-accent-orange-500/10 border border-red-200/50 dark:border-accent-pink-500/50 rounded-2xl p-5 shadow-xl">
+                                    <div className="flex items-start gap-4">
+                                          <div className="p-2 rounded-xl bg-gradient-to-br from-accent-pink-500 to-accent-orange-500 shadow-lg">
+                                                <AlertCircle className="text-white" size={20} strokeWidth={2.5} />
+                                          </div>
+                                          <div className="flex-1">
+                                                <h3 className="text-base font-bold text-red-800 dark:text-accent-pink-400 mb-1">Lỗi thực thi</h3>
+                                                <p className="text-sm text-red-700 dark:text-accent-orange-400 leading-relaxed">{errorMessage}</p>
+                                          </div>
+                                          <button
+                                                onClick={() => setErrorMessage('')}
+                                                className="p-2 rounded-xl hover:bg-red-100 dark:hover:bg-accent-pink-500/20 text-red-400 hover:text-red-600 dark:hover:text-accent-pink-300 transition-all"
+                                                title="Đóng"
+                                          >
+                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                                      <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                </svg>
+                                          </button>
                                     </div>
-                                    <button
-                                          onClick={() => setErrorMessage('')}
-                                          className="text-red-400 hover:text-red-600 dark:hover:text-red-300 transition-colors"
-                                          title="Đóng"
-                                    >
-                                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                                          </svg>
-                                    </button>
                               </div>
                         </div>
                   )}
@@ -532,50 +556,71 @@ const ScenarioDetail: React.FC = () => {
                               style={{ height: isTablesCollapsed ? 'calc(100% - 16px)' : `${sqlViewerHeight}px` }}
                         >
                               {/* Tabbed Viewer: Problem Description vs SQL Source */}
-                              <div className="flex-1 flex flex-col rounded-lg border border-slate-300 dark:border-slate-700 overflow-hidden shadow-sm bg-white dark:bg-dark-surface">
-                                    {/* Tab Headers - Redesigned for better UX */}
-                                    <div className="flex items-center justify-between border-b-2 border-slate-700 dark:border-slate-600 bg-gradient-to-r from-slate-800 to-slate-900 dark:from-slate-900 dark:to-black h-14 flex-shrink-0 shadow-md">
+                              <div className="flex-1 flex flex-col rounded-lg border border-slate-300 dark:border-dark-border overflow-hidden shadow-sm bg-white dark:bg-dark-surface">
+                                    {/* Modern Tab Headers with Glassmorphism */}
+                                    <div className="relative flex items-center justify-between border-b border-slate-200/50 dark:border-dark-border/50 h-16 flex-shrink-0">
+                                          {/* Gradient Background */}
+                                          <div className="absolute inset-0 bg-gradient-to-r from-white/50 to-transparent dark:from-dark-elevated/50 dark:to-transparent"></div>
+
                                           {/* Left: Tab buttons */}
-                                          <div className="flex h-full">
+                                          <div className="relative flex h-full">
                                                 <button
                                                       onClick={() => setActiveSourceTab('problem')}
-                                                      className={`h-full flex items-center gap-2.5 px-6 text-base font-bold transition-all duration-200 relative ${activeSourceTab === 'problem'
-                                                            ? 'text-red-500 bg-slate-900 dark:bg-slate-950 scale-105 shadow-lg'
-                                                            : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50 dark:hover:bg-slate-800/50'
+                                                      className={`group relative flex items-center gap-3 px-8 text-sm font-bold transition-all duration-300 ${activeSourceTab === 'problem'
+                                                            ? 'text-white'
+                                                            : 'text-slate-600 dark:text-dark-text-secondary hover:text-slate-900 dark:hover:text-dark-text-primary'
                                                             }`}
                                                 >
-                                                      <FileText size={20} strokeWidth={2.5} />
-                                                      <span>Trình Bày Bài Toán</span>
+                                                      {/* Active Background */}
                                                       {activeSourceTab === 'problem' && (
-                                                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-600 shadow-lg shadow-red-500/50"></div>
+                                                            <div className="absolute inset-0 bg-gradient-to-r from-accent-purple-500 to-accent-purple-600 shadow-lg shadow-accent-purple-500/30 rounded-t-xl"></div>
+                                                      )}
+
+                                                      <FileText size={20} strokeWidth={2.5} className={`relative z-10 transition-transform duration-300 ${activeSourceTab === 'problem' ? 'scale-110' : 'group-hover:scale-110 group-hover:rotate-3'}`} />
+                                                      <span className="relative z-10">Trình Bày Bài Toán</span>
+
+                                                      {/* Bottom Indicator */}
+                                                      {activeSourceTab === 'problem' && (
+                                                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-purple-400 to-accent-purple-600 shadow-lg"></div>
                                                       )}
                                                 </button>
+
                                                 <button
                                                       onClick={() => setActiveSourceTab('sql')}
-                                                      className={`h-full flex items-center gap-2.5 px-6 text-base font-bold transition-all duration-200 relative ${activeSourceTab === 'sql'
-                                                            ? 'text-red-500 bg-slate-900 dark:bg-slate-950 scale-105 shadow-lg'
-                                                            : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50 dark:hover:bg-slate-800/50'
+                                                      className={`group relative flex items-center gap-3 px-8 text-sm font-bold transition-all duration-300 ${activeSourceTab === 'sql'
+                                                            ? 'text-white'
+                                                            : 'text-slate-600 dark:text-dark-text-secondary hover:text-slate-900 dark:hover:text-dark-text-primary'
                                                             }`}
                                                 >
-                                                      <Code size={20} strokeWidth={2.5} />
-                                                      <span>SQL Source</span>
+                                                      {/* Active Background */}
                                                       {activeSourceTab === 'sql' && (
-                                                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-600 shadow-lg shadow-red-500/50"></div>
+                                                            <div className="absolute inset-0 bg-gradient-to-r from-accent-cyan-500 to-accent-cyan-600 shadow-lg shadow-accent-cyan-500/30 rounded-t-xl"></div>
+                                                      )}
+
+                                                      <Code size={20} strokeWidth={2.5} className={`relative z-10 transition-transform duration-300 ${activeSourceTab === 'sql' ? 'scale-110' : 'group-hover:scale-110 group-hover:rotate-3'}`} />
+                                                      <span className="relative z-10">SQL Source</span>
+
+                                                      {/* Bottom Indicator */}
+                                                      {activeSourceTab === 'sql' && (
+                                                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-cyan-400 to-accent-cyan-600 shadow-lg"></div>
                                                       )}
                                                 </button>
                                           </div>
 
-                                          {/* Right: Action buttons - Only show when SQL tab is active */}
+                                          {/* Right: Modern Action Buttons - Only show when SQL tab is active */}
                                           {activeSourceTab === 'sql' && (
-                                                <div className="flex items-center gap-2 px-4">
+                                                <div className="relative flex items-center gap-3 px-4">
+                                                      {/* Reset Button */}
                                                       <button
                                                             onClick={handleReset}
-                                                            className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-300 bg-slate-700 border border-slate-600 rounded-lg hover:bg-slate-600 hover:text-white hover:border-slate-500 transition-all shadow-sm hover:shadow-md"
+                                                            className="group flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-xl bg-white/80 dark:bg-dark-elevated/80 backdrop-blur-sm border border-slate-200 dark:border-dark-border hover:border-accent-pink-500 dark:hover:border-accent-pink-500 hover:bg-accent-pink-50 dark:hover:bg-accent-pink-500/10 text-slate-600 dark:text-dark-text-secondary hover:text-accent-pink-600 dark:hover:text-accent-pink-400 transition-all shadow-sm hover:shadow-md"
                                                             title="Reset"
                                                       >
-                                                            <RotateCcw size={14} strokeWidth={2.5} />
+                                                            <RotateCcw size={16} strokeWidth={2.5} className="group-hover:rotate-180 transition-transform duration-500" />
                                                             <span>Reset</span>
                                                       </button>
+
+                                                      {/* Show/Hide Tables Button */}
                                                       <button
                                                             onClick={() => {
                                                                   const newCollapsedState = !isTablesCollapsed;
@@ -587,22 +632,37 @@ const ScenarioDetail: React.FC = () => {
                                                                         fetchInitialData(scenarioMeta);
                                                                   }
                                                             }}
-                                                            className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg transition-all shadow-sm hover:shadow-md ${isTablesCollapsed
-                                                                  ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white border border-blue-500'
-                                                                  : 'bg-slate-700 text-slate-300 border border-slate-600 hover:bg-slate-600 hover:text-white hover:border-slate-500'
+                                                            className={`group flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-xl transition-all shadow-md hover:shadow-lg ${isTablesCollapsed
+                                                                  ? 'bg-gradient-to-r from-accent-cyan-500 to-accent-cyan-600 hover:from-accent-cyan-600 hover:to-accent-cyan-700 text-white border border-accent-cyan-400 shadow-accent-cyan-500/30'
+                                                                  : 'bg-white/80 dark:bg-dark-elevated/80 backdrop-blur-sm border border-slate-200 dark:border-dark-border hover:border-accent-cyan-500 text-slate-600 dark:text-dark-text-secondary hover:text-accent-cyan-600 dark:hover:text-accent-cyan-400'
                                                                   }`}
                                                             title={isTablesCollapsed ? "Show tables" : "Hide tables"}
                                                       >
-                                                            {isTablesCollapsed ? <ChevronDown size={14} strokeWidth={2.5} /> : <ChevronUp size={14} strokeWidth={2.5} />}
+                                                            {isTablesCollapsed ? <ChevronDown size={16} strokeWidth={2.5} className="group-hover:translate-y-0.5 transition-transform" /> : <ChevronUp size={16} strokeWidth={2.5} className="group-hover:-translate-y-0.5 transition-transform" />}
                                                             <span>{isTablesCollapsed ? 'Show Tables' : 'Hide Tables'}</span>
                                                       </button>
+                                                      {/* EXECUTE Button - Premium Design */}
                                                       <button
                                                             onClick={handleExecute}
                                                             disabled={status === 'running' || status === 'loading_script'}
-                                                            className="flex items-center gap-2 px-5 py-2 text-sm font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white rounded-lg shadow-md hover:shadow-xl transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed border border-red-500"
+                                                            className="group relative flex items-center gap-2.5 px-6 py-2.5 text-sm font-bold rounded-xl transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden"
                                                       >
-                                                            {status === 'running' ? <Loader2 size={16} className="animate-spin" strokeWidth={2.5} /> : <Play size={16} fill="currentColor" strokeWidth={2.5} />}
-                                                            <span>EXECUTE</span>
+                                                            {/* Gradient Background */}
+                                                            <div className="absolute inset-0 bg-gradient-to-r from-accent-green-500 to-accent-green-600 group-hover:from-accent-green-600 group-hover:to-accent-green-700 transition-all"></div>
+
+                                                            {/* Glow Effect */}
+                                                            <div className="absolute inset-0 bg-gradient-to-r from-accent-green-400 to-accent-green-500 opacity-0 group-hover:opacity-50 blur-xl transition-opacity"></div>
+
+                                                            {/* Pulse Animation when ready */}
+                                                            {status !== 'running' && status !== 'loading_script' && (
+                                                                  <div className="absolute inset-0 animate-pulse bg-white/20"></div>
+                                                            )}
+
+                                                            {/* Content */}
+                                                            <div className="relative z-10 flex items-center gap-2.5 text-white">
+                                                                  {status === 'running' ? <Loader2 size={18} className="animate-spin" strokeWidth={2.5} /> : <Play size={18} fill="currentColor" strokeWidth={2.5} className="group-hover:scale-110 transition-transform" />}
+                                                                  <span className="tracking-wide">EXECUTE</span>
+                                                            </div>
                                                       </button>
                                                 </div>
                                           )}
@@ -641,10 +701,10 @@ const ScenarioDetail: React.FC = () => {
 
                               {/* Params Panel - Only show when SQL Source tab is active */}
                               {activeSourceTab === 'sql' && (
-                                    <div className="w-64 flex-shrink-0 bg-white dark:bg-dark-surface border border-slate-300 dark:border-slate-700 rounded-lg p-3 overflow-y-auto shadow-sm">
-                                          <div className="flex items-center gap-2 mb-3 pb-2 border-b border-slate-100 dark:border-slate-700">
+                                    <div className="w-64 flex-shrink-0 bg-white dark:bg-dark-surface border border-slate-300 dark:border-dark-border rounded-lg p-3 overflow-y-auto shadow-sm">
+                                          <div className="flex items-center gap-2 mb-3 pb-2 border-b border-slate-100 dark:border-dark-border">
                                                 <Database size={14} className="text-primary-500" />
-                                                <h3 className="text-xs font-bold uppercase text-slate-700 dark:text-slate-300">Input Parameters</h3>
+                                                <h3 className="text-xs font-bold uppercase text-slate-700 dark:text-dark-text-secondary">Input Parameters</h3>
                                           </div>
                                           {scenarioMeta.params && scenarioMeta.params.length > 0 ? (
                                                 <div className="space-y-3">
@@ -653,7 +713,7 @@ const ScenarioDetail: React.FC = () => {
                                                             return (
                                                                   <div key={`${scenarioMeta.id}-${param.name}`} className="flex flex-col gap-1">
                                                                         <div className="flex justify-between items-baseline">
-                                                                              <label className={`text-[10px] font-mono font-semibold transition-colors ${hasError ? 'text-red-500' : 'text-slate-600 dark:text-slate-400'}`} title={param.name}>
+                                                                              <label className={`text-[10px] font-mono font-semibold transition-colors ${hasError ? 'text-accent-orange-500' : 'text-slate-600 dark:text-dark-text-secondary'}`} title={param.name}>
                                                                                     {param.name}
                                                                               </label>
                                                                               <span className="text-[9px] text-slate-400 italic">{param.type}</span>
@@ -667,18 +727,18 @@ const ScenarioDetail: React.FC = () => {
                                         w-full bg-slate-50 dark:bg-black/20 border rounded px-2 py-1 text-xs font-mono outline-none transition-all
                                         ${hasError
                                                                                                 ? 'border-red-500 focus:ring-1 focus:ring-red-500 bg-red-50 dark:bg-red-900/10'
-                                                                                                : 'border-slate-200 dark:border-slate-600 focus:ring-1 focus:ring-primary-500'
+                                                                                                : 'border-slate-200 dark:border-dark-border focus:ring-1 focus:ring-primary-500'
                                                                                           }
                                     `}
                                                                               />
                                                                               {hasError && (
-                                                                                    <div className="absolute right-2 top-1.5 text-red-500 pointer-events-none">
+                                                                                    <div className="absolute right-2 top-1.5 text-accent-orange-500 pointer-events-none">
                                                                                           <AlertCircle size={12} />
                                                                                     </div>
                                                                               )}
                                                                         </div>
                                                                         {hasError && (
-                                                                              <span className="text-[9px] text-red-500 font-medium animate-in fade-in slide-in-from-top-1">
+                                                                              <span className="text-[9px] text-accent-orange-500 font-medium animate-in fade-in slide-in-from-top-1">
                                                                                     {paramErrors[param.name]}
                                                                               </span>
                                                                         )}
@@ -723,28 +783,28 @@ const ScenarioDetail: React.FC = () => {
                                     {/* Result Controls (Tabs) - Only show when executed */}
                                     {hasExecuted && (
                                           <div className="flex items-center justify-center mb-2">
-                                                <div className="flex bg-slate-200 dark:bg-slate-800 p-1 rounded-lg shadow-inner">
+                                                <div className="flex bg-slate-200 dark:bg-dark-elevated p-1 rounded-lg shadow-inner">
                                                       <button
                                                             onClick={() => setActiveResultTab('before')}
                                                             className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-xs font-bold transition-all ${activeResultTab === 'before'
-                                                                  ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-sm'
-                                                                  : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                                                                  ? 'bg-white dark:bg-dark-hover text-blue-600 dark:text-primary-400 shadow-sm'
+                                                                  : 'text-slate-500 hover:text-slate-700 dark:text-dark-text-secondary dark:hover:text-dark-text-primary'}`}
                                                       >
                                                             <ArrowRight className="rotate-180" size={14} /> Before
                                                       </button>
                                                       <button
                                                             onClick={() => setActiveResultTab('diff')}
                                                             className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-xs font-bold transition-all ${activeResultTab === 'diff'
-                                                                  ? 'bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-sm'
-                                                                  : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                                                                  ? 'bg-white dark:bg-dark-hover text-purple-600 dark:text-purple-400 shadow-sm'
+                                                                  : 'text-slate-500 hover:text-slate-700 dark:text-dark-text-secondary dark:hover:text-dark-text-primary'}`}
                                                       >
                                                             <RotateCcw size={14} className="rotate-90" /> Diffs
                                                       </button>
                                                       <button
                                                             onClick={() => setActiveResultTab('after')}
                                                             className={`flex items-center gap-2 px-4 py-1.5 rounded-md text-xs font-bold transition-all ${activeResultTab === 'after'
-                                                                  ? 'bg-white dark:bg-slate-700 text-green-600 dark:text-green-400 shadow-sm'
-                                                                  : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}
+                                                                  ? 'bg-white dark:bg-dark-hover text-green-600 dark:text-green-400 shadow-sm'
+                                                                  : 'text-slate-500 hover:text-slate-700 dark:text-dark-text-secondary dark:hover:text-dark-text-primary'}`}
                                                       >
                                                             After <ArrowRight size={14} />
                                                       </button>
@@ -764,15 +824,15 @@ const ScenarioDetail: React.FC = () => {
                                           {scenarioMeta.separateTables ? (
                                                 <div className="flex flex-col h-full">
                                                       {/* Table Tabs */}
-                                                      <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-dark-surface/50 p-2">
+                                                      <div className="flex items-center justify-between border-b border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-surface/50 p-2">
                                                             <div className="flex gap-1">
                                                                   {scenarioMeta.separateTables.map((tableDef: any) => (
                                                                         <button
                                                                               key={tableDef.name}
                                                                               onClick={() => handleTabChange(tableDef.name)}
                                                                               className={`px-4 py-2 rounded-t text-sm font-medium transition-all ${activeTableTab === tableDef.name
-                                                                                    ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-b-2 border-blue-500'
-                                                                                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
+                                                                                    ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-primary-400 border-b-2 border-blue-500'
+                                                                                    : 'text-slate-600 dark:text-dark-text-secondary hover:bg-slate-100 dark:hover:bg-dark-hover'}`}
                                                                         >
                                                                               {tableDef.label}
                                                                         </button>

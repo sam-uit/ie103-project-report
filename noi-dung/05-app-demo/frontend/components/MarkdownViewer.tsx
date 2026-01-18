@@ -50,7 +50,7 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
 
       if (loading) {
             return (
-                  <div className={`bg-white dark:bg-dark-surface border border-slate-300 dark:border-slate-700 rounded-lg p-6 ${className}`}>
+                  <div className={`bg-white dark:bg-dark-surface border border-slate-300 dark:border-dark-border rounded-lg p-6 ${className}`}>
                         <div className="flex items-center justify-center gap-3 text-slate-500">
                               <Loader2 className="animate-spin" size={20} />
                               <span className="text-sm">Loading problem description...</span>
@@ -63,10 +63,10 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
             return (
                   <div className={`bg-red-50 dark:bg-red-900/20 border border-red-300 dark:border-red-800 rounded-lg p-6 ${className}`}>
                         <div className="flex items-start gap-3">
-                              <FileText className="text-red-500 flex-shrink-0 mt-1" size={20} />
+                              <FileText className="text-accent-orange-500 flex-shrink-0 mt-1" size={20} />
                               <div>
                                     <h3 className="text-sm font-semibold text-red-800 dark:text-red-300">Error Loading Markdown</h3>
-                                    <p className="text-xs text-red-600 dark:text-red-400 mt-1">{error}</p>
+                                    <p className="text-xs text-red-600 dark:text-accent-orange-400 mt-1">{error}</p>
                               </div>
                         </div>
                   </div>
@@ -74,12 +74,12 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
       }
 
       return (
-            <div className={`flex flex-col h-full bg-white dark:bg-dark-surface border border-slate-300 dark:border-slate-700 rounded-lg overflow-hidden ${className}`}>
+            <div className={`flex flex-col h-full bg-white dark:bg-dark-surface border border-slate-300 dark:border-dark-border rounded-lg overflow-hidden ${className}`}>
                   {/* Header */}
-                  <div className="flex-none bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-b border-slate-200 dark:border-slate-700 px-4 py-3">
+                  <div className="flex-none bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-b border-slate-200 dark:border-dark-border px-4 py-3">
                         <div className="flex items-center gap-2">
-                              <FileText className="text-blue-600 dark:text-blue-400" size={18} />
-                              <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100">{title}</h3>
+                              <FileText className="text-blue-600 dark:text-primary-400" size={18} />
+                              <h3 className="text-sm font-bold text-slate-800 dark:text-dark-text-primary">{title}</h3>
                         </div>
                   </div>
 
@@ -118,10 +118,10 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
                                                 <thead className="bg-blue-50 dark:bg-blue-950" {...props} />
                                           ),
                                           th: ({ node, ...props }) => (
-                                                <th className="bg-blue-100 dark:bg-blue-900/50 border border-slate-300 dark:border-slate-600 px-4 py-3 text-left font-bold text-slate-800 dark:text-slate-100" {...props} />
+                                                <th className="bg-blue-100 dark:bg-blue-900/50 border border-slate-300 dark:border-dark-border px-4 py-3 text-left font-bold text-slate-800 dark:text-dark-text-primary" {...props} />
                                           ),
                                           td: ({ node, ...props }) => (
-                                                <td className="border border-slate-300 dark:border-slate-600 px-4 py-3 text-slate-700 dark:text-slate-300" {...props} />
+                                                <td className="border border-slate-300 dark:border-dark-border px-4 py-3 text-slate-700 dark:text-dark-text-secondary" {...props} />
                                           ),
                                           tr: ({ node, ...props }) => (
                                                 <tr className="even:bg-slate-50 dark:even:bg-slate-900/30" {...props} />

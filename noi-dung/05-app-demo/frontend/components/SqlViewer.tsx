@@ -35,10 +35,10 @@ const SqlViewer: React.FC<SqlViewerProps> = ({ content }) => {
       <div className="flex items-center justify-between px-3 py-1.5 bg-slate-100 dark:bg-dark-surface border-b border-slate-200 dark:border-dark-border flex-shrink-0">
         <div className="flex items-center gap-1.5">
           <Code size={12} className="text-slate-500" />
-          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">SQL Source</span>
+          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-dark-text-secondary">SQL Source</span>
         </div>
         <div className="flex gap-1">
-          <button className="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded text-slate-500 transition-colors" title="Copy SQL">
+          <button className="p-1 hover:bg-slate-200 dark:hover:bg-dark-hover rounded text-slate-500 transition-colors" title="Copy SQL">
             <Copy size={12} />
           </button>
         </div>

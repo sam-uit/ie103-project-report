@@ -72,33 +72,33 @@ const Settings: React.FC = () => {
       <div className="max-w-3xl mx-auto space-y-8">
         
         {/* Header */}
-        <div className="flex flex-col gap-2 pb-6 border-b border-slate-200 dark:border-slate-700">
+        <div className="flex flex-col gap-2 pb-6 border-b border-slate-200 dark:border-dark-border">
           <h1 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-3">
             <Server className="text-primary-600" size={32} />
             Cài Đặt Hệ Thống
           </h1>
-          <p className="text-slate-500 dark:text-slate-400 text-lg">
+          <p className="text-slate-500 dark:text-dark-text-secondary text-lg">
             Cấu hình kết nối Backend và các tùy chọn môi trường.
           </p>
         </div>
 
         {/* Connection Status Card */}
         <div className="bg-white dark:bg-dark-surface border border-slate-200 dark:border-dark-border rounded-xl shadow-sm overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-slate-800/50 flex justify-between items-center">
+            <div className="px-6 py-4 border-b border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-elevated/50 flex justify-between items-center">
                 <h3 className="font-bold text-slate-800 dark:text-white flex items-center gap-2">
                     <Activity size={18} className="text-blue-500"/> Trạng Thái Kết Nối Hiện Tại
                 </h3>
                 <span className={`px-3 py-1 rounded-full text-xs font-bold border ${
                     backendOnline 
                     ? 'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-400' 
-                    : 'bg-red-100 text-red-700 border-red-200 dark:bg-red-900/30 dark:text-red-400'
+                    : 'bg-red-100 text-red-700 border-red-200 dark:bg-red-900/30 dark:text-accent-orange-400'
                 }`}>
                     {backendOnline ? 'ONLINE' : 'OFFLINE'}
                 </span>
             </div>
             <div className="p-6">
-                <p className="text-sm text-slate-600 dark:text-slate-300">
-                    Hệ thống đang sử dụng API tại: <code className="bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded font-mono text-primary-600 dark:text-primary-400">{getBaseUrl()}</code>
+                <p className="text-sm text-slate-600 dark:text-dark-text-secondary">
+                    Hệ thống đang sử dụng API tại: <code className="bg-slate-100 dark:bg-dark-hover px-2 py-1 rounded font-mono text-primary-600 dark:text-primary-400">{getBaseUrl()}</code>
                 </p>
                 {!backendOnline && (
                     <div className="mt-4 p-3 bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-800 rounded text-sm text-amber-800 dark:text-amber-400 flex items-start gap-2">
@@ -119,7 +119,7 @@ const Settings: React.FC = () => {
             </h3>
 
             <div className="space-y-3">
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+                <label className="block text-sm font-medium text-slate-700 dark:text-dark-text-secondary">
                     Backend Base URL
                 </label>
                 <div className="relative group">
@@ -131,19 +131,19 @@ const Settings: React.FC = () => {
                         value={url}
                         onChange={handleUrlChange}
                         placeholder="http://localhost:3001/api"
-                        className="block w-full pl-10 pr-3 py-2.5 border border-slate-300 dark:border-slate-600 rounded-lg bg-slate-50 dark:bg-black/20 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all font-mono text-sm"
+                        className="block w-full pl-10 pr-3 py-2.5 border border-slate-300 dark:border-dark-border rounded-lg bg-slate-50 dark:bg-black/20 text-slate-900 dark:text-dark-text-primary focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all font-mono text-sm"
                     />
                 </div>
-                <p className="text-xs text-slate-500 dark:text-slate-500">
+                <p className="text-xs text-slate-500 dark:text-dark-text-muted">
                     Địa chỉ máy chủ Node.js đang chạy. Mặc định là cổng 5000.
                 </p>
             </div>
 
             {/* Actions */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-100 dark:border-slate-700">
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-100 dark:border-dark-border">
                  <button 
                     onClick={handleResetDefault}
-                    className="text-sm text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 underline underline-offset-2"
+                    className="text-sm text-slate-500 hover:text-slate-700 dark:hover:text-dark-text-secondary underline underline-offset-2"
                  >
                     Khôi phục mặc định
                  </button>
@@ -155,7 +155,7 @@ const Settings: React.FC = () => {
                         className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors flex items-center gap-2
                             ${isTestLoading 
                                 ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-wait' 
-                                : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-300 dark:bg-slate-800 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700'
+                                : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-300 dark:bg-dark-elevated dark:border-dark-border dark:text-dark-text-primary dark:hover:bg-dark-hover'
                             }
                         `}
                     >
@@ -176,8 +176,8 @@ const Settings: React.FC = () => {
             {(message || testStatus !== 'idle') && (
                 <div className={`mt-4 p-3 rounded-lg text-sm flex items-center gap-2 animate-in fade-in slide-in-from-top-2
                     ${testStatus === 'success' ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400' : ''}
-                    ${testStatus === 'error' ? 'bg-red-50 text-red-700 dark:bg-red-900/20 dark:text-red-400' : ''}
-                    ${testStatus === 'idle' && message ? 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300' : ''}
+                    ${testStatus === 'error' ? 'bg-red-50 text-red-700 dark:bg-red-900/20 dark:text-accent-orange-400' : ''}
+                    ${testStatus === 'idle' && message ? 'bg-slate-100 text-slate-600 dark:bg-dark-elevated dark:text-dark-text-secondary' : ''}
                 `}>
                     {testStatus === 'success' && <CheckCircle2 size={16} />}
                     {testStatus === 'error' && <AlertCircle size={16} />}
