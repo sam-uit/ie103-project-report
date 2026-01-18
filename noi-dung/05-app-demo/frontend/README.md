@@ -9,7 +9,7 @@ Tài liệu này hướng dẫn chi tiết cách thiết lập môi trường ph
 Dự án được tổ chức như sau:
 
 ```
-sql-demo-manager/
+sql-demo-manager/frontend
 ├── public/
 │   ├── config/             # THƯ MỤC CẤU HÌNH (MỚI)
 │   │   ├── settings.json   # Cài đặt app
