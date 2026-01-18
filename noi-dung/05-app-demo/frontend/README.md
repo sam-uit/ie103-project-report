@@ -14,7 +14,7 @@ sql-demo-manager/
 │   ├── config/             # THƯ MỤC CẤU HÌNH (MỚI)
 │   │   ├── settings.json   # Cài đặt app
 │   │   ├── overview.json   # Trang tổng quan
-│   │   ├── scenarios.json  # Kịch bản SQL -> Đã chuyển sang thư mục `@sql-demo`
+│   │   ├── scenarios.json  # Kịch bản SQL -> Khai báo theo cấu trúc folder trong thư mục `@sql-demo`
 │   │   ├── reports.json    # Báo cáo
 │   │   └── team.json       # Thành viên nhóm
 │   └── vite.svg
@@ -53,4 +53,4 @@ npm run dev
 Truy cập: `http://localhost:5173`
 
 ---
-**Lưu ý:** Nếu website báo lỗi không load được config, hãy kiểm tra lại cú pháp JSON trong thư mục `public/config/`.
+### **Lưu ý:** Nếu website báo lỗi không load được config, hãy kiểm tra lại cú pháp JSON trong thư mục `public/config/`. Node version 18++
