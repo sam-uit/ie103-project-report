@@ -788,7 +788,8 @@ const ScenarioDetail: React.FC = () => {
                                                             <div className="flex-1 overflow-y-auto p-2">
                                                                   {scenarioMeta.separateTables.map((tableDef: any) => {
                                                                         if (activeTableTab !== tableDef.name) return null;
-                                                                        const tablePk = tableDef.columns.find((c: any) => c.isPk)?.key || tableDef.columns[0]?.key;
+                                                                        const columns = tableDef.columns || [];
+                                                                        const tablePk = columns.find((c: any) => c.isPk)?.key || columns[0]?.key;
 
                                                                         // Decide what to render based on activeResultTab
                                                                         if (hasExecuted && activeResultTab === 'diff') {
@@ -797,7 +798,7 @@ const ScenarioDetail: React.FC = () => {
                                                                                           <DiffView
                                                                                                 before={separateTablesBefore[tableDef.name] || []}
                                                                                                 after={separateTablesAfter[tableDef.name] || []}
-                                                                                                columns={tableDef.columns}
+                                                                                                columns={columns}
                                                                                                 pk={tablePk}
                                                                                           />
                                                                                     </div>
@@ -808,7 +809,7 @@ const ScenarioDetail: React.FC = () => {
                                                                                     <TableSnapshot
                                                                                           key={tableDef.name}
                                                                                           data={separateTablesBefore[tableDef.name] || []}
-                                                                                          columns={tableDef.columns}
+                                                                                          columns={columns}
                                                                                           title={`${tableDef.label} - Before Execution`}
                                                                                           className="border-slate-300"
                                                                                     />
@@ -819,23 +820,23 @@ const ScenarioDetail: React.FC = () => {
                                                                                     <TableSnapshot
                                                                                           key={tableDef.name}
                                                                                           data={separateTablesAfter[tableDef.name] || []}
-                                                                                          columns={tableDef.columns}
+                                                                                          columns={columns}
                                                                                           title={`${tableDef.label} - After Execution`}
                                                                                           className="border-slate-300"
                                                                                     />
                                                                               );
                                                                         }
-                                                                        // Default: Show Initial State (before execution when "Show Tables" clicked)
+
+                                                                        // Default: Initial Load (Preview)
                                                                         return (
                                                                               <TableSnapshot
                                                                                     key={tableDef.name}
                                                                                     data={separateTablesInitial[tableDef.name] || []}
-                                                                                    columns={tableDef.columns}
-                                                                                    title={`${tableDef.label} - Initial State`}
+                                                                                    columns={columns}
+                                                                                    title={`${tableDef.label} - Current State`}
                                                                                     className="border-slate-300"
                                                                               />
                                                                         );
-
                                                                   })}
                                                             </div>
                                                       )}

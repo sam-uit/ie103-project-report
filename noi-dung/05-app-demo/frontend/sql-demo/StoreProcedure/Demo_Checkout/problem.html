@@ -1,0 +1,27 @@
+<div class="prose prose-sm dark:prose-invert">
+      <h3>Quy trình Check-out Khách sạn</h3>
+      <p>Khi khách hàng trả phòng, lễ tân cần thực hiện chuỗi hành động sau để đảm bảo dữ liệu đồng nhất:</p>
+      <ol>
+            <li>
+                  <strong>Hoàn tất Đặt phòng:</strong> Cập nhật trạng thái <code>DATPHONG</code> từ
+                  <code>CONFIRMED/PENDING</code> sang <code>COMPLETED</code>.
+            </li>
+            <li>
+                  <strong>Ghi nhận Thanh toán:</strong> Xác nhận khách đã thanh toán toàn bộ chi phí (cập nhật bảng
+                  <code>PAYMENTS</code> sang <code>PAID</code>).
+            </li>
+            <li>
+                  <strong>Giải phóng Phòng:</strong> Cập nhật trạng thái bảng <code>PHONG</code> về
+                  <code>AVAILABLE</code> để sẵn sàng đón khách mới.
+            </li>
+      </ol>
+      <p class="text-xs text-slate-500 mt-4">
+            *Demo này minh họa việc cập nhật đồng thời 3 bảng dữ liệu quan trọng trong một giao dịch.
+      </p>
+      <div
+            class="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-sm rounded border border-blue-200 dark:border-blue-800">
+            <strong>💡 Mẹo:</strong> Hãy nhấn nút <strong>"Show Tables"</strong> và chọn tab <strong>"📋 Đặt
+                  Phòng"</strong> để tìm một <code>ID</code> đơn đặt phòng hợp lệ.
+            <br>Các ID khuyến nghị (có đầy đủ dữ liệu): <strong>40, 41, 44, 45, 46</strong>.
+      </div>
+</div>
