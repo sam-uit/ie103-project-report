@@ -4,6 +4,7 @@
             "Demo_Payment",
             "Demo_ReviewRoom",
             "Demo_Service",
-            "Demo_ApplyVoucher"
+            "Demo_ApplyVoucher",
+            "Demo_RegisterUser"
       ]
 }

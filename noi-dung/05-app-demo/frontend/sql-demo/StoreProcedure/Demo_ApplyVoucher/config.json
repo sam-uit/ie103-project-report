@@ -4,7 +4,7 @@
       "type": "Stored Procedure",
       "shortDesc": "Stored Procedure để áp dụng mã giảm giá cho booking",
       "mdFile": "StoreProcedure/Demo_ApplyVoucher/problem.html",
-      "sqlFile": "StoreProcedure/Demo_ApployVoucher/sp_ApplyVoucher.sql",
+      "sqlFile": "StoreProcedure/Demo_ApplyVoucher/sp_ApplyVoucher.sql",
       "tables": [
             "DATPHONG",
             "VOUCHERS"

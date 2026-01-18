@@ -1,21 +1,17 @@
 import { SCENARIOS } from '../data';
-
 // Default fallback if nothing is configured
 // const DEFAULT_API_URL = 'http://localhost:3001/api';
 const DEFAULT_API_URL = 'http://localhost:3001/api';
-
 export const getBaseUrl = () => {
       // Read from localStorage to allow dynamic configuration
       return localStorage.getItem('app_api_base_url') || DEFAULT_API_URL;
 };
-
 export interface ExecuteResponse {
       success: boolean;
       data?: any;
       error?: string;
       logs?: string;
 }
-
 export const api = {
       /**
        * Kiểm tra trạng thái Backend
@@ -32,7 +28,6 @@ export const api = {
                   return false;
             }
       },
-
       /**
        * Lấy nội dung script SQL từ server
        * Fallback về dữ liệu local nếu không kết nối được backend
@@ -52,7 +47,6 @@ export const api = {
                   };
             }
       },
-
       /**
        * Chạy câu truy vấn SELECT tùy ý (Fetch Before/After data)
        */
@@ -72,7 +66,6 @@ export const api = {
                   return [];
             }
       },
-
       /**
        * Gửi yêu cầu thực thi xuống Backend
        * Fallback về mock execution nếu không kết nối được backend
@@ -88,13 +81,10 @@ export const api = {
                   return await res.json();
             } catch (error) {
                   console.warn("Backend not accessible, falling back to local mock execution.", error);
-
                   // Fallback simulation
                   const scenario = SCENARIOS.find(s => s.id === scenarioId);
-
                   // Simulate network delay for realistic feel
                   await new Promise(resolve => setTimeout(resolve, 800));
-
                   if (scenario) {
                         return {
                               success: true,
@@ -106,11 +96,9 @@ export const api = {
                               logs: `Executed ${scenario.title} successfully (Offline Simulation)`
                         };
                   }
-
                   return { success: false, error: 'Cannot connect to Backend Server and local scenario not found.' };
             }
       },
-
       /**
        * Gửi raw SQL script lên server để thực thi
        * Đây là cách mới - gửi nguyên câu SQL thay vì scenarioId
@@ -123,7 +111,6 @@ export const api = {
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ sql: sqlContent, params })
                   });
-
                   const result = await res.json();
                   if (!result.success) {
                         throw new Error(result.error);
@@ -133,7 +120,6 @@ export const api = {
                   console.warn("Backend not accessible for raw SQL execution.", error);
                   // Simulate network delay
                   await new Promise(resolve => setTimeout(resolve, 800));
-
                   return {
                         success: false,
                         data: {},
@@ -141,5 +127,50 @@ export const api = {
                         logs: 'SQL executed successfully (Offline Simulation - no actual execution)'
                   };
             }
+      },
+      /**
+       * Unified demo execution - sends SQL script + before/after queries to server
+       * Server executes everything and returns { befores, afters, diffs }
+       */
+      async executeDemo(
+            sql: string,
+            beforeQueries: { name: string; query: string }[],
+            afterQueries: { name: string; query: string }[],
+            params: any[]
+      ): Promise<ExecuteDemoResponse> {
+            const baseUrl = getBaseUrl().replace(/\/$/, '');
+            try {
+                  const res = await fetch(`${baseUrl}/execute-demo`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ sql, beforeQueries, afterQueries, params })
+                  });
+                  const result = await res.json();
+                  if (!result.success) {
+                        throw new Error(result.error || result.message);
+                  }
+                  return result;
+            } catch (error: any) {
+                  console.error("Execute demo failed:", error);
+                  return {
+                        success: false,
+                        message: error.message ?? 'Unknown error',
+                        data: { befores: {}, afters: {}, diffs: {} }
+                  };
+            }
       }
 };
+// Response type for executeDemo
+export interface ExecuteDemoResponse {
+      success: boolean;
+      message?: string;
+      data: {
+            befores: Record<string, any[]>;
+            afters: Record<string, any[]>;
+            diffs: Record<string, {
+                  added: any[];
+                  removed: any[];
+                  modified: { before: any; after: any }[];
+            }>;
+      };
+}
