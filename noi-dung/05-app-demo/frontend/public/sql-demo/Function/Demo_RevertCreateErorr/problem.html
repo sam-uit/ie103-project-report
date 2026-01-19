@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+      <meta charset="UTF-8">
+      <style>
+            body {
+                  font-family: 'Inter', -apple-system, sans-serif;
+                  line-height: 1.7;
+                  color: #1e293b;
+                  background: #fff;
+                  margin: 0;
+                  padding: 0;
+            }
+
+            h1 {
+                  font-size: 1.875rem;
+                  font-weight: 700;
+                  color: #059669;
+                  margin: 0 0 1.5rem 0;
+                  padding-bottom: 0.75rem;
+                  border-bottom: 2px solid #10b981;
+            }
+
+            h2 {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  color: #0f172a;
+                  margin: 2rem 0 1rem 0;
+            }
+
+            h3 {
+                  font-size: 1.125rem;
+                  font-weight: 600;
+                  color: #334155;
+                  margin: 1.5rem 0 0.75rem 0;
+            }
+
+            p {
+                  margin: 0.75rem 0;
+                  color: #475569;
+            }
+
+            ul {
+                  margin: 0.75rem 0;
+                  padding-left: 1.5rem;
+            }
+
+            li {
+                  margin: 0.375rem 0;
+                  color: #475569;
+            }
+
+            strong {
+                  color: #0f172a;
+                  font-weight: 600;
+            }
+
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin: 1.25rem 0;
+                  font-size: 0.9375rem;
+                  background: #fff;
+                  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+                  border-radius: 0.5rem;
+                  overflow: hidden;
+            }
+
+            th {
+                  background-color: #6ee7b7;
+                  padding: 0.875rem 1rem;
+                  text-align: left;
+                  font-weight: 600;
+                  color: #064e3b;
+                  border-bottom: 2px solid #34d399;
+            }
+
+            td {
+                  padding: 0.75rem 1rem;
+                  color: #334155;
+                  border-bottom: 1px solid #e2e8f0;
+            }
+
+            tbody tr:hover {
+                  background-color: #ecfdf5;
+            }
+
+            code {
+                  font-family: 'Fira Code', monospace;
+                  font-size: 0.875rem;
+                  background-color: #ecfdf5;
+                  color: #059669;
+                  padding: 0.125rem 0.375rem;
+                  border-radius: 0.25rem;
+            }
+
+            pre {
+                  background-color: #1e293b;
+                  color: #e2e8f0;
+                  padding: 1.25rem;
+                  border-radius: 0.5rem;
+                  overflow-x: auto;
+                  margin: 1.25rem 0;
+            }
+
+            pre code {
+                  background: none;
+                  color: inherit;
+                  padding: 0;
+            }
+
+            .flow-step {
+                  background-color: #ecfdf5;
+                  border-left: 3px solid #10b981;
+                  padding: 0.875rem 1rem;
+                  margin: 0.5rem 0;
+                  border-radius: 0.25rem;
+                  color: #334155;
+            }
+
+            hr {
+                  border: none;
+                  border-top: 1px solid #e2e8f0;
+                  margin: 2rem 0;
+            }
+
+            .warning {
+                  background-color: #fef3c7;
+                  border-left: 3px solid #f59e0b;
+                  padding: 1rem;
+                  border-radius: 0.25rem;
+                  margin: 1rem 0;
+            }
+      </style>
+</head>
+
+<body>
+      <h1>🔙 FUNCTION – Hoàn Tác Lỗi</h1>
+
+      <h2>FN_REVERT_CREATE_ERROR – Xử lý lỗi khi tạo đặt phòng</h2>
+
+      <div class="section">
+            <h3>📌 Mục đích</h3>
+            <p>Function để <strong>hoàn tác các thay đổi</strong> khi tạo đặt phòng thất bại:</p>
+            <ul>
+                  <li>Xóa bản ghi đặt phòng dở dang</li>
+                  <li>Xóa chi tiết đặt phòng liên quan</li>
+                  <li>Phục hồi trạng thái phòng</li>
+                  <li>Ghi log lỗi để debug</li>
+            </ul>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>📥 Tham số</h3>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Tên</th>
+                              <th>Kiểu</th>
+                              <th>Mô tả</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td><code>@BookingID</code></td>
+                              <td>INT</td>
+                              <td>ID đặt phòng cần hoàn tác</td>
+                        </tr>
+                        <tr>
+                              <td><code>@ErrorMessage</code></td>
+                              <td>NVARCHAR(500)</td>
+                              <td>Thông báo lỗi để ghi log</td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>📤 Giá trị trả về</h3>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Kiểu</th>
+                              <th>Giá trị</th>
+                              <th>Ý nghĩa</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td>INT</td>
+                              <td>1</td>
+                              <td>Hoàn tác thành công</td>
+                        </tr>
+                        <tr>
+                              <td>INT</td>
+                              <td>0</td>
+                              <td>Hoàn tác thất bại</td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>🔄 Logic xử lý</h3>
+            <div class="flow-step">1. BEGIN TRANSACTION</div>
+            <div class="flow-step">2. Lấy danh sách phòng từ <code>CT_DATPHONG</code></div>
+            <div class="flow-step">3. UPDATE các phòng về trạng thái <code>AVAILABLE</code></div>
+            <div class="flow-step">4. DELETE từ <code>CT_DATPHONG</code></div>
+            <div class="flow-step">5. DELETE từ <code>DATPHONG</code></div>
+            <div class="flow-step">6. INSERT log vào <code>ERROR_LOG</code></div>
+            <div class="flow-step">7. COMMIT / ROLLBACK tùy kết quả</div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>⚠️ Lưu ý</h3>
+            <div class="warning">
+                  Function này được sử dụng trong CATCH block của stored procedure.
+                  Không gọi trực tiếp từ application code.
+            </div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>✅ Cách sử dụng</h3>
+            <pre><code>BEGIN TRY
+    -- Tạo đặt phòng
+    EXEC SP_DAT_PHONG @UserID, @CheckIn, @CheckOut, @RoomIDs;
+END TRY
+BEGIN CATCH
+    -- Nếu lỗi, hoàn tác
+    DECLARE @Result INT;
+    SET @Result = dbo.FN_REVERT_CREATE_ERROR(
+        @BookingID, 
+        ERROR_MESSAGE()
+    );
+    
+    -- Re-throw error to client
+    THROW;
+END CATCH</code></pre>
+      </div>
+</body>
+
+</html>

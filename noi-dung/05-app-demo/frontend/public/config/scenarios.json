@@ -1,0 +1,914 @@
+[
+  {
+    "id": "sp-booking-room",
+    "title": "SP: Đặt Phòng Khách Sạn",
+    "type": "Stored Procedure",
+    "shortDesc": "Tạo đặt phòng mới + chi tiết phòng (DATPHONG & CT_DATPHONG). Kiểm tra phòng trống và thời gian hợp lệ.",
+    "sqlFile": "sp_BookingRoom.sql",
+    "tables": [
+      "DATPHONG",
+      "CT_DATPHONG"
+    ],
+    "separateTables": [
+      {
+        "name": "DATPHONG",
+        "label": "📋 Bảng Đặt Phòng",
+        "sqlBefore": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG WHERE user_id = @UserId ORDER BY created_at DESC",
+        "sqlAfter": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG WHERE user_id = @UserId ORDER BY created_at DESC",
+        "columns": [
+          {
+            "key": "id",
+            "label": "Booking ID",
+            "isPk": true
+          },
+          {
+            "key": "user_id",
+            "label": "User ID"
+          },
+          {
+            "key": "check_in",
+            "label": "Check In"
+          },
+          {
+            "key": "check_out",
+            "label": "Check Out"
+          },
+          {
+            "key": "trang_thai",
+            "label": "⚡ Trạng Thái"
+          }
+        ]
+      },
+      {
+        "name": "CT_DATPHONG",
+        "label": "🏨 Chi Tiết Đặt Phòng",
+        "sqlBefore": "SELECT ct.id, ct.datphong_id, ct.phong_id, p.ten_phong, ct.don_gia FROM CT_DATPHONG ct LEFT JOIN PHONG p ON p.id = ct.phong_id WHERE ct.datphong_id IN (SELECT id FROM DATPHONG WHERE user_id = @UserId)",
+        "sqlAfter": "SELECT ct.id, ct.datphong_id, ct.phong_id, p.ten_phong, ct.don_gia FROM CT_DATPHONG ct LEFT JOIN PHONG p ON p.id = ct.phong_id WHERE ct.datphong_id IN (SELECT id FROM DATPHONG WHERE user_id = @UserId)",
+        "columns": [
+          {
+            "key": "id",
+            "label": "ID",
+            "isPk": true
+          },
+          {
+            "key": "datphong_id",
+            "label": "Booking ID"
+          },
+          {
+            "key": "phong_id",
+            "label": "Phòng ID"
+          },
+          {
+            "key": "ten_phong",
+            "label": "Tên Phòng"
+          },
+          {
+            "key": "don_gia",
+            "label": "⚡ Đơn Giá"
+          }
+        ]
+      }
+    ],
+    "sqlFetchInitial": "SELECT TOP 20 dp.id, dp.user_id, dp.check_in, dp.check_out, dp.trang_thai, ct.phong_id, ct.don_gia FROM DATPHONG dp LEFT JOIN CT_DATPHONG ct ON ct.datphong_id = dp.id ORDER BY dp.created_at DESC",
+    "sqlFetchBefore": "SELECT dp.id, dp.user_id, dp.check_in, dp.check_out, dp.trang_thai, ct.phong_id, ct.don_gia FROM DATPHONG dp LEFT JOIN CT_DATPHONG ct ON ct.datphong_id = dp.id WHERE dp.user_id = @UserId ORDER BY dp.created_at DESC",
+    "sqlFetchAfter": "SELECT dp.id, dp.user_id, dp.check_in, dp.check_out, dp.trang_thai, ct.phong_id, ct.don_gia FROM DATPHONG dp LEFT JOIN CT_DATPHONG ct ON ct.datphong_id = dp.id WHERE dp.user_id = @UserId ORDER BY dp.created_at DESC",
+    "columns": [
+      {
+        "key": "id",
+        "label": "Booking ID",
+        "isPk": true
+      },
+      {
+        "key": "user_id",
+        "label": "User ID"
+      },
+      {
+        "key": "phong_id",
+        "label": "Phòng ID"
+      },
+      {
+        "key": "check_in",
+        "label": "Check In"
+      },
+      {
+        "key": "check_out",
+        "label": "Check Out"
+      },
+      {
+        "key": "don_gia",
+        "label": "Đơn Giá"
+      },
+      {
+        "key": "trang_thai",
+        "label": "Trạng Thái"
+      }
+    ],
+    "params": [
+      {
+        "name": "@UserId",
+        "type": "int",
+        "defaultValue": 1
+      },
+      {
+        "name": "@SoPhong",
+        "type": "string",
+        "defaultValue": "101"
+      },
+      {
+        "name": "@CheckIn",
+        "type": "datetime",
+        "defaultValue": "2026-02-01 14:00:00"
+      },
+      {
+        "name": "@CheckOut",
+        "type": "datetime",
+        "defaultValue": "2026-02-05 12:00:00"
+      },
+      {
+        "name": "@VoucherId",
+        "type": "int",
+        "defaultValue": null
+      }
+    ],
+    "mockData": {
+      "before": [],
+      "after": [
+        {
+          "id": 1,
+          "user_id": 1,
+          "check_in": "2026-02-01T14:00:00",
+          "check_out": "2026-02-05T12:00:00",
+          "trang_thai": "PENDING"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp-apply-voucher",
+    "title": "SP: Áp Dụng Voucher Giảm Giá",
+    "type": "Stored Procedure",
+    "shortDesc": "Gán voucher vào booking, tăng số lần dùng voucher, tính tiền giảm. Có thể set voucher INACTIVE khi hết lượt.",
+    "sqlFile": "sp_ApplyVoucher.sql",
+    "tables": [
+      "VOUCHERS",
+      "DATPHONG"
+    ],
+    "separateTables": [
+      {
+        "name": "DATPHONG",
+        "label": "📋 Bảng Đặt Phòng",
+        "sqlBefore": "SELECT id, user_id, CAST(voucher_id as NVARCHAR(10)) as voucher_id, trang_thai FROM DATPHONG WHERE id = @DatPhongId",
+        "sqlAfter": "SELECT id, user_id, CAST(voucher_id as NVARCHAR(10)) as voucher_id, trang_thai FROM DATPHONG WHERE id = @DatPhongId",
+        "columns": [
+          {
+            "key": "id",
+            "label": "ID",
+            "isPk": true
+          },
+          {
+            "key": "user_id",
+            "label": "User"
+          },
+          {
+            "key": "voucher_id",
+            "label": "⚡ Voucher Gán"
+          },
+          {
+            "key": "trang_thai",
+            "label": "Status"
+          }
+        ]
+      },
+      {
+        "name": "VOUCHERS",
+        "label": "🎟️ Bảng Vouchers",
+        "sqlBefore": "SELECT id, ma_code, phan_tram_giam, so_lan_da_dung, so_lan_toi_da, trang_thai FROM VOUCHERS WHERE ma_code = @VoucherCode",
+        "sqlAfter": "SELECT id, ma_code, phan_tram_giam, so_lan_da_dung, so_lan_toi_da, trang_thai FROM VOUCHERS WHERE ma_code = @VoucherCode",
+        "columns": [
+          {
+            "key": "id",
+            "label": "ID",
+            "isPk": true
+          },
+          {
+            "key": "ma_code",
+            "label": "Mã Code"
+          },
+          {
+            "key": "phan_tram_giam",
+            "label": "% Giảm"
+          },
+          {
+            "key": "so_lan_da_dung",
+            "label": "⚡ Đã Dùng"
+          },
+          {
+            "key": "so_lan_toi_da",
+            "label": "Tối Đa"
+          },
+          {
+            "key": "trang_thai",
+            "label": "Status"
+          }
+        ]
+      }
+    ],
+    "sqlFetchInitial": "SELECT TOP 20 dp.id as booking_id, dp.voucher_id, dp.trang_thai as booking_status, v.id as vid, v.ma_code, v.phan_tram_giam, v.so_lan_da_dung, v.so_lan_toi_da, v.trang_thai as voucher_status FROM DATPHONG dp LEFT JOIN VOUCHERS v ON dp.voucher_id = v.id ORDER BY dp.created_at DESC",
+    "sqlFetchBefore": "SELECT dp.id as booking_id, dp.user_id, CAST(dp.voucher_id as NVARCHAR(10)) as voucher_gan, v.id as voucher_id, v.ma_code, v.phan_tram_giam, v.so_lan_da_dung, v.so_lan_toi_da, v.trang_thai as voucher_status, ISNULL((SELECT SUM(don_gia) FROM CT_DATPHONG WHERE datphong_id = dp.id), 0) as tong_tien FROM DATPHONG dp CROSS JOIN VOUCHERS v WHERE dp.id = @DatPhongId AND v.ma_code = @VoucherCode",
+    "sqlFetchAfter": "SELECT dp.id as booking_id, dp.user_id, CAST(dp.voucher_id as NVARCHAR(10)) as voucher_gan, v.id as voucher_id, v.ma_code, v.phan_tram_giam, v.so_lan_da_dung, v.so_lan_toi_da, v.trang_thai as voucher_status, ISNULL((SELECT SUM(don_gia) FROM CT_DATPHONG WHERE datphong_id = dp.id), 0) as tong_tien FROM DATPHONG dp LEFT JOIN VOUCHERS v ON dp.voucher_id = v.id WHERE dp.id = @DatPhongId",
+    "columns": [
+      {
+        "key": "booking_id",
+        "label": "Booking ID",
+        "isPk": true
+      },
+      {
+        "key": "user_id",
+        "label": "User ID"
+      },
+      {
+        "key": "voucher_gan",
+        "label": "⚡ Voucher Đã Gán"
+      },
+      {
+        "key": "tong_tien",
+        "label": "Tổng Tiền Phòng"
+      },
+      {
+        "key": "voucher_id",
+        "label": "Voucher ID"
+      },
+      {
+        "key": "ma_code",
+        "label": "Mã Voucher"
+      },
+      {
+        "key": "phan_tram_giam",
+        "label": "% Giảm"
+      },
+      {
+        "key": "so_lan_da_dung",
+        "label": "⚡ Đã Dùng"
+      },
+      {
+        "key": "so_lan_toi_da",
+        "label": "Tối Đa"
+      },
+      {
+        "key": "voucher_status",
+        "label": "Status"
+      }
+    ],
+    "params": [
+      {
+        "name": "@DatPhongId",
+        "type": "int",
+        "defaultValue": 4
+      },
+      {
+        "name": "@VoucherCode",
+        "type": "string",
+        "defaultValue": "DISCOUNT10"
+      }
+    ],
+    "mockData": {
+      "before": [
+        {
+          "booking_id": 4,
+          "user_id": 7,
+          "voucher_gan": null,
+          "tong_tien": 1500000,
+          "voucher_id": 2,
+          "ma_code": "DISCOUNT10",
+          "phan_tram_giam": 10,
+          "so_lan_da_dung": 0,
+          "so_lan_toi_da": 100,
+          "voucher_status": "ACTIVE"
+        }
+      ],
+      "after": [
+        {
+          "booking_id": 4,
+          "user_id": 7,
+          "voucher_gan": "2",
+          "tong_tien": 1500000,
+          "voucher_id": 2,
+          "ma_code": "DISCOUNT10",
+          "phan_tram_giam": 10,
+          "so_lan_da_dung": 1,
+          "so_lan_toi_da": 100,
+          "voucher_status": "ACTIVE"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp-cancel-room",
+    "title": "SP: Hủy Đặt Phòng",
+    "type": "Stored Procedure",
+    "shortDesc": "Chuyển trạng thái PENDING → CANCELLED. Chỉ cho phép hủy khi chưa check-in.",
+    "sqlFile": "sp_CancelRoom.sql",
+    "tables": [
+      "DATPHONG"
+    ],
+    "sqlFetchInitial": "SELECT TOP 20 id, user_id, check_in, check_out, trang_thai, created_at FROM DATPHONG WHERE trang_thai IN ('PENDING', 'CONFIRMED', 'CANCELLED') ORDER BY created_at DESC",
+    "sqlFetchBefore": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG WHERE id = @BookingId",
+    "sqlFetchAfter": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG WHERE id = @BookingId",
+    "columns": [
+      {
+        "key": "id",
+        "label": "Booking ID",
+        "isPk": true
+      },
+      {
+        "key": "user_id",
+        "label": "User ID"
+      },
+      {
+        "key": "check_in",
+        "label": "Check In"
+      },
+      {
+        "key": "check_out",
+        "label": "Check Out"
+      },
+      {
+        "key": "trang_thai",
+        "label": "Trạng Thái"
+      }
+    ],
+    "params": [
+      {
+        "name": "@BookingId",
+        "type": "int",
+        "defaultValue": 1
+      },
+      {
+        "name": "@UserId",
+        "type": "int",
+        "defaultValue": 1
+      },
+      {
+        "name": "@LyDo",
+        "type": "string",
+        "defaultValue": "Thay đổi kế hoạch"
+      }
+    ],
+    "mockData": {
+      "before": [
+        {
+          "id": 1,
+          "user_id": 1,
+          "check_in": "2026-03-01T14:00:00",
+          "check_out": "2026-03-05T12:00:00",
+          "trang_thai": "PENDING"
+        }
+      ],
+      "after": [
+        {
+          "id": 1,
+          "user_id": 1,
+          "check_in": "2026-03-01T14:00:00",
+          "check_out": "2026-03-05T12:00:00",
+          "trang_thai": "CANCELLED"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp-used-service",
+    "title": "SP: Sử Dụng Dịch Vụ",
+    "type": "Stored Procedure",
+    "shortDesc": "Thêm record vào CT_SUDUNG_DV khi khách sử dụng dịch vụ. Chỉ cho phép khi booking CONFIRMED.",
+    "sqlFile": "sp_UsedService.sql",
+    "tables": [
+      "CT_SUDUNG_DV",
+      "DICHVU"
+    ],
+    "separateTables": [
+      {
+        "name": "CT_SUDUNG_DV",
+        "label": "🛎️ Sử Dụng Dịch Vụ",
+        "sqlBefore": "SELECT ct.id, ct.datphong_id, ct.dichvu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia, (ct.so_luong * ct.don_gia) as thanh_tien FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id WHERE ct.datphong_id = @DatPhongId",
+        "sqlAfter": "SELECT ct.id, ct.datphong_id, ct.dichvu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia, (ct.so_luong * ct.don_gia) as thanh_tien FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id WHERE ct.datphong_id = @DatPhongId",
+        "columns": [
+          {
+            "key": "id",
+            "label": "ID",
+            "isPk": true
+          },
+          {
+            "key": "datphong_id",
+            "label": "Booking ID"
+          },
+          {
+            "key": "dichvu_id",
+            "label": "Dịch Vụ ID"
+          },
+          {
+            "key": "ten_dich_vu",
+            "label": "Tên Dịch Vụ"
+          },
+          {
+            "key": "so_luong",
+            "label": "⚡ Số Lượng"
+          },
+          {
+            "key": "don_gia",
+            "label": "Đơn Giá"
+          },
+          {
+            "key": "thanh_tien",
+            "label": "⚡ Thành Tiền"
+          }
+        ]
+      },
+      {
+        "name": "DICHVU",
+        "label": "📦 Danh Mục Dịch Vụ",
+        "sqlBefore": "SELECT id, ten_dich_vu, don_gia, trang_thai FROM DICHVU WHERE id = @DichVuId",
+        "sqlAfter": "SELECT id, ten_dich_vu, don_gia, trang_thai FROM DICHVU WHERE id = @DichVuId",
+        "columns": [
+          {
+            "key": "id",
+            "label": "ID",
+            "isPk": true
+          },
+          {
+            "key": "ten_dich_vu",
+            "label": "Tên Dịch Vụ"
+          },
+          {
+            "key": "don_gia",
+            "label": "Đơn Giá"
+          },
+          {
+            "key": "trang_thai",
+            "label": "Trạng Thái"
+          }
+        ]
+      }
+    ],
+    "sqlFetchInitial": "SELECT TOP 20 ct.id, ct.datphong_id, ct.dichvu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia, (ct.so_luong * ct.don_gia) as thanh_tien, ct.thoi_diem_su_dung FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id ORDER BY ct.created_at DESC",
+    "sqlFetchBefore": "SELECT ct.id, ct.datphong_id, ct.dichvu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia, (ct.so_luong * ct.don_gia) as thanh_tien FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id WHERE ct.datphong_id = @DatPhongId",
+    "sqlFetchAfter": "SELECT ct.id, ct.datphong_id, ct.dichvu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia, (ct.so_luong * ct.don_gia) as thanh_tien FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id WHERE ct.datphong_id = @DatPhongId",
+    "columns": [
+      {
+        "key": "id",
+        "label": "ID",
+        "isPk": true
+      },
+      {
+        "key": "datphong_id",
+        "label": "Booking ID"
+      },
+      {
+        "key": "dichvu_id",
+        "label": "Dịch Vụ ID"
+      },
+      {
+        "key": "ten_dich_vu",
+        "label": "Tên Dịch Vụ"
+      },
+      {
+        "key": "so_luong",
+        "label": "Số Lượng"
+      },
+      {
+        "key": "don_gia",
+        "label": "Đơn Giá"
+      },
+      {
+        "key": "thanh_tien",
+        "label": "Thành Tiền"
+      }
+    ],
+    "params": [
+      {
+        "name": "@DatPhongId",
+        "type": "int",
+        "defaultValue": 1
+      },
+      {
+        "name": "@DichVuId",
+        "type": "int",
+        "defaultValue": 1
+      },
+      {
+        "name": "@SoLuong",
+        "type": "int",
+        "defaultValue": 2
+      },
+      {
+        "name": "@GhiChu",
+        "type": "string",
+        "defaultValue": "Gọi phòng"
+      }
+    ],
+    "mockData": {
+      "before": [],
+      "after": [
+        {
+          "id": 1,
+          "datphong_id": 1,
+          "dichvu_id": 1,
+          "so_luong": 2,
+          "don_gia": 50000,
+          "thanh_tien": 100000
+        }
+      ]
+    }
+  },
+  {
+    "id": "sp-create-reviews",
+    "title": "SP: Tạo Đánh Giá",
+    "type": "Stored Procedure",
+    "shortDesc": "Thêm review mới vào bảng REVIEWS. Yêu cầu: đã thanh toán, đã check-out, chưa review trước đó.",
+    "sqlFile": "sp_CreateReviews.sql",
+    "tables": [
+      "REVIEWS",
+      "DATPHONG"
+    ],
+    "separateTables": [
+      {
+        "name": "REVIEWS",
+        "label": "⭐ Bảng Đánh Giá",
+        "sqlBefore": "SELECT r.id, r.user_id, r.phong_id, r.datphong_id, r.so_sao, LEFT(r.binh_luan, 50) as binh_luan, r.trang_thai FROM REVIEWS r WHERE r.datphong_id = @DatPhongId",
+        "sqlAfter": "SELECT r.id, r.user_id, r.phong_id, r.datphong_id, r.so_sao, LEFT(r.binh_luan, 50) as binh_luan, r.trang_thai FROM REVIEWS r WHERE r.datphong_id = @DatPhongId",
+        "columns": [
+          {
+            "key": "id",
+            "label": "Review ID",
+            "isPk": true
+          },
+          {
+            "key": "user_id",
+            "label": "User ID"
+          },
+          {
+            "key": "phong_id",
+            "label": "Phòng ID"
+          },
+          {
+            "key": "datphong_id",
+            "label": "Booking ID"
+          },
+          {
+            "key": "so_sao",
+            "label": "⚡ Số Sao"
+          },
+          {
+            "key": "binh_luan",
+            "label": "Bình Luận"
+          },
+          {
+            "key": "trang_thai",
+            "label": "⚡ Trạng Thái"
+          }
+        ]
+      },
+      {
+        "name": "DATPHONG",
+        "label": "📋 Thông Tin Đặt Phòng",
+        "sqlBefore": "SELECT dp.id, dp.user_id, dp.phong_id, dp.trang_thai, dp.check_out FROM DATPHONG dp WHERE dp.id = @DatPhongId",
+        "sqlAfter": "SELECT dp.id, dp.user_id, dp.phong_id, dp.trang_thai, dp.check_out FROM DATPHONG dp WHERE dp.id = @DatPhongId",
+        "columns": [
+          {
+            "key": "id",
+            "label": "Booking ID",
+            "isPk": true
+          },
+          {
+            "key": "user_id",
+            "label": "User ID"
+          },
+          {
+            "key": "phong_id",
+            "label": "Phòng ID"
+          },
+          {
+            "key": "check_out",
+            "label": "Check Out"
+          },
+          {
+            "key": "trang_thai",
+            "label": "Trạng Thái"
+          }
+        ]
+      }
+    ],
+    "sqlFetchInitial": "SELECT TOP 20 r.id, r.user_id, r.phong_id, r.datphong_id, r.so_sao, r.binh_luan, r.trang_thai, r.created_at FROM REVIEWS r ORDER BY r.created_at DESC",
+    "sqlFetchBefore": "SELECT r.id, r.user_id, r.phong_id, r.datphong_id, r.so_sao, LEFT(r.binh_luan, 50) as binh_luan, r.trang_thai FROM REVIEWS r WHERE r.datphong_id = @DatPhongId",
+    "sqlFetchAfter": "SELECT r.id, r.user_id, r.phong_id, r.datphong_id, r.so_sao, LEFT(r.binh_luan, 50) as binh_luan, r.trang_thai FROM REVIEWS r WHERE r.datphong_id = @DatPhongId",
+    "columns": [
+      {
+        "key": "id",
+        "label": "Review ID",
+        "isPk": true
+      },
+      {
+        "key": "user_id",
+        "label": "User ID"
+      },
+      {
+        "key": "phong_id",
+        "label": "Phòng ID"
+      },
+      {
+        "key": "datphong_id",
+        "label": "Booking ID"
+      },
+      {
+        "key": "so_sao",
+        "label": "Số Sao"
+      },
+      {
+        "key": "binh_luan",
+        "label": "Bình Luận"
+      },
+      {
+        "key": "trang_thai",
+        "label": "Trạng Thái"
+      }
+    ],
+    "params": [
+      {
+        "name": "@UserId",
+        "type": "int",
+        "defaultValue": 1
+      },
+      {
+        "name": "@DatPhongId",
+        "type": "int",
+        "defaultValue": 1
+      },
+      {
+        "name": "@SoSao",
+        "type": "int",
+        "defaultValue": 5
+      },
+      {
+        "name": "@BinhLuan",
+        "type": "string",
+        "defaultValue": "Phòng rất đẹp và sạch sẽ!"
+      }
+    ],
+    "mockData": {
+      "before": [],
+      "after": [
+        {
+          "id": 1,
+          "user_id": 1,
+          "phong_id": 1,
+          "datphong_id": 1,
+          "so_sao": 5,
+          "binh_luan": "Phòng rất đẹp và sạch sẽ!",
+          "trang_thai": "PENDING"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cs-book-revenue-report",
+    "title": "Cursor: Báo Cáo Doanh Thu",
+    "type": "Cursor",
+    "shortDesc": "Cursor READ-ONLY: Duyệt qua DATPHONG, tính tổng (tiền phòng + dịch vụ). KHÔNG thay đổi dữ liệu.",
+    "sqlFile": "cs_BookRevenueReport.sql",
+    "tables": [
+      "DATPHONG",
+      "CT_DATPHONG",
+      "CT_SUDUNG_DV"
+    ],
+    "separateTables": [
+      {
+        "name": "DATPHONG",
+        "label": "📋 Đặt Phòng",
+        "sqlBefore": "SELECT dp.id, dp.user_id, u.full_name, dp.trang_thai FROM DATPHONG dp JOIN USERS u ON dp.user_id = u.id ORDER BY dp.id",
+        "sqlAfter": "SELECT dp.id, dp.user_id, u.full_name, dp.trang_thai FROM DATPHONG dp JOIN USERS u ON dp.user_id = u.id ORDER BY dp.id",
+        "columns": [
+          {
+            "key": "id",
+            "label": "Booking ID",
+            "isPk": true
+          },
+          {
+            "key": "user_id",
+            "label": "User ID"
+          },
+          {
+            "key": "full_name",
+            "label": "Khách Hàng"
+          },
+          {
+            "key": "trang_thai",
+            "label": "Trạng Thái"
+          }
+        ]
+      },
+      {
+        "name": "CT_DATPHONG",
+        "label": "🏨 Tiền Phòng",
+        "sqlBefore": "SELECT ct.id, ct.datphong_id, ct.phong_id, ct.don_gia FROM CT_DATPHONG ct ORDER BY ct.datphong_id",
+        "sqlAfter": "SELECT ct.id, ct.datphong_id, ct.phong_id, ct.don_gia FROM CT_DATPHONG ct ORDER BY ct.datphong_id",
+        "columns": [
+          {
+            "key": "id",
+            "label": "ID",
+            "isPk": true
+          },
+          {
+            "key": "datphong_id",
+            "label": "Booking ID"
+          },
+          {
+            "key": "phong_id",
+            "label": "Phòng"
+          },
+          {
+            "key": "don_gia",
+            "label": "Đơn Giá"
+          }
+        ]
+      },
+      {
+        "name": "CT_SUDUNG_DV",
+        "label": "🛎️ Tiền Dịch Vụ",
+        "sqlBefore": "SELECT dv.id, dv.datphong_id, dv.dichvu_id, dv.so_luong, dv.don_gia, (dv.so_luong * dv.don_gia) as thanh_tien FROM CT_SUDUNG_DV dv ORDER BY dv.datphong_id",
+        "sqlAfter": "SELECT dv.id, dv.datphong_id, dv.dichvu_id, dv.so_luong, dv.don_gia, (dv.so_luong * dv.don_gia) as thanh_tien FROM CT_SUDUNG_DV dv ORDER BY dv.datphong_id",
+        "columns": [
+          {
+            "key": "id",
+            "label": "ID",
+            "isPk": true
+          },
+          {
+            "key": "datphong_id",
+            "label": "Booking ID"
+          },
+          {
+            "key": "dichvu_id",
+            "label": "Dịch Vụ"
+          },
+          {
+            "key": "so_luong",
+            "label": "SL"
+          },
+          {
+            "key": "don_gia",
+            "label": "Đơn Giá"
+          },
+          {
+            "key": "thanh_tien",
+            "label": "Thành Tiền"
+          }
+        ]
+      }
+    ],
+    "sqlFetchInitial": "SELECT TOP 20 dp.id as booking_id, u.full_name, dp.trang_thai, ISNULL(SUM(ct.don_gia), 0) as tien_phong, ISNULL(SUM(dv.so_luong * dv.don_gia), 0) as tien_dich_vu FROM DATPHONG dp JOIN USERS u ON dp.user_id = u.id LEFT JOIN CT_DATPHONG ct ON ct.datphong_id = dp.id LEFT JOIN CT_SUDUNG_DV dv ON dv.datphong_id = dp.id GROUP BY dp.id, u.full_name, dp.trang_thai ORDER BY dp.id",
+    "sqlFetchBefore": "SELECT dp.id as booking_id, u.full_name, ISNULL(SUM(ct.don_gia), 0) as tien_phong, ISNULL(SUM(dv.so_luong * dv.don_gia), 0) as tien_dich_vu, (ISNULL(SUM(ct.don_gia), 0) + ISNULL(SUM(dv.so_luong * dv.don_gia), 0)) as tong_cong FROM DATPHONG dp JOIN USERS u ON dp.user_id = u.id LEFT JOIN CT_DATPHONG ct ON ct.datphong_id = dp.id LEFT JOIN CT_SUDUNG_DV dv ON dv.datphong_id = dp.id GROUP BY dp.id, u.full_name",
+    "sqlFetchAfter": "SELECT dp.id as booking_id, u.full_name, ISNULL(SUM(ct.don_gia), 0) as tien_phong, ISNULL(SUM(dv.so_luong * dv.don_gia), 0) as tien_dich_vu, (ISNULL(SUM(ct.don_gia), 0) + ISNULL(SUM(dv.so_luong * dv.don_gia), 0)) as tong_cong FROM DATPHONG dp JOIN USERS u ON dp.user_id = u.id LEFT JOIN CT_DATPHONG ct ON ct.datphong_id = dp.id LEFT JOIN CT_SUDUNG_DV dv ON dv.datphong_id = dp.id GROUP BY dp.id, u.full_name",
+    "columns": [
+      {
+        "key": "booking_id",
+        "label": "Mã Đặt Phòng",
+        "isPk": true
+      },
+      {
+        "key": "full_name",
+        "label": "Khách Hàng"
+      },
+      {
+        "key": "tien_phong",
+        "label": "Tiền Phòng"
+      },
+      {
+        "key": "tien_dich_vu",
+        "label": "Tiền Dịch Vụ"
+      },
+      {
+        "key": "tong_cong",
+        "label": "Tổng Cộng"
+      }
+    ],
+    "params": [],
+    "mockData": {
+      "before": [
+        {
+          "booking_id": 1,
+          "full_name": "Nguyễn Văn A",
+          "tien_phong": 0,
+          "tien_dich_vu": 0,
+          "tong_cong": 0
+        },
+        {
+          "booking_id": 2,
+          "full_name": "Trần Thị B",
+          "tien_phong": 0,
+          "tien_dich_vu": 0,
+          "tong_cong": 0
+        }
+      ],
+      "after": [
+        {
+          "booking_id": 1,
+          "full_name": "Nguyễn Văn A",
+          "tien_phong": 2000000,
+          "tien_dich_vu": 300000,
+          "tong_cong": 2300000
+        },
+        {
+          "booking_id": 2,
+          "full_name": "Trần Thị B",
+          "tien_phong": 1500000,
+          "tien_dich_vu": 150000,
+          "tong_cong": 1650000
+        }
+      ]
+    }
+  },
+  {
+    "id": "cs-check-update-voucher",
+    "title": "Cursor: Kiểm Tra & Cập Nhật Voucher",
+    "type": "Cursor",
+    "shortDesc": "Cursor UPDATE: Duyệt VOUCHERS (ACTIVE), set INACTIVE nếu so_lan_da_dung >= so_lan_toi_da. Demo bảo trì dữ liệu.",
+    "sqlFile": "cs_CheckAndUpdateManyVoucher.sql",
+    "tables": [
+      "VOUCHERS"
+    ],
+    "sqlFetchInitial": "SELECT id, ma_code, so_lan_da_dung, so_lan_toi_da, trang_thai, ngay_het_han FROM VOUCHERS ORDER BY created_at DESC",
+    "sqlFetchBefore": "SELECT id, ma_code, so_lan_da_dung, so_lan_toi_da, trang_thai FROM VOUCHERS WHERE trang_thai = 'ACTIVE' OR so_lan_da_dung >= so_lan_toi_da",
+    "sqlFetchAfter": "SELECT id, ma_code, so_lan_da_dung, so_lan_toi_da, trang_thai FROM VOUCHERS WHERE trang_thai = 'INACTIVE' AND so_lan_da_dung >= so_lan_toi_da OR trang_thai = 'ACTIVE'",
+    "columns": [
+      {
+        "key": "id",
+        "label": "Voucher ID",
+        "isPk": true
+      },
+      {
+        "key": "ma_code",
+        "label": "Mã Code"
+      },
+      {
+        "key": "so_lan_da_dung",
+        "label": "Đã Dùng"
+      },
+      {
+        "key": "so_lan_toi_da",
+        "label": "Tối Đa"
+      },
+      {
+        "key": "trang_thai",
+        "label": "Trạng Thái"
+      }
+    ],
+    "params": [],
+    "mockData": {
+      "before": [
+        {
+          "id": 1,
+          "ma_code": "SALE20",
+          "so_lan_da_dung": 98,
+          "so_lan_toi_da": 100,
+          "trang_thai": "ACTIVE"
+        },
+        {
+          "id": 2,
+          "ma_code": "SALE50",
+          "so_lan_da_dung": 100,
+          "so_lan_toi_da": 100,
+          "trang_thai": "ACTIVE"
+        },
+        {
+          "id": 3,
+          "ma_code": "FREESHIP",
+          "so_lan_da_dung": 50,
+          "so_lan_toi_da": 200,
+          "trang_thai": "ACTIVE"
+        }
+      ],
+      "after": [
+        {
+          "id": 1,
+          "ma_code": "SALE20",
+          "so_lan_da_dung": 98,
+          "so_lan_toi_da": 100,
+          "trang_thai": "ACTIVE"
+        },
+        {
+          "id": 2,
+          "ma_code": "SALE50",
+          "so_lan_da_dung": 100,
+          "so_lan_toi_da": 100,
+          "trang_thai": "INACTIVE"
+        },
+        {
+          "id": 3,
+          "ma_code": "FREESHIP",
+          "so_lan_da_dung": 50,
+          "so_lan_toi_da": 200,
+          "trang_thai": "ACTIVE"
+        }
+      ]
+    }
+  }
+]

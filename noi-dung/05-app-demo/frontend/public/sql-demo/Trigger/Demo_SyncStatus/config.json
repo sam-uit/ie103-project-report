@@ -1,0 +1,75 @@
+{
+      "id": "trg-sync-status",
+      "title": "Trigger 3: Đồng Bộ Trạng Thái Phòng",
+      "type": "Trigger",
+      "shortDesc": "Tự động cập nhật trạng thái phòng khi có thay đổi trong chi tiết đặt phòng",
+      "mdFile": "Trigger/Demo_SyncStatus/problem.html",
+      "sqlFile": "Trigger/Demo_SyncStatus/script.sql",
+      "separateTables": [
+            {
+                  "name": "PHONG",
+                  "label": "🚪 Bảng Phòng",
+                  "sqlBefore": "SELECT id, so_phong AS ten_phong, loai_phong_id, trang_thai FROM PHONG",
+                  "sqlAfter": "SELECT id, so_phong AS ten_phong, loai_phong_id, trang_thai FROM PHONG",
+                  "sqlFetchInitial": "SELECT TOP 20 id, so_phong AS ten_phong, loai_phong_id, trang_thai FROM PHONG",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "ten_phong",
+                              "label": "Tên Phòng"
+                        },
+                        {
+                              "key": "loai_phong_id",
+                              "label": "Loại Phòng"
+                        },
+                        {
+                              "key": "trang_thai",
+                              "label": "⚡ Trạng Thái"
+                        }
+                  ]
+            },
+            {
+                  "name": "CT_DATPHONG",
+                  "label": "🏨 Chi Tiết Đặt Phòng",
+                  "sqlBefore": "SELECT id, datphong_id, phong_id FROM CT_DATPHONG ORDER BY id DESC",
+                  "sqlAfter": "SELECT id, datphong_id, phong_id FROM CT_DATPHONG ORDER BY id DESC",
+                  "sqlFetchInitial": "SELECT TOP 20 id, datphong_id, phong_id FROM CT_DATPHONG ORDER BY id DESC",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "datphong_id",
+                              "label": "Booking ID"
+                        },
+                        {
+                              "key": "phong_id",
+                              "label": "⚡ Phòng ID"
+                        }
+                  ]
+            }
+      ],
+      "params": [],
+      "mockData": {
+            "before": [
+                  {
+                        "id": 1,
+                        "ten_phong": "P101",
+                        "trang_thai": "AVAILABLE"
+                  }
+            ],
+            "after": [
+                  {
+                        "id": 1,
+                        "ten_phong": "P101",
+                        "trang_thai": "OCCUPIED"
+                  }
+            ]
+      }
+}

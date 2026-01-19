@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+      <meta charset="UTF-8">
+      <style>
+            body {
+                  font-family: 'Inter', -apple-system, sans-serif;
+                  line-height: 1.7;
+                  color: #1e293b;
+                  background: #fff;
+                  margin: 0;
+                  padding: 0;
+            }
+
+            h1 {
+                  font-size: 1.875rem;
+                  font-weight: 700;
+                  color: #059669;
+                  margin: 0 0 1.5rem 0;
+                  padding-bottom: 0.75rem;
+                  border-bottom: 2px solid #10b981;
+            }
+
+            h2 {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  color: #0f172a;
+                  margin: 2rem 0 1rem 0;
+            }
+
+            h3 {
+                  font-size: 1.125rem;
+                  font-weight: 600;
+                  color: #334155;
+                  margin: 1.5rem 0 0.75rem 0;
+            }
+
+            p {
+                  margin: 0.75rem 0;
+                  color: #475569;
+            }
+
+            ul {
+                  margin: 0.75rem 0;
+                  padding-left: 1.5rem;
+            }
+
+            li {
+                  margin: 0.375rem 0;
+                  color: #475569;
+            }
+
+            strong {
+                  color: #0f172a;
+                  font-weight: 600;
+            }
+
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin: 1.25rem 0;
+                  font-size: 0.9375rem;
+                  background: #fff;
+                  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+                  border-radius: 0.5rem;
+                  overflow: hidden;
+            }
+
+            th {
+                  background-color: #6ee7b7;
+                  padding: 0.875rem 1rem;
+                  text-align: left;
+                  font-weight: 600;
+                  color: #064e3b;
+                  border-bottom: 2px solid #34d399;
+            }
+
+            td {
+                  padding: 0.75rem 1rem;
+                  color: #334155;
+                  border-bottom: 1px solid #e2e8f0;
+            }
+
+            tbody tr:hover {
+                  background-color: #ecfdf5;
+            }
+
+            code {
+                  font-family: 'Fira Code', monospace;
+                  font-size: 0.875rem;
+                  background-color: #ecfdf5;
+                  color: #059669;
+                  padding: 0.125rem 0.375rem;
+                  border-radius: 0.25rem;
+            }
+
+            pre {
+                  background-color: #1e293b;
+                  color: #e2e8f0;
+                  padding: 1.25rem;
+                  border-radius: 0.5rem;
+                  overflow-x: auto;
+                  margin: 1.25rem 0;
+            }
+
+            pre code {
+                  background: none;
+                  color: inherit;
+                  padding: 0;
+            }
+
+            .flow-step {
+                  background-color: #ecfdf5;
+                  border-left: 3px solid #10b981;
+                  padding: 0.875rem 1rem;
+                  margin: 0.5rem 0;
+                  border-radius: 0.25rem;
+                  color: #334155;
+            }
+
+            hr {
+                  border: none;
+                  border-top: 1px solid #e2e8f0;
+                  margin: 2rem 0;
+            }
+      </style>
+</head>
+
+<body>
+      <h1>🏨 FUNCTION – Kiểm Tra Phòng Trống</h1>
+
+      <h2>FN_CHECK_ROOM_AVAILABLE – Kiểm tra phòng khả dụng</h2>
+
+      <div class="section">
+            <h3>📌 Mục đích</h3>
+            <p>Function để <strong>kiểm tra phòng có thể đặt</strong> trong khoảng thời gian:</p>
+            <ul>
+                  <li>Kiểm tra phòng không bị trùng lịch</li>
+                  <li>Trả về TRUE/FALSE cho validation</li>
+                  <li>Có thể dùng trong CHECK constraint</li>
+                  <li>Sử dụng trong WHERE clause khi tìm phòng</li>
+            </ul>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>📥 Tham số</h3>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Tên</th>
+                              <th>Kiểu</th>
+                              <th>Mô tả</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td><code>@RoomID</code></td>
+                              <td>INT</td>
+                              <td>ID phòng cần kiểm tra</td>
+                        </tr>
+                        <tr>
+                              <td><code>@CheckIn</code></td>
+                              <td>DATETIME</td>
+                              <td>Ngày check-in dự kiến</td>
+                        </tr>
+                        <tr>
+                              <td><code>@CheckOut</code></td>
+                              <td>DATETIME</td>
+                              <td>Ngày check-out dự kiến</td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>📤 Giá trị trả về</h3>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Kiểu</th>
+                              <th>Giá trị</th>
+                              <th>Ý nghĩa</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td>BIT</td>
+                              <td>1</td>
+                              <td>Phòng có thể đặt</td>
+                        </tr>
+                        <tr>
+                              <td>BIT</td>
+                              <td>0</td>
+                              <td>Phòng đã có người đặt</td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>🔄 Logic xử lý</h3>
+            <div class="flow-step">1. Query bảng <code>CT_DATPHONG</code> với phong_id</div>
+            <div class="flow-step">2. JOIN với <code>DATPHONG</code> để lấy thời gian</div>
+            <div class="flow-step">3. Kiểm tra overlap: (NewCheckIn &lt; ExistingCheckOut) AND (NewCheckOut &gt;
+                  ExistingCheckIn)</div>
+            <div class="flow-step">4. Nếu có conflict → return 0, ngược lại → return 1</div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>✅ Cách sử dụng</h3>
+            <pre><code>-- Kiểm tra 1 phòng cụ thể
+SELECT dbo.FN_CHECK_ROOM_AVAILABLE(101, '2024-02-20', '2024-02-25');
+-- Kết quả: 1 (có thể đặt) hoặc 0 (đã có người)
+
+-- Tìm tất cả phòng trống trong khoảng thời gian
+SELECT * FROM PHONG p
+WHERE dbo.FN_CHECK_ROOM_AVAILABLE(p.id, '2024-02-20', '2024-02-25') = 1;
+
+-- Sử dụng trong validation
+IF dbo.FN_CHECK_ROOM_AVAILABLE(@RoomID, @CheckIn, @CheckOut) = 0
+BEGIN
+    RAISERROR('Phòng đã được đặt trong thời gian này', 16, 1);
+    RETURN;
+END</code></pre>
+      </div>
+</body>
+
+</html>

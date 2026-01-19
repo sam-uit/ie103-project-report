@@ -1,0 +1,9 @@
+{
+      "demos": [
+            "Demo_CheckTime",
+            "Demo_AutoPrice",
+            "Demo_SyncStatus",
+            "Demo_Payment",
+            "Demo_Refund"
+      ]
+}

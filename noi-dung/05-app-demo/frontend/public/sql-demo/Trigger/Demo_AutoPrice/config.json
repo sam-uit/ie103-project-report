@@ -1,0 +1,63 @@
+{
+      "id": "trg-auto-price",
+      "title": "Trigger 2: Tự Động Tính Giá Phòng",
+      "type": "Trigger",
+      "shortDesc": "Tự động tính toán đơn giá chi tiết đặt phòng dựa trên loại phòng",
+      "mdFile": "Trigger/Demo_AutoPrice/problem.html",
+      "sqlFile": "Trigger/Demo_AutoPrice/trg_AutoPrice.sql",
+      "separateTables": [
+            {
+                  "name": "CT_DATPHONG",
+                  "label": "🏨 Chi Tiết Đặt Phòng",
+                  "sqlBefore": "SELECT id, datphong_id, phong_id, don_gia FROM CT_DATPHONG WHERE id = (SELECT MAX(id) FROM CT_DATPHONG)",
+                  "sqlAfter": "SELECT id, datphong_id, phong_id, don_gia FROM CT_DATPHONG WHERE id = (SELECT MAX(id) FROM CT_DATPHONG)",
+                  "sqlFetchInitial": "SELECT TOP 20 id, datphong_id, phong_id, don_gia FROM CT_DATPHONG ORDER BY id DESC",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "datphong_id",
+                              "label": "Booking ID"
+                        },
+                        {
+                              "key": "phong_id",
+                              "label": "Phòng ID"
+                        },
+                        {
+                              "key": "don_gia",
+                              "label": "⚡ Đơn Giá"
+                        }
+                  ]
+            },
+            {
+                  "name": "LOAIPHONG",
+                  "label": "🏷️ Loại Phòng",
+                  "sqlBefore": "SELECT id, ten_loai, gia_co_ban FROM LOAIPHONG",
+                  "sqlAfter": "SELECT id, ten_loai, gia_co_ban FROM LOAIPHONG",
+                  "sqlFetchInitial": "SELECT id, ten_loai, gia_co_ban FROM LOAIPHONG",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "ten_loai",
+                              "label": "Loại Phòng"
+                        },
+                        {
+                              "key": "gia_co_ban",
+                              "label": "Giá Cơ Bản"
+                        }
+                  ]
+            }
+      ],
+      "params": [],
+      "mockData": {
+            "before": [],
+            "after": []
+      }
+}

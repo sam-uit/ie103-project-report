@@ -1,0 +1,11 @@
+{
+      "demos": [
+            "Demo_BookingRoom",
+            "Demo_Payment",
+            "Demo_ReviewRoom",
+            "Demo_Service",
+            "Demo_ApplyVoucher",
+            "Demo_RegisterUser",
+            "Demo_Checkout"
+      ]
+}

@@ -1,0 +1,53 @@
+{
+      "id": "trg-check-time",
+      "title": "Trigger 1: Kiểm Tra Thời Gian Đặt Phòng",
+      "type": "Trigger",
+      "shortDesc": "Đảm bảo thời gian trả phòng phải lớn hơn hoặc bằng thời gian nhận phòng",
+      "mdFile": "Trigger/Demo_CheckTime/problem.html",
+      "sqlFile": "Trigger/Demo_CheckTime/trg_CheckTime.sql",
+      "separateTables": [
+            {
+                  "name": "DATPHONG",
+                  "label": "📋 Bảng Đặt Phòng",
+                  "sqlBefore": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG ORDER BY created_at DESC",
+                  "sqlAfter": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG ORDER BY created_at DESC",
+                  "sqlFetchInitial": "SELECT TOP 20 id, user_id, check_in, check_out, trang_thai, created_at FROM DATPHONG ORDER BY created_at DESC",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "user_id",
+                              "label": "User ID"
+                        },
+                        {
+                              "key": "check_in",
+                              "label": "⚡ Check In"
+                        },
+                        {
+                              "key": "check_out",
+                              "label": "⚡ Check Out"
+                        },
+                        {
+                              "key": "trang_thai",
+                              "label": "Trạng Thái"
+                        }
+                  ]
+            }
+      ],
+      "params": [],
+      "mockData": {
+            "before": [
+                  {
+                        "id": 1,
+                        "user_id": 1,
+                        "check_in": "2026-02-01T14:00:00",
+                        "check_out": "2026-01-25T12:00:00",
+                        "trang_thai": "PENDING"
+                  }
+            ],
+            "after": []
+      }
+}

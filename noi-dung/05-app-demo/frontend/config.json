@@ -1,0 +1,412 @@
+{
+  "appSettings": {
+    "title": "Hệ Thống BMS",
+    "description": "Môi trường demo các kỹ thuật xử lý dữ liệu SQL Server",
+    "version": "2.0"
+  },
+  "overview": {
+    "header": {
+      "title": "Tổng Quan Đồ Án",
+      "subtitle": "Hệ thống Quản lý Đặt phòng Khách sạn (BMS)"
+    },
+    "section1": {
+      "title": "1. Mô tả bài toán",
+      "problemStatement": "Xây dựng hệ thống phần mềm hỗ trợ quản lý toàn diện quy trình kinh doanh của khách sạn quy mô vừa và nhỏ. Mục tiêu giúp tối ưu hóa quy trình đặt phòng, quản lý dịch vụ, kiểm soát doanh thu chặt chẽ và nâng cao trải nghiệm khách hàng thông qua tự động hóa.",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Đặt phòng",
+          "desc": "Khách tìm kiếm & đặt phòng"
+        },
+        {
+          "step": "2",
+          "title": "Check-in",
+          "desc": "Lễ tân giao phòng & xác nhận"
+        },
+        {
+          "step": "3",
+          "title": "Lưu trú",
+          "desc": "Sử dụng dịch vụ & tiện ích"
+        },
+        {
+          "step": "4",
+          "title": "Check-out",
+          "desc": "Thanh toán & trả phòng"
+        }
+      ]
+    },
+    "section2": {
+      "title": "2. Phân tích và thiết kế",
+      "erdHighlights": [
+        "Phòng & Loại phòng: Quản lý danh mục, giá và trạng thái.",
+        "Booking: Thực thể trung tâm kết nối khách và phòng.",
+        "Hóa đơn & Thanh toán: Quản lý dòng tiền, hoàn tiền.",
+        "Dịch vụ & Voucher: Giá trị gia tăng cho booking."
+      ],
+      "businessConstraints": [
+        "Overlap: Một phòng không thể được đặt trùng thời gian.",
+        "Review: Chỉ cho phép đánh giá khi đã thanh toán (PAID) và checkout.",
+        "Payment: Tổng tiền = (Phòng + Dịch vụ) * (1 - Voucher)."
+      ]
+    },
+    "section3": {
+      "title": "3. Cài đặt & Dữ liệu",
+      "dbSystem": "Microsoft SQL Server",
+      "features": [
+        {
+          "title": "Cấu trúc bảng",
+          "desc": "Định nghĩa đầy đủ Primary Key, Foreign Key, và các ràng buộc toàn vẹn dữ liệu."
+        },
+        {
+          "title": "Dữ liệu mẫu",
+          "desc": "Hơn 1000 dòng dữ liệu mô phỏng thực tế bao gồm Lịch sử đặt phòng, Thanh toán."
+        },
+        {
+          "title": "Script Automation",
+          "desc": "Kịch bản SQL tự động tạo Database, Schema và Seed dữ liệu ban đầu."
+        }
+      ]
+    },
+    "section4": {
+      "title": "4. Quản lý thông tin",
+      "stats": [
+        {
+          "label": "Stored Procedures",
+          "value": "5",
+          "color": "blue"
+        },
+        {
+          "label": "Triggers",
+          "value": "5",
+          "color": "amber"
+        },
+        {
+          "label": "Functions",
+          "value": "3",
+          "color": "purple"
+        },
+        {
+          "label": "Cursors",
+          "value": "2",
+          "color": "emerald"
+        }
+      ],
+      "security": [
+        {
+          "label": "Bảo mật",
+          "desc": "Phân quyền RBAC, Mã hóa mật khẩu."
+        },
+        {
+          "label": "Sao lưu",
+          "desc": "Cơ chế Backup & Restore định kỳ."
+        },
+        {
+          "label": "Báo cáo",
+          "desc": "5 biểu mẫu báo cáo quản trị trực quan."
+        }
+      ]
+    }
+  },
+  "teamMembers": [
+    {
+      "mssv": "25410291",
+      "name": "Đinh Xuân Sâm",
+      "tasks": "Report/Demo Video/ERD Chen"
+    },
+    {
+      "mssv": "25410319",
+      "name": "Đặng Hữu Toàn",
+      "tasks": "Cursor: 2"
+    },
+    {
+      "mssv": "25410321",
+      "name": "Nguyễn Điền Triết",
+      "tasks": "Stored Procedure: 3"
+    },
+    {
+      "mssv": "25410204",
+      "name": "Trương Xuân Hậu",
+      "tasks": "Trigger: 5"
+    },
+    {
+      "mssv": "25410338",
+      "name": "Lê Anh Vũ",
+      "tasks": "Stored Procedure: 2",
+      "notes": "Các bảng mới."
+    },
+    {
+      "mssv": "25410176",
+      "name": "Trần Sơn Bình",
+      "tasks": "Function: 3"
+    },
+    {
+      "mssv": "25410247",
+      "name": "Lê Kim Long",
+      "tasks": "ERD/Data Seed"
+    },
+    {
+      "mssv": "25410337",
+      "name": "La Anh Vũ",
+      "tasks": "Code/Demo"
+    },
+    {
+      "mssv": "25410209",
+      "name": "Lê Ngọc Hiệp",
+      "tasks": "Report"
+    },
+    {
+      "mssv": "25410271",
+      "name": "Nguyễn Thị Ngọc Nhung",
+      "tasks": ""
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sp-01",
+      "title": "SP 1: Tính Hóa Đơn Cuối Cùng",
+      "type": "Stored Procedure",
+      "shortDesc": "Tổng hợp tiền phòng, dịch vụ và trừ giảm giá để ra số tiền cuối cùng.",
+      "sqlFile": "sp_GetFinalBill.sql",
+      "tables": [
+        "PAYMENTS"
+      ],
+      "columns": [
+        {
+          "key": "booking_id",
+          "label": "Mã Đặt Phòng",
+          "isPk": true
+        },
+        {
+          "key": "tien_phong",
+          "label": "Tiền Phòng"
+        },
+        {
+          "key": "tien_dich_vu",
+          "label": "Tiền Dịch Vụ"
+        },
+        {
+          "key": "giam_gia",
+          "label": "Giảm Giá"
+        },
+        {
+          "key": "tong_cong",
+          "label": "Tổng Cộng"
+        }
+      ],
+      "params": [
+        {
+          "name": "@BookingID",
+          "type": "int",
+          "defaultValue": 1001
+        }
+      ],
+      "mockData": {
+        "before": [
+          {
+            "booking_id": 1001,
+            "tien_phong": 0,
+            "tien_dich_vu": 0,
+            "giam_gia": 0,
+            "tong_cong": 0
+          }
+        ],
+        "after": [
+          {
+            "booking_id": 1001,
+            "tien_phong": 2000000,
+            "tien_dich_vu": 500000,
+            "giam_gia": 200000,
+            "tong_cong": 2300000
+          }
+        ]
+      },
+      "sqlContent": "CREATE OR ALTER PROCEDURE sp_GetFinalBill (@BookingID INT) AS\nBEGIN\n  -- Cộng tiền phòng + tiền dịch vụ - voucher\n  SELECT @Room = SUM(price) FROM CT_DATPHONG...\n  SELECT @Service = SUM(price) FROM CT_SUDUNG_DV...\n  -- ... Logic ...\n  SELECT @Room + @Service - @Discount as FinalAmount;\nEND"
+    },
+    {
+      "id": "trg-01",
+      "title": "Trigger 1: Áp Dụng Voucher",
+      "type": "Trigger",
+      "shortDesc": "Tự động trừ tiền trong bảng Payments khi cập nhật mã Voucher hợp lệ.",
+      "sqlFile": "trg_ApplyVoucher.sql",
+      "tables": [
+        "PAYMENTS"
+      ],
+      "columns": [
+        {
+          "key": "payment_id",
+          "label": "Payment ID",
+          "isPk": true
+        },
+        {
+          "key": "booking_id",
+          "label": "Booking ID"
+        },
+        {
+          "key": "so_tien",
+          "label": "Số Tiền"
+        },
+        {
+          "key": "voucher_code",
+          "label": "Voucher"
+        }
+      ],
+      "params": [
+        {
+          "name": "@Voucher",
+          "type": "string",
+          "defaultValue": "SALE50"
+        }
+      ],
+      "mockData": {
+        "before": [
+          {
+            "payment_id": 1,
+            "booking_id": 500,
+            "so_tien": 1000000,
+            "voucher_code": null
+          }
+        ],
+        "after": [
+          {
+            "payment_id": 1,
+            "booking_id": 500,
+            "so_tien": 500000,
+            "voucher_code": "SALE50"
+          }
+        ]
+      },
+      "sqlContent": "CREATE TRIGGER trg_ApplyVoucher ON DATPHONG AFTER UPDATE AS\nBEGIN\n   IF UPDATE(voucher_code)\n   BEGIN\n      -- Tính % giảm\n      -- Update PAYMENTS set so_tien = so_tien * (1 - %)\n   END\nEND"
+    },
+    {
+      "id": "cur-01",
+      "title": "Cursor 1: Gửi Email Marketing",
+      "type": "Cursor",
+      "shortDesc": "Duyệt qua danh sách khách hàng VIP để gửi mã khuyến mãi hàng tháng.",
+      "sqlFile": "cur_SendPromoEmails.sql",
+      "tables": [
+        "MAIL_QUEUE"
+      ],
+      "columns": [
+        {
+          "key": "user_id",
+          "label": "User ID",
+          "isPk": true
+        },
+        {
+          "key": "email",
+          "label": "Email"
+        },
+        {
+          "key": "status",
+          "label": "Trạng Thái Gửi"
+        }
+      ],
+      "params": [],
+      "mockData": {
+        "before": [
+          {
+            "user_id": 1,
+            "email": "a@gmail.com",
+            "status": "Pending"
+          },
+          {
+            "user_id": 2,
+            "email": "b@yahoo.com",
+            "status": "Pending"
+          }
+        ],
+        "after": [
+          {
+            "user_id": 1,
+            "email": "a@gmail.com",
+            "status": "SENT"
+          },
+          {
+            "user_id": 2,
+            "email": "b@yahoo.com",
+            "status": "SENT"
+          }
+        ]
+      },
+      "sqlContent": "DECLARE cur_Mail CURSOR FOR \nSELECT email FROM USERS WHERE level = 'GOLD';\n\nOPEN cur_Mail;\nFETCH NEXT FROM cur_Mail INTO @Email;\n\nWHILE @@FETCH_STATUS = 0\nBEGIN\n    EXEC sp_SendMail @Email, 'Voucher for you!';\n    FETCH NEXT FROM cur_Mail INTO @Email;\nEND\n\nCLOSE cur_Mail;\nDEALLOCATE cur_Mail;"
+    }
+  ],
+  "reportGroups": [
+    {
+      "id": "g1",
+      "title": "Báo Cáo Doanh Thu",
+      "description": "Tổng hợp các báo cáo về tình hình kinh doanh, dòng tiền và lợi nhuận theo từng quý/tháng.",
+      "files": [
+        {
+          "id": "f1",
+          "name": "Báo Cáo Quý 3/2023",
+          "type": "pdf",
+          "size": "2.4 MB",
+          "date": "15/10/2023",
+          "thumbnailUrl": "https://placehold.co/600x800/e6f2ff/0055aa?text=Doanh+Thu+Q3",
+          "url": "https://pdfobject.com/pdf/sample.pdf"
+        },
+        {
+          "id": "f2",
+          "name": "Chi Tiết Hóa Đơn T10",
+          "type": "pdf",
+          "size": "1.8 MB",
+          "date": "01/11/2023",
+          "thumbnailUrl": "https://placehold.co/600x800/e6fff2/00aa55?text=Hoa+Don+T10",
+          "url": "https://drive.google.com/file/d/1Z_u7qGq-Y2jXgKk9-7zZqXq9ZqXq9ZqX/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "title": "Tài Liệu Hệ Thống",
+      "description": "Sơ đồ thiết kế (ERD), Flowchart quy trình nghiệp vụ và các tài liệu kỹ thuật khác.",
+      "files": [
+        {
+          "id": "f3",
+          "name": "ERD Diagram Full",
+          "type": "png",
+          "size": "1.2 MB",
+          "date": "30/10/2023",
+          "thumbnailUrl": "https://placehold.co/600x400/png/white?text=ERD+Diagram",
+          "url": "https://placehold.co/1200x800/png/white?text=Full+ERD+Diagram+Preview"
+        },
+        {
+          "id": "f4",
+          "name": "Quy Trình Đặt Phòng",
+          "type": "jpg",
+          "size": "890 KB",
+          "date": "15/09/2023",
+          "thumbnailUrl": "https://placehold.co/800x400/png/white?text=Flowchart",
+          "url": "https://placehold.co/1600x800/png/white?text=Full+Flowchart+Preview"
+        }
+      ]
+    },
+    {
+      "id": "g3",
+      "title": "Google Drive Folder",
+      "description": "Các tài liệu được lưu trữ trực tiếp trên Cloud.",
+      "files": [
+        {
+          "id": "f5",
+          "name": "Slide Thuyết Trình",
+          "type": "pdf",
+          "size": "Cloud",
+          "date": "Live",
+          "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo_%282020-present%29.svg",
+          "url": "https://drive.google.com/file/d/1Z_u7qGq-Y2jXgKk9-7zZqXq9ZqXq9ZqX/view?usp=sharing"
+        }
+      ]
+    }
+  ],
+  "logs": [
+    {
+      "id": "l1",
+      "timestamp": "2023-10-30 14:30:00",
+      "scenarioTitle": "SP 4: Tạo Đặt Phòng Mới",
+      "type": "Stored Procedure",
+      "status": "Success",
+      "durationMs": 120
+    }
+  ]
+}

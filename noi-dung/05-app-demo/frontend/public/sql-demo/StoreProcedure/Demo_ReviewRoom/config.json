@@ -1,0 +1,104 @@
+{
+      "id": "sp-review-room",
+      "title": "SP 3: Đánh Giá Phòng",
+      "type": "Stored Procedure",
+      "shortDesc": "Stored Procedure để khách hàng đánh giá phòng sau khi check-out",
+      "mdFile": "StoreProcedure/Demo_ReviewRoom/problem.html",
+      "sqlFile": "StoreProcedure/Demo_ReviewRoom/sp_ReviewRoom.sql",
+      "separateTables": [
+            {
+                  "name": "PHONG",
+                  "label": "⭐ Thông tin khách hàng đặt phòng",
+                  "sqlBefore": "SELECT dp.user_id,ctdp.datphong_id, dp.trang_thai, p.so_phong FROM datphong dp JOIN ct_datphong ctdp ON ctdp.datphong_id = dp.id JOIN phong p          ON p.id = ctdp.phong_id;",
+                  "sqlAfter": "SELECT dp.user_id,ctdp.datphong_id, dp.trang_thai, p.so_phong FROM datphong dp JOIN ct_datphong ctdp ON ctdp.datphong_id = dp.id JOIN phong p          ON p.id = ctdp.phong_id;",
+                  "sqlFetchInitial": "SELECT dp.user_id,ctdp.datphong_id, dp.trang_thai, p.so_phong FROM datphong dp JOIN ct_datphong ctdp ON ctdp.datphong_id = dp.id JOIN phong p          ON p.id = ctdp.phong_id;",
+                  "columns": [
+                        {
+                              "key": "user_id",
+                              "label": "User ID"
+                        },
+                        {
+                              "key": "datphong_id",
+                              "label": "Đặt Phòng ID"
+                        },
+                        {
+                              "key": "so_phong",
+                              "label": "Số Phòng"
+                        },
+                        {
+                              "key": "trang_thai",
+                              "label": "Trạng Thái"
+                        }
+                  ]
+            },
+            {
+                  "name": "REVIEWS",
+                  "label": "⭐ Bảng Đánh Giá",
+                  "sqlBefore": "SELECT r.id, r.user_id, r.datphong_id, r.so_sao AS rating, LEFT(r.binh_luan, 50) as comment FROM REVIEWS r",
+                  "sqlAfter": "SELECT r.id, r.user_id, r.datphong_id, r.so_sao AS rating, LEFT(r.binh_luan, 50) as comment FROM REVIEWS r ",
+                  "sqlFetchInitial": "SELECT TOP 20 r.id, r.user_id, r.datphong_id, r.so_sao AS rating, r.binh_luan AS comment, r.created_at FROM REVIEWS r ORDER BY r.created_at DESC",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "Review ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "user_id",
+                              "label": "User ID"
+                        },
+                        {
+                              "key": "datphong_id",
+                              "label": "Booking ID"
+                        },
+                        {
+                              "key": "rating",
+                              "label": "⚡ Đánh Giá"
+                        },
+                        {
+                              "key": "comment",
+                              "label": "⚡ Nhận Xét"
+                        }
+                  ]
+            }
+      ],
+      "params": [
+            {
+                  "name": "@UserId",
+                  "type": "int",
+                  "defaultValue": 6
+            },
+            {
+                  "name": "@DatPhongId",
+                  "type": "int",
+                  "defaultValue": 10
+            },
+            {
+                  "name": "@SoPhong",
+                  "type": "nvarchar",
+                  "defaultValue": "202"
+            },
+            {
+                  "name": "@SoSao",
+                  "type": "int",
+                  "defaultValue": 5
+            },
+            {
+                  "name": "@BinhLuan",
+                  "type": "string",
+                  "defaultValue": "Phòng rất đẹp và sạch sẽ"
+            }
+      ],
+      "mockData": {
+            "before": [],
+            "after": [
+                  {
+                        "id": 1,
+                        "user_id": 1,
+                        "datphong_id": 1,
+                        "rating": 5,
+                        "comment": "Phòng rất đẹp và sạch sẽ"
+                  }
+            ]
+      }
+}

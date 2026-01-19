@@ -1,0 +1,102 @@
+{
+      "id": "sp-booking-room",
+      "title": "SP 1: Đặt Phòng",
+      "type": "Stored Procedure",
+      "shortDesc": "Stored Procedure để tạo booking mới và thêm chi tiết phòng",
+      "mdFile": "StoreProcedure/Demo_BookingRoom/sp_BookingRoom.html",
+      "sqlFile": "StoreProcedure/Demo_BookingRoom/sp_BookingRoom.sql",
+      "separateTables": [
+            {
+                  "name": "DATPHONG",
+                  "label": "📋 Bảng Đặt Phòng",
+                  "sqlBefore": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG WHERE user_id = @UserID ORDER BY created_at DESC",
+                  "sqlAfter": "SELECT id, user_id, check_in, check_out, trang_thai FROM DATPHONG WHERE user_id = @UserID ORDER BY created_at DESC",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "Booking ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "user_id",
+                              "label": "User ID"
+                        },
+                        {
+                              "key": "check_in",
+                              "label": "⚡ Check In"
+                        },
+                        {
+                              "key": "check_out",
+                              "label": "⚡ Check Out"
+                        },
+                        {
+                              "key": "trang_thai",
+                              "label": "Trạng Thái"
+                        }
+                  ]
+            },
+            {
+                  "name": "CT_DATPHONG",
+                  "label": "🏨 Chi Tiết Đặt Phòng",
+                  "sqlBefore": "SELECT ct.id, ct.datphong_id, ct.phong_id, p.so_phong AS ten_phong, ct.don_gia FROM CT_DATPHONG ct LEFT JOIN PHONG p ON p.id = ct.phong_id WHERE ct.datphong_id IN (SELECT id FROM DATPHONG WHERE user_id = @UserID)",
+                  "sqlAfter": "SELECT ct.id, ct.datphong_id, ct.phong_id, p.so_phong AS ten_phong, ct.don_gia FROM CT_DATPHONG ct LEFT JOIN PHONG p ON p.id = ct.phong_id WHERE ct.datphong_id IN (SELECT id FROM DATPHONG WHERE user_id = @UserID)",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "datphong_id",
+                              "label": "Booking ID"
+                        },
+                        {
+                              "key": "phong_id",
+                              "label": "⚡ Phòng ID"
+                        },
+                        {
+                              "key": "ten_phong",
+                              "label": "Tên Phòng"
+                        },
+                        {
+                              "key": "don_gia",
+                              "label": "Đơn Giá"
+                        }
+                  ]
+            }
+      ],
+      "params": [
+            {
+                  "name": "@UserId",
+                  "type": "int",
+                  "defaultValue": 1
+            },
+            {
+                  "name": "@SoPhong",
+                  "type": "nvarchar",
+                  "defaultValue": "101"
+            },
+            {
+                  "name": "@CheckIn",
+                  "type": "datetime",
+                  "defaultValue": "2026-01-20T22:00:00"
+            },
+            {
+                  "name": "@CheckOut",
+                  "type": "datetime",
+                  "defaultValue": "2026-01-25 12:00"
+            }
+      ],
+      "mockData": {
+            "before": [],
+            "after": [
+                  {
+                        "id": 1,
+                        "user_id": 1,
+                        "check_in": "2026-01-20T14:00:00",
+                        "check_out": "2026-01-25T12:00:00",
+                        "trang_thai": "PENDING"
+                  }
+            ]
+      }
+}

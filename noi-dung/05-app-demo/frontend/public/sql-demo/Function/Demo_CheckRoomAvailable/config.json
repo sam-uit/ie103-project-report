@@ -1,0 +1,64 @@
+{
+      "id": "fn-check-room-available",
+      "title": "Function 1: Kiểm Tra Phòng Trống",
+      "type": "Function",
+      "shortDesc": "Function kiểm tra xem phòng có available trong khoảng thời gian không",
+      "mdFile": "Function/Demo_CheckRoomAvailable/problem.html",
+      "sqlFile": "Function/Demo_CheckRoomAvailable/fn_CheckRoomAvailable.sql",
+      "separateTables": [
+            {
+                  "name": "PHONG",
+                  "label": "🚪 Bảng Phòng",
+                  "sqlBefore": "SELECT id, so_phong AS ten_phong, trang_thai FROM PHONG WHERE id = @PhongID",
+                  "sqlAfter": "SELECT id, so_phong AS ten_phong, trang_thai FROM PHONG WHERE id = @PhongID",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "Phòng ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "ten_phong",
+                              "label": "Tên Phòng"
+                        },
+                        {
+                              "key": "trang_thai",
+                              "label": "Trạng Thái"
+                        }
+                  ]
+            }
+      ],
+      "params": [
+            {
+                  "name": "@PhongID",
+                  "type": "int",
+                  "defaultValue": 1
+            },
+            {
+                  "name": "@NgayCheckIn",
+                  "type": "datetime",
+                  "defaultValue": "2026-01-20 14:00"
+            },
+            {
+                  "name": "@NgayCheckOut",
+                  "type": "datetime",
+                  "defaultValue": "2026-01-25 12:00"
+            }
+      ],
+      "mockData": {
+            "before": [
+                  {
+                        "id": 1,
+                        "ten_phong": "P101",
+                        "trang_thai": "AVAILABLE"
+                  }
+            ],
+            "after": [
+                  {
+                        "id": 1,
+                        "ten_phong": "P101",
+                        "trang_thai": "AVAILABLE"
+                  }
+            ]
+      }
+}

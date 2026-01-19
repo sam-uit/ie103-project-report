@@ -1,0 +1,78 @@
+{
+      "id": "trg-refund",
+      "title": "Trigger 5: Hoàn Tiền",
+      "type": "Trigger",
+      "shortDesc": "Kiểm tra số tiền hoàn và đồng bộ trạng thái payment, booking",
+      "mdFile": "Trigger/Demo_Refund/problem.html",
+      "sqlFile": "Trigger/Demo_Refund/trg_Refund.sql",
+      "separateTables": [
+            {
+                  "name": "REFUNDS",
+                  "label": "💸 Bảng Hoàn Tiền",
+                  "sqlBefore": "SELECT id, payment_id, so_tien_hoan AS refund_amount, trang_thai AS status, ly_do AS reason FROM REFUNDS WHERE payment_id = 1",
+                  "sqlAfter": "SELECT id, payment_id, so_tien_hoan AS refund_amount, trang_thai AS status, ly_do AS reason FROM REFUNDS WHERE payment_id = 1",
+                  "sqlFetchInitial": "SELECT TOP 20 id, payment_id, so_tien_hoan AS refund_amount, trang_thai AS status, ly_do AS reason FROM REFUNDS ORDER BY created_at DESC",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "payment_id",
+                              "label": "Payment ID"
+                        },
+                        {
+                              "key": "refund_amount",
+                              "label": "⚡ Số Tiền Hoàn"
+                        },
+                        {
+                              "key": "status",
+                              "label": "⚡ Trạng Thái"
+                        },
+                        {
+                              "key": "reason",
+                              "label": "Lý Do"
+                        }
+                  ]
+            },
+            {
+                  "name": "PAYMENTS",
+                  "label": "💰 Bảng Thanh Toán",
+                  "sqlBefore": "SELECT id, booking_id, so_tien AS amount, trang_thai AS status FROM PAYMENTS",
+                  "sqlAfter": "SELECT id, booking_id, so_tien AS amount, trang_thai AS status FROM PAYMENTS",
+                  "sqlFetchInitial": "SELECT TOP 20 id, booking_id, so_tien AS amount, trang_thai AS status FROM PAYMENTS ORDER BY created_at DESC",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "booking_id",
+                              "label": "Booking ID"
+                        },
+                        {
+                              "key": "amount",
+                              "label": "Số Tiền"
+                        },
+                        {
+                              "key": "status",
+                              "label": "⚡ Status"
+                        }
+                  ]
+            }
+      ],
+      "params": [],
+      "mockData": {
+            "before": [],
+            "after": [
+                  {
+                        "id": 1,
+                        "payment_id": 1,
+                        "refund_amount": 500000,
+                        "status": "COMPLETED"
+                  }
+            ]
+      }
+}

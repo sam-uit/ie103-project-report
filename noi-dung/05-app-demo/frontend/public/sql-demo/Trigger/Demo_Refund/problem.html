@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+      <meta charset="UTF-8">
+      <style>
+            body {
+                  font-family: 'Inter', -apple-system, sans-serif;
+                  line-height: 1.7;
+                  color: #1e293b;
+                  background: #fff;
+                  margin: 0;
+                  padding: 0;
+            }
+
+            h1 {
+                  font-size: 1.875rem;
+                  font-weight: 700;
+                  color: #dc2626;
+                  margin: 0 0 1.5rem 0;
+                  padding-bottom: 0.75rem;
+                  border-bottom: 2px solid #ef4444;
+            }
+
+            h2 {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  color: #0f172a;
+                  margin: 2rem 0 1rem 0;
+            }
+
+            h3 {
+                  font-size: 1.125rem;
+                  font-weight: 600;
+                  color: #334155;
+                  margin: 1.5rem 0 0.75rem 0;
+            }
+
+            p {
+                  margin: 0.75rem 0;
+                  color: #475569;
+            }
+
+            ul {
+                  margin: 0.75rem 0;
+                  padding-left: 1.5rem;
+            }
+
+            li {
+                  margin: 0.375rem 0;
+                  color: #475569;
+            }
+
+            strong {
+                  color: #0f172a;
+                  font-weight: 600;
+            }
+
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin: 1.25rem 0;
+                  font-size: 0.9375rem;
+                  background: #fff;
+                  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+                  border-radius: 0.5rem;
+                  overflow: hidden;
+            }
+
+            th {
+                  background-color: #fca5a5;
+                  padding: 0.875rem 1rem;
+                  text-align: left;
+                  font-weight: 600;
+                  color: #7f1d1d;
+                  border-bottom: 2px solid #f87171;
+            }
+
+            td {
+                  padding: 0.75rem 1rem;
+                  color: #334155;
+                  border-bottom: 1px solid #e2e8f0;
+            }
+
+            tbody tr:hover {
+                  background-color: #fef2f2;
+            }
+
+            code {
+                  font-family: 'Fira Code', monospace;
+                  font-size: 0.875rem;
+                  background-color: #fef2f2;
+                  color: #dc2626;
+                  padding: 0.125rem 0.375rem;
+                  border-radius: 0.25rem;
+            }
+
+            pre {
+                  background-color: #1e293b;
+                  color: #e2e8f0;
+                  padding: 1.25rem;
+                  border-radius: 0.5rem;
+                  overflow-x: auto;
+                  margin: 1.25rem 0;
+            }
+
+            pre code {
+                  background: none;
+                  color: inherit;
+                  padding: 0;
+            }
+
+            .flow-step {
+                  background-color: #fef2f2;
+                  border-left: 3px solid #ef4444;
+                  padding: 0.875rem 1rem;
+                  margin: 0.5rem 0;
+                  border-radius: 0.25rem;
+                  color: #334155;
+            }
+
+            hr {
+                  border: none;
+                  border-top: 1px solid #e2e8f0;
+                  margin: 2rem 0;
+            }
+
+            .warning {
+                  background-color: #fef3c7;
+                  border-left: 3px solid #f59e0b;
+                  padding: 1rem;
+                  border-radius: 0.25rem;
+                  margin: 1rem 0;
+            }
+      </style>
+</head>
+
+<body>
+      <h1>💸 TRIGGER – Xử Lý Hoàn Tiền</h1>
+
+      <h2>TR_REFUND – Tự động hoàn tiền khi hủy</h2>
+
+      <div class="section">
+            <h3>📌 Mục đích</h3>
+            <p>Trigger tự động <strong>xử lý hoàn tiền</strong> khi booking bị hủy:</p>
+            <ul>
+                  <li>Tính số tiền hoàn theo chính sách</li>
+                  <li>Tạo bản ghi hoàn tiền</li>
+                  <li>Hoàn lại số lượng voucher (nếu có)</li>
+                  <li>Giải phóng phòng về trạng thái AVAILABLE</li>
+            </ul>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>🎯 Kích hoạt khi</h3>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Bảng</th>
+                              <th>Sự kiện</th>
+                              <th>Điều kiện</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td><code>DATPHONG</code></td>
+                              <td>UPDATE</td>
+                              <td>trang_thai = 'CANCELLED'</td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>🔄 Logic xử lý</h3>
+            <div class="flow-step">1. Kiểm tra trạng thái cũ != 'CANCELLED' và mới = 'CANCELLED'</div>
+            <div class="flow-step">2. Tìm bản ghi thanh toán của booking</div>
+            <div class="flow-step">3. Tính số tiền hoàn theo chính sách (% theo thời gian)</div>
+            <div class="flow-step">4. INSERT vào bảng <code>HOAN_TIEN</code></div>
+            <div class="flow-step">5. Nếu có voucher → giảm so_lan_su_dung trong <code>VOUCHER</code></div>
+            <div class="flow-step">6. UPDATE các phòng liên quan → AVAILABLE</div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>📊 Chính sách hoàn tiền</h3>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Thời điểm hủy</th>
+                              <th>% Hoàn tiền</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td>Trước check-in > 7 ngày</td>
+                              <td>100%</td>
+                        </tr>
+                        <tr>
+                              <td>Trước check-in 3-7 ngày</td>
+                              <td>50%</td>
+                        </tr>
+                        <tr>
+                              <td>Trước check-in &lt; 3 ngày</td>
+                              <td>0%</td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>✅ Demo</h3>
+            <pre><code>-- Booking đã thanh toán, muốn hủy
+UPDATE DATPHONG 
+SET trang_thai = 'CANCELLED'
+WHERE id = 1;
+
+-- Trigger tự động:
+-- 1. Tạo bản ghi hoàn tiền
+SELECT * FROM HOAN_TIEN WHERE booking_id = 1;
+-- so_tien_hoan = 750000 (50%)
+
+-- 2. Phòng trở lại AVAILABLE
+SELECT trang_thai FROM PHONG WHERE id = 101;
+-- trang_thai = 'AVAILABLE' ✓</code></pre>
+      </div>
+</body>
+
+</html>

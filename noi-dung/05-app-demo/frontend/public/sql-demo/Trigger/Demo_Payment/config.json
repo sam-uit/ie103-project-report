@@ -1,0 +1,78 @@
+{
+      "id": "trg-payment",
+      "title": "Trigger 4: Kiểm Tra Thanh Toán",
+      "type": "Trigger",
+      "shortDesc": "Kiểm tra số tiền thanh toán và tự động cập nhật trạng thái booking",
+      "mdFile": "Trigger/Demo_Payment/problem.html",
+      "sqlFile": "Trigger/Demo_Payment/trg_Payment.sql",
+      "separateTables": [
+            {
+                  "name": "PAYMENTS",
+                  "label": "💰 Bảng Thanh Toán",
+                  "sqlBefore": "SELECT id, booking_id, user_id, so_tien AS amount, phuong_thuc AS method, trang_thai AS status FROM PAYMENTS WHERE booking_id = 1",
+                  "sqlAfter": "SELECT id, booking_id, user_id, so_tien AS amount, phuong_thuc AS method, trang_thai AS status FROM PAYMENTS WHERE booking_id = 1",
+                  "sqlFetchInitial": "SELECT TOP 20 id, booking_id, user_id, so_tien AS amount, phuong_thuc AS method, trang_thai AS status FROM PAYMENTS ORDER BY created_at DESC",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "booking_id",
+                              "label": "Booking ID"
+                        },
+                        {
+                              "key": "user_id",
+                              "label": "User ID"
+                        },
+                        {
+                              "key": "amount",
+                              "label": "⚡ Số Tiền"
+                        },
+                        {
+                              "key": "method",
+                              "label": "Phương Thức"
+                        },
+                        {
+                              "key": "status",
+                              "label": "⚡ Trạng Thái"
+                        }
+                  ]
+            },
+            {
+                  "name": "DATPHONG",
+                  "label": "📋 Bảng Đặt Phòng",
+                  "sqlBefore": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = 1",
+                  "sqlAfter": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = 1",
+                  "sqlFetchInitial": "SELECT TOP 20 id, user_id, trang_thai FROM DATPHONG ORDER BY created_at DESC",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "user_id",
+                              "label": "User ID"
+                        },
+                        {
+                              "key": "trang_thai",
+                              "label": "⚡ Trạng Thái"
+                        }
+                  ]
+            }
+      ],
+      "params": [],
+      "mockData": {
+            "before": [],
+            "after": [
+                  {
+                        "id": 1,
+                        "booking_id": 1,
+                        "amount": 1000000,
+                        "status": "COMPLETED"
+                  }
+            ]
+      }
+}

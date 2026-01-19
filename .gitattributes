@@ -9,3 +9,7 @@ dist/ export-ignore
 build/ export-ignore
 .env export-ignore
 .env.* export-ignore
+.DS_Store export-ignore
+package-lock.json export-ignore
+yarn.lock export-ignore
+pnpm-lock.yaml export-ignore

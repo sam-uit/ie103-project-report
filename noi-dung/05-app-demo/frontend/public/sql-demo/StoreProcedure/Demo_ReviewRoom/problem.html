@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+      <meta charset="UTF-8">
+      <style>
+            body {
+                  font-family: 'Inter', -apple-system, sans-serif;
+                  line-height: 1.7;
+                  color: #1e293b;
+                  background: #fff;
+                  margin: 0;
+                  padding: 0;
+            }
+
+            h1 {
+                  font-size: 1.875rem;
+                  font-weight: 700;
+                  color: #1e40af;
+                  margin: 0 0 1.5rem 0;
+                  padding-bottom: 0.75rem;
+                  border-bottom: 2px solid #3b82f6;
+            }
+
+            h2 {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  color: #0f172a;
+                  margin: 2rem 0 1rem 0;
+            }
+
+            h3 {
+                  font-size: 1.125rem;
+                  font-weight: 600;
+                  color: #334155;
+                  margin: 1.5rem 0 0.75rem 0;
+            }
+
+            p {
+                  margin: 0.75rem 0;
+                  color: #475569;
+            }
+
+            ul {
+                  margin: 0.75rem 0;
+                  padding-left: 1.5rem;
+            }
+
+            li {
+                  margin: 0.375rem 0;
+                  color: #475569;
+            }
+
+            strong {
+                  color: #0f172a;
+                  font-weight: 600;
+            }
+
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin: 1.25rem 0;
+                  font-size: 0.9375rem;
+                  background: #fff;
+                  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+                  border-radius: 0.5rem;
+                  overflow: hidden;
+            }
+
+            th {
+                  background-color: #93c5fd;
+                  padding: 0.875rem 1rem;
+                  text-align: left;
+                  font-weight: 600;
+                  color: #1e293b;
+                  border-bottom: 2px solid #60a5fa;
+            }
+
+            td {
+                  padding: 0.75rem 1rem;
+                  color: #334155;
+                  border-bottom: 1px solid #e2e8f0;
+            }
+
+            tbody tr:hover {
+                  background-color: #f8fafc;
+            }
+
+            code {
+                  font-family: 'Fira Code', monospace;
+                  font-size: 0.875rem;
+                  background-color: #f1f5f9;
+                  color: #db2777;
+                  padding: 0.125rem 0.375rem;
+                  border-radius: 0.25rem;
+            }
+
+            .badge {
+                  display: inline-flex;
+                  align-items: center;
+                  padding: 0.25rem 0.625rem;
+                  border-radius: 0.375rem;
+                  font-size: 0.8125rem;
+                  font-weight: 500;
+            }
+
+            .badge-required {
+                  background-color: #fee2e2;
+                  color: #991b1b;
+            }
+
+            .badge-optional {
+                  background-color: #dbeafe;
+                  color: #1e40af;
+            }
+
+            pre {
+                  background-color: #1e293b;
+                  color: #e2e8f0;
+                  padding: 1.25rem;
+                  border-radius: 0.5rem;
+                  overflow-x: auto;
+                  margin: 1.25rem 0;
+            }
+
+            pre code {
+                  background: none;
+                  color: inherit;
+                  padding: 0;
+            }
+
+            .flow-step {
+                  background-color: #f8fafc;
+                  border-left: 3px solid #3b82f6;
+                  padding: 0.875rem 1rem;
+                  margin: 0.5rem 0;
+                  border-radius: 0.25rem;
+                  color: #334155;
+            }
+
+            hr {
+                  border: none;
+                  border-top: 1px solid #e2e8f0;
+                  margin: 2rem 0;
+            }
+      </style>
+</head>
+
+<body>
+      <h1>⭐ STORED PROCEDURE – Đánh Giá Phòng</h1>
+
+      <h2>SP_DANHGIA – Tạo đánh giá phòng sau khi hoàn thành đặt phòng</h2>
+
+      <div class="section">
+            <h3>📌 Mục đích</h3>
+            <p>Cho phép khách hàng <strong>đánh giá phòng</strong> sau khi đã hoàn thành đặt phòng:</p>
+            <ul>
+                  <li>Đảm bảo chỉ đánh giá khi đã ở xong</li>
+                  <li>Mỗi đặt phòng chỉ được đánh giá <strong>1 lần</strong></li>
+                  <li>Lưu đánh giá ở trạng thái chờ duyệt (<code>CHO_XU_LY</code>)</li>
+                  <li>Hỗ trợ quản trị viên kiểm duyệt nội dung</li>
+            </ul>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>📥 Tham số vào</h3>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Tên tham số</th>
+                              <th>Kiểu dữ liệu</th>
+                              <th>Bắt buộc</th>
+                              <th>Mô tả</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td><code>@UserId</code></td>
+                              <td>INT</td>
+                              <td><span class="badge badge-required">✔ Bắt buộc</span></td>
+                              <td>ID người đánh giá</td>
+                        </tr>
+                        <tr>
+                              <td><code>@DatPhongId</code></td>
+                              <td>INT</td>
+                              <td><span class="badge badge-required">✔ Bắt buộc</span></td>
+                              <td>ID đặt phòng</td>
+                        </tr>
+                        <tr>
+                              <td><code>@SoPhong</code></td>
+                              <td>NVARCHAR(20)</td>
+                              <td><span class="badge badge-required">✔ Bắt buộc</span></td>
+                              <td>Số phòng được đánh giá</td>
+                        </tr>
+                        <tr>
+                              <td><code>@SoSao</code></td>
+                              <td>INT</td>
+                              <td><span class="badge badge-required">✔ Bắt buộc</span></td>
+                              <td>Số sao đánh giá (1 → 5)</td>
+                        </tr>
+                        <tr>
+                              <td><code>@BinhLuan</code></td>
+                              <td>NVARCHAR(1000)</td>
+                              <td><span class="badge badge-optional">✖ Tùy chọn</span></td>
+                              <td>Nội dung đánh giá</td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>📋 Điều kiện nghiệp vụ</h3>
+            <ul>
+                  <li>Booking phải thuộc về user</li>
+                  <li>Booking phải có trạng thái <code>HOAN_THANH</code></li>
+                  <li>Mỗi <code>DATPHONG</code> chỉ được đánh giá một lần</li>
+                  <li>Số sao phải từ <strong>1 đến 5</strong></li>
+                  <li>Đánh giá mặc định ở trạng thái <code>CHO_XU_LY</code></li>
+            </ul>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>🔄 Luồng xử lý</h3>
+            <div class="flow-step">1. Kiểm tra booking tồn tại, đúng user và đã hoàn thành (<code>HOAN_THANH</code>)</div>
+            <div class="flow-step">2. Lấy <code>PhongId</code> từ <code>SoPhong</code></div>
+            <div class="flow-step">3. Kiểm tra phòng có thuộc booking không</div>
+            <div class="flow-step">4. Kiểm tra booking đã được đánh giá chưa</div>
+            <div class="flow-step">5. Insert bản ghi vào <code>REVIEWS</code></div>
+            <div class="flow-step">6. Đặt trạng thái đánh giá là <code>CHO_XU_LY</code></div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>✅ Ví dụ gọi</h3>
+            <pre><code>EXEC SP_DANHGIA
+    @UserId = 1,
+    @DatPhongId = 1,
+    @SoPhong = '103',
+    @SoSao = 5,
+    @BinhLuan = N'Phòng sạch sẽ, nhân viên thân thiện, rất hài lòng!';</code></pre>
+      </div>
+</body>
+
+</html>

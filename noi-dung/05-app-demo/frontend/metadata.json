@@ -1,0 +1,5 @@
+{
+  "name": "SQL Demo Manager",
+  "description": "A professional database demonstration tool for visualizing SQL operations, snapshots, and data diffs on Microsoft SQL Server.",
+  "requestFramePermissions": []
+}

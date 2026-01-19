@@ -1,0 +1,105 @@
+{
+  "header": {
+    "title": "Hệ thống Quản lý Đặt phòng Khách sạn (BMS)",
+    "subtitle": "IE103.F12.LT.CNTT - Nhóm 2 - OMEGA",
+    "subject": "Quản lý thông tin",
+    "teacher": "ThS. Nguyễn Thành Luân"
+  },
+  "section1": {
+    "title": "1. Mô tả bài toán",
+    "problemStatement": "Xây dựng hệ thống phần mềm hỗ trợ quản lý toàn diện quy trình kinh doanh của khách sạn quy mô vừa và nhỏ. Mục tiêu giúp tối ưu hóa quy trình đặt phòng, quản lý dịch vụ, kiểm soát doanh thu chặt chẽ và nâng cao trải nghiệm khách hàng thông qua tự động hóa.",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Đặt phòng",
+        "desc": "Khách tìm kiếm & đặt phòng"
+      },
+      {
+        "step": "2",
+        "title": "Check-in",
+        "desc": "Lễ tân giao phòng & xác nhận"
+      },
+      {
+        "step": "3",
+        "title": "Lưu trú",
+        "desc": "Sử dụng dịch vụ & tiện ích"
+      },
+      {
+        "step": "4",
+        "title": "Check-out",
+        "desc": "Thanh toán & trả phòng"
+      }
+    ]
+  },
+  "section2": {
+    "title": "2. Phân tích và thiết kế",
+    "erdHighlights": [
+      "Phòng & Loại phòng: Quản lý danh mục, giá và trạng thái.",
+      "Booking: Thực thể trung tâm kết nối khách và phòng.",
+      "Hóa đơn & Thanh toán: Quản lý dòng tiền, hoàn tiền.",
+      "Dịch vụ & Voucher: Giá trị gia tăng cho booking."
+    ],
+    "businessConstraints": [
+      "Overlap: Một phòng không thể được đặt trùng thời gian.",
+      "Review: Chỉ cho phép đánh giá khi đã thanh toán (PAID) và checkout.",
+      "Payment: Tổng tiền = (Phòng + Dịch vụ) * (1 - Voucher)."
+    ]
+  },
+  "section3": {
+    "title": "3. Cài đặt & Dữ liệu",
+    "dbSystem": "Microsoft SQL Server",
+    "features": [
+      {
+        "title": "Cấu trúc bảng",
+        "desc": "Định nghĩa đầy đủ Primary Key, Foreign Key, và các ràng buộc toàn vẹn dữ liệu."
+      },
+      {
+        "title": "Dữ liệu mẫu",
+        "desc": "Hơn 1000 dòng dữ liệu mô phỏng thực tế bao gồm Lịch sử đặt phòng, Thanh toán."
+      },
+      {
+        "title": "Script Automation",
+        "desc": "Kịch bản SQL tự động tạo Database, Schema và Seed dữ liệu ban đầu."
+      }
+    ]
+  },
+  "section4": {
+    "title": "4. Quản lý thông tin",
+    "stats": [
+      {
+        "label": "Stored Procedures",
+        "value": "5",
+        "color": "blue"
+      },
+      {
+        "label": "Triggers",
+        "value": "5",
+        "color": "amber"
+      },
+      {
+        "label": "Functions",
+        "value": "3",
+        "color": "purple"
+      },
+      {
+        "label": "Cursors",
+        "value": "2",
+        "color": "emerald"
+      }
+    ],
+    "security": [
+      {
+        "label": "Bảo mật",
+        "desc": "Phân quyền RBAC, Mã hóa mật khẩu."
+      },
+      {
+        "label": "Sao lưu",
+        "desc": "Cơ chế Backup & Restore định kỳ."
+      },
+      {
+        "label": "Báo cáo",
+        "desc": "5 biểu mẫu báo cáo quản trị trực quan."
+      }
+    ]
+  }
+}

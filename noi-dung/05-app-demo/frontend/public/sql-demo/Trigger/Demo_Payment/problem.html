@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+      <meta charset="UTF-8">
+      <style>
+            body {
+                  font-family: 'Inter', -apple-system, sans-serif;
+                  line-height: 1.7;
+                  color: #1e293b;
+                  background: #fff;
+                  margin: 0;
+                  padding: 0;
+            }
+
+            h1 {
+                  font-size: 1.875rem;
+                  font-weight: 700;
+                  color: #dc2626;
+                  margin: 0 0 1.5rem 0;
+                  padding-bottom: 0.75rem;
+                  border-bottom: 2px solid #ef4444;
+            }
+
+            h2 {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  color: #0f172a;
+                  margin: 2rem 0 1rem 0;
+            }
+
+            h3 {
+                  font-size: 1.125rem;
+                  font-weight: 600;
+                  color: #334155;
+                  margin: 1.5rem 0 0.75rem 0;
+            }
+
+            p {
+                  margin: 0.75rem 0;
+                  color: #475569;
+            }
+
+            ul {
+                  margin: 0.75rem 0;
+                  padding-left: 1.5rem;
+            }
+
+            li {
+                  margin: 0.375rem 0;
+                  color: #475569;
+            }
+
+            strong {
+                  color: #0f172a;
+                  font-weight: 600;
+            }
+
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin: 1.25rem 0;
+                  font-size: 0.9375rem;
+                  background: #fff;
+                  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+                  border-radius: 0.5rem;
+                  overflow: hidden;
+            }
+
+            th {
+                  background-color: #fca5a5;
+                  padding: 0.875rem 1rem;
+                  text-align: left;
+                  font-weight: 600;
+                  color: #7f1d1d;
+                  border-bottom: 2px solid #f87171;
+            }
+
+            td {
+                  padding: 0.75rem 1rem;
+                  color: #334155;
+                  border-bottom: 1px solid #e2e8f0;
+            }
+
+            tbody tr:hover {
+                  background-color: #fef2f2;
+            }
+
+            code {
+                  font-family: 'Fira Code', monospace;
+                  font-size: 0.875rem;
+                  background-color: #fef2f2;
+                  color: #dc2626;
+                  padding: 0.125rem 0.375rem;
+                  border-radius: 0.25rem;
+            }
+
+            pre {
+                  background-color: #1e293b;
+                  color: #e2e8f0;
+                  padding: 1.25rem;
+                  border-radius: 0.5rem;
+                  overflow-x: auto;
+                  margin: 1.25rem 0;
+            }
+
+            pre code {
+                  background: none;
+                  color: inherit;
+                  padding: 0;
+            }
+
+            .flow-step {
+                  background-color: #fef2f2;
+                  border-left: 3px solid #ef4444;
+                  padding: 0.875rem 1rem;
+                  margin: 0.5rem 0;
+                  border-radius: 0.25rem;
+                  color: #334155;
+            }
+
+            hr {
+                  border: none;
+                  border-top: 1px solid #e2e8f0;
+                  margin: 2rem 0;
+            }
+      </style>
+</head>
+
+<body>
+      <h1>💳 TRIGGER – Xử Lý Thanh Toán</h1>
+
+      <h2>TR_PAYMENT – Tự động xử lý sau thanh toán</h2>
+
+      <div class="section">
+            <h3>📌 Mục đích</h3>
+            <p>Trigger tự động <strong>cập nhật hệ thống</strong> khi có thanh toán mới:</p>
+            <ul>
+                  <li>Cập nhật trạng thái booking → CONFIRMED</li>
+                  <li>Ghi log thanh toán</li>
+                  <li>Giảm số lượng voucher đã sử dụng</li>
+                  <li>Tạo thông báo cho user</li>
+            </ul>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>🎯 Kích hoạt khi</h3>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Bảng</th>
+                              <th>Sự kiện</th>
+                              <th>Thời điểm</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td><code>THANH_TOAN</code></td>
+                              <td>INSERT</td>
+                              <td>AFTER</td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>🔄 Logic xử lý</h3>
+            <div class="flow-step">1. Lấy thông tin thanh toán từ bảng <code>INSERTED</code></div>
+            <div class="flow-step">2. UPDATE <code>DATPHONG</code> SET trang_thai = 'CONFIRMED'</div>
+            <div class="flow-step">3. Nếu có voucher → UPDATE <code>VOUCHER</code> tăng so_lan_su_dung</div>
+            <div class="flow-step">4. INSERT log vào <code>PAYMENT_LOG</code></div>
+            <div class="flow-step">5. INSERT thông báo vào <code>THONG_BAO</code></div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>✅ Demo</h3>
+            <pre><code>-- Trước: Booking có trạng thái PENDING
+SELECT trang_thai FROM DATPHONG WHERE id = 1;
+-- trang_thai = 'PENDING'
+
+-- Thêm thanh toán
+INSERT INTO THANH_TOAN (booking_id, so_tien, phuong_thuc)
+VALUES (1, 1500000, 'CARD');
+
+-- Sau: Trigger tự động cập nhật booking
+SELECT trang_thai FROM DATPHONG WHERE id = 1;
+-- trang_thai = 'CONFIRMED' ✓
+
+-- Kiểm tra log được tạo
+SELECT * FROM PAYMENT_LOG WHERE booking_id = 1;
+-- Có bản ghi log ✓</code></pre>
+      </div>
+</body>
+
+</html>

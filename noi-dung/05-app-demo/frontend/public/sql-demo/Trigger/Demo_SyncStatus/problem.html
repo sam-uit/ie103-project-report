@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+      <meta charset="UTF-8">
+      <style>
+            body {
+                  font-family: 'Inter', -apple-system, sans-serif;
+                  line-height: 1.7;
+                  color: #1e293b;
+                  background: #fff;
+                  margin: 0;
+                  padding: 0;
+            }
+
+            h1 {
+                  font-size: 1.875rem;
+                  font-weight: 700;
+                  color: #dc2626;
+                  margin: 0 0 1.5rem 0;
+                  padding-bottom: 0.75rem;
+                  border-bottom: 2px solid #ef4444;
+            }
+
+            h2 {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  color: #0f172a;
+                  margin: 2rem 0 1rem 0;
+            }
+
+            h3 {
+                  font-size: 1.125rem;
+                  font-weight: 600;
+                  color: #334155;
+                  margin: 1.5rem 0 0.75rem 0;
+            }
+
+            p {
+                  margin: 0.75rem 0;
+                  color: #475569;
+            }
+
+            ul {
+                  margin: 0.75rem 0;
+                  padding-left: 1.5rem;
+            }
+
+            li {
+                  margin: 0.375rem 0;
+                  color: #475569;
+            }
+
+            strong {
+                  color: #0f172a;
+                  font-weight: 600;
+            }
+
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin: 1.25rem 0;
+                  font-size: 0.9375rem;
+                  background: #fff;
+                  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+                  border-radius: 0.5rem;
+                  overflow: hidden;
+            }
+
+            th {
+                  background-color: #fca5a5;
+                  padding: 0.875rem 1rem;
+                  text-align: left;
+                  font-weight: 600;
+                  color: #7f1d1d;
+                  border-bottom: 2px solid #f87171;
+            }
+
+            td {
+                  padding: 0.75rem 1rem;
+                  color: #334155;
+                  border-bottom: 1px solid #e2e8f0;
+            }
+
+            tbody tr:hover {
+                  background-color: #fef2f2;
+            }
+
+            code {
+                  font-family: 'Fira Code', monospace;
+                  font-size: 0.875rem;
+                  background-color: #fef2f2;
+                  color: #dc2626;
+                  padding: 0.125rem 0.375rem;
+                  border-radius: 0.25rem;
+            }
+
+            pre {
+                  background-color: #1e293b;
+                  color: #e2e8f0;
+                  padding: 1.25rem;
+                  border-radius: 0.5rem;
+                  overflow-x: auto;
+                  margin: 1.25rem 0;
+            }
+
+            pre code {
+                  background: none;
+                  color: inherit;
+                  padding: 0;
+            }
+
+            .flow-step {
+                  background-color: #fef2f2;
+                  border-left: 3px solid #ef4444;
+                  padding: 0.875rem 1rem;
+                  margin: 0.5rem 0;
+                  border-radius: 0.25rem;
+                  color: #334155;
+            }
+
+            hr {
+                  border: none;
+                  border-top: 1px solid #e2e8f0;
+                  margin: 2rem 0;
+            }
+      </style>
+</head>
+
+<body>
+      <h1>🔄 TRIGGER – Đồng Bộ Trạng Thái</h1>
+
+      <h2>TR_SYNC_STATUS – Đồng bộ trạng thái phòng</h2>
+
+      <div class="section">
+            <h3>📌 Mục đích</h3>
+            <p>Trigger tự động <strong>cập nhật trạng thái phòng</strong> khi có thay đổi đặt phòng:</p>
+            <ul>
+                  <li>Khi đặt phòng mới → Phòng chuyển sang RESERVED</li>
+                  <li>Khi hủy đặt → Phòng trở lại AVAILABLE</li>
+                  <li>Khi check-in → Phòng chuyển sang OCCUPIED</li>
+                  <li>Khi check-out → Phòng trở lại AVAILABLE</li>
+            </ul>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>🎯 Kích hoạt khi</h3>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Bảng</th>
+                              <th>Sự kiện</th>
+                              <th>Thời điểm</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td><code>DATPHONG</code></td>
+                              <td>INSERT, UPDATE, DELETE</td>
+                              <td>AFTER</td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>🔄 Logic xử lý</h3>
+            <div class="flow-step">1. Phát hiện loại thay đổi (INSERT/UPDATE/DELETE)</div>
+            <div class="flow-step">2. Lấy danh sách phòng từ <code>CT_DATPHONG</code></div>
+            <div class="flow-step">3. Xác định trạng thái mới dựa trên <code>trang_thai</code> của DATPHONG</div>
+            <div class="flow-step">4. UPDATE bảng <code>PHONG</code> với trạng thái tương ứng</div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>📊 Mapping trạng thái</h3>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Trạng thái DATPHONG</th>
+                              <th>→</th>
+                              <th>Trạng thái PHONG</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td>PENDING</td>
+                              <td>→</td>
+                              <td>RESERVED</td>
+                        </tr>
+                        <tr>
+                              <td>CONFIRMED</td>
+                              <td>→</td>
+                              <td>OCCUPIED</td>
+                        </tr>
+                        <tr>
+                              <td>COMPLETED / CANCELLED</td>
+                              <td>→</td>
+                              <td>AVAILABLE</td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>✅ Demo</h3>
+            <pre><code>-- Trước: Phòng 101 có trạng thái AVAILABLE
+SELECT trang_thai FROM PHONG WHERE id = 101;
+-- trang_thai = 'AVAILABLE'
+
+-- Tạo đặt phòng mới
+INSERT INTO DATPHONG (user_id, check_in, check_out, trang_thai)
+VALUES (1, '2024-02-20', '2024-02-25', 'PENDING');
+
+-- Sau: Trigger tự động cập nhật
+SELECT trang_thai FROM PHONG WHERE id = 101;
+-- trang_thai = 'RESERVED' ✓</code></pre>
+      </div>
+</body>
+
+</html>

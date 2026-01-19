@@ -1,0 +1,55 @@
+{
+      "id": "fn-revert-create-error",
+      "title": "Function 2: Xử Lý Lỗi Tạo Booking",
+      "type": "Function",
+      "shortDesc": "Function để revert các thay đổi khi tạo booking bị lỗi",
+      "mdFile": "Function/Demo_RevertCreateErorr/problem.html",
+      "sqlFile": "Function/Demo_RevertCreateErorr/fn_RevertCreateError.sql",
+      "separateTables": [
+            {
+                  "name": "DATPHONG",
+                  "label": "📋 Bảng Đặt Phòng",
+                  "sqlBefore": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = @DatPhongID",
+                  "sqlAfter": "SELECT id, user_id, trang_thai FROM DATPHONG WHERE id = @DatPhongID",
+                  "sqlFetchInitial": "SELECT TOP 20 id, user_id, trang_thai FROM DATPHONG ORDER BY created_at DESC",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "Booking ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "user_id",
+                              "label": "User ID"
+                        },
+                        {
+                              "key": "trang_thai",
+                              "label": "⚡ Trạng Thái"
+                        }
+                  ]
+            }
+      ],
+      "params": [
+            {
+                  "name": "@DatPhongID",
+                  "type": "int",
+                  "defaultValue": 1
+            }
+      ],
+      "mockData": {
+            "before": [
+                  {
+                        "id": 1,
+                        "user_id": 1,
+                        "trang_thai": "ERROR"
+                  }
+            ],
+            "after": [
+                  {
+                        "id": 1,
+                        "user_id": 1,
+                        "trang_thai": "CANCELLED"
+                  }
+            ]
+      }
+}

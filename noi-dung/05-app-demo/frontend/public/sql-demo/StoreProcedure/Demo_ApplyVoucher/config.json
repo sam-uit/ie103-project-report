@@ -1,0 +1,114 @@
+{
+      "id": "sp-apply-voucher",
+      "title": "SP 2: Áp Dụng Voucher",
+      "type": "Stored Procedure",
+      "shortDesc": "Stored Procedure để kiểm tra và áp dụng voucher giảm giá",
+      "mdFile": "StoreProcedure/Demo_ApplyVoucher/problem.html",
+      "sqlFile": "StoreProcedure/Demo_ApplyVoucher/sp_ApplyVoucher.sql",
+      "separateTables": [
+            {
+                  "name": "DATPHONG",
+                  "label": "📋 Bảng Đặt Phòng",
+                  "sqlBefore": "SELECT id, user_id, voucher_code, trang_thai FROM DATPHONG WHERE id = @DatPhongId",
+                  "sqlAfter": "SELECT id, user_id, voucher_code, trang_thai FROM DATPHONG WHERE id = @DatPhongId",
+                  "sqlFetchInitial": "SELECT TOP 20 dp.id, dp.user_id, dp.voucher_code, dp.trang_thai FROM DATPHONG dp ORDER BY dp.created_at DESC",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "Booking ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "user_id",
+                              "label": "User ID"
+                        },
+                        {
+                              "key": "voucher_code",
+                              "label": "⚡ Mã Voucher"
+                        },
+                        {
+                              "key": "trang_thai",
+                              "label": "Trạng Thái"
+                        }
+                  ]
+            },
+            {
+                  "name": "VOUCHERS",
+                  "label": "🎟️ Bảng Vouchers",
+                  "sqlBefore": "SELECT id, ma_code, phan_tram_giam, so_lan_da_dung, trang_thai FROM VOUCHERS WHERE ma_code = @VoucherCode",
+                  "sqlAfter": "SELECT id, ma_code, phan_tram_giam, so_lan_da_dung, trang_thai FROM VOUCHERS WHERE ma_code = @VoucherCode",
+                  "sqlFetchInitial": "SELECT TOP 20 id, ma_code, phan_tram_giam, so_lan_da_dung, trang_thai FROM VOUCHERS",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "ma_code",
+                              "label": "Mã Code"
+                        },
+                        {
+                              "key": "phan_tram_giam",
+                              "label": "% Giảm"
+                        },
+                        {
+                              "key": "so_lan_da_dung",
+                              "label": "⚡ Đã Dùng"
+                        },
+                        {
+                              "key": "trang_thai",
+                              "label": "Trạng Thái"
+                        }
+                  ]
+            }
+      ],
+      "params": [
+            {
+                  "name": "@DatPhongId",
+                  "type": "int",
+                  "defaultValue": 4
+            },
+            {
+                  "name": "@VoucherCode",
+                  "type": "string",
+                  "defaultValue": "DISCOUNT5"
+            },
+            {
+                  "name": "@TongTienPhong",
+                  "type": "decimal",
+                  "defaultValue": 0,
+                  "isOutput": true
+            },
+            {
+                  "name": "@TienGiam",
+                  "type": "decimal",
+                  "defaultValue": 0,
+                  "isOutput": true
+            },
+            {
+                  "name": "@TongTienSauGiam",
+                  "type": "decimal",
+                  "defaultValue": 0,
+                  "isOutput": true
+            }
+      ],
+      "mockData": {
+            "before": [
+                  {
+                        "id": 1,
+                        "user_id": 1,
+                        "voucher_code": null,
+                        "discount_amount": 0
+                  }
+            ],
+            "after": [
+                  {
+                        "id": 1,
+                        "user_id": 1,
+                        "voucher_code": "SALE50",
+                        "discount_amount": 500000
+                  }
+            ]
+      }
+}
