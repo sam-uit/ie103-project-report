@@ -1,0 +1,170 @@
+# Template: D2
+# Author: Sam Dinh
+# Mục đích: Tạo ER Diagram Chen Notation.
+# Trang nguồn: https://d2lang.com/
+# VSCode extension: Terrastruct.d2
+
+direction: right
+
+# Tiêu đề: căn góc trên-giữa
+# title: |md
+#   # Mô Hình Thực Thể Quan Hệ (ER Diagram Chen Notation)
+# | {near: top-center}
+
+# title.style: {
+# font-size: 20
+# font: "mono"
+# }
+
+# --- 0. STYLES ---
+style: {
+  # font: "mono"
+  font-size: 20
+  opacity: 0.0
+  fill: transparent
+  # stroke: "orange"
+  # stroke-width: 5
+}
+
+# --- 1. CSS STYLES (THEME) ---
+classes: {
+  # Thực thể: Chữ nhật bo góc Apple style
+  entity: {
+    shape: rectangle
+    style: {
+      border-radius: 15
+      stroke-width: 2
+      fill: "#FFFFFF"
+      stroke: "#333333"
+      font-size: 20
+    }
+  }
+
+  # Quan hệ (Relationship): Hình thoi
+  rel: {
+    shape: diamond
+    style: {
+      fill: "#F2F2F7"
+      stroke: "#8E8E93"
+      stroke-width: 2
+      font-size: 20
+    }
+  }
+
+  # Thuộc tính: Oval (chưa dùng nhiều để tránh rối)
+  attr: {
+    shape: oval
+    width: 60
+    height: 40
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      font-size: 20
+    }
+  }
+}
+
+# --- 2. ENTITIES (THỰC THỂ) ---
+# Dựa trên init_tables.sql và tài liệu mô tả
+
+ADMINS: {class: entity; label: "ADMINS"}
+ROLES: {class: entity; label: "ROLES"}
+PERMISSIONS: {class: entity; label: "PERMISSIONS"}
+
+USERS: {class: entity; label: "USERS"}
+VOUCHERS: {class: entity; label: "VOUCHERS"}
+
+DATPHONG: {class: entity; label: "DATPHONG"}
+LOAIPHONG: {class: entity; label: "LOAIPHONG"}
+PHONG: {class: entity; label: "PHONG"}
+DICHVU: {class: entity; label: "DICHVU"}
+
+PAYMENTS: {class: entity; label: "PAYMENTS"}
+REFUNDS: {class: entity; label: "REFUNDS"}
+REVIEWS: {class: entity; label: "REVIEWS"}
+
+# --- 3. RELATIONSHIPS (MỐI QUAN HỆ) ---
+# Phân biệt rõ đâu là quan hệ. 
+# Các bảng trung gian N-N trong SQL được coi là Quan Hệ trong ERD.
+
+# Quan hệ N-N (Từ bảng trung gian)
+ADMIN_ROLES: {class: rel; label: "Được Gán\nADMIN_ROLES"}
+ROLE_PERMISSIONS: {class: rel; label: "Bao Gồm\nROLE_PERMISSIONS"}
+CT_DATPHONG: {class: rel; label: "Chi Tiết Đặt\nCT_DATPHONG"}
+CT_SUDUNG_DV: {class: rel; label: "Chi Tiết DV\nCT_SUDUNG_DV"}
+
+# Quan hệ 1-N / 1-1 (Logical)
+thuc_hien: {class: rel; label: "Thực Hiện"}
+thuoc_loai: {class: rel; label: "Thuộc Loại"}
+ap_dung: {class: rel; label: "Áp Dụng"}
+thanh_toan: {class: rel; label: "Thanh Toán"}
+hoan_tien: {class: rel; label: "Hoàn Tiền"}
+yeu_cau: {class: rel; label: "Yêu Cầu"}
+duoc_duyet: {class: rel; label: "Được Duyệt"}
+tao_review: {class: rel; label: "Viết"}
+review_cho: {class: rel; label: "Review Cho"}
+review_cua: {class: rel; label: "Của Đơn"}
+
+# --- 4. CONNECTIONS (CARDINALITY) ---
+
+# --- Nhóm User & Authorization ---
+# N-N: Admin - Roles
+ADMINS -- ADMIN_ROLES: m
+ADMIN_ROLES -- ROLES: n
+
+# N-N: Roles - Permissions
+ROLES -- ROLE_PERMISSIONS: m
+ROLE_PERMISSIONS -- PERMISSIONS: n
+
+# --- Nhóm Booking & Room ---
+# 1-N: User - DatPhong
+USERS -- thuc_hien: 1
+thuc_hien -- DATPHONG: n
+
+# N-N: DatPhong - Phong (thông qua CT_DATPHONG)
+DATPHONG -- CT_DATPHONG: m
+CT_DATPHONG -- PHONG: n
+
+# 1-N: LoaiPhong - Phong
+PHONG -- thuoc_loai: n
+thuoc_loai -- LOAIPHONG: 1
+
+# 1-N: Voucher - DatPhong
+VOUCHERS -- ap_dung: 1
+ap_dung -- DATPHONG: n
+
+# N-N: DatPhong - DichVu (thông qua CT_SUDUNG_DV)
+DATPHONG -- CT_SUDUNG_DV: m
+CT_SUDUNG_DV -- DICHVU: n
+
+# --- Nhóm Payment & Refund ---
+# 1-N: DatPhong - Payments (Một đơn có thể có nhiều giao dịch?)
+# SQL: Payment references Booking.
+DATPHONG -- thanh_toan: 1
+thanh_toan -- PAYMENTS: n
+
+# 1-N: Payments - Refunds
+PAYMENTS -- hoan_tien: 1
+hoan_tien -- REFUNDS: n
+
+# User & Admin liên quan đến Refund
+USERS -- yeu_cau: 1
+yeu_cau -- REFUNDS: n
+ADMINS -- duoc_duyet: 1
+duoc_duyet -- REFUNDS: n
+
+# --- Nhóm Review ---
+# SQL: Reviews references User, Phong, DatPhong (Unique)
+
+# 1-N: User - Reviews
+USERS -- tao_review: 1
+tao_review -- REVIEWS: n
+
+# 1-N: Phong - Reviews
+PHONG -- review_cho: 1
+review_cho -- REVIEWS: n
+
+# 1-1: DatPhong - Reviews (Mỗi đơn 1 review)
+DATPHONG -- review_cua: 1
+review_cua -- REVIEWS: 1

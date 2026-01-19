@@ -332,7 +332,7 @@ Tài liệu này mô tả ý nghĩa của từng **thực thể (Entity)** trong
 
 ## 8. Ghi chú thiết kế
 
-- Các quan hệ N–N đều được xử lý bằng bảng trung gian (CT_DATPHONG, CT_SUDUNG_DV, ADMIN_ROLES, ROLE_PERMISSIONS).
+- Các quan hệ N–N đều được xử lý bằng bảng trung gian (`CT_DATPHONG`, `CT_SUDUNG_DV`, `ADMIN_ROLES`, `ROLE_PERMISSIONS`).
 - Phù hợp triển khai ràng buộc khóa ngoại, trigger và procedure trong SQL.
 - **Trigger** được sử dụng để:
   - Kiểm tra voucher còn hạn và tự động tính lại tổng tiền thanh toán
