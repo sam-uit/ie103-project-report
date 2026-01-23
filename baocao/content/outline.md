@@ -34,15 +34,15 @@
 
 ### Triggers (5)
 
-#### TG1
+#### TG1: AutoPrice
 
-#### TG2
+#### TG2: CheckTime
 
-#### TG3
+#### TG3: Payment
 
-#### TG4
+#### TG4: Refund
 
-#### TG5
+#### TG5: SyncStatus
 
 ### Functions (3)
 

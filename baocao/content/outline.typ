@@ -65,24 +65,24 @@
 <triggers-5>
 
 
-==== TG1
-<tg1>
+==== TG1: AutoPrice
+<tg1-autoprice>
 
 
-==== TG2
-<tg2>
+==== TG2: CheckTime
+<tg2-checktime>
 
 
-==== TG3
-<tg3>
+==== TG3: Payment
+<tg3-payment>
 
 
-==== TG4
-<tg4>
+==== TG4: Refund
+<tg4-refund>
 
 
-==== TG5
-<tg5>
+==== TG5: SyncStatus
+<tg5-syncstatus>
 
 
 === Functions (3)
