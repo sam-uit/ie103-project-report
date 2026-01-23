@@ -7,65 +7,126 @@
 == Các Chức Năng Nghiệp Vụ
 <cac-chuc-nang-nghiep-vu>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
 
-#figure(image("assets/macos-fhs-root-system.png"), caption: [
-  Bài 2. Cây thư mục trong CLI của macOS.
-])
+=== Bao Gồm
+<bao-gom>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat.
+- Quản lý phòng và loại phòng (BMS).
+- Quản lý khách hàng (BMS).
+- Quản lý đặt phòng (BMS).
+- Kiểm tra phòng trống (BMS & User Application).
+- Đặt phòng và hủy đặt phòng (User Application).
+- Thanh toán trực tuyến (mô phỏng).
+- Hoàn tiền và hủy giao dịch theo chính sách.
+- Quản lý và phân quyền người dùng (Admin / Staff / End User).
+- Hiển thị trạng thái đặt phòng và thanh toán (User Application).
+- Ứng dụng web hoặc mobile hoàn chỉnh phục vụ thao tác đặt phòng.
+- #strong[Hệ thống khuyến mãi & mã giảm giá (Vouchers)].
+- #strong[Quản lý dịch vụ đi kèm (Add-on Services)] như ăn sáng, giặt ủi, đưa đón sân bay.
+- #strong[Hệ thống đánh giá & phản hồi (Reviews & Ratings)] sau khi hoàn tất thanh toán.
 
-== Đối Tượng và Mối Quan Hệ
+=== Không Bao Gồm
+<khong-bao-gom>
+
+- Tích hợp cổng thanh toán thực tế (VNPay, Stripe, PayPal).
+- Hệ thống kế toán hoặc xuất hóa đơn điện tử.
+- Tối ưu hiệu năng cho quy mô lớn (high traffic).
+- Tích hợp bên thứ ba (OTA như Booking, Agoda).
+
+== Đối Tượng Và Mối Quan Hệ
 <doi-tuong-va-moi-quan-he>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
+#figure(image("diagrams/ch02-ER.svg"),
+  caption: [
+    Mô Hình Thực Thể Quan Hệ
+  ]
+)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat.
+=== User Stories
+<user-stories>
+
+- US-01: Quản lý phòng
+  - Là #strong[Admin], tôi muốn thêm, sửa, xóa phòng để cập nhật thông tin phòng.
+- US-02: Quản lý khách hàng
+  - Là #strong[Staff], tôi muốn lưu trữ thông tin khách hàng để theo dõi lịch sử đặt phòng.
+- US-03: Đặt phòng (End User) / Khách hàng
+  - Là #strong[End User], tôi muốn tìm kiếm phòng trống và đặt phòng theo thời gian mong muốn.
+- US-04: Hủy đặt phòng (End User) / Khách hàng
+  - Là #strong[End User], tôi muốn hủy đặt phòng trước thời điểm nhận phòng và biết liệu mình có được hoàn tiền hay không.
+- US-05: Kiểm tra phòng trống
+  - Là #strong[Staff] hoặc #strong[End User], tôi muốn xem danh sách phòng trống theo ngày check-in và check-out.
+- US-06: Thanh toán
+  - Là #strong[Staff], tôi muốn ghi nhận thanh toán và hoàn tiền cho một đặt phòng để theo dõi trạng thái thanh toán và doanh thu.
+- US-07: Áp dụng mã giảm giá
+  - Là #strong[End User], tôi muốn áp dụng mã giảm giá (voucher) khi đặt phòng để được giảm giá theo chương trình khuyến mãi.
+- US-08: Sử dụng dịch vụ đi kèm
+  - Là #strong[End User], tôi muốn đặt thêm các dịch vụ đi kèm (ăn sáng, giặt ủi, đưa đón sân bay) trong thời gian lưu trú để tiện lợi hơn.
+- US-09: Đánh giá phòng
+  - Là #strong[End User], tôi muốn đánh giá và để lại phản hồi về phòng sau khi hoàn tất thanh toán và trả phòng để chia sẻ trải nghiệm của mình.
+- US-10: Xem đánh giá phòng
+  - Là #strong[End User], tôi muốn xem điểm trung bình và các đánh giá của từng loại phòng để đưa ra quyết định đặt phòng phù hợp.
+
+=== Các Đối Tượng Chính
+<cac-doi-tuong-chinh>
 
 #figure(
-  align(center)[
-    #table(
-      columns: (1fr,) * 4,
-      align: (left, left, left, left),
-      [#strong[Thuộc tính]], [#strong[Ổ đĩa (Volume/Drive)]], [#strong[Thư mục (Folder)]], [#strong[Tập tin (File)]],
-      [#strong[Tên (Name)]],
-      [Tên phân vùng (VD: Macintosh HD).],
-      [Tên thư mục.],
-      [Tên file + Đuôi mở rộng (Extension).],
-
-      [#strong[Loại (Kind)]], [Định dạng (APFS, NTFS…).], [Folder.], [Định dạng (PDF, JPG, Docx…).],
-      [#strong[Kích thước (Size)]],
-      [Dung lượng tổng / Khả dụng.],
-      [Tổng kích thước nội dung.],
-      [Kích thước thực của file.],
-
-      [#strong[Ngày tháng]],
-      [Ngày tạo phân vùng.],
-      [Ngày tạo, ngày sửa đổi nội dung.],
-      [Ngày tạo, sửa đổi, mở gần nhất.],
-
-      [#strong[Quyền (Permissions)]],
-      [Quản trị hệ thống (System R/W).],
-      [Read/Write/Execute (truy cập).],
-      [Read/Write/Execute (thao tác).],
-
-      [#strong[Khác]],
-      [Mount point, thông tin phần cứng.],
-      [Số lượng mục con (items count).],
-      [App mặc định (Open with).],
-    )
-  ],
+  table(
+    columns: (10%, 30%, 15%, 45%),
+    align: (right, left, left, left),
+    [#strong("STT")], [#strong("Tên Thực Thể")], [#strong("Loại")], [#strong("Mô tả")],
+    [1], [`ADMIN_ROLES`], [Quan hệ], [Quan hệ giữa admin và role],
+    [2], [`ADMINS`], [Thực thể], [Admin và staff],
+    [3], [`CT_DATPHONG`], [Thực thể], [Chi tiết đặt phòng],
+    [4], [`CT_SUDUNG_DV`], [Thực thể], [Chi tiết sử dụng dịch vụ],
+    [5], [`DATPHONG`], [Thực thể], [Đặt phòng],
+    [6], [`DICHVU`], [Thực thể], [Dịch vụ đi kèm],
+    [7], [`LOAIPHONG`], [Thực thể], [Loại phòng],
+    [8], [`PAYMENTS`], [Thực thể], [Thanh toán],
+    [9], [`PERMISSIONS`], [Quan hệ], [Quan hệ giữa permission và role],
+    [10], [`PHONG`], [Thực thể], [Phòng],
+    [11], [`REFUNDS`], [Thực thể], [Hoàn tiền],
+    [12], [`REVIEWS`], [Thực thể], [Đánh giá & phản hồi],
+    [13], [`ROLE_PERMISSIONS`], [Quan hệ], [Quan hệ giữa role và permission],
+    [14], [`ROLES`], [Thực thể], [Role],
+    [15], [`USERS`], [Thực thể], [End User],
+    [16], [`VOUCHERS`], [Thực thể], [Mã giảm giá],
+  ),
   caption: [
-    @phan-tich-va-thiet-ke[Chương] -- Ví Dụ Về Bảng
+    Các Đối Tượng Chính
   ],
 )
+
+=== Quan Hệ Giữa Các Đối Tượng
+<quan-he-giua-cac-doi-tuong>
+
+- `ADMINS 1 --- n ADMIN_ROLES`: Một admin có thể có nhiều admin role.
+- `DATPHONG 1 --- 1 REVIEWS`: Một đặt phòng có thể có một đánh giá.
+- `DATPHONG 1 --- n CT_DATPHONG`: Một đặt phòng có thể có nhiều chi tiết đặt phòng.
+- `DATPHONG 1 --- n CT_SUDUNG_DV`: Một đặt phòng có thể sử dụng nhiều dịch vụ.
+- `DATPHONG 1 --- n PAYMENTS`: Một đặt phòng có thể có nhiều thanh toán.
+- `DICHVU 1 --- n CT_SUDUNG_DV`: Một dịch vụ có thể được sử dụng nhiều lần.
+- `LOAIPHONG 1 --- n PHONG`: Một loại phòng có thể có nhiều phòng.
+- `PAYMENTS 1 --- n REFUNDS`: Một thanh toán có thể có nhiều hoàn tiền.
+- `PERMISSIONS 1 --- n ROLE_PERMISSIONS`: Một permission có thể thuộc nhiều role.
+- `PHONG 1 --- n CT_DATPHONG`: Một phòng có thể có nhiều chi tiết đặt phòng.
+- `PHONG 1 --- n REVIEWS`: Một phòng có thể có nhiều đánh giá.
+- `ROLES 1 --- n ADMIN_ROLES`: Một role có thể có nhiều admin roles.
+- `ROLES 1 --- n ROLE_PERMISSIONS`: Một role có thể có nhiều role permission.
+- `USERS 1 --- n DATPHONG`: Một user có thể có nhiều đặt phòng.
+- `USERS 1 --- n REVIEWS`: Một user có thể đánh giá nhiều phòng.
+- `VOUCHERS 1 --- n DATPHONG`: Một voucher có thể được dùng cho nhiều đặt phòng.
 
 == Mô Hình Mức Quan Niệm
 <mo-hinh-muc-quan-niem>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
+
+=== Nhóm Bảng Thực Thể
+<nhom-bang-thuc-the>
+
+
+=== Nhóm Bảng Mối Quan Hệ
+<nhom-bang-moi-quan-he>
+
 
 == Thiết Kế Cơ Sở Dữ Liệu
 <thiet-ke-co-so-du-lieu>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
