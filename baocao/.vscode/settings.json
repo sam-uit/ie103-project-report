@@ -1,0 +1,11 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "Iosevka, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 15,
+    "editor.wordWrap": "off",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.autoIndentOnPaste": true,
+    "editor.tabCompletion": "on",
+    "makefile.configureOnOpen": false
+}
