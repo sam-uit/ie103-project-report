@@ -8,10 +8,6 @@
 <phan-tich-va-thiet-ke>
 
 
-= Phân Tích Và Thiết Kế
-<phan-tich-va-thiet-ke>
-
-
 = Cài Đặt Và Triển Khai
 <cai-dat-va-trien-khai>
 
@@ -26,6 +22,18 @@
 
 === Stored Procedures
 <stored-procedures>
+
+
+=== Triggers
+<triggers>
+
+
+=== Functions
+<functions>
+
+
+=== Cursors
+<cursors>
 
 
 == Trình Bày Thông Tin
