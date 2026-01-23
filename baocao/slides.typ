@@ -6,7 +6,7 @@
   title: data.assignment.title,
   subtitle: data.assignment.subtitle,
   author: data.author.name,
-  date: datetime.today(),
+  date: data.assignment.date,
   institution: data.course.name,
 )
 
