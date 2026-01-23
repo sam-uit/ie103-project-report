@@ -39,6 +39,7 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
       const fetchJson = async (path: string, fallback: any) => {
             try {
+                  console.log('🔍 Fetching menu config...', `${import.meta.env.BASE_URL}${path}`);
                   const res = await fetch(`${import.meta.env.BASE_URL}${path}`);
                   if (!res.ok) throw new Error(`Failed to load ${path}`);
                   return await res.json();
@@ -60,11 +61,12 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
             try {
                   // Fetch all config files in parallel
+                  console.log('🔍 Scanning menu config...');
                   const [settings, overview, reports, team] = await Promise.all([
-                        fetchJson('/config/settings.json', { title: "Hệ Thống Demo", description: "Config missing", version: "0.0" }),
-                        fetchJson('/config/overview.json', {}),
-                        fetchJson('/config/reports.json', []),
-                        fetchJson('/config/team.json', [])
+                        fetchJson('config/settings.json', { title: "Hệ Thống Demo", description: "Config missing", version: "0.0" }),
+                        fetchJson('config/overview.json', {}),
+                        fetchJson('config/reports.json', []),
+                        fetchJson('config/team.json', [])
                   ]);
 
                   // Load scenarios from sql-demo folder using demo scanner
