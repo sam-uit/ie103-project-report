@@ -92,29 +92,66 @@ classes: {
 # Dựa trên init_tables.sql và tài liệu mô tả
 
 ADMINS: {class: entity; label: "ADMINS"}
+admin_id: {class: attr_pri; label: "id"}
+ADMINS -- admin_id: {style: {stroke-width: 1}}
+
 ROLES: {class: entity; label: "ROLES"}
+role_id: {class: attr_pri; label: "id"}
+ROLES -- role_id: {style: {stroke-width: 1}}
+
 PERMISSIONS: {class: entity; label: "PERMISSIONS"}
+permission_id: {class: attr_pri; label: "id"}
+PERMISSIONS -- permission_id: {style: {stroke-width: 1}}
 
 USERS: {class: entity; label: "USERS"}
+user_id: {class: attr_pri; label: "id"}
+USERS -- user_id: {style: {stroke-width: 1}}
+
 VOUCHERS: {class: entity; label: "VOUCHERS"}
+voucher_id: {class: attr_pri; label: "id"}
+VOUCHERS -- voucher_id: {style: {stroke-width: 1}}
 
 DATPHONG: {class: entity; label: "DATPHONG"}
+datphong_id: {class: attr_pri; label: "id"}
+DATPHONG -- datphong_id: {style: {stroke-width: 1}}
+
 LOAIPHONG: {class: entity; label: "LOAIPHONG"}
+
 PHONG: {class: entity; label: "PHONG"}
+
 DICHVU: {class: entity; label: "DICHVU"}
 
 PAYMENTS: {class: entity; label: "PAYMENTS"}
+
 REFUNDS: {class: entity; label: "REFUNDS"}
+
 REVIEWS: {class: entity; label: "REVIEWS"}
 
 # --- 3. RELATIONSHIPS (MỐI QUAN HỆ) ---
 # Phân biệt rõ đâu là quan hệ. 
 # Các bảng trung gian N-N trong SQL được coi là Quan Hệ trong ERD.
+# FOREIGN KEY: orange
 
 # Quan hệ N-N (Từ bảng trung gian)
 ADMIN_ROLES: {class: rel; label: "Được Gán\nADMIN_ROLES"}
+admin_roles_pri_key: {class: attr_foreign_pri; width: 200; label: "admin_id, role_id"}
+ADMIN_ROLES -- admin_roles_pri_key: {style: {stroke-width: 1; stroke: orange}}
+
 ROLE_PERMISSIONS: {class: rel; label: "Bao Gồm\nROLE_PERMISSIONS"}
+roles_permissions_pri_key: {class: attr_foreign_pri; width: 200; label: "role_id, permission_id"}
+ROLE_PERMISSIONS -- roles_permissions_pri_key: {style: {stroke-width: 1; stroke: orange}}
+
 CT_DATPHONG: {class: rel; label: "Chi Tiết Đặt\nCT_DATPHONG"}
+ct_datphong_id: {class: attr_pri; label: "id"}
+ct_datphong_phong_id: {class: attr_foreign_pri; label: "phong_id"}
+ct_datphong_datphong_id: {class: attr_foreign_pri; label: "datphong_id"; width: 120}
+ct_datphong_dongia: {class: attr_pri; label: "don_gia"}
+
+CT_DATPHONG -- ct_datphong_id: {style: {stroke-width: 1}}
+CT_DATPHONG -- ct_datphong_dongia: {style: {stroke-width: 1}}
+CT_DATPHONG -- ct_datphong_phong_id: {style: {stroke-width: 1; stroke: orange}}
+CT_DATPHONG -- ct_datphong_datphong_id: {style: {stroke-width: 1; stroke: orange}}
+
 CT_SUDUNG_DV: {class: rel; label: "Chi Tiết DV\nCT_SUDUNG_DV"}
 
 # Quan hệ 1-N / 1-1 (Logical)
