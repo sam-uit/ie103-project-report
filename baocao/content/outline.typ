@@ -33,24 +33,32 @@
 <stored-procedures-5>
 
 
-==== SP1
-<sp1>
+==== SP1: ApplyVoucher
+<sp1-applyvoucher>
 
 
-==== SP2
-<sp2>
+==== SP2: BookingRoom
+<sp2-bookingroom>
 
 
-==== SP3
-<sp3>
+==== SP3: Checkout
+<sp3-checkout>
 
 
-==== SP4
-<sp4>
+==== SP4: Payment
+<sp4-payment>
 
 
-==== SP5
-<sp5>
+==== SP5: RegisterUser
+<sp5-registeruser>
+
+
+==== SPx: Review Room
+<spx-review-room>
+
+
+==== SPx: Service
+<spx-service>
 
 
 === Triggers (5)

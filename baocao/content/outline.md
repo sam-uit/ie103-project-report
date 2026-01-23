@@ -18,15 +18,19 @@
 
 ### Stored Procedures (5)
 
-#### SP1
+#### SP1: ApplyVoucher
 
-#### SP2
+#### SP2: BookingRoom
 
-#### SP3
+#### SP3: Checkout
 
-#### SP4
+#### SP4: Payment
 
-#### SP5
+#### SP5: RegisterUser
+
+#### SPx: Review Room
+
+#### SPx: Service
 
 ### Triggers (5)
 
