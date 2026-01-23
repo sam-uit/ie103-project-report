@@ -50,15 +50,15 @@ GO
 
 /* ============================================================
    KIỂM TRA TỔNG TIỀN BOOKING TRƯỚC KHI THANH TOÁN
-   ============================================================ */
+  
 SELECT datphong_id, SUM(don_gia) AS tong_tien
 FROM CT_DATPHONG
 GROUP BY datphong_id;
 
-/* ============================================================
+
    TEST CASE 1: Thanh toán ĐÚNG số tiền
    Kỳ vọng: Thành công, trạng thái booking = PAID
-   ============================================================ */
+ 
 INSERT INTO PAYMENTS(booking_id, user_id, so_tien, phuong_thuc, trang_thai, created_at)
 VALUES (1, 1, 600000, 'TIEN_MAT', 'SUCCESS', GETDATE());
 
@@ -68,17 +68,17 @@ SELECT * FROM PAYMENTS WHERE booking_id = 1;
 -- Kiểm tra trạng thái booking
 SELECT id, trang_thai FROM DATPHONG WHERE id = 1;
 
-/* ============================================================
+
    TEST CASE 2: Thanh toán SAI số tiền
    Kỳ vọng: Lỗi - Amount không khớp
    (Đã comment để demo chạy thành công)
-   ============================================================ */
+ 
 -- INSERT INTO PAYMENTS(booking_id, user_id, so_tien, phuong_thuc, trang_thai, created_at)
 -- VALUES (1, 1, 900000, 'CASH', 'SUCCESS', GETDATE());
 
-/* ============================================================
+
    KIỂM TRA TỔNG QUAN
-   ============================================================ */
+
 SELECT 
     d.id AS booking_id,
     d.trang_thai,
@@ -89,3 +89,4 @@ LEFT JOIN CT_DATPHONG c ON c.datphong_id = d.id
 LEFT JOIN PAYMENTS p ON p.booking_id = d.id
 GROUP BY d.id, d.trang_thai, p.so_tien
 ORDER BY d.id;
+ ============================================================ */

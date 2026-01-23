@@ -46,25 +46,24 @@ GO
 
 /* ============================================================
    KIỂM TRA TRẠNG THÁI PHÒNG TRƯỚC KHI TEST
-   ============================================================ */
+ 
 SELECT id, so_phong AS ten_phong, trang_thai FROM PHONG WHERE id IN (1, 2, 3);
 
-/* ============================================================
    TEST CASE 1: Đặt phòng AVAILABLE (Phòng 2)
    Kỳ vọng: Thành công, don_gia tự động = 500000
-   ============================================================ */
+
 INSERT INTO CT_DATPHONG(datphong_id, phong_id)
 VALUES (2, 2);
 
-/* ============================================================
+
    TEST CASE 2: Đặt phòng BOOKED (Phòng 1)
    Kỳ vọng: Lỗi - Phòng không AVAILABLE
    (Đã comment để demo chạy thành công)
-   ============================================================ */
+ 
 -- INSERT INTO CT_DATPHONG(datphong_id, phong_id)
 -- VALUES (2, 1);
 
-/* ============================================================
    KIỂM TRA KẾT QUẢ
-   ============================================================ */
+ 
 SELECT * FROM CT_DATPHONG ORDER BY id DESC;
+  ============================================================ */

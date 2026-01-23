@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+      <meta charset="UTF-8">
+      <style>
+            body {
+                  font-family: 'Inter', -apple-system, sans-serif;
+                  line-height: 1.7;
+                  color: #1e293b;
+                  background: #fff;
+                  margin: 0;
+                  padding: 0;
+            }
+
+            h1 {
+                  font-size: 1.875rem;
+                  font-weight: 700;
+                  color: #7c3aed;
+                  margin: 0 0 1.5rem 0;
+                  padding-bottom: 0.75rem;
+                  border-bottom: 2px solid #8b5cf6;
+            }
+
+            h2 {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  color: #0f172a;
+                  margin: 2rem 0 1rem 0;
+            }
+
+            h3 {
+                  font-size: 1.125rem;
+                  font-weight: 600;
+                  color: #334155;
+                  margin: 1.5rem 0 0.75rem 0;
+            }
+
+            p {
+                  margin: 0.75rem 0;
+                  color: #475569;
+            }
+
+            ul {
+                  margin: 0.75rem 0;
+                  padding-left: 1.5rem;
+            }
+
+            li {
+                  margin: 0.375rem 0;
+                  color: #475569;
+            }
+
+            strong {
+                  color: #0f172a;
+                  font-weight: 600;
+            }
+
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin: 1.25rem 0;
+                  font-size: 0.9375rem;
+                  background: #fff;
+                  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+                  border-radius: 0.5rem;
+                  overflow: hidden;
+            }
+
+            th {
+                  background-color: #c4b5fd;
+                  padding: 0.875rem 1rem;
+                  text-align: left;
+                  font-weight: 600;
+                  color: #4c1d95;
+                  border-bottom: 2px solid #a78bfa;
+            }
+
+            td {
+                  padding: 0.75rem 1rem;
+                  color: #334155;
+                  border-bottom: 1px solid #e2e8f0;
+            }
+
+            tbody tr:hover {
+                  background-color: #f5f3ff;
+            }
+
+            code {
+                  font-family: 'Fira Code', monospace;
+                  font-size: 0.875rem;
+                  background-color: #f5f3ff;
+                  color: #7c3aed;
+                  padding: 0.125rem 0.375rem;
+                  border-radius: 0.25rem;
+            }
+
+            pre {
+                  background-color: #1e293b;
+                  color: #e2e8f0;
+                  padding: 1.25rem;
+                  border-radius: 0.5rem;
+                  overflow-x: auto;
+                  margin: 1.25rem 0;
+            }
+
+            pre code {
+                  background: none;
+                  color: inherit;
+                  padding: 0;
+            }
+
+            .flow-step {
+                  background-color: #f5f3ff;
+                  border-left: 3px solid #8b5cf6;
+                  padding: 0.875rem 1rem;
+                  margin: 0.5rem 0;
+                  border-radius: 0.25rem;
+                  color: #334155;
+            }
+
+            hr {
+                  border: none;
+                  border-top: 1px solid #e2e8f0;
+                  margin: 2rem 0;
+            }
+      </style>
+</head>
+
+<body>
+      <h1>🏨 CURSOR – Đồng bộ trạng thái phòng thực tế</h1>
+
+      <h2>cur_phong_status – Đồng bộ trạng thái phòng</h2>
+
+      <div class="section">
+            <h3>📌 Mục đích</h3>
+            <p>Thực hiện nhiệm vụ <strong>kiểm kê (Audit) và bảo trì dữ liệu</strong>. Cursor này đảm bảo trạng thái hiển thị của 
+                  phòng (<code>AVAILABLE</code>, <code>OCCUPIED</code>, <code>MAINTENANCE</code>, <code>RESERVED</code>) trên giao diện luôn khớp với dữ liệu đặt 
+                  phòng thực tế trong cơ sở dữ liệu.</p>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>🔄 Logic xử lý</h3>
+            <div class="flow-step">1. Duyệt qua tất cả các phòng trong bảng PHONG, lấy thông tin id, so_phong và trang_thai hiện tại</div>
+            <div class="flow-step">2. Với mỗi phòng, thực hiện truy vấn kiểm tra xem có đơn đặt phòng nào đang hoạt động (Trạng thái CONFIRMED và thời gian hiện tại nằm trong khoảng lưu trú)</div>
+            <div class="flow-step">3. Cập nhật trạng thái:</div>
+            <div class="flow-step" style="margin-left: 2rem;">
+                  <strong>Trường hợp 1 (Có khách đang ở):</strong> Nếu trạng thái hiện tại chưa phải OCCUPIED → Cập nhật thành OCCUPIED
+            </div>
+            <div class="flow-step" style="margin-left: 2rem;">
+                  <strong>Trường hợp 2 (Không có khách):</strong>
+                  <ul style="margin-top: 0.5rem;">
+                        <li>Nếu trạng thái hiện tại là OCCUPIED (tức là dữ liệu cũ bị sai/treo) → Trả về AVAILABLE</li>
+                        <li>Nếu trạng thái hiện tại là MAINTENANCE (Bảo trì) hoặc RESERVED (Đã đặt trước) → Giữ nguyên, không can thiệp</li>
+                  </ul>
+            </div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>💻 Source Code</h3>
+            <pre><code>DECLARE @id_phong INT;
+DECLARE @so_phong NVARCHAR(20);
+DECLARE @trang_thai_hien_tai NVARCHAR(50); -- Thêm biến để lưu trạng thái hiện tại
+DECLARE @is_occupied INT;
+
+DECLARE cur_phong_status CURSOR FOR 
+SELECT id, so_phong, trang_thai FROM PHONG; -- Lấy thêm cột trang_thai
+
+OPEN cur_phong_status;
+FETCH NEXT FROM cur_phong_status INTO @id_phong, @so_phong, @trang_thai_hien_tai;
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    -- Kiểm tra xem phòng có khách đang ở (CONFIRMED và trong thời gian lưu trú)
+    SELECT @is_occupied = COUNT(*) 
+    FROM CT_DATPHONG ct
+    JOIN DATPHONG dp ON ct.datphong_id = dp.id
+    WHERE ct.phong_id = @id_phong 
+      AND dp.trang_thai = 'CONFIRMED'
+      AND GETDATE() BETWEEN dp.check_in AND dp.check_out;
+
+    IF @is_occupied > 0
+    BEGIN
+        -- Nếu có khách mà trạng thái chưa phải OCCUPIED thì mới cập nhật
+        IF @trang_thai_hien_tai != 'OCCUPIED'
+        BEGIN
+            UPDATE PHONG SET trang_thai = 'OCCUPIED' WHERE id = @id_phong;
+            PRINT N'Phòng ' + @so_phong + N': Cập nhật sang Đang có khách (OCCUPIED)';
+        END
+    END
+    ELSE
+    BEGIN
+        -- Logic an toàn: Chỉ chuyển về AVAILABLE nếu trạng thái cũ là OCCUPIED
+        -- (Tránh ghi đè trạng thái MAINTENANCE hoặc RESERVED)
+        IF @trang_thai_hien_tai = 'OCCUPIED'
+        BEGIN
+            UPDATE PHONG SET trang_thai = 'AVAILABLE' WHERE id = @id_phong;
+            PRINT N'Phòng ' + @so_phong + N': Khách đã đi, trả về Trống (AVAILABLE)';
+        END
+        ELSE
+        BEGIN
+             PRINT N'Phòng ' + @so_phong + N': Giữ nguyên trạng thái (' + @trang_thai_hien_tai + ')';
+        END
+    END
+
+    FETCH NEXT FROM cur_phong_status INTO @id_phong, @so_phong, @trang_thai_hien_tai;
+END
+
+CLOSE cur_phong_status;
+DEALLOCATE cur_phong_status;
+GO</code></pre>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>📊 Trạng thái phòng</h3>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Trạng thái</th>
+                              <th>Mô tả</th>
+                              <th>Ghi chú</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td><code>AVAILABLE</code></td>
+                              <td>Phòng trống, sẵn sàng đón khách</td>
+                              <td>Trạng thái mặc định khi không có khách</td>
+                        </tr>
+                        <tr>
+                              <td><code>OCCUPIED</code></td>
+                              <td>Phòng đang có khách ở</td>
+                              <td>Tự động cập nhật khi có đơn đặt phòng CONFIRMED</td>
+                        </tr>
+                        <tr>
+                              <td><code>MAINTENANCE</code></td>
+                              <td>Phòng đang bảo trì</td>
+                              <td>Giữ nguyên, không tự động thay đổi</td>
+                        </tr>
+                        <tr>
+                              <td><code>RESERVED</code></td>
+                              <td>Phòng đã được đặt trước</td>
+                              <td>Giữ nguyên, không tự động thay đổi</td>
+                        </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>✅ Kiểm thử</h3>
+            <h4>Kịch bản:</h4>
+            <ul>
+                  <li><strong>Phòng 101:</strong> Đang trống thực tế nhưng dữ liệu lỗi hiển thị là <code>OCCUPIED</code></li>
+                  <li><strong>Phòng 201:</strong> Đang có khách ở thực tế nhưng hiển thị là <code>AVAILABLE</code></li>
+                  <li><strong>Phòng 204:</strong> Đang bảo trì (<code>MAINTENANCE</code>), không có khách</li>
+            </ul>
+            
+            <h4>Dữ liệu ban đầu:</h4>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Phòng</th>
+                              <th>Trạng thái hiện tại</th>
+                              <th>Ghi chú</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td>101</td>
+                              <td><code>AVAILABLE</code></td>
+                              <td>Đúng</td>
+                        </tr>
+                        <tr>
+                              <td>102</td>
+                              <td><code>AVAILABLE</code></td>
+                              <td>Sai</td>
+                        </tr>
+                        <tr>
+                              <td>503</td>
+                              <td><code>MAINTENANCE</code></td>
+                              <td>Đúng</td>
+                        </tr>
+                  </tbody>
+            </table>
+
+            <h4>Kết quả mong đợi:</h4>
+            <ul>
+                  <li><strong>Phòng 101</strong> → Giữ nguyên là <code>AVAILABLE</code></li>
+                  <li><strong>Phòng 102</strong> → Được sửa thành <code>OCCUPIED</code></li>
+                  <li><strong>Phòng 503</strong> → Giữ nguyên là <code>MAINTENANCE</code></li>
+            </ul>
+
+            <h4>Kết quả in ra mong đợi:</h4>
+            <pre><code>-- Chạy đoạn code Cursor bên trên và quan sát cửa sổ Messages
+-- Kết quả in ra mong đợi:
+-- Phòng 101: Giữ nguyên trạng thái (AVAILABLE)
+-- Phòng 102: Cập nhật sang Đang có khách (OCCUPIED)
+-- Phòng 503: Giữ nguyên trạng thái (MAINTENANCE)</code></pre>
+      </div>
+</body>
+
+</html>
