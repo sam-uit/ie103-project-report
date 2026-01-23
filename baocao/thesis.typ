@@ -12,6 +12,7 @@
 #show: document.with(..data, acronyms: acronyms, doc-type: "thesis")
 
 // Content goes here
+#include "content/tasks.typ"
 #include "content/chapter01.typ"
 #include "content/chapter02.typ"
 #include "content/chapter03.typ"
