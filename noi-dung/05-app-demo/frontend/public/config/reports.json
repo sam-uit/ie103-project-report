@@ -6,50 +6,60 @@
     "files": [
       {
         "id": "f1",
-        "name": "Báo Cáo Quý 3/2023",
+        "name": "Báo cáo doanh thu từng tháng trong năm 2024",
         "type": "pdf",
-        "size": "2.4 MB",
-        "date": "15/10/2023",
-        "thumbnailUrl": "https://kenh14cdn.com/2017/3235-1500365611879.jpg",
-        "url": "https://drive.google.com/file/d/10i1klXuCZSBiI7OXp9LIQH9XFRiF8zax/view?usp=sharing"
+        "size": "184 KB",
+        "date": "21/01/2026",
+        "thumbnailUrl": "https://static.vecteezy.com/system/resources/previews/056/693/603/non_2x/pdf-file-icon-with-red-pdf-text-and-a-distinctive-adobe-logo-representing-a-document-format-commonly-used-for-digital-content-and-e-books-free-vector.jpg",
+        "url": "https://drive.google.com/file/d/1yQX22_iIuXxa-qVx-JBBgxLl8W_qjBme/view?usp=drive_link"
       },
       {
         "id": "f2",
-        "name": "Chi Tiết Hóa Đơn T10",
+        "name": "Top 10 khách hàng mang lại doanh thu năm 2024",
         "type": "pdf",
-        "size": "1.8 MB",
-        "date": "01/11/2023",
-        "thumbnailUrl": "https://placehold.co/600x800/e6fff2/00aa55?text=Hoa+Don+T10",
-        "url": "https://drive.google.com/file/d/1Z_u7qGq-Y2jXgKk9-7zZqXq9ZqXq9ZqX/view?usp=sharing"
+        "size": "216 KB",
+        "date": "21/01/2026",
+        "thumbnailUrl": "https://static.vecteezy.com/system/resources/previews/056/693/603/non_2x/pdf-file-icon-with-red-pdf-text-and-a-distinctive-adobe-logo-representing-a-document-format-commonly-used-for-digital-content-and-e-books-free-vector.jpg",
+        "url": "https://drive.google.com/file/d/1jQvG-RE-N3p00kRkJWPoiZDKlanCKjzl/view?usp=drive_link"
+      },
+      {
+        "id": "f3",
+        "name": "Dịch vụ sử dụng phổ biến năm 2024",
+        "type": "pdf",
+        "size": "143 KB",
+        "date": "21/01/2026",
+        "thumbnailUrl": "https://static.vecteezy.com/system/resources/previews/056/693/603/non_2x/pdf-file-icon-with-red-pdf-text-and-a-distinctive-adobe-logo-representing-a-document-format-commonly-used-for-digital-content-and-e-books-free-vector.jpg",
+        "url": "https://drive.google.com/file/d/1Sy2JVRukKPcdlLnOLD58Vvpk0RH36ZlY/view?usp=drive_link"
+      },
+      {
+        "id": "f4",
+        "name": "Voucher sử dụng trong năm 2024",
+        "type": "pdf",
+        "size": "184 KB",
+        "date": "21/01/2026",
+        "thumbnailUrl": "https://static.vecteezy.com/system/resources/previews/056/693/603/non_2x/pdf-file-icon-with-red-pdf-text-and-a-distinctive-adobe-logo-representing-a-document-format-commonly-used-for-digital-content-and-e-books-free-vector.jpg",
+        "url": "https://drive.google.com/file/d/1UPKT3SX-ESNaef7ZOtzG61DJHcgPKSCy/view?usp=drive_link "
       }
+     
     ]
   },
   {
     "id": "g2",
-    "title": "Tài Liệu Hệ Thống",
-    "description": "Sơ đồ thiết kế (ERD), Flowchart quy trình nghiệp vụ và các tài liệu kỹ thuật khác.",
+    "title": "Thống kê",
+    "description": "Các báo cáo chi tiết đánh giá khách sạn, ...",
     "files": [
-      {
-        "id": "f3",
-        "name": "ERD Diagram Full",
-        "type": "png",
-        "size": "1.2 MB",
-        "date": "30/10/2023",
-        "thumbnailUrl": "https://placehold.co/600x400/png/white?text=ERD+Diagram",
-        "url": "https://placehold.co/1200x800/png/white?text=Full+ERD+Diagram+Preview"
-      },
-      {
-        "id": "f4",
-        "name": "Quy Trình Đặt Phòng",
-        "type": "jpg",
-        "size": "890 KB",
-        "date": "15/09/2023",
-        "thumbnailUrl": "https://placehold.co/800x400/png/white?text=Flowchart",
-        "url": "https://placehold.co/1600x800/png/white?text=Full+Flowchart+Preview"
+     {
+        "id": "f6",
+        "name": "Thống kê đánh giá các loại phòng khách sạn",
+        "type": "pdf",
+        "size": "104 KB",
+        "date": "21/01/2026",
+        "thumbnailUrl": "https://static.vecteezy.com/system/resources/previews/056/693/603/non_2x/pdf-file-icon-with-red-pdf-text-and-a-distinctive-adobe-logo-representing-a-document-format-commonly-used-for-digital-content-and-e-books-free-vector.jpg",
+        "url": "https://drive.google.com/file/d/1askP3tGb6o_MWe65S-H2D3QcTkH9tfE0/view?usp=drive_link"
       }
     ]
   },
-   {
+  {
     "id": "g3",
     "title": "Google Drive Folder",
     "description": "Các tài liệu được lưu trữ trực tiếp trên Cloud.",

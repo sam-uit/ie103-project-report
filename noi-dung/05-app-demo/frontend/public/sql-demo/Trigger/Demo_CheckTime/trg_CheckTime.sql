@@ -32,18 +32,19 @@ GO
    TEST CASE 1: Trường hợp SAI (check_out < check_in)
    Kỳ vọng: Lỗi và ROLLBACK
    (Đã comment để demo chạy thành công)
-   ============================================================ */
+   
 -- INSERT INTO DATPHONG(user_id, check_in, check_out, trang_thai, created_at)
 -- VALUES (1, '2026-01-14 10:00', '2026-01-14 08:00', 'PENDING', GETDATE());
 
-/* ============================================================
+
    TEST CASE 2: Trường hợp ĐÚNG (check_out >= check_in)
    Kỳ vọng: Thành công, dữ liệu được thêm vào
-   ============================================================ */
+  
 INSERT INTO DATPHONG(user_id, check_in, check_out, trang_thai, created_at)
 VALUES (1, '2026-01-14 14:00', '2026-01-20 10:00', 'PENDING', GETDATE());
 
-/* ============================================================
+
    KIỂM TRA KẾT QUẢ
-   ============================================================ */
+
 SELECT * FROM DATPHONG ORDER BY id DESC;
+============================================================ */

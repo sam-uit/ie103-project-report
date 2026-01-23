@@ -60,8 +60,15 @@ export const api = {
             afterQueries: { name: string; query: string }[],
             params: any[]
       ): Promise<ExecuteDemoResponse> {
-            const baseUrl = getBaseUrl().replace(/\/$/, '');
             try {
+                  const baseUrl = getBaseUrl().replace(/\/$/, '');
+                  console.log("API executeDemo", baseUrl);
+                  console.log("API executeDemo", sql);
+                  console.log("API executeDemo", beforeQueries);
+                  console.log("API executeDemo", afterQueries);
+                  console.log("API executeDemo", params);
+                  console.log("API executeDemo", `${baseUrl}/execute-demo`);
+                  
                   const res = await fetch(`${baseUrl}/execute-demo`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },

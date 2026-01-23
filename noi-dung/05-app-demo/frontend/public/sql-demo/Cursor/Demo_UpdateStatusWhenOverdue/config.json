@@ -1,0 +1,79 @@
+{
+      "id": "cur-update-room-status",
+      "title": "Cursor 1: Cập Nhật Trạng Thái Phòng",
+      "type": "Cursor",
+      "shortDesc": "Cursor cập nhật trạng thái phòng",
+      "mdFile": "Cursor/Demo_UpdateStatusWhenOverdue/problem.html",
+      "sqlFile": "Cursor/Demo_UpdateStatusWhenOverdue/cs_CAPNHATTRANGTHAIKHIQUAGIO_CHECK-OUT.sql",
+      "separateTables": [
+            {
+                  "name": "DAT_PHONG",
+                  "label": "🎟️ Thông Tin Đơn Đặt Phòng",
+                  "sqlBefore": "SELECT id, so_phong, trang_thai FROM PHONG",
+                  "sqlAfter": "SELECT id, so_phong, trang_thai FROM PHONG",
+                  "sqlFetchInitial": "SELECT p.id, p.so_phong, dp.id as ma_dat_phong, dp.trang_thai, dp.check_out from PHONG p join CT_DATPHONG ctdp ON p.id = ctdp.phong_id JOIN DATPHONG dp ON ctdp.datphong_id = dp.id WHERE dp.trang_thai = 'CONFIRMED' AND dp.check_out < GETDATE();",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "Mã Phòng"
+                        },
+                        {
+                              "key": "ma_dat_phong",
+                              "label": "Mã Đặt Phòng"
+                        },
+                        {
+                              "key": "so_phong",
+                              "label": "Số Phòng"
+                        },
+                        {
+                              "key": "check_out",
+                              "label": "Ngày Trả Phòng"
+                        },
+                        {
+                              "key": "trang_thai",
+                              "label": "Trạng Thái"
+                        }
+                  ]
+            },
+            {
+                  "name": "PHONG",
+                  "label": "🎟️ Thông Tin Phòng",
+                  "sqlBefore": "SELECT id, so_phong, trang_thai FROM PHONG",
+                  "sqlAfter": "SELECT id, so_phong, trang_thai FROM PHONG",
+                  "sqlFetchInitial": "SELECT id, so_phong, trang_thai FROM PHONG",
+                  "columns": [
+                        {
+                              "key": "id",
+                              "label": "Mã Phòng"
+                        },
+                        {
+                              "key": "so_phong",
+                              "label": "Số Phòng"
+                        },
+                        {
+                              "key": "trang_thai",
+                              "label": "Trạng Thái"
+                        }
+                  ]
+            }
+      ],
+      "params": [],
+      "mockData": {
+            "before": [
+                  {
+                        "id": 1,
+                        "ma_code": "SALE20",
+                        "expiry_date": "2025-12-31",
+                        "trang_thai": "ACTIVE"
+                  }
+            ],
+            "after": [
+                  {
+                        "id": 1,
+                        "ma_code": "SALE20",
+                        "expiry_date": "2025-12-31",
+                        "trang_thai": "INACTIVE"
+                  }
+            ]
+      }
+}

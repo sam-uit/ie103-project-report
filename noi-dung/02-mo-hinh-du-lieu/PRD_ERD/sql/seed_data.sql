@@ -1,11 +1,3 @@
--- ============================================
--- SEED DATA FOR ROOM BOOKING SYSTEM (MSSQL)
--- Dữ liệu mẫu tuân thủ CHECK constraints từ init_fully_tables.sql
--- ============================================
-
--- ===== PHÂN QUYỀN =====
-
--- Insert ROLES
 INSERT INTO ROLES (code, name, description) VALUES
 ('SUPER_ADMIN', N'Quản trị viên cấp cao', N'Toàn quyền quản lý hệ thống'),
 ('ADMIN', N'Quản trị viên', N'Quản lý phòng và đặt phòng'),
@@ -113,6 +105,7 @@ INSERT INTO LOAIPHONG (ten_loai, gia_co_ban, mo_ta, suc_chua) VALUES
 GO
 
 -- Insert PHONG (trang_thai: AVAILABLE, OCCUPIED, MAINTENANCE, RESERVED)
+
 INSERT INTO PHONG (so_phong, loai_phong_id, trang_thai) VALUES
 -- Tầng 1
 ('101', 1, 'AVAILABLE'),
@@ -125,19 +118,25 @@ INSERT INTO PHONG (so_phong, loai_phong_id, trang_thai) VALUES
 ('202', 4, 'AVAILABLE'),
 ('203', 5, 'AVAILABLE'),
 ('204', 5, 'MAINTENANCE'),
-('205', 6, 'AVAILABLE'),
+('205', 6, 'OCCUPIED'),
 -- Tầng 3
-('301', 7, 'RESERVED'),
+('301', 7, 'OCCUPIED'),
 ('302', 7, 'AVAILABLE'),
 ('303', 8, 'AVAILABLE'),
 ('304', 9, 'AVAILABLE'),
-('305', 9, 'RESERVED'),
+('305', 9, 'OCCUPIED'),
 -- Tầng 4
 ('401', 10, 'AVAILABLE'),
 ('402', 10, 'AVAILABLE'),
-('403', 6, 'AVAILABLE'),
+('403', 6, 'OCCUPIED'),
 ('404', 4, 'MAINTENANCE'),
 ('405', 3, 'AVAILABLE');
+
+INSERT INTO PHONG (so_phong, loai_phong_id, trang_thai) VALUES
+('501', 1, 'OCCUPIED'),
+('502', 1, 'AVAILABLE'),
+('503', 1, 'MAINTENANCE');
+
 
 GO
 
@@ -208,6 +207,47 @@ INSERT INTO DATPHONG (user_id, voucher_id, check_in, check_out, trang_thai, crea
 (1, 8, '2024-02-12 14:00:00', '2024-02-14 12:00:00', 'CONFIRMED', '2024-01-28 10:00:00'),
 (2, NULL, '2024-02-15 14:00:00', '2024-02-18 12:00:00', 'PENDING', '2024-01-28 11:00:00'),
 (3, 10, '2024-02-20 14:00:00', '2024-02-25 12:00:00', 'PENDING', '2024-01-28 13:00:00');
+
+
+INSERT INTO DATPHONG (user_id, voucher_id, check_in, check_out, trang_thai, created_at)
+VALUES (
+    1,
+    NULL,
+    CAST(CONVERT(VARCHAR(10), DATEADD(MONTH, -1, GETDATE()), 120) + ' 14:00:00' AS DATETIME),
+    CAST(CONVERT(VARCHAR(10), DATEADD(MONTH, 1, GETDATE()), 120) + ' 12:00:00' AS DATETIME),
+    'CONFIRMED',
+    GETDATE()
+);
+
+INSERT INTO DATPHONG (user_id, voucher_id, check_in, check_out, trang_thai, created_at)
+VALUES (
+    2,
+    NULL,
+    CAST(CONVERT(VARCHAR(10), DATEADD(MONTH, -1, GETDATE()), 120) + ' 14:00:00' AS DATETIME),
+    CAST(CONVERT(VARCHAR(10), DATEADD(MONTH, 2, GETDATE()), 120) + ' 12:00:00' AS DATETIME),
+    'CONFIRMED',
+    GETDATE()
+);
+
+INSERT INTO DATPHONG (user_id, voucher_id, check_in, check_out, trang_thai, created_at)
+VALUES (
+    3,
+    NULL,
+    CAST(CONVERT(VARCHAR(10), DATEADD(MONTH, -1, GETDATE()), 120) + ' 14:00:00' AS DATETIME),
+    CAST(CONVERT(VARCHAR(10), DATEADD(MONTH, 2, GETDATE()), 120) + ' 12:00:00' AS DATETIME),
+    'PENDING',
+    GETDATE()
+);
+
+
+INSERT INTO CT_DATPHONG (datphong_id, phong_id, don_gia)
+VALUES (16, 1, 500000.00);
+
+INSERT INTO CT_DATPHONG (datphong_id, phong_id, don_gia)
+VALUES (17, 2, 600000.00);
+
+INSERT INTO CT_DATPHONG (datphong_id, phong_id, don_gia)
+VALUES (18, 23, 600000.00);
 
 GO
 

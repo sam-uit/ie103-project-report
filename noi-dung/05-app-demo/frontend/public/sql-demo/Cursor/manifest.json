@@ -1,6 +1,6 @@
 {
       "demos": [
-            "Demo_CheckAndUpdateVoucher",
-            "Demo_ReportRevenueService"
+            "Demo_UpdateStatusWhenOverdue",
+            "Demo_SyncRoomStatus"
       ]
 }

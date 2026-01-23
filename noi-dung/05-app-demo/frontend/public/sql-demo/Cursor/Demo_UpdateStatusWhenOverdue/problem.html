@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+      <meta charset="UTF-8">
+      <style>
+            body {
+                  font-family: 'Inter', -apple-system, sans-serif;
+                  line-height: 1.7;
+                  color: #1e293b;
+                  background: #fff;
+                  margin: 0;
+                  padding: 0;
+            }
+
+            h1 {
+                  font-size: 1.875rem;
+                  font-weight: 700;
+                  color: #7c3aed;
+                  margin: 0 0 1.5rem 0;
+                  padding-bottom: 0.75rem;
+                  border-bottom: 2px solid #8b5cf6;
+            }
+
+            h2 {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  color: #0f172a;
+                  margin: 2rem 0 1rem 0;
+            }
+
+            h3 {
+                  font-size: 1.125rem;
+                  font-weight: 600;
+                  color: #334155;
+                  margin: 1.5rem 0 0.75rem 0;
+            }
+
+            p {
+                  margin: 0.75rem 0;
+                  color: #475569;
+            }
+
+            ul {
+                  margin: 0.75rem 0;
+                  padding-left: 1.5rem;
+            }
+
+            li {
+                  margin: 0.375rem 0;
+                  color: #475569;
+            }
+
+            strong {
+                  color: #0f172a;
+                  font-weight: 600;
+            }
+
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin: 1.25rem 0;
+                  font-size: 0.9375rem;
+                  background: #fff;
+                  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+                  border-radius: 0.5rem;
+                  overflow: hidden;
+            }
+
+            th {
+                  background-color: #c4b5fd;
+                  padding: 0.875rem 1rem;
+                  text-align: left;
+                  font-weight: 600;
+                  color: #4c1d95;
+                  border-bottom: 2px solid #a78bfa;
+            }
+
+            td {
+                  padding: 0.75rem 1rem;
+                  color: #334155;
+                  border-bottom: 1px solid #e2e8f0;
+            }
+
+            tbody tr:hover {
+                  background-color: #f5f3ff;
+            }
+
+            code {
+                  font-family: 'Fira Code', monospace;
+                  font-size: 0.875rem;
+                  background-color: #f5f3ff;
+                  color: #7c3aed;
+                  padding: 0.125rem 0.375rem;
+                  border-radius: 0.25rem;
+            }
+
+            pre {
+                  background-color: #1e293b;
+                  color: #e2e8f0;
+                  padding: 1.25rem;
+                  border-radius: 0.5rem;
+                  overflow-x: auto;
+                  margin: 1.25rem 0;
+            }
+
+            pre code {
+                  background: none;
+                  color: inherit;
+                  padding: 0;
+            }
+
+            .flow-step {
+                  background-color: #f5f3ff;
+                  border-left: 3px solid #8b5cf6;
+                  padding: 0.875rem 1rem;
+                  margin: 0.5rem 0;
+                  border-radius: 0.25rem;
+                  color: #334155;
+            }
+
+            hr {
+                  border: none;
+                  border-top: 1px solid #e2e8f0;
+                  margin: 2rem 0;
+            }
+      </style>
+</head>
+
+<body>
+      <h1>🔄 CURSOR – Tự Động Hoàn Tất Đơn Đặt Phòng</h1>
+
+      <h2>CURSOR_CHECKOUT – Cập nhật trạng thái khi quá giờ check-out</h2>
+
+      <div class="section">
+            <h3>📌 Mục đích</h3>
+            <p>Tự động hóa việc kết thúc quy trình đặt phòng. Hệ thống quét các đơn đặt phòng đã quá hạn trả phòng (<code>Check-out</code>) nhưng trạng thái vẫn là <code>CONFIRMED</code> để chuyển sang <code>COMPLETED</code> và giải phóng phòng.</p>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>🔄 Logic xử lý</h3>
+            <div class="flow-step">1. Khai báo Cursor quét bảng <code>DATPHONG</code></div>
+            <div class="flow-step">2. Điều kiện lọc: <code>trang_thai = 'CONFIRMED'</code> VÀ <code>check_out &lt; GETDATE()</code> (Thời gian hiện tại đã vượt qua giờ check-out)</div>
+            <div class="flow-step">3. Vòng lặp xử lý từng đơn:</div>
+            <div class="flow-step" style="margin-left: 2rem;">a. Cập nhật trạng thái đơn (<code>DATPHONG</code>) thành <code>COMPLETED</code></div>
+            <div class="flow-step" style="margin-left: 2rem;">b. Tìm các phòng liên quan trong bảng <code>CT_DATPHONG</code> và cập nhật trạng thái phòng (<code>PHONG</code>) về <code>AVAILABLE</code> (Sẵn sàng đón khách mới)</div>
+            <div class="flow-step" style="margin-left: 2rem;">c. Đếm số lượng đơn đã xử lý và in log thông báo</div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>💻 Source Code</h3>
+            <pre><code>DECLARE @id_datphong INT;
+DECLARE @dem_completed INT = 0;
+
+-- Khai báo Cursor cho các đơn đã quá hạn trả phòng
+DECLARE cursor_checkout CURSOR FOR 
+SELECT id 
+FROM DATPHONG 
+WHERE trang_thai = 'CONFIRMED' 
+  AND check_out < GETDATE();
+
+OPEN cursor_checkout;
+
+FETCH NEXT FROM cursor_checkout INTO @id_datphong;
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    -- Cập nhật trạng thái đơn đặt phòng
+    UPDATE DATPHONG 
+    SET trang_thai = 'COMPLETED' 
+    WHERE id = @id_datphong;
+    
+    -- Cập nhật lại trạng thái các phòng trong đơn đó thành 'AVAILABLE'
+    UPDATE PHONG 
+    SET trang_thai = 'AVAILABLE'
+    WHERE id IN (SELECT phong_id FROM CT_DATPHONG WHERE datphong_id = @id_datphong);
+
+    SET @dem_completed = @dem_completed + 1;
+    PRINT N'Đã hoàn tất đơn đặt phòng số: ' + CAST(@id_datphong AS NVARCHAR(10));
+
+    FETCH NEXT FROM cursor_checkout INTO @id_datphong;
+END
+
+CLOSE cursor_checkout;
+DEALLOCATE cursor_checkout;
+
+PRINT N'>>> Tổng cộng đã xử lý xong ' + CAST(@dem_completed AS NVARCHAR(10)) + N' đơn quá hạn.';
+GO</code></pre>
+      </div>
+
+      <hr>
+
+      <div class="section">
+            <h3>✅ Kiểm thử</h3>
+            <p><strong>Kịch bản:</strong> Có một đơn đặt phòng (ID=1) có ngày Check-out là ngày hôm qua, nhưng lễ tân quên check-out trên phần mềm (Trạng thái vẫn là <code>CONFIRMED</code>).</p>
+            
+            <p><strong>Dữ liệu mẫu:</strong></p>
+            <ul>
+                  <li><code>DATPHONG</code>: ID=1, Status='CONFIRMED', Check-out='2025-04-03' (Giả sử hiện tại là 2025-04-04)</li>
+                  <li><code>PHONG</code>: ID=3 (P201), Status='OCCUPIED'</li>
+            </ul>
+
+            <p><strong>Kết quả mong đợi:</strong></p>
+            <ul>
+                  <li>Đơn ID=1 chuyển thành 'COMPLETED'</li>
+                  <li>Phòng P201 chuyển thành 'AVAILABLE'</li>
+            </ul>
+
+            <pre><code>-- Kiểm tra trước khi chạy
+SELECT id, trang_thai FROM DATPHONG WHERE id = 1;
+-- Chạy đoạn code Cursor bên trên
+-- Kiểm tra sau khi chạy
+SELECT id, trang_thai FROM DATPHONG WHERE id = 1;</code></pre>
+
+            <p><strong>Kết quả:</strong> Đơn ID=1 chuyển thành 'COMPLETED'. Phòng P201 chuyển thành 'AVAILABLE'.</p>
+      </div>
+</body>
+
+</html>

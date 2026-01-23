@@ -53,13 +53,13 @@ GO
 
 /* ============================================================
    KIỂM TRA THANH TOÁN TRƯỚC KHI HOÀN TIỀN
-   ============================================================ */
+   
 SELECT id, booking_id, so_tien, trang_thai FROM PAYMENTS;
 
-/* ============================================================
+
    TEST CASE 1: Hoàn tiền HỢP LỆ (bằng số tiền đã trả)
    Kỳ vọng: Thành công, cập nhật trạng thái
-   ============================================================ */
+
 INSERT INTO REFUNDS(payment_id, so_tien_hoan, trang_thai, ly_do, requested_by, approved_by, created_at)
 VALUES (1, 1000000, 'APPROVED', 'Khách hủy phòng', 1, 1, GETDATE());
 
@@ -72,17 +72,17 @@ SELECT id, trang_thai FROM PAYMENTS WHERE id = 1;
 -- Kiểm tra trạng thái booking
 SELECT id, trang_thai FROM DATPHONG WHERE id = 1;
 
-/* ============================================================
+
    TEST CASE 2: Hoàn tiền VƯỢT QUÁ
    Kỳ vọng: Lỗi - Refund vượt quá thanh toán
    (Đã comment để demo chạy thành công)
-   ============================================================ */
+ 
 -- INSERT INTO REFUNDS(payment_id, so_tien_hoan, trang_thai, reason, approved_by, created_at)
 -- VALUES (1, 1500000, 'APPROVED', 'Test vượt quá', 1, GETDATE());
 
-/* ============================================================
+
    KIỂM TRA TỔNG QUAN
-   ============================================================ */
+ 
 SELECT 
     d.id AS booking_id,
     d.trang_thai AS booking_status,
@@ -94,3 +94,4 @@ FROM DATPHONG d
 LEFT JOIN PAYMENTS p ON p.booking_id = d.id
 LEFT JOIN REFUNDS r ON r.payment_id = p.id
 ORDER BY d.id;
+============================================================ */

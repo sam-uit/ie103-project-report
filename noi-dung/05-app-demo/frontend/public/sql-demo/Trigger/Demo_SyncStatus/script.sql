@@ -40,7 +40,6 @@ GO
 
 /* ============================================================
    KIỂM TRA TỔNG QUAN
-   ============================================================ */
 SELECT 
     p.id,
     p.so_phong as ten_phong,
@@ -51,12 +50,14 @@ LEFT JOIN CT_DATPHONG c ON c.phong_id = p.id
 GROUP BY p.id, p.so_phong, p.trang_thai
 ORDER BY p.id;
 
-/* ============================================================
+
    TEST CASE 1: Thêm đặt phòng (Phòng 2)
    Kỳ vọng: Phòng 2 chuyển sang OCCUPIED (theo script)
-   ============================================================ */
+ 
 INSERT INTO CT_DATPHONG(datphong_id, phong_id, don_gia)
 VALUES (2, 2, 500000);
 
 -- Kiểm tra sau khi INSERT
 SELECT id, so_phong AS ten_phong, trang_thai FROM PHONG WHERE id = 2;
+
+   ============================================================ */
