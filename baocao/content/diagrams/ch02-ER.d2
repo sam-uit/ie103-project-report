@@ -238,9 +238,23 @@ PHONG -- phong_so_phong: {style: {stroke-width: 1}}
 PHONG -- phong_loai_phong_id: {style: {stroke-width: 1}}
 PHONG -- phong_trang_thai: {style: {stroke-width: 1}}
 
+# MARK: DICHVU
 DICHVU: {class: entity; label: "DICHVU"}
 dichvu_id: {class: attr_pri; label: "id"}
+dichvu_ten_dich_vu: {class: attr; label: "ten_dich_vu"; width: 120}
+dichvu_don_gia: {class: attr; label: "don_gia"}
+dichvu_don_vi_tinh: {class: attr; label: "don_vi_tinh"; width: 120}
+dichvu_trang_thai: {class: attr; label: "trang_thai"}
+dichvu_created_at: {class: attr; label: "created_at"; width: 110}
+dichvu_updated_at: {class: attr; label: "updated_at"; width: 110}
+
 DICHVU -- dichvu_id: {style: {stroke-width: 1}}
+DICHVU -- dichvu_ten_dich_vu: {style: {stroke-width: 1}}
+DICHVU -- dichvu_don_gia: {style: {stroke-width: 1}}
+DICHVU -- dichvu_don_vi_tinh: {style: {stroke-width: 1}}
+DICHVU -- dichvu_trang_thai: {style: {stroke-width: 1}}
+DICHVU -- dichvu_created_at: {style: {stroke-width: 1}}
+DICHVU -- dichvu_updated_at: {style: {stroke-width: 1}}
 
 PAYMENTS: {class: entity; label: "PAYMENTS"}
 payment_id: {class: attr_pri; label: "id"}
