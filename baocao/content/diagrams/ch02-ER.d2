@@ -112,10 +112,24 @@ classes: {
 # --- 2. ENTITIES (THỰC THỂ) ---
 # Dựa trên init_tables.sql và tài liệu mô tả
 
+# MARK: ADMINS
 ADMINS: {class: entity; label: "ADMINS"}
 admin_id: {class: attr_pri; label: "id"}
+admin_email: {class: attr; label: "email"}
+admin_password: {class: attr; label: "password"}
+admin_full_name: {class: attr; label: "full_name"}
+admin_status: {class: attr; label: "status"}
+admin_created_at: {class: attr; label: "created_at"}
+admin_updated_at: {class: attr; label: "updated_at"}
 ADMINS -- admin_id: {style: {stroke-width: 1}}
+ADMINS -- admin_email: {style: {stroke-width: 1}}
+ADMINS -- admin_password: {style: {stroke-width: 1}}
+ADMINS -- admin_full_name: {style: {stroke-width: 1}}
+ADMINS -- admin_status: {style: {stroke-width: 1}}
+ADMINS -- admin_created_at: {style: {stroke-width: 1}}
+ADMINS -- admin_updated_at: {style: {stroke-width: 1}}
 
+# MARK: ROLES
 ROLES: {class: entity; label: "ROLES"}
 role_id: {class: attr_pri; label: "id"}
 ROLES -- role_id: {style: {stroke-width: 1}}
