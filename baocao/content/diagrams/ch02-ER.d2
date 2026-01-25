@@ -141,10 +141,14 @@ ROLES -- roles_code: {style: {stroke-width: 1}}
 ROLES -- roles_name: {style: {stroke-width: 1}}
 ROLES -- roles_description: {style: {stroke-width: 1}}
 
-
+# MARK: PERMISSIONS
 PERMISSIONS: {class: entity; label: "PERMISSIONS"}
-permission_id: {class: attr_pri; label: "id"}
-PERMISSIONS -- permission_id: {style: {stroke-width: 1}}
+permissions_id: {class: attr_pri; label: "id"}
+permissions_code: {class: attr; label: "code"}
+permissions_description: {class: attr; label: "description"}
+PERMISSIONS -- permissions_id: {style: {stroke-width: 1}}
+PERMISSIONS -- permissions_code: {style: {stroke-width: 1}}
+PERMISSIONS -- permissions_description: {style: {stroke-width: 1}}
 
 USERS: {class: entity; label: "USERS"}
 user_id: {class: attr_pri; label: "id"}
