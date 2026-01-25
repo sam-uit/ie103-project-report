@@ -131,8 +131,16 @@ ADMINS -- admin_updated_at: {style: {stroke-width: 1}}
 
 # MARK: ROLES
 ROLES: {class: entity; label: "ROLES"}
-role_id: {class: attr_pri; label: "id"}
-ROLES -- role_id: {style: {stroke-width: 1}}
+roles_id: {class: attr_pri; label: "id"}
+roles_code: {class: attr; label: "code"}
+roles_name: {class: attr; label: "name"}
+roles_description: {class: attr; label: "description"}
+
+ROLES -- roles_id: {style: {stroke-width: 1}}
+ROLES -- roles_code: {style: {stroke-width: 1}}
+ROLES -- roles_name: {style: {stroke-width: 1}}
+ROLES -- roles_description: {style: {stroke-width: 1}}
+
 
 PERMISSIONS: {class: entity; label: "PERMISSIONS"}
 permission_id: {class: attr_pri; label: "id"}
