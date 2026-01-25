@@ -172,8 +172,27 @@ USERS -- users_updated_at: {style: {stroke-width: 1}}
 
 # MARK: VOUCHERS
 VOUCHERS: {class: entity; label: "VOUCHERS"}
-voucher_id: {class: attr_pri; label: "id"}
-VOUCHERS -- voucher_id: {style: {stroke-width: 1}}
+vouchers_id: {class: attr_pri; label: "id"}
+vouchers_ma_code: {class: attr; label: "ma_code"}
+vouchers_phan_tram_giam: {class: attr; label: "phan_tram_giam"; width: 150}
+vouchers_ngay_het_han: {class: attr; label: "ngay_het_han"; width: 150}
+vouchers_so_tien_toi_thieu: {class: attr; label: "so_tien_toi_thieu"; width: 160}
+vouchers_so_lan_toi_da: {class: attr; label: "so_lan_toi_da"; width: 150}
+vouchers_so_lan_da_dung: {class: attr; label: "so_lan_da_dung"; width: 150}
+vouchers_trang_thai: {class: attr; label: "trang_thai"}
+vouchers_created_at: {class: attr; label: "created_at"; width: 110}
+vouchers_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+VOUCHERS -- vouchers_id: {style: {stroke-width: 1}}
+VOUCHERS -- vouchers_ma_code: {style: {stroke-width: 1}}
+VOUCHERS -- vouchers_phan_tram_giam: {style: {stroke-width: 1}}
+VOUCHERS -- vouchers_ngay_het_han: {style: {stroke-width: 1}}
+VOUCHERS -- vouchers_so_tien_toi_thieu: {style: {stroke-width: 1}}
+VOUCHERS -- vouchers_so_lan_toi_da: {style: {stroke-width: 1}}
+VOUCHERS -- vouchers_so_lan_da_dung: {style: {stroke-width: 1}}
+VOUCHERS -- vouchers_trang_thai: {style: {stroke-width: 1}}
+VOUCHERS -- vouchers_created_at: {style: {stroke-width: 1}}
+VOUCHERS -- vouchers_updated_at: {style: {stroke-width: 1}}
 
 DATPHONG: {class: entity; label: "DATPHONG"}
 datphong_id: {class: attr_pri; label: "id"}
