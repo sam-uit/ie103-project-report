@@ -194,9 +194,23 @@ VOUCHERS -- vouchers_trang_thai: {style: {stroke-width: 1}}
 VOUCHERS -- vouchers_created_at: {style: {stroke-width: 1}}
 VOUCHERS -- vouchers_updated_at: {style: {stroke-width: 1}}
 
+# MARK: DATPHONG
 DATPHONG: {class: entity; label: "DATPHONG"}
 datphong_id: {class: attr_pri; label: "id"}
+datphong_user_id: {class: attr; label: "user_id"}
+datphong_voucher_id: {class: attr; label: "voucher_id"}
+datphong_check_in: {class: attr; label: "check_in"}
+datphong_check_out: {class: attr; label: "check_out"}
+datphong_trang_thai: {class: attr; label: "trang_thai"}
+datphong_created_at: {class: attr; label: "created_at"; width: 110}
+
 DATPHONG -- datphong_id: {style: {stroke-width: 1}}
+DATPHONG -- datphong_user_id: {style: {stroke-width: 1}}
+DATPHONG -- datphong_voucher_id: {style: {stroke-width: 1}}
+DATPHONG -- datphong_check_in: {style: {stroke-width: 1}}
+DATPHONG -- datphong_check_out: {style: {stroke-width: 1}}
+DATPHONG -- datphong_trang_thai: {style: {stroke-width: 1}}
+DATPHONG -- datphong_created_at: {style: {stroke-width: 1}}
 
 LOAIPHONG: {class: entity; label: "LOAIPHONG"}
 loaiphong_id: {class: attr_pri; label: "id"}
