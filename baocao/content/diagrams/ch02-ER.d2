@@ -185,7 +185,18 @@ CT_DATPHONG -- ct_datphong_dongia: {style: {stroke-width: 1}}
 CT_DATPHONG -- ct_datphong_phong_id: {style: {stroke-width: 1; stroke: orange}}
 CT_DATPHONG -- ct_datphong_datphong_id: {style: {stroke-width: 1; stroke: orange}}
 
+# MARK: CT_SUDUNG_DV
+
 CT_SUDUNG_DV: {class: rel; label: "Chi Tiết DV\nCT_SUDUNG_DV"}
+ct_sudung_dv_id: {class: attr_pri; label: "id"}
+ct_sudung_dv_datphong_id: {class: attr_foreign_key; label: "datphong_id"; width: 120}
+ct_sudung_dv_dongia: {class: attr; label: "don_gia"}
+ct_sudung_dv_dichvu_id: {class: attr_foreign_key; label: "dichvu_id"; width: 120}
+
+CT_SUDUNG_DV -- ct_sudung_dv_id: {style: {stroke-width: 1}}
+CT_SUDUNG_DV -- ct_sudung_dv_dongia: {style: {stroke-width: 1}}
+CT_SUDUNG_DV -- ct_sudung_dv_datphong_id: {style: {stroke-width: 1; stroke: orange}}
+CT_SUDUNG_DV -- ct_sudung_dv_dichvu_id: {style: {stroke-width: 1; stroke: orange}}
 
 # Quan hệ 1-N / 1-1 (Logical)
 thuc_hien: {class: rel; label: "Thực Hiện"}
