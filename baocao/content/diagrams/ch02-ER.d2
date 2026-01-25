@@ -119,8 +119,8 @@ admin_email: {class: attr; label: "email"}
 admin_password: {class: attr; label: "password"}
 admin_full_name: {class: attr; label: "full_name"}
 admin_status: {class: attr; label: "status"}
-admin_created_at: {class: attr; label: "created_at"}
-admin_updated_at: {class: attr; label: "updated_at"}
+admin_created_at: {class: attr; label: "created_at"; width: 110}
+admin_updated_at: {class: attr; label: "updated_at"; width: 110}
 ADMINS -- admin_id: {style: {stroke-width: 1}}
 ADMINS -- admin_email: {style: {stroke-width: 1}}
 ADMINS -- admin_password: {style: {stroke-width: 1}}
@@ -150,10 +150,27 @@ PERMISSIONS -- permissions_id: {style: {stroke-width: 1}}
 PERMISSIONS -- permissions_code: {style: {stroke-width: 1}}
 PERMISSIONS -- permissions_description: {style: {stroke-width: 1}}
 
+# MARK: USERS
 USERS: {class: entity; label: "USERS"}
-user_id: {class: attr_pri; label: "id"}
-USERS -- user_id: {style: {stroke-width: 1}}
+users_id: {class: attr_pri; label: "id"}
+users_email: {class: attr; label: "email"}
+users_phone: {class: attr; label: "phone"}
+users_password_hash: {class: attr; label: "password_hash"; width: 140}
+users_full_name: {class: attr; label: "full_name"}
+users_status: {class: attr; label: "status"}
+users_created_at: {class: attr; label: "created_at"; width: 110}
+users_updated_at: {class: attr; label: "updated_at"; width: 110}
 
+USERS -- users_id: {style: {stroke-width: 1}}
+USERS -- users_email: {style: {stroke-width: 1}}
+USERS -- users_password_hash: {style: {stroke-width: 1}}
+USERS -- users_full_name: {style: {stroke-width: 1}}
+USERS -- users_phone: {style: {stroke-width: 1}}
+USERS -- users_status: {style: {stroke-width: 1}}
+USERS -- users_created_at: {style: {stroke-width: 1}}
+USERS -- users_updated_at: {style: {stroke-width: 1}}
+
+# MARK: VOUCHERS
 VOUCHERS: {class: entity; label: "VOUCHERS"}
 voucher_id: {class: attr_pri; label: "id"}
 VOUCHERS -- voucher_id: {style: {stroke-width: 1}}
