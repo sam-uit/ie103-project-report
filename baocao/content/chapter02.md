@@ -322,6 +322,8 @@ Quy cách trình bày:
 - Khóa chính: <u>gạch chân</u> (ví dụ: <u>id</u>)
 - Khóa ngoại: *in nghiêng* (ví dụ: *loai_phong_id*)
 
+### Nhóm Bảng Thực Thể
+
 #### ADMINS (Quản Lý/Quản Trị Viên)
 
 ADMINS(<u>id</u>, username, password, full_name, email, phone, address, created_at, updated_at)
@@ -351,20 +353,32 @@ PHONG(<u>id</u>, so_phong, *loai_phong_id*, trang_thai)
 #### USERS (Người Dùng)
 #### VOUCHERS (Mã Giảm Giá)
 
-### Nhóm Bảng Mối Quan Hệ
+### Nhóm Bảng Mối Liên Kết (Mối Quan Hệ n-n)
+
+- Được hình thành từ việc tách các mối quan hệ nhiều-nhiều (Many-to-Many).
 
 #### `ADMIN_ROLES`:
 
-Mối quan hệ giữa ADMINS và ROLES
+- Mối quan hệ giữa ADMINS và ROLES.
+- Phân quyền Admin.
 
 `ADMIN_ROLES`(<u>admin_id</u>, <u>role_id</u>)
 
 - `admin_id`: Mã định danh duy nhất của admin.
 - `role_id`: Mã định danh duy nhất của role.
 
-- ROLE_PERMISSIONS
-- CT_DATPHONG
-- CT_SUDUNG_DV
+#### ROLE_PERMISSIONS
+
+- Giải quyết quan hệ N-N giữa ROLES và PERMISSIONS.
+- Gán quyền cho Role.
+
+#### CT_DATPHONG
+
+- Giải quyết quan hệ N-N giữa DATPHONG và PHONG.
+
+#### CT_SUDUNG_DV
+
+- Giải quyết quan hệ N-N giữa DATPHONG và DICHVU.
 
 ### Tổng Hợp
 
