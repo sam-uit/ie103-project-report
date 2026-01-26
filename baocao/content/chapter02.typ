@@ -392,7 +392,7 @@ Quy cách:
 == Mô Hình Mức Logic
 <mo-hinh-muc-logic>
 
-Quy tắc trình bày:
+Quy cách trình bày:
 
 - Khóa chính: #underline[gạch chân] (ví dụ: #underline[id])
 - Khóa ngoại: #emph[in nghiêng] (ví dụ: #emph[loai\_phong\_id])

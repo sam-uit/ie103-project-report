@@ -317,7 +317,7 @@ Quy cách:
 
 ## Mô Hình Mức Logic
 
-Quy tắc trình bày:
+Quy cách trình bày:
 
 - Khóa chính: <u>gạch chân</u> (ví dụ: <u>id</u>)
 - Khóa ngoại: *in nghiêng* (ví dụ: *loai_phong_id*)
