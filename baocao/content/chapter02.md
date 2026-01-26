@@ -448,16 +448,18 @@ REFUNDS(<u>id</u>, *payment_id*, *requested_by*, *approved_by*, so_tien_hoan, ly
 
 - Lưu trữ đánh giá từ khách hàng sau khi hoàn tất đặt phòng.
 
-REVIEWS(<u>id</u>, *user_id*, *phong_id*, *datphong_id*, so_sao, binh_luan, ngay_danh_gia, trang_thai)
+REVIEWS(<u>id</u>, *user_id*, *phong_id*, *datphong_id*, so_sao, binh_luan, ngay_danh_gia, trang_thai, created_at, updated_at)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh đánh giá. |
-| user_id | Người đánh giá. |
-| datphong_id | Khóa ngoại tham chiếu đơn đặt phòng (Đảm bảo tính xác thực). |
-| phong_id | Khóa ngoại tham chiếu phòng được đánh giá. |
+| <u>id</u> | Mã định danh đánh giá. |
+| *user_id* | Người đánh giá, khóa ngoại tham chiếu tới USERS. |
+| *datphong_id* | Khóa ngoại tham chiếu đơn đặt phòng, DATPHONG. |
+| *phong_id* | Khóa ngoại tham chiếu phòng được đánh giá, PHONG. |
 | so_sao | Điểm đánh giá (1-5). |
 | trang_thai | Trạng thái kiểm duyệt (VISIBLE/HIDDEN). |
+| created_at | Ngày tạo. |
+| updated_at | Ngày cập nhật. |
 
 #### ROLES (Vai Trò)
 
