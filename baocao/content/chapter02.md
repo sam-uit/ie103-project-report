@@ -523,8 +523,8 @@ VOUCHERS(<u>id</u>, ma_code, phan_tram_giam, ngay_het_han, so_tien_toi_thieu, so
 
 | Khóa | Mô tả |
 | --- | --- |
-| admin_id | Mã định danh duy nhất của admin. |
-| role_id | Mã định danh duy nhất của role. |
+| ***admin_id*** | Mã định danh duy nhất của admin. Khóa ngoại tham chiếu ADMINS. |
+| ***role_id*** | Mã định danh duy nhất của role. Khóa ngoại tham chiếu ROLES. |
 
 #### ROLE_PERMISSIONS
 
