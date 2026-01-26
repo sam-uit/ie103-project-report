@@ -27,8 +27,6 @@
 
 ## Đối Tượng Và Mối Quan Hệ
 
-![Mô Hình Thực Thể Quan Hệ](diagrams/ch02-ER.svg)
-
 ### User Stories
 
 - US-01: Quản lý phòng
@@ -53,6 +51,38 @@
     - Là **End User**, tôi muốn xem điểm trung bình và các đánh giá của từng loại phòng để đưa ra quyết định đặt phòng phù hợp.
 
 ### Các Đối Tượng Chính
+
+
+### Quan Hệ Giữa Các Đối Tượng
+
+- `ADMINS 1 --- n ADMIN_ROLES`: Một admin có thể có nhiều admin role.
+- `DATPHONG 1 --- 1 REVIEWS`: Một đặt phòng có thể có một đánh giá.
+- `DATPHONG 1 --- n CT_DATPHONG`: Một đặt phòng có thể có nhiều chi tiết đặt phòng.
+- `DATPHONG 1 --- n CT_SUDUNG_DV`: Một đặt phòng có thể sử dụng nhiều dịch vụ.
+- `DATPHONG 1 --- n PAYMENTS`: Một đặt phòng có thể có nhiều thanh toán.
+- `DICHVU 1 --- n CT_SUDUNG_DV`: Một dịch vụ có thể được sử dụng nhiều lần.
+- `LOAIPHONG 1 --- n PHONG`: Một loại phòng có thể có nhiều phòng.
+- `PAYMENTS 1 --- n REFUNDS`: Một thanh toán có thể có nhiều hoàn tiền.
+- `PERMISSIONS 1 --- n ROLE_PERMISSIONS`: Một permission có thể thuộc nhiều role.
+- `PHONG 1 --- n CT_DATPHONG`: Một phòng có thể có nhiều chi tiết đặt phòng.
+- `PHONG 1 --- n REVIEWS`: Một phòng có thể có nhiều đánh giá.
+- `ROLES 1 --- n ADMIN_ROLES`: Một role có thể có nhiều admin roles.
+- `ROLES 1 --- n ROLE_PERMISSIONS`: Một role có thể có nhiều role permission.
+- `USERS 1 --- n DATPHONG`: Một user có thể có nhiều đặt phòng.
+- `USERS 1 --- n REVIEWS`: Một user có thể đánh giá nhiều phòng.
+- `VOUCHERS 1 --- n DATPHONG`: Một voucher có thể được dùng cho nhiều đặt phòng.
+
+## Mô Hình Mức Quan Niệm
+
+![Mô Hình Thực Thể Quan Hệ](diagrams/ch02-ER.svg)
+
+## Thiết Kế Cơ Sở Dữ Liệu
+
+### Nhóm Bảng Thực Thể
+
+### Nhóm Bảng Mối Quan Hệ
+
+### Tổng Hợp
 
 ```{=typst}
 #figure(
@@ -82,31 +112,4 @@
   ],
 )
 ```
-
-### Quan Hệ Giữa Các Đối Tượng
-
-- `ADMINS 1 --- n ADMIN_ROLES`: Một admin có thể có nhiều admin role.
-- `DATPHONG 1 --- 1 REVIEWS`: Một đặt phòng có thể có một đánh giá.
-- `DATPHONG 1 --- n CT_DATPHONG`: Một đặt phòng có thể có nhiều chi tiết đặt phòng.
-- `DATPHONG 1 --- n CT_SUDUNG_DV`: Một đặt phòng có thể sử dụng nhiều dịch vụ.
-- `DATPHONG 1 --- n PAYMENTS`: Một đặt phòng có thể có nhiều thanh toán.
-- `DICHVU 1 --- n CT_SUDUNG_DV`: Một dịch vụ có thể được sử dụng nhiều lần.
-- `LOAIPHONG 1 --- n PHONG`: Một loại phòng có thể có nhiều phòng.
-- `PAYMENTS 1 --- n REFUNDS`: Một thanh toán có thể có nhiều hoàn tiền.
-- `PERMISSIONS 1 --- n ROLE_PERMISSIONS`: Một permission có thể thuộc nhiều role.
-- `PHONG 1 --- n CT_DATPHONG`: Một phòng có thể có nhiều chi tiết đặt phòng.
-- `PHONG 1 --- n REVIEWS`: Một phòng có thể có nhiều đánh giá.
-- `ROLES 1 --- n ADMIN_ROLES`: Một role có thể có nhiều admin roles.
-- `ROLES 1 --- n ROLE_PERMISSIONS`: Một role có thể có nhiều role permission.
-- `USERS 1 --- n DATPHONG`: Một user có thể có nhiều đặt phòng.
-- `USERS 1 --- n REVIEWS`: Một user có thể đánh giá nhiều phòng.
-- `VOUCHERS 1 --- n DATPHONG`: Một voucher có thể được dùng cho nhiều đặt phòng.
-
-## Mô Hình Mức Quan Niệm
-
-### Nhóm Bảng Thực Thể
-
-### Nhóm Bảng Mối Quan Hệ
-
-## Thiết Kế Cơ Sở Dữ Liệu
 
