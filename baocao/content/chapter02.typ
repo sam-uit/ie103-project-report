@@ -147,24 +147,12 @@ Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan:
 
 Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 
-=== Các Thực Thể
-<cac-thuc-the>
+=== Các Thực Thể và Thuộc Tính
+<cac-thuc-the-va-thuoc-tinh>
 
 
 ==== ADMINS (Quản Lý/Quản Trị Viên)
 <admins-quan-ly-quan-tri-vien>
-
-Thuộc Tính:
-
-- `id`: Mã định danh duy nhất của admin.
-- `username`: Tên đăng nhập của admin.
-- `password`: Mật khẩu của admin.
-- `full_name`: Họ tên đầy đủ của admin.
-- `email`: Email của admin.
-- `phone`: Số điện thoại của admin.
-- `address`: Địa chỉ của admin.
-- `created_at`: Thời gian tạo của admin.
-- `updated_at`: Thời gian cập nhật của admin.
 
 #figure(image("diagrams/ch02-table-admins.svg"),
   caption: [
@@ -195,6 +183,14 @@ Thuộc Tính:
 ==== PHONG (Phòng)
 <phong-phong>
 
+- Số Phòng (Thuộc tính định danh).
+- Trạng Thái (Trống, Đang Ở, Bảo Trì, Đã Đặt).
+
+#figure(image("diagrams/ch02-concept-phong.svg"),
+  caption: [
+    Thực Thể PHONG (Phòng)
+  ]
+)
 
 ==== REFUNDS (Hoàn Tiền)
 <refunds-hoan-tien>

@@ -152,6 +152,8 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Số Phòng (Thuộc tính định danh).
 - Trạng Thái (Trống, Đang Ở, Bảo Trì, Đã Đặt).
 
+![Thực Thể PHONG (Phòng)](diagrams/ch02-concept-phong.svg)
+
 #### REFUNDS (Hoàn Tiền)
 #### REVIEWS (Đánh Giá)
 #### ROLES (Vai Trò)
