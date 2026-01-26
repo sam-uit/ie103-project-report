@@ -161,9 +161,9 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Tên Đầy Đủ
 - Trạng Thái (Hoạt Động, Không Hoạt Động).
 
-#figure(image("diagrams/ch02-table-admins.svg"),
+#figure(image("diagrams/ch02-concept-admins.svg"),
   caption: [
-    Thực Thể ADMINS
+    Thực Thể và Thuộc Tính: ADMINS
   ]
 )
 

@@ -148,7 +148,7 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Tên Đầy Đủ
 - Trạng Thái (Hoạt Động, Không Hoạt Động).
 
-![Thực Thể ADMINS](diagrams/ch02-table-admins.svg)
+![Thực Thể và Thuộc Tính: ADMINS](diagrams/ch02-concept-admins.svg)
 
 #### DATPHONG (Đặt Phòng)
 
