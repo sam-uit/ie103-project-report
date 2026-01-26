@@ -54,13 +54,18 @@
 
 ### Danh Sách Các Thực Thể
 
-#### PHÒNG
-#### DỊCH VỤ
-#### THANH TOÁN
-#### HOÀN TIỀN
-#### QUYỀN
-#### ROLES
-#### USERS
+#### ADMINS (Quản Lý/Quản Trị Viên)
+#### DATPHONG (Đặt Phòng)
+#### DICHVU (Dịch Vụ)
+#### LOAIPHONG (Loại Phòng)
+#### PAYMENTS (Thanh Toán)
+#### PERMISSIONS (Quyền Hạn)
+#### PHONG (Phòng)
+#### REFUNDS (Hoàn Tiền)
+#### REVIEWS (Đánh Giá)
+#### ROLES (Vai Trò)
+#### USERS (Người Dùng)
+#### VOUCHERS (Mã Giảm Giá)
 
 ### Quan Hệ Giữa Các Thực Thể
 
