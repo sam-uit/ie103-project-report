@@ -150,7 +150,7 @@
     - Một vai trò có thể có nhiều quyền hạn.
     - Một quyền hạn có thể thuộc về nhiều vai trò.
 
-Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan đơn giản:
+Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan:
 
 ![Trực Quan Hóa các Thực Thể và Mối Quan Hệ](diagrams/entity-relationship.svg)
 
