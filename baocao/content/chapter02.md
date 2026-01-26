@@ -382,7 +382,7 @@ DATPHONG(<u>id</u>, *user_id*, *voucher_id*, check_in, check_out, trang_thai, cr
     NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
   ),
   caption: [
-    Mô Hình Mức Logic: ADMINS
+    Mô Hình Mức Logic: DATPHONG
   ],
 )
 ```
@@ -403,6 +403,20 @@ DICHVU(<u>id</u>, ten_dich_vu, don_gia, don_vi_tinh, trang_thai, created_at, upd
 | created_at | Ngày tạo. |
 | updated_at | Ngày cập nhật. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: DICHVU
+  ],
+)
+```
+
 #### LOAIPHONG (Loại Phòng)
 
 - Danh mục phân loại phòng (Deluxe, Standard, Suite...).
@@ -416,6 +430,20 @@ LOAIPHONG(<u>id</u>, ten_loai, gia_co_ban, mo_ta, suc_chua)
 | gia_co_ban | Giá gốc theo đêm. |
 | mo_ta | Mô tả chi tiết loại phòng. |
 | suc_chua | Số người tối đa cho phép. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: LOAIPHONG
+  ],
+)
+```
 
 #### PAYMENTS (Thanh Toán)
 
@@ -433,6 +461,20 @@ PAYMENTS(<u>id</u>, *booking_id*, *user_id*, so_tien, phuong_thuc, trang_thai, c
 | trang_thai | Trạng thái giao dịch (PENDING, SUCCESS, FAILED, CANCELLED, PAID, UNPAID, REFUNDED). |
 | created_at | Ngày tạo. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: PAYMENTS
+  ],
+)
+```
+
 #### PERMISSIONS (Quyền Hạn)
 
 - Danh sách các quyền hạn cụ thể trong hệ thống.
@@ -444,6 +486,20 @@ PERMISSIONS(<u>id</u>, code, description)
 | <u>id</u> | Mã định danh quyền hạn. |
 | code | Mã code hệ thống (ví dụ: `VIEW_DASHBOARD`, `EDIT_ROOM`). |
 | description | Mô tả chi tiết quyền hạn. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: PERMISSIONS
+  ],
+)
+```
 
 #### PHONG (Phòng)
 
@@ -457,6 +513,20 @@ PHONG(<u>id</u>, so_phong, *loai_phong_id*, trang_thai)
 | so_phong | Số hiệu phòng (ví dụ: 101, 202). |
 | *loai_phong_id* | Khóa ngoại tham chiếu tới bảng LOAIPHONG. |
 | trang_thai | Trạng thái hiện tại (AVAILABLE, OCCUPIED, MAINTENANCE, RESERVED). |
+
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: PHONG
+  ],
+)
+```
 
 #### REFUNDS (Hoàn Tiền)
 
@@ -475,6 +545,20 @@ REFUNDS(<u>id</u>, *payment_id*, *requested_by*, *approved_by*, so_tien_hoan, ly
 | created_at | Ngày tạo. |
 | updated_at | Ngày cập nhật. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: REFUNDS
+  ],
+)
+```
+
 #### REVIEWS (Đánh Giá)
 
 - Lưu trữ đánh giá từ khách hàng sau khi hoàn tất đặt phòng.
@@ -492,6 +576,20 @@ REVIEWS(<u>id</u>, *user_id*, *phong_id*, *datphong_id*, so_sao, binh_luan, ngay
 | created_at | Ngày tạo. |
 | updated_at | Ngày cập nhật. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: REVIEWS
+  ],
+)
+```
+
 #### ROLES (Vai Trò)
 
 Định nghĩa các nhóm quyền (Admin, Staff, Customer).
@@ -504,6 +602,20 @@ ROLES(<u>id</u>, code, name, description)
 | code | Mã code vai trò (ADMIN, STAFF, USER). |
 | name | Tên hiển thị. |
 | description | Mô tả chi tiết vai trò. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: ROLES
+  ],
+)
+```
 
 #### USERS (Người Dùng)
 
@@ -521,6 +633,20 @@ USERS(<u>id</u>, email, phone, password_hash, full_name, status, created_at, upd
 | status | Trạng thái (ACTIVE/INACTIVE). |
 | created_at | Ngày tạo. |
 | updated_at | Ngày cập nhật. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: USERS
+  ],
+)
+```
 
 #### VOUCHERS (Mã Giảm Giá)
 
@@ -541,6 +667,20 @@ VOUCHERS(<u>id</u>, ma_code, phan_tram_giam, ngay_het_han, so_tien_toi_thieu, so
 | created_at | Ngày tạo. |
 | updated_at | Ngày cập nhật. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: VOUCHERS
+  ],
+)
+```
+
 ### Nhóm Bảng Mối Liên Kết (Mối Quan Hệ n-n)
 
 - Được hình thành từ việc tách các mối quan hệ nhiều-nhiều (Many-to-Many).
@@ -559,6 +699,20 @@ ADMIN_ROLES(<u>admin_id</u>, <u>role_id</u>)
 | <u>*admin_id*</u> | Mã định danh duy nhất của admin. Khóa ngoại tham chiếu ADMINS. |
 | <u>*role_id*</u> | Mã định danh duy nhất của role. Khóa ngoại tham chiếu ROLES. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: ADMINS_ROLES
+  ],
+)
+```
+
 #### ROLE_PERMISSIONS
 
 - Giải quyết quan hệ N-N giữa ROLES và PERMISSIONS.
@@ -570,6 +724,20 @@ ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
 | --- | --- |
 | <u>*role_id*</u> | Khóa ngoại tham chiếu ROLES. |
 | <u>*permission_id*</u> | Khóa ngoại tham chiếu PERMISSIONS. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: ROLES_PERMISSIONS
+  ],
+)
+```
 
 #### CT_DATPHONG
 
@@ -584,6 +752,20 @@ CT_DATPHONG(<u>id</u>, *datphong_id*, *phong_id*, don_gia)
 | *datphong_id* | Khóa ngoại tham chiếu DATPHONG. |
 | *phong_id* | Khóa ngoại tham chiếu PHONG. |
 | don_gia | Giá phòng được chốt tại thời điểm đặt (Lưu lịch sử giá). |
+
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: CT_DATPHONG
+  ],
+)
+```
 
 #### CT_SUDUNG_DV
 
@@ -602,6 +784,20 @@ CT_SUDUNG_DV(<u>id</u>, *datphong_id*, *dichvu_id*, so_luong, don_gia, thoi_diem
 | thoi_diem_su_dung | Thời gian khách order dịch vụ. |
 | ghi_chu | Ghi chú về việc sử dụng dịch vụ. |
 | created_at | Ngày tạo. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: CT_SUDUNG_DV
+  ],
+)
+```
 
 ### Tổng Hợp Danh Sách Bảng
 
