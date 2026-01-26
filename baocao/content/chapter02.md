@@ -140,18 +140,6 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 
 #### ADMINS (Quản Lý/Quản Trị Viên)
 
-Thuộc Tính:
-
-- `id`: Mã định danh duy nhất của admin.
-- `username`: Tên đăng nhập của admin.
-- `password`: Mật khẩu của admin.
-- `full_name`: Họ tên đầy đủ của admin.
-- `email`: Email của admin.
-- `phone`: Số điện thoại của admin.
-- `address`: Địa chỉ của admin.
-- `created_at`: Thời gian tạo của admin.
-- `updated_at`: Thời gian cập nhật của admin.
-
 ![Thực Thể ADMINS](diagrams/ch02-table-admins.svg)
 
 #### DATPHONG (Đặt Phòng)
