@@ -339,6 +339,20 @@ ADMINS(<u>id</u>, username, password, full_name, email, phone, address, created_
 - `updated_at`: Thời gian cập nhật của admin.
 
 #### DATPHONG (Đặt Phòng)
+
+- Lưu trữ thông tin header của đơn đặt phòng.
+
+DATPHONG(<u>id</u>, *user_id*, *voucher_id*, ngay_dat, ngay_checkin, ngay_checkout, tong_tien, trang_thai, created_at, updated_at)
+
+* `id`: Mã định danh đơn đặt phòng.
+* `user_id`: Khóa ngoại tham chiếu tới bảng USERS (Người đặt).
+* `voucher_id`: Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể NULL).
+* `ngay_dat`: Thời điểm tạo đơn.
+* `ngay_checkin`: Ngày nhận phòng dự kiến.
+* `ngay_checkout`: Ngày trả phòng dự kiến.
+* `tong_tien`: Tổng giá trị đơn hàng (sau khi trừ voucher nếu có).
+* `trang_thai`: Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).
+
 #### DICHVU (Dịch Vụ)
 #### LOAIPHONG (Loại Phòng)
 #### PAYMENTS (Thanh Toán)
