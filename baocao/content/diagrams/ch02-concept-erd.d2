@@ -41,15 +41,15 @@ VOUCHERS: {class: entity; label: "VOUCHERS"}
 # ngôn ngữ "tự nhiên"
 
 # ADMINS -> REFUNDS: duyệt
-admin_approve_refund: {class: rel; label: "duyệt"}
-ADMINS -- admin_approve_refund: (1, n)
-admin_approve_refund -- REFUNDS: (1, n)
+admins_refunds: {class: rel; label: "duyệt"}
+ADMINS -- admins_refunds: (1, n)
+admins_refunds -- REFUNDS: (1, n)
 
 # ADMINS -> ROLES: được cấp
 # n - n: viền cam
-admin_role: {class: rel; label: "được cấp"; style: {stroke: orange}}
-ADMINS -- admin_role: (n, n)
-admin_role -- ROLES: (n, n)
+admins_roles: {class: rel; label: "được cấp"; style: {stroke: orange}}
+ADMINS -- admins_roles: (n, n)
+admins_roles -- ROLES: (n, n)
 
 DATPHONG -> DICHVU: bao gồm
 DATPHONG -> PAYMENTS: được
@@ -59,9 +59,9 @@ LOAIPHONG <- PHONG: thuộc
 PAYMENTS -> REFUNDS: được
 
 # ROLES -> PERMISSIONS: có các
-role_permission: {class: rel; label: "có gán"; style: {stroke: orange}}
-ROLES -- role_permission: (n, n)
-role_permission -- PERMISSIONS: (n, n)
+roles_permission: {class: rel; label: "có gán"; style: {stroke: orange}}
+ROLES -- roles_permission: (n, n)
+roles_permission -- PERMISSIONS: (n, n)
 
 USERS -> DATPHONG: thực hiện
 
@@ -76,11 +76,11 @@ USERS -- users_refunds: (1, n)
 users_refunds -- REFUNDS: (1, n)
 
 # USERS -> REVIEWS: viết
-user_reviews: {class: rel; label: "viết"}
-USERS -- user_reviews: (1, n)
-user_reviews -- REVIEWS: (1, n)
+users_reviews: {class: rel; label: "viết"}
+USERS -- uses_reviews: (1, n)
+users_reviews -- REVIEWS: (1, n)
 
 # VOUCHERS -> DATPHONG: áp dụng cho
-voucher_datphong: {class: rel; label: "áp dụng"}
-VOUCHERS -- voucher_datphong: (1, n)
-voucher_datphong -- DATPHONG: (1, n)
+vouchers_datphong: {class: rel; label: "áp dụng"}
+VOUCHERS -- vouchers_datphong: (1, n)
+vouchers_datphong -- DATPHONG: (1, n)
