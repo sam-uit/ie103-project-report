@@ -66,7 +66,11 @@ role_permission -- PERMISSIONS: (n, n)
 USERS -> DATPHONG: thực hiện
 USERS -> PAYMENTS: thực hiện
 USERS -> REFUNDS: yêu cầu
-USERS -> REVIEWS: viết
+
+# USERS -> REVIEWS: viết
+user_reviews: {class: rel; label: "viết"}
+USERS -- user_reviews: (1, n)
+user_reviews -- REVIEWS: (1, n)
 
 # VOUCHERS -> DATPHONG: áp dụng cho
 voucher_datphong: {class: rel; label: "áp dụng"}
