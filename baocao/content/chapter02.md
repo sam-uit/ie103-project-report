@@ -328,7 +328,7 @@ Quy cách trình bày:
 
 ADMINS(<u>id</u>, username, password, full_name, email, phone, address, created_at, updated_at)
 
-<!-- TODO: Sử dụng bảng thay vì list -->
+<!-- TODO: định dạng khóa chính, khóa ngoại trong bảng -->
 
 | Khóa | Mô tả |
 | --- | --- |
