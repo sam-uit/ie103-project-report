@@ -97,14 +97,14 @@ classes: {
 
 # MARK: USERS
 USERS: {class: entity; label: "USERS"}
-users_id: {class: attr_pri; label: "id"}
-users_email: {class: attr; label: "email"}
-users_phone: {class: attr; label: "phone"}
-users_password_hash: {class: attr; label: "password_hash"; width: 140}
-users_full_name: {class: attr; label: "full_name"}
-users_status: {class: attr; label: "status"}
-users_created_at: {class: attr; label: "created_at"; width: 110}
-users_updated_at: {class: attr; label: "updated_at"; width: 110}
+users_id: {class: attr_pri; label: "ID Người Dùng"}
+users_email: {class: attr; label: "Email"}
+users_password_hash: {class: attr; label: "Mật Khẩu"}
+users_phone: {class: attr; label: "Số Điện Thoại"}
+users_full_name: {class: attr; label: "Tên Đầy Đủ"}
+users_status: {class: attr; label: "Trạng Thái"}
+# users_created_at: {class: attr; label: "created_at"; width: 110}
+# users_updated_at: {class: attr; label: "updated_at"; width: 110}
 
 USERS -- users_id
 USERS -- users_email
@@ -112,5 +112,5 @@ USERS -- users_password_hash
 USERS -- users_full_name
 USERS -- users_phone
 USERS -- users_status
-USERS -- users_created_at
-USERS -- users_updated_at
+# USERS -- users_created_at
+# USERS -- users_updated_at
