@@ -7,6 +7,36 @@
       "sqlFile": "StoreProcedure/Demo_Service/sp_Service.sql",
       "separateTables": [
             {
+                  "name": "DATPHONG",
+                  "label": "📋 Bảng Chi tiết sử dụng dịch vụ",
+                  "sqlBefore": "SELECT ct.datphong_id AS booking_id, ct.dichvu_id AS dich_vu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id WHERE ct.datphong_id = @DatPhongId",
+                  "sqlAfter": "SELECT ct.datphong_id AS booking_id, ct.dichvu_id AS dich_vu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id WHERE ct.datphong_id = @DatPhongId",
+                  "sqlFetchInitial": "SELECT TOP 5 ct.datphong_id AS booking_id, ct.dichvu_id AS dich_vu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id ORDER BY ct.created_at DESC",
+                  "columns": [
+                        {
+                              "key": "booking_id",
+                              "label": "Booking ID",
+                              "isPk": true
+                        },
+                        {
+                              "key": "dich_vu_id",
+                              "label": "Dịch Vụ ID"
+                        },
+                        {
+                              "key": "ten_dich_vu",
+                              "label": "Tên DV"
+                        },
+                        {
+                              "key": "so_luong",
+                              "label": "⚡ Số Lượng"
+                        },
+                        {
+                              "key": "don_gia",
+                              "label": "Đơn Giá"
+                        }
+                  ]
+            },
+            {
                   "name": "CT_SUDUNG_DV",
                   "label": "🛎️ Sử Dụng Dịch Vụ",
                   "sqlBefore": "SELECT ct.id, ct.datphong_id AS booking_id, ct.dichvu_id AS dich_vu_id, dv.ten_dich_vu, ct.so_luong, ct.don_gia FROM CT_SUDUNG_DV ct LEFT JOIN DICHVU dv ON dv.id = ct.dichvu_id WHERE ct.datphong_id = @DatPhongId",

@@ -9,9 +9,9 @@
             {
                   "name": "DATPHONG",
                   "label": "📋 Bảng Đặt Phòng",
-                  "sqlBefore": "SELECT id, user_id, voucher_code, trang_thai FROM DATPHONG WHERE id = @DatPhongId",
-                  "sqlAfter": "SELECT id, user_id, voucher_code, trang_thai FROM DATPHONG WHERE id = @DatPhongId",
-                  "sqlFetchInitial": "SELECT TOP 20 dp.id, dp.user_id, dp.voucher_code, dp.trang_thai FROM DATPHONG dp ORDER BY dp.created_at DESC",
+                  "sqlBefore": "SELECT dp.id, dp.user_id, dp.voucher_id, ISNULL(v.ma_code, 'N/A') AS voucher_code, dp.trang_thai FROM DATPHONG dp LEFT JOIN VOUCHERS v ON v.id = dp.voucher_id WHERE dp.id = @DatPhongId",
+                  "sqlAfter": "SELECT dp.id, dp.user_id, dp.voucher_id, ISNULL(v.ma_code, 'N/A') AS voucher_code, dp.trang_thai FROM DATPHONG dp LEFT JOIN VOUCHERS v ON v.id = dp.voucher_id WHERE dp.id = @DatPhongId",
+                  "sqlFetchInitial": "SELECT TOP 10 dp.id, dp.user_id, dp.voucher_id, ISNULL(v.ma_code, 'N/A') AS voucher_code, dp.trang_thai FROM DATPHONG dp LEFT JOIN VOUCHERS v ON v.id = dp.voucher_id ORDER BY dp.created_at ASC",
                   "columns": [
                         {
                               "key": "id",
@@ -21,6 +21,10 @@
                         {
                               "key": "user_id",
                               "label": "User ID"
+                        },
+                        {
+                              "key": "voucher_id",
+                              "label": "Voucher ID"
                         },
                         {
                               "key": "voucher_code",
