@@ -92,7 +92,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 10%, 25%, 45%),
     align: (left, left, left, left),
     [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`role_id`], [`INT`], [`PK`, `FK` (ROLES)], [Khóa ngoại + Khóa chính.], [`permission_id`], [`INT`], [`PK`, `FK` (PERMISSIONS)], [Khóa ngoại + Khóa chính.], [#emph[FK Rule]], [], [`ON DELETE CASCADE`], [Xóa Role/Permission tự động xóa dòng này.]
   ),
@@ -128,7 +128,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 20%, 25%, 35%),
     align: (left, left, left, left),
     [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`ten_loai`], [`NVARCHAR(100)`], [`NOT NULL`], [Tên loại (VD: Deluxe).], [`gia_co_ban`], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá niêm yết.], [`mo_ta`], [`NVARCHAR(500)`], [`NULL`], [Mô tả tiện nghi.], [`suc_chua`], [`INT`], [`DEFAULT 2`], [Số người tối đa.], [#emph[CHECK]], [], [`gia_co_ban > 0`], [Chỉ nhận giá trị quy định.], [#emph[CHECK]], [], [`suc_chua > 0`], [Chỉ nhận giá trị quy định.]
   ),
@@ -146,7 +146,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
   table(
     columns: (20%, 20%, 30%, 30%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`so_phong`], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Số phòng (VD: 101).], [`loai_phong_id`], [`INT`], [`FK` (LOAIPHONG), `NOT NULL`], [Loại phòng tương ứng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'AVAILABLE'`], [Trạng thái phòng.], [#emph[CHECK]], [], [`trang_thai IN ('AVAILABLE', 'OCCUPIED', 'MAINTENANCE', 'RESERVED')`], [Chỉ nhận giá trị quy định.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`so_phong`], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Số phòng (VD: 101).], [`loai_phong_id`], [`INT`], [`FK (LOAIPHONG)`, `NOT NULL`], [Loại phòng tương ứng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'AVAILABLE'`], [Trạng thái phòng.], [#emph[CHECK]], [], [`trang_thai IN ('AVAILABLE', 'OCCUPIED', 'MAINTENANCE', 'RESERVED')`], [Chỉ nhận giá trị quy định.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: PHONG
@@ -176,12 +176,12 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`ma_code`], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Mã Voucher (VD: TET2025).], [`phan_tram_giam`], [`DECIMAL(5,2)`], [`NOT NULL`], [Phần trăm giảm.], [`ngay_het_han`], [`DATETIME`], [`NOT NULL`], [Ngày hết hạn.], [`so_tien_toi_thieu`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền tối thiểu.], [`so_lan_toi_da`], [`INT`], [`NOT NULL`, `DEFAULT 100`], [Số lần tối đa.], [`so_lan_da_dung`], [`INT`], [`DEFAULT 0`], [Số lần đã dùng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`phan_tram_giam >= 0`], [Phần trăm giảm phải dương.], [#emph[CHECK]], [], [`so_tien_toi_thieu >= 0`], [Số tiền tối thiểu phải dương.], [#emph[CHECK]], [], [`so_lan_toi_da > 0`], [Số lần tối đa phải dương.], [#emph[CHECK]], [], [`so_lan_da_dung >= 0`], [Số lần đã dùng phải dương.], [#emph[CHECK]], [], [`so_lan_da_dung <= so_lan_toi_da`], [Số lần đã dùng phải nhỏ hơn hoặc bằng số lần tối đa.], [#emph[CHECK]], [], [`trang_thai IN ('ACTIVE', 'INACTIVE')`], [Ràng buộc trạng thái.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`ma_code`], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Mã Voucher (vd: `TET2025`).], [`phan_tram_giam`], [`DECIMAL(5,2)`], [`NOT NULL`], [Phần trăm giảm.], [`ngay_het_han`], [`DATETIME`], [`NOT NULL`], [Ngày hết hạn.], [`so_tien_toi_thieu`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền tối thiểu.], [`so_lan_toi_da`], [`INT`], [`NOT NULL`, `DEFAULT 100`], [Số lần tối đa.], [`so_lan_da_dung`], [`INT`], [`DEFAULT 0`], [Số lần đã dùng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`phan_tram_giam >= 0`], [Phần trăm giảm phải >= 0.], [#emph[CHECK]], [], [`so_tien_toi_thieu >= 0`], [Số tiền tối thiểu phải >= 0.], [#emph[CHECK]], [], [`so_lan_toi_da > 0`], [Số lần tối đa phải > 0.], [#emph[CHECK]], [], [`so_lan_da_dung >= 0`], [Số lần đã dùng phải >= 0.], [#emph[CHECK]], [], [`so_lan_da_dung <= so_lan_toi_da`], [Số lần đã dùng phải <= số lần tối đa.], [#emph[CHECK]], [], [`trang_thai IN ('ACTIVE', 'INACTIVE')`], [Ràng buộc trạng thái.]
   ),
   caption: [
-    Mô Hình Mức Vật Lý: VOUCHER
+    Mô Hình Mức Vật Lý: VOUCHERS
   ],
 )
 
@@ -196,9 +196,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`user_id`], [`INT`], [`FK` (USERS), `NOT NULL`], [Khách đặt phòng.], [`voucher_id`], [`INT`], [`FK` (VOUCHERS), `NULL`], [Voucher áp dụng (nếu có).], [`check_in`], [`DATETIME`], [`NOT NULL`], [Thời gian nhận phòng.], [`check_out`], [`DATETIME`], [`NOT NULL`], [Thời gian trả phòng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái đơn.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[CHECK]], [], [`check_out > check_in`], [Thời gian trả phải lớn hơn thời gian nhận.], [#emph[CHECK]], [], [`check_in > 14:00:00`], [Thời gian nhận phải sau 14 giờ chiều.], [#emph[CHECK]], [], [`check_out < 12:00:00`], [Thời gian trả phải trước 12 giờ trưa.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'CONFIRMED', 'CANCELLED', 'COMPLETED')`], [Ràng buộc trạng thái.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`user_id`], [`INT`], [`FK (USERS)`, `NOT NULL`], [Khách đặt phòng.], [`voucher_id`], [`INT`], [`FK (VOUCHERS)`, `NULL`], [Voucher áp dụng (nếu có).], [`check_in`], [`DATETIME`], [`NOT NULL`], [Thời gian nhận phòng.], [`check_out`], [`DATETIME`], [`NOT NULL`], [Thời gian trả phòng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái đơn.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[CHECK]], [], [`check_out > check_in`], [Thời gian trả phải lớn hơn thời gian nhận.], [#emph[CHECK]], [], [`check_in > 14:00:00`], [Nhận phòng sau 14 giờ chiều.], [#emph[CHECK]], [], [`check_out < 12:00:00`], [Trả phòng trước 12 giờ trưa.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'CONFIRMED', 'CANCELLED', 'COMPLETED')`], [Ràng buộc trạng thái.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: DATPHONG
@@ -212,9 +212,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`datphong_id`], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thuộc đơn đặt phòng nào.], [`phong_id`], [`INT`], [`FK` (PHONG), `NOT NULL`], [Phòng nào.], [`don_gia`], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá phòng tại thời điểm đặt.], [#emph[FK Rule]], [], [`datphong_id ON DELETE CASCADE`], [Xóa đơn xóa luôn chi tiết.], [#emph[CHECK]], [], [`UNIQUE datphong_id, phong_id`], [Chi tiết đặt phòng không được trùng.], [#emph[CHECK]], [], [`don_gia > 0`], [Giá phải dương.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`datphong_id`], [`INT`], [`FK (DATPHONG)`, `NOT NULL`], [Thuộc đơn đặt phòng nào.], [`phong_id`], [`INT`], [`FK (PHONG)`, `NOT NULL`], [Phòng nào.], [`don_gia`], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá phòng tại thời điểm đặt.], [#emph[FK Rule]], [], [`datphong_id ON DELETE CASCADE`], [Xóa đơn xóa luôn chi tiết.], [#emph[CHECK]], [], [`UNIQUE datphong_id, phong_id`], [Chi tiết đặt phòng không được trùng.], [#emph[CHECK]], [], [`don_gia > 0`], [Giá phải dương.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: CT_DATPHONG
@@ -228,9 +228,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`datphong_id`], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thuộc đơn đặt phòng nào.], [`dichvu_id`], [`INT`], [`FK` (DICHVU), `NOT NULL`], [Dịch vụ nào.], [`so_luong`], [`INT`], [`DEFAULT 1`, `NOT NULL`], [Số lượng.], [`don_gia`], [`DECIMAL(18,2)`], [`NOT NULL`], [Đơn giá tại thời điểm dùng.], [`thoi_diem_su_dung`], [`DATETIME`], [`DEFAULT GETDATE()`], [Thời gian order.], [`ghi_chu`], [`NVARCHAR(500)`], [`NULL`], [Ghi chú thêm.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[FK Rule]], [], [`datphong_id ON DELETE CASCADE`], [Xóa đơn xóa luôn chi tiết.], [#emph[CHECK]], [], [`so_luong > 0`], [Số lượng phải dương.], [#emph[CHECK]], [], [`don_gia > 0`], [Giá phải dương.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`datphong_id`], [`INT`], [`FK (DATPHONG)`, `NOT NULL`], [Thuộc đơn đặt phòng nào.], [`dichvu_id`], [`INT`], [`FK (DICHVU)`, `NOT NULL`], [Dịch vụ nào.], [`so_luong`], [`INT`], [`DEFAULT 1`, `NOT NULL`], [Số lượng.], [`don_gia`], [`DECIMAL(18,2)`], [`NOT NULL`], [Đơn giá tại thời điểm dùng.], [`thoi_diem_su_dung`], [`DATETIME`], [`DEFAULT GETDATE()`], [Thời gian order.], [`ghi_chu`], [`NVARCHAR(500)`], [`NULL`], [Ghi chú thêm.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[FK Rule]], [], [`datphong_id ON DELETE CASCADE`], [Xóa đơn xóa luôn chi tiết.], [#emph[CHECK]], [], [`so_luong > 0`], [Số lượng phải dương.], [#emph[CHECK]], [], [`don_gia > 0`], [Giá phải dương.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: CT_SUDUNG_DV
@@ -244,9 +244,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`booking_id`], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thanh toán cho đơn nào.], [`user_id`], [`INT`], [`FK` (USERS), `NOT NULL`], [Người thanh toán.], [`so_tien`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền giao dịch.], [`phuong_thuc`], [`NVARCHAR(50)`], [`NOT NULL`], [Cách trả (`TIEN_MAT`, `CHUYEN_KHOAN`, `THE`, `ONLINE`…).], [`trang_thai`], [`NVARCHAR(50)`], [`NULL`], [Trạng thái giao dịch.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[CHECK]], [], [`so_tien > 0`], [Tiền phải dương.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'SUCCESS', 'FAILED', 'CANCELLED', 'PAID', 'UNPAID', 'REFUNDED')`], [Ràng buộc trạng thái.], [#emph[CHECK]], [], [`phuong_thuc IN ('TIEN_MAT', 'CHUYEN_KHOAN', 'THE', 'ONLINE')`], [Ràng buộc phương thức.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`booking_id`], [`INT`], [`FK (DATPHONG)`, `NOT NULL`], [Thanh toán cho đơn nào.], [`user_id`], [`INT`], [`FK (USERS)`, `NOT NULL`], [Người thanh toán.], [`so_tien`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền giao dịch.], [`phuong_thuc`], [`NVARCHAR(50)`], [`NOT NULL`], [Cách trả tiền.], [`trang_thai`], [`NVARCHAR(50)`], [`NULL`], [Trạng thái giao dịch.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[CHECK]], [], [`so_tien > 0`], [Tiền phải dương.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'SUCCESS', 'FAILED', 'CANCELLED', 'PAID', 'UNPAID', 'REFUNDED')`], [Ràng buộc trạng thái.], [#emph[CHECK]], [], [`phuong_thuc IN ('TIEN_MAT', 'CHUYEN_KHOAN', 'THE', 'ONLINE')`], [Ràng buộc phương thức.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: PAYMENTS
@@ -260,9 +260,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`payment_id`], [`INT`], [`FK` (PAYMENTS), `NOT NULL`], [Hoàn tiền cho giao dịch nào.], [`so_tien_hoan`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền hoàn trả.], [`trang_thai`], [`NVARCHAR(50)`], [`NULL`], [Trạng thái.], [`ly_do`], [`NVARCHAR(500)`], [`NULL`], [Lý do hoàn tiền.], [`requested_by`], [`INT`], [`FK` (USERS), `NOT NULL`], [Người yêu cầu.], [`approved_by`], [`INT`], [`FK` (ADMINS), `NULL`], [Người duyệt.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('REQUESTED', 'APPROVED', 'REJECTED', 'COMPLETED')`], [Ràng buộc trạng thái.], [#emph[CHECK]], [], [`so_tien_hoan > 0`], [Tiền phải dương.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`payment_id`], [`INT`], [`FK (PAYMENTS)`, `NOT NULL`], [Hoàn tiền cho giao dịch nào.], [`so_tien_hoan`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền hoàn trả.], [`trang_thai`], [`NVARCHAR(50)`], [`NULL`], [Trạng thái.], [`ly_do`], [`NVARCHAR(500)`], [`NULL`], [Lý do hoàn tiền.], [`requested_by`], [`INT`], [`FK (USERS)`, `NOT NULL`], [Người yêu cầu.], [`approved_by`], [`INT`], [`FK (ADMINS)`, `NULL`], [Người duyệt.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('REQUESTED', 'APPROVED', 'REJECTED', 'COMPLETED')`], [Ràng buộc trạng thái.], [#emph[CHECK]], [], [`so_tien_hoan > 0`], [Tiền phải dương.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: REFUNDS
@@ -276,9 +276,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 18%, 26%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`user_id`], [`INT`], [`FK` (USERS), `NOT NULL`], [Người đánh giá.], [`phong_id`], [`INT`], [`FK` (PHONG), `NOT NULL`], [Phòng được đánh giá.], [`datphong_id`], [`INT`], [`FK` (DATPHONG), `UNIQUE`, `NOT NULL`], [Thuộc đơn đặt phòng nào (Duy nhất 1-1).], [`so_sao`], [`INT`], [`NOT NULL`], [Điểm sao (1-5).], [`binh_luan`], [`NVARCHAR(1000)`], [`NULL`], [Nội dung text.], [`ngay_danh_gia`], [`DATE`], [`DEFAULT GETDATE()`], [Ngày đánh giá.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`so_sao BETWEEN 1 AND 5`], [Giới hạn 1 đến 5 sao.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'APPROVED', 'REJECTED')`], [Ràng buộc trạng thái.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`user_id`], [`INT`], [`FK (USERS)`, `NOT NULL`], [Người đánh giá.], [`phong_id`], [`INT`], [`FK (PHONG)`, `NOT NULL`], [Phòng được đánh giá.], [`datphong_id`], [`INT`], [`FK (DATPHONG)`, `UNIQUE`, `NOT NULL`], [Thuộc đơn đặt phòng nào (Duy nhất 1-1).], [`so_sao`], [`INT`], [`NOT NULL`], [Điểm sao (1-5).], [`binh_luan`], [`NVARCHAR(1000)`], [`NULL`], [Nội dung text.], [`ngay_danh_gia`], [`DATE`], [`DEFAULT GETDATE()`], [Ngày đánh giá.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`so_sao BETWEEN 1 AND 5`], [Giới hạn 1 đến 5 sao.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'APPROVED', 'REJECTED')`], [Ràng buộc trạng thái.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: REVIEWS
