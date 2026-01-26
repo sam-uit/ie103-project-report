@@ -535,8 +535,8 @@ ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
 
 | Khóa | Mô tả |
 | --- | --- |
-| role_id | Khóa ngoại tham chiếu ROLES. |
-| permission_id | Khóa ngoại tham chiếu PERMISSIONS. |
+| ***role_id*** | Khóa ngoại tham chiếu ROLES. |
+| ***permission_id*** | Khóa ngoại tham chiếu PERMISSIONS. |
 
 #### CT_DATPHONG
 
