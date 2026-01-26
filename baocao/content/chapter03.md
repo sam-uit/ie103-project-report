@@ -333,9 +333,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 ```{=typst}
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`datphong_id`], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thuộc đơn đặt phòng nào.], [`phong_id`], [`INT`], [`FK` (PHONG), `NOT NULL`], [Phòng nào.], [`don_gia`], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá phòng tại thời điểm đặt.], [#emph[FK Rule]], [], [`datphong_id ON DELETE CASCADE`], [Xóa đơn xóa luôn chi tiết.], [#emph[CHECK]], [], [`UNIQUE datphong_id, phong_id`], [Chi tiết đặt phòng không được trùng.], [#emph[CHECK]], [], [`don_gia > 0`], [Giá phải dương.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`datphong_id`], [`INT`], [`FK (DATPHONG)`, `NOT NULL`], [Thuộc đơn đặt phòng nào.], [`phong_id`], [`INT`], [`FK (PHONG)`, `NOT NULL`], [Phòng nào.], [`don_gia`], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá phòng tại thời điểm đặt.], [#emph[FK Rule]], [], [`datphong_id ON DELETE CASCADE`], [Xóa đơn xóa luôn chi tiết.], [#emph[CHECK]], [], [`UNIQUE datphong_id, phong_id`], [Chi tiết đặt phòng không được trùng.], [#emph[CHECK]], [], [`don_gia > 0`], [Giá phải dương.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: CT_DATPHONG
