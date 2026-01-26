@@ -22,6 +22,7 @@
 // Show appendix
 #show: appendix
 #include "content/appendixA.typ"
+#include "content/appendixB.typ"
 
 // Show bibliography
 #show: bibliography-page

@@ -1,13 +1,11 @@
 # Phụ Lục B
 
-## Phụ Lục B Mục 1
+## Mô Hình Thực Thể Quan Hệ Đầy Đủ
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
+### Dạng Ngang
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat.
+![Mô Hình Thực Thể Quan Hệ Đầy Đủ (Dạng Ngang)](diagrams/ch02-ER-full-elk.svg)
 
-## Phụ Lục B Mục 2
+### Dạng Dọc
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat.
+![Mô Hình Thực Thể Quan Hệ Đầy Đủ (Dạng Dọc)](diagrams/ch02-ER-full-dagre.svg)
