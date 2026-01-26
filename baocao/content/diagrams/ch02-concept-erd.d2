@@ -53,7 +53,11 @@ admins_roles -- ROLES: (n, n)
 
 DATPHONG -> DICHVU: bao gồm
 DATPHONG -> PAYMENTS: được
-DATPHONG -> PHONG: có nhiều
+
+# DATPHONG -> PHONG: có nhiều
+datphong_phong: {class: rel; label: "bao gồm"}
+DATPHONG -- datphong_phong: (1, n)
+datphong_phong -- PHONG: (1, n)
 
 # DATPHONG -> REVIEWS: được
 datphong_reviews: {class: rel; label: "được"}
