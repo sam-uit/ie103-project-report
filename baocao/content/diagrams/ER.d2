@@ -84,10 +84,14 @@ thanh_toan -- PAYMENTS: "(1, 1)" # 1 giao dịch thuộc về 1 đơn
 
 # -- Nhóm Reviews (1-1 Relationship) --
 # 1 Đơn chỉ có tối đa 1 review. 1 Review thuộc về đúng 1 đơn.
-danh_gia: {class: rel; label: "Có Đánh Giá"}
+danh_gia: {class: rel; label: "Có đánh giá"}
 DATPHONG -- danh_gia: "(0, 1)"
 danh_gia -- REVIEWS: "(1, 1)"
 
-viet_danh_gia: {class: rel; label: "Viết Đánh Giá"}
+viet_danh_gia: {class: rel; label: "Viết đánh giá"}
 USERS -- viet_danh_gia: "(0, n)"
 viet_danh_gia -- REVIEWS: "(1, 1)"
+
+admin_duyet_refunds: {class: rel; label: "Duyệt hoàn tiền"}
+ADMINS -- admin_duyet_refunds: "(0, n)"
+admin_duyet_refunds -- REFUNDS: "(1, 1)"
