@@ -410,7 +410,7 @@ PERMISSIONS(<u>id</u>, code, description)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh quyền hạn. |
+| <u>id</u> | Mã định danh quyền hạn. |
 | code | Mã code hệ thống (ví dụ: `VIEW_DASHBOARD`, `EDIT_ROOM`). |
 | description | Mô tả chi tiết quyền hạn. |
 
