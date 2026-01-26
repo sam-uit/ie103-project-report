@@ -124,6 +124,8 @@
 
 Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan:
 
+<!-- Sử dụng layout elk cho riêng diagram này. -->
+
 ![Trực Quan Hóa các Thực Thể và Mối Quan Hệ](diagrams/entity-relationship.svg)
 
 ## Mô Hình Mức Quan Niệm
