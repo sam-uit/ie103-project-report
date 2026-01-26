@@ -84,33 +84,33 @@
 === Danh Sách Các Thực Thể
 <danh-sach-cac-thuc-the>
 
-- ADMINS (Quản Lý/Quản Trị Viên)
+- #strong[Quản Lý/Quản Trị Viên]
   - Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
   - Có quyền quản lý nghiệp vụ và dữ liệu hệ thống
-- DATPHONG (Đặt Phòng)
-  - Đại diện cho một giao dịch đặt phòng.
-  - Có thể được hủy hoặc không.
-- DICHVU (Dịch Vụ)
-  - Đại diện cho một dịch vụ đi kèm.
-- LOAIPHONG (Loại Phòng)
-  - Đại diện cho một loại phòng.
-- PAYMENTS (Thanh Toán)
-  - Đại diện cho một giao dịch thanh toán.
-- PERMISSIONS (Quyền Hạn)
-  - Định nghĩa quyền thao tác cụ thể (CRUD phòng, duyệt hoàn tiền, xem báo cáo…).
-- PHONG (Phòng)
-  - Đại diện cho một phòng.
-  - Có thể được đặt hoặc không.
-- REFUNDS (Hoàn Tiền)
-  - Đại diện cho một giao dịch hoàn tiền.
-- REVIEWS (Đánh Giá)
-  - Đại diện cho một đánh giá.
-- ROLES (Vai Trò)
-  - Đại diện cho một vai trò.
-- USERS (Người Dùng)
+- #strong[Người Dùng]
   - Đại diện cho một người dùng/khách hàng cuối của hệ thống quản lý đặt phòng.
   - Có thể thực hiện đặt phòng, hủy đặt phòng, thanh toán, đánh giá, và xem các thông tin của mình.
-- VOUCHERS (Mã Giảm Giá)
+- #strong[Phòng]
+  - Đại diện cho một phòng.
+  - Có thể được đặt hoặc không.
+- #strong[Loại Phòng]
+  - Đại diện cho một loại phòng.
+- #strong[Đặt Phòng]
+  - Đại diện cho một giao dịch đặt phòng.
+  - Có thể được hủy hoặc không.
+- #strong[Dịch Vụ]
+  - Đại diện cho một dịch vụ đi kèm.
+- #strong[Thanh Toán]
+  - Đại diện cho một giao dịch thanh toán.
+- #strong[Hoàn Tiền]
+  - Đại diện cho một giao dịch hoàn tiền.
+- #strong[Vai Trò]
+  - Đại diện cho một vai trò.
+- #strong[Quyền Hạn]
+  - Định nghĩa quyền thao tác cụ thể (CRUD phòng, duyệt hoàn tiền, xem báo cáo…).
+- #strong[Đánh Giá]
+  - Đại diện cho một đánh giá.
+- #strong[Mã Giảm Giá]
   - Đại diện cho một mã giảm giá.
   - Có thể được áp dụng khi đặt phòng.
 
