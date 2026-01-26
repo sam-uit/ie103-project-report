@@ -330,15 +330,17 @@ ADMINS(<u>id</u>, username, password, full_name, email, phone, address, created_
 
 <!-- TODO: Sử dụng bảng thay vì list -->
 
-- `id`: Mã định danh duy nhất của admin.
-- `username`: Tên đăng nhập của admin.
-- `password`: Mật khẩu của admin.
-- `full_name`: Họ tên đầy đủ của admin.
-- `email`: Email của admin.
-- `phone`: Số điện thoại của admin.
-- `address`: Địa chỉ của admin.
-- `created_at`: Thời gian tạo của admin.
-- `updated_at`: Thời gian cập nhật của admin.
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh duy nhất của admin. |
+| username | Tên đăng nhập của admin. |
+| password | Mật khẩu của admin. |
+| full_name | Họ tên đầy đủ của admin. |
+| email | Email của admin. |
+| phone | Số điện thoại của admin. |
+| address | Địa chỉ của admin. |
+| created_at | Thời gian tạo của admin. |
+| updated_at | Thời gian cập nhật của admin. |
 
 #### DATPHONG (Đặt Phòng)
 
