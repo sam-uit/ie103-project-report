@@ -20,13 +20,13 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính tự tăng. |
-| email | `NVARCHAR(255)` | `NOT NULL`, `UNIQUE` | Email đăng nhập. |
-| password_hash | `NVARCHAR(255)` | `NOT NULL` | Mật khẩu (Hash). |
-| full_name | `NVARCHAR(255)` | `NULL` | Họ tên đầy đủ. |
-| status | `NVARCHAR(50)` | `DEFAULT 'ACTIVE'` | Trạng thái tài khoản. |
-| created_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| updated_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính tự tăng. |
+| `email` | `NVARCHAR(255)` | `NOT NULL`, `UNIQUE` | Email đăng nhập. |
+| `password_hash` | `NVARCHAR(255)` | `NOT NULL` | Mật khẩu (Hash). |
+| `full_name` | `NVARCHAR(255)` | `NULL` | Họ tên đầy đủ. |
+| `status` | `NVARCHAR(50)` | `DEFAULT 'ACTIVE'` | Trạng thái tài khoản. |
+| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
+| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 | *CHECK* |  | `status IN ('ACTIVE', 'INACTIVE')` | Chỉ nhận giá trị quy định. |
 
 ```{=typst}
@@ -34,15 +34,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
   table(
     columns: (20%, 20%, 30%, 30%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]],
-    [id], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.],
-    [email], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.],
-    [password_hash], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).],
-    [full_name], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.],
-    [status], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.],
-    [created_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.],
-    [updated_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.],
-    [CHECK], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.],
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: ADMINS
