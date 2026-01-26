@@ -1,0 +1,126 @@
+# direction: right
+
+# Tiêu đề: căn góc trên-giữa
+# title: |md
+#   # Mô Hình Thực Thể Quan Hệ (ER Diagram Chen Notation)
+# | {near: top-center}
+
+# title.style: {
+# font-size: 20
+# font: "mono"
+# }
+
+# --- 0. STYLES ---
+style: {
+  # font: "mono"
+  opacity: 0.0
+  # fill: "#dcdcdc"
+  # stroke: "orange"
+  # stroke-width: 5
+}
+
+# --- 1. CSS STYLES (THEME) ---
+classes: {
+  # Thực thể: Chữ nhật bo góc Apple style
+  entity: {
+    shape: rectangle
+    style: {
+      border-radius: 15
+      stroke-width: 2
+      fill: "#FFFFFF"
+      stroke: "#333333"
+    }
+  }
+
+  # Quan hệ (Relationship): Hình thoi
+  rel: {
+    shape: diamond
+    style: {
+      fill: "#F2F2F7"
+      stroke: "#8E8E93"
+      stroke-width: 2
+    }
+  }
+
+  # Thuộc tính: Oval
+  attr: {
+    shape: oval
+    width: 90
+    height: 40
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+    }
+  }
+
+  # Khóa chính: gạch chân
+  # viền xanh
+  attr_pri: {
+    shape: oval
+    width: 90
+    height: 40
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa chính là khóa khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_pri: {
+    shape: oval
+    width: 90
+    height: 40
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_key: {
+    shape: oval
+    width: 90
+    height: 40
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      # underline: true
+    }
+  }
+}
+
+# MARK: REFUNDS
+REFUNDS: {class: entity; label: "REFUNDS"}
+refunds_id: {class: attr_pri; label: "id"}
+refunds_payment_id: {class: attr_foreign_key; label: "payment_id"; width: 120}
+refunds_so_tien_hoan: {class: attr; label: "so_tien_hoan"; width: 120}
+refunds_trang_thai: {class: attr; label: "trang_thai"}
+refunds_ly_do: {class: attr; label: "ly_do"}
+refunds_requested_by: {class: attr_foreign_key; label: "requested_by"; width: 120}
+refunds_approved_by: {class: attr_foreign_key; label: "approved_by"; width: 120}
+refunds_created_at: {class: attr; label: "created_at"; width: 110}
+refunds_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+REFUNDS -- refunds_id: {style: {stroke-width: 1}}
+REFUNDS -- refunds_payment_id: {style: {stroke-width: 1; stroke: orange}}
+REFUNDS -- refunds_so_tien_hoan: {style: {stroke-width: 1}}
+REFUNDS -- refunds_trang_thai: {style: {stroke-width: 1}}
+REFUNDS -- refunds_ly_do: {style: {stroke-width: 1}}
+REFUNDS -- refunds_requested_by: {style: {stroke-width: 1; stroke: orange}}
+REFUNDS -- refunds_approved_by: {style: {stroke-width: 1; stroke: orange}}
+REFUNDS -- refunds_created_at: {style: {stroke-width: 1}}
+REFUNDS -- refunds_updated_at: {style: {stroke-width: 1}}
