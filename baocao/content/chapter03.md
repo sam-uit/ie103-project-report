@@ -469,7 +469,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 ## Khởi Tạo Cơ Sở Dữ Liệu
 
-- Script khởi tạo dữ liệu, phiên bản đầy đủ được đính kèm theo file báo cáo này, hoặc truy cập kho git của bản báo cáo này để lấy phiên bản đầy đủ nhất.
+- Script khởi tạo dữ liệu, phiên bản đầy đủ được đính kèm theo file báo cáo này.
 
 ### Tạo Database
 
@@ -501,6 +501,8 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 Để hệ thống có thể hoạt động demo, Nhóm 02 đã xây dựng bộ dữ liệu mẫu bao gồm danh mục hệ thống và dữ liệu giao dịch giả lập.
 
+- Dưới đây là một số ví dụ, vui lòng tham khảo phiên bản đầy đủ đính kèm.
+
 ### Phân Quyền
 
 - Hệ thống định nghĩa các nhóm người dùng cơ bản và quyền hạn tương ứng.
@@ -522,9 +524,7 @@ INSERT INTO ROLES (code, name, description) VALUES
 GO
 ```
 
-### Tài Khoản & Phòng Vật Lý
-
-Tài Khoản:
+### Tài Khoản
 
 ```sql
 -- Insert ADMINS (status: ACTIVE or INACTIVE)
@@ -536,23 +536,9 @@ INSERT INTO ADMINS (email, password_hash, full_name, status) VALUES
 GO
 ```
 
-Phòng:
+### Loại Phòng
 
 ```sql
-INSERT INTO PHONG (so_phong, loai_phong_id, trang_thai) VALUES
-('501', 1, 'OCCUPIED'),
-('502', 1, 'AVAILABLE'),
-('503', 1, 'MAINTENANCE');
-
-GO
-```
-
-### Loại Phòng & Dịch Vụ
-
-Loại Phòng:
-
-```sql
--- 5. LOAIPHONG
 INSERT INTO LOAIPHONG (ten_loai, gia_co_ban, mo_ta, suc_chua) VALUES
 (N'Phòng Đơn Tiêu Chuẩn', 500000, N'Phòng đơn cơ bản, giường đơn', 1),
 (N'Phòng Đơn Cao Cấp', 700000, N'Phòng đơn với tiện nghi cao cấp', 1),
@@ -568,56 +554,20 @@ INSERT INTO LOAIPHONG (ten_loai, gia_co_ban, mo_ta, suc_chua) VALUES
 GO
 ```
 
-Dịch Vụ:
-
-```sql
--- Insert DICHVU (trang_thai: ACTIVE or INACTIVE)
-INSERT INTO DICHVU (ten_dich_vu, don_gia, don_vi_tinh, trang_thai) VALUES
-(N'Ăn sáng Buffet', 150000, N'Suất', 'ACTIVE'),
-(N'Ăn sáng Phòng', 200000, N'Suất', 'ACTIVE'),
-(N'Ăn trưa Set', 250000, N'Suất', 'ACTIVE'),
-(N'Ăn tối Set', 300000, N'Suất', 'ACTIVE'),
-(N'Giặt ủi', 50000, N'Kg', 'ACTIVE'),
-(N'Massage body', 500000, N'Giờ', 'ACTIVE'),
-(N'Đưa đón sân bay', 400000, N'Lượt', 'ACTIVE'),
-(N'Thuê xe máy', 150000, N'Ngày', 'ACTIVE'),
-(N'Tour thành phố', 800000, N'Người', 'ACTIVE'),
-(N'Spa chăm sóc da', 700000, N'Lần', 'ACTIVE'),
-(N'Karaoke', 300000, N'Giờ', 'ACTIVE'),
-(N'Minibar', 100000, N'Lần', 'ACTIVE'),
-(N'Late checkout', 200000, N'Lần', 'ACTIVE'),
-(N'Early checkin', 150000, N'Lần', 'INACTIVE');
-
-GO
-```
-
 ### Dữ Liệu Giao Dịch
 
 - Mô phỏng quy trình đặt phòng và thanh toán.
 
 ```sql
--- Insert DATPHONG
--- trang_thai: PENDING, CONFIRMED, CANCELLED, COMPLETED
--- check_in time >= 14:00:00, check_out time <= 12:00:00, check_out > check_in
 INSERT INTO DATPHONG (user_id, voucher_id, check_in, check_out, trang_thai, created_at) VALUES
 -- Đặt phòng đã hoàn thành
 (1, 1, '2024-01-05 14:00:00', '2024-01-08 12:00:00', 'COMPLETED', '2024-01-01 10:00:00'),
-(2, 2, '2024-01-10 14:00:00', '2024-01-12 12:00:00', 'COMPLETED', '2024-01-05 15:30:00'),
-(3, NULL, '2024-01-15 14:00:00', '2024-01-17 12:00:00', 'COMPLETED', '2024-01-10 09:00:00'),
-(4, 3, '2024-01-20 14:00:00', '2024-01-25 12:00:00', 'COMPLETED', '2024-01-15 11:20:00'),
 -- Đặt phòng đang diễn ra
 (5, NULL, '2024-01-25 14:00:00', '2024-01-28 12:00:00', 'CONFIRMED', '2024-01-20 16:00:00'),
-(6, 4, '2024-01-26 14:00:00', '2024-01-29 12:00:00', 'CONFIRMED', '2024-01-22 14:00:00'),
-(7, NULL, '2024-01-27 14:00:00', '2024-01-30 12:00:00', 'CONFIRMED', '2024-01-23 10:30:00'),
 -- Đặt phòng sắp tới
 (8, 6, '2024-02-01 14:00:00', '2024-02-05 12:00:00', 'PENDING', '2024-01-25 09:00:00'),
-(9, NULL, '2024-02-05 14:00:00', '2024-02-08 12:00:00', 'PENDING', '2024-01-26 11:00:00'),
-(10, 7, '2024-02-10 14:00:00', '2024-02-15 12:00:00', 'PENDING', '2024-01-27 15:00:00'),
 -- Đặt phòng đã hủy
 (11, NULL, '2024-01-18 14:00:00', '2024-01-20 12:00:00', 'CANCELLED', '2024-01-10 10:00:00'),
-(12, 9, '2024-01-22 14:00:00', '2024-01-24 12:00:00', 'CANCELLED', '2024-01-15 14:00:00'),
 -- Thêm một số đặt phòng nữa
-(1, 8, '2024-02-12 14:00:00', '2024-02-14 12:00:00', 'CONFIRMED', '2024-01-28 10:00:00'),
-(2, NULL, '2024-02-15 14:00:00', '2024-02-18 12:00:00', 'PENDING', '2024-01-28 11:00:00'),
-(3, 10, '2024-02-20 14:00:00', '2024-02-25 12:00:00', 'PENDING', '2024-01-28 13:00:00');
+(1, 8, '2024-02-12 14:00:00', '2024-02-14 12:00:00', 'CONFIRMED', '2024-01-28 10:00:00');
 ```
