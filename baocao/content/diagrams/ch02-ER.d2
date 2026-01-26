@@ -397,8 +397,8 @@ ROLE_PERMISSIONS -- PERMISSIONS: n
 
 # --- Nhóm Booking & Room ---
 # 1-N: User - DatPhong
-USERS -- thuc_hien: 1
-thuc_hien -- DATPHONG: n
+USERS -- thuc_hien: (1, n)
+thuc_hien -- DATPHONG: (1, n)
 
 # N-N: DatPhong - Phong (thông qua CT_DATPHONG)
 DATPHONG -- CT_DATPHONG: m
