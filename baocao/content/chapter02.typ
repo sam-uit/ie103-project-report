@@ -705,9 +705,9 @@ CT\_SUDUNG\_DV(#underline[id], #emph[datphong\_id], #emph[dichvu\_id], so\_luong
 
 #figure(
   table(
-    columns: (30%, 15%, 55%),
-    align: (left, left, left),
-  [#strong[Tên Bảng]], [#strong[Loại]], [#strong[Mô Tả]], [`ADMINS`], [Thực Thể], [Biểu diễn người quản trị.], [`DATPHONG`], [Thực Thể], [Lưu trữ thông tin đơn đặt phòng.], [`DICHVU`], [Thực Thể], [Danh mục các dịch vụ đi kèm.], [`LOAIPHONG`], [Thực Thể], [Danh mục phân loại phòng.], [`PAYMENTS`], [Thực Thể], [Lưu trữ lịch sử giao dịch thanh toán.], [`PERMISSIONS`], [Thực Thể], [Danh sách các quyền hạn hệ thống.], [`PHONG`], [Thực Thể], [Danh sách các phòng vật lý.], [`REFUNDS`], [Thực Thể], [Lưu trữ yêu cầu và lịch sử hoàn tiền.], [`REVIEWS`], [Thực Thể], [Lưu trữ đánh giá từ khách hàng.], [`ROLES`], [Thực Thể], [Định nghĩa các vai trò trong hệ thống.], [`USERS`], [Thực Thể], [Lưu trữ thông tin khách hàng.], [`VOUCHERS`], [Thực Thể], [Quản lý các chương trình khuyến mãi.], [`ADMIN_ROLES`], [Liên Kết], [Mối quan hệ giữa `ADMINS` và `ROLES`.], [`ROLE_PERMISSIONS`], [Liên Kết], [Mối quan hệ giữa `ROLES` và `PERMISSIONS`.], [`CT_DATPHONG`], [Liên Kết], [Chi tiết các phòng trong đơn đặt phòng.], [`CT_SUDUNG_DV`], [Liên Kết], [Chi tiết các dịch vụ khách sử dụng.]
+    columns: (10%, 20%, 20%, 50%),
+    align: (right, left, left, left),
+    [#strong[STT]], [#strong[Tên Bảng]], [#strong[Loại]], [#strong[Mô Tả]], [1], [`ADMINS`], [Thực Thể], [Biểu diễn người quản trị.], [2], [`DATPHONG`], [Thực Thể], [Lưu trữ thông tin đơn đặt phòng.], [3], [`DICHVU`], [Thực Thể], [Danh mục các dịch vụ đi kèm.], [4], [`LOAIPHONG`], [Thực Thể], [Danh mục phân loại phòng.], [5], [`PAYMENTS`], [Thực Thể], [Lưu trữ lịch sử giao dịch thanh toán.], [6], [`PERMISSIONS`], [Thực Thể], [Danh sách các quyền hạn hệ thống.], [7], [`PHONG`], [Thực Thể], [Danh sách các phòng vật lý.], [8], [`REFUNDS`], [Thực Thể], [Lưu trữ yêu cầu và lịch sử hoàn tiền.], [9], [`REVIEWS`], [Thực Thể], [Lưu trữ đánh giá từ khách hàng.], [10], [`ROLES`], [Thực Thể], [Định nghĩa các vai trò trong hệ thống.], [11], [`USERS`], [Thực Thể], [Lưu trữ thông tin khách hàng.], [12], [`VOUCHERS`], [Thực Thể], [Quản lý các chương trình khuyến mãi.], [13], [`ADMIN_ROLES`], [Liên Kết], [Mối quan hệ giữa `ADMINS` và `ROLES`.], [14], [`ROLE_PERMISSIONS`], [Liên Kết], [Mối quan hệ giữa `ROLES` và `PERMISSIONS`.], [15], [`CT_DATPHONG`], [Liên Kết], [Chi tiết các phòng trong đơn đặt phòng.], [16], [`CT_SUDUNG_DV`], [Liên Kết], [Chi tiết các dịch vụ khách sử dụng.]
   ),
   caption: [
     Mô Hình Mức Logic: Danh Sách Bảng
