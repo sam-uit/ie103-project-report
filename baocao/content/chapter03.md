@@ -18,7 +18,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Lưu trữ tài khoản quản trị viên và nhân viên.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính tự tăng. |
 | email | `NVARCHAR(255)` | `NOT NULL`, `UNIQUE` | Email đăng nhập. |
@@ -33,7 +33,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Định nghĩa các vai trò (nhóm quyền).
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | code | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Mã vai trò (VD: ADMIN). |
@@ -44,7 +44,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Danh sách các quyền hạn chức năng.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | code | `NVARCHAR(100)` | `NOT NULL`, `UNIQUE` | Mã quyền (VD: USER_READ). |
@@ -54,7 +54,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Bảng trung gian phân quyền cho Admin.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **admin_id** | `INT` | `PK`, `FK` (ADMINS) | Khóa ngoại + Khóa chính. |
 | **role_id** | `INT` | `PK`, `FK` (ROLES) | Khóa ngoại + Khóa chính. |
@@ -64,7 +64,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Bảng trung gian gán quyền cho Role.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **role_id** | `INT` | `PK`, `FK` (ROLES) | Khóa ngoại + Khóa chính. |
 | **permission_id** | `INT` | `PK`, `FK` (PERMISSIONS) | Khóa ngoại + Khóa chính. |
@@ -76,7 +76,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Thông tin người dùng cuối (Khách hàng).
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính tự tăng. |
 | email | `NVARCHAR(255)` | `NOT NULL`, `UNIQUE` | Email đăng nhập. |
@@ -91,7 +91,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Danh mục loại phòng.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | ten_loai | `NVARCHAR(100)` | `NOT NULL` | Tên loại (VD: Deluxe). |
@@ -105,7 +105,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Danh sách phòng vật lý.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | loai_phong_id | `INT` | `FK` (LOAIPHONG), `NOT NULL` | Loại phòng tương ứng. |
@@ -119,7 +119,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Danh mục dịch vụ đi kèm.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | ten_dich_vu | `NVARCHAR(100)` | `NOT NULL` | Tên dịch vụ. |
@@ -135,7 +135,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Mã giảm giá và khuyến mãi.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | code | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Mã Voucher (VD: TET2025). |
@@ -157,7 +157,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Đơn đặt phòng.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | user_id | `INT` | `FK` (USERS), `NOT NULL` | Khách đặt phòng. |
@@ -175,7 +175,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Chi tiết phòng trong đơn đặt.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | datphong_id | `INT` | `FK` (DATPHONG), `NOT NULL` | Thuộc đơn đặt phòng nào. |
@@ -188,7 +188,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Chi tiết sử dụng dịch vụ.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | datphong_id | `INT` | `FK` (DATPHONG), `NOT NULL` | Thuộc đơn đặt phòng nào. |
@@ -204,7 +204,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Giao dịch thanh toán.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | datphong_id | `INT` | `FK` (DATPHONG), `NOT NULL` | Thanh toán cho đơn nào. |
@@ -223,7 +223,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Yêu cầu hoàn tiền.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | payment_id | `INT` | `FK` (PAYMENTS), `NOT NULL` | Hoàn tiền cho giao dịch nào. |
@@ -241,7 +241,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Đánh giá từ khách hàng.
 
-| Tên Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
+| Thuộc Tính | Kiểu Dữ Liệu | Ràng Buộc (Constraints) | Mô Tả |
 | --- | --- | --- | --- |
 | **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | user_id | `INT` | `FK` (USERS), `NOT NULL` | Người đánh giá. |

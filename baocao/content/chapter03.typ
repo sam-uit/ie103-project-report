@@ -29,7 +29,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [email], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [password\_hash], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [full\_name], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [status], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [email], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [password\_hash], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [full\_name], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [status], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
 )
 
 ==== 2. ROLES
@@ -40,7 +40,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [code], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Mã vai trò (VD: ADMIN).], [name], [`NVARCHAR(255)`], [`NOT NULL`], [Tên hiển thị.], [description], [`NVARCHAR(500)`], [`NULL`], [Mô tả vai trò.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [code], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Mã vai trò (VD: ADMIN).], [name], [`NVARCHAR(255)`], [`NOT NULL`], [Tên hiển thị.], [description], [`NVARCHAR(500)`], [`NULL`], [Mô tả vai trò.]
 )
 
 ==== 3. PERMISSIONS
@@ -51,7 +51,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [code], [`NVARCHAR(100)`], [`NOT NULL`, `UNIQUE`], [Mã quyền (VD: USER\_READ).], [description], [`NVARCHAR(255)`], [`NULL`], [Mô tả quyền hạn.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [code], [`NVARCHAR(100)`], [`NOT NULL`, `UNIQUE`], [Mã quyền (VD: USER\_READ).], [description], [`NVARCHAR(255)`], [`NULL`], [Mô tả quyền hạn.]
 )
 
 ==== 4. ADMIN\_ROLES
@@ -62,7 +62,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[admin\_id]], [`INT`], [`PK`, `FK` (ADMINS)], [Khóa ngoại + Khóa chính.], [#strong[role\_id]], [`INT`], [`PK`, `FK` (ROLES)], [Khóa ngoại + Khóa chính.], [#emph[FK Rule]], [], [`ON DELETE CASCADE`], [Xóa Admin/Role tự động xóa dòng này.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[admin\_id]], [`INT`], [`PK`, `FK` (ADMINS)], [Khóa ngoại + Khóa chính.], [#strong[role\_id]], [`INT`], [`PK`, `FK` (ROLES)], [Khóa ngoại + Khóa chính.], [#emph[FK Rule]], [], [`ON DELETE CASCADE`], [Xóa Admin/Role tự động xóa dòng này.]
 )
 
 ==== 5. ROLE\_PERMISSIONS
@@ -73,7 +73,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[role\_id]], [`INT`], [`PK`, `FK` (ROLES)], [Khóa ngoại + Khóa chính.], [#strong[permission\_id]], [`INT`], [`PK`, `FK` (PERMISSIONS)], [Khóa ngoại + Khóa chính.], [#emph[FK Rule]], [], [`ON DELETE CASCADE`], [Xóa Role/Permission tự động xóa dòng này.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[role\_id]], [`INT`], [`PK`, `FK` (ROLES)], [Khóa ngoại + Khóa chính.], [#strong[permission\_id]], [`INT`], [`PK`, `FK` (PERMISSIONS)], [Khóa ngoại + Khóa chính.], [#emph[FK Rule]], [], [`ON DELETE CASCADE`], [Xóa Role/Permission tự động xóa dòng này.]
 )
 
 === B. Nhóm Bảng Nghiệp Vụ Chính
@@ -88,7 +88,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [email], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [password\_hash], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [full\_name], [`NVARCHAR(255)`], [`NULL`], [Họ tên khách hàng.], [phone\_number], [`NVARCHAR(20)`], [`NULL`], [Số điện thoại.], [address], [`NVARCHAR(500)`], [`NULL`], [Địa chỉ liên hệ.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày đăng ký.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [email], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [password\_hash], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [full\_name], [`NVARCHAR(255)`], [`NULL`], [Họ tên khách hàng.], [phone\_number], [`NVARCHAR(20)`], [`NULL`], [Số điện thoại.], [address], [`NVARCHAR(500)`], [`NULL`], [Địa chỉ liên hệ.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày đăng ký.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.]
 )
 
 ==== 7. LOAIPHONG
@@ -99,7 +99,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [ten\_loai], [`NVARCHAR(100)`], [`NOT NULL`], [Tên loại (VD: Deluxe).], [mo\_ta], [`NVARCHAR(500)`], [`NULL`], [Mô tả tiện nghi.], [gia\_co\_ban], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá niêm yết.], [suc\_chua], [`INT`], [`NOT NULL`], [Số người tối đa.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [ten\_loai], [`NVARCHAR(100)`], [`NOT NULL`], [Tên loại (VD: Deluxe).], [mo\_ta], [`NVARCHAR(500)`], [`NULL`], [Mô tả tiện nghi.], [gia\_co\_ban], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá niêm yết.], [suc\_chua], [`INT`], [`NOT NULL`], [Số người tối đa.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.]
 )
 
 ==== 8. PHONG
@@ -110,7 +110,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [loai\_phong\_id], [`INT`], [`FK` (LOAIPHONG), `NOT NULL`], [Loại phòng tương ứng.], [so\_phong], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Số phòng (VD: 101).], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'AVAILABLE'`], [Trạng thái phòng.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('AVAILABLE', 'BOOKED', 'MAINTENANCE')`], [Ràng buộc trạng thái.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [loai\_phong\_id], [`INT`], [`FK` (LOAIPHONG), `NOT NULL`], [Loại phòng tương ứng.], [so\_phong], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Số phòng (VD: 101).], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'AVAILABLE'`], [Trạng thái phòng.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('AVAILABLE', 'BOOKED', 'MAINTENANCE')`], [Ràng buộc trạng thái.]
 )
 
 ==== 9. DICHVU
@@ -121,7 +121,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [ten\_dich\_vu], [`NVARCHAR(100)`], [`NOT NULL`], [Tên dịch vụ.], [mo\_ta], [`NVARCHAR(500)`], [`NULL`], [Mô tả chi tiết.], [don\_gia], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá dịch vụ.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`don_gia > 0`], [Đơn giá phải dương.], [#emph[CHECK]], [], [`trang_thai IN ('ACTIVE', 'INACTIVE')`], [Ràng buộc trạng thái.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [ten\_dich\_vu], [`NVARCHAR(100)`], [`NOT NULL`], [Tên dịch vụ.], [mo\_ta], [`NVARCHAR(500)`], [`NULL`], [Mô tả chi tiết.], [don\_gia], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá dịch vụ.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`don_gia > 0`], [Đơn giá phải dương.], [#emph[CHECK]], [], [`trang_thai IN ('ACTIVE', 'INACTIVE')`], [Ràng buộc trạng thái.]
 )
 
 ==== 10. VOUCHERS
@@ -132,7 +132,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [code], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Mã Voucher (VD: TET2025).], [mo\_ta], [`NVARCHAR(500)`], [`NULL`], [Mô tả chương trình.], [giam\_gia], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá trị giảm.], [loai\_giam\_gia], [`NVARCHAR(20)`], [`NOT NULL`], [Loại (`PERCENT`, `FIXED`).], [ngay\_bat\_dau], [`DATETIME`], [`NOT NULL`], [Ngày bắt đầu.], [ngay\_ket\_thuc], [`DATETIME`], [`NOT NULL`], [Ngày kết thúc.], [so\_luong], [`INT`], [`NOT NULL`], [Số lượng mã.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('ACTIVE', 'EXPIRED', 'DISABLED')`], [Ràng buộc trạng thái.], [#emph[CHECK]], [], [`loai_giam_gia IN ('PERCENT', 'FIXED')`], [Ràng buộc loại giảm.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [code], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Mã Voucher (VD: TET2025).], [mo\_ta], [`NVARCHAR(500)`], [`NULL`], [Mô tả chương trình.], [giam\_gia], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá trị giảm.], [loai\_giam\_gia], [`NVARCHAR(20)`], [`NOT NULL`], [Loại (`PERCENT`, `FIXED`).], [ngay\_bat\_dau], [`DATETIME`], [`NOT NULL`], [Ngày bắt đầu.], [ngay\_ket\_thuc], [`DATETIME`], [`NOT NULL`], [Ngày kết thúc.], [so\_luong], [`INT`], [`NOT NULL`], [Số lượng mã.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('ACTIVE', 'EXPIRED', 'DISABLED')`], [Ràng buộc trạng thái.], [#emph[CHECK]], [], [`loai_giam_gia IN ('PERCENT', 'FIXED')`], [Ràng buộc loại giảm.]
 )
 
 === C. Nhóm Bảng Giao Dịch & Chi Tiết
@@ -147,7 +147,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [user\_id], [`INT`], [`FK` (USERS), `NOT NULL`], [Khách đặt phòng.], [voucher\_id], [`INT`], [`FK` (VOUCHERS), `NULL`], [Voucher áp dụng (nếu có).], [ngay\_dat], [`DATETIME`], [`DEFAULT GETDATE()`], [Thời gian đặt.], [ngay\_checkin], [`DATE`], [`NOT NULL`], [Ngày nhận phòng.], [ngay\_checkout], [`DATE`], [`NOT NULL`], [Ngày trả phòng.], [tong\_tien], [`DECIMAL(18,2)`], [`NOT NULL`], [Tổng tiền đơn.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái đơn.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'CONFIRMED', 'CANCELLED', 'COMPLETED')`], [Ràng buộc trạng thái.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [user\_id], [`INT`], [`FK` (USERS), `NOT NULL`], [Khách đặt phòng.], [voucher\_id], [`INT`], [`FK` (VOUCHERS), `NULL`], [Voucher áp dụng (nếu có).], [ngay\_dat], [`DATETIME`], [`DEFAULT GETDATE()`], [Thời gian đặt.], [ngay\_checkin], [`DATE`], [`NOT NULL`], [Ngày nhận phòng.], [ngay\_checkout], [`DATE`], [`NOT NULL`], [Ngày trả phòng.], [tong\_tien], [`DECIMAL(18,2)`], [`NOT NULL`], [Tổng tiền đơn.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái đơn.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'CONFIRMED', 'CANCELLED', 'COMPLETED')`], [Ràng buộc trạng thái.]
 )
 
 ==== 12. CT\_DATPHONG
@@ -158,7 +158,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [datphong\_id], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thuộc đơn đặt phòng nào.], [phong\_id], [`INT`], [`FK` (PHONG), `NOT NULL`], [Phòng nào.], [gia\_tien], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá phòng tại thời điểm đặt.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[FK Rule]], [], [`datphong_id ON DELETE CASCADE`], [Xóa đơn xóa luôn chi tiết.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [datphong\_id], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thuộc đơn đặt phòng nào.], [phong\_id], [`INT`], [`FK` (PHONG), `NOT NULL`], [Phòng nào.], [gia\_tien], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá phòng tại thời điểm đặt.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[FK Rule]], [], [`datphong_id ON DELETE CASCADE`], [Xóa đơn xóa luôn chi tiết.]
 )
 
 ==== 13. CT\_SUDUNG\_DV
@@ -169,7 +169,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [datphong\_id], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thuộc đơn đặt phòng nào.], [dichvu\_id], [`INT`], [`FK` (DICHVU), `NOT NULL`], [Dịch vụ nào.], [so\_luong], [`INT`], [`DEFAULT 1`, `NOT NULL`], [Số lượng.], [don\_gia], [`DECIMAL(18,2)`], [`NOT NULL`], [Đơn giá tại thời điểm dùng.], [thoi\_diem\_su\_dung], [`DATETIME`], [`DEFAULT GETDATE()`], [Thời gian order.], [ghi\_chu], [`NVARCHAR(500)`], [`NULL`], [Ghi chú thêm.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[CHECK]], [], [`so_luong > 0`, `don_gia > 0`], [Số lượng và giá phải dương.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [datphong\_id], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thuộc đơn đặt phòng nào.], [dichvu\_id], [`INT`], [`FK` (DICHVU), `NOT NULL`], [Dịch vụ nào.], [so\_luong], [`INT`], [`DEFAULT 1`, `NOT NULL`], [Số lượng.], [don\_gia], [`DECIMAL(18,2)`], [`NOT NULL`], [Đơn giá tại thời điểm dùng.], [thoi\_diem\_su\_dung], [`DATETIME`], [`DEFAULT GETDATE()`], [Thời gian order.], [ghi\_chu], [`NVARCHAR(500)`], [`NULL`], [Ghi chú thêm.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[CHECK]], [], [`so_luong > 0`, `don_gia > 0`], [Số lượng và giá phải dương.]
 )
 
 ==== 14. PAYMENTS
@@ -180,7 +180,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [datphong\_id], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thanh toán cho đơn nào.], [user\_id], [`INT`], [`FK` (USERS), `NOT NULL`], [Người thanh toán.], [so\_tien], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền giao dịch.], [phuong\_thuc], [`NVARCHAR(50)`], [`NOT NULL`], [Cách trả (`CASH`, `BANK`…).], [ma\_giao\_dich], [`NVARCHAR(100)`], [`UNIQUE`, `NULL`], [Ref ID (nếu CK online).], [ngay\_thanh\_toan], [`DATETIME`], [`DEFAULT GETDATE()`], [Thời điểm trả.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái giao dịch.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`so_tien > 0`], [Tiền phải dương.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'SUCCESS', 'FAILED')`], [Ràng buộc trạng thái.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [datphong\_id], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thanh toán cho đơn nào.], [user\_id], [`INT`], [`FK` (USERS), `NOT NULL`], [Người thanh toán.], [so\_tien], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền giao dịch.], [phuong\_thuc], [`NVARCHAR(50)`], [`NOT NULL`], [Cách trả (`CASH`, `BANK`…).], [ma\_giao\_dich], [`NVARCHAR(100)`], [`UNIQUE`, `NULL`], [Ref ID (nếu CK online).], [ngay\_thanh\_toan], [`DATETIME`], [`DEFAULT GETDATE()`], [Thời điểm trả.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái giao dịch.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`so_tien > 0`], [Tiền phải dương.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'SUCCESS', 'FAILED')`], [Ràng buộc trạng thái.]
 )
 
 ==== 15. REFUNDS
@@ -191,7 +191,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [payment\_id], [`INT`], [`FK` (PAYMENTS), `NOT NULL`], [Hoàn tiền cho giao dịch nào.], [user\_id], [`INT`], [`FK` (USERS), `NOT NULL`], [Người yêu cầu.], [admin\_id], [`INT`], [`FK` (ADMINS), `NULL`], [Người duyệt.], [so\_tien], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền hoàn.], [ly\_do], [`NVARCHAR(500)`], [`NULL`], [Lý do hoàn tiền.], [ngay\_hoan\_tien], [`DATETIME`], [`NULL`], [Thời điểm hoàn thành.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'APPROVED', 'REJECTED')`], [Ràng buộc trạng thái.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [payment\_id], [`INT`], [`FK` (PAYMENTS), `NOT NULL`], [Hoàn tiền cho giao dịch nào.], [user\_id], [`INT`], [`FK` (USERS), `NOT NULL`], [Người yêu cầu.], [admin\_id], [`INT`], [`FK` (ADMINS), `NULL`], [Người duyệt.], [so\_tien], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền hoàn.], [ly\_do], [`NVARCHAR(500)`], [`NULL`], [Lý do hoàn tiền.], [ngay\_hoan\_tien], [`DATETIME`], [`NULL`], [Thời điểm hoàn thành.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'APPROVED', 'REJECTED')`], [Ràng buộc trạng thái.]
 )
 
 ==== 16. REVIEWS
@@ -202,7 +202,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #table(
   columns: (1fr,) * 4,
   align: (left, left, left, left),
-  [Tên Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [user\_id], [`INT`], [`FK` (USERS), `NOT NULL`], [Người đánh giá.], [phong\_id], [`INT`], [`FK` (PHONG), `NOT NULL`], [Phòng được đánh giá.], [datphong\_id], [`INT`], [`FK` (DATPHONG), `UNIQUE`], [Thuộc đơn nào (Duy nhất 1-1).], [so\_sao], [`INT`], [`NOT NULL`], [Điểm sao (1-5).], [binh\_luan], [`NVARCHAR(1000)`], [`NULL`], [Nội dung text.], [ngay\_danh\_gia], [`DATE`], [`DEFAULT GETDATE()`], [Ngày đánh giá.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'VISIBLE'`], [Trạng thái hiển thị.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`so_sao BETWEEN 1 AND 5`], [Giới hạn 1 đến 5 sao.], [#emph[CHECK]], [], [`trang_thai IN ('VISIBLE', 'HIDDEN')`], [Ràng buộc hiển thị.]
+  [Thuộc Tính], [Kiểu Dữ Liệu], [Ràng Buộc (Constraints)], [Mô Tả], [#strong[id]], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [user\_id], [`INT`], [`FK` (USERS), `NOT NULL`], [Người đánh giá.], [phong\_id], [`INT`], [`FK` (PHONG), `NOT NULL`], [Phòng được đánh giá.], [datphong\_id], [`INT`], [`FK` (DATPHONG), `UNIQUE`], [Thuộc đơn nào (Duy nhất 1-1).], [so\_sao], [`INT`], [`NOT NULL`], [Điểm sao (1-5).], [binh\_luan], [`NVARCHAR(1000)`], [`NULL`], [Nội dung text.], [ngay\_danh\_gia], [`DATE`], [`DEFAULT GETDATE()`], [Ngày đánh giá.], [trang\_thai], [`NVARCHAR(50)`], [`DEFAULT 'VISIBLE'`], [Trạng thái hiển thị.], [created\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [updated\_at], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`so_sao BETWEEN 1 AND 5`], [Giới hạn 1 đến 5 sao.], [#emph[CHECK]], [], [`trang_thai IN ('VISIBLE', 'HIDDEN')`], [Ràng buộc hiển thị.]
 )
 
 == Khởi Tạo Cơ Sở Dữ Liệu
