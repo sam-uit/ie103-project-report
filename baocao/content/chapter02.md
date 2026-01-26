@@ -305,6 +305,10 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 
 ### Mô Hình ERD Hoàn Chỉnh
 
+Quy cách:
+
+- Các quan hệ *(n - n)* được tô sáng màu cam, chuẩn bị cho bước thiết kế logic.
+
 ![Mô Hình ERD Hoàn Chỉnh](diagrams/ch02-concept-erd.svg)
 
 ## Mô Hình Mức Logic

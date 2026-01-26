@@ -377,6 +377,10 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 === Mô Hình ERD Hoàn Chỉnh
 <mo-hinh-erd-hoan-chinh>
 
+Quy cách:
+
+- Các quan hệ #emph[\(n - n)] được tô sáng màu cam, chuẩn bị cho bước thiết kế logic.
+
 #figure(image("diagrams/ch02-concept-erd.svg"),
   caption: [
     Mô Hình ERD Hoàn Chỉnh
