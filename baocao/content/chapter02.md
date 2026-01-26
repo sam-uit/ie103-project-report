@@ -168,52 +168,48 @@ Thuộc Tính:
 
 ### Các Mối Quan Hệ
 
-- ADMINS - ROLES: *nhiều - nhiều*
+- ADMINS - ROLES: *(n - n)*
     - Một admin có thể có nhiều vai trò.
     - Một vai trò có thể gán cho nhiều admin.
-- PHONG - LOAIPHONG: *một - nhiều*
+- PHONG - LOAIPHONG: *(1 - n)*
     - Một phòng thuộc về một loại phòng.
     - Một loại phòng có thể có nhiều phòng.
-- USERS - DATPHONG: *một - nhiều*
+- USERS - DATPHONG: *(1 - n)*
     - Một người dùng có thể có nhiều đặt phòng.
     - Một đặt phòng được thực hiện bởi một người dùng.
-- DATPHONG - PHONG: *nhiều - nhiều*
+- DATPHONG - PHONG: *(n - n)*
     - Một đặt phòng có thể có nhiều phòng.
     - Một phòng có thể được đặt trong nhiều đặt phòng.
-- DATPHONG - VOUCHERS: *một - nhiều*
+- DATPHONG - VOUCHERS: *(1 - n)*
     - Một đặt phòng có thể có một mã giảm giá.
     - Một mã giảm giá có thể được áp dụng cho nhiều đặt phòng.
 - DATPHONG - REVIEWS: *một - một*
     - Một lần đặt phòng có thể có một đánh giá.
     - Một đánh giá chỉ thuộc về một lần đặt phòng.
-- USERS - REVIEWS: *một - nhiều*
+- USERS - REVIEWS: *(1 - n)*
     - Một người dùng có thể có nhiều đánh giá.
     - Một đánh giá chỉ thuộc về một người dùng.
-- USERS - PAYMENTS: *một - nhiều*
+- USERS - PAYMENTS: *(1 - n)*
     - Một người dùng có thể thực hiện nhiều thanh toán.
     - Một thanh toán chỉ được thực hiện bởi một người dùng.
-- USERS - REFUNDS: *một - nhiều*
+- USERS - REFUNDS: *(1 - n)*
     - Một người dùng có thể yêu cầu nhiều lần hoàn tiền.
     - Một lần hoàn tiền chỉ được yêu cầu bởi một người dùng.
-- PAYMENTS - REFUNDS: *một - nhiều*
+- PAYMENTS - REFUNDS: *(1 - n)*
     - Một lần thanh toán có thể có nhiều lần hoàn tiền.
     - Một lần hoàn tiền chỉ thuộc về một lần thanh toán.
-- PAYMENTS - DATPHONG: *một - nhiều*
+- PAYMENTS - DATPHONG: *(1 - n)*
     - Một lần thanh toán thuộc về một lần đặt phòng.
     - Một lần đặt phòng có thể có nhiều lần thanh toán.
-- ADMINS - REFUNDS: *một - nhiều*
+- ADMINS - REFUNDS: *(1 - n)*
     - Một admin có thể duyệt nhiều lần hoàn tiền.
     - Một lần hoàn tiền chỉ được duyệt bởi một admin.
-- DATPHONG - DICHVU: *nhiều - nhiều*
+- DATPHONG - DICHVU: *(n - n)*
     - Một lần đặt phòng có thể có nhiều dịch vụ đi kèm.
     - Một dịch vụ đi kèm có thể được áp dụng cho nhiều lần đặt phòng.
-- ROLES - PERMISSIONS: *nhiều - nhiều*
+- ROLES - PERMISSIONS: *(n - n)*
     - Một vai trò có thể có nhiều quyền hạn.
     - Một quyền hạn có thể thuộc về nhiều vai trò.
-
-- `ADMINS - ROLES`: (n, n)
-    - Một admin có thể có nhiều admin role.
-    - Một role gán vào một admin cụ thể.
 
 ## Mô Hình Mức Logic
 
