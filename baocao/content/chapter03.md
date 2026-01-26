@@ -228,7 +228,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `booking_id` | `INT` | `FK` (DATPHONG), `NOT NULL` | Thanh toán cho đơn nào. |
 | `user_id` | `INT` | `FK` (USERS), `NOT NULL` | Người thanh toán. |
 | `so_tien` | `DECIMAL(18,2)` | `NOT NULL` | Số tiền giao dịch. |
-| `phuong_thuc` | `NVARCHAR(50)` | `NOT NULL` | Cách trả (`CASH`, `BANK`...). |
+| `phuong_thuc` | `NVARCHAR(50)` | `NOT NULL` | Cách trả (`TIEN_MAT`, `CHUYEN_KHOAN`, `THE`, `ONLINE`...). |
 | `trang_thai` | `NVARCHAR(50)` | `NULL` | Trạng thái giao dịch. |
 | `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
 | *CHECK* |  | `so_tien > 0` | Tiền phải dương. |
