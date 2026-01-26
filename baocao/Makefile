@@ -57,3 +57,13 @@ watch:
 	@echo "Started watching with entr..."
 	@find config content author pandoc template . -maxdepth 2 -name "*.md" -o -name "*.typ" -o -name "*.lua" -o -name "*.yaml" \
 	| entr -r $(MAKE) all
+
+# Helper target to compile all d2 files
+d2-all:
+	@echo "Compiling all d2 files..."
+	@find content/diagrams -name "*.d2" -exec d2 --pad 0 {} \;
+
+# For every files in content/diagrams, if any file changed, recompile/rebuild ALL d2 files
+d2watch:
+	@echo "Watching d2 files..."
+	@find content/diagrams -name "*.d2" | entr -r $(MAKE) d2-all
