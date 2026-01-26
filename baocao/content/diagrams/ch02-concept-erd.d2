@@ -55,7 +55,11 @@ DATPHONG -> DICHVU: bao gồm
 DATPHONG -> PAYMENTS: được
 DATPHONG -> PHONG: có nhiều
 DATPHONG -> REVIEWS: được
-LOAIPHONG <- PHONG: thuộc
+
+# LOAIPHONG <- PHONG: thuộc
+loaiphong_phong: {class: rel; label: "bao gồm"}
+LOAIPHONG -- loaiphong_phong: (1, n)
+loaiphong_phong -- PHONG: (1, n)
 
 # PAYMENTS -> REFUNDS: được
 payments_refunds: {class: rel; label: "được"}
