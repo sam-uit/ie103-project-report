@@ -148,6 +148,10 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 #### PAYMENTS (Thanh Toán)
 #### PERMISSIONS (Quyền Hạn)
 #### PHONG (Phòng)
+
+- Số Phòng (Thuộc tính định danh).
+- Trạng Thái (Trống, Đang Ở, Bảo Trì, Đã Đặt).
+
 #### REFUNDS (Hoàn Tiền)
 #### REVIEWS (Đánh Giá)
 #### ROLES (Vai Trò)
