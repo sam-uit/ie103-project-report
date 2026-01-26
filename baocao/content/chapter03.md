@@ -122,12 +122,10 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| `loai_phong_id` | `INT` | `FK` (LOAIPHONG), `NOT NULL` | Loại phòng tương ứng. |
 | `so_phong` | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Số phòng (VD: 101). |
+| `loai_phong_id` | `INT` | `FK` (LOAIPHONG), `NOT NULL` | Loại phòng tương ứng. |
 | `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'AVAILABLE'` | Trạng thái phòng. |
-| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
-| *CHECK* |  | `trang_thai IN ('AVAILABLE', 'BOOKED', 'MAINTENANCE')` | Ràng buộc trạng thái. |
+| *CHECK* |  | `trang_thai IN ('AVAILABLE', 'OCCUPIED', 'MAINTENANCE', 'RESERVED')` | Chỉ nhận giá trị quy định. |
 
 #### 9. DICHVU
 
