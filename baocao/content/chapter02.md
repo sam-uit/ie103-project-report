@@ -361,7 +361,7 @@ ADMINS(<u>id</u>, email, password_hash, full_name, status, created_at, updated_a
 
 DATPHONG(<u>id</u>, *user_id*, *voucher_id*, check_in, check_out, trang_thai, created_at)
 
-| **Khóa** | **Mô tả** |
+<!-- | **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh đơn đặt phòng.
 | *user_id* | Khóa ngoại tham chiếu tới bảng USERS (Người đặt).
@@ -369,7 +369,23 @@ DATPHONG(<u>id</u>, *user_id*, *voucher_id*, check_in, check_out, trang_thai, cr
 | check_in | Ngày nhận phòng dự kiến.
 | check_out | Ngày trả phòng dự kiến.
 | trang_thai | Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).
-| created_at | Thời gian tạo đơn.
+| created_at | Thời gian tạo đơn. -->
+
+<!-- Sử dụng bảng của Typst -->
+
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: ADMINS
+  ],
+)
+```
 
 #### DICHVU (Dịch Vụ)
 
