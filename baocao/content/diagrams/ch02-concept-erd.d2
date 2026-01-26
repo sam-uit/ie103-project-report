@@ -67,4 +67,8 @@ USERS -> DATPHONG: thực hiện
 USERS -> PAYMENTS: thực hiện
 USERS -> REFUNDS: yêu cầu
 USERS -> REVIEWS: viết
-VOUCHERS -> DATPHONG: áp dụng cho
+
+# VOUCHERS -> DATPHONG: áp dụng cho
+voucher_datphong: {class: rel; label: "áp dụng"}
+VOUCHERS -- voucher_datphong: (1, n)
+voucher_datphong -- DATPHONG: (1, n)
