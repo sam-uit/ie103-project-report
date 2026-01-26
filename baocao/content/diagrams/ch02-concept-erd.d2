@@ -45,14 +45,24 @@ admin_approve_refund: {class: rel; label: "duyệt"}
 ADMINS -- admin_approve_refund: (1, n)
 admin_approve_refund -- REFUNDS: (1, n)
 
-ADMINS -> ROLES: được cấp
+# ADMINS -> ROLES: được cấp
+# n - n: viền cam
+admin_role: {class: rel; label: "được cấp"; style: {stroke: orange}}
+ADMINS -- admin_role: (n, n)
+admin_role -- ROLES: (n, n)
+
 DATPHONG -> DICHVU: bao gồm
 DATPHONG -> PAYMENTS: được
 DATPHONG -> PHONG: có nhiều
 DATPHONG -> REVIEWS: được
 LOAIPHONG <- PHONG: thuộc
 PAYMENTS -> REFUNDS: được
-ROLES -> PERMISSIONS: có các
+
+# ROLES -> PERMISSIONS: có các
+role_permission: {class: rel; label: "có gán"; style: {stroke: orange}}
+ROLES -- role_permission: (n, n)
+role_permission -- PERMISSIONS: (n, n)
+
 USERS -> DATPHONG: thực hiện
 USERS -> PAYMENTS: thực hiện
 USERS -> REFUNDS: yêu cầu
