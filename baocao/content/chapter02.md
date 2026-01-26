@@ -623,7 +623,7 @@ ROLES(<u>id</u>, code, name, description)
 
 USERS(<u>id</u>, email, phone, password_hash, full_name, status, created_at, updated_at)
 
-| **Khóa** | **Mô tả** |
+<!-- | **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh người dùng. |
 | email | Địa chỉ email (dùng để đăng nhập). |
@@ -632,15 +632,14 @@ USERS(<u>id</u>, email, phone, password_hash, full_name, status, created_at, upd
 | full_name | Họ và tên. |
 | status | Trạng thái (ACTIVE/INACTIVE). |
 | created_at | Ngày tạo. |
-| updated_at | Ngày cập nhật. |
+| updated_at | Ngày cập nhật. | -->
 
 ```{=typst}
 #figure(
   table(
     columns: (30%, 70%),
     align: (left, left),
-    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
-    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh người dùng.], [email], [Địa chỉ email (dùng để đăng nhập).], [phone], [Số điện thoại liên lạc.], [password\_hash], [Mật khẩu đã mã hóa.], [full\_name], [Họ và tên.], [status], [Trạng thái (ACTIVE/INACTIVE).], [created\_at], [Ngày tạo.], [updated\_at], [Ngày cập nhật.]
   ),
   caption: [
     Mô Hình Mức Logic: USERS
