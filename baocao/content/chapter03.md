@@ -242,16 +242,16 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| payment_id | `INT` | `FK` (PAYMENTS), `NOT NULL` | Hoàn tiền cho giao dịch nào. |
-| user_id | `INT` | `FK` (USERS), `NOT NULL` | Người yêu cầu. |
-| admin_id | `INT` | `FK` (ADMINS), `NULL` | Người duyệt. |
-| so_tien | `DECIMAL(18,2)` | `NOT NULL` | Số tiền hoàn. |
-| ly_do | `NVARCHAR(500)` | `NULL` | Lý do hoàn tiền. |
-| ngay_hoan_tien | `DATETIME` | `NULL` | Thời điểm hoàn thành. |
-| trang_thai | `NVARCHAR(50)` | `DEFAULT 'PENDING'` | Trạng thái. |
-| created_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| updated_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
-| *CHECK* |  | `trang_thai IN ('PENDING', 'APPROVED', 'REJECTED')` | Ràng buộc trạng thái. |
+| `payment_id` | `INT` | `FK` (PAYMENTS), `NOT NULL` | Hoàn tiền cho giao dịch nào. |
+| `so_tien_hoan` | `DECIMAL(18,2)` | `NOT NULL` | Số tiền hoàn trả. |
+| `trang_thai` | `NVARCHAR(50)` | `NULL` | Trạng thái. |
+| `ly_do` | `NVARCHAR(500)` | `NULL` | Lý do hoàn tiền. |
+| `requested_by` | `INT` | `FK` (USERS), `NOT NULL` | Người yêu cầu. |
+| `approved_by` | `INT` | `FK` (ADMINS), `NULL` | Người duyệt. |
+| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
+| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| *CHECK* |  | `trang_thai IN ('REQUESTED', 'APPROVED', 'REJECTED', 'COMPLETED')` | Ràng buộc trạng thái. |
+| *CHECK* |  | `so_tien_hoan > 0` | Tiền phải dương. |
 
 #### 16. REVIEWS
 
