@@ -1,0 +1,85 @@
+direction: right
+
+# --- 1. SETTINGS ---
+classes: {
+  entity: {
+    shape: rectangle
+    style: {border-radius: 10; fill: "#FFFFFF"; stroke: "#333333"}
+  }
+  rel: {
+    shape: diamond
+    style: {fill: "#F2F2F7"; stroke: "#8E8E93"}
+  }
+  attr: {
+    shape: oval
+    width: 100; height: 50
+    style: {fill: "#F0F8FF"; stroke: "#4682B4"; stroke-dash: 3}
+  }
+}
+
+# --- 2. ENTITIES ---
+ADMINS: {class: entity}
+ROLES: {class: entity}
+USERS: {class: entity}
+DATPHONG: {class: entity}
+PHONG: {class: entity}
+LOAIPHONG: {class: entity}
+DICHVU: {class: entity}
+VOUCHERS: {class: entity}
+PAYMENTS: {class: entity}
+REVIEWS: {class: entity}
+
+# --- 3. RELATIONSHIPS (Sửa lại theo (min, max)) ---
+
+# -- Nhóm Admin --
+# Admin có ít nhất 1 role, Role có thể chưa gán cho admin nào
+phan_quyen: {class: rel; label: "Được cấp"}
+ADMINS -- phan_quyen: "(1, n)"
+phan_quyen -- ROLES: "(0, n)"
+
+# -- Nhóm User & Booking --
+# User có thể chưa đặt phòng nào (0,n). Một đơn đặt phòng phải thuộc về 1 user (1,1)
+thuc_hien: {class: rel; label: "Thực hiện"}
+USERS -- thuc_hien: "(0, n)"
+thuc_hien -- DATPHONG: "(1, 1)"
+
+# -- Nhóm Booking & Room (QUAN TRỌNG: CHUYỂN CT_DATPHONG THÀNH QUAN HỆ) --
+# Một đơn đặt phòng có ít nhất 1 phòng. Một phòng có thể nằm trong nhiều đơn (theo thời gian)
+chi_tiet_dat: {
+    class: rel
+    label: "Gồm"
+    # Thuộc tính của mối quan hệ N-N nằm ở đây
+    tooltip: "Chứa giá tiền tại thời điểm đặt"
+}
+DATPHONG -- chi_tiet_dat: "(1, n)"
+chi_tiet_dat -- PHONG: "(0, n)"
+
+# -- Nhóm Room & Type --
+thuoc_loai: {class: rel; label: "Thuộc loại"}
+PHONG -- thuoc_loai: "(1, 1)"
+thuoc_loai -- LOAIPHONG: "(1, n)" # 1 loại phòng có nhiều phòng
+
+# -- Nhóm Booking & Voucher --
+ap_dung: {class: rel; label: "Áp dụng"}
+VOUCHERS -- ap_dung: "(0, n)"
+ap_dung -- DATPHONG: "(0, 1)" # 1 đơn chỉ áp dụng tối đa 1 voucher
+
+# -- Nhóm Booking & Service (Tương tự CT_DATPHONG, xử lý N-N) --
+su_dung: {class: rel; label: "Sử dụng"}
+DATPHONG -- su_dung: "(0, n)"
+su_dung -- DICHVU: "(0, n)"
+
+# -- Nhóm Payment --
+thanh_toan: {class: rel; label: "Thanh toán"}
+DATPHONG -- thanh_toan: "(0, n)" # 1 đơn có thể chia nhiều lần thanh toán (trả góp/cọc)
+thanh_toan -- PAYMENTS: "(1, 1)" # 1 giao dịch thuộc về 1 đơn
+
+# -- Nhóm Reviews (1-1 Relationship) --
+# 1 Đơn chỉ có tối đa 1 review. 1 Review thuộc về đúng 1 đơn.
+danh_gia: {class: rel; label: "Có Đánh Giá"}
+DATPHONG -- danh_gia: "(0, 1)"
+danh_gia -- REVIEWS: "(1, 1)"
+
+viet_danh_gia: {class: rel; label: "Viết Đánh Giá"}
+USERS -- viet_danh_gia: "(0, n)"
+viet_danh_gia -- REVIEWS: "(1, 1)"
