@@ -377,7 +377,7 @@ DATPHONG(<u>id</u>, *user_id*, *voucher_id*, check_in, check_out, trang_thai, cr
 
 DICHVU(<u>id</u>, ten_dich_vu, don_gia, don_vi_tinh, trang_thai, created_at, updated_at)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh dịch vụ. |
 | ten_dich_vu | Tên dịch vụ. |
@@ -393,7 +393,7 @@ DICHVU(<u>id</u>, ten_dich_vu, don_gia, don_vi_tinh, trang_thai, created_at, upd
 
 LOAIPHONG(<u>id</u>, ten_loai, gia_co_ban, mo_ta, suc_chua)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh loại phòng. |
 | ten_loai | Tên hiển thị của loại phòng. |
@@ -407,7 +407,7 @@ LOAIPHONG(<u>id</u>, ten_loai, gia_co_ban, mo_ta, suc_chua)
 
 PAYMENTS(<u>id</u>, *booking_id*, *user_id*, so_tien, phuong_thuc, trang_thai, created_at)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh giao dịch. |
 | *booking_id* | Khóa ngoại tham chiếu đơn đặt phòng được thanh toán. |
@@ -423,7 +423,7 @@ PAYMENTS(<u>id</u>, *booking_id*, *user_id*, so_tien, phuong_thuc, trang_thai, c
 
 PERMISSIONS(<u>id</u>, code, description)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh quyền hạn. |
 | code | Mã code hệ thống (ví dụ: `VIEW_DASHBOARD`, `EDIT_ROOM`). |
@@ -435,7 +435,7 @@ PERMISSIONS(<u>id</u>, code, description)
 
 PHONG(<u>id</u>, so_phong, *loai_phong_id*, trang_thai)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh phòng. |
 | so_phong | Số hiệu phòng (ví dụ: 101, 202). |
@@ -448,7 +448,7 @@ PHONG(<u>id</u>, so_phong, *loai_phong_id*, trang_thai)
 
 REFUNDS(<u>id</u>, *payment_id*, *requested_by*, *approved_by*, so_tien_hoan, ly_do, trang_thai, created_at, updated_at)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh yêu cầu hoàn tiền. |
 | *payment_id* | Khóa ngoại tham chiếu giao dịch gốc cần hoàn tại PAYMENTS. |
@@ -465,7 +465,7 @@ REFUNDS(<u>id</u>, *payment_id*, *requested_by*, *approved_by*, so_tien_hoan, ly
 
 REVIEWS(<u>id</u>, *user_id*, *phong_id*, *datphong_id*, so_sao, binh_luan, ngay_danh_gia, trang_thai, created_at, updated_at)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh đánh giá. |
 | *user_id* | Người đánh giá, khóa ngoại tham chiếu tới USERS. |
@@ -482,7 +482,7 @@ REVIEWS(<u>id</u>, *user_id*, *phong_id*, *datphong_id*, so_sao, binh_luan, ngay
 
 ROLES(<u>id</u>, code, name, description)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh vai trò. |
 | code | Mã code vai trò (ADMIN, STAFF, USER). |
@@ -495,7 +495,7 @@ ROLES(<u>id</u>, code, name, description)
 
 USERS(<u>id</u>, email, phone, password_hash, full_name, status, created_at, updated_at)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh người dùng. |
 | email | Địa chỉ email (dùng để đăng nhập). |
@@ -512,7 +512,7 @@ USERS(<u>id</u>, email, phone, password_hash, full_name, status, created_at, upd
 
 VOUCHERS(<u>id</u>, ma_code, phan_tram_giam, ngay_het_han, so_tien_toi_thieu, so_lan_toi_da, so_lan_da_dung, trang_thai, created_at, updated_at)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh voucher. |
 | ma_code | Mã nhập khuyến mãi (ví dụ: SUMMER2024). |
@@ -538,7 +538,7 @@ ADMIN_ROLES(<u>admin_id</u>, <u>role_id</u>)
 
 <!-- Nếu khóa vừa là khóa chính, vừa là khóa ngoại: đậm-nghiêng -->
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>*admin_id*</u> | Mã định danh duy nhất của admin. Khóa ngoại tham chiếu ADMINS. |
 | <u>*role_id*</u> | Mã định danh duy nhất của role. Khóa ngoại tham chiếu ROLES. |
@@ -550,7 +550,7 @@ ADMIN_ROLES(<u>admin_id</u>, <u>role_id</u>)
 
 ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>*role_id*</u> | Khóa ngoại tham chiếu ROLES. |
 | <u>*permission_id*</u> | Khóa ngoại tham chiếu PERMISSIONS. |
@@ -562,7 +562,7 @@ ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
 
 CT_DATPHONG(<u>id</u>, *datphong_id*, *phong_id*, don_gia)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh dòng chi tiết (Surrogate Key). |
 | *datphong_id* | Khóa ngoại tham chiếu DATPHONG. |
@@ -576,7 +576,7 @@ CT_DATPHONG(<u>id</u>, *datphong_id*, *phong_id*, don_gia)
 
 CT_SUDUNG_DV(<u>id</u>, *datphong_id*, *dichvu_id*, so_luong, don_gia, thoi_diem_su_dung, ghi_chu, created_at)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh dòng chi tiết (Surrogate Key). |
 | *datphong_id* | Khóa ngoại tham chiếu DATPHONG. |
