@@ -93,12 +93,13 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính tự tăng. |
 | `email` | `NVARCHAR(255)` | `NOT NULL`, `UNIQUE` | Email đăng nhập. |
+| `phone` | `NVARCHAR(20)` |  | Số điện thoại. |
 | `password_hash` | `NVARCHAR(255)` | `NOT NULL` | Mật khẩu (Hash). |
 | `full_name` | `NVARCHAR(255)` | `NULL` | Họ tên khách hàng. |
-| `phone_number` | `NVARCHAR(20)` | `NULL` | Số điện thoại. |
-| `address` | `NVARCHAR(500)` | `NULL` | Địa chỉ liên hệ. |
+| `status` | `NVARCHAR(50)` | `DEFAULT 'ACTIVE'` | Trạng thái tài khoản. |
 | `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày đăng ký. |
 | `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| *CHECK* |  | `status IN ('ACTIVE', 'INACTIVE')` | Chỉ nhận giá trị quy định. |
 
 #### 7. LOAIPHONG
 
