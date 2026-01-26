@@ -68,9 +68,43 @@
 - US-10: Xem đánh giá phòng
     - Là **End User**, tôi muốn xem điểm trung bình và các đánh giá của từng loại phòng để đưa ra quyết định đặt phòng phù hợp.
 
-### Các Thực Thể Và Quan Hệ
-
 ### Danh Sách Các Thực Thể
+
+#### ADMINS (Quản Lý/Quản Trị Viên)
+
+Định Nghĩa:
+
+- Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
+- Có quyền quản lý nghiệp vụ và dữ liệu hệ thống.
+
+#### DATPHONG (Đặt Phòng)
+#### DICHVU (Dịch Vụ)
+#### LOAIPHONG (Loại Phòng)
+#### PAYMENTS (Thanh Toán)
+#### PERMISSIONS (Quyền Hạn)
+#### PHONG (Phòng)
+#### REFUNDS (Hoàn Tiền)
+#### REVIEWS (Đánh Giá)
+#### ROLES (Vai Trò)
+#### USERS (Người Dùng)
+#### VOUCHERS (Mã Giảm Giá)
+
+### Quan Hệ Giữa Các Thực Thể
+
+<!-- TODO: Mô tả bằng ngôn ngữ "business" thay vì kỹ thuật -->
+
+- ADMINS - ROLES: Một admin có thể có nhiều role. Một role có thể gán cho nhiều admin.
+
+<!-- (nên cần bảng trung gian) -->
+
+## Mô Hình Mức Quan Niệm
+
+<!-- - Thực thể và các thuộc tính. -->
+<!-- - Mô hình ER dạng Chen. -->
+
+![Mô Hình Thực Thể Quan Hệ](diagrams/ER.svg)
+
+### Các Thực Thể
 
 #### ADMINS (Quản Lý/Quản Trị Viên)
 
@@ -81,7 +115,7 @@
 
 Thuộc Tính:
 
-- `admin_id`: Mã định danh duy nhất của admin.
+- `id`: Mã định danh duy nhất của admin.
 - `username`: Tên đăng nhập của admin.
 - `password`: Mật khẩu của admin.
 - `full_name`: Họ tên đầy đủ của admin.
@@ -103,54 +137,51 @@ Thuộc Tính:
 #### USERS (Người Dùng)
 #### VOUCHERS (Mã Giảm Giá)
 
-### Quan Hệ Giữa Các Thực Thể
+### Các Mối Quan Hệ
 
-<!-- TODO: Mô tả bằng ngôn ngữ "business" thay vì kỹ thuật -->
-
-- `ADMINS 1 --- n ADMIN_ROLES`: Một admin có thể có nhiều admin role.
-- `DATPHONG 1 --- 1 REVIEWS`: Một đặt phòng có thể có một đánh giá.
-- `DATPHONG 1 --- n CT_DATPHONG`: Một đặt phòng có thể có nhiều chi tiết đặt phòng.
-- `DATPHONG 1 --- n CT_SUDUNG_DV`: Một đặt phòng có thể sử dụng nhiều dịch vụ.
-- `DATPHONG 1 --- n PAYMENTS`: Một đặt phòng có thể có nhiều thanh toán.
-- `DICHVU 1 --- n CT_SUDUNG_DV`: Một dịch vụ có thể được sử dụng nhiều lần.
-- `LOAIPHONG 1 --- n PHONG`: Một loại phòng có thể có nhiều phòng.
-- `PAYMENTS 1 --- n REFUNDS`: Một thanh toán có thể có nhiều hoàn tiền.
-- `PERMISSIONS 1 --- n ROLE_PERMISSIONS`: Một permission có thể thuộc nhiều role.
-- `PHONG 1 --- n CT_DATPHONG`: Một phòng có thể có nhiều chi tiết đặt phòng.
-- `PHONG 1 --- n REVIEWS`: Một phòng có thể có nhiều đánh giá.
-- `ROLES 1 --- n ADMIN_ROLES`: Một role có thể có nhiều admin roles.
-- `ROLES 1 --- n ROLE_PERMISSIONS`: Một role có thể có nhiều role permission.
-- `USERS 1 --- n DATPHONG`: Một user có thể có nhiều đặt phòng.
-- `USERS 1 --- n REVIEWS`: Một user có thể đánh giá nhiều phòng.
-- `VOUCHERS 1 --- n DATPHONG`: Một voucher có thể được dùng cho nhiều đặt phòng.
-
-## Mô Hình Mức Quan Niệm
-
-<!-- - Thực thể và các thuộc tính. -->
-<!-- - Mô hình ER dạng Chen. -->
-
-![Mô Hình Thực Thể Quan Hệ](diagrams/ER.svg)
+- `ADMINS - ROLES`: (n, n)
+    - Một admin có thể có nhiều admin role.
+    - Một role gán vào một admin cụ thể.
 
 ## Mô Hình Mức Logic
 
-### Nhóm Bảng Thực Thể
+#### ADMINS (Quản Lý/Quản Trị Viên)
 
-- ADMINS
-- ROLES
-- PERMISSIONS
-- USERS
-- VOUCHERS
-- DATPHONG
-- LOAIPHONG
-- PHONG
-- DICHVU
-- PAYMENTS
-- REFUNDS
-- REVIEWS
+ADMINS(<u>id</u>, username, password, full_name, email, phone, address, created_at, updated_at)
+
+- `id`: Mã định danh duy nhất của admin.
+- `username`: Tên đăng nhập của admin.
+- `password`: Mật khẩu của admin.
+- `full_name`: Họ tên đầy đủ của admin.
+- `email`: Email của admin.
+- `phone`: Số điện thoại của admin.
+- `address`: Địa chỉ của admin.
+- `created_at`: Thời gian tạo của admin.
+- `updated_at`: Thời gian cập nhật của admin.
+
+#### DATPHONG (Đặt Phòng)
+#### DICHVU (Dịch Vụ)
+#### LOAIPHONG (Loại Phòng)
+#### PAYMENTS (Thanh Toán)
+#### PERMISSIONS (Quyền Hạn)
+#### PHONG (Phòng)
+#### REFUNDS (Hoàn Tiền)
+#### REVIEWS (Đánh Giá)
+#### ROLES (Vai Trò)
+#### USERS (Người Dùng)
+#### VOUCHERS (Mã Giảm Giá)
 
 ### Nhóm Bảng Mối Quan Hệ
 
-- ADMIN_ROLES
+#### `ADMIN_ROLES`:
+
+Mối quan hệ giữa ADMINS và ROLES
+
+`ADMIN_ROLES`(<u>admin_id</u>, <u>role_id</u>)
+
+- `admin_id`: Mã định danh duy nhất của admin.
+- `role_id`: Mã định danh duy nhất của role.
+
 - ROLE_PERMISSIONS
 - CT_DATPHONG
 - CT_SUDUNG_DV
@@ -181,7 +212,7 @@ Thuộc Tính:
     [16], [`VOUCHERS`], [Thực thể], [Mã giảm giá],
   ),
   caption: [
-    Các Đối Tượng Chính
+    Các Bảng Trong Cơ Sở Dữ Liệu
   ],
 )
 ```
