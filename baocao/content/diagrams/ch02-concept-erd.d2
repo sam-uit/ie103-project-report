@@ -56,7 +56,11 @@ DATPHONG -> PAYMENTS: được
 DATPHONG -> PHONG: có nhiều
 DATPHONG -> REVIEWS: được
 LOAIPHONG <- PHONG: thuộc
-PAYMENTS -> REFUNDS: được
+
+# PAYMENTS -> REFUNDS: được
+payments_refunds: {class: rel; label: "được"}
+PAYMENTS -- payments_refunds: (1, n)
+payments_refunds -- REFUNDS: (1, n)
 
 # ROLES -> PERMISSIONS: có các
 roles_permissions: {class: rel; label: "có gán"; style: {stroke: orange}}
