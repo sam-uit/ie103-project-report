@@ -97,7 +97,13 @@ classes: {
 
 # MARK: ROLES
 ROLES: {class: entity; label: "ROLES"}
-roles_id: {class: attr_pri; label: "id"}
-roles_code: {class: attr; label: "code"}
-roles_name: {class: attr; label: "name"}
-roles_description: {class: attr; label: "description"}
+
+roles_id: {class: attr_pri; label: "ID Vai Trò"}
+roles_code: {class: attr; label: "Mã Vai Trò"}
+roles_name: {class: attr; label: "Tên Vai Trò"}
+roles_description: {class: attr; label: "Mô Tả"}
+
+ROLES -- roles_id
+ROLES -- roles_code
+ROLES -- roles_name
+ROLES -- roles_description
