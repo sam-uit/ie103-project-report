@@ -499,11 +499,14 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 ## Dữ Liệu Mẫu
 
+Để hệ thống có thể hoạt động demo, Nhóm 02 đã xây dựng bộ dữ liệu mẫu bao gồm danh mục hệ thống và dữ liệu giao dịch giả lập.
+
 ### Phân Quyền
 
-#### ROLES
+- Hệ thống định nghĩa các nhóm người dùng cơ bản và quyền hạn tương ứng.
 
 ```sql
+-- 2. ROLES
 INSERT INTO ROLES (code, name, description) VALUES
 ('SUPER_ADMIN', N'Quản trị viên cấp cao', N'Toàn quyền quản lý hệ thống'),
 ('ADMIN', N'Quản trị viên', N'Quản lý phòng và đặt phòng'),
@@ -517,4 +520,104 @@ INSERT INTO ROLES (code, name, description) VALUES
 ('ANALYST', N'Phân tích', N'Xem báo cáo và thống kê');
 
 GO
+```
+
+### Tài Khoản & Phòng Vật Lý
+
+Tài Khoản:
+
+```sql
+-- Insert ADMINS (status: ACTIVE or INACTIVE)
+INSERT INTO ADMINS (email, password_hash, full_name, status) VALUES
+('superadmin@gmail.com', 'hash_password_1', N'Lê Kim Long', 'ACTIVE'),
+('admin@gmail.com', 'hash_password_2', N'Đinh Xuân Sâm', 'ACTIVE'),
+('staff@gmail.com', 'hash_password_3', N'Nguyễn Minh Triết', 'ACTIVE');
+
+GO
+```
+
+Phòng:
+
+```sql
+INSERT INTO PHONG (so_phong, loai_phong_id, trang_thai) VALUES
+('501', 1, 'OCCUPIED'),
+('502', 1, 'AVAILABLE'),
+('503', 1, 'MAINTENANCE');
+
+GO
+```
+
+### Loại Phòng & Dịch Vụ
+
+Loại Phòng:
+
+```sql
+-- 5. LOAIPHONG
+INSERT INTO LOAIPHONG (ten_loai, gia_co_ban, mo_ta, suc_chua) VALUES
+(N'Phòng Đơn Tiêu Chuẩn', 500000, N'Phòng đơn cơ bản, giường đơn', 1),
+(N'Phòng Đơn Cao Cấp', 700000, N'Phòng đơn với tiện nghi cao cấp', 1),
+(N'Phòng Đôi Tiêu Chuẩn', 800000, N'Phòng đôi với 2 giường đơn hoặc 1 giường đôi', 2),
+(N'Phòng Đôi Cao Cấp', 1200000, N'Phòng đôi rộng rãi, view đẹp', 2),
+(N'Phòng Gia Đình', 1500000, N'Phòng lớn cho gia đình, 2-3 giường', 4),
+(N'Phòng VIP', 2000000, N'Phòng VIP với đầy đủ tiện nghi', 2),
+(N'Suite Junior', 2500000, N'Suite nhỏ với phòng khách riêng', 2),
+(N'Suite Executive', 3500000, N'Suite cao cấp với nhiều phòng', 4),
+(N'Phòng Deluxe', 1800000, N'Phòng deluxe view biển', 2),
+(N'Phòng Honeymoon', 2200000, N'Phòng trang trí lãng mạn cho cặp đôi', 2);
+
+GO
+```
+
+Dịch Vụ:
+
+```sql
+-- Insert DICHVU (trang_thai: ACTIVE or INACTIVE)
+INSERT INTO DICHVU (ten_dich_vu, don_gia, don_vi_tinh, trang_thai) VALUES
+(N'Ăn sáng Buffet', 150000, N'Suất', 'ACTIVE'),
+(N'Ăn sáng Phòng', 200000, N'Suất', 'ACTIVE'),
+(N'Ăn trưa Set', 250000, N'Suất', 'ACTIVE'),
+(N'Ăn tối Set', 300000, N'Suất', 'ACTIVE'),
+(N'Giặt ủi', 50000, N'Kg', 'ACTIVE'),
+(N'Massage body', 500000, N'Giờ', 'ACTIVE'),
+(N'Đưa đón sân bay', 400000, N'Lượt', 'ACTIVE'),
+(N'Thuê xe máy', 150000, N'Ngày', 'ACTIVE'),
+(N'Tour thành phố', 800000, N'Người', 'ACTIVE'),
+(N'Spa chăm sóc da', 700000, N'Lần', 'ACTIVE'),
+(N'Karaoke', 300000, N'Giờ', 'ACTIVE'),
+(N'Minibar', 100000, N'Lần', 'ACTIVE'),
+(N'Late checkout', 200000, N'Lần', 'ACTIVE'),
+(N'Early checkin', 150000, N'Lần', 'INACTIVE');
+
+GO
+```
+
+### Dữ Liệu Giao Dịch
+
+- Mô phỏng quy trình đặt phòng và thanh toán.
+
+```sql
+-- Insert DATPHONG
+-- trang_thai: PENDING, CONFIRMED, CANCELLED, COMPLETED
+-- check_in time >= 14:00:00, check_out time <= 12:00:00, check_out > check_in
+INSERT INTO DATPHONG (user_id, voucher_id, check_in, check_out, trang_thai, created_at) VALUES
+-- Đặt phòng đã hoàn thành
+(1, 1, '2024-01-05 14:00:00', '2024-01-08 12:00:00', 'COMPLETED', '2024-01-01 10:00:00'),
+(2, 2, '2024-01-10 14:00:00', '2024-01-12 12:00:00', 'COMPLETED', '2024-01-05 15:30:00'),
+(3, NULL, '2024-01-15 14:00:00', '2024-01-17 12:00:00', 'COMPLETED', '2024-01-10 09:00:00'),
+(4, 3, '2024-01-20 14:00:00', '2024-01-25 12:00:00', 'COMPLETED', '2024-01-15 11:20:00'),
+-- Đặt phòng đang diễn ra
+(5, NULL, '2024-01-25 14:00:00', '2024-01-28 12:00:00', 'CONFIRMED', '2024-01-20 16:00:00'),
+(6, 4, '2024-01-26 14:00:00', '2024-01-29 12:00:00', 'CONFIRMED', '2024-01-22 14:00:00'),
+(7, NULL, '2024-01-27 14:00:00', '2024-01-30 12:00:00', 'CONFIRMED', '2024-01-23 10:30:00'),
+-- Đặt phòng sắp tới
+(8, 6, '2024-02-01 14:00:00', '2024-02-05 12:00:00', 'PENDING', '2024-01-25 09:00:00'),
+(9, NULL, '2024-02-05 14:00:00', '2024-02-08 12:00:00', 'PENDING', '2024-01-26 11:00:00'),
+(10, 7, '2024-02-10 14:00:00', '2024-02-15 12:00:00', 'PENDING', '2024-01-27 15:00:00'),
+-- Đặt phòng đã hủy
+(11, NULL, '2024-01-18 14:00:00', '2024-01-20 12:00:00', 'CANCELLED', '2024-01-10 10:00:00'),
+(12, 9, '2024-01-22 14:00:00', '2024-01-24 12:00:00', 'CANCELLED', '2024-01-15 14:00:00'),
+-- Thêm một số đặt phòng nữa
+(1, 8, '2024-02-12 14:00:00', '2024-02-14 12:00:00', 'CONFIRMED', '2024-01-28 10:00:00'),
+(2, NULL, '2024-02-15 14:00:00', '2024-02-18 12:00:00', 'PENDING', '2024-01-28 11:00:00'),
+(3, 10, '2024-02-20 14:00:00', '2024-02-25 12:00:00', 'PENDING', '2024-01-28 13:00:00');
 ```
