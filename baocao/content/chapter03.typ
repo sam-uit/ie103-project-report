@@ -4,9 +4,11 @@
 <cai-dat-trien-khai>
 
 
-== Cài Đặt Mô Hình Dữ Liệu
-<cai-dat-mo-hinh-du-lieu>
+== Cài Đặt Mô Hình Dữ Liệu (Mức Vật Lý)
+<cai-dat-mo-hinh-du-lieu-muc-vat-ly>
 
+- Hệ quản trị cơ sở dữ liệu (DBMS) được sử dụng là Microsoft SQL Server.
+- Dưới đây là đặc tả chi tiết các bảng dữ liệu, kiểu dữ liệu và các ràng buộc toàn vẹn.
 
 == Dữ Liệu Mẫu
 <du-lieu-mau>
