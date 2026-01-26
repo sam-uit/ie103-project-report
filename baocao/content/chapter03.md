@@ -177,13 +177,13 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | `user_id` | `INT` | `FK` (USERS), `NOT NULL` | Khách đặt phòng. |
 | `voucher_id` | `INT` | `FK` (VOUCHERS), `NULL` | Voucher áp dụng (nếu có). |
-| `ngay_dat` | `DATETIME` | `DEFAULT GETDATE()` | Thời gian đặt. |
-| `ngay_checkin` | `DATE` | `NOT NULL` | Ngày nhận phòng. |
-| `ngay_checkout` | `DATE` | `NOT NULL` | Ngày trả phòng. |
-| `tong_tien` | `DECIMAL(18,2)` | `NOT NULL` | Tổng tiền đơn. |
+| `check_in` | `DATETIME` | `NOT NULL` | Thời gian nhận phòng. |
+| `check_out` | `DATETIME` | `NOT NULL` | Thời gian trả phòng. |
 | `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'PENDING'` | Trạng thái đơn. |
 | `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| *CHECK* |  | `check_out > check_in` | Thời gian trả phải lớn hơn thời gian nhận. |
+| *CHECK* |  | `check_in > 14:00:00` | Thời gian nhận phải sau 14 giờ chiều. |
+| *CHECK* |  | `check_out < 12:00:00` | Thời gian trả phải trước 12 giờ trưa. |
 | *CHECK* |  | `trang_thai IN ('PENDING', 'CONFIRMED', 'CANCELLED', 'COMPLETED')` | Ràng buộc trạng thái. |
 
 #### 12. CT_DATPHONG
