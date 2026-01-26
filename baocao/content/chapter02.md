@@ -490,13 +490,37 @@ VOUCHERS(<u>id</u>, code, mo_ta, giam_gia, loai_giam_gia, ngay_bat_dau, ngay_ket
 - Giải quyết quan hệ N-N giữa ROLES và PERMISSIONS.
 - Gán quyền cho Role.
 
+ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
+
+* `role_id`, `permission_id`: Sử dụng khóa chính phức hợp (Composite Primary Key).
+* `role_id`: Khóa ngoại tham chiếu ROLES.
+* `permission_id`: Khóa ngoại tham chiếu PERMISSIONS.
+
 #### CT_DATPHONG
 
 - Giải quyết quan hệ N-N giữa DATPHONG và PHONG.
+- Lưu trữ danh sách phòng trong một đơn đặt phòng.
+
+CT_DATPHONG(<u>id</u>, *datphong_id*, *phong_id*, gia_tien)
+
+* `id`: Mã định danh dòng chi tiết (Surrogate Key).
+* `datphong_id`: Khóa ngoại tham chiếu DATPHONG.
+* `phong_id`: Khóa ngoại tham chiếu PHONG.
+* `gia_tien`: Giá phòng được chốt tại thời điểm đặt (Lưu lịch sử giá).
 
 #### CT_SUDUNG_DV
 
 - Giải quyết quan hệ N-N giữa DATPHONG và DICHVU.
+- Lưu trữ các dịch vụ khách sử dụng trong đơn đặt hàng.
+
+CT_SUDUNG_DV(<u>id</u>, *datphong_id*, *dichvu_id*, so_luong, don_gia, thoi_diem_su_dung)
+
+* `id`: Mã định danh dòng chi tiết (Surrogate Key).
+* `datphong_id`: Khóa ngoại tham chiếu DATPHONG.
+* `dichvu_id`: Khóa ngoại tham chiếu DICHVU.
+* `so_luong`: Số lượng dịch vụ sử dụng.
+* `don_gia`: Đơn giá dịch vụ tại thời điểm sử dụng.
+* `thoi_diem_su_dung`: Thời gian khách order dịch vụ.
 
 ### Tổng Hợp
 
