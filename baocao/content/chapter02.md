@@ -559,16 +559,18 @@ CT_DATPHONG(<u>id</u>, *datphong_id*, *phong_id*, don_gia)
 - Giải quyết quan hệ N-N giữa DATPHONG và DICHVU.
 - Lưu trữ các dịch vụ khách sử dụng trong đơn đặt hàng.
 
-CT_SUDUNG_DV(<u>id</u>, *datphong_id*, *dichvu_id*, so_luong, don_gia, thoi_diem_su_dung)
+CT_SUDUNG_DV(<u>id</u>, *datphong_id*, *dichvu_id*, so_luong, don_gia, thoi_diem_su_dung, ghi_chu, created_at)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh dòng chi tiết (Surrogate Key). |
-| datphong_id | Khóa ngoại tham chiếu DATPHONG. |
-| dichvu_id | Khóa ngoại tham chiếu DICHVU. |
+| <u>id</u> | Mã định danh dòng chi tiết (Surrogate Key). |
+| *datphong_id* | Khóa ngoại tham chiếu DATPHONG. |
+| *dichvu_id* | Khóa ngoại tham chiếu DICHVU. |
 | so_luong | Số lượng dịch vụ sử dụng. |
 | don_gia | Đơn giá dịch vụ tại thời điểm sử dụng. |
 | thoi_diem_su_dung | Thời gian khách order dịch vụ. |
+| ghi_chu | Ghi chú về việc sử dụng dịch vụ. |
+| created_at | Ngày tạo. |
 
 ### Tổng Hợp
 
