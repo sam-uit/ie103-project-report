@@ -51,8 +51,15 @@ admins_roles: {class: rel; label: "được cấp"; style: {stroke: orange}}
 ADMINS -- admins_roles: (n, n)
 admins_roles -- ROLES: (n, n)
 
-DATPHONG -> DICHVU: bao gồm
-DATPHONG -> PAYMENTS: được
+# DATPHONG -> DICHVU: bao gồm
+datphong_dichvu: {class: rel; label: "bao gồm"}
+DATPHONG -- datphong_dichvu: (1, n)
+datphong_dichvu -- DICHVU: (1, n)
+
+# DATPHONG -> PAYMENTS: được
+datphong_payments: {class: rel; label: "được"}
+DATPHONG -- datphong_payments: (1, n)
+datphong_payments -- PAYMENTS: (1, n)
 
 # DATPHONG -> PHONG: có nhiều
 datphong_phong: {class: rel; label: "bao gồm"}
