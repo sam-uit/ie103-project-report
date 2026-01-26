@@ -97,16 +97,17 @@ classes: {
 
 # MARK: VOUCHERS
 VOUCHERS: {class: entity; label: "VOUCHERS"}
-vouchers_id: {class: attr_pri; label: "id"}
-vouchers_ma_code: {class: attr; label: "ma_code"}
-vouchers_phan_tram_giam: {class: attr; label: "phan_tram_giam"; width: 150}
-vouchers_ngay_het_han: {class: attr; label: "ngay_het_han"; width: 150}
-vouchers_so_tien_toi_thieu: {class: attr; label: "so_tien_toi_thieu"; width: 160}
-vouchers_so_lan_toi_da: {class: attr; label: "so_lan_toi_da"; width: 150}
-vouchers_so_lan_da_dung: {class: attr; label: "so_lan_da_dung"; width: 150}
-vouchers_trang_thai: {class: attr; label: "trang_thai"}
-vouchers_created_at: {class: attr; label: "created_at"; width: 110}
-vouchers_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+vouchers_id: {class: attr_pri; label: "ID Voucher"}
+vouchers_ma_code: {class: attr; label: "Mã Voucher"}
+vouchers_phan_tram_giam: {class: attr; label: "Phần Trăm Giảm"}
+vouchers_ngay_het_han: {class: attr; label: "Ngày Hết Hạn"}
+vouchers_so_tien_toi_thieu: {class: attr; label: "Số Tiền Tối Thiếu"}
+vouchers_so_lan_toi_da: {class: attr; label: "Số Lần Tối Đa"}
+vouchers_so_lan_da_dung: {class: attr; label: "Số Lần Đã Dùng"}
+vouchers_trang_thai: {class: attr; label: "Trạng Thái"}
+# vouchers_created_at: {class: attr; label: "created_at"; width: 110}
+# vouchers_updated_at: {class: attr; label: "updated_at"; width: 110}
 
 VOUCHERS -- vouchers_id
 VOUCHERS -- vouchers_ma_code
@@ -116,5 +117,5 @@ VOUCHERS -- vouchers_so_tien_toi_thieu
 VOUCHERS -- vouchers_so_lan_toi_da
 VOUCHERS -- vouchers_so_lan_da_dung
 VOUCHERS -- vouchers_trang_thai
-VOUCHERS -- vouchers_created_at
-VOUCHERS -- vouchers_updated_at
+# VOUCHERS -- vouchers_created_at
+# VOUCHERS -- vouchers_updated_at
