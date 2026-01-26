@@ -746,20 +746,19 @@ ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
 
 CT_DATPHONG(<u>id</u>, *datphong_id*, *phong_id*, don_gia)
 
-| **Khóa** | **Mô tả** |
+<!-- | **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh dòng chi tiết (Surrogate Key). |
 | *datphong_id* | Khóa ngoại tham chiếu DATPHONG. |
 | *phong_id* | Khóa ngoại tham chiếu PHONG. |
-| don_gia | Giá phòng được chốt tại thời điểm đặt (Lưu lịch sử giá). |
+| don_gia | Giá phòng được chốt tại thời điểm đặt (Lưu lịch sử giá). | -->
 
 ```{=typst}
 #figure(
   table(
     columns: (30%, 70%),
     align: (left, left),
-    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
-    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh dòng chi tiết (Surrogate Key).], [#emph[datphong\_id]], [Khóa ngoại tham chiếu DATPHONG.], [#emph[phong\_id]], [Khóa ngoại tham chiếu PHONG.], [don\_gia], [Giá phòng được chốt tại thời điểm đặt (Lưu lịch sử giá).]
   ),
   caption: [
     Mô Hình Mức Logic: CT_DATPHONG
