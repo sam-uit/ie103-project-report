@@ -393,3 +393,10 @@ INSERT INTO DATPHONG (user_id, voucher_id, check_in, check_out, trang_thai, crea
 -- Thêm một số đặt phòng nữa
 (1, 8, '2024-02-12 14:00:00', '2024-02-14 12:00:00', 'CONFIRMED', '2024-01-28 10:00:00');
 ```
+
+== Kết Luận Chương 3
+<ket-luan-chuong-3>
+
+Trong chương này, nhóm đã thực hiện các bước thiết kế cơ sở dữ liệu ở mức vật lý trên một Hệ Quản Trị Cơ Sở Dữ Liệu cụ thể. Đồng thời đã tạo các bảng, và thêm dữ liệu mẫu.
+
+Tới thời điểm này, cơ sở dữ liệu đã sẵn sàng để thực hiện các bài toán nghiệp vụ cần thiết.
