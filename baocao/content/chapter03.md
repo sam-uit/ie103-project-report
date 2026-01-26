@@ -150,18 +150,21 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| `code` | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Mã Voucher (VD: TET2025). |
-| `mo_ta` | `NVARCHAR(500)` | `NULL` | Mô tả chương trình. |
-| `giam_gia` | `DECIMAL(18,2)` | `NOT NULL` | Giá trị giảm. |
-| `loai_giam_gia` | `NVARCHAR(20)` | `NOT NULL` | Loại (`PERCENT`, `FIXED`). |
-| `ngay_bat_dau` | `DATETIME` | `NOT NULL` | Ngày bắt đầu. |
-| `ngay_ket_thuc` | `DATETIME` | `NOT NULL` | Ngày kết thúc. |
-| `so_luong` | `INT` | `NOT NULL` | Số lượng mã. |
+| `ma_code` | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Mã Voucher (VD: TET2025). |
+| `phan_tram_giam` | `DECIMAL(5,2)` | `NOT NULL` | Phần trăm giảm. |
+| `ngay_het_han` | `DATETIME` | `NOT NULL` | Ngày hết hạn. |
+| `so_tien_toi_thieu` | `DECIMAL(18,2)` | `NOT NULL` | Số tiền tối thiểu. |
+| `so_lan_toi_da` | `INT` | `NOT NULL`, `DEFAULT 100` | Số lần tối đa. |
+| `so_lan_da_dung` | `INT` | `DEFAULT 0` | Số lần đã dùng. |
 | `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'ACTIVE'` | Trạng thái. |
 | `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
 | `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
-| *CHECK* |  | `trang_thai IN ('ACTIVE', 'EXPIRED', 'DISABLED')` | Ràng buộc trạng thái. |
-| *CHECK* |  | `loai_giam_gia IN ('PERCENT', 'FIXED')` | Ràng buộc loại giảm. |
+| *CHECK* |  | `phan_tram_giam >= 0` | Phần trăm giảm phải dương. |
+| *CHECK* |  | `so_tien_toi_thieu >= 0` | Số tiền tối thiểu phải dương. |
+| *CHECK* |  | `so_lan_toi_da > 0` | Số lần tối đa phải dương. |
+| *CHECK* |  | `so_lan_da_dung >= 0` | Số lần đã dùng phải dương. |
+| *CHECK* |  | `so_lan_da_dung <= so_lan_toi_da` | Số lần đã dùng phải nhỏ hơn hoặc bằng số lần tối đa. |
+| *CHECK* |  | `trang_thai IN ('ACTIVE', 'INACTIVE')` | Ràng buộc trạng thái. |
 
 ### C. Nhóm Bảng Giao Dịch & Chi Tiết
 
