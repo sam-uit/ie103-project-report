@@ -38,7 +38,7 @@ export async function scanDemoConfigs(): Promise<DemoConfig[]> {
                         try {
                               // Load config.json for this demo
                               const configPath = `${BASE_URL}sql-demo/${type}/${folder}/config.json`;
-                              console.log({configPath});
+                              console.log({ configPath });
                               const response = await fetch(configPath);
 
                               if (response.ok) {
@@ -99,7 +99,7 @@ function getHardcodedDemoList(type: string): string[] {
                   'Demo_Payment',
                   'Demo_ReviewRoom',
                   'Demo_Service',
-                  'Demo_ApployVoucher'
+                  'Demo_ApplyVoucher'
             ],
             'Function': [
                   'Demo_CheckRoomAvailable',
