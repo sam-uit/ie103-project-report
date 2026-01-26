@@ -63,7 +63,10 @@ roles_permissions: {class: rel; label: "có gán"; style: {stroke: orange}}
 ROLES -- roles_permissions: (n, n)
 roles_permissions -- PERMISSIONS: (n, n)
 
-USERS -> DATPHONG: thực hiện
+# USERS -> DATPHONG: thực hiện
+users_datphong: {class: rel; label: "thực hiện"}
+USERS -- users_datphong: (1, n)
+users_datphong -- DATPHONG: (1, n)
 
 # USERS -> PAYMENTS: thực hiện
 users_payment: {class: rel; label: "thực hiện"}
@@ -77,7 +80,7 @@ users_refunds -- REFUNDS: (1, n)
 
 # USERS -> REVIEWS: viết
 users_reviews: {class: rel; label: "viết"}
-USERS -- uses_reviews: (1, n)
+USERS -- users_reviews: (1, n)
 users_reviews -- REVIEWS: (1, n)
 
 # VOUCHERS -> DATPHONG: áp dụng cho
