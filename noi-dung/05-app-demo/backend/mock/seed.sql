@@ -1,4 +1,4 @@
-USE BookingMS;
+USE ROOM_BOOKING_SYSTEM;
 GO
 
 -- 1. ADMINS
