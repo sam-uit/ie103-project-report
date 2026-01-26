@@ -306,9 +306,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 ```{=typst}
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`user_id`], [`INT`], [`FK` (USERS), `NOT NULL`], [Khách đặt phòng.], [`voucher_id`], [`INT`], [`FK` (VOUCHERS), `NULL`], [Voucher áp dụng (nếu có).], [`check_in`], [`DATETIME`], [`NOT NULL`], [Thời gian nhận phòng.], [`check_out`], [`DATETIME`], [`NOT NULL`], [Thời gian trả phòng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái đơn.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[CHECK]], [], [`check_out > check_in`], [Thời gian trả phải lớn hơn thời gian nhận.], [#emph[CHECK]], [], [`check_in > 14:00:00`], [Thời gian nhận phải sau 14 giờ chiều.], [#emph[CHECK]], [], [`check_out < 12:00:00`], [Thời gian trả phải trước 12 giờ trưa.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'CONFIRMED', 'CANCELLED', 'COMPLETED')`], [Ràng buộc trạng thái.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`user_id`], [`INT`], [`FK (USERS)`, `NOT NULL`], [Khách đặt phòng.], [`voucher_id`], [`INT`], [`FK (VOUCHERS)`, `NULL`], [Voucher áp dụng (nếu có).], [`check_in`], [`DATETIME`], [`NOT NULL`], [Thời gian nhận phòng.], [`check_out`], [`DATETIME`], [`NOT NULL`], [Thời gian trả phòng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái đơn.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[CHECK]], [], [`check_out > check_in`], [Thời gian trả phải lớn hơn thời gian nhận.], [#emph[CHECK]], [], [`check_in > 14:00:00`], [Nhận phòng sau 14 giờ chiều.], [#emph[CHECK]], [], [`check_out < 12:00:00`], [Trả phòng trước 12 giờ trưa.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'CONFIRMED', 'CANCELLED', 'COMPLETED')`], [Ràng buộc trạng thái.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: DATPHONG
