@@ -64,7 +64,11 @@ ROLES -- role_permission: (n, n)
 role_permission -- PERMISSIONS: (n, n)
 
 USERS -> DATPHONG: thực hiện
-USERS -> PAYMENTS: thực hiện
+
+# USERS -> PAYMENTS: thực hiện
+users_payment: {class: rel; label: "thực hiện"}
+USERS -- users_payment: (1, n)
+users_payment -- PAYMENTS: (1, n)
 
 # USERS -> REFUNDS: yêu cầu
 users_refunds: {class: rel; label: "yêu cầu"}
