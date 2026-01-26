@@ -195,9 +195,10 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | `datphong_id` | `INT` | `FK` (DATPHONG), `NOT NULL` | Thuộc đơn đặt phòng nào. |
 | `phong_id` | `INT` | `FK` (PHONG), `NOT NULL` | Phòng nào. |
-| `gia_tien` | `DECIMAL(18,2)` | `NOT NULL` | Giá phòng tại thời điểm đặt. |
-| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
+| `don_gia` | `DECIMAL(18,2)` | `NOT NULL` | Giá phòng tại thời điểm đặt. |
 | *FK Rule* |  | `datphong_id ON DELETE CASCADE` | Xóa đơn xóa luôn chi tiết. |
+| *CHECK* |  | `UNIQUE datphong_id, phong_id` | Chi tiết đặt phòng không được trùng. |
+| *CHECK* |  | `don_gia > 0` | Giá phải dương. |
 
 #### 13. CT_SUDUNG_DV
 
