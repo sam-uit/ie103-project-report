@@ -3,6 +3,7 @@
 = Phân Tích Và Thiết Kế
 <phan-tich-va-thiet-ke>
 
+Trong chương này, Nhóm sẽ trình bày các chức năng và quy tắc nghiệp vụ của Hệ Thống Quản Lý Khách Sạn. Từ đó thực hiện phân tích và thiết kế cơ sở dữ liệu ở các mức Quan Niệm, và Logic.
 
 == Các Chức Năng Nghiệp Vụ
 <cac-chuc-nang-nghiep-vu>
