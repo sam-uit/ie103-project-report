@@ -59,9 +59,9 @@ LOAIPHONG <- PHONG: thuộc
 PAYMENTS -> REFUNDS: được
 
 # ROLES -> PERMISSIONS: có các
-roles_permission: {class: rel; label: "có gán"; style: {stroke: orange}}
-ROLES -- roles_permission: (n, n)
-roles_permission -- PERMISSIONS: (n, n)
+roles_permissions: {class: rel; label: "có gán"; style: {stroke: orange}}
+ROLES -- roles_permissions: (n, n)
+roles_permissions -- PERMISSIONS: (n, n)
 
 USERS -> DATPHONG: thực hiện
 
