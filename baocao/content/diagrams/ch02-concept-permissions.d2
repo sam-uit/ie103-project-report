@@ -97,9 +97,11 @@ classes: {
 
 # MARK: PERMISSIONS
 PERMISSIONS: {class: entity; label: "PERMISSIONS"}
-permissions_id: {class: attr_pri; label: "id"}
-permissions_code: {class: attr; label: "code"}
-permissions_description: {class: attr; label: "description"}
+
+permissions_id: {class: attr_pri; label: "ID Quyền Hạn"}
+permissions_code: {class: attr; label: "Mã Quyền Hạn"}
+permissions_description: {class: attr; label: "Miêu Tả"}
+
 PERMISSIONS -- permissions_id
 PERMISSIONS -- permissions_code
 PERMISSIONS -- permissions_description
