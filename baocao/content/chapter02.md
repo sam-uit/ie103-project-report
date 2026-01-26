@@ -451,7 +451,7 @@ LOAIPHONG(<u>id</u>, ten_loai, gia_co_ban, mo_ta, suc_chua)
 
 PAYMENTS(<u>id</u>, *booking_id*, *user_id*, so_tien, phuong_thuc, trang_thai, created_at)
 
-| **Khóa** | **Mô tả** |
+<!-- | **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh giao dịch. |
 | *booking_id* | Khóa ngoại tham chiếu đơn đặt phòng được thanh toán. |
@@ -459,15 +459,15 @@ PAYMENTS(<u>id</u>, *booking_id*, *user_id*, so_tien, phuong_thuc, trang_thai, c
 | so_tien | Số tiền thanh toán. |
 | phuong_thuc | Phương thức (TIEN_MAT, CHUYEN_KHOAN, THE, ONLINE). |
 | trang_thai | Trạng thái giao dịch (PENDING, SUCCESS, FAILED, CANCELLED, PAID, UNPAID, REFUNDED). |
-| created_at | Ngày tạo. |
+| created_at | Ngày tạo. | -->
 
 ```{=typst}
 #figure(
   table(
     columns: (30%, 70%),
     align: (left, left),
-    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
-    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh giao dịch.], [#emph[booking\_id]], [Khóa ngoại tham chiếu đơn đặt phòng được thanh toán.], [#emph[user\_id]], [Khóa ngoại tham chiếu người thực hiện thanh toán.], [so\_tien], [Số tiền thanh toán.], [phuong\_thuc], [Phương thức (TIEN\_MAT, CHUYEN\_KHOAN, THE, ONLINE).], [trang\_thai], [Trạng thái giao dịch (PENDING, SUCCESS, FAILED, CANCELLED, PAID, UNPAID,
+    REFUNDED).], [created\_at], [Ngày tạo.]
   ),
   caption: [
     Mô Hình Mức Logic: PAYMENTS
