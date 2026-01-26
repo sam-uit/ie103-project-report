@@ -394,9 +394,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 ```{=typst}
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`booking_id`], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thanh toán cho đơn nào.], [`user_id`], [`INT`], [`FK` (USERS), `NOT NULL`], [Người thanh toán.], [`so_tien`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền giao dịch.], [`phuong_thuc`], [`NVARCHAR(50)`], [`NOT NULL`], [Cách trả (`TIEN_MAT`, `CHUYEN_KHOAN`, `THE`, `ONLINE`…).], [`trang_thai`], [`NVARCHAR(50)`], [`NULL`], [Trạng thái giao dịch.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[CHECK]], [], [`so_tien > 0`], [Tiền phải dương.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'SUCCESS', 'FAILED', 'CANCELLED', 'PAID', 'UNPAID', 'REFUNDED')`], [Ràng buộc trạng thái.], [#emph[CHECK]], [], [`phuong_thuc IN ('TIEN_MAT', 'CHUYEN_KHOAN', 'THE', 'ONLINE')`], [Ràng buộc phương thức.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`booking_id`], [`INT`], [`FK (DATPHONG)`, `NOT NULL`], [Thanh toán cho đơn nào.], [`user_id`], [`INT`], [`FK (USERS)`, `NOT NULL`], [Người thanh toán.], [`so_tien`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền giao dịch.], [`phuong_thuc`], [`NVARCHAR(50)`], [`NOT NULL`], [Cách trả tiền.], [`trang_thai`], [`NVARCHAR(50)`], [`NULL`], [Trạng thái giao dịch.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[CHECK]], [], [`so_tien > 0`], [Tiền phải dương.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'SUCCESS', 'FAILED', 'CANCELLED', 'PAID', 'UNPAID', 'REFUNDED')`], [Ràng buộc trạng thái.], [#emph[CHECK]], [], [`phuong_thuc IN ('TIEN_MAT', 'CHUYEN_KHOAN', 'THE', 'ONLINE')`], [Ràng buộc phương thức.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: PAYMENTS
