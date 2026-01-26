@@ -423,21 +423,20 @@ DICHVU(<u>id</u>, ten_dich_vu, don_gia, don_vi_tinh, trang_thai, created_at, upd
 
 LOAIPHONG(<u>id</u>, ten_loai, gia_co_ban, mo_ta, suc_chua)
 
-| **Khóa** | **Mô tả** |
+<!-- | **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh loại phòng. |
 | ten_loai | Tên hiển thị của loại phòng. |
 | gia_co_ban | Giá gốc theo đêm. |
 | mo_ta | Mô tả chi tiết loại phòng. |
-| suc_chua | Số người tối đa cho phép. |
+| suc_chua | Số người tối đa cho phép. | -->
 
 ```{=typst}
 #figure(
   table(
     columns: (30%, 70%),
     align: (left, left),
-    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
-    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh loại phòng.], [ten\_loai], [Tên hiển thị của loại phòng.], [gia\_co\_ban], [Giá gốc theo đêm.], [mo\_ta], [Mô tả chi tiết loại phòng.], [suc\_chua], [Số người tối đa cho phép.]
   ),
   caption: [
     Mô Hình Mức Logic: LOAIPHONG
