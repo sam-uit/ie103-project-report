@@ -418,14 +418,14 @@ PERMISSIONS(<u>id</u>, code, description)
 
 - Danh sách các phòng vật lý.
 
-PHONG(<u>id</u>, so_phong, *loai_phong_id*, trang_thai, created_at, updated_at)
+PHONG(<u>id</u>, so_phong, *loai_phong_id*, trang_thai)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh phòng. |
+| <u>id</u> | Mã định danh phòng. |
 | so_phong | Số hiệu phòng (ví dụ: 101, 202). |
-| loai_phong_id | Khóa ngoại tham chiếu tới bảng LOAIPHONG. |
-| trang_thai | Trạng thái hiện tại (AVAILABLE, BOOKED, MAINTENANCE). |
+| *loai_phong_id* | Khóa ngoại tham chiếu tới bảng LOAIPHONG. |
+| trang_thai | Trạng thái hiện tại (AVAILABLE, OCCUPIED, MAINTENANCE, RESERVED). |
 
 #### REFUNDS (Hoàn Tiền)
 
