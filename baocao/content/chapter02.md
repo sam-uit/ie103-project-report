@@ -514,19 +514,19 @@ VOUCHERS(<u>id</u>, ma_code, phan_tram_giam, ngay_het_han, so_tien_toi_thieu, so
 
 - Được hình thành từ việc tách các mối quan hệ nhiều-nhiều (Many-to-Many).
 
-#### `ADMIN_ROLES`:
+#### ADMIN_ROLES
 
 - Mối quan hệ giữa ADMINS và ROLES.
 - Phân quyền Admin.
 
-`ADMIN_ROLES`(<u>admin_id</u>, <u>role_id</u>)
+ADMIN_ROLES(<u>admin_id</u>, <u>role_id</u>)
 
 <!-- Nếu khóa vừa là khóa chính, vừa là khóa ngoại: đậm-nghiêng -->
 
 | Khóa | Mô tả |
 | --- | --- |
-| ***admin_id*** | Mã định danh duy nhất của admin. Khóa ngoại tham chiếu ADMINS. |
-| ***role_id*** | Mã định danh duy nhất của role. Khóa ngoại tham chiếu ROLES. |
+| <u>*admin_id*</u> | Mã định danh duy nhất của admin. Khóa ngoại tham chiếu ADMINS. |
+| <u>*role_id*</u> | Mã định danh duy nhất của role. Khóa ngoại tham chiếu ROLES. |
 
 #### ROLE_PERMISSIONS
 
@@ -537,8 +537,8 @@ ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
 
 | Khóa | Mô tả |
 | --- | --- |
-| ***role_id*** | Khóa ngoại tham chiếu ROLES. |
-| ***permission_id*** | Khóa ngoại tham chiếu PERMISSIONS. |
+| <u>*role_id*</u> | Khóa ngoại tham chiếu ROLES. |
+| <u>*permission_id*</u> | Khóa ngoại tham chiếu PERMISSIONS. |
 
 #### CT_DATPHONG
 
