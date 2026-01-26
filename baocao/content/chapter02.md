@@ -469,9 +469,10 @@ ROLES(<u>id</u>, code, name, description)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh vai trò. |
+| <u>id</u> | Mã định danh vai trò. |
 | code | Mã code vai trò (ADMIN, STAFF, USER). |
 | name | Tên hiển thị. |
+| description | Mô tả chi tiết vai trò. |
 
 #### USERS (Người Dùng)
 
