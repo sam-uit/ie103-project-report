@@ -262,15 +262,15 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | `user_id` | `INT` | `FK` (USERS), `NOT NULL` | Người đánh giá. |
 | `phong_id` | `INT` | `FK` (PHONG), `NOT NULL` | Phòng được đánh giá. |
-| `datphong_id` | `INT` | `FK` (DATPHONG), `UNIQUE` | Thuộc đơn nào (Duy nhất 1-1). |
+| `datphong_id` | `INT` | `FK` (DATPHONG), `UNIQUE`, `NOT NULL` | Thuộc đơn đặt phòng nào (Duy nhất 1-1). |
 | `so_sao` | `INT` | `NOT NULL` | Điểm sao (1-5). |
 | `binh_luan` | `NVARCHAR(1000)` | `NULL` | Nội dung text. |
 | `ngay_danh_gia` | `DATE` | `DEFAULT GETDATE()` | Ngày đánh giá. |
-| `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'VISIBLE'` | Trạng thái hiển thị. |
+| `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'PENDING'` | Trạng thái. |
 | `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
 | `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 | *CHECK* |  | `so_sao BETWEEN 1 AND 5` | Giới hạn 1 đến 5 sao. |
-| *CHECK* |  | `trang_thai IN ('VISIBLE', 'HIDDEN')` | Ràng buộc hiển thị. |
+| *CHECK* |  | `trang_thai IN ('PENDING', 'APPROVED', 'REJECTED')` | Ràng buộc trạng thái. |
 
 ## Khởi Tạo Cơ Sở Dữ Liệu
 
