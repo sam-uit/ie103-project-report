@@ -365,11 +365,13 @@ DATPHONG(<u>id</u>, *user_id*, *voucher_id*, ngay_dat, ngay_checkin, ngay_checko
 
 DICHVU(<u>id</u>, ten_dich_vu, mo_ta, don_gia, trang_thai, created_at, updated_at)
 
-* `id`: Mã định danh dịch vụ.
-* `ten_dich_vu`: Tên dịch vụ.
-* `mo_ta`: Mô tả chi tiết dịch vụ.
-* `don_gia`: Đơn giá niêm yết.
-* `trang_thai`: Trạng thái khả dụng (ACTIVE/INACTIVE).
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh dịch vụ. |
+| ten_dich_vu | Tên dịch vụ. |
+| mo_ta | Mô tả chi tiết dịch vụ. |
+| don_gia | Đơn giá niêm yết. |
+| trang_thai | Trạng thái khả dụng (ACTIVE/INACTIVE). |
 
 #### LOAIPHONG (Loại Phòng)
 
@@ -377,10 +379,12 @@ DICHVU(<u>id</u>, ten_dich_vu, mo_ta, don_gia, trang_thai, created_at, updated_a
 
 LOAIPHONG(<u>id</u>, ten_loai, mo_ta, gia_co_ban, suc_chua, created_at, updated_at)
 
-* `id`: Mã định danh loại phòng.
-* `ten_loai`: Tên hiển thị của loại phòng.
-* `gia_co_ban`: Giá gốc theo đêm.
-* `suc_chua`: Số người tối đa cho phép.
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh loại phòng. |
+| ten_loai | Tên hiển thị của loại phòng. |
+| gia_co_ban | Giá gốc theo đêm. |
+| suc_chua | Số người tối đa cho phép. |
 
 #### PAYMENTS (Thanh Toán)
 
@@ -388,13 +392,15 @@ LOAIPHONG(<u>id</u>, ten_loai, mo_ta, gia_co_ban, suc_chua, created_at, updated_
 
 PAYMENTS(<u>id</u>, *datphong_id*, *user_id*, so_tien, phuong_thuc, ma_giao_dich, ngay_thanh_toan, trang_thai)
 
-* `id`: Mã định danh giao dịch.
-* `datphong_id`: Khóa ngoại tham chiếu đơn đặt phòng được thanh toán.
-* `user_id`: Khóa ngoại tham chiếu người thực hiện thanh toán.
-* `so_tien`: Số tiền thanh toán.
-* `phuong_thuc`: Phương thức (CASH, BANKING, CARD).
-* `ma_giao_dich`: Mã tham chiếu từ cổng thanh toán (Transaction Ref ID).
-* `trang_thai`: Trạng thái giao dịch (PENDING, SUCCESS, FAILED).
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh giao dịch. |
+| datphong_id | Khóa ngoại tham chiếu đơn đặt phòng được thanh toán. |
+| user_id | Khóa ngoại tham chiếu người thực hiện thanh toán. |
+| so_tien | Số tiền thanh toán. |
+| phuong_thuc | Phương thức (CASH, BANKING, CARD). |
+| ma_giao_dich | Mã tham chiếu từ cổng thanh toán (Transaction Ref ID). |
+| trang_thai | Trạng thái giao dịch (PENDING, SUCCESS, FAILED). |
 
 #### PERMISSIONS (Quyền Hạn)
 
@@ -402,9 +408,11 @@ PAYMENTS(<u>id</u>, *datphong_id*, *user_id*, so_tien, phuong_thuc, ma_giao_dich
 
 PERMISSIONS(<u>id</u>, code, description)
 
-* `id`: Mã định danh quyền hạn.
-* `code`: Mã code hệ thống (ví dụ: `VIEW_DASHBOARD`, `EDIT_ROOM`).
-* `description`: Mô tả chi tiết quyền hạn.
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh quyền hạn. |
+| code | Mã code hệ thống (ví dụ: `VIEW_DASHBOARD`, `EDIT_ROOM`). |
+| description | Mô tả chi tiết quyền hạn. |
 
 #### PHONG (Phòng)
 
@@ -412,10 +420,12 @@ PERMISSIONS(<u>id</u>, code, description)
 
 PHONG(<u>id</u>, so_phong, *loai_phong_id*, trang_thai, created_at, updated_at)
 
-* `id`: Mã định danh phòng.
-* `so_phong`: Số hiệu phòng (ví dụ: 101, 202).
-* `loai_phong_id`: Khóa ngoại tham chiếu tới bảng LOAIPHONG.
-* `trang_thai`: Trạng thái hiện tại (AVAILABLE, BOOKED, MAINTENANCE).
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh phòng. |
+| so_phong | Số hiệu phòng (ví dụ: 101, 202). |
+| loai_phong_id | Khóa ngoại tham chiếu tới bảng LOAIPHONG. |
+| trang_thai | Trạng thái hiện tại (AVAILABLE, BOOKED, MAINTENANCE). |
 
 #### REFUNDS (Hoàn Tiền)
 
@@ -423,12 +433,14 @@ PHONG(<u>id</u>, so_phong, *loai_phong_id*, trang_thai, created_at, updated_at)
 
 REFUNDS(<u>id</u>, *payment_id*, *user_id*, *admin_id*, so_tien, ly_do, ngay_hoan_tien, trang_thai)
 
-* `id`: Mã định danh yêu cầu hoàn tiền.
-* `payment_id`: Khóa ngoại tham chiếu giao dịch gốc cần hoàn.
-* `user_id`: Người yêu cầu hoàn tiền.
-* `admin_id`: Người duyệt hoàn tiền (có thể NULL nếu chưa duyệt).
-* `so_tien`: Số tiền được hoàn.
-* `trang_thai`: Trạng thái (PENDING, APPROVED, REJECTED).
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh yêu cầu hoàn tiền. |
+| payment_id | Khóa ngoại tham chiếu giao dịch gốc cần hoàn. |
+| user_id | Người yêu cầu hoàn tiền. |
+| admin_id | Người duyệt hoàn tiền (có thể NULL nếu chưa duyệt). |
+| so_tien | Số tiền được hoàn. |
+| trang_thai | Trạng thái (PENDING, APPROVED, REJECTED). |
 
 #### REVIEWS (Đánh Giá)
 
@@ -436,12 +448,14 @@ REFUNDS(<u>id</u>, *payment_id*, *user_id*, *admin_id*, so_tien, ly_do, ngay_hoa
 
 REVIEWS(<u>id</u>, *user_id*, *phong_id*, *datphong_id*, so_sao, binh_luan, ngay_danh_gia, trang_thai)
 
-* `id`: Mã định danh đánh giá.
-* `user_id`: Người đánh giá.
-* `datphong_id`: Khóa ngoại tham chiếu đơn đặt phòng (Đảm bảo tính xác thực).
-* `phong_id`: Khóa ngoại tham chiếu phòng được đánh giá.
-* `so_sao`: Điểm đánh giá (1-5).
-* `trang_thai`: Trạng thái kiểm duyệt (VISIBLE/HIDDEN).
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh đánh giá. |
+| user_id | Người đánh giá. |
+| datphong_id | Khóa ngoại tham chiếu đơn đặt phòng (Đảm bảo tính xác thực). |
+| phong_id | Khóa ngoại tham chiếu phòng được đánh giá. |
+| so_sao | Điểm đánh giá (1-5). |
+| trang_thai | Trạng thái kiểm duyệt (VISIBLE/HIDDEN). |
 
 #### ROLES (Vai Trò)
 
@@ -449,9 +463,11 @@ REVIEWS(<u>id</u>, *user_id*, *phong_id*, *datphong_id*, so_sao, binh_luan, ngay
 
 ROLES(<u>id</u>, code, name, description)
 
-* `id`: Mã định danh vai trò.
-* `code`: Mã code vai trò (ADMIN, STAFF, USER).
-* `name`: Tên hiển thị.
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh vai trò. |
+| code | Mã code vai trò (ADMIN, STAFF, USER). |
+| name | Tên hiển thị. |
 
 #### USERS (Người Dùng)
 
@@ -459,11 +475,13 @@ ROLES(<u>id</u>, code, name, description)
 
 USERS(<u>id</u>, email, password_hash, full_name, phone_number, address, created_at, updated_at)
 
-* `id`: Mã định danh người dùng.
-* `email`: Địa chỉ email (dùng để đăng nhập).
-* `password_hash`: Mật khẩu đã mã hóa.
-* `full_name`: Họ và tên.
-* `phone_number`: Số điện thoại liên lạc.
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh người dùng. |
+| email | Địa chỉ email (dùng để đăng nhập). |
+| password_hash | Mật khẩu đã mã hóa. |
+| full_name | Họ và tên. |
+| phone_number | Số điện thoại liên lạc. |
 
 #### VOUCHERS (Mã Giảm Giá)
 
@@ -471,11 +489,13 @@ USERS(<u>id</u>, email, password_hash, full_name, phone_number, address, created
 
 VOUCHERS(<u>id</u>, code, mo_ta, giam_gia, loai_giam_gia, ngay_bat_dau, ngay_ket_thuc, so_luong, trang_thai)
 
-* `id`: Mã định danh voucher.
-* `code`: Mã nhập khuyến mãi (ví dụ: SUMMER2024).
-* `giam_gia`: Giá trị giảm (số tiền hoặc phần trăm).
-* `loai_giam_gia`: Loại giảm (PERCENT/FIXED).
-* `so_luong`: Số lượng mã giới hạn.
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh voucher. |
+| code | Mã nhập khuyến mãi (ví dụ: SUMMER2024). |
+| giam_gia | Giá trị giảm (số tiền hoặc phần trăm). |
+| loai_giam_gia | Loại giảm (PERCENT/FIXED). |
+| so_luong | Số lượng mã giới hạn. |
 
 ### Nhóm Bảng Mối Liên Kết (Mối Quan Hệ n-n)
 
@@ -488,8 +508,10 @@ VOUCHERS(<u>id</u>, code, mo_ta, giam_gia, loai_giam_gia, ngay_bat_dau, ngay_ket
 
 `ADMIN_ROLES`(<u>admin_id</u>, <u>role_id</u>)
 
-- `admin_id`: Mã định danh duy nhất của admin.
-- `role_id`: Mã định danh duy nhất của role.
+| Khóa | Mô tả |
+| --- | --- |
+| admin_id | Mã định danh duy nhất của admin. |
+| role_id | Mã định danh duy nhất của role. |
 
 #### ROLE_PERMISSIONS
 
@@ -498,9 +520,10 @@ VOUCHERS(<u>id</u>, code, mo_ta, giam_gia, loai_giam_gia, ngay_bat_dau, ngay_ket
 
 ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
 
-* `role_id`, `permission_id`: Sử dụng khóa chính phức hợp (Composite Primary Key).
-* `role_id`: Khóa ngoại tham chiếu ROLES.
-* `permission_id`: Khóa ngoại tham chiếu PERMISSIONS.
+| Khóa | Mô tả |
+| --- | --- |
+| role_id | Khóa ngoại tham chiếu ROLES. |
+| permission_id | Khóa ngoại tham chiếu PERMISSIONS. |
 
 #### CT_DATPHONG
 
@@ -509,10 +532,12 @@ ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
 
 CT_DATPHONG(<u>id</u>, *datphong_id*, *phong_id*, gia_tien)
 
-* `id`: Mã định danh dòng chi tiết (Surrogate Key).
-* `datphong_id`: Khóa ngoại tham chiếu DATPHONG.
-* `phong_id`: Khóa ngoại tham chiếu PHONG.
-* `gia_tien`: Giá phòng được chốt tại thời điểm đặt (Lưu lịch sử giá).
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh dòng chi tiết (Surrogate Key). |
+| datphong_id | Khóa ngoại tham chiếu DATPHONG. |
+| phong_id | Khóa ngoại tham chiếu PHONG. |
+| gia_tien | Giá phòng được chốt tại thời điểm đặt (Lưu lịch sử giá). |
 
 #### CT_SUDUNG_DV
 
@@ -521,12 +546,14 @@ CT_DATPHONG(<u>id</u>, *datphong_id*, *phong_id*, gia_tien)
 
 CT_SUDUNG_DV(<u>id</u>, *datphong_id*, *dichvu_id*, so_luong, don_gia, thoi_diem_su_dung)
 
-* `id`: Mã định danh dòng chi tiết (Surrogate Key).
-* `datphong_id`: Khóa ngoại tham chiếu DATPHONG.
-* `dichvu_id`: Khóa ngoại tham chiếu DICHVU.
-* `so_luong`: Số lượng dịch vụ sử dụng.
-* `don_gia`: Đơn giá dịch vụ tại thời điểm sử dụng.
-* `thoi_diem_su_dung`: Thời gian khách order dịch vụ.
+| Khóa | Mô tả |
+| --- | --- |
+| id | Mã định danh dòng chi tiết (Surrogate Key). |
+| datphong_id | Khóa ngoại tham chiếu DATPHONG. |
+| dichvu_id | Khóa ngoại tham chiếu DICHVU. |
+| so_luong | Số lượng dịch vụ sử dụng. |
+| don_gia | Đơn giá dịch vụ tại thời điểm sử dụng. |
+| thoi_diem_su_dung | Thời gian khách order dịch vụ. |
 
 ### Tổng Hợp
 
