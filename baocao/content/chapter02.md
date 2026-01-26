@@ -88,7 +88,7 @@
 <!-- - Thực thể và các thuộc tính. -->
 <!-- - Mô hình ER dạng Chen. -->
 
-![Mô Hình Thực Thể Quan Hệ](diagrams/ch02-ER.svg)
+![Mô Hình Thực Thể Quan Hệ](diagrams/ER.svg)
 
 ## Mô Hình Mức Logic
 
