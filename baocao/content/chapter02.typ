@@ -183,7 +183,8 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 ==== PHONG (Phòng)
 <phong-phong>
 
-- Số Phòng (Thuộc tính định danh).
+- ID Phòng (Thuộc tính định danh).
+- Số Phòng (101, 102, …).
 - Trạng Thái (Trống, Đang Ở, Bảo Trì, Đã Đặt).
 
 #figure(image("diagrams/ch02-concept-phong.svg"),

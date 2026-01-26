@@ -149,7 +149,8 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 #### PERMISSIONS (Quyền Hạn)
 #### PHONG (Phòng)
 
-- Số Phòng (Thuộc tính định danh).
+- ID Phòng (Thuộc tính định danh).
+- Số Phòng (101, 102, ...).
 - Trạng Thái (Trống, Đang Ở, Bảo Trì, Đã Đặt).
 
 ![Thực Thể PHONG (Phòng)](diagrams/ch02-concept-phong.svg)
