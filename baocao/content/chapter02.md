@@ -25,7 +25,7 @@
 - Tối ưu hiệu năng cho quy mô lớn (high traffic).
 - Tích hợp bên thứ ba (OTA như Booking, Agoda).
 
-## Đối Tượng Và Mối Quan Hệ
+## Quy Tắc Nghiệp Vụ & Xác Định Thực Thể
 
 ### User Stories
 
@@ -52,12 +52,12 @@
 
 ### Các Thực Thể Và Quan Hệ
 
-### Các Thực Thể
+### Danh Sách Các Thực Thể
 
 #### PHÒNG
 #### DỊCH VỤ
 #### THANH TOÁN
-#### HOÀN TRẢ
+#### HOÀN TIỀN
 #### QUYỀN
 #### ROLES
 #### USERS
@@ -94,7 +94,25 @@
 
 ### Nhóm Bảng Thực Thể
 
+- ADMINS
+- ROLES
+- PERMISSIONS
+- USERS
+- VOUCHERS
+- DATPHONG
+- LOAIPHONG
+- PHONG
+- DICHVU
+- PAYMENTS
+- REFUNDS
+- REVIEWS
+
 ### Nhóm Bảng Mối Quan Hệ
+
+- ADMIN_ROLES
+- ROLE_PERMISSIONS
+- CT_DATPHONG
+- CT_SUDUNG_DV
 
 ### Tổng Hợp
 
