@@ -390,17 +390,17 @@ LOAIPHONG(<u>id</u>, ten_loai, gia_co_ban, mo_ta, suc_chua)
 
 - Lưu trữ lịch sử giao dịch thanh toán.
 
-PAYMENTS(<u>id</u>, *datphong_id*, *user_id*, so_tien, phuong_thuc, ma_giao_dich, ngay_thanh_toan, trang_thai)
+PAYMENTS(<u>id</u>, *booking_id*, *user_id*, so_tien, phuong_thuc, trang_thai, created_at)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh giao dịch. |
-| datphong_id | Khóa ngoại tham chiếu đơn đặt phòng được thanh toán. |
-| user_id | Khóa ngoại tham chiếu người thực hiện thanh toán. |
+| <u>id</u> | Mã định danh giao dịch. |
+| *booking_id* | Khóa ngoại tham chiếu đơn đặt phòng được thanh toán. |
+| *user_id* | Khóa ngoại tham chiếu người thực hiện thanh toán. |
 | so_tien | Số tiền thanh toán. |
-| phuong_thuc | Phương thức (CASH, BANKING, CARD). |
-| ma_giao_dich | Mã tham chiếu từ cổng thanh toán (Transaction Ref ID). |
-| trang_thai | Trạng thái giao dịch (PENDING, SUCCESS, FAILED). |
+| phuong_thuc | Phương thức (TIEN_MAT, CHUYEN_KHOAN, THE, ONLINE). |
+| trang_thai | Trạng thái giao dịch (PENDING, SUCCESS, FAILED, CANCELLED, PAID, UNPAID, REFUNDED). |
+| created_at | Ngày tạo. |
 
 #### PERMISSIONS (Quyền Hạn)
 
