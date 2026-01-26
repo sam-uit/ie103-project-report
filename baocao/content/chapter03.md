@@ -425,9 +425,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 ```{=typst}
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`payment_id`], [`INT`], [`FK` (PAYMENTS), `NOT NULL`], [Hoàn tiền cho giao dịch nào.], [`so_tien_hoan`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền hoàn trả.], [`trang_thai`], [`NVARCHAR(50)`], [`NULL`], [Trạng thái.], [`ly_do`], [`NVARCHAR(500)`], [`NULL`], [Lý do hoàn tiền.], [`requested_by`], [`INT`], [`FK` (USERS), `NOT NULL`], [Người yêu cầu.], [`approved_by`], [`INT`], [`FK` (ADMINS), `NULL`], [Người duyệt.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('REQUESTED', 'APPROVED', 'REJECTED', 'COMPLETED')`], [Ràng buộc trạng thái.], [#emph[CHECK]], [], [`so_tien_hoan > 0`], [Tiền phải dương.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`payment_id`], [`INT`], [`FK (PAYMENTS)`, `NOT NULL`], [Hoàn tiền cho giao dịch nào.], [`so_tien_hoan`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền hoàn trả.], [`trang_thai`], [`NVARCHAR(50)`], [`NULL`], [Trạng thái.], [`ly_do`], [`NVARCHAR(500)`], [`NULL`], [Lý do hoàn tiền.], [`requested_by`], [`INT`], [`FK (USERS)`, `NOT NULL`], [Người yêu cầu.], [`approved_by`], [`INT`], [`FK (ADMINS)`, `NULL`], [Người duyệt.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`trang_thai IN ('REQUESTED', 'APPROVED', 'REJECTED', 'COMPLETED')`], [Ràng buộc trạng thái.], [#emph[CHECK]], [], [`so_tien_hoan > 0`], [Tiền phải dương.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: REFUNDS
