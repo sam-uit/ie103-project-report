@@ -160,6 +160,8 @@ Các bước thực hiện:
 
 ## Các Chức Năng Của Hệ Thống
 
+(Hướng dẫn: Chỉ miêu tả)
+
 ### Quản Lý Thông Tin Nền Tảng
 
 ### Quản Lý Dữ Liệu Đặt Phòng
