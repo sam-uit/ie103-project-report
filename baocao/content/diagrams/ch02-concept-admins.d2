@@ -1,0 +1,123 @@
+# direction: right
+
+# Tiêu đề: căn góc trên-giữa
+# title: |md
+#   # Mô Hình Thực Thể Quan Hệ (ER Diagram Chen Notation)
+# | {near: top-center}
+
+# title.style: {
+# font-size: 20
+# font: "mono"
+# }
+
+# --- 0. STYLES ---
+style: {
+  # font: "mono"
+  opacity: 0.0
+  fill: transparent
+  # stroke: "orange"
+  # stroke-width: 5
+}
+
+# --- 1. CSS STYLES (THEME) ---
+classes: {
+  # Thực thể: Chữ nhật bo góc Apple style
+  entity: {
+    shape: rectangle
+    style: {
+      border-radius: 15
+      stroke-width: 2
+      fill: "#FFFFFF"
+      stroke: "#333333"
+    }
+  }
+
+  # Quan hệ (Relationship): Hình thoi
+  rel: {
+    shape: diamond
+    style: {
+      fill: "#F2F2F7"
+      stroke: "#8E8E93"
+      stroke-width: 2
+    }
+  }
+
+  # Thuộc tính: Oval
+  attr: {
+    shape: oval
+    # width: 90
+    # height: 40
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+    }
+  }
+
+  # Khóa chính: gạch chân
+  # viền xanh
+  attr_pri: {
+    shape: oval
+    # width: 90
+    # height: 40
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa chính là khóa khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_pri: {
+    shape: oval
+    # width: 90
+    # height: 40
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_key: {
+    shape: oval
+    # width: 90
+    # height: 40
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      # underline: true
+    }
+  }
+}
+
+# MARK: ADMINS
+ADMINS: {class: entity; label: "ADMINS"}
+
+admin_id: {class: attr_pri; label: "ID Admin"}
+admin_email: {class: attr; label: "Email"}
+admin_password: {class: attr; label: "Mật Khẩu"}
+admin_full_name: {class: attr; label: "Tên Đầy Đủ"}
+admin_status: {class: attr; label: "Trạng Thái"}
+# admin_created_at: {class: attr; label: "created_at"; width: 110}
+# admin_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+ADMINS -- admin_id
+ADMINS -- admin_email
+ADMINS -- admin_password
+ADMINS -- admin_full_name
+ADMINS -- admin_status
+# ADMINS -- admin_created_at
+# ADMINS -- admin_updated_at

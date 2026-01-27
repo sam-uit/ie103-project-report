@@ -1,0 +1,116 @@
+# direction: right
+
+# Tiêu đề: căn góc trên-giữa
+# title: |md
+#   # Mô Hình Thực Thể Quan Hệ (ER Diagram Chen Notation)
+# | {near: top-center}
+
+# title.style: {
+# font-size: 20
+# font: "mono"
+# }
+
+# --- 0. STYLES ---
+style: {
+  # font: "mono"
+  opacity: 0.0
+  fill: transparent
+  # stroke: "orange"
+  # stroke-width: 5
+}
+
+# --- 1. CSS STYLES (THEME) ---
+classes: {
+  # Thực thể: Chữ nhật bo góc Apple style
+  entity: {
+    shape: rectangle
+    style: {
+      border-radius: 15
+      stroke-width: 2
+      fill: "#FFFFFF"
+      stroke: "#333333"
+    }
+  }
+
+  # Quan hệ (Relationship): Hình thoi
+  rel: {
+    shape: diamond
+    style: {
+      fill: "#F2F2F7"
+      stroke: "#8E8E93"
+      stroke-width: 2
+    }
+  }
+
+  # Thuộc tính: Oval
+  attr: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+    }
+  }
+
+  # Khóa chính: gạch chân
+  # viền xanh
+  attr_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa chính là khóa khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_key: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      # underline: true
+    }
+  }
+}
+
+# MARK: CT_SUDUNG_DV
+CT_SUDUNG_DV: {class: rel; label: "Chi Tiết DV\nCT_SUDUNG_DV"}
+ct_sudung_dv_id: {class: attr_pri; label: "id"}
+ct_sudung_dv_datphong_id: {class: attr_foreign_key; label: "datphong_id"; width: 120}
+ct_sudung_dv_dichvu_id: {class: attr_foreign_key; label: "dichvu_id"; width: 120}
+ct_sudung_dv_so_luong: {class: attr; label: "so_luong"}
+ct_sudung_dv_don_gia: {class: attr; label: "don_gia"}
+ct_sudung_dv_thoi_diem_su_dung: {class: attr; label: "thoi_diem_su_dung"; width: 170}
+ct_sudung_dv_ghi_chu: {class: attr; label: "ghi_chu"}
+ct_sudung_dv_created_at: {class: attr; label: "created_at"; width: 110}
+
+CT_SUDUNG_DV -- ct_sudung_dv_id
+CT_SUDUNG_DV -- ct_sudung_dv_datphong_id: {style: {stroke-width: 1; stroke: orange}}
+CT_SUDUNG_DV -- ct_sudung_dv_dichvu_id: {style: {stroke-width: 1; stroke: orange}}
+CT_SUDUNG_DV -- ct_sudung_dv_so_luong
+CT_SUDUNG_DV -- ct_sudung_dv_don_gia
+CT_SUDUNG_DV -- ct_sudung_dv_thoi_diem_su_dung
+CT_SUDUNG_DV -- ct_sudung_dv_ghi_chu
+CT_SUDUNG_DV -- ct_sudung_dv_created_at

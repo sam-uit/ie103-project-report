@@ -1,0 +1,120 @@
+# direction: right
+
+# Tiêu đề: căn góc trên-giữa
+# title: |md
+#   # Mô Hình Thực Thể Quan Hệ (ER Diagram Chen Notation)
+# | {near: top-center}
+
+# title.style: {
+# font-size: 20
+# font: "mono"
+# }
+
+# --- 0. STYLES ---
+style: {
+  # font: "mono"
+  opacity: 0.0
+  fill: transparent
+  # stroke: "orange"
+  # stroke-width: 5
+}
+
+# --- 1. CSS STYLES (THEME) ---
+classes: {
+  # Thực thể: Chữ nhật bo góc Apple style
+  entity: {
+    shape: rectangle
+    style: {
+      border-radius: 15
+      stroke-width: 2
+      fill: "#FFFFFF"
+      stroke: "#333333"
+    }
+  }
+
+  # Quan hệ (Relationship): Hình thoi
+  rel: {
+    shape: diamond
+    style: {
+      fill: "#F2F2F7"
+      stroke: "#8E8E93"
+      stroke-width: 2
+    }
+  }
+
+  # Thuộc tính: Oval
+  attr: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+    }
+  }
+
+  # Khóa chính: gạch chân
+  # viền xanh
+  attr_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa chính là khóa khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_key: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      # underline: true
+    }
+  }
+}
+
+# MARK: VOUCHERS
+VOUCHERS: {class: entity; label: "VOUCHERS"}
+vouchers_id: {class: attr_pri; label: "id"}
+vouchers_ma_code: {class: attr; label: "ma_code"}
+vouchers_phan_tram_giam: {class: attr; label: "phan_tram_giam"; width: 150}
+vouchers_ngay_het_han: {class: attr; label: "ngay_het_han"; width: 150}
+vouchers_so_tien_toi_thieu: {class: attr; label: "so_tien_toi_thieu"; width: 160}
+vouchers_so_lan_toi_da: {class: attr; label: "so_lan_toi_da"; width: 150}
+vouchers_so_lan_da_dung: {class: attr; label: "so_lan_da_dung"; width: 150}
+vouchers_trang_thai: {class: attr; label: "trang_thai"}
+vouchers_created_at: {class: attr; label: "created_at"; width: 110}
+vouchers_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+VOUCHERS -- vouchers_id
+VOUCHERS -- vouchers_ma_code
+VOUCHERS -- vouchers_phan_tram_giam
+VOUCHERS -- vouchers_ngay_het_han
+VOUCHERS -- vouchers_so_tien_toi_thieu
+VOUCHERS -- vouchers_so_lan_toi_da
+VOUCHERS -- vouchers_so_lan_da_dung
+VOUCHERS -- vouchers_trang_thai
+VOUCHERS -- vouchers_created_at
+VOUCHERS -- vouchers_updated_at

@@ -1,0 +1,121 @@
+# direction: right
+
+# Tiêu đề: căn góc trên-giữa
+# title: |md
+#   # Mô Hình Thực Thể Quan Hệ (ER Diagram Chen Notation)
+# | {near: top-center}
+
+# title.style: {
+# font-size: 20
+# font: "mono"
+# }
+
+# --- 0. STYLES ---
+style: {
+  # font: "mono"
+  opacity: 0.0
+  fill: transparent
+  # stroke: "orange"
+  # stroke-width: 5
+}
+
+# --- 1. CSS STYLES (THEME) ---
+classes: {
+  # Thực thể: Chữ nhật bo góc Apple style
+  entity: {
+    shape: rectangle
+    style: {
+      border-radius: 15
+      stroke-width: 2
+      fill: "#FFFFFF"
+      stroke: "#333333"
+    }
+  }
+
+  # Quan hệ (Relationship): Hình thoi
+  rel: {
+    shape: diamond
+    style: {
+      fill: "#F2F2F7"
+      stroke: "#8E8E93"
+      stroke-width: 2
+    }
+  }
+
+  # Thuộc tính: Oval
+  attr: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+    }
+  }
+
+  # Khóa chính: gạch chân
+  # viền xanh
+  attr_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa chính là khóa khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_key: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      # underline: true
+    }
+  }
+}
+
+# MARK: REVIEWS
+REVIEWS: {class: entity; label: "REVIEWS"}
+
+reviews_id: {class: attr_pri; label: "ID Đánh Giá"}
+# reviews_user_id: {class: attr_foreign_key; label: "user_id"; width: 120}
+# reviews_phong_id: {class: attr_foreign_key; label: "phong_id"; width: 120}
+# reviews_datphong_id: {class: attr_foreign_key; label: "datphong_id"; width: 120}
+reviews_so_sao: {class: attr; label: "Số Sao"}
+reviews_binh_luan: {class: attr; label: "Bình Luận"}
+reviews_ngay_danh_gia: {class: attr; label: "Ngày Đánh Giá"}
+reviews_trang_thai: {class: attr; label: "Trạng Thái"}
+# reviews_created_at: {class: attr; label: "created_at"; width: 110}
+# reviews_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+REVIEWS -- reviews_id
+# REVIEWS -- reviews_user_id: {style: {stroke-width: 1; stroke: orange}}
+# REVIEWS -- reviews_phong_id: {style: {stroke-width: 1; stroke: orange}}
+# REVIEWS -- reviews_datphong_id: {style: {stroke-width: 1; stroke: orange}}
+REVIEWS -- reviews_so_sao
+REVIEWS -- reviews_binh_luan
+REVIEWS -- reviews_ngay_danh_gia
+REVIEWS -- reviews_trang_thai
+# REVIEWS -- reviews_created_at
+# REVIEWS -- reviews_updated_at

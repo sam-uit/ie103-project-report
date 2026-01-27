@@ -19,7 +19,6 @@ direction: right
 # --- 0. STYLES ---
 style: {
   # font: "mono"
-  font-size: 20
   opacity: 0.0
   fill: transparent
   # stroke: "orange"
@@ -36,7 +35,6 @@ classes: {
       stroke-width: 2
       fill: "#FFFFFF"
       stroke: "#333333"
-      font-size: 20
     }
   }
 
@@ -47,20 +45,58 @@ classes: {
       fill: "#F2F2F7"
       stroke: "#8E8E93"
       stroke-width: 2
-      font-size: 20
     }
   }
 
-  # Thuộc tính: Oval (chưa dùng nhiều để tránh rối)
+  # Thuộc tính: Oval
   attr: {
     shape: oval
-    width: 60
-    height: 40
     style: {
       fill: "#F0F8FF"
       stroke: "#0d95de"
       stroke-width: 1
-      font-size: 20
+      # font-size: 20
+    }
+  }
+
+  # Khóa chính: gạch chân
+  # viền xanh
+  attr_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa chính là khóa khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_key: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      # underline: true
     }
   }
 }
@@ -68,31 +104,218 @@ classes: {
 # --- 2. ENTITIES (THỰC THỂ) ---
 # Dựa trên init_tables.sql và tài liệu mô tả
 
+# MARK: ADMINS
 ADMINS: {class: entity; label: "ADMINS"}
+admin_id: {class: attr_pri; label: "id"}
+admin_email: {class: attr; label: "email"}
+admin_password: {class: attr; label: "password"}
+admin_full_name: {class: attr; label: "full_name"}
+admin_status: {class: attr; label: "status"}
+admin_created_at: {class: attr; label: "created_at"; width: 110}
+admin_updated_at: {class: attr; label: "updated_at"; width: 110}
+ADMINS -- admin_id
+ADMINS -- admin_email
+ADMINS -- admin_password
+ADMINS -- admin_full_name
+ADMINS -- admin_status
+ADMINS -- admin_created_at
+ADMINS -- admin_updated_at
+
+# MARK: ROLES
 ROLES: {class: entity; label: "ROLES"}
+roles_id: {class: attr_pri; label: "id"}
+roles_code: {class: attr; label: "code"}
+roles_name: {class: attr; label: "name"}
+roles_description: {class: attr; label: "description"}
+
+ROLES -- roles_id
+ROLES -- roles_code
+ROLES -- roles_name
+ROLES -- roles_description
+
+# MARK: PERMISSIONS
 PERMISSIONS: {class: entity; label: "PERMISSIONS"}
+permissions_id: {class: attr_pri; label: "id"}
+permissions_code: {class: attr; label: "code"}
+permissions_description: {class: attr; label: "description"}
+PERMISSIONS -- permissions_id
+PERMISSIONS -- permissions_code
+PERMISSIONS -- permissions_description
 
+# MARK: USERS
 USERS: {class: entity; label: "USERS"}
+users_id: {class: attr_pri; label: "id"}
+users_email: {class: attr; label: "email"}
+users_phone: {class: attr; label: "phone"}
+users_password_hash: {class: attr; label: "password_hash"; width: 140}
+users_full_name: {class: attr; label: "full_name"}
+users_status: {class: attr; label: "status"}
+users_created_at: {class: attr; label: "created_at"; width: 110}
+users_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+USERS -- users_id
+USERS -- users_email
+USERS -- users_password_hash
+USERS -- users_full_name
+USERS -- users_phone
+USERS -- users_status
+USERS -- users_created_at
+USERS -- users_updated_at
+
+# MARK: VOUCHERS
 VOUCHERS: {class: entity; label: "VOUCHERS"}
+vouchers_id: {class: attr_pri; label: "id"}
+vouchers_ma_code: {class: attr; label: "ma_code"}
+vouchers_phan_tram_giam: {class: attr; label: "phan_tram_giam"; width: 150}
+vouchers_ngay_het_han: {class: attr; label: "ngay_het_han"; width: 150}
+vouchers_so_tien_toi_thieu: {class: attr; label: "so_tien_toi_thieu"; width: 160}
+vouchers_so_lan_toi_da: {class: attr; label: "so_lan_toi_da"; width: 150}
+vouchers_so_lan_da_dung: {class: attr; label: "so_lan_da_dung"; width: 150}
+vouchers_trang_thai: {class: attr; label: "trang_thai"}
+vouchers_created_at: {class: attr; label: "created_at"; width: 110}
+vouchers_updated_at: {class: attr; label: "updated_at"; width: 110}
 
+VOUCHERS -- vouchers_id
+VOUCHERS -- vouchers_ma_code
+VOUCHERS -- vouchers_phan_tram_giam
+VOUCHERS -- vouchers_ngay_het_han
+VOUCHERS -- vouchers_so_tien_toi_thieu
+VOUCHERS -- vouchers_so_lan_toi_da
+VOUCHERS -- vouchers_so_lan_da_dung
+VOUCHERS -- vouchers_trang_thai
+VOUCHERS -- vouchers_created_at
+VOUCHERS -- vouchers_updated_at
+
+# MARK: DATPHONG
 DATPHONG: {class: entity; label: "DATPHONG"}
-LOAIPHONG: {class: entity; label: "LOAIPHONG"}
-PHONG: {class: entity; label: "PHONG"}
-DICHVU: {class: entity; label: "DICHVU"}
+datphong_id: {class: attr_pri; label: "id"}
+datphong_user_id: {class: attr; label: "user_id"}
+datphong_voucher_id: {class: attr; label: "voucher_id"}
+datphong_check_in: {class: attr; label: "check_in"}
+datphong_check_out: {class: attr; label: "check_out"}
+datphong_trang_thai: {class: attr; label: "trang_thai"}
+datphong_created_at: {class: attr; label: "created_at"; width: 110}
 
+DATPHONG -- datphong_id
+DATPHONG -- datphong_user_id
+DATPHONG -- datphong_voucher_id
+DATPHONG -- datphong_check_in
+DATPHONG -- datphong_check_out
+DATPHONG -- datphong_trang_thai
+DATPHONG -- datphong_created_at
+
+# MARK: LOAIPHONG
+LOAIPHONG: {class: entity; label: "LOAIPHONG"}
+loaiphong_id: {class: attr_pri; label: "id"}
+loaiphong_ten_loai: {class: attr; label: "ten_loai"}
+loaiphong_gia_co_ban: {class: attr; label: "gia_co_ban"; width: 110}
+loaiphong_mo_ta: {class: attr; label: "mo_ta"}
+loaiphong_suc_chua: {class: attr; label: "suc_chua"}
+
+LOAIPHONG -- loaiphong_id
+LOAIPHONG -- loaiphong_ten_loai
+LOAIPHONG -- loaiphong_gia_co_ban
+LOAIPHONG -- loaiphong_mo_ta
+LOAIPHONG -- loaiphong_suc_chua
+
+# MARK: PHONG
+PHONG: {class: entity; label: "PHONG"}
+phong_id: {class: attr_pri; label: "id"}
+phong_so_phong: {class: attr; label: "so_phong"}
+phong_loai_phong_id: {class: attr_foreign_key; label: "loai_phong_id"; width: 120}
+phong_trang_thai: {class: attr; label: "trang_thai"}
+
+PHONG -- phong_id
+PHONG -- phong_so_phong
+PHONG -- phong_loai_phong_id: {style: {stroke-width: 1; stroke: orange}}
+PHONG -- phong_trang_thai
+
+# MARK: DICHVU
+DICHVU: {class: entity; label: "DICHVU"}
+dichvu_id: {class: attr_pri; label: "id"}
+dichvu_ten_dich_vu: {class: attr; label: "ten_dich_vu"; width: 120}
+dichvu_don_gia: {class: attr; label: "don_gia"}
+dichvu_don_vi_tinh: {class: attr; label: "don_vi_tinh"; width: 120}
+dichvu_trang_thai: {class: attr; label: "trang_thai"}
+dichvu_created_at: {class: attr; label: "created_at"; width: 110}
+dichvu_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+DICHVU -- dichvu_id
+DICHVU -- dichvu_ten_dich_vu
+DICHVU -- dichvu_don_gia
+DICHVU -- dichvu_don_vi_tinh
+DICHVU -- dichvu_trang_thai
+DICHVU -- dichvu_created_at
+DICHVU -- dichvu_updated_at
+
+# MARK: PAYMENTS
 PAYMENTS: {class: entity; label: "PAYMENTS"}
+payments_id: {class: attr_pri; label: "id"}
+payments_booking_id: {class: attr_foreign_key; label: "booking_id"}
+payments_user_id: {class: attr_foreign_key; label: "user_id"}
+payments_so_tien: {class: attr; label: "so_tien"}
+payments_phuong_thuc: {class: attr; label: "phuong_thuc"; width: 120}
+payments_trang_thai: {class: attr; label: "trang_thai"}
+payments_created_at: {class: attr; label: "created_at"; width: 110}
+
+PAYMENTS -- payments_id
+PAYMENTS -- payments_booking_id: {style: {stroke-width: 1; stroke: orange}}
+PAYMENTS -- payments_user_id: {style: {stroke-width: 1; stroke: orange}}
+PAYMENTS -- payments_so_tien
+PAYMENTS -- payments_phuong_thuc
+PAYMENTS -- payments_trang_thai
+PAYMENTS -- payments_created_at
+
+# MARK: REFUNDS
 REFUNDS: {class: entity; label: "REFUNDS"}
+refunds_id: {class: attr_pri; label: "id"}
+refunds_payment_id: {class: attr_foreign_key; label: "payment_id"; width: 120}
+refunds_so_tien_hoan: {class: attr; label: "so_tien_hoan"; width: 120}
+refunds_trang_thai: {class: attr; label: "trang_thai"}
+refunds_ly_do: {class: attr; label: "ly_do"}
+refunds_requested_by: {class: attr_foreign_key; label: "requested_by"; width: 120}
+refunds_approved_by: {class: attr_foreign_key; label: "approved_by"; width: 120}
+refunds_created_at: {class: attr; label: "created_at"; width: 110}
+refunds_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+REFUNDS -- refunds_id
+REFUNDS -- refunds_payment_id: {style: {stroke-width: 1; stroke: orange}}
+REFUNDS -- refunds_so_tien_hoan
+REFUNDS -- refunds_trang_thai
+REFUNDS -- refunds_ly_do
+REFUNDS -- refunds_requested_by: {style: {stroke-width: 1; stroke: orange}}
+REFUNDS -- refunds_approved_by: {style: {stroke-width: 1; stroke: orange}}
+REFUNDS -- refunds_created_at
+REFUNDS -- refunds_updated_at
+
+# MARK: REVIEWS
 REVIEWS: {class: entity; label: "REVIEWS"}
+reviews_id: {class: attr_pri; label: "id"}
+reviews_user_id: {class: attr_foreign_key; label: "user_id"; width: 120}
+reviews_phong_id: {class: attr_foreign_key; label: "phong_id"; width: 120}
+reviews_datphong_id: {class: attr_foreign_key; label: "datphong_id"; width: 120}
+reviews_so_sao: {class: attr; label: "so_sao"}
+reviews_binh_luan: {class: attr; label: "binh_luan"; width: 110}
+reviews_ngay_danh_gia: {class: attr; label: "ngay_danh_gia"; width: 120}
+reviews_trang_thai: {class: attr; label: "trang_thai"; width: 110}
+reviews_created_at: {class: attr; label: "created_at"; width: 110}
+reviews_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+REVIEWS -- reviews_id
+REVIEWS -- reviews_user_id: {style: {stroke-width: 1; stroke: orange}}
+REVIEWS -- reviews_phong_id: {style: {stroke-width: 1; stroke: orange}}
+REVIEWS -- reviews_datphong_id: {style: {stroke-width: 1; stroke: orange}}
+REVIEWS -- reviews_so_sao
+REVIEWS -- reviews_binh_luan
+REVIEWS -- reviews_ngay_danh_gia
+REVIEWS -- reviews_trang_thai
+REVIEWS -- reviews_created_at
+REVIEWS -- reviews_updated_at
 
 # --- 3. RELATIONSHIPS (MỐI QUAN HỆ) ---
 # Phân biệt rõ đâu là quan hệ. 
 # Các bảng trung gian N-N trong SQL được coi là Quan Hệ trong ERD.
-
-# Quan hệ N-N (Từ bảng trung gian)
-ADMIN_ROLES: {class: rel; label: "Được Gán\nADMIN_ROLES"}
-ROLE_PERMISSIONS: {class: rel; label: "Bao Gồm\nROLE_PERMISSIONS"}
-CT_DATPHONG: {class: rel; label: "Chi Tiết Đặt\nCT_DATPHONG"}
-CT_SUDUNG_DV: {class: rel; label: "Chi Tiết DV\nCT_SUDUNG_DV"}
+# FOREIGN KEY: orange
 
 # Quan hệ 1-N / 1-1 (Logical)
 thuc_hien: {class: rel; label: "Thực Hiện"}
@@ -105,6 +328,53 @@ duoc_duyet: {class: rel; label: "Được Duyệt"}
 tao_review: {class: rel; label: "Viết"}
 review_cho: {class: rel; label: "Review Cho"}
 review_cua: {class: rel; label: "Của Đơn"}
+
+# Quan hệ N-N (Bảng trung gian)
+# MARK: ADMIN_ROLES
+ADMIN_ROLES: {class: rel; label: "Được Gán\nADMIN_ROLES"}
+admin_roles_admin_id: {class: attr_foreign_pri; label: "admin_id"}
+admin_roles_role_id: {class: attr_foreign_pri; label: "role_id"}
+ADMIN_ROLES -- admin_roles_admin_id: {style: {stroke-width: 1; stroke: orange}}
+ADMIN_ROLES -- admin_roles_role_id: {style: {stroke-width: 1; stroke: orange}}
+
+# MARK: ROLE_PERMISSIONS
+ROLE_PERMISSIONS: {class: rel; label: "Bao Gồm\nROLE_PERMISSIONS"}
+role_permissions_role_id: {class: attr_foreign_key; label: "role_id"}
+role_permissions_permission_id: {class: attr_foreign_key; label: "permission_id"; width: 130}
+ROLE_PERMISSIONS -- role_permissions_role_id: {style: {stroke-width: 1; stroke: orange}}
+ROLE_PERMISSIONS -- role_permissions_permission_id: {style: {stroke-width: 1; stroke: orange}}
+
+# MARK: CT_DATPHONG
+CT_DATPHONG: {class: rel; label: "Chi Tiết Đặt\nCT_DATPHONG"}
+ct_datphong_id: {class: attr_pri; label: "id"}
+ct_datphong_phong_id: {class: attr_foreign_pri; label: "phong_id"}
+ct_datphong_datphong_id: {class: attr_foreign_pri; label: "datphong_id"; width: 120}
+ct_datphong_dongia: {class: attr_pri; label: "don_gia"}
+
+CT_DATPHONG -- ct_datphong_id
+CT_DATPHONG -- ct_datphong_dongia
+CT_DATPHONG -- ct_datphong_phong_id: {style: {stroke-width: 1; stroke: orange}}
+CT_DATPHONG -- ct_datphong_datphong_id: {style: {stroke-width: 1; stroke: orange}}
+
+# MARK: CT_SUDUNG_DV
+CT_SUDUNG_DV: {class: rel; label: "Chi Tiết DV\nCT_SUDUNG_DV"}
+ct_sudung_dv_id: {class: attr_pri; label: "id"}
+ct_sudung_dv_datphong_id: {class: attr_foreign_key; label: "datphong_id"; width: 120}
+ct_sudung_dv_dichvu_id: {class: attr_foreign_key; label: "dichvu_id"; width: 120}
+ct_sudung_dv_so_luong: {class: attr; label: "so_luong"}
+ct_sudung_dv_don_gia: {class: attr; label: "don_gia"}
+ct_sudung_dv_thoi_diem_su_dung: {class: attr; label: "thoi_diem_su_dung"; width: 170}
+ct_sudung_dv_ghi_chu: {class: attr; label: "ghi_chu"}
+ct_sudung_dv_created_at: {class: attr; label: "created_at"; width: 110}
+
+CT_SUDUNG_DV -- ct_sudung_dv_id
+CT_SUDUNG_DV -- ct_sudung_dv_datphong_id: {style: {stroke-width: 1; stroke: orange}}
+CT_SUDUNG_DV -- ct_sudung_dv_dichvu_id: {style: {stroke-width: 1; stroke: orange}}
+CT_SUDUNG_DV -- ct_sudung_dv_so_luong
+CT_SUDUNG_DV -- ct_sudung_dv_don_gia
+CT_SUDUNG_DV -- ct_sudung_dv_thoi_diem_su_dung
+CT_SUDUNG_DV -- ct_sudung_dv_ghi_chu
+CT_SUDUNG_DV -- ct_sudung_dv_created_at
 
 # --- 4. CONNECTIONS (CARDINALITY) ---
 
@@ -119,8 +389,8 @@ ROLE_PERMISSIONS -- PERMISSIONS: n
 
 # --- Nhóm Booking & Room ---
 # 1-N: User - DatPhong
-USERS -- thuc_hien: 1
-thuc_hien -- DATPHONG: n
+USERS -- thuc_hien: (1, n)
+thuc_hien -- DATPHONG: (1, n)
 
 # N-N: DatPhong - Phong (thông qua CT_DATPHONG)
 DATPHONG -- CT_DATPHONG: m
@@ -166,5 +436,5 @@ PHONG -- review_cho: 1
 review_cho -- REVIEWS: n
 
 # 1-1: DatPhong - Reviews (Mỗi đơn 1 review)
-DATPHONG -- review_cua: 1
-review_cua -- REVIEWS: 1
+DATPHONG -- review_cua: (1, 0)
+review_cua -- REVIEWS: (1, 0)

@@ -1,0 +1,143 @@
+# direction: right
+
+# --- 0. STYLES ---
+style: {
+  opacity: 0.0
+  fill: transparent
+}
+
+# --- 1. SETTINGS ---
+classes: {
+  entity: {
+    shape: rectangle
+    style: {border-radius: 10; fill: "#FFFFFF"; stroke: "#333333"}
+  }
+  rel: {
+    shape: diamond
+    style: {fill: "#F2F2F7"; stroke: "#8E8E93"}
+  }
+  attr: {
+    shape: oval
+    # width: 100; height: 50
+    style: {fill: "#F0F8FF"; stroke: "#4682B4"; stroke-dash: 3}
+  }
+}
+
+# --- 2. ENTITIES ---
+ADMINS: {class: entity; label: "ADMINS"}
+DATPHONG: {class: entity; label: "DATPHONG"}
+DICHVU: {class: entity; label: "DICHVU"}
+LOAIPHONG: {class: entity; label: "LOAIPHONG"}
+PAYMENTS: {class: entity; label: "PAYMENTS"}
+PERMISSIONS: {class: entity; label: "PERMISSIONS"}
+PHONG: {class: entity; label: "PHONG"}
+REFUNDS: {class: entity; label: "REFUNDS"}
+REVIEWS: {class: entity; label: "REVIEWS"}
+ROLES: {class: entity; label: "ROLES"}
+USERS: {class: entity; label: "USERS"}
+VOUCHERS: {class: entity; label: "VOUCHERS"}
+
+# --- 3. RELATIONSHIPS ---
+# ngôn ngữ "tự nhiên"
+
+# ADMINS -> REFUNDS: duyệt (1-n)
+# Admins có thể duyệt tối thiểu 0 và tối đa n lần hoàn tiền.
+# Một hoàn tiền có và chỉ có 1 admin duyệt.
+admins_refunds: {class: rel; label: "duyệt"}
+ADMINS -- admins_refunds: (0, n)
+admins_refunds -- REFUNDS: (1, 1)
+
+# ADMINS -> ROLES: được cấp (n-n)
+# n - n: viền cam
+# Một admin phải có tối thiểu 1 và tối đa n role được gán.
+# Một role có tối thiểu 0 và tối đa n admin được gán.
+admins_roles: {class: rel; label: "được cấp"; style: {stroke: orange}}
+ADMINS -- admins_roles: (1, n)
+admins_roles -- ROLES: (0, n)
+
+# DATPHONG -> DICHVU: sử dụng (n-n)
+# Một đơn đặt phòng có thể có tối thiểu 0 và tối đa n dịch vụ đi kèm.
+# Một dịch vụ đi kèm có thể được sử dụng tối thiểu 0 và tối đa n đơn đặt phòng.
+datphong_dichvu: {class: rel; label: "sử dụng"; style: {stroke: orange}}
+DATPHONG -- datphong_dichvu: (0, n)
+datphong_dichvu -- DICHVU: (0, n)
+
+# DATPHONG -> PAYMENTS: được (1-n)
+# Một đơn đặt phòng có tối thiểu 0 và tối đa n thanh toán.
+# Một thanh toán có và chỉ có 1 đơn đặt phòng.
+datphong_payments: {class: rel; label: "được"}
+DATPHONG -- datphong_payments: (0, n)
+datphong_payments -- PAYMENTS: (1, 1)
+
+# DATPHONG -> PHONG: bao gồm (1-n)
+# Một đơn đặt phòng có tối thiểu 1 và tối đa n phòng.
+# Một phòng có tối thiểu 0 và tối đa n đơn đặt phòng.
+datphong_phong: {class: rel; label: "bao gồm"; style: {stroke: orange}}
+DATPHONG -- datphong_phong: (1, n)
+datphong_phong -- PHONG: (0, n)
+
+# DATPHONG -> REVIEWS: được (1-1)
+# Một đơn đặt phòng có tối thiểu 0 và tối đa 1 đánh giá.
+# Một đánh giá thuộc và chỉ thuộc 1 đơn đặt phòng.
+datphong_reviews: {class: rel; label: "được"}
+DATPHONG -- datphong_reviews: (0, 1)
+datphong_reviews -- REVIEWS: (1, 1)
+
+# LOAIPHONG <- PHONG: thuộc
+# Một loại phòng có tối thiểu 0 và tối đa n phòng.
+# Một phòng thuộc và chỉ thuộc 1 loại phòng.
+loaiphong_phong: {class: rel; label: "bao gồm"}
+LOAIPHONG -- loaiphong_phong: (0, n)
+loaiphong_phong -- PHONG: (1, 1)
+
+# PAYMENTS -> REFUNDS: được
+# Một thanh toán có tối thiểu 0 và tối đa n hoàn tiền.
+# Một hoàn tiền được và chỉ được tạo từ 1 thanh toán.
+payments_refunds: {class: rel; label: "được"}
+PAYMENTS -- payments_refunds: (0, n)
+payments_refunds -- REFUNDS: (1, 1)
+
+# ROLES -> PERMISSIONS: có gán (n-n)
+# Một vai trò có tối thiểu 0 và tối đa n quyền hạn.
+# Một quyền hạn có tối thiểu 0 và tối đa n vai trò.
+roles_permissions: {class: rel; label: "có gán"; style: {stroke: orange}}
+ROLES -- roles_permissions: (0, n)
+roles_permissions -- PERMISSIONS: (0, n)
+
+# USERS -> DATPHONG: thực hiện (1-n)
+# Một user có tối thiểu 0, và tối đa n đặt phòng
+# Một đặt phòng có và chỉ có 1 user
+users_datphong: {class: rel; label: "thực hiện"}
+USERS -- users_datphong: (0, n)
+users_datphong -- DATPHONG: (1, 1)
+
+# USERS -> PAYMENTS: thực hiện (1-n)
+# Một user có tối thiểu 0, và tối đa n thanh toán.
+# Một thanh toán có và chỉ có 1 user
+users_payment: {class: rel; label: "thực hiện"}
+USERS -- users_payment: (0, n)
+users_payment -- PAYMENTS: (1, 1)
+
+# USERS -> REFUNDS: yêu cầu (1-n)
+# Một user có tối thiểu 0, và tối đa n yêu cầu hoàn tiền.
+# Một yêu cầu hoàn tiền có và chỉ có 1 user.
+users_refunds: {class: rel; label: "yêu cầu"}
+USERS -- users_refunds: (0, n)
+users_refunds -- REFUNDS: (1, 1)
+
+# USERS -> REVIEWS: viết (1-n)
+# Một user có tối thiểu 0, và tối đa n đánh giá.
+# Một đánh giá có tối thiểu 1 tối đa 1 user.
+users_reviews: {class: rel; label: "viết"}
+USERS -- users_reviews: (0, n)
+users_reviews -- REVIEWS: (1, 1)
+
+# VOUCHERS -> DATPHONG: áp dụng (1-n)
+# Một mã giảm giá có tối thiểu 0, và tối đa n đơn đặt phòng.
+# Một đơn đặt phòng có tối thiểu 0, và tối đa 1 mã giảm giá áp dụng.
+vouchers_datphong: {class: rel; label: "áp dụng"}
+VOUCHERS -- vouchers_datphong: (0, n)
+vouchers_datphong -- DATPHONG: (0, 1)
+
+# 4. Bảng Số
+# Tách riêng cho dễ cập nhật và quản lý.

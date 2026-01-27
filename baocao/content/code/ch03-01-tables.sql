@@ -1,0 +1,11 @@
+CREATE TABLE ADMINS (
+...
+);
+
+CREATE TABLE ROLES (
+...
+);
+
+CREATE TABLE PERMISSIONS (
+...
+);

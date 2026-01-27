@@ -1,0 +1,56 @@
+direction: right
+
+# --- 0. STYLES ---
+style: {
+  opacity: 0.0
+  fill: transparent
+}
+
+# --- 1. SETTINGS ---
+classes: {
+  entity: {
+    shape: rectangle
+    style: {border-radius: 10; fill: "#FFFFFF"; stroke: "#333333"}
+  }
+  rel: {
+    shape: diamond
+    style: {fill: "#F2F2F7"; stroke: "#8E8E93"}
+  }
+  attr: {
+    shape: oval
+    # width: 100; height: 50
+    style: {fill: "#F0F8FF"; stroke: "#4682B4"; stroke-dash: 3}
+  }
+}
+
+# --- 2. ENTITIES ---
+ADMINS: {class: entity; label: "Quản Trị Viên"}
+DATPHONG: {class: entity; label: "Đặt Phòng"}
+DICHVU: {class: entity; label: "Dịch Vụ"}
+LOAIPHONG: {class: entity; label: "Loại Phòng"}
+PAYMENTS: {class: entity; label: "Thanh Toán"}
+PERMISSIONS: {class: entity; label: "Quyền Hạn"}
+PHONG: {class: entity; label: "Phòng"}
+REFUNDS: {class: entity; label: "Hoàn Tiền"}
+REVIEWS: {class: entity; label: "Đánh Giá"}
+ROLES: {class: entity; label: "Vai Trò"}
+USERS: {class: entity; label: "Người Dùng"}
+VOUCHERS: {class: entity; label: "Mã Giảm Giá"}
+
+# --- 3. RELATIONSHIPS ---
+# ngôn ngữ "tự nhiên"
+
+ADMINS -> REFUNDS: duyệt
+ADMINS -> ROLES: được cấp
+DATPHONG -> DICHVU: bao gồm
+DATPHONG -> PAYMENTS: được
+DATPHONG -> PHONG: có nhiều
+DATPHONG -> REVIEWS: được
+LOAIPHONG <- PHONG: thuộc
+PAYMENTS -> REFUNDS: được
+ROLES -> PERMISSIONS: có các
+USERS -> DATPHONG: thực hiện
+USERS -> PAYMENTS: thực hiện
+USERS -> REFUNDS: yêu cầu
+USERS -> REVIEWS: viết
+VOUCHERS -> DATPHONG: áp dụng cho

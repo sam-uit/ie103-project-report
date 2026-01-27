@@ -1,0 +1,116 @@
+# direction: right
+
+# Tiêu đề: căn góc trên-giữa
+# title: |md
+#   # Mô Hình Thực Thể Quan Hệ (ER Diagram Chen Notation)
+# | {near: top-center}
+
+# title.style: {
+# font-size: 20
+# font: "mono"
+# }
+
+# --- 0. STYLES ---
+style: {
+  # font: "mono"
+  opacity: 0.0
+  fill: transparent
+  # stroke: "orange"
+  # stroke-width: 5
+}
+
+# --- 1. CSS STYLES (THEME) ---
+classes: {
+  # Thực thể: Chữ nhật bo góc Apple style
+  entity: {
+    shape: rectangle
+    style: {
+      border-radius: 15
+      stroke-width: 2
+      fill: "#FFFFFF"
+      stroke: "#333333"
+    }
+  }
+
+  # Quan hệ (Relationship): Hình thoi
+  rel: {
+    shape: diamond
+    style: {
+      fill: "#F2F2F7"
+      stroke: "#8E8E93"
+      stroke-width: 2
+    }
+  }
+
+  # Thuộc tính: Oval
+  attr: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+    }
+  }
+
+  # Khóa chính: gạch chân
+  # viền xanh
+  attr_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa chính là khóa khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_key: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      # underline: true
+    }
+  }
+}
+
+# MARK: USERS
+USERS: {class: entity; label: "USERS"}
+users_id: {class: attr_pri; label: "ID Người Dùng"}
+users_email: {class: attr; label: "Email"}
+users_password_hash: {class: attr; label: "Mật Khẩu"}
+users_phone: {class: attr; label: "Số Điện Thoại"}
+users_full_name: {class: attr; label: "Tên Đầy Đủ"}
+users_status: {class: attr; label: "Trạng Thái"}
+# users_created_at: {class: attr; label: "created_at"; width: 110}
+# users_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+USERS -- users_id
+USERS -- users_email
+USERS -- users_password_hash
+USERS -- users_full_name
+USERS -- users_phone
+USERS -- users_status
+# USERS -- users_created_at
+# USERS -- users_updated_at

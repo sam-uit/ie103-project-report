@@ -1,0 +1,114 @@
+# direction: right
+
+# Tiêu đề: căn góc trên-giữa
+# title: |md
+#   # Mô Hình Thực Thể Quan Hệ (ER Diagram Chen Notation)
+# | {near: top-center}
+
+# title.style: {
+# font-size: 20
+# font: "mono"
+# }
+
+# --- 0. STYLES ---
+style: {
+  # font: "mono"
+  opacity: 0.0
+  fill: transparent
+  # stroke: "orange"
+  # stroke-width: 5
+}
+
+# --- 1. CSS STYLES (THEME) ---
+classes: {
+  # Thực thể: Chữ nhật bo góc Apple style
+  entity: {
+    shape: rectangle
+    style: {
+      border-radius: 15
+      stroke-width: 2
+      fill: "#FFFFFF"
+      stroke: "#333333"
+    }
+  }
+
+  # Quan hệ (Relationship): Hình thoi
+  rel: {
+    shape: diamond
+    style: {
+      fill: "#F2F2F7"
+      stroke: "#8E8E93"
+      stroke-width: 2
+    }
+  }
+
+  # Thuộc tính: Oval
+  attr: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+    }
+  }
+
+  # Khóa chính: gạch chân
+  # viền xanh
+  attr_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa chính là khóa khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      underline: true
+    }
+  }
+
+  # Khóa ngoại từ bảng khác
+  # gạch chân
+  # viền cam
+  attr_foreign_key: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#f2840e"
+      stroke-width: 1
+      # font-size: 20
+      # underline: true
+    }
+  }
+}
+
+# MARK: DICHVU
+DICHVU: {class: entity; label: "DICHVU"}
+dichvu_id: {class: attr_pri; label: "id"}
+dichvu_ten_dich_vu: {class: attr; label: "ten_dich_vu"; width: 120}
+dichvu_don_gia: {class: attr; label: "don_gia"}
+dichvu_don_vi_tinh: {class: attr; label: "don_vi_tinh"; width: 120}
+dichvu_trang_thai: {class: attr; label: "trang_thai"}
+dichvu_created_at: {class: attr; label: "created_at"; width: 110}
+dichvu_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+DICHVU -- dichvu_id
+DICHVU -- dichvu_ten_dich_vu
+DICHVU -- dichvu_don_gia
+DICHVU -- dichvu_don_vi_tinh
+DICHVU -- dichvu_trang_thai
+DICHVU -- dichvu_created_at
+DICHVU -- dichvu_updated_at

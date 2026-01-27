@@ -174,6 +174,38 @@
     include "/content/summary.typ"
   }
 
+  // PREAMBLE
+
+  // MARK: Forewords
+  if doc-type == "thesis" {
+    // No Header/Footer, No Numbering
+    set page(header: none, footer: none, numbering: none)
+    // No Heading Numbering, No Outlined
+    set heading(numbering: none, outlined: false)
+    // We place the forewords here
+    include "/content/preamble-forewords.typ"
+  }
+
+  // MARK: Acknowledgement
+  if doc-type == "thesis" {
+    // No Header/Footer, No Numbering
+    set page(header: none, footer: none, numbering: none)
+    // No Heading Numbering, No Outlined
+    set heading(numbering: none, outlined: false)
+    // We place the acknowledgement here
+    include "/content/preamble-ack.typ"
+  }
+
+  // MARK: Instructor's comment
+  if doc-type == "thesis" {
+    // No Header/Footer, No Numbering
+    set page(header: none, footer: none, numbering: none)
+    // No Heading Numbering, No Outlined
+    set heading(numbering: none, outlined: false)
+    // We place the instructor's comment here
+    include "/content/preamble-comment.typ"
+  }
+
   // MARK: Report Author
   if doc-type == "report" {
     // No Header/Footer, No Numbering

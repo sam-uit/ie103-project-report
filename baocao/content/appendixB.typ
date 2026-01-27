@@ -4,16 +4,24 @@
 <phu-luc-b>
 
 
-== Phụ Lục B Mục 1
-<phu-luc-b-muc-1>
+== Mô Hình Thực Thể Quan Hệ Đầy Đủ
+<mo-hinh-thuc-the-quan-he-day-du>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat.
+=== Dạng Ngang
+<dang-ngang>
 
-== Phụ Lục B Mục 2
-<phu-luc-b-muc-2>
+#figure(image("diagrams/ch02-ER-full-elk.svg"),
+  caption: [
+    Mô Hình Thực Thể Quan Hệ Đầy Đủ (Dạng Ngang)
+  ]
+)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
+=== Dạng Dọc
+<dang-doc>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat.
+#figure(image("diagrams/ch02-ER-full-dagre.svg"),
+  caption: [
+    Mô Hình Thực Thể Quan Hệ Đầy Đủ (Dạng Dọc)
+  ]
+)
