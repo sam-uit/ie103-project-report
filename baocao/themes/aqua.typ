@@ -109,6 +109,11 @@
       if info.title != none {
         text(size: 48pt, weight: "bold", fill: self.colors.primary, info.title)
       },
+      // Hiện thị subtitle nếu có
+      // vd: Tên đề tài
+      if info.subtitle != none {
+        text(size: 36pt, weight: "bold", fill: self.colors.primary, info.subtitle)
+      },
       if info.author != none {
         text(
           fill: self.colors.primary-light,
