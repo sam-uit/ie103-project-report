@@ -30,6 +30,7 @@
   composer: auto,
   ..bodies,
 ) = touying-slide-wrapper(self => {
+  // Phần nền của header
   let header(self) = {
     place(
       center + top,
@@ -45,9 +46,10 @@
         ),
       ),
     )
+    // Thanh chia đôi header
     place(left + top, line(
-      start: (30%, 0%),
-      end: (27%, 100%),
+      start: (70%, 0%),
+      end: (67%, 100%),
       stroke: .5em + white,
     ))
   }
