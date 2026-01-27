@@ -204,3 +204,19 @@
 
 = KẾT LUẬN
 <ket-luan>
+
+
+== Phần Đã Đạt Được
+<phan-da-dat-duoc>
+
+- #lorem(10)
+
+== Phần Chưa Đạt Được
+<phan-chua-dat-duoc>
+
+- #lorem(10)
+
+== Mở Rộng & Nâng Cấp
+<mo-rong-nang-cap>
+
+- #lorem(10)

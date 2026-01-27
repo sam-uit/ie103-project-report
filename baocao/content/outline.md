@@ -208,3 +208,21 @@
 ```
 
 # KẾT LUẬN
+
+## Phần Đã Đạt Được
+
+```{=typst}
+- #lorem(10)
+```
+
+## Phần Chưa Đạt Được
+
+```{=typst}
+- #lorem(10)
+```
+
+## Mở Rộng & Nâng Cấp
+
+```{=typst}
+- #lorem(10)
+```
