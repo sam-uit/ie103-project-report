@@ -6,17 +6,7 @@
   "mdFile": "Function/Demo_TimPhong/problem.html",
   "sqlFile": "Function/Demo_TimPhong/fn_TimPhongTrong.sql",
   "separateTables": [
-    {
-      "name": "PHONG",
-      "label": "🏨 Phòng Gốc",
-      "sqlFetchInitial": "SELECT TOP 20 * FROM PHONG WHERE trang_thai = 'AVAILABLE'",
-      "sqlBefore": "SELECT * FROM PHONG WHERE loai_phong_id = @LoaiPhongID",
-      "sqlAfter": "SELECT * FROM PHONG WHERE loai_phong_id = @LoaiPhongID",
-      "columns": [
-        { "key": "id", "label": "ID", "isPk": true },
-        { "key": "so_phong", "label": "Số Phòng" }
-      ]
-    },
+    
     {
       "name": "KET_QUA",
       "label": "✅ KẾT QUẢ TÌM KIẾM",
@@ -31,7 +21,7 @@
   ],
   "params": [
     { "name": "@LoaiPhongID", "type": "int", "defaultValue": 1 },
-    { "name": "@CheckIn", "type": "datetime", "defaultValue": "2025-04-02 14:00:00" },
-    { "name": "@CheckOut", "type": "datetime", "defaultValue": "2025-04-03 12:00:00" }
+    { "name": "@CheckIn", "type": "datetime", "defaultValue": "2023-04-04 14:00:00" },
+    { "name": "@CheckOut", "type": "datetime", "defaultValue": "2023-04-05 12:00:00" }
   ]
 }

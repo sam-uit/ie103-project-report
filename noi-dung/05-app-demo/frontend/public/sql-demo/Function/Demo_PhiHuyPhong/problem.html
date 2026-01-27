@@ -98,11 +98,10 @@
 
     <div class="section">
         <h3>✅ Cách sử dụng</h3>
-        <pre><code>-- Test trường hợp báo hủy gấp (dưới 1 ngày trước Check-in)
-DECLARE @PhiPhat DECIMAL(18,0);
-SET @PhiPhat = dbo.fn_TinhPhiHuyPhong(2, '2024-01-10');
-
-PRINT 'Số tiền khách phải đền bù: ' + CAST(@PhiPhat AS VARCHAR);</code></pre>
+        <pre><code>-- Test các trường hợp báo hủy của BookingID 3
+SELECT 
+    dbo.fn_TinhPhiHuyPhong(3, '2023-04-01') AS PhiHuy_XaNgay, -- Kỳ vọng: 0
+    dbo.fn_TinhPhiHuyPhong(3, '2023-04-04') AS PhiHuy_Gap;    -- Kỳ vọng: 600.000</code></pre>
     </div>
 </body>
 </html>

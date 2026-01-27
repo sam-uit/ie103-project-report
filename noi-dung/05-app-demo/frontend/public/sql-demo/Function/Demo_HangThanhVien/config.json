@@ -6,19 +6,7 @@
   "mdFile": "Function/Demo_HangThanhVien/problem.html",
   "sqlFile": "Function/Demo_HangThanhVien/fn_HangThanhVien.sql",
   "separateTables": [
-    {
-      "name": "PAYMENTS",
-      "label": "💳 Lịch Sử Giao Dịch",
-      "sqlFetchInitial": "SELECT TOP 20 * FROM PAYMENTS ORDER BY id DESC",
-      "sqlBefore": "SELECT * FROM PAYMENTS WHERE user_id = @UserID",
-      "sqlAfter": "SELECT * FROM PAYMENTS WHERE user_id = @UserID",
-      "columns": [
-        { "key": "id", "label": "ID", "isPk": true },
-        { "key": "amount", "label": "⚡ Số Tiền" },
-        { "key": "status", "label": "Trạng Thái" },
-        { "key": "created_at", "label": "Ngày GD" }
-      ]
-    },
+
     {
       "name": "KET_QUA",
       "label": "🏆 KẾT QUẢ XẾP HẠNG",

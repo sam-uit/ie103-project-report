@@ -19,7 +19,7 @@
     }
   ],
   "params": [
-    { "name": "@BookingID", "type": "int", "defaultValue": 2 },
-    { "name": "@NgayBaoHuy", "type": "datetime", "defaultValue": "2024-01-07 08:00:00" }
+    { "name": "@BookingID", "type": "int", "defaultValue": 3 },
+    { "name": "@NgayBaoHuy", "type": "datetime", "defaultValue": "2023-04-01 08:00:00" }
   ]
 }

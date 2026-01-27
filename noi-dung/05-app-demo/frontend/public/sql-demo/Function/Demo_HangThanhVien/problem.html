@@ -103,12 +103,10 @@
 
     <div class="section">
         <h3>✅ Cách sử dụng</h3>
-        <pre><code>-- Kiểm tra hạng của khách hàng ID = 1
+        <pre><code>-- Kiểm tra hạng của khách hàng ID = 1 và 3
 SELECT 
-    full_name, 
-    dbo.fn_TinhHangThanhVien(id) AS Hanh_Thanh_Vien
-FROM USERS 
-WHERE id = 1;</code></pre>
+    dbo.fn_TinhHangThanhVien(1) AS Hang_User1,
+    dbo.fn_TinhHangThanhVien(3) AS Hang_User3;</code></pre>
     </div>
 </body>
 </html>

@@ -28,7 +28,7 @@
 
     <div class="section">
         <h3>📌 Mục đích</h3>
-        <p>Function Table-Valued trả về <strong>danh sách các phòng</strong> thuộc một loại cụ thể:</p>
+        <p>Function trả về <strong>danh sách các phòng</strong> thuộc một loại cụ thể:</p>
         <ul>
             <li>Đang trống (Available) trong khoảng thời gian khách yêu cầu.</li>
             <li>Tự động loại bỏ các phòng đã có lịch trùng.</li>
@@ -102,11 +102,8 @@
 
     <div class="section">
         <h3>✅ Cách sử dụng</h3>
-        <pre><code>-- Tìm tất cả phòng Loại 1 trống vào ngày mai
-SELECT * FROM dbo.fn_TimPhongTrongTheoLoai(1, '2025-04-02', '2025-04-03');
-
--- Kết quả sẽ trả về danh sách các phòng như P102, P103...
--- P101 sẽ bị ẩn nếu đang có khách ở.</code></pre>
+        <pre><code>-- Câu lệnh chạy test
+SELECT * FROM dbo.fn_TimPhongTrongTheoLoai(1, '2023-04-04', '2023-04-05');</code></pre>
     </div>
 </body>
 </html>
