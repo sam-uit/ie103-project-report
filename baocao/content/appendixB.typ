@@ -7,6 +7,7 @@
 == Mô Hình Thực Thể Quan Hệ Đầy Đủ
 <mo-hinh-thuc-the-quan-he-day-du>
 
+TODO: Cập nhật phiên bản đầy đủ của ERD.
 
 === Dạng Ngang
 <dang-ngang>
