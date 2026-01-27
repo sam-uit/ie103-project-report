@@ -1,5 +1,18 @@
 # Mô Tả Bài Toán 
 
+Mở đầu cho đồ án, chương này sẽ trình bày tổng quan về bối cảnh thực tế, lý do lựa chọn đề tài "Hệ thống quản lý đặt phòng", đồng thời xác định rõ phạm vi và mục tiêu mà nhóm hướng tới.
+
+## Tổng Quan Về Đề Tài
+
+### Đặt Vấn Đề
+
+Trong bối cảnh ngành du lịch và dịch vụ lưu trú phát triển mạnh mẽ, nhu cầu quản lý vận hành tại các khách sạn, nhà nghỉ và homestay ngày càng trở nên cấp thiết. Tuy nhiên, tại các cơ sở quy mô nhỏ và vừa, quy trình quản lý hiện tại vẫn còn tồn tại nhiều bất cập:
+
+- **Quản lý thủ công:** Việc ghi chép sổ sách hoặc sử dụng Excel rời rạc hoặc các cuộc chat Zalo, Facebook riêng lẻ, dẫn đến sai sót, khó tra cứu lịch sử và dễ mất mát dữ liệu.
+- **Xung đột đặt phòng (Overbooking):** Khó kiểm soát trạng thái phòng theo thời gian thực, dẫn đến nhận trùng khách cho cùng một phòng.
+- **Báo cáo khó khăn:** Chủ doanh nghiệp gặp khó khăn trong việc tổng hợp doanh thu, thống kê hiệu suất kinh doanh theo ngày/tháng.
+
+Xuất phát từ thực tế đó, Nhóm 02 quyết định xây dựng **"Booking Management System (BMS)"** - Hệ thống quản lý đặt phòng tập trung, nhằm giải quyết các bài toán trên bằng công nghệ cơ sở dữ liệu quan hệ.
 ## Động Lực, Mục Tiêu, Ý Nghĩa của Đề Tài
 
 ### Tên Sản Phẩm
