@@ -13,6 +13,17 @@ Trong bối cảnh ngành du lịch và dịch vụ lưu trú phát triển mạ
 - **Báo cáo khó khăn:** Chủ doanh nghiệp gặp khó khăn trong việc tổng hợp doanh thu, thống kê hiệu suất kinh doanh theo ngày/tháng.
 
 Xuất phát từ thực tế đó, Nhóm 02 quyết định xây dựng **"Booking Management System (BMS)"** - Hệ thống quản lý đặt phòng tập trung, nhằm giải quyết các bài toán trên bằng công nghệ cơ sở dữ liệu quan hệ.
+
+### Mục Tiêu Đề Tài
+
+Đồ án tập trung vào hai mục tiêu chính:
+
+1. **Mục tiêu học thuật:** Vận dụng kiến thức môn Quản Lý Thông Tin để phân tích, thiết kế và cài đặt một cơ sở dữ liệu hoàn chỉnh (SQL Server), bao gồm các ràng buộc toàn vẹn và kỹ thuật xử lý nâng cao (Store Procedure, Trigger).
+2. **Mục tiêu ứng dụng:** Xây dựng giải pháp phần mềm hỗ trợ 3 nhóm đối tượng chính:
+    - **Quản trị viên (Admin):** Quản lý toàn diện hệ thống (Phòng, Giá, Nhân viên).
+    - **Nhân viên (Staff):** Thao tác nghiệp vụ hàng ngày (Check-in, Check-out, Thanh toán).
+    - **Khách hàng (End User):** Tìm kiếm và đặt phòng trực tuyến.
+
 ## Động Lực, Mục Tiêu, Ý Nghĩa của Đề Tài
 
 ### Tên Sản Phẩm
