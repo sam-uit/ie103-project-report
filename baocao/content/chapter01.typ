@@ -87,4 +87,4 @@ Quy trình quản lý đặt phòng trong thực tế (Business Process) mà h�
 == Tổng Kết Chương 1
 <tong-ket-chuong-1>
 
-Chương 01 đã trình bày tổng quan về bài toán quản lý đặt phòng khách sạn, xác định rõ những bất cập trong quy trình quản lý thủ công hiện tại và đề xuất giải pháp số hóa thông qua hệ thống BMS. Các yêu cầu về nghiệp vụ và phạm vi người dùng được xác định trong chương này sẽ là cơ sở (Input) quan trọng để tiến hành #strong[Phân tích và Thiết kế hệ thống] chi tiết trong #strong[Chương 2].
+Chương 01 đã trình bày tổng quan về bài toán Quản Lý Đặt Phòng Khách Sạn, xác định rõ những bất cập trong quy trình quản lý thủ công hiện tại và đề xuất giải pháp số hóa thông qua hệ thống BMS. Các yêu cầu về nghiệp vụ và phạm vi người dùng được xác định trong chương này sẽ là cơ sở quan trọng để tiến hành #strong[Phân Tích và Thiết Kế Hệ Thống] chi tiết trong #strong[Chương 2].
