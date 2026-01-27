@@ -16,7 +16,7 @@
 #show raw: set text(size: 0.8em)
 
 // Content goes here
-#include "content/tasks.typ"
+// #include "content/tasks.typ"
 #include "content/chapter01.typ"
 #include "content/chapter02.typ"
 #include "content/chapter03.typ"
