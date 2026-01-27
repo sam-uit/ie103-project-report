@@ -340,6 +340,7 @@
         ) { 1.0 } else { 0.5 }
         let bias1 = -page-width * (1 - r)
         let bias2 = -page-width * 2 * (1 - r)
+        // Có thể đổi màu ở mục fill (fill: orange) để xác định hình cần sửa
         place(left + top, dx: -15pt, dy: -26pt, circle(
           radius: 40pt,
           fill: self.colors.primary,
@@ -372,6 +373,7 @@
           radius: 8pt,
           fill: self.colors.primary,
         ))
+        // Logo/icon mũ tốt nghiệp
         place(center + horizon, dx: bias1, polygon(
           fill: self.colors.primary-lightest,
           (35% * page-width, -17%),
@@ -403,6 +405,7 @@
           radius: 13pt,
           fill: white,
         ))
+        // icon mũ tốt nghiệp tới đây.
       },
     ),
     ..args,
