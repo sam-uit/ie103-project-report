@@ -174,6 +174,8 @@
     include "/content/summary.typ"
   }
 
+  // PREAMBLE
+
   // MARK: Forewords
   if doc-type == "thesis" {
     // No Header/Footer, No Numbering
@@ -181,7 +183,7 @@
     // No Heading Numbering, No Outlined
     set heading(numbering: none, outlined: false)
     // We place the forewords here
-    include "/content/forewords.typ"
+    include "/content/preamble-forewords.typ"
   }
 
   // MARK: Acknowledgement
@@ -191,7 +193,7 @@
     // No Heading Numbering, No Outlined
     set heading(numbering: none, outlined: false)
     // We place the acknowledgement here
-    include "/content/acknowledgement.typ"
+    include "/content/preamble-ack.typ"
   }
 
   // MARK: Instructor's comment
@@ -201,7 +203,7 @@
     // No Heading Numbering, No Outlined
     set heading(numbering: none, outlined: false)
     // We place the instructor's comment here
-    include "/content/pre-comment.typ"
+    include "/content/preamble-comment.typ"
   }
 
   // MARK: Report Author
