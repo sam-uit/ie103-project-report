@@ -46,10 +46,13 @@ Bảng dưới đây mô tả vai trò và trách nhiệm của các đối tư�
 | **End User** | Khách hàng cá nhân. Có thể tìm kiếm phòng, tạo đơn đặt phòng, xem lịch sử giao dịch và gửi đánh giá chất lượng. | -->
 
 ```{=typst}
-#table(
-  columns: (20%, 80%),
-  align: (left, left),
-  [#strong[Vai Trò]], [#strong[Mô Tả Trách Nhiệm]], [#strong[Admin]], [Quản trị viên cấp cao. Chịu trách nhiệm cấu hình hệ thống, quản lý danh mục phòng, thiết lập giá và quản lý tài khoản nhân viên.], [#strong[Staff]], [Nhân viên vận hành (Lễ tân/Sale). Chịu trách nhiệm xử lý các đơn đặt phòng, thực hiện thủ tục nhận/trả phòng và ghi nhận thanh toán.], [#strong[End User]], [Khách hàng cá nhân. Có thể tìm kiếm phòng, tạo đơn đặt phòng, xem lịch sử giao dịch và gửi đánh giá chất lượng.]
+#figure(
+    table(
+    columns: (20%, 80%),
+    align: (left, left),
+    [#strong[Vai Trò]], [#strong[Mô Tả Trách Nhiệm]], [#strong[Admin]], [Quản trị viên cấp cao. Chịu trách nhiệm cấu hình hệ thống, quản lý danh mục phòng, thiết lập giá và quản lý tài khoản nhân viên.], [#strong[Staff]], [Nhân viên vận hành (Lễ tân/Sale). Chịu trách nhiệm xử lý các đơn đặt phòng, thực hiện thủ tục nhận/trả phòng và ghi nhận thanh toán.], [#strong[End User]], [Khách hàng cá nhân. Có thể tìm kiếm phòng, tạo đơn đặt phòng, xem lịch sử giao dịch và gửi đánh giá chất lượng.]
+  ),
+  caption: [Tổng Quan Đề Tài: Các Bên Liên Quan]
 )
 ```
 
