@@ -1,6 +1,6 @@
 # Mô Tả Bài Toán 
 
-Mở đầu cho đồ án, chương này sẽ trình bày tổng quan về bối cảnh thực tế, lý do lựa chọn đề tài "Hệ thống quản lý đặt phòng", đồng thời xác định rõ phạm vi và mục tiêu mà nhóm hướng tới.
+Mở đầu cho đồ án, chương này sẽ trình bày tổng quan về bối cảnh thực tế, lý do lựa chọn đề tài "Hệ Thống Quản Lý Đặt Phòng", đồng thời xác định rõ phạm vi và mục tiêu mà nhóm hướng tới.
 
 ## Tổng Quan Về Đề Tài
 
