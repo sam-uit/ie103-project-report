@@ -194,6 +194,16 @@
     include "/content/acknowledgement.typ"
   }
 
+  // MARK: Instructor's comment
+  if doc-type == "thesis" {
+    // No Header/Footer, No Numbering
+    set page(header: none, footer: none, numbering: none)
+    // No Heading Numbering, No Outlined
+    set heading(numbering: none, outlined: false)
+    // We place the instructor's comment here
+    include "/content/pre-comment.typ"
+  }
+
   // MARK: Report Author
   if doc-type == "report" {
     // No Header/Footer, No Numbering
