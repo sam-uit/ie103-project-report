@@ -59,6 +59,10 @@ Quy trình quản lý đặt phòng trong thực tế (Business Process) mà h�
 5. **Lưu trú & Sử dụng dịch vụ:** Khách check-in. Trong quá trình ở, khách có thể sử dụng thêm dịch vụ (Ăn uống, Spa) -> Ghi nhận vào chi tiết hóa đơn.
 6. **Trả phòng & Quyết toán:** Khách check-out. Hệ thống tổng hợp tiền phòng + tiền dịch vụ - tiền cọc/khuyến mãi. Khách thanh toán số còn lại và hoàn tất giao dịch.
 
+## Tổng Kết Chương 1
+
+Chương 01 đã trình bày tổng quan về bài toán quản lý đặt phòng khách sạn, xác định rõ những bất cập trong quy trình quản lý thủ công hiện tại và đề xuất giải pháp số hóa thông qua hệ thống BMS. Các yêu cầu về nghiệp vụ và phạm vi người dùng được xác định trong chương này sẽ là cơ sở (Input) quan trọng để tiến hành **Phân tích và Thiết kế hệ thống** chi tiết trong **Chương 2**.
+
 ## Động Lực, Mục Tiêu, Ý Nghĩa của Đề Tài
 
 ### Tên Sản Phẩm
