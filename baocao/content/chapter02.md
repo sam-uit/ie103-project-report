@@ -16,9 +16,9 @@ Trong chương này, Nhóm sẽ trình bày các chức năng và quy tắc nghi
 - Quản lý và phân quyền người dùng (Admin / Staff / End User).
 - Hiển thị trạng thái đặt phòng và thanh toán (User Application).
 - Ứng dụng web hoặc mobile hoàn chỉnh phục vụ thao tác đặt phòng.
-- **Hệ thống khuyến mãi & mã giảm giá (Vouchers)**.
-- **Quản lý dịch vụ đi kèm (Add-on Services)** như ăn sáng, giặt ủi, đưa đón sân bay.
-- **Hệ thống đánh giá & phản hồi (Reviews & Ratings)** sau khi hoàn tất thanh toán.
+- Hệ thống khuyến mãi & mã giảm giá (Vouchers).
+- Quản lý dịch vụ đi kèm (Add-on Services) như ăn sáng, giặt ủi, đưa đón sân bay.
+- Hệ thống đánh giá & phản hồi (Reviews & Ratings) sau khi hoàn tất thanh toán.
 
 ### Không Bao Gồm
 
@@ -41,12 +41,12 @@ Trong chương này, Nhóm sẽ trình bày các chức năng và quy tắc nghi
 - Không được xóa đặt phòng nếu đã thanh toán.
 - Có thể hoàn tiền nếu người dùng yêu cầu trước 24 tiếng (2 ngày) kể từ ngày nhận phòng.
 - Chỉ có **Admin** mới có quyền duyệt hoàn trả.
-- **Mỗi đặt phòng có thể áp dụng tối đa một mã giảm giá (voucher)**.
-- **Mã giảm giá phải còn hạn sử dụng và chưa hết số lượng**.
-- **Khách hàng có thể gọi dịch vụ đi kèm bất cứ lúc nào trong thời gian lưu trú**.
-- **Chỉ những khách hàng đã thanh toán (PAID) và đã trả phòng mới được đánh giá**.
-- **Mỗi đặt phòng chỉ được đánh giá một lần**.
-- **Số sao đánh giá phải từ 1 đến 5**.
+- Mỗi đặt phòng có thể áp dụng tối đa một mã giảm giá (voucher).
+- Mã giảm giá phải còn hạn sử dụng và chưa hết số lượng.
+- Khách hàng có thể gọi dịch vụ đi kèm bất cứ lúc nào trong thời gian lưu trú.
+- Chỉ những khách hàng đã thanh toán (PAID) và đã trả phòng mới được đánh giá.
+- Mỗi đặt phòng chỉ được đánh giá một lần.
+- Số sao đánh giá phải từ 1 đến 5.
 
 ### Miêu Tả Các Nghiệp Vụ (User Stories)
 
