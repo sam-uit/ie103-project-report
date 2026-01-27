@@ -3,7 +3,7 @@
   { "mssv": "25410319", "name": "Đặng Hữu Toàn", "tasks": "Cursor: 2" },
   { "mssv": "25410321", "name": "Nguyễn Điền Triết", "tasks": "Stored Procedure: 3" },
   { "mssv": "25410204", "name": "Trương Xuân Hậu", "tasks": "Trigger: 5" },
-  { "mssv": "25410338", "name": "Lê Anh Vũ", "tasks": "Stored Procedure: 2", "notes": "Các bảng mới." },
+  { "mssv": "25410338", "name": "Lê Anh Vũ", "tasks": "Stored Procedure: 2" },
   { "mssv": "25410176", "name": "Trần Sơn Bình", "tasks": "Function: 3" },
   { "mssv": "25410247", "name": "Lê Kim Long", "tasks": "ERD/Data Seed" },
   { "mssv": "25410337", "name": "La Anh Vũ", "tasks": "Code/Demo" },
