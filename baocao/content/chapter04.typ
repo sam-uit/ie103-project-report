@@ -38,10 +38,34 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 )
 #todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
 
-==== SP2: BookingRoom
-<sp2-bookingroom>
+==== SP2: Thanh Toán Đặt Phòng
+<sp2-thanh-toan-dat-phong>
 
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+- Tên gọi: `SP_THANHTOAN`.
+- #strong[Mục đích:] Thực hiện chức năng #strong[thanh toán] cho người dùng.
+  - Kiểm tra booking hợp lệ.
+  - Kiểm tra số tiền thanh toán có đúng với số tiền cần trả.
+  - Lưu lịch sử thanh toán.
+  - Cập nhật trạng thái booking khi thanh toán hoàn tất.
+- #strong[Bảng liên quan:]
+
+#table(
+  columns: (8%, 32%, 60%),
+  align: (right, left, left),
+  [STT], [Bảng], [Mô tả], [1], [`DATPHONG`], [Thông tin đặt phòng], [2], [`CT_DATPHONG`], [Chi tiết phòng và đơn giá], [3], [`CT_SUDUNG_DV`], [Dịch vụ phát sinh], [4], [`VOUCHERS`], [Mã giảm giá], [5], [`PAYMENTS`], [Lịch sử thanh toán]
+)
+- #strong[Tham số vào:]
+
+#table(
+  columns: (8%, 15%, 18%, 14%, 46%),
+  align: (right, left, left, left, left),
+  [STT], [Tham số], [Kiểu dữ liệu], [Bắt buộc], [Mô tả],
+  [1], [`@BookingId`], [`INT`], [#text(fill: blue)[#sym.checkmark]], [ID đặt phòng],
+  [2], [`@UserId`], [`INT`], [#text(fill: blue)[#sym.checkmark]], [ID người thanh toán],
+  [3], [`@SoTien`], [`DECIMAL(18,2)`], [#text(fill: blue)[#sym.checkmark]], [Số tiền thanh toán],
+  [4], [`@PhuongThuc`], [`NVARCHAR(50)`], [#text(fill: blue)[#sym.checkmark]], [Phương thức thanh toán (`TIEN_MAT`, `CHUYEN_KHOAN`, `THE`, `ONLINE`)]
+)
+#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
 
 ==== SP3: Checkout
 <sp3-checkout>
