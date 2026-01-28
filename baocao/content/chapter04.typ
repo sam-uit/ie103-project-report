@@ -187,16 +187,20 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 === Xác Thực Và Phân Quyền
 <xac-thuc-va-phan-quyen>
 
+#todo[(Xác Thực Và Phân Quyền) THỰC HIỆN PHÂN QUYỀN.]
 Hệ thống áp dụng mô hình bảo mật dựa trên vai trò (RBAC - Role Based Access Control).
 
 - Xác thực:
   - Mật khẩu người dùng được mã hóa (Hashing) trước khi lưu vào cơ sở dữ liệu (giả lập logic ứng dụng).
 - Bảng phân quyền:
 
-#table(
-  columns: (1fr,) * 3,
-  align: (right, left, left),
-  [STT], [#strong[Vai Trò]], [#strong[Quyền Hạn]], [1], [Admin], [Quản lý tất cả], [2], [Staff], [Quản lý đặt phòng], [3], [End User], [Đặt phòng]
+#figure(
+    table(
+    columns: (10%, 20%, 70%),
+    align: (right, left, left),
+    [STT], [#strong[Vai Trò]], [#strong[Quyền Hạn]], [1], [Admin], [Quản lý tất cả], [2], [Staff], [Quản lý đặt phòng], [3], [End User], [Đặt phòng]
+    ),
+    caption: [An Toàn Thông Tin - Bảng Phân Quyền]
 )
 
 === Sao Lưu & Phục Hồi
