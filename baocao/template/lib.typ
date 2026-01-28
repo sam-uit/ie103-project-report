@@ -169,6 +169,22 @@
   // Có thể bổ sung trang bìa mềm ở đây
   // ----- BÌA MỀM --------------------
 
+  // MARK: Preamble
+  // Roman numbering, Header/Footer active
+  counter(page).update(1)
+
+  // Căn giữa và làm mờ số trang
+  set page(
+    header: auto,
+    numbering: "i",
+    number-align: center,
+    footer: context [
+      #set text(size: 10pt, fill: gray)
+      #align(center)[
+        #counter(page).display(page.numbering)
+      ]
+    ],
+  )
 
   // MARK: Thesis Summary
   if doc-type == "thesis" {
@@ -221,23 +237,6 @@
     // We place the author information here
     include "/author/author.typ"
   }
-
-  // MARK: Front Matter
-  // Roman numbering, Header/Footer active
-  counter(page).update(1)
-
-  // Căn giữa và làm mờ số trang
-  set page(
-    header: auto,
-    numbering: "i",
-    number-align: center,
-    footer: context [
-      #set text(size: 10pt, fill: gray)
-      #align(center)[
-        #counter(page).display(page.numbering)
-      ]
-    ],
-  )
 
   // MARK: TOC & Lists
   // Rename "Figure" supplements
