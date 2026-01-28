@@ -123,7 +123,7 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
       - Nếu trạng thái hiện tại là `OCCUPIED` (tức là dữ liệu cũ bị sai/treo) $arrow.r$ Trả về `AVAILABLE`.
       - Nếu trạng thái hiện tại là `MAINTENANCE` (Bảo trì) hoặc `RESERVED` (Đã đặt trước) $arrow.r$ Giữ nguyên, không can thiệp.
 
-#strong[Kiểm Thử: Trước khi thực hiện]
+#strong[Kiểm Thử: Trước khi thực hiện.]
 
 - Phòng 101: Đang trống thực tế và dữ liệu lỗi hiển thị là `AVAILABLE` (đúng).
 - Phòng 102: Đang có khách ở thực tế nhưng hiển thị là `AVAILABLE` (sai).
@@ -135,7 +135,7 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
   ]
 )
 
-#strong[Kiểm Thử: Kết quả]
+#strong[Kiểm Thử: Kết quả.]
 
 - Phòng 101: Giữ nguyên trạng thái (`AVAILABLE`).
 - Phòng 102: Cập nhật sang Đang có khách (`OCCUPIED`).
@@ -162,7 +162,7 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
     - Tìm các phòng liên quan trong bảng `CT_DATPHONG` và cập nhật trạng thái phòng (`PHONG`) về `AVAILABLE` (Sẵn sàng đón khách mới).
     - Đếm số lượng đơn đã xử lý và in log thông báo.
 
-Trước khi thực hiện:
+#strong[Kiểm Thử: Trước khi thực hiện.]
 
 - Các phòng có trạng thái `CONFIRMED`.
 
@@ -172,7 +172,7 @@ Trước khi thực hiện:
   ]
 )
 
-Kết quả:
+#strong[Kiểm Thử: Kết quả.]
 
 - Các phòng có trạng thái `AVAILABLE`.
 
