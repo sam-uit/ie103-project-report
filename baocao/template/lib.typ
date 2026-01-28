@@ -153,6 +153,7 @@
   show figure.where(kind: "todo"): it => it.body
 
   // MARK: Cover Page
+  // ----- BÌA CỨNG --------------------
   // No headers/footers, no numbering
   set page(header: none, footer: none, numbering: none)
   cover-page(
