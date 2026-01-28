@@ -30,6 +30,7 @@
   [#metadata("top") <top>]
 
   // MARK: Page & Text Setup
+  // Cài đặt khoảng cách lề (margin) cho trang.
   set page(margin: 2.5cm)
   set text(
     font: body-font,
