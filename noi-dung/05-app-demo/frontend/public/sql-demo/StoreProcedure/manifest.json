@@ -1,8 +1,8 @@
 {
       "demos": [
             "SP_DATPHONG",
-            "Demo_Payment",
             "SP_DANHGIA",
+            "SP_THANHTOAN",
             "Demo_Service",
             "Demo_ApplyVoucher",
             "Demo_RegisterUser",

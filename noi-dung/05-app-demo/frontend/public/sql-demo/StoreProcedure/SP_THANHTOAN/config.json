@@ -3,8 +3,8 @@
       "title": "SP_THANHTOAN",
       "type": "Stored Procedure",
       "shortDesc": "Stored Procedure để ghi nhận thanh toán và cập nhật trạng thái booking",
-      "mdFile": "StoreProcedure/Demo_Payment/problem.html",
-      "sqlFile": "StoreProcedure/Demo_Payment/sp_Payment.sql",
+      "mdFile": "StoreProcedure/SP_THANHTOAN/SP_THANHTOAN.html",
+      "sqlFile": "StoreProcedure/SP_THANHTOAN/SP_THANHTOAN.sql",
       "separateTables": [
             {
                   "name": "PAYMENTS",
