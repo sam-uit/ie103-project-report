@@ -33,11 +33,11 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
   columns: (20%, 20%, 20%, 40%),
   align: (left, left, left, left),
   [Tên tham số], [Kiểu dữ liệu], [Bắt buộc], [Mô tả],
-  [`@UserId`], [`INT`], [#sym.checkmark], [ID người dùng],
-  [`@SoPhong`], [`NVARCHAR(20)`], [#sym.checkmark], [Số phòng],
-  [`@CheckIn`], [`DATETIME`], [#sym.checkmark], [Thời gian check-in],
-  [`@CheckOut`], [`DATETIME`], [#sym.checkmark], [Thời gian check-out],
-  [`@VoucherId`], [`INT`], [#sym.crossmark], [Voucher (nếu có)]
+  [`@UserId`], [`INT`], [#text(fill: blue)[#sym.checkmark]], [ID người dùng],
+  [`@SoPhong`], [`NVARCHAR(20)`], [#text(fill: blue)[#sym.checkmark]], [Số phòng],
+  [`@CheckIn`], [`DATETIME`], [#text(fill: blue)[#sym.checkmark]], [Thời gian check-in],
+  [`@CheckOut`], [`DATETIME`], [#text(fill: blue)[#sym.checkmark]], [Thời gian check-out],
+  [`@VoucherId`], [`INT`], [#text(fill: red)[#sym.crossmark]], [Voucher (nếu có)]
 )
 ```
 
