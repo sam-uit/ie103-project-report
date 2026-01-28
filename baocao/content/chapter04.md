@@ -114,15 +114,36 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 
 - `C_UpdateOverdueBookings`: Quét toàn bộ các đơn đặt phòng trạng thái `PENDING`. Nếu quá hạn thanh toán (24h), hệ thống tự động hủy đơn và giải phóng phòng.
 
-#### Cursor - SyncRoomStatus (Đồng Bộ Trạng Thái Phòng)
+#### Cursor - Đồng Bộ Trạng Thái Phòng Thực Tế
 
-```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
-```
+- Tên gọi: `cur_phong_status`.
+- **Mục đích:**
+    - Cursor này đảm bảo trạng thái hiển thị của phòng (`AVAILABLE`, `OCCUPIED`, `MAINTENANCE`, `RESERVED`) trên giao diện luôn khớp với dữ liệu đặt phòng thực tế trong cơ sở dữ liệu.
+- **Logic xử lý:**
+    - Duyệt qua tất cả các phòng trong bảng `PHONG`, lấy thông tin `id`, `so_phong` và `trang_thai` hiện tại.
+    - Với mỗi phòng, thực hiện truy vấn kiểm tra xem có đơn đặt phòng nào đang hoạt động (Trạng thái `CONFIRMED` và thời gian hiện tại nằm trong khoảng lưu trú).
+    - Cập nhật:
+        + Trường hợp 1 (Có khách đang ở):
+            - Nếu trạng thái hiện tại chưa phải `OCCUPIED` $\to$ Cập nhật thành `OCCUPIED`.
+        + Trường hợp 2 (Không có khách):
+            - Nếu trạng thái hiện tại là `OCCUPIED` (tức là dữ liệu cũ bị sai/treo) $\to$ Trả về `AVAILABLE`.
+            - Nếu trạng thái hiện tại là `MAINTENANCE` (Bảo trì) hoặc `RESERVED` (Đã đặt trước) $\to$ Giữ nguyên, không can thiệp.
 
-<!-- ![Cursor - SyncRoomStatus 01](demo/C-SyncRoomStatus01.png)
+**Kiểm Thử: Trước khi thực hiện**
 
-![Cursor - SyncRoomStatus 02](demo/C-SyncRoomStatus02.png) -->
+- Phòng 101: Đang trống thực tế và dữ liệu lỗi hiển thị là `AVAILABLE` (đúng).
+- Phòng 102: Đang có khách ở thực tế nhưng hiển thị là `AVAILABLE` (sai).
+- Phòng 503: Đang bảo trì (`MAINTENANCE`), không có khách (đúng).
+
+![Cursor - SyncRoomStatus 01](demo/C-SyncRoomStatus03.png)
+
+**Kiểm Thử: Kết quả**
+
+- Phòng 101: Giữ nguyên trạng thái (`AVAILABLE`).
+- Phòng 102: Cập nhật sang Đang có khách (`OCCUPIED`).
+- Phòng 503: Giữ nguyên trạng thái (`MAINTENANCE`).
+
+![Cursor - SyncRoomStatus 02](demo/C-SyncRoomStatus04.png)
 
 #### Cursor - Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
 

@@ -107,10 +107,45 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 
 - `C_UpdateOverdueBookings`: Quét toàn bộ các đơn đặt phòng trạng thái `PENDING`. Nếu quá hạn thanh toán (24h), hệ thống tự động hủy đơn và giải phóng phòng.
 
-==== Cursor - SyncRoomStatus (Đồng Bộ Trạng Thái Phòng)
-<cursor-syncroomstatus-dong-bo-trang-thai-phong>
+==== Cursor - Đồng Bộ Trạng Thái Phòng Thực Tế
+<cursor-dong-bo-trang-thai-phong-thuc-te>
 
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+- Tên gọi: `cur_phong_status`.
+- #strong[Mục đích:]
+  - Cursor này đảm bảo trạng thái hiển thị của phòng (`AVAILABLE`, `OCCUPIED`, `MAINTENANCE`, `RESERVED`) trên giao diện luôn khớp với dữ liệu đặt phòng thực tế trong cơ sở dữ liệu.
+- #strong[Logic xử lý:]
+  - Duyệt qua tất cả các phòng trong bảng `PHONG`, lấy thông tin `id`, `so_phong` và `trang_thai` hiện tại.
+  - Với mỗi phòng, thực hiện truy vấn kiểm tra xem có đơn đặt phòng nào đang hoạt động (Trạng thái `CONFIRMED` và thời gian hiện tại nằm trong khoảng lưu trú).
+  - Cập nhật:
+    - Trường hợp 1 (Có khách đang ở):
+      - Nếu trạng thái hiện tại chưa phải `OCCUPIED` $arrow.r$ Cập nhật thành `OCCUPIED`.
+    - Trường hợp 2 (Không có khách):
+      - Nếu trạng thái hiện tại là `OCCUPIED` (tức là dữ liệu cũ bị sai/treo) $arrow.r$ Trả về `AVAILABLE`.
+      - Nếu trạng thái hiện tại là `MAINTENANCE` (Bảo trì) hoặc `RESERVED` (Đã đặt trước) $arrow.r$ Giữ nguyên, không can thiệp.
+
+#strong[Kiểm Thử: Trước khi thực hiện]
+
+- Phòng 101: Đang trống thực tế và dữ liệu lỗi hiển thị là `AVAILABLE` (đúng).
+- Phòng 102: Đang có khách ở thực tế nhưng hiển thị là `AVAILABLE` (sai).
+- Phòng 503: Đang bảo trì (`MAINTENANCE`), không có khách (đúng).
+
+#figure(image("demo/C-SyncRoomStatus03.png"),
+  caption: [
+    Cursor - SyncRoomStatus 01
+  ]
+)
+
+#strong[Kiểm Thử: Kết quả]
+
+- Phòng 101: Giữ nguyên trạng thái (`AVAILABLE`).
+- Phòng 102: Cập nhật sang Đang có khách (`OCCUPIED`).
+- Phòng 503: Giữ nguyên trạng thái (`MAINTENANCE`).
+
+#figure(image("demo/C-SyncRoomStatus04.png"),
+  caption: [
+    Cursor - SyncRoomStatus 02
+  ]
+)
 
 ==== Cursor - Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
 <cursor-tu-dong-hoan-tat-don-dat-phong-khi-qua-han>
