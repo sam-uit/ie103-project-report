@@ -10,7 +10,7 @@ Hệ thống sử dụng các đối tượng lập trình cơ sở dữ liệu 
 
 Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như đặt phòng, thanh toán và áp dụng khuyến mãi.
 
-#### SP1 – Đặt phòng
+#### SP1 – Đặt Phòng
 
 - Tên gọi: `SP_DATPHONG`.
 - **Mục đích:** Thực hiện chức năng **đặt phòng** cho người dùng.
@@ -39,6 +39,10 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
   [`@CheckOut`], [`DATETIME`], [#text(fill: blue)[#sym.checkmark]], [Thời gian check-out],
   [`@VoucherId`], [`INT`], [#text(fill: red)[#sym.crossmark]], [Voucher (nếu có)]
 )
+```
+
+```{=typst}
+#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
 ```
 
 #### SP2: BookingRoom
