@@ -14,14 +14,16 @@ Hệ thống tự động load demos từ thư mục `sql-demo/` - không cần 
 
 ### Thêm Demo Mới (3 Bước)
 
-**Bước 1:** Tạo thư mục
+#### **Bước 1:** Tạo thư mục
+
 ```bash
 mkdir -p sql-demo/Trigger/Demo_MyDemo
 ```
 
-**Bước 2:** Tạo 3 files
+#### **Bước 2:** Tạo 3 files
 
-`config.json`:
+- `config.json`:
+
 ```json
 {
   "id": "trg-my-demo",
@@ -36,11 +38,11 @@ mkdir -p sql-demo/Trigger/Demo_MyDemo
 }
 ```
 
-`problem.md`: Theo cấu trúc B1-B5
+- `problem.md`: Theo cấu trúc B1-B5
+- `script.sql`: SQL code
 
-`script.sql`: SQL code
+#### **Bước 3:** Update manifest
 
-**Bước 3:** Update manifest
 ```json
 // sql-demo/Trigger/manifest.json
 {
@@ -48,7 +50,9 @@ mkdir -p sql-demo/Trigger/Demo_MyDemo
 }
 ```
 
-**Reload browser** → Demo mới xuất hiện!
+#### **Bước 4:** Reload browser
+
+- **Reload browser** → Demo mới xuất hiện!
 
 ## 📁 Demos Hiện Tại
 
@@ -58,5 +62,6 @@ mkdir -p sql-demo/Trigger/Demo_MyDemo
 ## 🔍 Debug
 
 Mở Console (F12) để xem:
+
 - `🔍 Scanning sql-demo folder...`
 - `✅ Found X demos: [...]`
