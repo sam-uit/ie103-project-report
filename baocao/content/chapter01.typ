@@ -3,7 +3,7 @@
 = Mô Tả Bài Toán
 <mo-ta-bai-toan>
 
-Mở đầu cho đồ án, chương này sẽ trình bày tổng quan về bối cảnh thực tế, lý do lựa chọn đề tài "Hệ Thống Quản Lý Đặt Phòng", đồng thời xác định rõ phạm vi và mục tiêu mà nhóm hướng tới.
+Mở đầu cho bản #emph[Báo Cáo Đồ Án], trong chương này, nhóm 02 sẽ trình bày tổng quan về bối cảnh thực tế, lý do lựa chọn đề tài #strong["Hệ Thống Quản Lý Đặt Phòng"], đồng thời xác định rõ phạm vi và mục tiêu mà nhóm hướng tới.
 
 == Tổng Quan Về Đề Tài
 <tong-quan-ve-de-tai>
