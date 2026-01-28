@@ -22,6 +22,9 @@
 Khai báo:
 
 ```sql
+-- Nhóm 02.
+-- Cursor - Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
+
 DECLARE @id_datphong INT;
 DECLARE @dem_completed INT = 0;
 
