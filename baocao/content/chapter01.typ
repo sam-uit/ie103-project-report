@@ -77,18 +77,26 @@ Bảng dưới đây mô tả vai trò và trách nhiệm của các đối tư�
 
 Quy trình quản lý đặt phòng trong thực tế (Business Process) mà hệ thống hướng tới tin học hóa được mô tả qua các bước sau:
 
-+ #strong[Tiếp nhận yêu cầu:] Khách hàng yêu cầu đặt phòng (qua điện thoại, trực tiếp hoặc website) với các thông tin: Ngày đến, Ngày đi, Loại phòng, Số lượng người.
-+ #strong[Kiểm tra tình trạng (Availability Check):] Nhân viên/Hệ thống kiểm tra danh sách phòng trống trong khoảng thời gian yêu cầu.
++ #strong[Tiếp nhận yêu cầu:]
+  - Khách hàng yêu cầu đặt phòng (qua điện thoại, trực tiếp hoặc website).
+  - Cung cấp các thông tin: Ngày đến, Ngày đi, Loại phòng, Số lượng người, vv…
++ #strong[Kiểm tra tình trạng (Availability Check):]
+  - Nhân viên/Hệ thống kiểm tra danh sách phòng trống trong khoảng thời gian yêu cầu.
   - Nếu hết phòng: Thông báo và đề xuất thời gian/loại phòng khác.
   - Nếu còn phòng: Tiến hành tạm giữ phòng.
-+ #strong[Tạo đơn đặt phòng (Booking):] Ghi nhận thông tin khách hàng và thông tin phòng. Hệ thống tính toán tổng tiền tạm tính.
++ #strong[Tạo đơn đặt phòng (Booking):]
+  - Ghi nhận thông tin khách hàng và thông tin phòng.
+  - Hệ thống tính toán tổng tiền tạm tính.
 + #strong[Thanh toán & Xác nhận:]
   - Khách hàng thực hiện thanh toán (Cọc hoặc toàn bộ).
   - Đơn hàng chuyển sang trạng thái "Đã xác nhận" (Confirmed).
-+ #strong[Lưu trú & Sử dụng dịch vụ:] Khách check-in. Trong quá trình ở, khách có thể sử dụng thêm dịch vụ (Ăn uống, Spa) $arrow.r$ Ghi nhận vào chi tiết hóa đơn.
-+ #strong[Trả phòng & Quyết toán:] Khách check-out. Hệ thống tổng hợp tiền phòng + tiền dịch vụ - tiền cọc/khuyến mãi. Khách thanh toán số còn lại và hoàn tất giao dịch.
++ #strong[Lưu trú & Sử dụng dịch vụ:] Khách check-in.
+  - Trong quá trình ở, khách có thể sử dụng thêm dịch vụ (Ăn uống, Spa) $arrow.r$ Ghi nhận vào chi tiết hóa đơn.
++ #strong[Trả phòng & Quyết toán:] Khách check-out.
+  - Hệ thống tổng hợp tiền phòng + tiền dịch vụ - tiền cọc/khuyến mãi.
+  - Khách thanh toán số còn lại và hoàn tất giao dịch.
 
 == Tổng Kết Chương 1
 <tong-ket-chuong-1>
 
-Chương 01 đã trình bày tổng quan về bài toán Quản Lý Đặt Phòng Khách Sạn, xác định rõ những bất cập trong quy trình quản lý thủ công hiện tại và đề xuất giải pháp số hóa thông qua hệ thống BMS. Các yêu cầu về nghiệp vụ và phạm vi người dùng được xác định trong chương này sẽ là cơ sở quan trọng để tiến hành #strong[Phân Tích và Thiết Kế Hệ Thống] chi tiết trong #strong[Chương 2].
+#emph[Chương 01] đã trình bày tổng quan về bài toán #strong[Quản Lý Đặt Phòng Khách Sạn], xác định rõ những bất cập trong quy trình quản lý thủ công hiện tại và đề xuất giải pháp số hóa thông qua hệ thống BMS. Các yêu cầu về nghiệp vụ và phạm vi người dùng được xác định trong chương này sẽ là cơ sở quan trọng để tiến hành #strong[Phân Tích và Thiết Kế Hệ Thống] chi tiết trong #emph[Chương 02].
