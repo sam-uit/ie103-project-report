@@ -39,10 +39,15 @@
     size: 12pt,
     weight: "regular",
   )
+
+  // Cài đặt đoạn văn bản
   set par(
-    leading: 0.8em,
+    // leading: Khoảng cách dòng, mặc định 0.65em
+    // leading: 0.6em,
+    // justify: Căn lề, mặc định false
     justify: true,
-    spacing: 1.5em,
+    // spacing: Khoảng cách giữa các đoạn, mặc định 1.2em
+    // spacing: 1em,
   )
 
   // MARK: Citation Text Style
