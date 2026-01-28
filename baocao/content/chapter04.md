@@ -112,7 +112,31 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
 
 Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) định kỳ.
 
-- `C_UpdateOverdueBookings`: Quét toàn bộ các đơn đặt phòng trạng thái `PENDING`. Nếu quá hạn thanh toán (24h), hệ thống tự động hủy đơn và giải phóng phòng.
+#### Cursor - Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
+
+- Tên gọi: `cursor_checkout`.
+- **Mục Đích:**
+    - Tự động hóa việc kết thúc quy trình đặt phòng.
+    - Hệ thống quét các đơn đặt phòng đã quá hạn trả phòng (`Check-out`) nhưng trạng thái vẫn là `CONFIRMED` để chuyển sang `COMPLETED` và giải phóng phòng.
+- **Logic Xử Lý:**
+    - Khai báo Cursor quét bảng `DATPHONG`.
+    - Điều kiện lọc: `trang_thai = 'CONFIRMED'` VÀ `check_out < GETDATE()` (Thời gian hiện tại đã vượt qua giờ check-out).
+    - **Xử Lý Ngoại Lệ:** Vòng lặp xử lý từng đơn:
+        + Cập nhật trạng thái đơn (`DATPHONG`) thành `COMPLETED`.
+        + Tìm các phòng liên quan trong bảng `CT_DATPHONG` và cập nhật trạng thái phòng (`PHONG`) về `AVAILABLE` (Sẵn sàng đón khách mới).
+        + Đếm số lượng đơn đã xử lý và in log thông báo.
+
+**Kiểm Thử: Trước khi thực hiện.**
+
+- Các phòng có trạng thái `CONFIRMED`.
+
+![Cursor - UpdateStatusWhenOverdue 01](demo/C-UpdateStatusWhenOverdue01.png)
+
+**Kiểm Thử: Kết quả.**
+
+- Các phòng có trạng thái `AVAILABLE`.
+
+![Cursor - UpdateStatusWhenOverdue 02](demo/C-UpdateStatusWhenOverdue02.png)
 
 #### Cursor - Đồng Bộ Trạng Thái Phòng Thực Tế
 
@@ -144,32 +168,6 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 - Phòng 503: Giữ nguyên trạng thái (`MAINTENANCE`).
 
 ![Cursor - SyncRoomStatus 02](demo/C-SyncRoomStatus04.png)
-
-#### Cursor - Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
-
-- Tên gọi: `cursor_checkout`.
-- **Mục Đích:**
-    - Tự động hóa việc kết thúc quy trình đặt phòng.
-    - Hệ thống quét các đơn đặt phòng đã quá hạn trả phòng (`Check-out`) nhưng trạng thái vẫn là `CONFIRMED` để chuyển sang `COMPLETED` và giải phóng phòng.
-- **Logic Xử Lý:**
-    - Khai báo Cursor quét bảng `DATPHONG`.
-    - Điều kiện lọc: `trang_thai = 'CONFIRMED'` VÀ `check_out < GETDATE()` (Thời gian hiện tại đã vượt qua giờ check-out).
-    - **Xử Lý Ngoại Lệ:** Vòng lặp xử lý từng đơn:
-        + Cập nhật trạng thái đơn (`DATPHONG`) thành `COMPLETED`.
-        + Tìm các phòng liên quan trong bảng `CT_DATPHONG` và cập nhật trạng thái phòng (`PHONG`) về `AVAILABLE` (Sẵn sàng đón khách mới).
-        + Đếm số lượng đơn đã xử lý và in log thông báo.
-
-**Kiểm Thử: Trước khi thực hiện.**
-
-- Các phòng có trạng thái `CONFIRMED`.
-
-![Cursor - UpdateStatusWhenOverdue 01](demo/C-UpdateStatusWhenOverdue01.png)
-
-**Kiểm Thử: Kết quả.**
-
-- Các phòng có trạng thái `AVAILABLE`.
-
-![Cursor - UpdateStatusWhenOverdue 02](demo/C-UpdateStatusWhenOverdue02.png)
 
 ## An Toàn Thông Tin
 
