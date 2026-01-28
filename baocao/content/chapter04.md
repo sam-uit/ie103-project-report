@@ -171,18 +171,18 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 
 ## An Toàn Thông Tin
 
-### Xác thực và phân quyền
+### Xác Thực Và Phân Quyền
 
 Hệ thống áp dụng mô hình bảo mật dựa trên vai trò (RBAC - Role Based Access Control).
 
 - Xác thực: Mật khẩu người dùng được mã hóa (Hashing) trước khi lưu vào cơ sở dữ liệu (giả lập logic ứng dụng).
 - Phân quyền:
 
-| Vai Trò | Quyền Hạn |
-|----|----|
-| Admin | Quản lý tất cả |
-| Staff | Quản lý đặt phòng |
-| End User | Đặt phòng |
+| STT | **Vai Trò** | **Quyền Hạn** |
+|----:|----|----|
+| 1 | Admin | Quản lý tất cả |
+| 2 | Staff | Quản lý đặt phòng |
+| 3 | End User | Đặt phòng |
 
 ### Sao Lưu & Phục Hồi
 
