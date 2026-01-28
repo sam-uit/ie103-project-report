@@ -3,7 +3,7 @@
             "SP_DATPHONG",
             "SP_DANHGIA",
             "SP_THANHTOAN",
-            "Demo_Service",
+            "SP_AP_DUNG_VOUCHER",
             "Demo_ApplyVoucher",
             "Demo_RegisterUser",
             "Demo_Checkout"

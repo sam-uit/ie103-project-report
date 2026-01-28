@@ -3,8 +3,8 @@
       "title": "SP_AP_DUNG_VOUCHER",
       "type": "Stored Procedure",
       "shortDesc": "Stored Procedure để kiểm tra và áp dụng Voucher giảm giá cho đơn Đặt Phòng.",
-      "mdFile": "StoreProcedure/Demo_ApplyVoucher/problem.html",
-      "sqlFile": "StoreProcedure/Demo_ApplyVoucher/sp_ApplyVoucher.sql",
+      "mdFile": "StoreProcedure/SP_AP_DUNG_VOUCHER/SP_AP_DUNG_VOUCHER.html",
+      "sqlFile": "StoreProcedure/SP_AP_DUNG_VOUCHER/SP_AP_DUNG_VOUCHER.sql",
       "separateTables": [
             {
                   "name": "DATPHONG",
