@@ -26,7 +26,7 @@
   ..args,
   body,
 ) = {
-  // Anchor/Móc cho nút Back to Top
+  // Anchor/Móc cho nút [Back to Top]
   [#metadata("top") <top>]
 
   // MARK: Page & Text Setup
