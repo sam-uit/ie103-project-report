@@ -69,11 +69,11 @@ GO
 Kiểm thử:
 
 ```sql
-    -- Kiểm tra trước khi chạy
-    SELECT id, trang_thai FROM DATPHONG WHERE id = 1;
-    -- Chạy đoạn code Cursor bên trên
-    -- Kiểm tra sau khi chạy
-    SELECT id, trang_thai FROM DATPHONG WHERE id = 1;
+-- Kiểm tra trước khi chạy
+SELECT id, trang_thai FROM DATPHONG WHERE id = 1;
+-- Chạy đoạn code Cursor bên trên
+-- Kiểm tra sau khi chạy
+SELECT id, trang_thai FROM DATPHONG WHERE id = 1;
 ```
 
 Kết quả:
