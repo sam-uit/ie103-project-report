@@ -32,6 +32,8 @@
   // MARK: Page & Text Setup
   // Cài đặt khoảng cách lề (margin) cho trang.
   set page(margin: 2.5cm)
+
+  // Cài đặt font chữ cho body.
   set text(
     font: body-font,
     size: 12pt,
