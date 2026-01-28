@@ -21,9 +21,12 @@ Xuất phát từ thực tế đó, nhóm 02 quyết định xây dựng **"Book
 1. **Mục tiêu học thuật:**
     - Vận dụng kiến thức môn Quản Lý Thông Tin để phân tích, thiết kế và cài đặt một cơ sở dữ liệu hoàn chỉnh (SQL Server), bao gồm các ràng buộc toàn vẹn và kỹ thuật xử lý nâng cao (Store Procedure, Trigger).
 2. **Mục tiêu ứng dụng:** Xây dựng giải pháp phần mềm hỗ trợ 3 nhóm đối tượng chính:
-    - **Quản trị viên (Admin):** Quản lý toàn diện hệ thống (Phòng, Giá, Nhân viên).
-    - **Nhân viên (Staff):** Thao tác nghiệp vụ hàng ngày (Check-in, Check-out, Thanh toán).
-    - **Khách hàng (End User):** Tìm kiếm và đặt phòng trực tuyến.
+    - **Quản trị viên (Admin):**
+        - Quản lý toàn diện hệ thống (Phòng, Giá, Nhân viên).
+    - **Nhân viên (Staff):**
+        - Thao tác nghiệp vụ hàng ngày (Check-in, Check-out, Thanh toán).
+    - **Khách hàng (End User):**
+        - Tìm kiếm và đặt phòng trực tuyến.
 
 ## Phạm Vi & Đối Tượng Nghiên Cứu
 

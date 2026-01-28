@@ -28,9 +28,12 @@ Xuất phát từ thực tế đó, nhóm 02 quyết định xây dựng #strong
 + #strong[Mục tiêu học thuật:]
   - Vận dụng kiến thức môn Quản Lý Thông Tin để phân tích, thiết kế và cài đặt một cơ sở dữ liệu hoàn chỉnh (SQL Server), bao gồm các ràng buộc toàn vẹn và kỹ thuật xử lý nâng cao (Store Procedure, Trigger).
 + #strong[Mục tiêu ứng dụng:] Xây dựng giải pháp phần mềm hỗ trợ 3 nhóm đối tượng chính:
-  - #strong[Quản trị viên (Admin):] Quản lý toàn diện hệ thống (Phòng, Giá, Nhân viên).
-  - #strong[Nhân viên (Staff):] Thao tác nghiệp vụ hàng ngày (Check-in, Check-out, Thanh toán).
-  - #strong[Khách hàng (End User):] Tìm kiếm và đặt phòng trực tuyến.
+  - #strong[Quản trị viên (Admin):]
+    - Quản lý toàn diện hệ thống (Phòng, Giá, Nhân viên).
+  - #strong[Nhân viên (Staff):]
+    - Thao tác nghiệp vụ hàng ngày (Check-in, Check-out, Thanh toán).
+  - #strong[Khách hàng (End User):]
+    - Tìm kiếm và đặt phòng trực tuyến.
 
 == Phạm Vi & Đối Tượng Nghiên Cứu
 <pham-vi-doi-tuong-nghien-cuu>
