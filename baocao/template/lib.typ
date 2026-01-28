@@ -163,6 +163,8 @@
     author: author,
     assignment: assignment,
   )
+
+  // Ngắt trang sau trang bìa.
   pagebreak()
 
   // MARK: Thesis Summary
