@@ -1,8 +1,8 @@
 {
       "id": "sp-service-usage",
-      "title": "SP 4: Sử Dụng Dịch Vụ",
+      "title": "SP_SU_DUNG_DICH_VU",
       "type": "Stored Procedure",
-      "shortDesc": "Stored Procedure để thêm dịch vụ cho booking",
+      "shortDesc": "Stored Procedure để thêm Dịch Vụ cho đơn Đặt Phòng.",
       "mdFile": "StoreProcedure/Demo_Service/problem.html",
       "sqlFile": "StoreProcedure/Demo_Service/sp_Service.sql",
       "separateTables": [

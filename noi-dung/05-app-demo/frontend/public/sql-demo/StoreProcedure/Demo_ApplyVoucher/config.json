@@ -1,6 +1,6 @@
 {
       "id": "sp-apply-voucher",
-      "title": "SP 2: Áp Dụng Voucher",
+      "title": "SP_AP_DUNG_VOUCHER",
       "type": "Stored Procedure",
       "shortDesc": "Stored Procedure để kiểm tra và áp dụng voucher giảm giá",
       "mdFile": "StoreProcedure/Demo_ApplyVoucher/problem.html",
