@@ -1,6 +1,6 @@
 {
       "id": "sp-review-room",
-      "title": "SP 3: Đánh Giá Phòng",
+      "title": "SP_DANHGIA",
       "type": "Stored Procedure",
       "shortDesc": "Stored Procedure để khách hàng đánh giá phòng sau khi check-out",
       "mdFile": "StoreProcedure/Demo_ReviewRoom/problem.html",

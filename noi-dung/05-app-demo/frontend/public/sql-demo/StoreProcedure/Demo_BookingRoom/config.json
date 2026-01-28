@@ -1,6 +1,6 @@
 {
       "id": "sp-booking-room",
-      "title": "SP 1: Đặt Phòng",
+      "title": "SP_DATPHONG",
       "type": "Stored Procedure",
       "shortDesc": "Stored Procedure để tạo booking mới và thêm chi tiết phòng",
       "mdFile": "StoreProcedure/Demo_BookingRoom/sp_BookingRoom.html",

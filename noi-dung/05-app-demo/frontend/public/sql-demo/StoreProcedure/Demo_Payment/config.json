@@ -1,6 +1,6 @@
 {
       "id": "sp-payment",
-      "title": "SP 5: Thanh Toán",
+      "title": "SP_THANHTOAN",
       "type": "Stored Procedure",
       "shortDesc": "Stored Procedure để ghi nhận thanh toán và cập nhật trạng thái booking",
       "mdFile": "StoreProcedure/Demo_Payment/problem.html",
