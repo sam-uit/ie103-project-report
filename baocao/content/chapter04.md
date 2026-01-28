@@ -10,10 +10,35 @@ Hệ thống sử dụng các đối tượng lập trình cơ sở dữ liệu 
 
 Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như đặt phòng, thanh toán và áp dụng khuyến mãi.
 
-#### SP1: ApplyVoucher
+#### SP1 – Đặt phòng
+
+- Tên gọi: `SP_DATPHONG`.
+- **Mục đích:** Thực hiện chức năng **đặt phòng** cho người dùng.
+    - Kiểm tra phòng tồn tại và khả dụng.
+    - Tạo bản ghi đặt phòng.
+    - Lưu chi tiết phòng.
+    - Cập nhật trạng thái phòng.
+- **Tham số vào:**
+
+<!-- | Tên tham số | Kiểu dữ liệu | Bắt buộc | Mô tả |
+|------------|------------|----------|------|
+| `@UserId` | `INT` | ✔ | ID người dùng |
+| `@SoPhong` | `NVARCHAR(20)` | ✔ | Số phòng |
+| `@CheckIn` | `DATETIME` | ✔ | Thời gian check-in |
+| `@CheckOut` | `DATETIME` | ✔ | Thời gian check-out |
+| `@VoucherId` | `INT` | ✖ | Voucher (nếu có) | -->
 
 ```{=typst}
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+#table(
+  columns: (20%, 20%, 20%, 40%),
+  align: (left, left, left, left),
+  [Tên tham số], [Kiểu dữ liệu], [Bắt buộc], [Mô tả],
+  [`@UserId`], [`INT`], [#sym.checkmark], [ID người dùng],
+  [`@SoPhong`], [`NVARCHAR(20)`], [#sym.checkmark], [Số phòng],
+  [`@CheckIn`], [`DATETIME`], [#sym.checkmark], [Thời gian check-in],
+  [`@CheckOut`], [`DATETIME`], [#sym.checkmark], [Thời gian check-out],
+  [`@VoucherId`], [`INT`], [#sym.crossmark], [Voucher (nếu có)]
+)
 ```
 
 #### SP2: BookingRoom
