@@ -1,8 +1,6 @@
-﻿--Cursor 1: Tự động hoàn tất đơn đặt phòng (Check-out quá hạn)
---Cursor này quét các đơn đang ở trạng thái 'CONFIRMED' nhưng đã quá giờ trả phòng để chuyển sang 'COMPLETED'.
-
---Cursor 1 (Xử lý theo sự kiện thời gian): Giúp hệ thống tự động hóa việc kết thúc quy trình đặt phòng. Nó không--
---          chỉ tác động lên bảng DATPHONG mà còn "dọn dẹp" trạng thái ở bảng PHONG để đón khách mới.           --
+﻿-- Cursor: Tự động hoàn tất đơn đặt phòng (Check-out quá hạn)
+-- Cursor này quét các đơn đang ở trạng thái 'CONFIRMED' nhưng đã quá giờ trả phòng để chuyển sang 'COMPLETED'.
+-- Cursor (Xử lý theo sự kiện thời gian): Giúp hệ thống tự động hóa việc kết thúc quy trình đặt phòng. Nó không chỉ tác động lên bảng DATPHONG mà còn "dọn dẹp" trạng thái ở bảng PHONG để đón khách mới.
 
 DECLARE @id_datphong INT;
 DECLARE @dem_completed INT = 0;
