@@ -47,7 +47,7 @@ Hệ thống được thiết kế phù hợp cho mô hình:
 - Khách sạn, nhà nghỉ, homestay quy mô nhỏ và vừa.
 - Hỗ trợ quy trình đặt phòng trực tiếp (tại quầy) và đặt phòng trực tuyến (qua ứng dụng).
 
-#emph[Lưu ý:] Trong khuôn khổ đồ án môn học, hệ thống sẽ mô phỏng tính năng thanh toán trực tuyến và chưa tích hợp với các kênh OTA (như Agoda, Booking.com).
+Trong khuôn khổ #emph[Đồ Án Môn Học], hệ thống sẽ mô phỏng tính năng thanh toán trực tuyến và chưa tích hợp với các kênh OTA (như Agoda, Booking.com).
 
 === Các Bên Liên Quan (Stakeholders)
 <cac-ben-lien-quan-stakeholders>
