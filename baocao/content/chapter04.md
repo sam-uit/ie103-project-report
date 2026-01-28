@@ -151,10 +151,10 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 - **Mục Đích:**
     - Tự động hóa việc kết thúc quy trình đặt phòng.
     - Hệ thống quét các đơn đặt phòng đã quá hạn trả phòng (`Check-out`) nhưng trạng thái vẫn là `CONFIRMED` để chuyển sang `COMPLETED` và giải phóng phòng.
-- **Logic xử lý:**
+- **Logic Xử Lý:**
     - Khai báo Cursor quét bảng `DATPHONG`.
     - Điều kiện lọc: `trang_thai = 'CONFIRMED'` VÀ `check_out < GETDATE()` (Thời gian hiện tại đã vượt qua giờ check-out).
-    - **Xử lý ngoại lệ:** Vòng lặp xử lý từng đơn:
+    - **Xử Lý Ngoại Lệ:** Vòng lặp xử lý từng đơn:
         + Cập nhật trạng thái đơn (`DATPHONG`) thành `COMPLETED`.
         + Tìm các phòng liên quan trong bảng `CT_DATPHONG` và cập nhật trạng thái phòng (`PHONG`) về `AVAILABLE` (Sẵn sàng đón khách mới).
         + Đếm số lượng đơn đã xử lý và in log thông báo.
