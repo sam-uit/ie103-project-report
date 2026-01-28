@@ -3,8 +3,8 @@
       "title": "SP_SU_DUNG_DICH_VU",
       "type": "Stored Procedure",
       "shortDesc": "Stored Procedure để thêm Dịch Vụ cho đơn Đặt Phòng.",
-      "mdFile": "StoreProcedure/Demo_Service/problem.html",
-      "sqlFile": "StoreProcedure/Demo_Service/sp_Service.sql",
+      "mdFile": "StoreProcedure/SP_SU_DUNG_DICH_VU/SP_SU_DUNG_DICH_VU.html",
+      "sqlFile": "StoreProcedure/SP_SU_DUNG_DICH_VU/SP_SU_DUNG_DICH_VU.sql",
       "separateTables": [
             {
                   "name": "DATPHONG",

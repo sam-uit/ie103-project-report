@@ -4,7 +4,7 @@
             "SP_DANHGIA",
             "SP_THANHTOAN",
             "SP_AP_DUNG_VOUCHER",
-            "Demo_ApplyVoucher",
+            "SP_SU_DUNG_DICH_VU",
             "Demo_RegisterUser",
             "Demo_Checkout"
       ]
