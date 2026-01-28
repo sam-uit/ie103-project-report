@@ -166,6 +166,9 @@
 
   // Ngắt trang sau trang bìa.
   pagebreak()
+  // Có thể bổ sung trang bìa mềm ở đây
+  // ----- BÌA MỀM --------------------
+
 
   // MARK: Thesis Summary
   if doc-type == "thesis" {
