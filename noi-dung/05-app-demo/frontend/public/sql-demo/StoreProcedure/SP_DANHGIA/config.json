@@ -3,7 +3,7 @@
       "title": "SP_DANHGIA",
       "type": "Stored Procedure",
       "shortDesc": "Stored Procedure để khách hàng đánh giá phòng sau khi check-out",
-      "mdFile": "StoreProcedure/SP_DANHGIA/problem.html",
+      "mdFile": "StoreProcedure/SP_DANHGIA/SP_DANHGIA.html",
       "sqlFile": "StoreProcedure/SP_DANHGIA/SP_DANHGIA.sql",
       "separateTables": [
             {
