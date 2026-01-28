@@ -121,7 +121,6 @@ CREATE TRIGGER ...
 
 ## B5: Kết Quả Sau Thực Thi
 [Bảng sau khi thực thi]
-```
 
 ### Bước 3: Tạo `script.sql`
 
