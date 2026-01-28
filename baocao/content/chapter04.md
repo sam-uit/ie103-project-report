@@ -45,7 +45,7 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 #todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
 ```
 
-#### SP2: Thanh Toán Đặt Phòng
+#### SP2 - Thanh Toán Đặt Phòng
 
 - Tên gọi: `SP_THANHTOAN`.
 - **Mục đích:** Thực hiện chức năng **thanh toán** cho người dùng.
@@ -96,16 +96,66 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 #todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
 ```
 
-#### SP3: Checkout
+#### SP3 - Đánh Giá
+
+- Tên gọi: `SP_DANHGIA`.
+- **Mục đích:** Thực hiện chức năng **đánh giá** của người dùng sau khi *đã hoàn thành đặt phòng* (*COMPLETED*).
+    - Đảm bảo chỉ đánh giá khi đã ở xong.
+    - Mỗi đặt phòng chỉ được đánh giá **1 lần**.
+    - Lưu đánh giá ở trạng thái chờ duyệt (`CHO_XU_LY`).
+    - Hỗ trợ quản trị viên kiểm duyệt nội dung.
+- **Bảng liên quan:**
+
+<!-- | stt | Bảng | Mô tả |
+|---:|----|------|
+| 1 | `DATPHONG` | Thông tin đặt phòng |
+| 2 | `PHONG` | Thông tin phòng |
+| 3 | `REVIEWS` | Đánh giá của người dùng |
+| 4 | `USERS` | Người đánh giá | -->
 
 ```{=typst}
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+#table(
+  columns: (8%, 32%, 60%),
+  align: (right, left, left),
+  [stt], [Bảng], [Mô tả],
+  [`1`], [`DATPHONG`], [Thông tin đặt phòng],
+  [`2`], [`PHONG`], [Thông tin phòng],
+  [`3`], [`REVIEWS`], [Đánh giá của người dùng],
+  [`4`], [`USERS`], [Người đánh giá]
+)
+```
+
+- **Tham số vào:**
+
+<!-- | stt | Tham số | Kiểu dữ liệu | Bắt buộc | Mô tả |
+|---:|------------|------------|----------|------|
+| 1 | `@UserId` | INT | ✔ | ID người đánh giá |
+| 2 | `@DatPhongId` | INT | ✔ | ID đặt phòng |
+| 3 | `@SoPhong` | NVARCHAR(20) | ✔ | Số phòng được đánh giá |
+| 4 | `@SoSao` | INT | ✔ | Số sao (1 → 5) |
+| 5 | `@BinhLuan` | NVARCHAR(1000) | ✖ | Nội dung đánh giá | -->
+
+```{=typst}
+#table(
+  columns: (8%, 15%, 18%, 14%, 46%),
+  align: (right, left, left, left, left),
+  [stt], [Tham số], [Kiểu dữ liệu], [Bắt buộc], [Mô tả],
+  [`1`], [`@UserId`], [`INT`], [#text(fill: blue)[#sym.checkmark]], [ID người đánh giá],
+  [`2`], [`@DatPhongId`], [`INT`], [#text(fill: blue)[#sym.checkmark]], [ID đặt phòng],
+  [`3`], [`@SoPhong`], [`NVARCHAR(20)`], [#text(fill: blue)[#sym.checkmark]], [Số phòng được đánh giá],
+  [`4`], [`@SoSao`], [`INT`], [#text(fill: blue)[#sym.checkmark]], [Số sao (1 → 5)],
+  [`5`], [`@BinhLuan`], [`NVARCHAR(1000)`], [#text(fill: red)[#sym.crossmark]], [Nội dung đánh giá]
+)
+```
+
+```{=typst}
+#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
 ```
 
 #### SP4: Payment
 
 ```{=typst}
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
 ```
 
 #### SP5: RegisterUser
