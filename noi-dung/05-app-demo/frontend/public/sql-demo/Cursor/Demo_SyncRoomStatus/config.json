@@ -1,37 +1,37 @@
 {
-      "id": "cur-sync-room-status",
-      "title": "Cursor 2: Đồng bộ trạng thái phòng thực tế với trạng thái phòng trong hệ thống",
-      "type": "Cursor",
-      "shortDesc": "Cursor đồng bộ trạng thái phòng thực tế với trạng thái phòng trong hệ thống",
-      "mdFile": "Cursor/Demo_SyncRoomStatus/problem.html",
-      "sqlFile": "Cursor/Demo_SyncRoomStatus/cs_DONGBOTRANGTHAIPHONGTHUCTE.sql",
-      "separateTables": [
-            {
-                  "name": "PHONG",
-                  "label": "🎟️ Kiểm tra các phòng đang trong thời gian check in và check out",
-                  "sqlBefore": "SELECT dp.id AS dat_phong_id, p.so_phong, dp.trang_thai as trang_thai_dat_phong,p.trang_thai FROM CT_DATPHONG ct JOIN DATPHONG dp ON ct.datphong_id = dp.id JOIN PHONG p ON p.id = ct.phong_id WHERE GETDATE() BETWEEN dp.check_in AND dp.check_out",
-                  "sqlAfter": "SELECT dp.id AS dat_phong_id, p.so_phong, dp.trang_thai as trang_thai_dat_phong,p.trang_thai FROM CT_DATPHONG ct JOIN DATPHONG dp ON ct.datphong_id = dp.id JOIN PHONG p ON p.id = ct.phong_id WHERE GETDATE() BETWEEN dp.check_in AND dp.check_out",
-                  "sqlFetchInitial": "SELECT dp.id AS dat_phong_id, p.so_phong, dp.trang_thai as trang_thai_dat_phong,p.trang_thai FROM CT_DATPHONG ct JOIN DATPHONG dp ON ct.datphong_id = dp.id JOIN PHONG p ON p.id = ct.phong_id WHERE GETDATE() BETWEEN dp.check_in AND dp.check_out",
-                  "columns": [
-                        {
-                              "key": "dat_phong_id",
-                              "label": "Mã Đặt Phòng"
-                        },
-                        {
-                              "key": "so_phong",
-                              "label": "Số Phòng"
-                        },
-                        {
-                              "key": "trang_thai_dat_phong",
-                              "label": "Trạng Thái Đặt Phòng"
-                        },
-                        {
-                              "key": "trang_thai",
-                              "label": "Trạng Thái Phòng"
-                        }
-                  ]
-            }
-      ],
-      "params": [],
-      "mockData": {}
+    "id": "cur-sync-room-status",
+    "title": "Cursor 02: Đồng Bộ Trạng Thái Phòng Thực Tế",
+    "type": "Cursor",
+    "shortDesc": "Cursor đồng bộ trạng thái phòng thực tế với trạng thái phòng trong hệ thống.",
+    "mdFile": "Cursor/Demo_SyncRoomStatus/problem.html",
+    "sqlFile": "Cursor/Demo_SyncRoomStatus/cs_DONGBOTRANGTHAIPHONGTHUCTE.sql",
+    "separateTables": [
+        {
+            "name": "PHONG",
+            "label": "Kiểm Tra Các Phòng Đang Trong Thời Gian Check In Và Check Out",
+            "sqlBefore": "SELECT dp.id AS dat_phong_id, p.so_phong, dp.trang_thai as trang_thai_dat_phong,p.trang_thai FROM CT_DATPHONG ct JOIN DATPHONG dp ON ct.datphong_id = dp.id JOIN PHONG p ON p.id = ct.phong_id WHERE GETDATE() BETWEEN dp.check_in AND dp.check_out",
+            "sqlAfter": "SELECT dp.id AS dat_phong_id, p.so_phong, dp.trang_thai as trang_thai_dat_phong,p.trang_thai FROM CT_DATPHONG ct JOIN DATPHONG dp ON ct.datphong_id = dp.id JOIN PHONG p ON p.id = ct.phong_id WHERE GETDATE() BETWEEN dp.check_in AND dp.check_out",
+            "sqlFetchInitial": "SELECT dp.id AS dat_phong_id, p.so_phong, dp.trang_thai as trang_thai_dat_phong,p.trang_thai FROM CT_DATPHONG ct JOIN DATPHONG dp ON ct.datphong_id = dp.id JOIN PHONG p ON p.id = ct.phong_id WHERE GETDATE() BETWEEN dp.check_in AND dp.check_out",
+            "columns": [
+                {
+                    "key": "dat_phong_id",
+                    "label": "Mã Đặt Phòng"
+                },
+                {
+                    "key": "so_phong",
+                    "label": "Số Phòng"
+                },
+                {
+                    "key": "trang_thai_dat_phong",
+                    "label": "Trạng Thái Đặt Phòng"
+                },
+                {
+                    "key": "trang_thai",
+                    "label": "Trạng Thái Phòng"
+                }
+            ]
+        }
+    ],
+    "params": [],
+    "mockData": {}
 }
