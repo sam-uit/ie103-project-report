@@ -15,17 +15,18 @@ Mở đầu cho bản #emph[Báo Cáo Đồ Án], trong chương này, nhóm 02 
 Trong bối cảnh ngành du lịch và dịch vụ lưu trú phát triển mạnh mẽ, nhu cầu quản lý vận hành tại các khách sạn, nhà nghỉ và homestay ngày càng trở nên cấp thiết. Tuy nhiên, tại các cơ sở quy mô nhỏ và vừa, quy trình quản lý hiện tại vẫn còn tồn tại nhiều bất cập:
 
 - #strong[Quản lý thủ công:] Việc ghi chép sổ sách hoặc sử dụng Excel rời rạc hoặc các cuộc chat Zalo, Facebook riêng lẻ, dẫn đến sai sót, khó tra cứu lịch sử và dễ mất mát dữ liệu.
-- #strong[Xung đột đặt phòng (Overbooking):] Khó kiểm soát trạng thái phòng theo thời gian thực, dẫn đến nhận trùng khách cho cùng một phòng.
+- #strong[Xung đột đặt phòng:] Khó kiểm soát trạng thái phòng theo thời gian thực, dẫn đến nhận trùng khách cho cùng một phòng.
 - #strong[Báo cáo khó khăn:] Chủ doanh nghiệp gặp khó khăn trong việc tổng hợp doanh thu, thống kê hiệu suất kinh doanh theo ngày/tháng.
 
-Xuất phát từ thực tế đó, Nhóm 02 quyết định xây dựng #strong["Booking Management System (BMS)"] - Hệ thống quản lý đặt phòng tập trung, nhằm giải quyết các bài toán trên bằng công nghệ cơ sở dữ liệu quan hệ.
+Xuất phát từ thực tế đó, nhóm 02 quyết định xây dựng #strong["Booking Management System (BMS)"] - Hệ Thống Quản Lý Đặt Phòng tập trung, nhằm giải quyết các bài toán trên bằng công nghệ cơ sở dữ liệu quan hệ.
 
 === Mục Tiêu Đề Tài
 <muc-tieu-de-tai>
 
 Đồ án tập trung vào hai mục tiêu chính:
 
-+ #strong[Mục tiêu học thuật:] Vận dụng kiến thức môn Quản Lý Thông Tin để phân tích, thiết kế và cài đặt một cơ sở dữ liệu hoàn chỉnh (SQL Server), bao gồm các ràng buộc toàn vẹn và kỹ thuật xử lý nâng cao (Store Procedure, Trigger).
++ #strong[Mục tiêu học thuật:]
+  - Vận dụng kiến thức môn Quản Lý Thông Tin để phân tích, thiết kế và cài đặt một cơ sở dữ liệu hoàn chỉnh (SQL Server), bao gồm các ràng buộc toàn vẹn và kỹ thuật xử lý nâng cao (Store Procedure, Trigger).
 + #strong[Mục tiêu ứng dụng:] Xây dựng giải pháp phần mềm hỗ trợ 3 nhóm đối tượng chính:
   - #strong[Quản trị viên (Admin):] Quản lý toàn diện hệ thống (Phòng, Giá, Nhân viên).
   - #strong[Nhân viên (Staff):] Thao tác nghiệp vụ hàng ngày (Check-in, Check-out, Thanh toán).
