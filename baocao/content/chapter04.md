@@ -13,43 +13,43 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 #### SP1: ApplyVoucher
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### SP2: BookingRoom
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### SP3: Checkout
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### SP4: Payment
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### SP5: RegisterUser
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### SPx: Review Room
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### SPx: Service
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 ### Triggers (5)
@@ -59,31 +59,31 @@ Sử dụng Trigger để đảm bảo toàn vẹn dữ liệu và tự động 
 #### TG1: AutoPrice
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### TG2: CheckTime
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### TG3: Payment
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### TG4: Refund
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### TG5: SyncStatus
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 ### Functions (3)
@@ -93,19 +93,19 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
 #### F1: CheckRoomAvailable
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### F2: RevertCreateError
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### F3 (WIP)
 
 ```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 ### Cursors (2)
