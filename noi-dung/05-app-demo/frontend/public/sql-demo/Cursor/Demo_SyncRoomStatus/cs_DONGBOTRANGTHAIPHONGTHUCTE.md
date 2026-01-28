@@ -5,13 +5,14 @@
 - **Mục đích:**
     - Cursor này đảm bảo trạng thái hiển thị của phòng (`AVAILABLE`, `OCCUPIED`, `MAINTENANCE`, `RESERVED`) trên giao diện luôn khớp với dữ liệu đặt phòng thực tế trong cơ sở dữ liệu.
 - **Logic xử lý:**
-    - Duyệt qua tất cả các phòng trong bảng `PHONG`, lấy thông tin id, so_phong và trang_thai hiện tại.
+    - Duyệt qua tất cả các phòng trong bảng `PHONG`, lấy thông tin `id`, `so_phong` và `trang_thai` hiện tại.
     - Với mỗi phòng, thực hiện truy vấn kiểm tra xem có đơn đặt phòng nào đang hoạt động (Trạng thái `CONFIRMED` và thời gian hiện tại nằm trong khoảng lưu trú).
     - Cập nhật:
-        + Trường hợp 1 (Có khách đang ở): Nếu trạng thái hiện tại chưa phải `OCCUPIED` -> Cập nhật thành `OCCUPIED`.
+        + Trường hợp 1 (Có khách đang ở):
+            - Nếu trạng thái hiện tại chưa phải `OCCUPIED` $\to$ Cập nhật thành `OCCUPIED`.
         + Trường hợp 2 (Không có khách):
-            - Nếu trạng thái hiện tại là `OCCUPIED` (tức là dữ liệu cũ bị sai/treo) -> Trả về `AVAILABLE`.
-            - Nếu trạng thái hiện tại là `MAINTENANCE` (Bảo trì) hoặc `RESERVED` (Đã đặt trước) -> Giữ nguyên, không can thiệp.
+            - Nếu trạng thái hiện tại là `OCCUPIED` (tức là dữ liệu cũ bị sai/treo) $\to$ Trả về `AVAILABLE`.
+            - Nếu trạng thái hiện tại là `MAINTENANCE` (Bảo trì) hoặc `RESERVED` (Đã đặt trước) $\to$ Giữ nguyên, không can thiệp.
 
 #### 2. Source Code
 
@@ -83,9 +84,9 @@ GO
     - 102: AVAILABLE (Sai)
     - 503: MAINTENANCE (Đúng)
 - **Kết quả mong đợi:**
-    - Phòng 101 -> Giữ nguyên là `AVAILABLE`
-    - Phòng 102 -> Được sửa thành `OCCUPIED`.
-    - Phòng 503 -> Giữ nguyên là `MAINTENANCE`
+    - Phòng 101 $\to$ Giữ nguyên là `AVAILABLE`
+    - Phòng 102 $\to$ Được sửa thành `OCCUPIED`.
+    - Phòng 503 $\to$ Giữ nguyên là `MAINTENANCE`
 
 Kết quả:
 
