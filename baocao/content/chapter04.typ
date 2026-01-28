@@ -15,10 +15,28 @@ Hệ thống sử dụng các đối tượng lập trình cơ sở dữ liệu 
 
 Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như đặt phòng, thanh toán và áp dụng khuyến mãi.
 
-==== SP1: ApplyVoucher
-<sp1-applyvoucher>
+==== SP1 -- Đặt Phòng
+<sp1-dat-phong>
 
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+- Tên gọi: `SP_DATPHONG`.
+- #strong[Mục đích:] Thực hiện chức năng #strong[đặt phòng] cho người dùng.
+  - Kiểm tra phòng tồn tại và khả dụng.
+  - Tạo bản ghi đặt phòng.
+  - Lưu chi tiết phòng.
+  - Cập nhật trạng thái phòng.
+- #strong[Tham số vào:]
+
+#table(
+  columns: (20%, 20%, 20%, 40%),
+  align: (left, left, left, left),
+  [Tên tham số], [Kiểu dữ liệu], [Bắt buộc], [Mô tả],
+  [`@UserId`], [`INT`], [#text(fill: blue)[#sym.checkmark]], [ID người dùng],
+  [`@SoPhong`], [`NVARCHAR(20)`], [#text(fill: blue)[#sym.checkmark]], [Số phòng],
+  [`@CheckIn`], [`DATETIME`], [#text(fill: blue)[#sym.checkmark]], [Thời gian check-in],
+  [`@CheckOut`], [`DATETIME`], [#text(fill: blue)[#sym.checkmark]], [Thời gian check-out],
+  [`@VoucherId`], [`INT`], [#text(fill: red)[#sym.crossmark]], [Voucher (nếu có)]
+)
+#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
 
 ==== SP2: BookingRoom
 <sp2-bookingroom>
