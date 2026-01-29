@@ -1,9 +1,9 @@
 {
-      "demos": [
-            "SP_DATPHONG",
-            "SP_DANHGIA",
-            "SP_THANHTOAN",
-            "SP_AP_DUNG_VOUCHER",
-            "SP_SU_DUNG_DICH_VU"
-      ]
+    "demos": [
+        "SP_DATPHONG",
+        "SP_DANHGIA",
+        "SP_THANHTOAN",
+        "SP_AP_DUNG_VOUCHER",
+        "SP_SU_DUNG_DICH_VU"
+    ]
 }
