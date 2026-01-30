@@ -95,9 +95,19 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 )
 ```
 
-```{=typst}
-#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
-```
+**Ví dụ thực hiện**:
+
+- Một đơn Đặt Phòng có thể được thanh toán nhiều lần. Lần 1:
+
+![SP_THANHTOAN - Thanh Toán lần 1.](demo/SP_THANHTOAN-01.png)
+
+- Lần 2:
+
+![SP_THANHTOAN - Thanh Toán lần 2.](demo/SP_THANHTOAN-02.png)
+
+- Hoàn thành Thanh Toán: đơn Đặt Phòng chuyển trạng thái sang `COMPLETED`.
+
+![SP_THANHTOAN - Hoàn thành Thanh Toán.](demo/SP_THANHTOAN-03.png)
 
 #### SP3 - Đánh Giá
 
