@@ -232,13 +232,36 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 Sử dụng Trigger để đảm bảo toàn vẹn dữ liệu và tự động cập nhật trạng thái.
 
-==== TG1: AutoPrice
-<tg1-autoprice>
-
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-
 ==== TG2: CheckTime
 <tg2-checktime>
+
+- Xây dựng #strong[Trigger] để đảm bảo tính hợp lệ của dữ liệu thời gian khi đặt phòng trong hệ thống quản lý khách sạn.
+
+Trong hệ thống đặt phòng khách sạn, cần đảm bảo rằng:
+
+- Thời gian trả phòng (`check_out`) phải #strong[lớn hơn hoặc bằng] thời gian nhận phòng (`check_in`).
+- Ngăn chặn dữ liệu không hợp lệ được lưu vào cơ sở dữ liệu.
+- Báo lỗi rõ ràng cho người dùng khi nhập sai.
+
+Sử dụng #strong[AFTER Trigger] trên bảng `DATPHONG` để:
+
++ Kiểm tra điều kiện thời gian sau khi INSERT hoặc UPDATE
++ Sử dụng bảng ảo `inserted` để truy cập dữ liệu mới
++ ROLLBACK transaction nếu phát hiện lỗi
++ Hiển thị thông báo lỗi chi tiết
+
+#strong[Ví dụ thực hiện]:
+
+- Thời gian check-out lớn hơn check-in, nên thực hiện thành công.
+
+#figure(image("demo/TRG-CHECKTIME.png"),
+  caption: [
+    TRG-CHECKTIME - Kết quả
+  ]
+)
+
+==== TG1: AutoPrice
+<tg1-autoprice>
 
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 
