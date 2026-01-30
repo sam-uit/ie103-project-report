@@ -227,16 +227,6 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
   ]
 )
 
-==== SPx: Review Room
-<spx-review-room>
-
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-
-==== SPx: Service
-<spx-service>
-
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-
 === Triggers (5)
 <triggers-5>
 

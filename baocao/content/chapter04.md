@@ -226,18 +226,6 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 ![SP_SU_DUNG_DICH_VU - Kết quả](demo/SP_SU_DUNG_DICH_VU-03.png)
 
-#### SPx: Review Room
-
-```{=typst}
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-```
-
-#### SPx: Service
-
-```{=typst}
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-```
-
 ### Triggers (5)
 
 Sử dụng Trigger để đảm bảo toàn vẹn dữ liệu và tự động cập nhật trạng thái.
