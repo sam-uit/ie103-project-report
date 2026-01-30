@@ -171,6 +171,19 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 #### SP5 - Sử Dụng Dịch Vụ
 
+- **Tên**: `SP_SU_DUNG_DICH_VU`.
+- **Mục đích**: Ghi nhận việc khách hàng sử dụng dịch vụ đi kèm (ăn sáng, giặt ủi, đưa đón sân bay, v.v.) trong thời gian lưu trú.
+    - Khách hàng có thể gọi dịch vụ đi kèm bất cứ lúc nào trong thời gian lưu trú.
+    - Mỗi lần gọi dịch vụ được ghi nhận riêng biệt.
+    - Đơn giá được lưu lại tại thời điểm sử dụng (tránh thay đổi giá sau này ảnh hưởng đến hóa đơn).
+- Tham số đầu vào:
+    - `@DatPhongId (INT)`: ID của đặt phòng.
+    - `@DichVuId (INT)`: ID của dịch vụ được sử dụng.
+    - `@SoLuong (INT, mặc định = 1)`: Số lượng dịch vụ.
+    - `@GhiChu (NVARCHAR(500), tùy chọn)`: Ghi chú về việc sử dụng dịch vụ.
+    - `@ServiceUsageId (INT OUTPUT)`: ID của bản ghi sử dụng dịch vụ vừa tạo.
+
+
 ```{=typst}
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
