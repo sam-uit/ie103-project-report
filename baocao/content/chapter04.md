@@ -165,9 +165,19 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
     - `@TienGiam (DECIMAL(18,2))`: Số tiền được giảm.
     - `@TongTienSauGiam (DECIMAL(18,2))`: Tổng tiền sau khi áp dụng giảm giá.
 
-```{=typst}
-#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
-```
+**Ví dụ sử dụng**:
+
+- Đặt Phòng ID số 4 hiện chưa có voucher.
+
+![SP_AP_DUNG_VOUCHER - Trước khi thực hiện](demo/SP_AP_DUNG_VOUCHER-01.png)
+
+- Thực thi SP áp dụng voucher.
+
+![SP_AP_DUNG_VOUCHER - Áp Dụng Voucher](demo/SP_AP_DUNG_VOUCHER-02.png)
+
+- Đặt Phòng ID số 4 hiện đã có voucher áp dụng.
+
+![SP_AP_DUNG_VOUCHER - Kết quả](demo/SP_AP_DUNG_VOUCHER-03.png)
 
 #### SP5 - Sử Dụng Dịch Vụ
 
@@ -183,10 +193,19 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
     - `@GhiChu (NVARCHAR(500), tùy chọn)`: Ghi chú về việc sử dụng dịch vụ.
     - `@ServiceUsageId (INT OUTPUT)`: ID của bản ghi sử dụng dịch vụ vừa tạo.
 
+**Ví dụ sử dụng**:
 
-```{=typst}
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-```
+- Đặt Phòng ID số 2 hiện chưa có dịch vụ sử dụng.
+
+![SP_SU_DUNG_DICH_VU - Trước khi thực hiện](demo/SP_SU_DUNG_DICH_VU-01.png)
+
+- Thực thi SP sử dụng dịch vụ: Dịch Vụ ID = 1, Coca Cola.
+
+![SP_SU_DUNG_DICH_VU - Sử Dụng Dịch Vụ](demo/SP_SU_DUNG_DICH_VU-02.png)
+
+- Đặt Phòng ID số 2 hiện đã có dịch vụ sử dụng.
+
+![SP_SU_DUNG_DICH_VU - Kết quả](demo/SP_SU_DUNG_DICH_VU-03.png)
 
 #### SPx: Review Room
 
