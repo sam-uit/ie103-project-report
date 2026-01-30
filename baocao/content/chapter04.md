@@ -148,17 +148,28 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 )
 ```
 
+#### SP4 - Áp Dụng Voucher
+
+- **Tên**: `SP_AP_DUNG_VOUCHER`
+- **Mục đích**: Áp dụng mã giảm giá (voucher) cho một đặt phòng và tự động tính toán số tiền giảm giá.
+    - Mỗi đặt phòng chỉ có thể áp dụng tối đa một mã giảm giá.
+    - Mã giảm giá phải còn hạn sử dụng và chưa hết số lượng.
+    - Tổng tiền đặt phòng phải đạt mức tối thiểu để áp dụng voucher.
+    - Chỉ áp dụng được khi đặt phòng ở trạng thái `PENDING`.
+- **Bảng liên quan**: `VOUCHERS`, `DATPHONG`, `CT_DATPHONG`.
+- **Tham số đầu vào**:
+    - `@DatPhongId (INT)`: ID của đặt phòng.
+    - `@VoucherCode (NVARCHAR(50))`: Mã voucher cần áp dụng.
+- **Tham số đầu ra**:
+    - `@TongTienPhong (DECIMAL(18,2))`: Tổng tiền phòng trước khi giảm.
+    - `@TienGiam (DECIMAL(18,2))`: Số tiền được giảm.
+    - `@TongTienSauGiam (DECIMAL(18,2))`: Tổng tiền sau khi áp dụng giảm giá.
+
 ```{=typst}
 #todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
 ```
 
-#### SP4: Payment
-
-```{=typst}
-#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
-```
-
-#### SP5: RegisterUser
+#### SP5 - Sử Dụng Dịch Vụ
 
 ```{=typst}
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]

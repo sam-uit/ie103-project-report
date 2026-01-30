@@ -99,15 +99,29 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
   [`4`], [`@SoSao`], [`INT`], [#text(fill: blue)[#sym.checkmark]], [Số sao (1 → 5)],
   [`5`], [`@BinhLuan`], [`NVARCHAR(1000)`], [#text(fill: red)[#sym.crossmark]], [Nội dung đánh giá]
 )
+
+==== SP4 - Áp Dụng Voucher
+<sp4-ap-dung-voucher>
+
+- #strong[Tên]: `SP_AP_DUNG_VOUCHER`
+- #strong[Mục đích]: Áp dụng mã giảm giá (voucher) cho một đặt phòng và tự động tính toán số tiền giảm giá.
+  - Mỗi đặt phòng chỉ có thể áp dụng tối đa một mã giảm giá.
+  - Mã giảm giá phải còn hạn sử dụng và chưa hết số lượng.
+  - Tổng tiền đặt phòng phải đạt mức tối thiểu để áp dụng voucher.
+  - Chỉ áp dụng được khi đặt phòng ở trạng thái `PENDING`.
+- #strong[Bảng liên quan]: `VOUCHERS`, `DATPHONG`, `CT_DATPHONG`.
+- #strong[Tham số đầu vào]:
+  - `@DatPhongId (INT)`: ID của đặt phòng.
+  - `@VoucherCode (NVARCHAR(50))`: Mã voucher cần áp dụng.
+- #strong[Tham số đầu ra]:
+  - `@TongTienPhong (DECIMAL(18,2))`: Tổng tiền phòng trước khi giảm.
+  - `@TienGiam (DECIMAL(18,2))`: Số tiền được giảm.
+  - `@TongTienSauGiam (DECIMAL(18,2))`: Tổng tiền sau khi áp dụng giảm giá.
+
 #todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
 
-==== SP4: Payment
-<sp4-payment>
-
-#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
-
-==== SP5: RegisterUser
-<sp5-registeruser>
+==== SP5 - Sử Dụng Dịch Vụ
+<sp5-su-dung-dich-vu>
 
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 
