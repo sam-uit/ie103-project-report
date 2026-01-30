@@ -36,7 +36,16 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
   [`@CheckOut`], [`DATETIME`], [#text(fill: blue)[#sym.checkmark]], [Thời gian check-out],
   [`@VoucherId`], [`INT`], [#text(fill: red)[#sym.crossmark]], [Voucher (nếu có)]
 )
-#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
+#strong[Ví dụ thực hiện]:
+
+- Phòng ID = 30, Tên Phòng = 605, có Mã Vouher = 1:
+  - Tạo ra đơn Đặt Phòng ID = 55, có Đơn Giá = 3,000,000.
+
+#figure(image("demo/SP_DATPHONG.png"),
+  caption: [
+    SP\_DATPHONG - Tạo mới đơn Đặt Phòng.
+  ]
+)
 
 ==== SP2 - Thanh Toán Đặt Phòng
 <sp2-thanh-toan-dat-phong>
@@ -65,7 +74,31 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
   [3], [`@SoTien`], [`DECIMAL(18,2)`], [#text(fill: blue)[#sym.checkmark]], [Số tiền thanh toán],
   [4], [`@PhuongThuc`], [`NVARCHAR(50)`], [#text(fill: blue)[#sym.checkmark]], [Phương thức thanh toán (`TIEN_MAT`, `CHUYEN_KHOAN`, `THE`, `ONLINE`)]
 )
-#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
+#strong[Ví dụ thực hiện]:
+
+- Một đơn Đặt Phòng có thể được thanh toán nhiều lần. Lần 1:
+
+#figure(image("demo/SP_THANHTOAN-01.png"),
+  caption: [
+    SP\_THANHTOAN - Thanh Toán lần 1.
+  ]
+)
+
+- Lần 2:
+
+#figure(image("demo/SP_THANHTOAN-02.png"),
+  caption: [
+    SP\_THANHTOAN - Thanh Toán lần 2.
+  ]
+)
+
+- Hoàn thành Thanh Toán: đơn Đặt Phòng chuyển trạng thái sang `COMPLETED`.
+
+#figure(image("demo/SP_THANHTOAN-03.png"),
+  caption: [
+    SP\_THANHTOAN - Hoàn thành Thanh Toán.
+  ]
+)
 
 ==== SP3 - Đánh Giá
 <sp3-danh-gia>
@@ -98,6 +131,15 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
   [`3`], [`@SoPhong`], [`NVARCHAR(20)`], [#text(fill: blue)[#sym.checkmark]], [Số phòng được đánh giá],
   [`4`], [`@SoSao`], [`INT`], [#text(fill: blue)[#sym.checkmark]], [Số sao (1 → 5)],
   [`5`], [`@BinhLuan`], [`NVARCHAR(1000)`], [#text(fill: red)[#sym.crossmark]], [Nội dung đánh giá]
+)
+#strong[Ví dụ thực hiện]:
+
+- Sau khi hoàn thành thanh toán, và trạng thái đơn Đặt Phòng là `COMPLETED`, người dùng có thể thực hiện đánh giá.
+
+#figure(image("demo/SP_DANHGIA.png"),
+  caption: [
+    SP\_DANHGIA - Đánh Giá đơn Đặt Phòng.
+  ]
 )
 
 ==== SP4 - Áp Dụng Voucher
