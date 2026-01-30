@@ -41,9 +41,12 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 )
 ```
 
-```{=typst}
-#todo[(Xử Lý Thông Tin) HÌNH CHỤP.]
-```
+**Ví dụ thực hiện**:
+
+- Phòng ID = 30, Tên Phòng = 605, có Mã Vouher = 1:
+    - Tạo ra đơn Đặt Phòng ID = 55, có Đơn Giá = 3,000,000.
+
+![SP_DATPHONG - Tạo mới đơn Đặt Phòng.](demo/SP_DATPHONG.png)
 
 #### SP2 - Thanh Toán Đặt Phòng
 
