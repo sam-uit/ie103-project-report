@@ -39,3 +39,21 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 
 ==== Backup -- Restore Dữ Liệu
 <backup-restore-du-lieu>
+
+Backup:
+
++ Chuột phải vào Database, chọn #emph[Task] \> #emph[Back Up…].
++ Chọn #emph[Full] trong mục #emph[Backup type].
++ Chọn #emph[Destination] là #emph[Disk]
++ Thêm đường dẫn thư mục lưu file backup.
++ Nhấn #emph[OK].
++ Thông báo Hoàn Thành.
+
+Restore:
+
++ Chuột phải vào mục Database của Server, chọn #emph[Restore Database…].
++ Chọn #emph[Source] là #emph[Device] và chọn #emph[File name] là file backup.
++ Chọn #emph[Destination] là #emph[Database] và chọn #emph[Database] là #emph[BookingMS] (tên của Database muốn khôi phục thành).
++ Nhấn #emph[OK].
++ Thông báo Hoàn Thành.
++ Kiểm tra các thành phần của Database vừa được khôi phục.

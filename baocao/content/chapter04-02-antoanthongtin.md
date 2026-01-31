@@ -44,3 +44,22 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 #### Import - Export Dữ Liệu
 
 #### Backup – Restore Dữ Liệu
+
+Backup:
+
+1. Chuột phải vào Database, chọn *Task* > *Back Up...*.
+2. Chọn *Full* trong mục *Backup type*.
+3. Chọn *Destination* là *Disk*
+4. Thêm đường dẫn thư mục lưu file backup.
+5. Nhấn *OK*.
+6. Thông báo Hoàn Thành.
+
+Restore:
+
+1. Chuột phải vào mục Database của Server, chọn *Restore Database...*.
+2. Chọn *Source* là *Device* và chọn *File name* là file backup.
+3. Chọn *Destination* là *Database* và chọn *Database* là *BookingMS* (tên của Database muốn khôi phục thành).
+4. Nhấn *OK*.
+5. Thông báo Hoàn Thành.
+6. Kiểm tra các thành phần của Database vừa được khôi phục.
+
