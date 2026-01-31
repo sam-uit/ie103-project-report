@@ -177,7 +177,7 @@ caption: [Danh Sách Các Thực Thể]
 
 Đây là quan hệ giữa các thực thể dưới góc độ và ngôn ngữ nghiệp vụ.
 
-| **Thực Thể** | **Quan Hệ** | **Thực Thể** |
+<!-- | **Thực Thể** | **Quan Hệ** | **Thực Thể** |
 |---|---|---|
 | **Quản Trị Viên** | được gán | **Vai Trò**|
 | **Vai Trò** | có các | **Quyền Hạn**|
@@ -192,7 +192,32 @@ caption: [Danh Sách Các Thực Thể]
 | **Người Dùng** | yêu cầu | **Hoàn Tiền**|
 | **Thanh Toán** | được | **Hoàn Tiền**|
 | **Quản Trị Viên** | duyệt | **Hoàn Tiền**|
-| **Đặt Phòng** | có kèm | **Dịch Vụ**|
+| **Đặt Phòng** | có kèm | **Dịch Vụ**| -->
+
+```{=typst}
+#figure(
+table(
+  columns: (1fr,) * 3,
+  align: (left, left, left),
+  [#strong[Thực Thể]], [#strong[Quan Hệ]], [#strong[Thực Thể]],
+  [#strong[Quản Trị Viên]], [được gán], [#strong[Vai Trò]],
+  [#strong[Vai Trò]], [có các], [#strong[Quyền Hạn]],
+  [#strong[Phòng]], [thuộc], [#strong[Loại Phòng]],
+  [#strong[Người Dùng]], [thực hiện], [#strong[Đặt Phòng]],
+  [#strong[Đặt Phòng]], [bao gồm], [#strong[Phòng]],
+  [#strong[Đặt Phòng]], [được áp dụng], [#strong[Mã Giảm Giá]],
+  [#strong[Đặt Phòng]], [được], [#strong[Thanh Toán]],
+  [#strong[Đặt Phòng]], [được], [#strong[Đánh Giá]],
+  [#strong[Người Dùng]], [viết], [#strong[Đánh Giá]],
+  [#strong[Người Dùng]], [thực hiện], [#strong[Thanh Toán]],
+  [#strong[Người Dùng]], [yêu cầu], [#strong[Hoàn Tiền]],
+  [#strong[Thanh Toán]], [được], [#strong[Hoàn Tiền]],
+  [#strong[Quản Trị Viên]], [duyệt], [#strong[Hoàn Tiền]],
+  [#strong[Đặt Phòng]], [có kèm], [#strong[Dịch Vụ]]
+),
+caption: [Quan Hệ Giữa Các Thực Thể]
+)
+```
 
 Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan:
 
