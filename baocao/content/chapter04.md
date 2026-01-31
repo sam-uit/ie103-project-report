@@ -276,19 +276,33 @@ Sử dụng `INSTEAD OF` Trigger để:
 
 ![TRG-AutoPrice - Kết quả](demo/TRG-AUTOPRICE.png)
 
-#### TG3: Payment
+#### TG3: SyncStatus
+
+- Xây dựng **Trigger** để tự động đồng bộ trạng thái phòng khi có thay đổi trong chi tiết đặt phòng.
+
+Khi có thao tác INSERT/UPDATE/DELETE trên bảng `CT_DATPHONG`:
+
+- Phòng được đặt → Cần chuyển trạng thái sang `OCCUPIED`.
+- Phòng bị hủy đặt → Cần trả về trạng thái `AVAILABLE`.
+- Đảm bảo đồng bộ thời gian thực.
+
+Sử dụng **AFTER Trigger** với:
+
+- Bảng ảo `inserted`: Phòng vừa được đặt.
+- Bảng ảo `deleted`: Phòng vừa bị hủy.
+- Cập nhật trạng thái tự động.
+
+**Ví dụ thực hiện**:
+
+![TRG-03-SYNCSTATUS - Tự động cập nhật trạng thái Phòng](demo/TRG-03-SYNCSTATUS.png)
+
+#### TG4: Payment
 
 ```{=typst}
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 ```
 
 #### TG4: Refund
-
-```{=typst}
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-```
-
-#### TG5: SyncStatus
 
 ```{=typst}
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]

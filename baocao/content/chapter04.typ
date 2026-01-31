@@ -288,18 +288,38 @@ Sử dụng `INSTEAD OF` Trigger để:
   ]
 )
 
-==== TG3: Payment
-<tg3-payment>
+==== TG3: SyncStatus
+<tg3-syncstatus>
+
+- Xây dựng #strong[Trigger] để tự động đồng bộ trạng thái phòng khi có thay đổi trong chi tiết đặt phòng.
+
+Khi có thao tác INSERT/UPDATE/DELETE trên bảng `CT_DATPHONG`:
+
+- Phòng được đặt → Cần chuyển trạng thái sang `OCCUPIED`.
+- Phòng bị hủy đặt → Cần trả về trạng thái `AVAILABLE`.
+- Đảm bảo đồng bộ thời gian thực.
+
+Sử dụng #strong[AFTER Trigger] với:
+
+- Bảng ảo `inserted`: Phòng vừa được đặt.
+- Bảng ảo `deleted`: Phòng vừa bị hủy.
+- Cập nhật trạng thái tự động.
+
+#strong[Ví dụ thực hiện]:
+
+#figure(image("demo/TRG-03-SYNCSTATUS.png"),
+  caption: [
+    TRG-03-SYNCSTATUS - Tự động cập nhật trạng thái Phòng
+  ]
+)
+
+==== TG4: Payment
+<tg4-payment>
 
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 
 ==== TG4: Refund
 <tg4-refund>
-
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-
-==== TG5: SyncStatus
-<tg5-syncstatus>
 
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 
