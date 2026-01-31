@@ -290,18 +290,19 @@ Sử dụng `INSTEAD OF` Trigger để:
   ]
 )
 
-==== TG3: SyncStatus
-<tg3-syncstatus>
+==== TRG-03 - Đồng Bộ Trạng Thái Phòng
+<trg-03-dong-bo-trang-thai-phong>
 
-- Xây dựng #strong[Trigger] để tự động đồng bộ trạng thái phòng khi có thay đổi trong chi tiết đặt phòng.
+- Tên: `trg_CTDP_SyncRoomStatus`.
+- Mục đích: Tự động đồng bộ trạng thái phòng khi có thay đổi trong chi tiết đặt phòng.
 
-Khi có thao tác INSERT/UPDATE/DELETE trên bảng `CT_DATPHONG`:
+Khi có thao tác `INSERT`/`UPDATE`/`DELETE` trên bảng `CT_DATPHONG`:
 
-- Phòng được đặt → Cần chuyển trạng thái sang `OCCUPIED`.
-- Phòng bị hủy đặt → Cần trả về trạng thái `AVAILABLE`.
+- Phòng được đặt $arrow.r$ Cần chuyển trạng thái sang `OCCUPIED`.
+- Phòng bị hủy đặt $arrow.r$ Cần trả về trạng thái `AVAILABLE`.
 - Đảm bảo đồng bộ thời gian thực.
 
-Sử dụng #strong[AFTER Trigger] với:
+Sử dụng `AFTER Trigger` với:
 
 - Bảng ảo `inserted`: Phòng vừa được đặt.
 - Bảng ảo `deleted`: Phòng vừa bị hủy.
