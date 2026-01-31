@@ -10,7 +10,7 @@ Mục này trình bày về cách hiện thực các biện pháp bảo mật th
 === Bảo Mật Mức Hệ Quản Trị
 <bao-mat-muc-he-quan-tri>
 
-Bảo mật mức vật lý của hệ quản trị SQL Server là lớp đầu tiên trong #emph[An Toàn Thông Tin] của Hệ Thống BMS.
+Bảo mật mức hệ quản trị SQL Server là lớp đầu tiên trong #emph[An Toàn Thông Tin] của Hệ Thống BMS.
 
 Để tuân thủ nguyên tắc #emph[Đặc Quyền Tối Thiểu] (Least Privilege) -- mỗi tài khoản chỉ có đủ quyền truy cập vào tài nguyên cần thiết cho các nghiệp vụ cụ thể, hệ thống KHÔNG SỬ DỤNG tài khoản `sa` (System Admin) để kết nối từ ứng dụng vào cơ sở dữ liệu. Thay vào đó, một tài khoản chuyên biệt được tạo ra để kết nối từ ứng dụng vào cơ sở dữ liệu.
 
