@@ -64,26 +64,11 @@ Tồn tại một SP Đăng nhập (Kiểm tra Hash mật khẩu khi người d�
 - Mã hóa mật khẩu nhập vào và so sánh với mật khẩu đã mã hóa trong database.
 - Đảm bảo luôn so sánh cặp `email` đăng nhập và `password_hash` được nhập vào.
 
-```sql
-BEGIN
-    SET NOCOUNT ON;
-
-    DECLARE @InputHash NVARCHAR(255);
-    SET @InputHash = CONVERT(NVARCHAR(255), HASHBYTES('SHA2_256', @Password), 1);
-
-    IF EXISTS (
-        SELECT 1 FROM USERS 
-        WHERE email = @Email AND password_hash = @InputHash
-    )
-    BEGIN
-        SELECT id, email, full_name FROM USERS WHERE email = @Email;
-        PRINT N'Đăng nhập thành công';
-    END
-    ELSE
-    BEGIN
-        RAISERROR(N'Sai email hoặc mật khẩu.', 16, 1);
-    END
-END;
+```{=typst}
+#figure(
+    raw(read("code/ch04-sp_auth_login.sql"), lang: "sql", block: true),
+    caption: [An Toàn Thông Tin -- Kiểm Tra Mật Khẩu Đăng Nhập]
+)
 ```
 
 ### Xác Thực Và Phân Quyền
