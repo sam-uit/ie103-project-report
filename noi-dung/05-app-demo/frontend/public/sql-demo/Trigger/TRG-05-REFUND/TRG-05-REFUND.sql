@@ -1,7 +1,7 @@
 /* ============================================================
    TRIGGER 5: Hoàn tiền (REFUNDS)
    - Mục đích:
-       (1) bo_tien_hoan không được vượt quá PAYMENTS.so_tien
+       (1) so_tien_hoan không được vượt quá PAYMENTS.so_tien
        (2) Đồng bộ trạng thái: PAYMENTS.trang_thai = 'REFUNDED', DATPHONG.trang_thai = 'REFUNDED'
    - Chạy khi: INSERT vào REFUNDS
    - Kiểu: INSTEAD OF (kiểm tra trước, đúng thì mới cho insert)
