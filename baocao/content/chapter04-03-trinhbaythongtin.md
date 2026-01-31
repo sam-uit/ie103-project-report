@@ -122,3 +122,47 @@ Màn hình design và preview dashboard:
 ![Report 3 - Màn Hình Design](./images/rpt3-8.png)
 
 ![Report 3 - Màn Hình Preview](./images/rpt3-9.png)
+
+#### Báo Cáo 04 - Thống Kê Top Voucher Được Săn Đón Nhất
+
+Miêu tả:
+
+- Để thống kê xem mình đưa ra bao nhiêu mã giảm giá, và cái nào khách xài nhiều nhất.
+- Tổng số tiền của voucher nào sử dụng nhiều nhất.
+- Chỉ tính dòng trong bảng `PAYMENTS` có trạng thái `SUCCESS`, hiểu là thanh toán thành công.
+- Công thức tính số tiền giảm: (tiền thực / (100% - %giảm)) - tiền thực .
+
+Các bước thực hiện:
+
+1. Tạo View lấy danh sách Top Voucher Được Săn Đón Nhất & Số Tiền Đã Giảm Giá Năm 2024 (`V_REPORT_TOP_VOUCHER_2024`).
+2. Kết nối Tableu vào database.
+3. Kéo view `V_REPORT_TOP_VOUCHER_2024` vào Canvas.
+4. Mapping dữ liệu từ View `V_REPORT_TOP_VOUCHER_2024` để tạo chart line.
+5. Tạo Sheet hiển thị table chi tiết.
+
+Màn hình design và preview dashboard:
+
+![Report 4 - Màn Hình Design](./images/rpt4-2.png)
+
+![Report 4 - Màn Hình Preview](./images/rpt4-6.png)
+
+#### Báo Cáo 05 - Thống Kê Top Loại Phòng Được Yêu Thích Nhất
+
+Miêu tả:
+
+- Dựa trên số sao được khách hàng đánh giá, ta sẽ thống kê xem xem là loại phòng nào làm khách hàng thích nhất, để điều chỉnh phòng theo xu hướng của khách hàng, giúp đánh giá tăng doanh thu, thu hút khách.
+- Chúng ta chỉ lấy những reviews nào đã được admin duyệt(`trang_thai = 'APPROVED'`), vì có thể có những review spam hoặc rác.
+
+Các bước thực hiện:
+
+1. Tạo View lấy danh sách Top Loại Phòng Được Yêu Thích Nhất (`V_REPORT_ROOM_RATING`).
+2. Kết nối Tableu vào database.
+3. Kéo view `V_REPORT_ROOM_RATING` vào Canvas.
+4. Mapping dữ liệu từ View `V_REPORT_ROOM_RATING` để tạo chart line.
+5. Tạo Sheet hiển thị table chi tiết.
+
+Màn hình design và preview dashboard:
+
+![Report 5 - Màn Hình Design](./images/rpt5-5.png)
+
+![Report 5 - Màn Hình Preview](./images/rpt5-6.png)

@@ -159,3 +159,65 @@ Màn hình design và preview dashboard:
     Report 3 - Màn Hình Preview
   ]
 )
+
+==== Báo Cáo 04 - Thống Kê Top Voucher Được Săn Đón Nhất
+<bao-cao-04-thong-ke-top-voucher-duoc-san-don-nhat>
+
+Miêu tả:
+
+- Để thống kê xem mình đưa ra bao nhiêu mã giảm giá, và cái nào khách xài nhiều nhất.
+- Tổng số tiền của voucher nào sử dụng nhiều nhất.
+- Chỉ tính dòng trong bảng `PAYMENTS` có trạng thái `SUCCESS`, hiểu là thanh toán thành công.
+- Công thức tính số tiền giảm: (tiền thực / (100% - %giảm)) - tiền thực .
+
+Các bước thực hiện:
+
++ Tạo View lấy danh sách Top Voucher Được Săn Đón Nhất & Số Tiền Đã Giảm Giá Năm 2024 (`V_REPORT_TOP_VOUCHER_2024`).
++ Kết nối Tableu vào database.
++ Kéo view `V_REPORT_TOP_VOUCHER_2024` vào Canvas.
++ Mapping dữ liệu từ View `V_REPORT_TOP_VOUCHER_2024` để tạo chart line.
++ Tạo Sheet hiển thị table chi tiết.
+
+Màn hình design và preview dashboard:
+
+#figure(image("./images/rpt4-2.png"),
+  caption: [
+    Report 4 - Màn Hình Design
+  ]
+)
+
+#figure(image("./images/rpt4-6.png"),
+  caption: [
+    Report 4 - Màn Hình Preview
+  ]
+)
+
+==== Báo Cáo 05 - Thống Kê Top Loại Phòng Được Yêu Thích Nhất
+<bao-cao-05-thong-ke-top-loai-phong-duoc-yeu-thich-nhat>
+
+Miêu tả:
+
+- Dựa trên số sao được khách hàng đánh giá, ta sẽ thống kê xem xem là loại phòng nào làm khách hàng thích nhất, để điều chỉnh phòng theo xu hướng của khách hàng, giúp đánh giá tăng doanh thu, thu hút khách.
+- Chúng ta chỉ lấy những reviews nào đã được admin duyệt(`trang_thai = 'APPROVED'`), vì có thể có những review spam hoặc rác.
+
+Các bước thực hiện:
+
++ Tạo View lấy danh sách Top Loại Phòng Được Yêu Thích Nhất (`V_REPORT_ROOM_RATING`).
++ Kết nối Tableu vào database.
++ Kéo view `V_REPORT_ROOM_RATING` vào Canvas.
++ Mapping dữ liệu từ View `V_REPORT_ROOM_RATING` để tạo chart line.
++ Tạo Sheet hiển thị table chi tiết.
+
+Màn hình design và preview dashboard:
+
+#figure(image("./images/rpt5-5.png"),
+  caption: [
+    Report 5 - Màn Hình Design
+  ]
+)
+
+#figure(image("./images/rpt5-6.png"),
+  caption: [
+    Report 5 - Màn Hình Preview
+  ]
+)
