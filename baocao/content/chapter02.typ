@@ -85,8 +85,12 @@ Trong chương này, Nhóm sẽ trình bày các chức năng và quy tắc nghi
 === Danh Sách Các Thực Thể
 <danh-sach-cac-thuc-the>
 
-Lưu ý: Việc chủ động tách riêng các thực thể #emph[Người Dùng] (Khách hàng) và #emph[Quản Lý/Quản Trị Viên] (Nhân Viên) nhằm mục đích phân biệt quyền hạn và vai trò của người dùng trong hệ thống, tránh các tình huống leo thang quyền lực và vi phạm quy tắc kiểm soát truy cập (RBAC).
+#co-note(title: "Lưu Ý về Thiết Kế Các Thực Thể")[
+Mặc dù đều là các thực thể sử dụng hệ thống *BMS*, nhưng Nhóm quyết định tách biệt thực thể Người Dùng (`USERS`) và Quản Trị Viên (`ADMINS`) thành hai cấu trúc dữ liệu độc lập thay vì gộp chung. Quyết định này nhằm mục đích:
 
+1. #strong[Phân định rõ ràng phạm vi truy cập]: Ngăn chặn tuyệt đối các rủi ro leo thang đặc quyền (Privilege Escalation), đảm bảo người dùng cuối không thể vô tình hoặc cố ý truy cập vào các chức năng quản trị.
+2. #strong[Tối ưu hóa thuộc tính]: Mỗi nhóm đối tượng có các thuộc tính đặc thù riêng biệt (Ví dụ: `USERS` cần tích điểm, `ADMINS` cần có vai trò (role) cụ thể), giúp tránh dư thừa dữ liệu (`NULL` values) và đảm bảo tính chuẩn hóa.
+]
 - #strong[Quản Lý/Quản Trị Viên]
   - Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
   - Có quyền quản lý nghiệp vụ và dữ liệu hệ thống
