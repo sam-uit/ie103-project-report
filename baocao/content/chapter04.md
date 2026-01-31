@@ -369,6 +369,26 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
 
 ![FN-01 - Tính Hạng Thành Viên - User 3.](demo/FN-01-TinhHangThanhVien-03.png)
 
+#### FN-02 - Tìm Phòng Trống Theo Loại
+
+- Tên: `fn_TimPhongTrongTheoLoai`.
+- **Mục đích:** Tự động tìm kiếm các phòng trống thuộc một loại phòng cụ thể trong khoảng thời gian yêu cầu.
+- **Logic xử lý:**
+    - Đầu vào: `Loại Phòng ID`, `Ngày Check-in`, `Ngày Check-out`.
+    - Lấy danh sách **TẤT CẢ** phòng thuộc loại phòng yêu cầu.
+    - Tìm danh sách các phòng **ĐANG BẬN** (có lịch đặt trùng với thời gian đầu vào).
+    - _Lưu ý:_ Bỏ qua các đơn đặt phòng đã bị Hủy (`CANCELLED`) hoặc Hoàn tiền (`REFUNDED`).
+    - **Công thức:** `Kết quả = Danh sách Gốc - Danh sách Bận`.
+    - Trả về dạng Bảng (Table-Valued Function).
+
+**Kiểm thử:**
+
+- Kịch bản: Phòng `101` (Loại 1) đang có khách ở từ `04/04` đến `05/04`. Phòng `102` (Loại 1) đang trống.
+- Test Case: Tìm phòng Loại 1 trống trong ngày `02/04`.
+- Kết quả mong đợi: Chỉ hiển thị phòng `104`, `205`, `304`, `501`. Phòng `101` bị ẩn đi.
+
+![FN-02 - Tìm Phòng Trống Theo Loại - Kết quả](demo/FN-02-TimPhongTrongTheoLoai.png)
+
 #### FN-03 - Tính Phí Hủy Phòng Động
 
 - Tên: `fn_TinhPhiHuyPhong`.
