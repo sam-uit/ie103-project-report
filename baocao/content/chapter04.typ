@@ -254,9 +254,9 @@ Sử dụng #strong[AFTER Trigger] trên bảng `DATPHONG` để:
 
 - Thời gian check-out lớn hơn check-in, nên thực hiện thành công.
 
-#figure(image("demo/TRG-CHECKTIME.png"),
+#figure(image("demo/TRG-01-CHECKTIME.png"),
   caption: [
-    TRG-CheckTime - Kết quả
+    TRG-01-CheckTime - Kết quả
   ]
 )
 
@@ -282,9 +282,9 @@ Sử dụng `INSTEAD OF` Trigger để:
   - Đặt Phòng ID = 71.
   - Phòng ID = 8.
 
-#figure(image("demo/TRG-AUTOPRICE.png"),
+#figure(image("demo/TRG-02-AUTOPRICE.png"),
   caption: [
-    TRG-AutoPrice - Kết quả
+    TRG-02-AutoPrice - Kết quả
   ]
 )
 

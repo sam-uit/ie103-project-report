@@ -251,7 +251,7 @@ Sử dụng **AFTER Trigger** trên bảng `DATPHONG` để:
 
 - Thời gian check-out lớn hơn check-in, nên thực hiện thành công.
 
-![TRG-CheckTime - Kết quả](demo/TRG-CHECKTIME.png)
+![TRG-01-CheckTime - Kết quả](demo/TRG-01-CHECKTIME.png)
 
 #### TG2: AutoPrice
 
@@ -274,7 +274,7 @@ Sử dụng `INSTEAD OF` Trigger để:
     - Đặt Phòng ID = 71.
     - Phòng ID = 8.
 
-![TRG-AutoPrice - Kết quả](demo/TRG-AUTOPRICE.png)
+![TRG-02-AutoPrice - Kết quả](demo/TRG-02-AUTOPRICE.png)
 
 #### TG3: SyncStatus
 
