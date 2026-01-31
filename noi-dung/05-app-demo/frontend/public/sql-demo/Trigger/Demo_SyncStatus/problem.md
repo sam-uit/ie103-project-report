@@ -3,19 +3,24 @@
 ## B1: Trình Bày Bài Toán
 
 ### Mục Đích
-Xây dựng **Trigger** để tự động đồng bộ trạng thái phòng khi có thay đổi trong chi tiết đặt phòng.
+
+- Xây dựng **Trigger** để tự động đồng bộ trạng thái phòng khi có thay đổi trong chi tiết đặt phòng.
 
 ### Vấn Đề
+
 Khi có thao tác INSERT/UPDATE/DELETE trên bảng `CT_DATPHONG`:
-- Phòng được đặt → Cần chuyển trạng thái sang `BOOKED`
+
+- Phòng được đặt → Cần chuyển trạng thái sang `OCCUPIED`.
 - Phòng bị hủy đặt → Cần trả về trạng thái `AVAILABLE`
 - Đảm bảo đồng bộ thời gian thực
 
 ### Giải Pháp
+
 Sử dụng **AFTER Trigger** với:
-- Bảng ảo `inserted`: Phòng vừa được đặt
-- Bảng ảo `deleted`: Phòng vừa bị hủy
-- Cập nhật trạng thái tự động
+ 
+- Bảng ảo `inserted`: Phòng vừa được đặt.
+- Bảng ảo `deleted`: Phòng vừa bị hủy.
+- Cập nhật trạng thái tự động.
 
 ---
 
@@ -28,9 +33,9 @@ ON dbo.CT_DATPHONG
 AFTER INSERT, DELETE, UPDATE
 AS
 BEGIN
-    -- Có thêm/đổi chi tiết đặt phòng → BOOKED
+    -- Có thêm/đổi chi tiết đặt phòng → OCCUPIED
     UPDATE p
-    SET p.trang_thai = 'BOOKED'
+    SET p.trang_thai = 'OCCUPIED'
     FROM dbo.PHONG p
     JOIN inserted i ON i.phong_id = p.id;
 
