@@ -297,6 +297,16 @@ Trước khi đi vào vận hành nghiệp vụ, nhóm thực hiện thiết l�
   caption: [Chương 03 -- Tài Khoản Kết Nối CSDL Của Ứng Dụng.]
 )
 
+=== Hàm Kiểm Tra Quyền Hạn
+<ham-kiem-tra-quyen-han>
+
+Hệ thống triển khai hàm `F_CHECK_PERMISSION` làm nền tảng cho cơ chế RBAC (Role-Based Access Control). Mọi thủ tục và thao tác nghiệp vụ của #emph[Nhân Viên] đều cần đi qua hàm này để xác định quyền hạn tương ứng trước khi được thực hiện hoặc từ chối thao tác.
+
+#figure(
+  raw(read("code/ch03-02-f_check_permission.sql"), lang: "sql", block: true),
+  caption: [Chương 03 -- Hàm Kiểm Tra Quyền Hạn.]
+)
+
 == Dữ Liệu Mẫu
 <du-lieu-mau>
 
