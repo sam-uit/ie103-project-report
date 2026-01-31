@@ -314,27 +314,15 @@ Hệ thống triển khai hàm `F_CHECK_PERMISSION` làm nền tảng cho cơ ch
 
 - Dưới đây là một số ví dụ, vui lòng tham khảo phiên bản đầy đủ đính kèm.
 
-=== Phân Quyền
-<phan-quyen>
+=== Phân Quyền và Vai Trò
+<phan-quyen-va-vai-tro>
 
 - Hệ thống định nghĩa các nhóm người dùng cơ bản và quyền hạn tương ứng.
 
-```sql
--- 2. ROLES
-INSERT INTO ROLES (code, name, description) VALUES
-('SUPER_ADMIN', N'Quản trị viên cấp cao', N'Toàn quyền quản lý hệ thống'),
-('ADMIN', N'Quản trị viên', N'Quản lý phòng và đặt phòng'),
-('STAFF', N'Nhân viên', N'Xử lý đặt phòng và thanh toán'),
-('ACCOUNTANT', N'Kế toán', N'Quản lý thanh toán và doanh thu'),
-('RECEPTIONIST', N'Lễ tân', N'Tiếp nhận khách và check-in/out'),
-('MANAGER', N'Quản lý', N'Giám sát hoạt động'),
-('MAINTENANCE', N'Bảo trì', N'Quản lý bảo trì phòng'),
-('MARKETING', N'Marketing', N'Quản lý khuyến mãi và voucher'),
-('SUPPORT', N'Hỗ trợ', N'Hỗ trợ khách hàng'),
-('ANALYST', N'Phân tích', N'Xem báo cáo và thống kê');
-
-GO
-```
+#figure(
+  raw(read("code/ch03-seed_data_roles.sql"), lang: "sql", block: true),
+  caption: [Dữ Liệu Mẫu -- Phân Quyền và Vai Trò.]
+)
 
 === Tài Khoản
 <tai-khoan>
