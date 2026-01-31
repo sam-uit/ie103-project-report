@@ -3,8 +3,8 @@
     "title": "Cursor 02: Đồng Bộ Trạng Thái Phòng Thực Tế",
     "type": "Cursor",
     "shortDesc": "Cursor đồng bộ trạng thái phòng thực tế với trạng thái phòng trong hệ thống.",
-    "mdFile": "Cursor/Demo_SyncRoomStatus/problem.html",
-    "sqlFile": "Cursor/Demo_SyncRoomStatus/cs_DONGBOTRANGTHAIPHONGTHUCTE.sql",
+    "mdFile": "Cursor/cs02_SyncRoomStatus/cs02_SyncRoomStatus.html",
+    "sqlFile": "Cursor/cs02_SyncRoomStatus/cs02_SyncRoomStatus.sql",
     "separateTables": [
         {
             "name": "PHONG",
