@@ -345,11 +345,29 @@ Sử dụng `INSTEAD OF` Trigger để:
 
 Các hàm hỗ trợ tính toán và kiểm tra nhanh.
 
-#### F1: CheckRoomAvailable
+#### FN-01 - Tính Hạng Thành Viên
 
-```{=typst}
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-```
+- Tên: `fn_TinhHangThanhVien`.
+- **Mục đích:** Tự động xếp hạng thành viên (Loyalty Tier) cho khách hàng dựa trên tổng doanh thu thực tế.
+- **Logic xử lý:**
+    - Kết nối bảng `PAYMENTS` để lấy lịch sử giao dịch của `UserID`.
+    - Chỉ tính tổng tiền (`SUM`) của các giao dịch thành công (Status là `PAID`, `SUCCESS`, hoặc `APPROVED`).
+- **Quy tắc xếp hạng:**
+    - Tổng chi tiêu < 5.000.000 VNĐ: **STANDARD**.
+    - Tổng chi tiêu 5.000.000 - 20.000.000 VNĐ: **GOLD**.
+    - Tổng chi tiêu > 20.000.000 VNĐ: **PLATINUM**.
+
+**Kiểm thử:**
+
+- User 1: Đã thanh toán tổng cộng `13,400,000 VNĐ`.
+    - User 1: `GOLD`.
+
+![FN-01 - Tính Hạng Thành Viên - User 1.](demo/FN-01-TinhHangThanhVien-01.png)
+
+- User 3 : Đã thanh toán `4,300,000 VNĐ`.
+    - User 3: `STANDARD`.
+
+![FN-01 - Tính Hạng Thành Viên - User 3.](demo/FN-01-TinhHangThanhVien-03.png)
 
 #### F2: RevertCreateError
 
