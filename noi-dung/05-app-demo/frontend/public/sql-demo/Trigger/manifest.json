@@ -3,7 +3,7 @@
             "Demo_CheckTime",
             "Demo_AutoPrice",
             "Demo_SyncStatus",
-            "Demo_Payment",
+            "TRG-04-PAYMENT",
             "TRG-05-REFUND"
       ]
 }

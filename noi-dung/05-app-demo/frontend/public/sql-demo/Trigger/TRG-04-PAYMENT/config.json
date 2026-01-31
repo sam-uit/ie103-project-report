@@ -3,8 +3,8 @@
       "title": "Trigger 4: Kiểm Tra Thanh Toán",
       "type": "Trigger",
       "shortDesc": "Kiểm tra số tiền thanh toán và tự động cập nhật trạng thái booking",
-      "mdFile": "Trigger/Demo_Payment/problem.html",
-      "sqlFile": "Trigger/Demo_Payment/trg_Payment.sql",
+      "mdFile": "Trigger/TRG-04-PAYMENT/TRG-04-PAYMENT.html",
+      "sqlFile": "Trigger/TRG-04-PAYMENT/TRG-04-PAYMENT.sql",
       "separateTables": [
             {
                   "name": "PAYMENTS",
