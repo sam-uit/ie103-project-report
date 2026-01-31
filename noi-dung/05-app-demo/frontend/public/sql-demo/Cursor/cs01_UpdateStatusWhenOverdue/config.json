@@ -3,8 +3,8 @@
     "title": "Cursor 01: Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn",
     "type": "Cursor",
     "shortDesc": "Cursor cập nhật trạng thái phòng, tự động hoàn tất đơn đặt phòng khi quá hạn.",
-    "mdFile": "Cursor/Demo_UpdateStatusWhenOverdue/problem.html",
-    "sqlFile": "Cursor/Demo_UpdateStatusWhenOverdue/cs_CAPNHATTRANGTHAIKHIQUAGIO_CHECK-OUT.sql",
+    "mdFile": "Cursor/cs01_UpdateStatusWhenOverdue/cs01_UpdateStatusWhenOverdue.html",
+    "sqlFile": "Cursor/cs01_UpdateStatusWhenOverdue/cs01_UpdateStatusWhenOverdue-OUT.sql",
     "separateTables": [
         {
             "name": "DAT_PHONG",

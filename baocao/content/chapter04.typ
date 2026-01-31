@@ -479,8 +479,8 @@ Case 2:
 
 Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) định kỳ.
 
-==== Cursor - Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
-<cursor-tu-dong-hoan-tat-don-dat-phong-khi-qua-han>
+==== CS-01 - Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
+<cs-01-tu-dong-hoan-tat-don-dat-phong-khi-qua-han>
 
 - Tên gọi: `cursor_checkout`.
 - #strong[Mục Đích:]
