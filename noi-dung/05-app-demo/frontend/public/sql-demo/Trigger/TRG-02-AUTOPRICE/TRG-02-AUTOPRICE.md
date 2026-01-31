@@ -1,4 +1,4 @@
-# Demo 2: Tự Động Đơn Giá Khi Đặt Phòng
+# Demo 2: Tự Động Tính Đơn Giá Khi Đặt Phòng
 
 ## B1: Trình Bày Bài Toán
 

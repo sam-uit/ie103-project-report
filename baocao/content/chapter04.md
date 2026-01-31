@@ -254,9 +254,10 @@ Sử dụng `AFTER Trigger` trên bảng `DATPHONG` để:
 
 ![TRG-01-CheckTime - Kết quả](demo/TRG-01-CHECKTIME.png)
 
-#### TG2: AutoPrice
+#### TRG-02 - Tự Động Tính Đơn Giá Khi Đặt Phòng
 
-- Xây dựng **Trigger** để tự động hóa quy trình đặt phòng và đảm bảo tính chính xác của đơn giá.
+- Tên: `trg_CTDP_Insert_ValidatePrice`.
+- Mục đích: Tự động hóa quy trình đặt phòng và đảm bảo tính chính xác của đơn giá.
 
 Khi thêm chi tiết đặt phòng vào bảng `CT_DATPHONG`, cần:
 
