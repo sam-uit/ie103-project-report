@@ -307,7 +307,7 @@ Sử dụng `AFTER Trigger` với:
 
 #figure(image("demo/TRG-03-SYNCSTATUS.png"),
   caption: [
-    TRG-03-SYNCSTATUS - Tự động cập nhật trạng thái Phòng
+    TRG-03-SyncStatus - Đồng bộ trạng thái Phòng
   ]
 )
 
