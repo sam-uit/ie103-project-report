@@ -15,8 +15,6 @@
 
 #### 2. Source Code
 
-
-
 ```SQL
 CREATE OR ALTER FUNCTION dbo.fn_TinhPhiHuyPhong (@MaDatPhong INT, @NgayBaoHuy DATETIME)
 RETURNS DECIMAL(18, 0)
@@ -54,14 +52,12 @@ GO
 
 #### 3. Kiểm thử
 
-- **Kịch bản:** Đơn đặt phòng `ID = 3` có ngày Check-in là `2023/04/04`. Tổng tiền cọc `600,000 VNĐ`.
-    
-- **Test Case:** - Case 1: Hủy ngày `2023/04/01` (Trước 3 ngày).
-    
+- **Kịch bản:** Đơn đặt phòng `ID = 3` có ngày Check-in là `2023/04/04`. Tổng tiền cọc `600,000 VNĐ`.    
+- **Test Case:**
+    - Case 1: Hủy ngày `2023/04/01` (Trước 3 ngày).
     - Case 2: Hủy ngày `2023/04/04` (Trong ngày Check-in).
-        
-- **Kết quả mong đợi:** - Case 1: `0 VNĐ`.
-    
+- **Kết quả mong đợi:**
+    - Case 1: `0 VNĐ`.
     - Case 2: `600,000 VNĐ`.
     
 ```SQL
