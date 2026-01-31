@@ -246,10 +246,14 @@ GO
 ![Ví dụ](./images/rpt3-9.png)
 
 ## 4. Thống kê Top Voucher được săn đón nhất & Số tiền đã giảm giá năm 2024
-    Để thống kê xem mình đưa ra bao nhiêu mã giảm giá, và cái nào khách xài nhiều nhất. Tổng số tiền của voucher nào sử dụng nhiều nhất.
-    Chỉ tính dòng trong bảng PAYMENTS có trạng thái 'SUCCESS', hiểu là thanh toán thành công.
-    Công thức tính số tiền giảm: (tiền thực / (100% - %giảm)) - tiền thực .
+
+- Để thống kê xem mình đưa ra bao nhiêu mã giảm giá, và cái nào khách xài nhiều nhất.
+- Tổng số tiền của voucher nào sử dụng nhiều nhất.
+- Chỉ tính dòng trong bảng `PAYMENTS` có trạng thái '`SUCCESS`', hiểu là thanh toán thành công.
+- Công thức tính số tiền giảm: (tiền thực / (100% - %giảm)) - tiền thực .
+
 #### 4.1 Tạo View
+
 ```sql
 CREATE OR ALTER VIEW V_REPORT_TOP_VOUCHER_2024 AS
 SELECT
@@ -284,8 +288,9 @@ GO
    SELECT * FROM V_REPORT_TOP_VOUCHER_2024;
 ```
 #### 4.3 Tạo sheet sử dụng Chart Bar và mapping các fields của View đã tạo
-    Sử dụng chart bar để hiển thị số tiền rõ ràng hơn, có thể sort được theo tổng số tiền giảm của các voucher cho dễ nhìn.
-    Kéo field "Phan_tram_giam" vào color để hiển thị màu -> màu càng đậm thì hiểu là phần trăm giảm càng nhiều
+
+- Sử dụng chart bar để hiển thị số tiền rõ ràng hơn, có thể sort được theo tổng số tiền giảm của các voucher cho dễ nhìn.
+- Kéo field "Phan_tram_giam" vào color để hiển thị màu -> màu càng đậm thì hiểu là phần trăm giảm càng nhiều
 
 #### 4.4 Màn hình design và preview của chart bar
 
@@ -294,8 +299,9 @@ GO
 ![Ví dụ](./images/rpt4-2.png)
 
 #### 4.5 Tạo sheet để hiển thị table chi tiết
-    Kéo và sử dụng Measure Values cho: các chỉ số (phần trăm giảm, số lần sử dụng, tổng tiền giảm) để hiển thị các thông tin này ra thành từng cột riêng biệt.
-    Kéo VoucherID và Voucher vào Rows để hiển thị thông tin voucher theo dòng
+
+- Kéo và sử dụng Measure Values cho: các chỉ số (phần trăm giảm, số lần sử dụng, tổng tiền giảm) để hiển thị các thông tin này ra thành từng cột riêng biệt.
+- Kéo VoucherID và Voucher vào Rows để hiển thị thông tin voucher theo dòng
 
 #### 4.6 Màn hình preview & design sheet table chi tiết
 
@@ -309,11 +315,13 @@ GO
 
 ![Ví dụ](./images/rpt4-6.png)
 
-
 ## 5. Thống kê top loại phòng được yêu thích nhất
-    Dựa trên số sao được khách hàng đánh giá, ta sẽ thống kê xem xem là loại phòng nào làm khách hàng thích nhất, để điều chỉnh phòng theo xu hướng của khách hàng, giúp đánh giá tăng doanh thu, thu hút khách.
-    Chúng ta chỉ lấy những reviews nào đã được admin duyệt(trang_thai = 'APPROVED'), vì có thể có những review spam hoặc rác.
+
+- Dựa trên số sao được khách hàng đánh giá, ta sẽ thống kê xem xem là loại phòng nào làm khách hàng thích nhất, để điều chỉnh phòng theo xu hướng của khách hàng, giúp đánh giá tăng doanh thu, thu hút khách.
+- Chúng ta chỉ lấy những reviews nào đã được admin duyệt(`trang_thai = 'APPROVED'`), vì có thể có những review spam hoặc rác.
+
 #### 5.1 Tạo View
+
 ```sql
 CREATE OR ALTER VIEW V_REPORT_ROOM_RATING AS
 SELECT
@@ -342,7 +350,8 @@ GO
    SELECT * FROM V_REPORT_ROOM_RATING;
 ```
 #### 5.3 Tạo sheet để hiển thị table chart dạng Bar và mapping các fields của View đã tạo
-    Sử dụng AVG để tính điểm sao TB được đánh giá
+
+- Sử dụng AVG để tính điểm sao TB được đánh giá
 
 #### 5.4 Màn hình design và preview của chart bar
 
@@ -351,8 +360,9 @@ GO
 ![Ví dụ](./images/rpt5-2.png)
 
 #### 5.5 Tạo sheet để hiển thị table chi tiết
-    Kéo và sử dụng Measure Values cho: các chỉ số (avg(diem_danh_gia), count của tableau) để hiển thị các thông tin "điểm sao tb", "số lần được đánh giá" ra thành từng cột riêng biệt.
-    Kéo "loại phòng" vào Rows để hiển thị thông tin loại phòng theo dòng
+
+- Kéo và sử dụng Measure Values cho: các chỉ số (avg(diem_danh_gia), count của tableau) để hiển thị các thông tin "điểm sao tb", "số lần được đánh giá" ra thành từng cột riêng biệt.
+- Kéo "loại phòng" vào Rows để hiển thị thông tin loại phòng theo dòng.
 
 #### 5.6 Màn hình preview & design sheet table chi tiết
 
@@ -365,6 +375,3 @@ GO
 ![Ví dụ](./images/rpt5-5.png)
 
 ![Ví dụ](./images/rpt5-6.png)
-
-
---------------
