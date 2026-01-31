@@ -120,20 +120,22 @@ Mặc dù đều là các thực thể sử dụng hệ thống *BMS*, nhưng Nh
 
 Đây là quan hệ giữa các thực thể dưới góc độ và ngôn ngữ nghiệp vụ.
 
-- **Quản Trị Viên** được gán **Vai Trò**.
-- **Vai Trò** có các **Quyền Hạn**.
-- **Phòng** thuộc **Loại Phòng**.
-- **Người Dùng** thực hiện **Đặt Phòng**.
-- **Đặt Phòng** bao gồm **Phòng**.
-- **Đặt Phòng** được áp dụng **Mã Giảm Giá**.
-- **Đặt Phòng** được **Thanh Toán**.
-- **Đặt Phòng** được **Đánh Giá**.
-- **Người Dùng** viết **Đánh Giá**.
-- **Người Dùng** thực hiện **Thanh Toán**.
-- **Người Dùng** yêu cầu **Hoàn Tiền**.
-- **Thanh Toán** được **Hoàn Tiền**.
-- **Quản Trị Viên** duyệt **Hoàn Tiền**.
-- **Đặt Phòng** có kèm **Dịch Vụ**.
+| **Thực Thể** | **Quan Hệ** | **Thực Thể** |
+|---|---|---|
+| **Quản Trị Viên** | được gán | **Vai Trò**|
+| **Vai Trò** | có các | **Quyền Hạn**|
+| **Phòng** | thuộc | **Loại Phòng**|
+| **Người Dùng** | thực hiện | **Đặt Phòng**|
+| **Đặt Phòng** | bao gồm | **Phòng**|
+| **Đặt Phòng** | được áp dụng | **Mã Giảm Giá**|
+| **Đặt Phòng** | được | **Thanh Toán**|
+| **Đặt Phòng** | được | **Đánh Giá**|
+| **Người Dùng** | viết | **Đánh Giá**|
+| **Người Dùng** | thực hiện | **Thanh Toán**|
+| **Người Dùng** | yêu cầu | **Hoàn Tiền**|
+| **Thanh Toán** | được | **Hoàn Tiền**|
+| **Quản Trị Viên** | duyệt | **Hoàn Tiền**|
+| **Đặt Phòng** | có kèm | **Dịch Vụ**|
 
 Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan:
 
