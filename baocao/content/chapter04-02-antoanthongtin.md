@@ -41,7 +41,27 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 - Differential Backup: Thực hiện vào 00:00 các ngày trong tuần.
 - Transaction Log Backup: Mỗi 4 giờ/lần để giảm thiểu rủi ro mất dữ liệu giao dịch.
 
-#### Import - Export Dữ Liệu
+#### Export - Import Dữ Liệu
+
+Export:
+
+1. Chuột phải vào Database cần Export, chọn *Task* > *Export Data-Tier Application...*.
+2. Chọn *Next* ở trang *Introduction*.
+3. Ở trang *Export Settings*, mục *Save to local disk*, chỉ định đường dẫn lưu file `.bacpac`.
+4. Ở trang *Export Settings*, *Next* và chọn các thành phần (*tables*) cần export.
+5. Ở trang *Summary*, xác nhận thông tin và nhấn *Finish*.
+6. Kiểm tra tiến độ và kết quả ở trang *Results*.
+7. Kiểm tra kết quả và chắc chắn file `.bacpac` đã được tạo thành công.
+
+Import:
+
+1. Chuột phải vào Database cần Import, chọn *Import Data-Tier Application...*.
+2. Chọn *Next* ở trang *Introduction*.
+3. Chọn *Browse* để tìm file `.bacpac`.
+4. Ở trang *Database Settings*, đặt tên cho database tại *New database name*.
+5. Ở trang *Summary*, xác nhận thông tin và nhấn *Finish*.
+6. Kiểm tra tiến độ và kết quả ở trang *Results*.
+7. Kiểm tra kết quả bằng cách xem các thành phần của Database vừa được import.
 
 #### Backup – Restore Dữ Liệu
 
