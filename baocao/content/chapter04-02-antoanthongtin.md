@@ -46,31 +46,23 @@ caption: [Bảo Mật Mức Hệ Quản Trị - Gán Quyền]
 )
 ```
 
-### Xác Thực Và Phân Quyền
-
-Hệ thống áp dụng cơ chế phân quyền dựa trên vai trò (RBAC).
-
-#### Mã Hóa Mật Khẩu
+### Mã Hóa Mật Khẩu
 
 Để đảm bảo an toàn dữ liệu người dùng, hệ thống không lưu trữ mật khẩu dưới dạng văn bản thuần (plain-text). Mọi mật khẩu đều được mã hóa một chiều bằng thuật toán SHA-256 thông qua hàm HASHBYTES của SQL Server trước khi lưu vào cơ sở dữ liệu.
 
-Tạo một Stored Producedure thực hiện mã hóa mật khẩu mỗi khi tạo User mới (`SP_AUTH_REGISTER`) như miêu tả sau:
+Tồn tại một Stored Producedure (SP) thực hiện mã hóa mật khẩu mỗi khi tạo User mới (`SP_AUTH_REGISTER`) như miêu tả sau:
 
-```sql
---- Phần quan trọng: Mã hóa mật khẩu trước khi ghi vào bảng USERS.
-BEGIN
-    DECLARE @PasswordHash VARBINARY(64);
-    SET @PasswordHash = HASHBYTES('SHA2_256', @Password);
-
-    INSERT INTO USERS (email, password_hash, full_name)
-    VALUES (@Email, CONVERT(NVARCHAR(255), @Hash, 1), @FullName);
-END
+```{=typst}
+#figure(
+    raw(read("code/ch04-sp_auth_register.sql"), lang: "sql", block: true),
+    caption: [An Toàn Thông Tin -- Mã Hóa Mật Khẩu]
+)
 ```
 
-SP Đăng nhập (Kiểm tra Hash mật khẩu khi người dùng đăng nhập) `SP_AUTH_LOGIN`:
+Tồn tại một SP Đăng nhập (Kiểm tra Hash mật khẩu khi người dùng đăng nhập) `SP_AUTH_LOGIN`:
 
 - Mã hóa mật khẩu nhập vào và so sánh với mật khẩu đã mã hóa trong database.
-- Đảm bảo luôn so sánh cặp `email` đăng nhập và `mật khẩu` được nhập vào.
+- Đảm bảo luôn so sánh cặp `email` đăng nhập và `password_hash` được nhập vào.
 
 ```sql
 BEGIN
@@ -93,6 +85,12 @@ BEGIN
     END
 END;
 ```
+
+### Xác Thực Và Phân Quyền
+
+Hệ thống áp dụng cơ chế phân quyền dựa trên vai trò (RBAC).
+
+
 
 #### Kiểm Soát Truy Cập Dựa Trên Vai Trò (Data-Driven RBAC)
 
