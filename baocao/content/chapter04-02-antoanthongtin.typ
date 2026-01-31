@@ -32,7 +32,7 @@ CREATE USER [BMS_App_User] FOR LOGIN [BMS_App_User];
 
 #block[
 #set enum(numbering: "1.", start: 3)
-+ Gán Quyền: Chỉ cấp quyền thực thi (EXECUTE) trên các Stored Procedure, ngăn chặn truy cập trực tiếp vào bảng dữ liệu.
++ Gán Quyền: Chỉ cấp quyền thực thi (`EXECUTE`) trên các Stored Procedure, ngăn chặn truy cập trực tiếp vào bảng dữ liệu.
 ]
 
 ```sql

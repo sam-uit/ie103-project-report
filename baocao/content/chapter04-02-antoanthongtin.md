@@ -23,7 +23,7 @@ USE ROOM_BOOKING_SYSTEM;
 CREATE USER [BMS_App_User] FOR LOGIN [BMS_App_User];
 ```
 
-3. Gán Quyền: Chỉ cấp quyền thực thi (EXECUTE) trên các Stored Procedure, ngăn chặn truy cập trực tiếp vào bảng dữ liệu.
+3. Gán Quyền: Chỉ cấp quyền thực thi (`EXECUTE`) trên các Stored Procedure, ngăn chặn truy cập trực tiếp vào bảng dữ liệu.
 
 ```sql
 GRANT EXECUTE TO [BMS_App_User];
