@@ -299,9 +299,10 @@ Sử dụng `AFTER Trigger` với:
 
 ![TRG-03-SYNCSTATUS - Tự động cập nhật trạng thái Phòng](demo/TRG-03-SYNCSTATUS.png)
 
-#### TG4: Payment
+#### TRG-04 - Kiểm Tra Thanh Toán
 
-- Xây dựng **Trigger** để đảm bảo tính chính xác của số tiền thanh toán và tự động cập nhật trạng thái đơn đặt phòng.
+- Tên: `trg_PAYMENTS_Insert_CheckAndPaid`.
+- Mục đích: Đảm bảo tính chính xác của số tiền thanh toán và tự động cập nhật trạng thái đơn đặt phòng.
 
 Khi khách hàng thanh toán (`INSERT` vào bảng `PAYMENTS`):
 

@@ -316,10 +316,11 @@ Sử dụng `AFTER Trigger` với:
   ]
 )
 
-==== TG4: Payment
-<tg4-payment>
+==== TRG-04 - Kiểm Tra Thanh Toán
+<trg-04-kiem-tra-thanh-toan>
 
-- Xây dựng #strong[Trigger] để đảm bảo tính chính xác của số tiền thanh toán và tự động cập nhật trạng thái đơn đặt phòng.
+- Tên: `trg_PAYMENTS_Insert_CheckAndPaid`.
+- Mục đích: Đảm bảo tính chính xác của số tiền thanh toán và tự động cập nhật trạng thái đơn đặt phòng.
 
 Khi khách hàng thanh toán (`INSERT` vào bảng `PAYMENTS`):
 
