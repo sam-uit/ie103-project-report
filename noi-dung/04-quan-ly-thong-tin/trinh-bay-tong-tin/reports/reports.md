@@ -112,6 +112,7 @@ Kéo thả vào mục Marks các trường trong view:
 - Giúp đánh giá xem khách hàng thân thiết để tặng voucher hay là nâng hạng khách hàng lên Premium,VIP phục vụ cho CSKH, CRM
 
 #### 2.1 Tạo View lấy danh sách
+
 ```sql
 CREATE OR ALTER VIEW V_REPORT_USER_VIP_2024 AS
 SELECT
@@ -139,28 +140,30 @@ GO
 ```
 
 #### 2.3 Kéo view V_REPORT_USER_VIP_2024 vào canva
+
 ![Ví dụ](./images/rpt2-1.png)
 
 #### 2.4 Tạo Line chart để hiển thị tổng quan
 
 #### 2.5 Mapping dữ liệu từ View V_REPORT_USER_VIP_2024 để tạo chart line
 
-    ▪ Kéo "Tổng tiền chi tiêu" -> Row => Tableau sẽ tự động tính tổng và làm trục đứng(Y).
-    ▪ Kéo "Tháng" -> Columns, chọn demension để làm trục ngang(X)
-    ▪ Kéo UserID vào Color chỗ Mark để hiển thị màu phân biệt
-    ▪ Filter top 10 hoặc gì đó tùy mục đích
+- Kéo "Tổng tiền chi tiêu" -> Row => Tableau sẽ tự động tính tổng và làm trục đứng(Y).
+- Kéo "Tháng" -> Columns, chọn demension để làm trục ngang(X)
+- Kéo UserID vào Color chỗ Mark để hiển thị màu phân biệt
+- Filter top 10 hoặc gì đó tùy mục đích
 
 ![Ví dụ](./images/rpt2-2.png)
 
 ![Ví dụ](./images/rpt2-3.png)
 
 #### 2.6 Tạo Sheet hiển thị table chi tiết
-    ▪ Kéo "Tháng" -> Columns, chọn demension và discrete
-    ▪ Tạo calculated fields để hiển thị UserID - Tên
-    ▪ Kéo calculated fields và phone vào để hiển thị
-    ▪ Kéo "Tổng chi tiêu" và Text chỗ Marks để show tiền vào table
-    ▪ Format màu, kiểu chữ kích thước
-    ▪ Chọn Analysis -> Total -> show grands total và kéo về trái để hiển thị cột tổng
+
+- Kéo "Tháng" -> Columns, chọn demension và discrete
+- Tạo calculated fields để hiển thị UserID - Tên
+- Kéo calculated fields và phone vào để hiển thị
+- Kéo "Tổng chi tiêu" và Text chỗ Marks để show tiền vào table
+- Format màu, kiểu chữ kích thước
+- Chọn Analysis -> Total -> show grands total và kéo về trái để hiển thị cột tổng
 
 ![Ví dụ](./images/rpt2-5.png)
 
@@ -172,18 +175,18 @@ GO
 
 ![Ví dụ](./images/rpt2-9.png)
 
-
-
 #### 2.7 Màn hình design và preview dashboard
-    Ta chọn kích cỡ A4 lanscape để in cho đẹp và đây đủ, chọn fit -> entrie view để hiển thị hết width height.
+
+- Ta chọn kích cỡ A4 lanscape để in cho đẹp và đây đủ, chọn fit -> entrie view để hiển thị hết width height.
 
 ![Ví dụ](./images/rpt2-11.png)
 
 ![Ví dụ](./images/rpt2-10.png)
 
 ## 3. Thống kê xem dịch vụ nào được khách sử dụng nhiều, và nó mang lại bao nhiêu tiền trong năm 2024
-    Để xác định "services nào được ưa chuộng nhất" (Best Seller) sẽ giúp quản lý biết đường nhập hàng và đẩy mạnh khuyến mãi.
-    Vì mỗi dịch vụ thời giá sẽ khác nhau nên ở table chi tiết ta sẽ thống kê từng đơn giá của dịch vụ.
+
+Để xác định "services nào được ưa chuộng nhất" (Best Seller) sẽ giúp quản lý biết đường nhập hàng và đẩy mạnh khuyến mãi.
+Vì mỗi dịch vụ thời giá sẽ khác nhau nên ở table chi tiết ta sẽ thống kê từng đơn giá của dịch vụ.
 
 #### 3.1 Tạo View
 ```sql

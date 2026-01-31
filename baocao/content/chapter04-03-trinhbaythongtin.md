@@ -70,3 +70,34 @@ Các bước thực hiện:
 ![Report 1 - Dashboard Để Hiển Thị Teport - Design](./images/rpt1-6.png)
 
 ![Report 1 - Dashboard Để Hiển Thị Teport - Preview](./images/rpt1-7.png)
+
+#### Báo Cáo 02 - Top Khách Hàng Chi Tiêu Nhiều Nhất
+
+Mục đích:
+
+- Giúp đánh giá xem khách hàng thân thiết để tặng voucher hay là nâng hạng khách hàng lên Premium,VIP phục vụ cho CSKH, CRM.
+
+Các bước thực hiện:
+
+1. Tạo View lấy danh sách Khách Hàng VIP (`V_REPORT_USER_VIP_2024`).
+2. Kết nối Tableu vào database.
+3. Kéo view `V_REPORT_USER_VIP_2024` vào Canvas.
+4. Mapping dữ liệu từ View `V_REPORT_USER_VIP_2024` để tạo chart line:
+    - Kéo "Tổng tiền chi tiêu" $\to$ Row $\Rightarrow$ Tableau sẽ tự động tính tổng và làm trục đứng (Y).
+    - Kéo "Tháng" $\to$ Columns, chọn demension để làm trục ngang (X).
+    - Kéo `UserID` vào Color chỗ Mark để hiển thị màu phân biệt.
+    - Filter top 10 tùy mục đích.
+5. Tạo Sheet hiển thị table chi tiết.
+    - Kéo "Tháng" $\to$ Columns, chọn demension và *discrete*.
+    - Tạo calculated fields để hiển thị UserID - Tên.
+    - Kéo calculated fields và phone vào để hiển thị.
+    - Kéo "Tổng chi tiêu" và Text chỗ Marks để show tiền vào table.
+    - Format màu, kiểu chữ kích thước.
+    - Chọn Analysis $\to$ Total $\to$ show grands total và kéo về trái để hiển thị cột tổng.
+6. Màn hình design và preview dashboard.
+
+- Ta chọn kích cỡ A4 lanscape để in cho đẹp và đây đủ, chọn fit -> entrie view để hiển thị hết width height.
+
+![Báo Cáo 02 - Top Khách Hàng Chi Tiêu Nhiều Nhất - Design](./images/rpt2-10.png)
+
+![Báo Cáo 02 - Top Khách Hàng Chi Tiêu Nhiều Nhất - Preview](./images/rpt2-11.png)
