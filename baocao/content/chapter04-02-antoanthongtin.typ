@@ -116,8 +116,64 @@ Import:
 #strong[Restore:]
 
 + Chuột phải vào mục Database của Server, chọn #emph[Restore Database…].
+
+#figure(image("images/restore-01.jpg"),
+  caption: [
+    Restore - 01 - Restore Database.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 2)
 + Chọn #emph[Source] là #emph[Device] và chọn #emph[File name] là file backup.
-+ Chọn #emph[Destination] là #emph[Database] và chọn #emph[Database] là #emph[BookingMS] (tên của Database muốn khôi phục thành).
-+ Nhấn #emph[OK].
+]
+
+#figure(image("images/restore-02.jpg"),
+  caption: [
+    Restore - 02 - Source.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 3)
++ Chọn file `.bak` để khôi phục.
+]
+
+#figure(image("images/restore-03.jpg"),
+  caption: [
+    Restore - 03 - Destination.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 4)
++ Chọn #emph[Destination] là #emph[Database] và đặt tên #emph[Database] là #emph[BookingMS].
+]
+
+#figure(image("images/restore-04.jpg"),
+  caption: [
+    Restore - 04 - Xác Nhận.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 5)
 + Thông báo Hoàn Thành.
+]
+
+#figure(image("images/restore-05.jpg"),
+  caption: [
+    Restore - 05 - Restore Hoàn Thành.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 6)
 + Kiểm tra các thành phần của Database vừa được khôi phục.
+]
+
+#figure(image("images/restore-06.jpg"),
+  caption: [
+    Restore - 06 - Kiểm Tra.
+  ]
+)

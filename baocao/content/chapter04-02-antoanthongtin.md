@@ -90,9 +90,25 @@ Import:
 **Restore:**
 
 1. Chuột phải vào mục Database của Server, chọn *Restore Database...*.
+
+![Restore - 01 - Restore Database.](images/restore-01.jpg)
+
 2. Chọn *Source* là *Device* và chọn *File name* là file backup.
-3. Chọn *Destination* là *Database* và chọn *Database* là *BookingMS* (tên của Database muốn khôi phục thành).
-4. Nhấn *OK*.
+
+![Restore - 02 - Source.](images/restore-02.jpg)
+
+3. Chọn file `.bak` để khôi phục.
+
+![Restore - 03 - Destination.](images/restore-03.jpg)
+
+4. Chọn *Destination* là *Database* và đặt tên *Database* là *BookingMS*.
+
+![Restore - 04 - Xác Nhận.](images/restore-04.jpg)
+
 5. Thông báo Hoàn Thành.
+
+![Restore - 05 - Restore Hoàn Thành.](images/restore-05.jpg)
+
 6. Kiểm tra các thành phần của Database vừa được khôi phục.
 
+![Restore - 06 - Kiểm Tra.](images/restore-06.jpg)
