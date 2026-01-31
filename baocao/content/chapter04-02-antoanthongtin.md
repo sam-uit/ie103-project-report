@@ -75,9 +75,7 @@ Tồn tại một SP Đăng nhập (Kiểm tra Hash mật khẩu khi người d�
 
 Hệ thống áp dụng cơ chế phân quyền dựa trên vai trò (RBAC).
 
-
-
-#### Kiểm Soát Truy Cập Dựa Trên Vai Trò (Data-Driven RBAC)
+#### RBAC (Role-Based Access Control) Cho Nhân Viên
 
 Hệ thống quản lý quyền hạn thông qua các bảng `ROLES`, `PERMISSIONS` và `ADMIN_ROLES`. Quyền truy cập không được gán cứng mà dựa trên vai trò và quyền hạn của *Admin* hoặc *Staff* (Nhân viên).
 
@@ -140,6 +138,10 @@ BEGIN
     RETURN @IsAllowed;
 END;
 ```
+
+#### OBAC (Ownership-Based Access Control) Cho Khách Hàng
+
+(Trình Bày Ở Đây)
 
 ### Sao Lưu & Phục Hồi
 
