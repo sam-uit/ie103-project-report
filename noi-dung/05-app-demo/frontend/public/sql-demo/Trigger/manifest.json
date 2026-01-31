@@ -4,6 +4,6 @@
             "Demo_AutoPrice",
             "Demo_SyncStatus",
             "Demo_Payment",
-            "Demo_Refund"
+            "TRG-05-REFUND"
       ]
 }

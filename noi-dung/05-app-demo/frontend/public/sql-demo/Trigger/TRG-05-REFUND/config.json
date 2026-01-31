@@ -3,8 +3,8 @@
       "title": "Trigger 5: Hoàn Tiền",
       "type": "Trigger",
       "shortDesc": "Kiểm tra số tiền hoàn và đồng bộ trạng thái payment, booking",
-      "mdFile": "Trigger/Demo_Refund/problem.html",
-      "sqlFile": "Trigger/Demo_Refund/trg_Refund.sql",
+      "mdFile": "Trigger/TRG-05-REFUND/TRG-05-REFUND.html",
+      "sqlFile": "Trigger/TRG-05-REFUND/TRG-05-REFUND.sql",
       "separateTables": [
             {
                   "name": "REFUNDS",
