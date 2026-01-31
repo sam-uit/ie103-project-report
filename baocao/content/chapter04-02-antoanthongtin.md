@@ -1,14 +1,12 @@
 ## An Toàn Thông Tin
 
-Mục này trình bày về cách hiện thực các biện pháp bảo mật thông tin trong hệ thống, bao gồm các biện pháp phân quyền, mã hóa mật khẩu, và các biện pháp bảo mật khác.
+Mục này trình bày về cách hiện thực các biện pháp bảo mật thông tin trong hệ thống, bao gồm các biện pháp phân quyền, mã hóa mật khẩu, và các biện pháp bảo mật khác. Hệ thống áp dụng mô hình bảo mật đa lớp từ mức Vật Lý của Hệ Quản Trị CSDL, tới phân quyền dựa trên vai trò (RBAC) ở mức dữ liệu.
 
 Đồng thời trình bày các công việc của quản trị viên trong việc sao lưu/khôi phục dữ liệu, đảm bảo an toàn thông tin và tính liên tục của vận hành (Business Continuity).
 
-### Xác Thực Và Phân Quyền
+### Bảo Mật Mức Hệ Quản Trị
 
-Hệ thống áp dụng mô hình bảo mật đa lớp, kết hợp giữa cơ chế phân quyền dựa trên vai trò (RBAC) ở mức dữ liệu và bảo mật mức vật lý của hệ quản trị SQL Server.
-
-#### Bảo Mật Mức Hệ Quản Trị
+Bảo mật mức vật lý của hệ quản trị SQL Server là lớp đầu tiên trong An Toàn Thông Tin của Hệ Thống BMS.
 
 Để tuân thủ nguyên tắc "Đặc quyền tối thiểu" (Least Privilege) -- mỗi tài khoản chỉ có quyền truy cập vào tài nguyên cần thiết, hệ thống KHÔNG SỬ DỤNG tài khoản `sa` (System Admin) để kết nối từ ứng dụng vào cơ sở dữ liệu. Thay vào đó, một tài khoản chuyên biệt được tạo ra để kết nối từ ứng dụng vào cơ sở dữ liệu.
 
@@ -33,6 +31,10 @@ DENY SELECT, INSERT, UPDATE, DELETE ON SCHEMA::dbo TO [BMS_App_User];
 GO
 ```
 
+### Xác Thực Và Phân Quyền
+
+Hệ thống áp dụng cơ chế phân quyền dựa trên vai trò (RBAC).
+
 #### Mã Hóa Mật Khẩu
 
 Để đảm bảo an toàn dữ liệu người dùng, hệ thống không lưu trữ mật khẩu dưới dạng văn bản thuần (plain-text). Mọi mật khẩu đều được mã hóa một chiều bằng thuật toán SHA-256 thông qua hàm HASHBYTES của SQL Server trước khi lưu vào cơ sở dữ liệu.
@@ -49,7 +51,6 @@ BEGIN
     VALUES (@Email, CONVERT(NVARCHAR(255), @Hash, 1), @FullName);
 END
 ```
-
 
 SP Đăng nhập (Kiểm tra Hash mật khẩu khi người dùng đăng nhập) `SP_AUTH_LOGIN`:
 
@@ -120,7 +121,7 @@ Mô hình phân quyền:
 
 Thủ tục kiểm tra quyền `F_CHECK_PERMISSION`:
 
-- Kiểm tra quyền bằng cách liên kết các bảng, và chỉ cho phép truy cập vào tài nguyên hệ thống nếu user/admin có quyền truy cập vào tài nguyên đó.
+- Kiểm tra quyền bằng cách liên kết các bảng, và chỉ cho phép truy cập vào tài nguyên hệ thống nếu staff/admin có quyền truy cập vào tài nguyên đó.
 - Miêu tả nhanh như dưới đây.
 
 ```sql
