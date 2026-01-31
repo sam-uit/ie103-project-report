@@ -8,7 +8,7 @@ Mục này trình bày về cách hiện thực các biện pháp bảo mật th
 
 Bảo mật mức vật lý của hệ quản trị SQL Server là lớp đầu tiên trong An Toàn Thông Tin của Hệ Thống BMS.
 
-Để tuân thủ nguyên tắc "Đặc quyền tối thiểu" (Least Privilege) -- mỗi tài khoản chỉ có quyền truy cập vào tài nguyên cần thiết, hệ thống KHÔNG SỬ DỤNG tài khoản `sa` (System Admin) để kết nối từ ứng dụng vào cơ sở dữ liệu. Thay vào đó, một tài khoản chuyên biệt được tạo ra để kết nối từ ứng dụng vào cơ sở dữ liệu.
+Để tuân thủ nguyên tắc "Đặc quyền tối thiểu" (Least Privilege) -- mỗi tài khoản chỉ có đủ quyền truy cập vào tài nguyên cần thiết cho các nghiệp vụ cụ thể, hệ thống KHÔNG SỬ DỤNG tài khoản `sa` (System Admin) để kết nối từ ứng dụng vào cơ sở dữ liệu. Thay vào đó, một tài khoản chuyên biệt được tạo ra để kết nối từ ứng dụng vào cơ sở dữ liệu.
 
 1. Tạo Login Server:
 
