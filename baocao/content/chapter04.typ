@@ -324,7 +324,7 @@ Khi khách hàng thanh toán (`INSERT` vào bảng `PAYMENTS`):
 + #strong[Cập nhật trạng thái]: Tự động chuyển trạng thái booking sang `PAID`.
 + #strong[Ngăn gian lận]: Không cho thanh toán sai số tiền.
 
-Sử dụng #strong[INSTEAD OF Trigger] để:
+Sử dụng `INSTEAD OF` Trigger để:
 
 - Tính tổng tiền từ `CT_DATPHONG`.
 - So sánh với số tiền thanh toán.
@@ -338,8 +338,8 @@ Sử dụng #strong[INSTEAD OF Trigger] để:
   ]
 )
 
-==== TG4: Refund
-<tg4-refund>
+==== TG5: Refund
+<tg5-refund>
 
 - Xây dựng #strong[Trigger] để quản lý quy trình hoàn tiền an toàn và chính xác.
 
