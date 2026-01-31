@@ -77,7 +77,7 @@ Trong chương này, Nhóm sẽ trình bày các chức năng và quy tắc nghi
 
 ```{=typst}
 #co-note(title: "Lưu Ý về Thiết Kế Các Thực Thể")[
-Mặc dù đều là các thực thể sử dụng hệ thống *BMS*, nhưng Nhóm quyết định tách biệt thực thể Người Dùng (`USERS`) và Quản Trị Viên (`ADMINS`) thành hai cấu trúc dữ liệu độc lập thay vì gộp chung. Quyết định này nhằm mục đích:
+Mặc dù đều là các thực thể sử dụng hệ thống *BMS*, nhưng Nhóm 02 quyết định tách biệt thực thể Người Dùng (`USERS`) và Quản Trị Viên (`ADMINS`) thành hai cấu trúc dữ liệu độc lập thay vì gộp chung. Quyết định này nhằm mục đích:
 
 1. #strong[Phân định rõ ràng phạm vi truy cập]: Ngăn chặn tuyệt đối các rủi ro leo thang đặc quyền (Privilege Escalation), đảm bảo người dùng cuối không thể vô tình hoặc cố ý truy cập vào các chức năng quản trị.
 2. #strong[Tối ưu hóa thuộc tính]: Mỗi nhóm đối tượng có các thuộc tính đặc thù riêng biệt (Ví dụ: `USERS` cần tích điểm, `ADMINS` cần có vai trò (role) cụ thể), giúp tránh dư thừa dữ liệu (`NULL` values) và đảm bảo tính chuẩn hóa.
