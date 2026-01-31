@@ -324,18 +324,13 @@ Hệ thống triển khai hàm `F_CHECK_PERMISSION` làm nền tảng cho cơ ch
   caption: [Dữ Liệu Mẫu -- Phân Quyền và Vai Trò.]
 )
 
-=== Tài Khoản
-<tai-khoan>
+=== Tài Khoản Admins
+<tai-khoan-admins>
 
-```sql
--- Insert ADMINS (status: ACTIVE or INACTIVE)
-INSERT INTO ADMINS (email, password_hash, full_name, status) VALUES
-('superadmin@gmail.com', 'hash_password_1', N'Lê Kim Long', 'ACTIVE'),
-('admin@gmail.com', 'hash_password_2', N'Đinh Xuân Sâm', 'ACTIVE'),
-('staff@gmail.com', 'hash_password_3', N'Nguyễn Minh Triết', 'ACTIVE');
-
-GO
-```
+#figure(
+  raw(read("code/ch03-seed_data-admins.sql"), lang: "sql", block: true),
+  caption: [Dữ Liệu Mẫu -- Các Tài Khoản Admins.]
+)
 
 === Loại Phòng
 <loai-phong>
