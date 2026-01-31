@@ -151,6 +151,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
   - Mỗi bản Differential backup được lưu giữ trong 1 tuần.
 - Export/Import: Sử dụng trong các tình huống cụ thể.
   - Không quy định thời gian lưu giữ, tùy tình huống hoặc yêu cầu khi thực hiện.
+  - Cần có bản ghi chú về thời gian, và mục đích tạo.
 
 ==== Backup -- Restore Dữ Liệu
 <backup-restore-du-lieu>
