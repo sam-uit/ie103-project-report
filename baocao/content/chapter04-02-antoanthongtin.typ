@@ -93,7 +93,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 
 + Chuột phải vào mục Database của Server, chọn #emph[Restore Database…].
 
-#figure(image("images/restore-01.jpg"),
+#figure(image("images/restore-01.jpg.jpeg"),
   caption: [
     Restore - 01 - Restore Database.
   ]
@@ -104,7 +104,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Chọn #emph[Source] là #emph[Device] và chọn #emph[File name] là file backup.
 ]
 
-#figure(image("images/restore-02.jpg"),
+#figure(image("images/restore-02.jpg.jpeg"),
   caption: [
     Restore - 02 - Source.
   ]
@@ -115,7 +115,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Chọn file `.bak` để khôi phục.
 ]
 
-#figure(image("images/restore-03.jpg"),
+#figure(image("images/restore-03.jpg.jpeg"),
   caption: [
     Restore - 03 - Destination.
   ]
@@ -126,7 +126,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Chọn #emph[Destination] là #emph[Database] và đặt tên #emph[Database] là #emph[BookingMS].
 ]
 
-#figure(image("images/restore-04.jpg"),
+#figure(image("images/restore-04.jpg.jpeg"),
   caption: [
     Restore - 04 - Xác Nhận.
   ]
@@ -137,7 +137,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Thông báo Hoàn Thành.
 ]
 
-#figure(image("images/restore-05.jpg"),
+#figure(image("images/restore-05.jpg.jpeg"),
   caption: [
     Restore - 05 - Restore Hoàn Thành.
   ]
@@ -148,7 +148,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Kiểm tra các thành phần của Database vừa được khôi phục.
 ]
 
-#figure(image("images/restore-06.jpg"),
+#figure(image("images/restore-06.jpg.jpeg"),
   caption: [
     Restore - 06 - Kiểm Tra.
   ]

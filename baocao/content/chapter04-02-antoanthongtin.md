@@ -65,28 +65,27 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 
 1. Chuột phải vào mục Database của Server, chọn *Restore Database...*.
 
-![Restore - 01 - Restore Database.](images/restore-01.jpg)
+![Restore - 01 - Restore Database.](images/restore-01.jpg.jpeg)
 
 2. Chọn *Source* là *Device* và chọn *File name* là file backup.
 
-![Restore - 02 - Source.](images/restore-02.jpg)
+![Restore - 02 - Source.](images/restore-02.jpg.jpeg)
 
 3. Chọn file `.bak` để khôi phục.
 
-![Restore - 03 - Destination.](images/restore-03.jpg)
+![Restore - 03 - Destination.](images/restore-03.jpg.jpeg)
 
 4. Chọn *Destination* là *Database* và đặt tên *Database* là *BookingMS*.
 
-![Restore - 04 - Xác Nhận.](images/restore-04.jpg)
+![Restore - 04 - Xác Nhận.](images/restore-04.jpg.jpeg)
 
 5. Thông báo Hoàn Thành.
 
-![Restore - 05 - Restore Hoàn Thành.](images/restore-05.jpg)
+![Restore - 05 - Restore Hoàn Thành.](images/restore-05.jpg.jpeg)
 
 6. Kiểm tra các thành phần của Database vừa được khôi phục.
 
-![Restore - 06 - Kiểm Tra.](images/restore-06.jpg)
-
+![Restore - 06 - Kiểm Tra.](images/restore-06.jpg.jpeg)
 
 #### Export - Import Dữ Liệu
 
