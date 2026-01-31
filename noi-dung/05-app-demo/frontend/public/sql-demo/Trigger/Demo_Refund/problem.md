@@ -3,19 +3,24 @@
 ## B1: Trình Bày Bài Toán
 
 ### Mục Đích
-Xây dựng **Trigger** để quản lý quy trình hoàn tiền an toàn và chính xác.
+
+- Xây dựng **Trigger** để quản lý quy trình hoàn tiền an toàn và chính xác.
 
 ### Vấn Đề
-Khi xử lý hoàn tiền (INSERT vào bảng `REFUNDS`):
-1. **Kiểm tra số tiền hoàn**: Không được vượt quá số tiền đã thanh toán
-2. **Đồng bộ trạng thái**: Cập nhật PAYMENTS.status = 'REFUNDED' và DATPHONG.trang_thai = 'REFUNDED'
-3. **Ngăn gian lận**: Không cho hoàn tiền nhiều hơn đã trả
+
+Khi xử lý hoàn tiền (`INSERT` vào bảng `REFUNDS`):
+
+1. **Kiểm tra số tiền hoàn**: Không được vượt quá số tiền đã thanh toán.
+2. **Đồng bộ trạng thái**: Cập nhật `PAYMENTS.trang_thai = 'REFUNDED'` và `DATPHONG.trang_thai = 'REFUNDED'`.
+3. **Ngăn gian lận**: Không cho hoàn tiền nhiều hơn đã trả.
 
 ### Giải Pháp
+
 Sử dụng **INSTEAD OF Trigger** để:
-- Kiểm tra `refund_amount <= payment.amount`
-- Tự động cập nhật trạng thái payment và booking
-- Đảm bảo tính toàn vẹn dữ liệu
+
+- Kiểm tra `REFUNDS.so_tien_hoan <= PAYMENTS.so_tien`.
+- Tự động cập nhật trạng thái payment và booking.
+- Đảm bảo tính toàn vẹn dữ liệu.
 
 ---
 

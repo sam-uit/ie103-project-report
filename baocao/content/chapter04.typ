@@ -341,7 +341,27 @@ Sử dụng #strong[INSTEAD OF Trigger] để:
 ==== TG4: Refund
 <tg4-refund>
 
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+- Xây dựng #strong[Trigger] để quản lý quy trình hoàn tiền an toàn và chính xác.
+
+Khi xử lý hoàn tiền (`INSERT` vào bảng `REFUNDS`):
+
++ #strong[Kiểm tra số tiền hoàn]: Không được vượt quá số tiền đã thanh toán.
++ #strong[Đồng bộ trạng thái]: Cập nhật `PAYMENTS.trang_thai = 'REFUNDED'` và `DATPHONG.trang_thai = 'REFUNDED'`.
++ #strong[Ngăn gian lận]: Không cho hoàn tiền nhiều hơn đã trả.
+
+Sử dụng `INSTEAD OF` Trigger để:
+
+- Kiểm tra `REFUNDS.so_tien_hoan <= PAYMENTS.so_tien`.
+- Tự động cập nhật trạng thái payment và booking.
+- Đảm bảo tính toàn vẹn dữ liệu.
+
+#strong[Ví dụ thực hiện]:
+
+#figure(image("demo/TRG-05-REFUND.png"),
+  caption: [
+    TRG-05-Refund - Kết quả
+  ]
+)
 
 === Functions (3)
 <functions-3>

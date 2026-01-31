@@ -318,11 +318,23 @@ Sử dụng **INSTEAD OF Trigger** để:
 
 #### TG4: Refund
 
+- Xây dựng **Trigger** để quản lý quy trình hoàn tiền an toàn và chính xác.
 
+Khi xử lý hoàn tiền (`INSERT` vào bảng `REFUNDS`):
 
-```{=typst}
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-```
+1. **Kiểm tra số tiền hoàn**: Không được vượt quá số tiền đã thanh toán.
+2. **Đồng bộ trạng thái**: Cập nhật `PAYMENTS.trang_thai = 'REFUNDED'` và `DATPHONG.trang_thai = 'REFUNDED'`.
+3. **Ngăn gian lận**: Không cho hoàn tiền nhiều hơn đã trả.
+
+Sử dụng `INSTEAD OF` Trigger để:
+
+- Kiểm tra `REFUNDS.so_tien_hoan <= PAYMENTS.so_tien`.
+- Tự động cập nhật trạng thái payment và booking.
+- Đảm bảo tính toàn vẹn dữ liệu.
+
+**Ví dụ thực hiện**:
+
+![TRG-05-Refund - Kết quả](demo/TRG-05-REFUND.png)
 
 ### Functions (3)
 
