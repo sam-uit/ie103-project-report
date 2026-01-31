@@ -18,3 +18,10 @@ This will be the place to stay that I recommend to you when coming to Vietnam.
 
 Tuy nhiên, đặc thù thuộc một khu vực trung du miền núi, mật độ khách vãng lai hoặc du lịch không cao, kèm theo đó là mô hình quản lý còn thủ công, dựa trên sổ sách truyền thống, tạo nên một khoản cách nhất định để khách hàng có thể tiếp cận được dịch vụ của Nhà Nghỉ 999.
 
+Phần *"số hóa"* thấy rõ nhất của quy trình quản lý và vận hành là một phần sổ sách được lưu trữ trong các bảng Excel rời rạc, và phần *"chuyển đổi số"* lớn nhất có lẽ là thực hiện nhận kiểm tra phòng trống, đặt phòng, báo giá thông qua các ứng dụng chat phổ biến như Zalo, Messenger.
+
+Với các nhân sự quản lý là Vợ và Con Gái thay phiên nhau trực, điều này nhiều lúc tạo nên các vấn đề trong việc quản lý, nhất là khi có các giao dịch phức tạp, hoặc các yêu cầu được gửi tới một trong 2 người quản lý nhưng chưa được thống nhất hoặc *cập nhật* kịp thời.
+
+Ngoài ra, với hình thức quản lý gần như thủ công hoàn toàn, việc *thống kê* hoặc *báo cáo* là rất vất vả, hoặc thậm chí không thể thực hiện được. Chưa kể không có một hình thức và điểm chạm *tương tác số* nào với khách hàng qua Internet, vô tình tạo nên một khoảng cách nhất định giữa khách hàng và dịch vụ của Nhà Nghỉ 999.
+
+Đây là một góc nhỏ động lực để Nhóm 02 chọn đề tài *"Hệ Thống Quản Lý Đặt Phòng"* để thực hiện nghiên cứu, và tìm ra các giải pháp để cải thiện quy trình quản lý, và tạo ra một hình thức và điểm chạm *tương tác số* với khách hàng qua Internet, đặc biệt cho các doanh nghiệp vừa và nhỏ, ít hoặc thậm chí không có nền tảng *số hóa* hoặc *chuyển đổi số* như Nhà Nghỉ 999.
