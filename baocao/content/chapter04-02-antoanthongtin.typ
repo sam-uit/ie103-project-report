@@ -29,8 +29,11 @@ Hệ thống áp dụng mô hình bảo mật dựa trên vai trò (RBAC - Role 
 Chiến lược sao lưu dữ liệu được đề xuất:
 
 - Full Backup: Thực hiện định kỳ vào 00:00 Chủ Nhật hàng tuần.
+  - Mỗi bản Full backup được lưu giữ trong 2 tuần.
 - Differential Backup: Thực hiện vào 00:00 các ngày trong tuần.
+  - Mỗi bản Differential backup được lưu giữ trong 1 tuần.
 - Export/Import: Sử dụng trong các tình huống cụ thể.
+  - Không quy định thời gian lưu giữ, tùy tình huống hoặc yêu cầu khi thực hiện.
 
 ==== Backup -- Restore Dữ Liệu
 <backup-restore-du-lieu>
@@ -47,7 +50,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 
 #block[
 #set enum(numbering: "1.", start: 2)
-+ Chọn #emph[Full] trong mục #emph[Backup type]. Chọn #emph[Destination] là #emph[Disk]
++ Chọn #emph[Full] hoặc #emph[Differential] trong mục #emph[Backup type]. Chọn #emph[Destination] là #emph[Disk]
 ]
 
 #figure(image("images/backup-02.jpg.jpeg"),
