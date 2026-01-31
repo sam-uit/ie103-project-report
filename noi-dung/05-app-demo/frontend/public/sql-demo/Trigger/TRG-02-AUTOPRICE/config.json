@@ -3,8 +3,8 @@
       "title": "Trigger 2: Tự Động Tính Giá Phòng",
       "type": "Trigger",
       "shortDesc": "Tự động tính toán đơn giá chi tiết đặt phòng dựa trên loại phòng",
-      "mdFile": "Trigger/Demo_AutoPrice/problem.html",
-      "sqlFile": "Trigger/Demo_AutoPrice/trg_AutoPrice.sql",
+      "mdFile": "Trigger/TRG-02-AUTOPRICE/TRG-02-AUTOPRICE.html",
+      "sqlFile": "Trigger/TRG-02-AUTOPRICE/TRG-02-AUTOPRICE.sql",
       "separateTables": [
             {
                   "name": "CT_DATPHONG",
