@@ -101,3 +101,24 @@ Các bước thực hiện:
 ![Report 2 - Màn Hình Design](./images/rpt2-10.png)
 
 ![Report 2 - Màn Hình Preview](./images/rpt2-11.png)
+
+#### Báo Cáo 03 - Thống Kê Doanh Thu Dịch Vụ
+
+Miêu tả:
+
+- Để xác định "services nào được ưa chuộng nhất" (Best Seller) sẽ giúp quản lý có kế hoạch nhập hàng và đẩy mạnh khuyến mãi.
+- Vì mỗi dịch vụ thời giá sẽ khác nhau nên ở table chi tiết ta sẽ thống kê từng đơn giá của dịch vụ.
+
+Các bước thực hiện:
+
+1. Tạo View lấy danh sách Dịch Vụ Yêu Thích Nhất (`V_REPORT_TOP_SERVICE_2024`).
+2. Kết nối Tableu vào database.
+3. Kéo view `V_REPORT_TOP_SERVICE_2024` vào Canvas.
+4. Mapping dữ liệu từ View `V_REPORT_TOP_SERVICE_2024` để tạo chart line:
+5. Tạo Sheet hiển thị table chi tiết.
+
+Màn hình design và preview dashboard:
+
+![Report 3 - Màn Hình Design](./images/rpt3-8.png)
+
+![Report 3 - Màn Hình Preview](./images/rpt3-9.png)

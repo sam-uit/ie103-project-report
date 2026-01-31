@@ -185,10 +185,11 @@ GO
 
 ## 3. Thống kê xem dịch vụ nào được khách sử dụng nhiều, và nó mang lại bao nhiêu tiền trong năm 2024
 
-Để xác định "services nào được ưa chuộng nhất" (Best Seller) sẽ giúp quản lý biết đường nhập hàng và đẩy mạnh khuyến mãi.
-Vì mỗi dịch vụ thời giá sẽ khác nhau nên ở table chi tiết ta sẽ thống kê từng đơn giá của dịch vụ.
+- Để xác định "services nào được ưa chuộng nhất" (Best Seller) sẽ giúp quản lý biết đường nhập hàng và đẩy mạnh khuyến mãi.
+- Vì mỗi dịch vụ thời giá sẽ khác nhau nên ở table chi tiết ta sẽ thống kê từng đơn giá của dịch vụ.
 
 #### 3.1 Tạo View
+
 ```sql
 CREATE OR ALTER VIEW V_REPORT_TOP_SERVICE_2024 AS
 SELECT
@@ -234,7 +235,7 @@ GO
 
 ![Ví dụ](./images/rpt3-6.png)
 
-#### 3.6 Màn hình preview  sheet table chi tiết
+#### 3.6 Màn hình preview sheet table chi tiết
 
 ![Ví dụ](./images/rpt3-7.png)
 
