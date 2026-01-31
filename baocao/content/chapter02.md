@@ -84,35 +84,20 @@ Mặc dù đều là các thực thể sử dụng hệ thống *BMS*, nhưng Nh
 ]
 ```
 
-- **Quản Lý/Quản Trị Viên**: *Nhân Viên* thuộc đơn vị cung cấp dịch vụ.
-    - Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
-    - Có quyền quản lý nghiệp vụ và dữ liệu hệ thống
-- **Người Dùng**: *Khách Hàng* sử dụng dịch vụ.
-    - Đại diện cho một người dùng/khách hàng cuối của hệ thống quản lý đặt phòng.
-    - Có thể thực hiện đặt phòng, hủy đặt phòng, thanh toán, đánh giá, và xem các thông tin của mình.
-- **Phòng**
-    - Đại diện cho một phòng.
-    - Có thể được đặt hoặc không.
-- **Loại Phòng**
-    - Đại diện cho một loại phòng.
-- **Đặt Phòng**
-    - Đại diện cho một giao dịch đặt phòng.
-    - Có thể được hủy hoặc không.
-- **Dịch Vụ**
-    - Đại diện cho một dịch vụ đi kèm.
-- **Thanh Toán**
-    - Đại diện cho một giao dịch thanh toán.
-- **Hoàn Tiền**
-    - Đại diện cho một giao dịch hoàn tiền.
-- **Vai Trò**
-    - Đại diện cho một vai trò.
-- **Quyền Hạn**
-    - Định nghĩa quyền thao tác cụ thể (CRUD phòng, duyệt hoàn tiền, xem báo cáo...).
-- **Đánh Giá**
-    - Đại diện cho một đánh giá.
-- **Mã Giảm Giá**
-    - Đại diện cho một mã giảm giá.
-    - Có thể được áp dụng khi đặt phòng.
+| **Thực Thể** | **Miêu Tả** |
+|--------------|--------------|
+| **Admin/Staff** | - *Nhân Viên* thuộc đơn vị cung cấp dịch vụ. - Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff). - Có quyền quản lý nghiệp vụ và dữ liệu hệ thống |
+| **User** | - *Khách Hàng* sử dụng dịch vụ. - Đại diện cho một người dùng/khách hàng cuối của hệ thống quản lý đặt phòng. - Có thể thực hiện đặt phòng, hủy đặt phòng, thanh toán, đánh giá, và xem các thông tin của mình. |
+| **Phòng** | - Đại diện cho một phòng. - Có thể được đặt hoặc không. |
+| **Loại Phòng** | - Đại diện cho một loại phòng. |
+| **Đặt Phòng** | - Đại diện cho một giao dịch đặt phòng. - Có thể được hủy hoặc không. |
+| **Dịch Vụ** | - Đại diện cho một dịch vụ đi kèm. |
+| **Thanh Toán** | - Đại diện cho một giao dịch thanh toán. |
+| **Hoàn Tiền** | - Đại diện cho một giao dịch hoàn tiền. |
+| **Vai Trò** | - Đại diện cho một vai trò. |
+| **Quyền Hạn** | - Định nghĩa quyền thao tác cụ thể (CRUD phòng, duyệt hoàn tiền, xem báo cáo...). |
+| **Đánh Giá** | - Đại diện cho một đánh giá. |
+| **Mã Giảm Giá** | - Đại diện cho một mã giảm giá. - Có thể được áp dụng khi đặt phòng. |
 
 ### Quan Hệ Giữa Các Thực Thể
 
