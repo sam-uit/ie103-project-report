@@ -7,12 +7,37 @@
 === Xác Thực Và Phân Quyền
 <xac-thuc-va-phan-quyen>
 
-#todo[(Xác Thực Và Phân Quyền) THỰC HIỆN PHÂN QUYỀN.]
-Hệ thống áp dụng mô hình bảo mật dựa trên vai trò (RBAC - Role Based Access Control).
+Hệ thống áp dụng mô hình bảo mật đa lớp, kết hợp giữa cơ chế phân quyền dựa trên vai trò (RBAC) ở mức dữ liệu và bảo mật mức vật lý của hệ quản trị SQL Server.
 
-- Xác thực:
-  - Mật khẩu người dùng được mã hóa (Hashing) trước khi lưu vào cơ sở dữ liệu (giả lập logic ứng dụng).
-- Bảng phân quyền:
+==== Mã Hóa Mật Khẩu
+<ma-hoa-mat-khau>
+
+Để đảm bảo an toàn dữ liệu người dùng, hệ thống không lưu trữ mật khẩu dưới dạng văn bản thuần (plain-text). Mọi mật khẩu đều được mã hóa một chiều bằng thuật toán SHA-256 thông qua hàm HASHBYTES của SQL Server trước khi lưu vào cơ sở dữ liệu.
+
+Tạo một Stored Producedure thực hiện mã hóa mật khẩu mỗi khi tạo User mới (`SP_RegisterUser`):
+
+```sql
+-- Mã Hóa Mật Khẩu trong quá trình Đăng Ký Thành Viên
+CREATE PROCEDURE SP_RegisterUser
+    @Email NVARCHAR(255),
+    @Password NVARCHAR(50),
+    @FullName NVARCHAR(255)
+AS
+BEGIN
+    DECLARE @PasswordHash VARBINARY(64);
+    SET @PasswordHash = HASHBYTES('SHA2_256', @Password);
+
+    INSERT INTO USERS (email, password_hash, full_name)
+    VALUES (@Email, @PasswordHash, @FullName);
+END
+```
+
+==== Kiểm Soát Truy Cập Dựa Trên Vai Trò (Data-Driven RBAC)
+<kiem-soat-truy-cap-dua-tren-vai-tro-data-driven-rbac>
+
+Hệ thống quản lý quyền hạn thông qua các bảng `ROLES`, `PERMISSIONS` và `ADMIN_ROLES`. Quyền truy cập không được gán cứng mà động dựa trên dữ liệu.
+
+Mô hình phân quyền:
 
 #figure(
     table(
@@ -22,6 +47,28 @@ Hệ thống áp dụng mô hình bảo mật dựa trên vai trò (RBAC - Role 
     ),
     caption: [An Toàn Thông Tin - Bảng Phân Quyền]
 )
+Thủ tục kiểm tra quyền:
+
+```sql
+CREATE FUNCTION F_CheckPermission (@AdminId INT, @PermissionCode NVARCHAR(50))
+RETURNS BIT
+AS
+BEGIN
+    DECLARE @IsAllowed BIT = 0;
+    
+    IF EXISTS (
+        SELECT 1 
+        FROM ADMIN_ROLES ar
+        JOIN ROLES r ON ar.role_id = r.id
+        JOIN ROLE_PERMISSIONS rp ON r.id = rp.role_id
+        JOIN PERMISSIONS p ON rp.permission_id = p.id
+        WHERE ar.admin_id = @AdminId AND p.code = @PermissionCode
+    )
+    SET @IsAllowed = 1;
+
+    RETURN @IsAllowed;
+END
+```
 
 === Sao Lưu & Phục Hồi
 <sao-luu-phuc-hoi>
