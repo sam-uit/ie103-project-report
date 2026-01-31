@@ -230,9 +230,10 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 Sử dụng Trigger để đảm bảo toàn vẹn dữ liệu và tự động cập nhật trạng thái.
 
-#### TG1: CheckTime
+#### TRG-01 - Kiểm Tra Thời Gian Đặt Phòng
 
-- Xây dựng **Trigger** để đảm bảo tính hợp lệ của dữ liệu thời gian khi đặt phòng trong hệ thống quản lý khách sạn.
+- Tên: `trg_DATPHONG_CheckTime`.
+- Mục đích: Đảm bảo tính hợp lệ của dữ liệu thời gian khi đặt phòng trong hệ thống quản lý khách sạn.
 
 Trong hệ thống đặt phòng khách sạn, cần đảm bảo rằng:
 
@@ -240,12 +241,12 @@ Trong hệ thống đặt phòng khách sạn, cần đảm bảo rằng:
 - Ngăn chặn dữ liệu không hợp lệ được lưu vào cơ sở dữ liệu.
 - Báo lỗi rõ ràng cho người dùng khi nhập sai.
 
-Sử dụng **AFTER Trigger** trên bảng `DATPHONG` để:
+Sử dụng `AFTER Trigger` trên bảng `DATPHONG` để:
 
-1. Kiểm tra điều kiện thời gian sau khi INSERT hoặc UPDATE
-2. Sử dụng bảng ảo `inserted` để truy cập dữ liệu mới
-3. ROLLBACK transaction nếu phát hiện lỗi
-4. Hiển thị thông báo lỗi chi tiết
+1. Kiểm tra điều kiện thời gian sau khi `INSERT` hoặc `UPDATE`.
+2. Sử dụng bảng ảo `inserted` để truy cập dữ liệu mới.
+3. `ROLLBACK` transaction nếu phát hiện lỗi.
+4. Hiển thị thông báo lỗi chi tiết.
 
 **Ví dụ thực hiện**:
 
