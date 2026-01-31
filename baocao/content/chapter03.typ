@@ -290,11 +290,11 @@ Trước khi đi vào vận hành nghiệp vụ, nhóm thực hiện thiết l�
 === Tài Khoản Kết Nối CSDL Của Ứng Dụng
 <tai-khoan-ket-noi-csdl-cua-ung-dung>
 
-Để tuân thủ nguyên tắc bảo mật, hệ thống không sử dụng tài khoản quản trị cao nhất (`sa`) cho ứng dụng. Một tài khoản chuyên biệt được khởi tạo:
+Để tuân thủ nguyên tắc bảo mật, hệ thống không sử dụng tài khoản quản trị cao nhất (`sa`) cho ứng dụng. Một tài khoản chuyên biệt được khởi tạo dành riêng cho ứng dụng khi kết nối CSDL:
 
 #figure(
   raw(read("code/ch03-02-bms_app_user.sql"), lang: "sql", block: true),
-  caption: [Chương 03 -- Tài Khoản Kết Nối CSDL Của Ứng Dụng.]
+  caption: [Quản Trị & Bảo Mật -- Tài Khoản Kết Nối CSDL.]
 )
 
 === Hàm Kiểm Tra Quyền Hạn
@@ -304,7 +304,7 @@ Hệ thống triển khai hàm `F_CHECK_PERMISSION` làm nền tảng cho cơ ch
 
 #figure(
   raw(read("code/ch03-02-f_check_permission.sql"), lang: "sql", block: true),
-  caption: [Chương 03 -- Hàm Kiểm Tra Quyền Hạn.]
+  caption: [Quản Trị & Bảo Mật -- Hàm Kiểm Tra Quyền Hạn.]
 )
 
 == Dữ Liệu Mẫu
