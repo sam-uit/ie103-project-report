@@ -73,12 +73,15 @@ Tồn tại một SP Đăng nhập (Kiểm tra Hash mật khẩu khi người d�
 
 ### Xác Thực Và Phân Quyền
 
-Hệ thống áp dụng cơ chế phân quyền dựa trên vai trò (RBAC).
+Để đảm bảo đúng và đủ quyền thực thi các thao tác tương ứng cho từng vai trò của *Nhân Viên* và của *Khách Hàng*, hệ thống áp dụng những cơ chế tương ứng cần thiết.
+
+- Đối với *Nhân Viên*: Hệ thống áp dụng cơ chế phân quyền dựa trên vai trò (RBAC).
+- Đối với *Khách Hàng*: Hệ thống áp dụng cơ chế xác thực quyền sở hữu (OBAC).
 
 #### RBAC (Role-Based Access Control) Cho Nhân Viên
 
 ```{=typst}
-#co-warn[Mọi thao tác quản trị (Thêm phòng, Duyệt hoàn tiền...) đều phải đi qua hàm kiểm tra `F_CHECK_PERMISSION` để xác thực xem `AdminID` có sở hữu quyền (`PERMISSIONS.code`) tương ứng hay không.]
+#co-warn[Mọi thủ tục dành cho #emph[Nhân Viên] (các thao tác quản trị: Thêm phòng, Duyệt hoàn tiền...) đều phải đi qua hàm kiểm tra `F_CHECK_PERMISSION` để xác thực xem nhân viên đó có sở hữu quyền (`PERMISSIONS.code`) tương ứng hay không.]
 ```
 
 Hệ thống quản lý quyền hạn thông qua các bảng `ROLES`, `PERMISSIONS` và `ADMIN_ROLES`. Quyền truy cập không được gán cứng mà dựa trên vai trò và quyền hạn của *Admin* hoặc *Staff* (Nhân viên).
@@ -144,7 +147,28 @@ Luôn sử dụng hàm `F_CHECK_PERMISSION` trên mọi thao thác của *Nhân 
 
 #### OBAC (Ownership-Based Access Control) Cho Khách Hàng
 
-(Trình Bày Ở Đây)
+- Quyền hạn được kiểm tra dựa trên tính sở hữu dữ liệu.
+
+```{=typst}
+#co-warn[Mọi thủ tục dành cho #emph[Khách Hàng] đều cần có logic kiểm tra tính sở hữu dữ liệu.]
+```
+
+Ví dụ 1: Đối với End User, quyền "Đặt phòng" là quyền mặc định. Ta chỉ cần kiểm tra: User có tồn tại và đang hoạt động hay không.
+
+```sql
+    -- Nếu tài khoản hợp lệ (tồn tại, và đang ACTIVE), cho phép tạo đơn Đặt Phòng
+    IF NOT EXISTS (SELECT 1 FROM USERS WHERE id = @UserId and status = 'ACTIVE')
+```
+
+Ví dụ 2: Trong thủ tục `SP_USER_CANCEL_BOOKING`, hệ thống bắt buộc kiểm tra điều kiện `WHERE user_id = @CurrentUserId` để đảm bảo người dùng chỉ có thể thao tác trên các đơn đặt phòng của chính họ.
+
+```sql
+    -- Đơn đặt phòng phải tồn tại VÀ thuộc về đúng User này
+    IF NOT EXISTS (
+        SELECT 1 FROM DATPHONG 
+        WHERE id = @BookingId AND user_id = @UserId
+    )
+```
 
 ### Sao Lưu & Phục Hồi
 
