@@ -1,8 +1,8 @@
 # Lời Nói Đầu
 
 ```{=typst}
-#co-info(title: [Wifong Alex #text(fill: gray)[posted:]])[#emph[
-I am quite satisfied with this hotel.
+#co-info(title: [#link("https://maps.app.goo.gl/HkeHUT6AEJRQPRjG8")[Wifong Alex] #text(fill: gray)[posted (2 months ago)] #text(fill: orange)[#sym.star #sym.star #sym.star #sym.star #sym.star]:])[
+#emph[I am quite satisfied with this hotel.
 
 Although it is not available on the "Booking" app, this is a reasonable accommodation when you travel to Vietnam.
 
