@@ -8,11 +8,10 @@
 - Chúng ta sẽ có phần chart thể hiển tổng doanh thu của từng tháng, và phần hiển thị chi tiết tổng số lượt đặt và tổng số tiền đem về của từng phòng trong năm 2024
 
 #### 1.1 Tạo View tính tổng doanh thu  và số lần đặt của từng phòng trong từng tháng của năm 2024
-```sql
 
+```sql
 CREATE OR ALTER VIEW V_RPT_DOANHTHU_THEO_PHONG_2024 AS
 WITH
-
 TargetMonths AS (
     SELECT DISTINCT MONTH(Check_In) AS Thang, YEAR(Check_In) AS Nam
     FROM DATPHONG
@@ -77,13 +76,15 @@ GO
 
 #### 1.4 Sheet tạo chart bar, mapping dữ liệu từ View V_RPT_DOANHTHU_THEO_PHONG_2024 để tạo report
 
-    ▪ Thang -> Columns, edit chọn Discrete => để hiển thị từng tháng theo cột
-    ▪ Doanh Thu Phong -> Rows => để tableau tự tính SUM doanh thu theo từng tháng tương ứng
-    Kéo thả vào mục Marks các trường trong view:
-    ▪ Doanh Thu Phong -> Color => để hiển thị màu phân biệt giá trị doanh thu
-    ▪ Doanh Thu Phong và So Luot Dat  -> Label => để hiển thị doanh thu, số lần đặt trên bar
-    ▪ Kéo So Luot Dat vào tooltip và edit thông tin để hiển thị khi rê chuột
-    ▪ Tạo calculated fields để hiển thị mã phòng - tên loại phòng
+- Thang -> Columns, edit chọn Discrete => để hiển thị từng tháng theo cột
+- Doanh Thu Phong -> Rows => để tableau tự tính SUM doanh thu theo từng tháng tương ứng
+
+Kéo thả vào mục Marks các trường trong view:
+
+- Doanh Thu Phong -> Color => để hiển thị màu phân biệt giá trị doanh thu
+- Doanh Thu Phong và So Luot Dat  -> Label => để hiển thị doanh thu, số lần đặt trên bar
+- Kéo So Luot Dat vào tooltip và edit thông tin để hiển thị khi rê chuột
+- Tạo calculated fields để hiển thị mã phòng - tên loại phòng
 
 #### 1.5 Màn hình design và preview chart bar
 
@@ -92,8 +93,9 @@ GO
 ![Ví dụ](./images/rpt1-3.png)
 
 #### 1.6 Màn hình design và preview sheet hiển thị table chi tiết
-    Kéo vào column sử dụng Measure Values cho: các chỉ số (số lượt đặt, doanh thu phòng) để hiển thị các thông tin này ra thành từng cột riêng biệt.
-    Kéo field "Phòng" vào Rows để hiển thị thông tin phòng theo dòng.
+
+- Kéo vào column sử dụng Measure Values cho: các chỉ số (số lượt đặt, doanh thu phòng) để hiển thị các thông tin này ra thành từng cột riêng biệt.
+- Kéo field "Phòng" vào Rows để hiển thị thông tin phòng theo dòng.
 
 ![Ví dụ](./images/rpt1-4.png)
 
@@ -105,9 +107,9 @@ GO
 
 ![Ví dụ](./images/rpt1-7.png)
 
-
 ## 2. Thống kê top khách hàng chi tiêu nhiều nhất năm 2024
-    Giúp đánh giá xem khách hàng thân thiết để tặng voucher hay là nâng hạng khách hàng lên Premium,VIP phục vụ cho CSKH, CRM
+
+- Giúp đánh giá xem khách hàng thân thiết để tặng voucher hay là nâng hạng khách hàng lên Premium,VIP phục vụ cho CSKH, CRM
 
 #### 2.1 Tạo View lấy danh sách
 ```sql
