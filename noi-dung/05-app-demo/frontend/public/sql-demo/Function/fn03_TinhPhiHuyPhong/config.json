@@ -3,8 +3,8 @@
   "title": "Function 3: Tính Phí Hủy Phòng",
   "type": "Function",
   "shortDesc": "Tính phí phạt (0%, 50%, 100%) dựa trên mốc 3 ngày.",
-  "mdFile": "Function/fn02_TinhPhiHuyPhong/fn02_TinhPhiHuyPhong.html",
-  "sqlFile": "Function/fn02_TinhPhiHuyPhong/fn02_TinhPhiHuyPhong.sql",
+  "mdFile": "Function/fn03_TinhPhiHuyPhong/fn03_TinhPhiHuyPhong.html",
+  "sqlFile": "Function/fn03_TinhPhiHuyPhong/fn03_TinhPhiHuyPhong.sql",
   "separateTables": [
   
     {
