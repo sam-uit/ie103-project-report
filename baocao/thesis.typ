@@ -21,6 +21,10 @@
 #include "content/chapter02.typ"
 #include "content/chapter03.typ"
 #include "content/chapter04.typ"
+#include "content/chapter04-01-xulythongtin.typ"
+#include "content/chapter04-02-antoanthongtin.typ"
+#include "content/chapter04-03-trinhbaythongtin.typ"
+#include "content/chapter04-04-chucnangcuahethong.typ"
 #include "content/chapter05.typ"
 
 // Show appendix
