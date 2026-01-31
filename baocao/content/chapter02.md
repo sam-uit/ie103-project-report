@@ -73,6 +73,8 @@ Trong chương này, Nhóm sẽ trình bày các chức năng và quy tắc nghi
 
 ### Danh Sách Các Thực Thể
 
+<!-- Lưu Ý về Thiết Kế Các Thực Thể -->
+
 ```{=typst}
 #co-note(title: "Lưu Ý về Thiết Kế Các Thực Thể")[
 Mặc dù đều là các thực thể sử dụng hệ thống *BMS*, nhưng Nhóm quyết định tách biệt thực thể Người Dùng (`USERS`) và Quản Trị Viên (`ADMINS`) thành hai cấu trúc dữ liệu độc lập thay vì gộp chung. Quyết định này nhằm mục đích:
