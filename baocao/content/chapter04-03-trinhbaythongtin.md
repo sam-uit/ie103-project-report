@@ -1,10 +1,14 @@
 ## Trình Bày Thông Tin
 
-Hệ thống được thiết kế hướng tới trải nghiệm người dùng tối ưu hóa cho từng đối tượng.
+Phần này hiện thực yêu cầu Trình Bày Thông Tin, phục vụ cho người sử dụng trên hệ thống, bao gồm USERS (qua Menu hoặc Form), Admin/Quản Lý qua các Báo Cáo (Report), vv...
 
-<!-- Menu: Không sử dụng -->
-<!-- ### Menu
+Mỗi hình thức trình bày thông tin hướng đến những yêu cầu khác nhau nhằm tối ưu hóa trải nghiệm người dùng và hỗ trợ ra quyết định hiệu quả.
 
+### Menu
+
+(Không trình bày).
+
+<!--
 - Module Khách Hàng (Front-Office):
     - Trang chủ / Tìm kiếm phòng.
     - Chi tiết phòng & Đặt phòng.
@@ -16,15 +20,24 @@ Hệ thống được thiết kế hướng tới trải nghiệm người dùng
     - Cấu hình: Quản lý Voucher, Tài khoản nhân viên. -->
 
 <!-- Form: Không sử dụng -->
-<!-- ### Form -->
+### Form
 
-### Report
+(Không trình bày).
 
-Các báo cáo đầu ra chính của hệ thống:
+### Report - Các Báo Cáo
 
-- Báo Cáo Doanh Thu Tháng: Tổng hợp doanh thu theo loại phòng và theo dịch vụ, phục vụ bộ phận kế toán.
-- Phiếu Xác Nhận Đặt Phòng (Booking Confirmation): Gửi cho khách hàng sau khi đặt thành công.
-- Hóa Đơn Thanh Toán (Invoice): Chi tiết tiền phòng, dịch vụ, giảm giá voucher và số tiền thực thu.
+Các báo cáo đầu ra chính của hệ thống phục vụ quá trình khai thác dữ liệu và ra quyết định của quản lý:
+
+- Báo Cáo 01 - Thống Kê Doanh Thu:
+    - Thống kê doanh thu từng tháng và doanh thu của từng phòng trong tháng.
+- Báo Cáo 02 - Top Khách Hàng Chi Tiêu Nhiều Nhất:
+    - Thống kê và xếp hạng khách hàng chi tiêu nhiều nhất.
+- Báo Cáo 03 - Thống Kê Doanh Thu Dịch Vụ:
+    - Thống kê "Dịch vụ được yêu thích nhất".
+- Báo Cáo 04 - Thống Kê Top Voucher Được Săn Đón Nhất:
+    - Thống kê và xếp hạng voucher được sử dụng nhiều nhất.
+- Báo Cáo 05 - Thống Kê Top Loại Phòng Được Yêu Thích Nhất:
+    - Thống kê và xếp hạng loại phòng được yêu thích nhất.
 
 #### Báo Cáo 01 - Thống Kê Doanh Thu
 
