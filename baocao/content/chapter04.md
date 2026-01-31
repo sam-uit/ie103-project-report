@@ -230,7 +230,7 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 Sử dụng Trigger để đảm bảo toàn vẹn dữ liệu và tự động cập nhật trạng thái.
 
-#### TG2: CheckTime
+#### TG1: CheckTime
 
 - Xây dựng **Trigger** để đảm bảo tính hợp lệ của dữ liệu thời gian khi đặt phòng trong hệ thống quản lý khách sạn.
 
@@ -251,9 +251,11 @@ Sử dụng **AFTER Trigger** trên bảng `DATPHONG` để:
 
 - Thời gian check-out lớn hơn check-in, nên thực hiện thành công.
 
-![TRG-CHECKTIME - Kết quả](demo/TRG-CHECKTIME.png)
+![TRG-CheckTime - Kết quả](demo/TRG-CHECKTIME.png)
 
-#### TG1: AutoPrice
+#### TG2: AutoPrice
+
+![TRG-AutoPrice - Kết quả](demo/TRG-AUTOPRICE.png)
 
 ```{=typst}
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]

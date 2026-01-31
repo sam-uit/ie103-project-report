@@ -232,8 +232,8 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 Sử dụng Trigger để đảm bảo toàn vẹn dữ liệu và tự động cập nhật trạng thái.
 
-==== TG2: CheckTime
-<tg2-checktime>
+==== TG1: CheckTime
+<tg1-checktime>
 
 - Xây dựng #strong[Trigger] để đảm bảo tính hợp lệ của dữ liệu thời gian khi đặt phòng trong hệ thống quản lý khách sạn.
 
@@ -256,12 +256,18 @@ Sử dụng #strong[AFTER Trigger] trên bảng `DATPHONG` để:
 
 #figure(image("demo/TRG-CHECKTIME.png"),
   caption: [
-    TRG-CHECKTIME - Kết quả
+    TRG-CheckTime - Kết quả
   ]
 )
 
-==== TG1: AutoPrice
-<tg1-autoprice>
+==== TG2: AutoPrice
+<tg2-autoprice>
+
+#figure(image("demo/TRG-AUTOPRICE.png"),
+  caption: [
+    TRG-AutoPrice - Kết quả
+  ]
+)
 
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 
