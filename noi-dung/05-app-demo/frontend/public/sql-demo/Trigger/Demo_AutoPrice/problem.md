@@ -3,15 +3,20 @@
 ## B1: Trình Bày Bài Toán
 
 ### Mục Đích
+
 Xây dựng **Trigger** để tự động hóa quy trình đặt phòng và đảm bảo tính chính xác của đơn giá.
 
 ### Vấn Đề
+
 Khi thêm chi tiết đặt phòng vào bảng `CT_DATPHONG`, cần:
+
 1. **Kiểm tra trạng thái phòng**: Chỉ cho phép đặt phòng có trạng thái `AVAILABLE`
 2. **Tự động lấy đơn giá**: Lấy giá từ bảng `LOAIPHONG` thay vì nhập thủ công (tránh sai sót)
 
 ### Giải Pháp
+
 Sử dụng **INSTEAD OF Trigger** để:
+
 - Chặn INSERT không hợp lệ (phòng không AVAILABLE)
 - Tự động điền `don_gia` từ `LOAIPHONG.gia_co_ban`
 - Đảm bảo tính nhất quán của dữ liệu
