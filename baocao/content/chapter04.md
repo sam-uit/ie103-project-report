@@ -453,7 +453,7 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 
 ![Cursor - UpdateStatusWhenOverdue 02](demo/C-UpdateStatusWhenOverdue02.png)
 
-#### Cursor - Đồng Bộ Trạng Thái Phòng Thực Tế
+#### CS-02 - Đồng Bộ Trạng Thái Phòng Thực Tế
 
 - Tên gọi: `cur_phong_status`.
 - **Mục đích:**

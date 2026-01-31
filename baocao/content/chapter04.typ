@@ -514,8 +514,8 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
   ]
 )
 
-==== Cursor - Đồng Bộ Trạng Thái Phòng Thực Tế
-<cursor-dong-bo-trang-thai-phong-thuc-te>
+==== CS-02 - Đồng Bộ Trạng Thái Phòng Thực Tế
+<cs-02-dong-bo-trang-thai-phong-thuc-te>
 
 - Tên gọi: `cur_phong_status`.
 - #strong[Mục đích:]
