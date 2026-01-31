@@ -6,29 +6,44 @@ Mục này trình bày về cách hiện thực các biện pháp bảo mật th
 
 ### Bảo Mật Mức Hệ Quản Trị
 
-Bảo mật mức vật lý của hệ quản trị SQL Server là lớp đầu tiên trong An Toàn Thông Tin của Hệ Thống BMS.
+Bảo mật mức vật lý của hệ quản trị SQL Server là lớp đầu tiên trong *An Toàn Thông Tin* của Hệ Thống BMS.
 
-Để tuân thủ nguyên tắc "Đặc quyền tối thiểu" (Least Privilege) -- mỗi tài khoản chỉ có đủ quyền truy cập vào tài nguyên cần thiết cho các nghiệp vụ cụ thể, hệ thống KHÔNG SỬ DỤNG tài khoản `sa` (System Admin) để kết nối từ ứng dụng vào cơ sở dữ liệu. Thay vào đó, một tài khoản chuyên biệt được tạo ra để kết nối từ ứng dụng vào cơ sở dữ liệu.
+Để tuân thủ nguyên tắc *Đặc Quyền Tối Thiểu* (Least Privilege) -- mỗi tài khoản chỉ có đủ quyền truy cập vào tài nguyên cần thiết cho các nghiệp vụ cụ thể, hệ thống KHÔNG SỬ DỤNG tài khoản `sa` (System Admin) để kết nối từ ứng dụng vào cơ sở dữ liệu. Thay vào đó, một tài khoản chuyên biệt được tạo ra để kết nối từ ứng dụng vào cơ sở dữ liệu.
 
-1. Tạo Login Server:
+- Tạo Login trên Server:
 
-```sql
-CREATE LOGIN [BMS_App_User] WITH PASSWORD = 'P@ssw0rd123!';
+```{=typst}
+#figure(
+  ```sql
+  CREATE LOGIN [BMS_App_User] WITH PASSWORD = 'P@ssw0rd123!';
+  ```,
+  caption: [Bảo Mật Mức Hệ Quản Trị - Tạo Login Server]
+)
 ```
 
-2. Tạo Database User & Gán Quyền:
+- Tạo Database User & Gán Quyền:
 
+```{=typst}
+#figure(
 ```sql
 USE ROOM_BOOKING_SYSTEM;
 CREATE USER [BMS_App_User] FOR LOGIN [BMS_App_User];
+```,
+caption: [Bảo Mật Mức Hệ Quản Trị - Tạo Database User]
+)
 ```
 
-3. Gán Quyền: Chỉ cấp quyền thực thi (`EXECUTE`) trên các Stored Procedure, ngăn chặn truy cập trực tiếp vào bảng dữ liệu.
+- Gán Quyền: Chỉ cấp quyền thực thi (`EXECUTE`) trên các Stored Procedure, ngăn chặn truy cập trực tiếp vào bảng dữ liệu.
 
+```{=typst}
+#figure(
 ```sql
 GRANT EXECUTE TO [BMS_App_User];
 DENY SELECT, INSERT, UPDATE, DELETE ON SCHEMA::dbo TO [BMS_App_User];
 GO
+```,
+caption: [Bảo Mật Mức Hệ Quản Trị - Gán Quyền]
+)
 ```
 
 ### Xác Thực Và Phân Quyền
