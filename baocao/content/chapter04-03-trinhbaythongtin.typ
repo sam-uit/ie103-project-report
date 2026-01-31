@@ -14,8 +14,8 @@ Các báo cáo đầu ra chính của hệ thống:
 - Phiếu Xác Nhận Đặt Phòng (Booking Confirmation): Gửi cho khách hàng sau khi đặt thành công.
 - Hóa Đơn Thanh Toán (Invoice): Chi tiết tiền phòng, dịch vụ, giảm giá voucher và số tiền thực thu.
 
-==== Thống Kê Doanh Thu
-<thong-ke-doanh-thu>
+==== Báo Cáo 01 - Thống Kê Doanh Thu
+<bao-cao-01-thong-ke-doanh-thu>
 
 Tóm tắt:
 
