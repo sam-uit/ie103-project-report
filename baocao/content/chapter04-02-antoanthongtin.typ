@@ -70,6 +70,102 @@ BEGIN
 END
 ```
 
+SP Cho đăng ký user, tạo mã hóa mật khẩu:
+
+- Kiểm tra nếu email đã tồn tại.
+- Mã hóa mật khẩu.
+- Thêm người dùng vào bảng `USERS`.
+
+```sql
+-- SP_AUTH_REGISTER.sql
+CREATE OR ALTER PROCEDURE SP_AUTH_REGISTER
+    @Email NVARCHAR(255),
+    @Password NVARCHAR(50),
+    @FullName NVARCHAR(255)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        IF EXISTS (SELECT 1 FROM USERS WHERE email = @Email)
+        BEGIN
+            RAISERROR(N'Email đã tồn tại.', 16, 1);
+            RETURN;
+        END
+
+        DECLARE @Hash VARBINARY(64);
+        SET @Hash = HASHBYTES('SHA2_256', @Password);
+
+        INSERT INTO USERS (email, password_hash, full_name)
+        VALUES (@Email, CONVERT(NVARCHAR(255), @Hash, 1), @FullName);
+    END TRY
+    BEGIN CATCH
+        THROW;
+    END CATCH
+END;
+```
+
+SP Đăng nhập (Kiểm tra Hash):
+
+- Mã hóa mật khẩu nhập vào và so sánh với mật khẩu đã mã hóa trong database.
+
+```sql
+-- SP_AUTH_LOGIN.sql
+CREATE OR ALTER PROCEDURE SP_AUTH_LOGIN
+    @Email NVARCHAR(255),
+    @Password NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @InputHash NVARCHAR(255);
+    SET @InputHash = CONVERT(NVARCHAR(255), HASHBYTES('SHA2_256', @Password), 1);
+
+    IF EXISTS (
+        SELECT 1 FROM USERS 
+        WHERE email = @Email AND password_hash = @InputHash
+    )
+    BEGIN
+        SELECT id, email, full_name FROM USERS WHERE email = @Email;
+        PRINT N'Đăng nhập thành công';
+    END
+    ELSE
+    BEGIN
+        RAISERROR(N'Sai email hoặc mật khẩu.', 16, 1);
+    END
+END;
+```
+
+Function kiểm tra quyền:
+
+- Đảm bảo mỗi user/admin có đúng quyền truy cập vào tài nguyên hệ thống theo vai trò của mình.
+
+```sql
+-- F_CHECK_PERMISSION.sql
+CREATE OR ALTER FUNCTION F_CHECK_PERMISSION 
+(
+    @AdminId INT, 
+    @RequiredPermissionCode NVARCHAR(50)
+)
+RETURNS BIT
+AS
+BEGIN
+    DECLARE @IsAllowed BIT = 0;
+
+    IF EXISTS (
+        SELECT 1 
+        FROM ADMIN_ROLES ar
+        JOIN ROLES r ON ar.role_id = r.id
+        JOIN ROLE_PERMISSIONS rp ON r.id = rp.role_id
+        JOIN PERMISSIONS p ON rp.permission_id = p.id
+        WHERE ar.admin_id = @AdminId 
+          AND p.code = @RequiredPermissionCode
+    )
+    SET @IsAllowed = 1;
+
+    RETURN @IsAllowed;
+END;
+```
+
 ==== Bảo Mật Mức Hệ Quản Trị
 <bao-mat-muc-he-quan-tri>
 
