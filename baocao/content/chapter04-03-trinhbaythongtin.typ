@@ -43,13 +43,13 @@ Các bước thực hiện:
 
 #figure(image("./images/rpt1-2.png"),
   caption: [
-    Report 1 - Màn hình Design Chart Bar
+    Báo Cáo 01 - Màn hình Design Chart Bar
   ]
 )
 
 #figure(image("./images/rpt1-3.png"),
   caption: [
-    Report 1 - Màn hình Preview Chart Bar
+    Báo Cáo 01 - Màn hình Preview Chart Bar
   ]
 )
 
@@ -60,13 +60,13 @@ Các bước thực hiện:
 
 #figure(image("./images/rpt1-4.png"),
   caption: [
-    Report 1 - Màn hình Design Hiển Thị Bảng Chi Tiết
+    Báo Cáo 01 - Màn hình Design Hiển Thị Bảng Chi Tiết
   ]
 )
 
 #figure(image("./images/rpt1-5.png"),
   caption: [
-    Report 1 - Màn hình Preview Hiển Thị Bảng Chi Tiết
+    Báo Cáo 01 - Màn hình Preview Hiển Thị Bảng Chi Tiết
   ]
 )
 
@@ -80,13 +80,13 @@ Các bước thực hiện:
 
 #figure(image("./images/rpt1-6.png"),
   caption: [
-    Report 1 - Dashboard Để Hiển Thị Teport - Design
+    Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Design
   ]
 )
 
 #figure(image("./images/rpt1-7.png"),
   caption: [
-    Report 1 - Dashboard Để Hiển Thị Teport - Preview
+    Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Preview
   ]
 )
 
@@ -120,13 +120,13 @@ Các bước thực hiện:
 
 #figure(image("./images/rpt2-10.png"),
   caption: [
-    Report 2 - Màn Hình Design
+    Báo Cáo 02 - Màn Hình Design
   ]
 )
 
 #figure(image("./images/rpt2-11.png"),
   caption: [
-    Report 2 - Màn Hình Preview
+    Báo Cáo 02 - Màn Hình Preview
   ]
 )
 
@@ -150,13 +150,13 @@ Màn hình design và preview dashboard:
 
 #figure(image("./images/rpt3-8.png"),
   caption: [
-    Report 3 - Màn Hình Design
+    Báo Cáo 03 - Màn Hình Design
   ]
 )
 
 #figure(image("./images/rpt3-9.png"),
   caption: [
-    Report 3 - Màn Hình Preview
+    Báo Cáo 03 - Màn Hình Preview
   ]
 )
 
@@ -182,13 +182,13 @@ Màn hình design và preview dashboard:
 
 #figure(image("./images/rpt4-2.png"),
   caption: [
-    Report 4 - Màn Hình Design
+    Báo Cáo 04 - Màn Hình Design
   ]
 )
 
 #figure(image("./images/rpt4-6.png"),
   caption: [
-    Report 4 - Màn Hình Preview
+    Báo Cáo 04 - Màn Hình Preview
   ]
 )
 
@@ -212,12 +212,12 @@ Màn hình design và preview dashboard:
 
 #figure(image("./images/rpt5-5.png"),
   caption: [
-    Report 5 - Màn Hình Design
+    Báo Cáo 05 - Màn Hình Design
   ]
 )
 
 #figure(image("./images/rpt5-6.png"),
   caption: [
-    Report 5 - Màn Hình Preview
+    Báo Cáo 05 - Màn Hình Preview
   ]
 )
