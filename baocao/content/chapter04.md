@@ -369,7 +369,18 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
 
 ![FN-01 - Tính Hạng Thành Viên - User 3.](demo/FN-01-TinhHangThanhVien-03.png)
 
-#### F2: RevertCreateError
+#### FN-02 - Tính Phí Hủy Phòng Động
+
+- Tên: `fn_TinhPhiHuyPhong`.
+- **Mục đích:** Tính toán số tiền phạt khi khách hàng yêu cầu hủy phòng, dựa trên thời gian báo trước so với ngày Check-in để đảm bảo công bằng.
+- **Logic xử lý:**
+    - Kết nối bảng `DATPHONG` để lấy ngày Check-in dự kiến.
+    - Tính tổng tiền cọc của đơn hàng từ bảng `CT_DATPHONG`.
+    - Tính khoảng cách ngày: `Số ngày` = `Ngày Check-in` - `Ngày Báo Hủy`.
+- **Quy tắc tính phí:**
+    - Nếu báo trước **>= 3 ngày**: Miễn phí (0%).
+    - Nếu báo trước **từ 1 đến dưới 3 ngày**: Phạt **50%** tổng tiền cọc.
+    - Nếu báo sát giờ (**< 1 ngày** hoặc trong ngày check-in): Phạt **100%** tổng tiền cọc.
 
 ```{=typst}
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]

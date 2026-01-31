@@ -1,25 +1,17 @@
-### Function 1: Tính phí hủy phòng động (`fn_TinhPhiHuyPhong`)
+### Function 1: Tính Phí Hủy Phòng Động (`fn_TinhPhiHuyPhong`)
 
 #### 1. Mô tả và Hướng xử lý
 
 - **Mục đích:** Tính toán số tiền phạt khi khách hàng yêu cầu hủy phòng, dựa trên thời gian báo trước so với ngày Check-in để đảm bảo công bằng.
     
 - **Logic xử lý:**
-    
     - Kết nối bảng `DATPHONG` để lấy ngày Check-in dự kiến.
-        
     - Tính tổng tiền cọc của đơn hàng từ bảng `CT_DATPHONG`.
-        
     - Tính khoảng cách ngày: `Số ngày` = `Ngày Check-in` - `Ngày Báo Hủy`.
-        
-    - **Quy tắc tính phí (Logic mới):**
-        
-        - Nếu báo trước **>= 3 ngày**: Miễn phí (0%).
-            
-        - Nếu báo trước **từ 1 đến dưới 3 ngày**: Phạt **50%** tổng tiền cọc.
-            
-        - Nếu báo sát giờ (**< 1 ngày** hoặc trong ngày check-in): Phạt **100%** tổng tiền cọc.
-            
+- **Quy tắc tính phí:**
+    - Nếu báo trước **>= 3 ngày**: Miễn phí (0%).
+    - Nếu báo trước **từ 1 đến dưới 3 ngày**: Phạt **50%** tổng tiền cọc.
+    - Nếu báo sát giờ (**< 1 ngày** hoặc trong ngày check-in): Phạt **100%** tổng tiền cọc.
 
 #### 2. Source Code
 
