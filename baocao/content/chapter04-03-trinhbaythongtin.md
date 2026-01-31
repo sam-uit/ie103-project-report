@@ -52,24 +52,24 @@ Các bước thực hiện:
         - Tạo calculated fields để hiển thị mã phòng - tên loại phòng.
 5. Màn hình design và preview chart bar.
 
-![Báo Cáo 01 - Màn hình Design Chart Bar](./images/rpt1-2.png)
+![Báo Cáo 01 - Màn hình Design Chart Bar.](./images/rpt1-2.png)
 
-![Báo Cáo 01 - Màn hình Preview Chart Bar](./images/rpt1-3.png)
+![Báo Cáo 01 - Màn hình Preview Chart Bar.](./images/rpt1-3.png)
 
 6. Màn hình Design và Preview sheet hiển thị bảng chi tiết.
 
-![Báo Cáo 01 - Màn hình Design Hiển Thị Bảng Chi Tiết](./images/rpt1-4.png)
+![Báo Cáo 01 - Màn hình Design Hiển Thị Bảng Chi Tiết.](./images/rpt1-4.png)
 
-![Báo Cáo 01 - Màn hình Preview Hiển Thị Bảng Chi Tiết](./images/rpt1-5.png)
+![Báo Cáo 01 - Màn hình Preview Hiển Thị Bảng Chi Tiết.](./images/rpt1-5.png)
 
 7. Tạo dashboard để hiển thị report.
     - Hiển thị 2 sheet charts ở trên.
         - Dạng cột.
         - Dạng bảng.
 
-![Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Design](./images/rpt1-6.png)
+![Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Design.](./images/rpt1-6.png)
 
-![Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Preview](./images/rpt1-7.png)
+![Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Preview.](./images/rpt1-7.png)
 
 #### Báo Cáo 02 - Top Khách Hàng Chi Tiêu Nhiều Nhất
 
@@ -98,15 +98,15 @@ Các bước thực hiện:
 
 - Ta chọn kích cỡ A4 lanscape để in cho đẹp và đây đủ, chọn fit -> entrie view để hiển thị hết width height.
 
-![Báo Cáo 02 - Màn Hình Design](./images/rpt2-10.png)
+![Báo Cáo 02 - Màn Hình Design.](./images/rpt2-10.png)
 
-![Báo Cáo 02 - Màn Hình Preview](./images/rpt2-11.png)
+![Báo Cáo 02 - Màn Hình Preview.](./images/rpt2-11.png)
 
 #### Báo Cáo 03 - Thống Kê Doanh Thu Dịch Vụ
 
 Miêu tả:
 
-- Để xác định "services nào được ưa chuộng nhất" (Best Seller) sẽ giúp quản lý có kế hoạch nhập hàng và đẩy mạnh khuyến mãi.
+- Để xác định "Dịch vụ nào được ưa chuộng nhất" (Best Seller) sẽ giúp quản lý có kế hoạch nhập hàng và đẩy mạnh khuyến mãi.
 - Vì mỗi dịch vụ thời giá sẽ khác nhau nên ở table chi tiết ta sẽ thống kê từng đơn giá của dịch vụ.
 
 Các bước thực hiện:
@@ -114,14 +114,14 @@ Các bước thực hiện:
 1. Tạo View lấy danh sách Dịch Vụ Yêu Thích Nhất (`V_REPORT_TOP_SERVICE_2024`).
 2. Kết nối Tableu vào database.
 3. Kéo view `V_REPORT_TOP_SERVICE_2024` vào Canvas.
-4. Mapping dữ liệu từ View `V_REPORT_TOP_SERVICE_2024` để tạo chart line:
+4. Mapping dữ liệu từ View `V_REPORT_TOP_SERVICE_2024` để tạo chart line.
 5. Tạo Sheet hiển thị table chi tiết.
 
 Màn hình design và preview dashboard:
 
-![Báo Cáo 03 - Màn Hình Design](./images/rpt3-8.png)
+![Báo Cáo 03 - Màn Hình Design.](./images/rpt3-8.png)
 
-![Báo Cáo 03 - Màn Hình Preview](./images/rpt3-9.png)
+![Báo Cáo 03 - Màn Hình Preview.](./images/rpt3-9.png)
 
 #### Báo Cáo 04 - Thống Kê Top Voucher Được Săn Đón Nhất
 
@@ -142,9 +142,9 @@ Các bước thực hiện:
 
 Màn hình design và preview dashboard:
 
-![Báo Cáo 04 - Màn Hình Design](./images/rpt4-2.png)
+![Báo Cáo 04 - Màn Hình Design.](./images/rpt4-2.png)
 
-![Báo Cáo 04 - Màn Hình Preview](./images/rpt4-6.png)
+![Báo Cáo 04 - Màn Hình Preview.](./images/rpt4-6.png)
 
 #### Báo Cáo 05 - Thống Kê Top Loại Phòng Được Yêu Thích Nhất
 
@@ -163,6 +163,6 @@ Các bước thực hiện:
 
 Màn hình design và preview dashboard:
 
-![Báo Cáo 05 - Màn Hình Design](./images/rpt5-5.png)
+![Báo Cáo 05 - Màn Hình Design.](./images/rpt5-5.png)
 
-![Báo Cáo 05 - Màn Hình Preview](./images/rpt5-6.png)
+![Báo Cáo 05 - Màn Hình Preview.](./images/rpt5-6.png)
