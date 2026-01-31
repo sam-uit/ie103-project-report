@@ -161,7 +161,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 
 + Chuột phải vào Database cần Export, chọn #emph[Task] \> #emph[Export Data-Tier Application…].
 
-#figure(image("images/export-01.jpg"),
+#figure(image("images/export-01.jpg.jpeg"),
   caption: [
     Export - 01 - Task \> Export Data-Tier Application.
   ]
@@ -172,7 +172,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Chọn #emph[Next] ở trang #emph[Introduction].
 ]
 
-#figure(image("images/export-02.jpg"),
+#figure(image("images/export-02.jpg.jpeg"),
   caption: [
     Export - 02 - Introduction.
   ]
@@ -183,7 +183,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Ở trang #emph[Export Settings], mục #emph[Save to local disk], chỉ định đường dẫn lưu file `.bacpac`.
 ]
 
-#figure(image("images/export-03.jpg"),
+#figure(image("images/export-03.jpg.jpeg"),
   caption: [
     Export - 03 - Export Settings.
   ]
@@ -194,7 +194,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Ở trang #emph[Export Settings], #emph[Next] và chọn các thành phần (#emph[tables]) cần export.
 ]
 
-#figure(image("images/export-04.jpg"),
+#figure(image("images/export-04.jpg.jpeg"),
   caption: [
     Export - 04 - Export Settings.
   ]
@@ -205,7 +205,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Ở trang #emph[Summary], xác nhận thông tin và nhấn #emph[Finish].
 ]
 
-#figure(image("images/export-05.jpg"),
+#figure(image("images/export-05.jpg.jpeg"),
   caption: [
     Export - 05 - Summary.
   ]
@@ -216,7 +216,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Kiểm tra tiến độ và kết quả ở trang #emph[Results].
 ]
 
-#figure(image("images/export-06.jpg"),
+#figure(image("images/export-06.jpg.jpeg"),
   caption: [
     Export - 06 - Results.
   ]
@@ -227,7 +227,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Kiểm tra kết quả và chắc chắn file `.bacpac` đã được tạo thành công.
 ]
 
-#figure(image("images/export-07.jpg"),
+#figure(image("images/export-07.jpg.jpeg"),
   caption: [
     Export - 07 - Kiểm Tra.
   ]
@@ -237,7 +237,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 
 + Chuột phải vào Database cần Import, chọn #emph[Import Data-Tier Application…].
 
-#figure(image("images/import-01.jpg"),
+#figure(image("images/import-01.jpg.jpeg"),
   caption: [
     Import - 01 - Import Data-Tier Application.
   ]
@@ -248,7 +248,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Chọn #emph[Next] ở trang #emph[Introduction].
 ]
 
-#figure(image("images/import-02.jpg"),
+#figure(image("images/import-02.jpg.jpeg"),
   caption: [
     Import - 02 - Introduction.
   ]
@@ -259,7 +259,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Chọn #emph[Browse] để tìm file `.bacpac`.
 ]
 
-#figure(image("images/import-03.jpg"),
+#figure(image("images/import-03.jpg.jpeg"),
   caption: [
     Import - 03 - Browse.
   ]
@@ -270,7 +270,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Ở trang #emph[Database Settings], đặt tên cho database tại #emph[New database name].
 ]
 
-#figure(image("images/import-04.jpg"),
+#figure(image("images/import-04.jpg.jpeg"),
   caption: [
     Import - 04 - Database Settings.
   ]
@@ -281,7 +281,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Ở trang #emph[Summary], xác nhận thông tin và nhấn #emph[Finish].
 ]
 
-#figure(image("images/import-05.jpg"),
+#figure(image("images/import-05.jpg.jpeg"),
   caption: [
     Import - 05 - Summary.
   ]
@@ -292,7 +292,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Kiểm tra tiến độ và kết quả ở trang #emph[Results].
 ]
 
-#figure(image("images/import-06.jpg"),
+#figure(image("images/import-06.jpg.jpeg"),
   caption: [
     Import - 06 - Results.
   ]
@@ -303,7 +303,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Kiểm tra kết quả bằng cách xem các thành phần của Database vừa được import.
 ]
 
-#figure(image("images/import-07.jpg"),
+#figure(image("images/import-07.jpg.jpeg"),
   caption: [
     Import - 07 - Kiểm Tra.
   ]
