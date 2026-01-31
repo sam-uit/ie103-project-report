@@ -263,13 +263,30 @@ Sử dụng #strong[AFTER Trigger] trên bảng `DATPHONG` để:
 ==== TG2: AutoPrice
 <tg2-autoprice>
 
+- Xây dựng #strong[Trigger] để tự động hóa quy trình đặt phòng và đảm bảo tính chính xác của đơn giá.
+
+Khi thêm chi tiết đặt phòng vào bảng `CT_DATPHONG`, cần:
+
++ #strong[Kiểm tra trạng thái phòng]: Chỉ cho phép đặt phòng có trạng thái `AVAILABLE`.
++ #strong[Tự động lấy đơn giá]: Lấy giá từ bảng `LOAIPHONG` thay vì nhập thủ công (tránh sai sót).
+
+Sử dụng `INSTEAD OF` Trigger để:
+
+- Chặn `INSERT` không hợp lệ (phòng không `AVAILABLE`).
+- Tự động điền `don_gia` từ `LOAIPHONG.gia_co_ban`.
+- Đảm bảo tính nhất quán của dữ liệu.
+
+#strong[Ví dụ thực hiện]:
+
+- Tự động tính đơn giá khi thêm chi tiết đặt phòng vào bảng `CT_DATPHONG`.
+  - Đặt Phòng ID = 71.
+  - Phòng ID = 8.
+
 #figure(image("demo/TRG-AUTOPRICE.png"),
   caption: [
     TRG-AutoPrice - Kết quả
   ]
 )
-
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
 
 ==== TG3: Payment
 <tg3-payment>
