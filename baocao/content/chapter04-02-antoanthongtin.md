@@ -65,16 +65,29 @@ Import:
 
 #### Backup – Restore Dữ Liệu
 
-Backup:
+**Backup:**
 
 1. Chuột phải vào Database, chọn *Task* > *Back Up...*.
-2. Chọn *Full* trong mục *Backup type*.
-3. Chọn *Destination* là *Disk*
-4. Thêm đường dẫn thư mục lưu file backup.
-5. Nhấn *OK*.
-6. Thông báo Hoàn Thành.
 
-Restore:
+![Backup - 01 - Task > Back Up.](images/backup-01.jpg)
+
+2. Chọn *Full* trong mục *Backup type*. Chọn *Destination* là *Disk*
+
+![Backup - 02 - Backup Type.](images/backup-02.jpg)
+
+3. Thêm đường dẫn thư mục lưu file backup.
+
+![Backup - 03 - Backup Destination.](images/backup-03.jpg)
+
+4. Nhấn *OK*.
+
+![Backup - 04 - Xác Nhận.](images/backup-04.jpg)
+
+5. Thông báo Hoàn Thành.
+
+![Backup - 05 - Backup Hoàn Thành.](images/backup-05.jpg)
+
+**Restore:**
 
 1. Chuột phải vào mục Database của Server, chọn *Restore Database...*.
 2. Chọn *Source* là *Device* và chọn *File name* là file backup.

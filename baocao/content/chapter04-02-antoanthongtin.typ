@@ -59,16 +59,61 @@ Import:
 ==== Backup -- Restore Dữ Liệu
 <backup-restore-du-lieu>
 
-Backup:
+#strong[Backup:]
 
 + Chuột phải vào Database, chọn #emph[Task] \> #emph[Back Up…].
-+ Chọn #emph[Full] trong mục #emph[Backup type].
-+ Chọn #emph[Destination] là #emph[Disk]
-+ Thêm đường dẫn thư mục lưu file backup.
-+ Nhấn #emph[OK].
-+ Thông báo Hoàn Thành.
 
-Restore:
+#figure(image("images/backup-01.jpg"),
+  caption: [
+    Backup - 01 - Task \> Back Up.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 2)
++ Chọn #emph[Full] trong mục #emph[Backup type]. Chọn #emph[Destination] là #emph[Disk]
+]
+
+#figure(image("images/backup-02.jpg"),
+  caption: [
+    Backup - 02 - Backup Type.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 3)
++ Thêm đường dẫn thư mục lưu file backup.
+]
+
+#figure(image("images/backup-03.jpg"),
+  caption: [
+    Backup - 03 - Backup Destination.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 4)
++ Nhấn #emph[OK].
+]
+
+#figure(image("images/backup-04.jpg"),
+  caption: [
+    Backup - 04 - Xác Nhận.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 5)
++ Thông báo Hoàn Thành.
+]
+
+#figure(image("images/backup-05.jpg"),
+  caption: [
+    Backup - 05 - Backup Hoàn Thành.
+  ]
+)
+
+#strong[Restore:]
 
 + Chuột phải vào mục Database của Server, chọn #emph[Restore Database…].
 + Chọn #emph[Source] là #emph[Device] và chọn #emph[File name] là file backup.
