@@ -1,4 +1,4 @@
-### Function 3: Xếp hạng thành viên (`fn_TinhHangThanhVien`)
+### Function 1: Xếp hạng thành viên (`fn_TinhHangThanhVien`)
 
 #### 1. Mô tả và Hướng xử lý
 

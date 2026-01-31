@@ -3,8 +3,8 @@
   "title": "Function 1: Xếp Hạng Thành Viên",
   "type": "Function",
   "shortDesc": "Tự động xếp hạng (Standard, Gold, Platinum) dựa trên chi tiêu.",
-  "mdFile": "Function/Demo_HangThanhVien/problem.html",
-  "sqlFile": "Function/Demo_HangThanhVien/fn_HangThanhVien.sql",
+  "mdFile": "Function/fn01_TinhHangThanhVien/fn01_TinhHangThanhVien.html",
+  "sqlFile": "Function/fn01_TinhHangThanhVien/fn01_TinhHangThanhVien.sql",
   "separateTables": [
     {
       "name": "KET_QUA",
