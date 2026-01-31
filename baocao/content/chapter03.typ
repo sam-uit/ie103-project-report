@@ -267,9 +267,7 @@ Sau khi hoàn tất thiết kế từ điển dữ liệu, nhóm sử dụng ng�
 
 #figure(
   raw(read("code/ch03-00-create-database.sql"), lang: "sql", block: true),
-  caption: [
-    Khởi Tạo Cơ Sở Dữ Liệu: Tạo Database
-  ],
+  caption: [Khởi Tạo Cơ Sở Dữ Liệu: Tạo Database.],
 )
 
 === Khai Báo Các Bảng
@@ -279,9 +277,7 @@ Sau khi hoàn tất thiết kế từ điển dữ liệu, nhóm sử dụng ng�
 
 #figure(
   raw(read("code/ch03-01-tables.sql"), lang: "sql", block: true),
-  caption: [
-    Khởi Tạo Cơ Sở Dữ Liệu: Khai Báo Các Bảng
-  ],
+  caption: [Khởi Tạo Cơ Sở Dữ Liệu: Khai Báo Các Bảng.],
 )
 
 == Thiết Lập Nền Tảng Quản Trị & Bảo Mật
