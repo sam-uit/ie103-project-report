@@ -474,11 +474,6 @@ Case 2:
   ]
 )
 
-==== F3 (WIP)
-<f3-wip>
-
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-
 === Cursors (2)
 <cursors-2>
 

@@ -423,12 +423,6 @@ Case 2:
 
 ![FN-03 - Tính Phí Hủy Phòng Động - Case 2.](demo/FN-03-TinhPhiHuyPhong-02.png)
 
-#### F3 (WIP)
-
-```{=typst}
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-```
-
 ### Cursors (2)
 
 Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) định kỳ.
