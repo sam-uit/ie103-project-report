@@ -14,16 +14,6 @@ Nhóm thực hiện lựa chọn Microsoft SQL Server làm hệ quản trị cơ
 
 Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thành phần và cấu trúc của cơ sở dữ liệu, bao gồm các bảng, thuộc tính, loại dữ liệu, quan hệ giữa các bảng, và các ràng buộc toàn vẹn.
 
-<!-- Ghi Chú về Các Thủ Tục An Toàn Thông Tin -->
-
-```{=typst}
-#co-note(title: [Ghi Chú về Các Thủ Tục An Toàn Thông Tin])[
-Trong phạm vi chương này, nhóm tập trung vào việc khởi tạo cấu trúc lưu trữ (DDL) và nạp dữ liệu tĩnh. 
-
-Các thủ tục lưu trữ (Stored Procedures) liên quan đến nghiệp vụ xử lý và cơ chế kiểm soát an toàn thông tin sẽ được trình bày chi tiết tại Chương 4, mục #emph[An Toàn Thông Tin]. Việc tách biệt này giúp chuyên môn hóa phần trình bày và tập trung giải thích logic thực hiện ở các phần tương ứng.
-]
-```
-
 ### A. Nhóm Bảng Quản Trị & Hệ Thống
 
 #### 1. ADMINS
@@ -475,6 +465,16 @@ Sau khi hoàn tất thiết kế từ điển dữ liệu, nhóm sử dụng ng�
     Khởi Tạo Cơ Sở Dữ Liệu: Khai Báo Các Bảng
   ],
 )
+```
+
+## Thiết Lập Nền Tảng Quản Trị & Bảo Mật
+
+Trước khi đi vào vận hành nghiệp vụ, nhóm thực hiện thiết lập các cấu phần nền tảng để đảm bảo an toàn truy cập và cơ chế kiểm soát quyền hạn.
+
+<!-- Ghi Chú về Các Thủ Tục An Toàn Thông Tin -->
+
+```{=typst}
+#co-note(title: [Lưu Ý])[Chi tiết về chiến lược bảo mật, lý do thiết kế và quy trình xác thực sẽ được trình bày chuyên sâu tại #emph[Chương 4] - Mục #emph[An Toàn Thông Tin].]
 ```
 
 ## Dữ Liệu Mẫu
