@@ -3,8 +3,8 @@
       "title": "Trigger 1: Kiểm Tra Thời Gian Đặt Phòng",
       "type": "Trigger",
       "shortDesc": "Đảm bảo thời gian trả phòng phải lớn hơn hoặc bằng thời gian nhận phòng",
-      "mdFile": "Trigger/Demo_CheckTime/problem.html",
-      "sqlFile": "Trigger/Demo_CheckTime/trg_CheckTime.sql",
+      "mdFile": "Trigger/TRG-01-CHECKTIME/TRG-01-CHECKTIME.html",
+      "sqlFile": "Trigger/TRG-01-CHECKTIME/TRG-01-CHECKTIME.sql",
       "separateTables": [
             {
                   "name": "DATPHONG",

@@ -1,6 +1,6 @@
 {
       "demos": [
-            "Demo_CheckTime",
+            "TRG-01-CHECKTIME",
             "TRG-02-AUTOPRICE",
             "TRG-03-SYNCSTATUS",
             "TRG-04-PAYMENT",
