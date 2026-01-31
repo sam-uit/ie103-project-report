@@ -353,10 +353,10 @@ Hệ thống triển khai hàm `F_CHECK_PERMISSION` làm nền tảng cho cơ ch
 == Kết Luận Chương 3
 <ket-luan-chuong-3>
 
-Như vậy, nhóm đã hoàn thành việc xây dựng hạ tầng cơ sở dữ liệu cho bài toán "Quản Lý Đặt Phòng Khách Sạn". Hệ thống sau khi cài đặt đã đáp ứng được các yêu cầu cốt lõi:
+Như vậy, Nhóm 02 đã hoàn thành việc xây dựng hạ tầng cơ sở dữ liệu cho bài toán #emph["Quản Lý Đặt Phòng Khách Sạn"]. Hệ thống sau khi cài đặt đã đáp ứng được các yêu cầu cốt lõi:
 
-+ Cấu trúc lưu trữ: Phản ánh đúng mô hình thực thể kết hợp đã thiết kế.
-+ Toàn vẹn dữ liệu: Các ràng buộc khóa chính, khóa ngoại và ràng buộc miền giá trị (CHECK constraints) đã được áp dụng chặt chẽ.
-+ Dữ liệu thử nghiệm: Bộ dữ liệu mẫu bao quát được các kịch bản nghiệp vụ chính (Đặt phòng, Thanh toán, Đánh giá).
++ #strong[Cấu trúc lưu trữ]: Phản ánh đúng mô hình thực thể kết hợp đã thiết kế.
++ #strong[Toàn vẹn dữ liệu]: Các ràng buộc khóa chính, khóa ngoại và ràng buộc miền giá trị (CHECK constraints) đã được áp dụng chặt chẽ.
++ #strong[Dữ liệu thử nghiệm]: Bộ dữ liệu mẫu bao quát được các kịch bản nghiệp vụ chính (Đặt phòng, Thanh toán, Đánh giá).
 
-Cơ sở dữ liệu vật lý này sẽ đóng vai trò là nền tảng trung tâm để thực hiện các thao tác xử lý dữ liệu nâng cao (Stored Procedures, Triggers, Functions) và các chính sách bảo mật sẽ được trình bày chi tiết trong Chương 4.
+Cơ sở dữ liệu vật lý này sẽ đóng vai trò là nền tảng trung tâm để thực hiện các thao tác xử lý dữ liệu nâng cao (Stored Procedures, Triggers, Functions, vv…) và các chính sách bảo mật sẽ được trình bày chi tiết trong #emph[Chương 4].
