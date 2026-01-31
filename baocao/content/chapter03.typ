@@ -291,6 +291,27 @@ Trước khi đi vào vận hành nghiệp vụ, nhóm thực hiện thiết l�
 
 #co-note(title: [Lưu Ý])[Chi tiết về chiến lược bảo mật, lý do thiết kế và quy trình xác thực sẽ được trình bày chuyên sâu tại #emph[Chương 4] - Mục #emph[An Toàn Thông Tin].]
 
+=== Tài Khoản Kết Nối Của Ứng Dụng
+<tai-khoan-ket-noi-cua-ung-dung>
+
+Để tuân thủ nguyên tắc bảo mật, hệ thống không sử dụng tài khoản quản trị cao nhất (`sa`) cho ứng dụng. Một tài khoản chuyên biệt được khởi tạo:
+
+```sql
+-- 1. Tạo Login ở cấp độ Server
+CREATE LOGIN [BMS_App_User] WITH PASSWORD = 'P@ssw0rd123!';
+GO
+
+-- 2. Tạo User ở cấp độ Database
+USE ROOM_BOOKING_SYSTEM;
+GO
+CREATE USER [BMS_App_User] FOR LOGIN [BMS_App_User];
+GO
+
+-- 3. Cấp quyền thực thi cơ bản (Sẽ được tinh chỉnh chi tiết ở Chương 4)
+GRANT EXECUTE TO [BMS_App_User];
+GO
+```
+
 == Dữ Liệu Mẫu
 <du-lieu-mau>
 
