@@ -157,19 +157,20 @@ Luôn sử dụng hàm `F_CHECK_PERMISSION` trên mọi thao thác của *Nhân 
 
 Ví dụ 1: Đối với End User, quyền "Đặt Phòng" là quyền mặc định. Ta chỉ cần kiểm tra: User có tồn tại và đang hoạt động hay không.
 
-```sql
-    -- Nếu tài khoản hợp lệ (tồn tại, và đang ACTIVE), cho phép tạo đơn Đặt Phòng
-    IF NOT EXISTS (SELECT 1 FROM USERS WHERE id = @UserId and status = 'ACTIVE')
+```{=typst}
+#figure(
+    raw(read("code/ch04-obac-ex1.sql"), lang: "sql", block: true),
+    caption: [An Toàn Thông Tin -- OBAC đối với USERS -- Ví dụ 1.]
+)
 ```
 
 Ví dụ 2: Trong thủ tục Hủy Đặt Phòng (giả sử), hệ thống bắt buộc kiểm tra điều kiện `WHERE user_id = @CurrentUserId` để đảm bảo người dùng chỉ có thể thao tác trên các đơn đặt phòng của chính họ.
 
-```sql
-    -- Đơn đặt phòng phải tồn tại VÀ thuộc về đúng User này
-    IF NOT EXISTS (
-        SELECT 1 FROM DATPHONG 
-        WHERE id = @BookingId AND user_id = @UserId
-    )
+```{=typst}
+#figure(
+    raw(read("code/ch04-obac-ex2.sql"), lang: "sql", block: true),
+    caption: [An Toàn Thông Tin -- OBAC đối với USERS -- Ví dụ 2.]
+)
 ```
 
 ### Sao Lưu & Phục Hồi
