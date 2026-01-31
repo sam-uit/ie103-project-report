@@ -406,8 +406,8 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
   ]
 )
 
-==== FN-02 - Tính Phí Hủy Phòng Động
-<fn-02-tinh-phi-huy-phong-dong>
+==== FN-03 - Tính Phí Hủy Phòng Động
+<fn-03-tinh-phi-huy-phong-dong>
 
 - Tên: `fn_TinhPhiHuyPhong`.
 - #strong[Mục đích:] Tính toán số tiền phạt khi khách hàng yêu cầu hủy phòng, dựa trên thời gian báo trước so với ngày Check-in để đảm bảo công bằng.
@@ -420,7 +420,34 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
   - Nếu báo trước #strong[từ 1 đến dưới 3 ngày]: Phạt #strong[50%] tổng tiền cọc.
   - Nếu báo sát giờ (#strong[\< 1 ngày] hoặc trong ngày check-in): Phạt #strong[100%] tổng tiền cọc.
 
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+#strong[Kiểm thử:]
+
+Kịch bản:
+
+- Đơn đặt phòng `ID = 3` có ngày Check-in là `2023/04/04`.
+- Tổng tiền cọc `600,000 VNĐ`.
+
+Case 1:
+
+- Hủy ngày `2023/04/01` (Trước 3 ngày).
+- Kết quả: `0 VNĐ`.
+
+#figure(image("demo/FN-03-TinhPhiHuyPhong-01.png"),
+  caption: [
+    FN-03 - Tính Phí Hủy Phòng Động - Case 1.
+  ]
+)
+
+Case 2:
+
+- Hủy ngày `2023/04/04` (Trong ngày Check-in).
+- Kết quả: `600,000 VNĐ`.
+
+#figure(image("demo/FN-03-TinhPhiHuyPhong-02.png"),
+  caption: [
+    FN-03 - Tính Phí Hủy Phòng Động - Case 2.
+  ]
+)
 
 ==== F3 (WIP)
 <f3-wip>
