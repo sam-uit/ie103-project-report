@@ -1,19 +1,21 @@
 ## An Toàn Thông Tin
 
+Mục này trình bày về cách hiện thực các biện pháp bảo mật thông tin trong hệ thống, bao gồm các biện pháp phân quyền, mã hóa mật khẩu, và các biện pháp bảo mật khác.
+
+Đồng thời trình bày các công việc của quản trị viên trong việc sao lưu/khôi phục dữ liệu, đảm bảo an toàn thông tin và tính liên tục của vận hành (Business Continuity).
+
 ### Xác Thực Và Phân Quyền
 
 Hệ thống áp dụng mô hình bảo mật đa lớp, kết hợp giữa cơ chế phân quyền dựa trên vai trò (RBAC) ở mức dữ liệu và bảo mật mức vật lý của hệ quản trị SQL Server.
 
 #### Bảo Mật Mức Hệ Quản Trị
 
-Để tuân thủ nguyên tắc "Đặc quyền tối thiểu" (Least Privilege), hệ thống không sử dụng tài khoản `sa` (System Admin) để kết nối từ ứng dụng vào cơ sở dữ liệu.
-
-Nhóm thực hiện tạo các Login và User chuyên biệt cho ứng dụng:
+Để tuân thủ nguyên tắc "Đặc quyền tối thiểu" (Least Privilege) -- mỗi tài khoản chỉ có quyền truy cập vào tài nguyên cần thiết, hệ thống KHÔNG SỬ DỤNG tài khoản `sa` (System Admin) để kết nối từ ứng dụng vào cơ sở dữ liệu. Thay vào đó, một tài khoản chuyên biệt được tạo ra để kết nối từ ứng dụng vào cơ sở dữ liệu.
 
 1. Tạo Login Server:
 
 ```sql
-CREATE LOGIN [BMS_App_User] WITH PASSWORD = 'StrongPassword123!';
+CREATE LOGIN [BMS_App_User] WITH PASSWORD = 'P@ssw0rd123!';
 ```
 
 2. Tạo Database User & Gán Quyền:
@@ -56,6 +58,8 @@ END
 #### Kiểm Soát Truy Cập Dựa Trên Vai Trò (Data-Driven RBAC)
 
 Hệ thống quản lý quyền hạn thông qua các bảng `ROLES`, `PERMISSIONS` và `ADMIN_ROLES`. Quyền truy cập không được gán cứng mà động dựa trên dữ liệu.
+
+Hệ thống sử dụng Stored Procedure để xử lý đăng ký và đăng nhập, đảm bảo mật khẩu luôn được mã hóa một chiều (SHA-256) trước khi lưu xuống cơ sở dữ liệu.
 
 Mô hình phân quyền:
 
