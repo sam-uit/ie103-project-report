@@ -77,7 +77,7 @@ Tồn tại một SP Đăng nhập (Kiểm tra Hash mật khẩu khi người d�
 <rbac-role-based-access-control-cho-nhan-vien>
 
 #co-warn[Mọi thủ tục dành cho #emph[Nhân Viên] (các thao tác quản trị: Thêm phòng, Duyệt hoàn tiền...) đều phải đi qua hàm kiểm tra `F_CHECK_PERMISSION` để xác thực xem nhân viên đó có sở hữu quyền (`PERMISSIONS.code`) tương ứng hay không.]
-Hệ thống quản lý quyền hạn thông qua các bảng `ROLES`, `PERMISSIONS` và `ADMIN_ROLES`. Quyền truy cập không được gán cứng mà dựa trên vai trò và quyền hạn của #emph[Admin] hoặc #emph[Staff] (Nhân viên).
+Hệ thống quản lý quyền hạn thông qua các bảng `ROLES`, `PERMISSIONS`, `ROLE_PERMISSIONS` và `ADMIN_ROLES`. Quyền truy cập không được gán cứng mà dựa trên vai trò và quyền hạn của #emph[Admin] hoặc #emph[Staff] (Nhân viên).
 
 Mô hình phân quyền:
 
