@@ -84,10 +84,10 @@ Mặc dù đều là các thực thể sử dụng hệ thống *BMS*, nhưng Nh
 ]
 ```
 
-- **Quản Lý/Quản Trị Viên**
+- **Quản Lý/Quản Trị Viên**: *Nhân Viên* thuộc đơn vị cung cấp dịch vụ.
     - Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
     - Có quyền quản lý nghiệp vụ và dữ liệu hệ thống
-- **Người Dùng**
+- **Người Dùng**: *Khách Hàng* sử dụng dịch vụ.
     - Đại diện cho một người dùng/khách hàng cuối của hệ thống quản lý đặt phòng.
     - Có thể thực hiện đặt phòng, hủy đặt phòng, thanh toán, đánh giá, và xem các thông tin của mình.
 - **Phòng**

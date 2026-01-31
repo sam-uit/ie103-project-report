@@ -91,10 +91,10 @@ Mặc dù đều là các thực thể sử dụng hệ thống *BMS*, nhưng Nh
 1. #strong[Phân định rõ ràng phạm vi truy cập]: Ngăn chặn tuyệt đối các rủi ro leo thang đặc quyền (Privilege Escalation), đảm bảo người dùng cuối không thể vô tình hoặc cố ý truy cập vào các chức năng quản trị.
 2. #strong[Tối ưu hóa thuộc tính]: Mỗi nhóm đối tượng có các thuộc tính đặc thù riêng biệt (Ví dụ: `USERS` cần tích điểm, `ADMINS` cần có vai trò (role) cụ thể), giúp tránh dư thừa dữ liệu (`NULL` values) và đảm bảo tính chuẩn hóa.
 ]
-- #strong[Quản Lý/Quản Trị Viên]
+- #strong[Quản Lý/Quản Trị Viên]: #emph[Nhân Viên] thuộc đơn vị cung cấp dịch vụ.
   - Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
   - Có quyền quản lý nghiệp vụ và dữ liệu hệ thống
-- #strong[Người Dùng]
+- #strong[Người Dùng]: #emph[Khách Hàng] sử dụng dịch vụ.
   - Đại diện cho một người dùng/khách hàng cuối của hệ thống quản lý đặt phòng.
   - Có thể thực hiện đặt phòng, hủy đặt phòng, thanh toán, đánh giá, và xem các thông tin của mình.
 - #strong[Phòng]
