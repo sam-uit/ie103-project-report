@@ -26,12 +26,133 @@ Hệ thống áp dụng mô hình bảo mật dựa trên vai trò (RBAC - Role 
 === Sao Lưu & Phục Hồi
 <sao-luu-phuc-hoi>
 
-#todo[(Sao Lưu & Phục Hồi) TRÌNH BÀY BACKUP/RESTORE.]
 Chiến lược sao lưu dữ liệu được đề xuất:
 
 - Full Backup: Thực hiện định kỳ vào 00:00 Chủ Nhật hàng tuần.
 - Differential Backup: Thực hiện vào 00:00 các ngày trong tuần.
-- Transaction Log Backup: Mỗi 4 giờ/lần để giảm thiểu rủi ro mất dữ liệu giao dịch.
+- Export/Import: Sử dụng trong các tình huống cụ thể.
+
+==== Backup -- Restore Dữ Liệu
+<backup-restore-du-lieu>
+
+#strong[Backup:]
+
++ Chuột phải vào Database, chọn #emph[Task] \> #emph[Back Up…].
+
+#figure(image("images/backup-01.jpg"),
+  caption: [
+    Backup - 01 - Task \> Back Up.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 2)
++ Chọn #emph[Full] trong mục #emph[Backup type]. Chọn #emph[Destination] là #emph[Disk]
+]
+
+#figure(image("images/backup-02.jpg"),
+  caption: [
+    Backup - 02 - Backup Type.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 3)
++ Thêm đường dẫn thư mục lưu file backup.
+]
+
+#figure(image("images/backup-03.jpg"),
+  caption: [
+    Backup - 03 - Backup Destination.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 4)
++ Nhấn #emph[OK].
+]
+
+#figure(image("images/backup-04.jpg"),
+  caption: [
+    Backup - 04 - Xác Nhận.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 5)
++ Thông báo Hoàn Thành.
+]
+
+#figure(image("images/backup-05.jpg"),
+  caption: [
+    Backup - 05 - Backup Hoàn Thành.
+  ]
+)
+
+#strong[Restore:]
+
++ Chuột phải vào mục Database của Server, chọn #emph[Restore Database…].
+
+#figure(image("images/restore-01.jpg"),
+  caption: [
+    Restore - 01 - Restore Database.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 2)
++ Chọn #emph[Source] là #emph[Device] và chọn #emph[File name] là file backup.
+]
+
+#figure(image("images/restore-02.jpg"),
+  caption: [
+    Restore - 02 - Source.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 3)
++ Chọn file `.bak` để khôi phục.
+]
+
+#figure(image("images/restore-03.jpg"),
+  caption: [
+    Restore - 03 - Destination.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 4)
++ Chọn #emph[Destination] là #emph[Database] và đặt tên #emph[Database] là #emph[BookingMS].
+]
+
+#figure(image("images/restore-04.jpg"),
+  caption: [
+    Restore - 04 - Xác Nhận.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 5)
++ Thông báo Hoàn Thành.
+]
+
+#figure(image("images/restore-05.jpg"),
+  caption: [
+    Restore - 05 - Restore Hoàn Thành.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 6)
++ Kiểm tra các thành phần của Database vừa được khôi phục.
+]
+
+#figure(image("images/restore-06.jpg"),
+  caption: [
+    Restore - 06 - Kiểm Tra.
+  ]
+)
 
 ==== Export - Import Dữ Liệu
 <export-import-du-lieu>
@@ -185,127 +306,5 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 #figure(image("images/import-07.jpg"),
   caption: [
     Import - 07 - Kiểm Tra.
-  ]
-)
-
-==== Backup -- Restore Dữ Liệu
-<backup-restore-du-lieu>
-
-#strong[Backup:]
-
-+ Chuột phải vào Database, chọn #emph[Task] \> #emph[Back Up…].
-
-#figure(image("images/backup-01.jpg"),
-  caption: [
-    Backup - 01 - Task \> Back Up.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 2)
-+ Chọn #emph[Full] trong mục #emph[Backup type]. Chọn #emph[Destination] là #emph[Disk]
-]
-
-#figure(image("images/backup-02.jpg"),
-  caption: [
-    Backup - 02 - Backup Type.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 3)
-+ Thêm đường dẫn thư mục lưu file backup.
-]
-
-#figure(image("images/backup-03.jpg"),
-  caption: [
-    Backup - 03 - Backup Destination.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 4)
-+ Nhấn #emph[OK].
-]
-
-#figure(image("images/backup-04.jpg"),
-  caption: [
-    Backup - 04 - Xác Nhận.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 5)
-+ Thông báo Hoàn Thành.
-]
-
-#figure(image("images/backup-05.jpg"),
-  caption: [
-    Backup - 05 - Backup Hoàn Thành.
-  ]
-)
-
-#strong[Restore:]
-
-+ Chuột phải vào mục Database của Server, chọn #emph[Restore Database…].
-
-#figure(image("images/restore-01.jpg"),
-  caption: [
-    Restore - 01 - Restore Database.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 2)
-+ Chọn #emph[Source] là #emph[Device] và chọn #emph[File name] là file backup.
-]
-
-#figure(image("images/restore-02.jpg"),
-  caption: [
-    Restore - 02 - Source.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 3)
-+ Chọn file `.bak` để khôi phục.
-]
-
-#figure(image("images/restore-03.jpg"),
-  caption: [
-    Restore - 03 - Destination.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 4)
-+ Chọn #emph[Destination] là #emph[Database] và đặt tên #emph[Database] là #emph[BookingMS].
-]
-
-#figure(image("images/restore-04.jpg"),
-  caption: [
-    Restore - 04 - Xác Nhận.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 5)
-+ Thông báo Hoàn Thành.
-]
-
-#figure(image("images/restore-05.jpg"),
-  caption: [
-    Restore - 05 - Restore Hoàn Thành.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 6)
-+ Kiểm tra các thành phần của Database vừa được khôi phục.
-]
-
-#figure(image("images/restore-06.jpg"),
-  caption: [
-    Restore - 06 - Kiểm Tra.
   ]
 )

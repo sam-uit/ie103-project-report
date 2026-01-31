@@ -31,15 +31,62 @@ Hệ thống áp dụng mô hình bảo mật dựa trên vai trò (RBAC - Role 
 
 ### Sao Lưu & Phục Hồi
 
-```{=typst}
-#todo[(Sao Lưu & Phục Hồi) TRÌNH BÀY BACKUP/RESTORE.]
-```
-
 Chiến lược sao lưu dữ liệu được đề xuất:
 
 - Full Backup: Thực hiện định kỳ vào 00:00 Chủ Nhật hàng tuần.
 - Differential Backup: Thực hiện vào 00:00 các ngày trong tuần.
-- Transaction Log Backup: Mỗi 4 giờ/lần để giảm thiểu rủi ro mất dữ liệu giao dịch.
+- Export/Import: Sử dụng trong các tình huống cụ thể.
+
+#### Backup – Restore Dữ Liệu
+
+**Backup:**
+
+1. Chuột phải vào Database, chọn *Task* > *Back Up...*.
+
+![Backup - 01 - Task > Back Up.](images/backup-01.jpg)
+
+2. Chọn *Full* trong mục *Backup type*. Chọn *Destination* là *Disk*
+
+![Backup - 02 - Backup Type.](images/backup-02.jpg)
+
+3. Thêm đường dẫn thư mục lưu file backup.
+
+![Backup - 03 - Backup Destination.](images/backup-03.jpg)
+
+4. Nhấn *OK*.
+
+![Backup - 04 - Xác Nhận.](images/backup-04.jpg)
+
+5. Thông báo Hoàn Thành.
+
+![Backup - 05 - Backup Hoàn Thành.](images/backup-05.jpg)
+
+**Restore:**
+
+1. Chuột phải vào mục Database của Server, chọn *Restore Database...*.
+
+![Restore - 01 - Restore Database.](images/restore-01.jpg)
+
+2. Chọn *Source* là *Device* và chọn *File name* là file backup.
+
+![Restore - 02 - Source.](images/restore-02.jpg)
+
+3. Chọn file `.bak` để khôi phục.
+
+![Restore - 03 - Destination.](images/restore-03.jpg)
+
+4. Chọn *Destination* là *Database* và đặt tên *Database* là *BookingMS*.
+
+![Restore - 04 - Xác Nhận.](images/restore-04.jpg)
+
+5. Thông báo Hoàn Thành.
+
+![Restore - 05 - Restore Hoàn Thành.](images/restore-05.jpg)
+
+6. Kiểm tra các thành phần của Database vừa được khôi phục.
+
+![Restore - 06 - Kiểm Tra.](images/restore-06.jpg)
+
 
 #### Export - Import Dữ Liệu
 
@@ -102,53 +149,3 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 7. Kiểm tra kết quả bằng cách xem các thành phần của Database vừa được import.
 
 ![Import - 07 - Kiểm Tra.](images/import-07.jpg)
-
-#### Backup – Restore Dữ Liệu
-
-**Backup:**
-
-1. Chuột phải vào Database, chọn *Task* > *Back Up...*.
-
-![Backup - 01 - Task > Back Up.](images/backup-01.jpg)
-
-2. Chọn *Full* trong mục *Backup type*. Chọn *Destination* là *Disk*
-
-![Backup - 02 - Backup Type.](images/backup-02.jpg)
-
-3. Thêm đường dẫn thư mục lưu file backup.
-
-![Backup - 03 - Backup Destination.](images/backup-03.jpg)
-
-4. Nhấn *OK*.
-
-![Backup - 04 - Xác Nhận.](images/backup-04.jpg)
-
-5. Thông báo Hoàn Thành.
-
-![Backup - 05 - Backup Hoàn Thành.](images/backup-05.jpg)
-
-**Restore:**
-
-1. Chuột phải vào mục Database của Server, chọn *Restore Database...*.
-
-![Restore - 01 - Restore Database.](images/restore-01.jpg)
-
-2. Chọn *Source* là *Device* và chọn *File name* là file backup.
-
-![Restore - 02 - Source.](images/restore-02.jpg)
-
-3. Chọn file `.bak` để khôi phục.
-
-![Restore - 03 - Destination.](images/restore-03.jpg)
-
-4. Chọn *Destination* là *Database* và đặt tên *Database* là *BookingMS*.
-
-![Restore - 04 - Xác Nhận.](images/restore-04.jpg)
-
-5. Thông báo Hoàn Thành.
-
-![Restore - 05 - Restore Hoàn Thành.](images/restore-05.jpg)
-
-6. Kiểm tra các thành phần của Database vừa được khôi phục.
-
-![Restore - 06 - Kiểm Tra.](images/restore-06.jpg)
