@@ -3,16 +3,21 @@
 ## B1: Trình Bày Bài Toán
 
 ### Mục Đích
-Xây dựng **Trigger** để đảm bảo tính chính xác của số tiền thanh toán và tự động cập nhật trạng thái đơn đặt phòng.
+
+- Xây dựng **Trigger** để đảm bảo tính chính xác của số tiền thanh toán và tự động cập nhật trạng thái đơn đặt phòng.
 
 ### Vấn Đề
+
 Khi khách hàng thanh toán (INSERT vào bảng `PAYMENTS`):
+
 1. **Kiểm tra số tiền**: Số tiền thanh toán phải bằng tổng đơn giá các phòng đã đặt
 2. **Cập nhật trạng thái**: Tự động chuyển trạng thái booking sang `PAID`
 3. **Ngăn gian lận**: Không cho thanh toán sai số tiền
 
 ### Giải Pháp
+
 Sử dụng **INSTEAD OF Trigger** để:
+
 - Tính tổng tiền từ `CT_DATPHONG`
 - So sánh với số tiền thanh toán
 - Tự động cập nhật trạng thái nếu hợp lệ
@@ -22,6 +27,7 @@ Sử dụng **INSTEAD OF Trigger** để:
 ## B2: Câu Truy Vấn SQL
 
 ### Tạo Trigger
+
 ```sql
 CREATE TRIGGER dbo.trg_PAYMENTS_Insert_CheckAndPaid
 ON dbo.PAYMENTS
@@ -63,6 +69,7 @@ END
 ## B3: Các Bảng Dữ Liệu Liên Quan
 
 ### Bảng CT_DATPHONG
+
 | id | datphong_id | phong_id | don_gia |
 |----|-------------|----------|---------|
 | 1  | 1           | 1        | 500000  |
@@ -71,11 +78,13 @@ END
 **Tổng tiền booking #1:** 1,000,000 VNĐ
 
 ### Bảng DATPHONG (Trước Khi Thực Thi)
+
 | id | user_id | trang_thai | created_at |
 |----|---------|------------|------------|
 | 1  | 1       | PENDING    | 2026-01-10 |
 
 ### Bảng PAYMENTS (Trước Khi Thực Thi)
+
 | id | booking_id | amount | status |
 |----|------------|--------|--------|
 | (Trống) |||
@@ -85,6 +94,7 @@ END
 ## B4: Thực Thi Câu Lệnh
 
 ### Test Case - Thanh toán đúng số tiền
+
 ```sql
 INSERT INTO PAYMENTS(booking_id, user_id, amount, method, status, created_at)
 VALUES (1, 1, 1000000, 'CASH', 'SUCCESS', GETDATE());
@@ -118,6 +128,7 @@ VALUES (1, 1, 900000, 'CASH', 'SUCCESS', GETDATE());
 ## Kết Luận
 
 Trigger này:
-- ✅ Đảm bảo tính chính xác của thanh toán
-- ✅ Tự động cập nhật trạng thái booking
-- ✅ Ngăn chặn gian lận và sai sót
+
+- Đảm bảo tính chính xác của thanh toán
+- Tự động cập nhật trạng thái booking
+- Ngăn chặn gian lận và sai sót

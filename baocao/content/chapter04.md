@@ -298,11 +298,27 @@ Sử dụng **AFTER Trigger** với:
 
 #### TG4: Payment
 
-```{=typst}
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
-```
+- Xây dựng **Trigger** để đảm bảo tính chính xác của số tiền thanh toán và tự động cập nhật trạng thái đơn đặt phòng.
+
+Khi khách hàng thanh toán (`INSERT` vào bảng `PAYMENTS`):
+
+1. **Kiểm tra số tiền**: Số tiền thanh toán phải bằng tổng đơn giá các phòng đã đặt.
+2. **Cập nhật trạng thái**: Tự động chuyển trạng thái booking sang `PAID`.
+3. **Ngăn gian lận**: Không cho thanh toán sai số tiền.
+
+Sử dụng **INSTEAD OF Trigger** để:
+
+- Tính tổng tiền từ `CT_DATPHONG`.
+- So sánh với số tiền thanh toán.
+- Tự động cập nhật trạng thái nếu hợp lệ.
+
+**Ví dụ thực hiện**:
+
+![TRG-04-Payment - Kết quả](demo/TRG-04-PAYMENT.png)
 
 #### TG4: Refund
+
+
 
 ```{=typst}
 #todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]

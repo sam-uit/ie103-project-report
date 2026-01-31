@@ -316,7 +316,27 @@ Sử dụng #strong[AFTER Trigger] với:
 ==== TG4: Payment
 <tg4-payment>
 
-#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+- Xây dựng #strong[Trigger] để đảm bảo tính chính xác của số tiền thanh toán và tự động cập nhật trạng thái đơn đặt phòng.
+
+Khi khách hàng thanh toán (`INSERT` vào bảng `PAYMENTS`):
+
++ #strong[Kiểm tra số tiền]: Số tiền thanh toán phải bằng tổng đơn giá các phòng đã đặt.
++ #strong[Cập nhật trạng thái]: Tự động chuyển trạng thái booking sang `PAID`.
++ #strong[Ngăn gian lận]: Không cho thanh toán sai số tiền.
+
+Sử dụng #strong[INSTEAD OF Trigger] để:
+
+- Tính tổng tiền từ `CT_DATPHONG`.
+- So sánh với số tiền thanh toán.
+- Tự động cập nhật trạng thái nếu hợp lệ.
+
+#strong[Ví dụ thực hiện]:
+
+#figure(image("demo/TRG-04-PAYMENT.png"),
+  caption: [
+    TRG-04-Payment - Kết quả
+  ]
+)
 
 ==== TG4: Refund
 <tg4-refund>
