@@ -1,10 +1,10 @@
 {
   "id": "demo-fn-tim-phong",
-  "title": "Function 2: Tìm Phòng Trống",
+  "title": "Function 2: Tìm Phòng Trống Theo Loại",
   "type": "Function",
   "shortDesc": "Lọc danh sách phòng trống theo thời gian thực.",
-  "mdFile": "Function/Demo_TimPhong/problem.html",
-  "sqlFile": "Function/Demo_TimPhong/fn_TimPhongTrong.sql",
+  "mdFile": "Function/fn02_TimPhongTrongTheoLoai/fn02_TimPhongTrongTheoLoai.html",
+  "sqlFile": "Function/fn02_TimPhongTrongTheoLoai/fn02_TimPhongTrongTheoLoai.sql",
   "separateTables": [
     
     {

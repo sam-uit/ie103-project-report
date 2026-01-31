@@ -1,7 +1,7 @@
 {
       "demos": [
             "fn01_TinhHangThanhVien",
-            "fn02_TimPhong",
+            "fn02_TimPhongTrongTheoLoai",
             "fn03_TinhPhiHuyPhong"
       ]
 }
