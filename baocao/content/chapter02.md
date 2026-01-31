@@ -73,6 +73,8 @@ Trong chương này, Nhóm sẽ trình bày các chức năng và quy tắc nghi
 
 ### Danh Sách Các Thực Thể
 
+Lưu ý: Việc chủ động tách riêng các thực thể *Người Dùng* (Khách hàng) và *Quản Lý/Quản Trị Viên* (Nhân Viên) nhằm mục đích phân biệt quyền hạn và vai trò của người dùng trong hệ thống, tránh các tình huống leo thang quyền lực và vi phạm quy tắc kiểm soát truy cập (RBAC).
+
 - **Quản Lý/Quản Trị Viên**
     - Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
     - Có quyền quản lý nghiệp vụ và dữ liệu hệ thống
