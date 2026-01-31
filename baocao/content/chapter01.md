@@ -1,6 +1,6 @@
 # Mô Tả Bài Toán 
 
-Mở đầu cho bản *Báo Cáo Đồ Án*, trong chương này, nhóm 02 sẽ trình bày tổng quan về bối cảnh thực tế, lý do lựa chọn đề tài **"Hệ Thống Quản Lý Đặt Phòng"**, đồng thời xác định rõ phạm vi và mục tiêu mà nhóm hướng tới.
+Mở đầu cho bản *Báo Cáo Đồ Án*, trong chương này, Nhóm 02 sẽ trình bày tổng quan về bối cảnh thực tế, lý do lựa chọn đề tài **"Hệ Thống Quản Lý Đặt Phòng"**, đồng thời xác định rõ phạm vi và mục tiêu mà nhóm hướng tới.
 
 ## Tổng Quan Về Đề Tài
 
@@ -12,7 +12,7 @@ Trong bối cảnh ngành du lịch và dịch vụ lưu trú phát triển mạ
 - **Xung đột đặt phòng:** Khó kiểm soát trạng thái phòng theo thời gian thực, dẫn đến nhận trùng khách cho cùng một phòng.
 - **Báo cáo khó khăn:** Chủ doanh nghiệp gặp khó khăn trong việc tổng hợp doanh thu, thống kê hiệu suất kinh doanh theo ngày/tháng.
 
-Xuất phát từ thực tế đó, nhóm 02 quyết định xây dựng **"Booking Management System (BMS)"** - Hệ Thống Quản Lý Đặt Phòng tập trung, nhằm giải quyết các bài toán trên bằng công nghệ cơ sở dữ liệu quan hệ.
+Xuất phát từ thực tế đó, Nhóm 02 quyết định xây dựng **"Booking Management System (BMS)"** - Hệ Thống Quản Lý Đặt Phòng tập trung, nhằm giải quyết các bài toán trên bằng công nghệ cơ sở dữ liệu quan hệ.
 
 ### Mục Tiêu Đề Tài
 
