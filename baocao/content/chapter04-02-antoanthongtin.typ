@@ -9,6 +9,40 @@
 
 Hệ thống áp dụng mô hình bảo mật đa lớp, kết hợp giữa cơ chế phân quyền dựa trên vai trò (RBAC) ở mức dữ liệu và bảo mật mức vật lý của hệ quản trị SQL Server.
 
+==== Bảo Mật Mức Hệ Quản Trị
+<bao-mat-muc-he-quan-tri>
+
+Để tuân thủ nguyên tắc "Đặc quyền tối thiểu" (Least Privilege), hệ thống không sử dụng tài khoản `sa` (System Admin) để kết nối từ ứng dụng vào cơ sở dữ liệu.
+
+Nhóm thực hiện tạo các Login và User chuyên biệt cho ứng dụng:
+
++ Tạo Login Server:
+
+```sql
+CREATE LOGIN [BMS_App_User] WITH PASSWORD = 'StrongPassword123!';
+```
+
+#block[
+#set enum(numbering: "1.", start: 2)
++ Tạo Database User & Gán Quyền:
+]
+
+```sql
+USE ROOM_BOOKING_SYSTEM;
+CREATE USER [BMS_App_User] FOR LOGIN [BMS_App_User];
+```
+
+#block[
+#set enum(numbering: "1.", start: 3)
++ Gán Quyền: Chỉ cấp quyền thực thi (EXECUTE) trên các Stored Procedure, ngăn chặn truy cập trực tiếp vào bảng dữ liệu.
+]
+
+```sql
+GRANT EXECUTE TO [BMS_App_User];
+DENY SELECT, INSERT, UPDATE, DELETE ON SCHEMA::dbo TO [BMS_App_User];
+GO
+```
+
 ==== Mã Hóa Mật Khẩu
 <ma-hoa-mat-khau>
 
@@ -164,40 +198,6 @@ BEGIN
 
     RETURN @IsAllowed;
 END;
-```
-
-==== Bảo Mật Mức Hệ Quản Trị
-<bao-mat-muc-he-quan-tri>
-
-Để tuân thủ nguyên tắc "Đặc quyền tối thiểu" (Least Privilege), hệ thống không sử dụng tài khoản `sa` (System Admin) để kết nối từ ứng dụng vào cơ sở dữ liệu.
-
-Nhóm thực hiện tạo các Login và User chuyên biệt cho ứng dụng:
-
-+ Tạo Login Server:
-
-```sql
-CREATE LOGIN [BMS_App_User] WITH PASSWORD = 'StrongPassword123!';
-```
-
-#block[
-#set enum(numbering: "1.", start: 2)
-+ Tạo Database User & Gán Quyền:
-]
-
-```sql
-USE ROOM_BOOKING_SYSTEM;
-CREATE USER [BMS_App_User] FOR LOGIN [BMS_App_User];
-```
-
-#block[
-#set enum(numbering: "1.", start: 3)
-+ Gán Quyền: Chỉ cấp quyền thực thi (EXECUTE) trên các Stored Procedure, ngăn chặn truy cập trực tiếp vào bảng dữ liệu.
-]
-
-```sql
-GRANT EXECUTE TO [BMS_App_User];
-DENY SELECT, INSERT, UPDATE, DELETE ON SCHEMA::dbo TO [BMS_App_User];
-GO
 ```
 
 === Sao Lưu & Phục Hồi
