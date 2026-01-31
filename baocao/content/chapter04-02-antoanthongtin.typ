@@ -36,25 +36,157 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 ==== Export - Import Dữ Liệu
 <export-import-du-lieu>
 
-Export:
+#strong[Export:]
 
 + Chuột phải vào Database cần Export, chọn #emph[Task] \> #emph[Export Data-Tier Application…].
-+ Chọn #emph[Next] ở trang #emph[Introduction].
-+ Ở trang #emph[Export Settings], mục #emph[Save to local disk], chỉ định đường dẫn lưu file `.bacpac`.
-+ Ở trang #emph[Export Settings], #emph[Next] và chọn các thành phần (#emph[tables]) cần export.
-+ Ở trang #emph[Summary], xác nhận thông tin và nhấn #emph[Finish].
-+ Kiểm tra tiến độ và kết quả ở trang #emph[Results].
-+ Kiểm tra kết quả và chắc chắn file `.bacpac` đã được tạo thành công.
 
-Import:
+#figure(image("images/export-01.jpg"),
+  caption: [
+    Export - 01 - Task \> Export Data-Tier Application.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 2)
++ Chọn #emph[Next] ở trang #emph[Introduction].
+]
+
+#figure(image("images/export-02.jpg"),
+  caption: [
+    Export - 02 - Introduction.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 3)
++ Ở trang #emph[Export Settings], mục #emph[Save to local disk], chỉ định đường dẫn lưu file `.bacpac`.
+]
+
+#figure(image("images/export-03.jpg"),
+  caption: [
+    Export - 03 - Export Settings.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 4)
++ Ở trang #emph[Export Settings], #emph[Next] và chọn các thành phần (#emph[tables]) cần export.
+]
+
+#figure(image("images/export-04.jpg"),
+  caption: [
+    Export - 04 - Export Settings.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 5)
++ Ở trang #emph[Summary], xác nhận thông tin và nhấn #emph[Finish].
+]
+
+#figure(image("images/export-05.jpg"),
+  caption: [
+    Export - 05 - Summary.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 6)
++ Kiểm tra tiến độ và kết quả ở trang #emph[Results].
+]
+
+#figure(image("images/export-06.jpg"),
+  caption: [
+    Export - 06 - Results.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 7)
++ Kiểm tra kết quả và chắc chắn file `.bacpac` đã được tạo thành công.
+]
+
+#figure(image("images/export-07.jpg"),
+  caption: [
+    Export - 07 - Kiểm Tra.
+  ]
+)
+
+#strong[Import:]
 
 + Chuột phải vào Database cần Import, chọn #emph[Import Data-Tier Application…].
+
+#figure(image("images/import-01.jpg"),
+  caption: [
+    Import - 01 - Import Data-Tier Application.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 2)
 + Chọn #emph[Next] ở trang #emph[Introduction].
+]
+
+#figure(image("images/import-02.jpg"),
+  caption: [
+    Import - 02 - Introduction.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 3)
 + Chọn #emph[Browse] để tìm file `.bacpac`.
+]
+
+#figure(image("images/import-03.jpg"),
+  caption: [
+    Import - 03 - Browse.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 4)
 + Ở trang #emph[Database Settings], đặt tên cho database tại #emph[New database name].
+]
+
+#figure(image("images/import-04.jpg"),
+  caption: [
+    Import - 04 - Database Settings.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 5)
 + Ở trang #emph[Summary], xác nhận thông tin và nhấn #emph[Finish].
+]
+
+#figure(image("images/import-05.jpg"),
+  caption: [
+    Import - 05 - Summary.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 6)
 + Kiểm tra tiến độ và kết quả ở trang #emph[Results].
+]
+
+#figure(image("images/import-06.jpg"),
+  caption: [
+    Import - 06 - Results.
+  ]
+)
+
+#block[
+#set enum(numbering: "1.", start: 7)
 + Kiểm tra kết quả bằng cách xem các thành phần của Database vừa được import.
+]
+
+#figure(image("images/import-07.jpg"),
+  caption: [
+    Import - 07 - Kiểm Tra.
+  ]
+)
 
 ==== Backup -- Restore Dữ Liệu
 <backup-restore-du-lieu>

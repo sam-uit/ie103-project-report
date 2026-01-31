@@ -43,25 +43,65 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 
 #### Export - Import Dữ Liệu
 
-Export:
+**Export:**
 
 1. Chuột phải vào Database cần Export, chọn *Task* > *Export Data-Tier Application...*.
+
+![Export - 01 - Task > Export Data-Tier Application.](images/export-01.jpg)
+
 2. Chọn *Next* ở trang *Introduction*.
+
+![Export - 02 - Introduction.](images/export-02.jpg)
+
 3. Ở trang *Export Settings*, mục *Save to local disk*, chỉ định đường dẫn lưu file `.bacpac`.
+
+![Export - 03 - Export Settings.](images/export-03.jpg)
+
 4. Ở trang *Export Settings*, *Next* và chọn các thành phần (*tables*) cần export.
+
+![Export - 04 - Export Settings.](images/export-04.jpg)
+
 5. Ở trang *Summary*, xác nhận thông tin và nhấn *Finish*.
+
+![Export - 05 - Summary.](images/export-05.jpg)
+
 6. Kiểm tra tiến độ và kết quả ở trang *Results*.
+
+![Export - 06 - Results.](images/export-06.jpg)
+
 7. Kiểm tra kết quả và chắc chắn file `.bacpac` đã được tạo thành công.
 
-Import:
+![Export - 07 - Kiểm Tra.](images/export-07.jpg)
+
+**Import:**
 
 1. Chuột phải vào Database cần Import, chọn *Import Data-Tier Application...*.
+
+![Import - 01 - Import Data-Tier Application.](images/import-01.jpg)
+
 2. Chọn *Next* ở trang *Introduction*.
+
+![Import - 02 - Introduction.](images/import-02.jpg)
+
 3. Chọn *Browse* để tìm file `.bacpac`.
+
+![Import - 03 - Browse.](images/import-03.jpg)
+
 4. Ở trang *Database Settings*, đặt tên cho database tại *New database name*.
+
+![Import - 04 - Database Settings.](images/import-04.jpg)
+
 5. Ở trang *Summary*, xác nhận thông tin và nhấn *Finish*.
+
+![Import - 05 - Summary.](images/import-05.jpg)
+
 6. Kiểm tra tiến độ và kết quả ở trang *Results*.
+
+![Import - 06 - Results.](images/import-06.jpg)
+
 7. Kiểm tra kết quả bằng cách xem các thành phần của Database vừa được import.
+
+![Import - 07 - Kiểm Tra.](images/import-07.jpg)
 
 #### Backup – Restore Dữ Liệu
 
