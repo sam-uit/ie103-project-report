@@ -74,22 +74,51 @@ caption: [Các Chức Năng Nhiệm Vụ -- KHÔNG Bao Gồm.]
 
 ### Các Quy Tắc Nghiệp Vụ
 
-- Một phòng không được đặt trùng thời gian.
-- Ngày trả phòng phải lớn hơn ngày nhận phòng.
-- Giờ trả phòng trễ nhất là **12:00 trưa** mỗi ngày.
-- Giờ nhận phòng sớm nhất là **14:00 (2 giờ chiều)** mỗi ngày.
-- Một lần đặt phòng phải có ít nhất một phòng.
-- Mỗi đặt phòng chỉ có tối đa một thanh toán.
-- Số tiền thanh toán phải lớn hơn 0.
-- Không được xóa đặt phòng nếu đã thanh toán.
-- Có thể hoàn tiền nếu người dùng yêu cầu trước 24 tiếng (2 ngày) kể từ ngày nhận phòng.
-- Chỉ có **Admin** mới có quyền duyệt hoàn trả.
-- Mỗi đặt phòng có thể áp dụng tối đa một mã giảm giá (voucher).
-- Mã giảm giá phải còn hạn sử dụng và chưa hết số lượng.
-- Khách hàng có thể gọi dịch vụ đi kèm bất cứ lúc nào trong thời gian lưu trú.
-- Chỉ những khách hàng đã thanh toán (PAID) và đã trả phòng mới được đánh giá.
-- Mỗi đặt phòng chỉ được đánh giá một lần.
-- Số sao đánh giá phải từ 1 đến 5.
+<!-- | STT | **Quy Tắc Nghiệp Vụ** |
+|---:|------------|
+| 1 | Một phòng không được đặt trùng thời gian. |
+| 2 | Ngày trả phòng phải lớn hơn ngày nhận phòng. |
+| 3 | Giờ trả phòng trễ nhất là **12:00 trưa** mỗi ngày. |
+| 4 | Giờ nhận phòng sớm nhất là **14:00 (2 giờ chiều)** mỗi ngày. |
+| 5 | Một lần đặt phòng phải có ít nhất một phòng. |
+| 6 | Mỗi đặt phòng chỉ có tối đa một thanh toán. |
+| 7 | Số tiền thanh toán phải lớn hơn 0. |
+| 8 | Không được xóa đặt phòng nếu đã thanh toán. |
+| 9 | Có thể hoàn tiền nếu người dùng yêu cầu trước 24 tiếng (2 ngày) kể từ ngày nhận phòng. |
+| 10 | Chỉ có **Admin** mới có quyền duyệt hoàn trả. |
+| 11 | Mỗi đặt phòng có thể áp dụng tối đa một mã giảm giá (voucher). |
+| 12 | Mã giảm giá phải còn hạn sử dụng và chưa hết số lượng. |
+| 13 | Khách hàng có thể gọi dịch vụ đi kèm bất cứ lúc nào trong thời gian lưu trú. |
+| 14 | Chỉ những khách hàng đã thanh toán (PAID) và đã trả phòng mới được đánh giá. |
+| 15 | Mỗi đặt phòng chỉ được đánh giá một lần. |
+| 16 | Số sao đánh giá phải từ 1 đến 5. | -->
+
+```{=typst}
+#figure(
+table(
+  columns: (10%, 90%),
+  align: (right, left),
+  [STT], [#strong[Quy Tắc Nghiệp Vụ]],
+  [1], [Một phòng không được đặt trùng thời gian.],
+  [2], [Ngày trả phòng phải lớn hơn ngày nhận phòng.],
+  [3], [Giờ trả phòng trễ nhất là #strong[12:00 trưa] mỗi ngày.],
+  [4], [Giờ nhận phòng sớm nhất là #strong[14:00 (2 giờ chiều)] mỗi ngày.],
+  [5], [Một lần đặt phòng phải có ít nhất một phòng.],
+  [6], [Mỗi đặt phòng chỉ có tối đa một thanh toán.],
+  [7], [Số tiền thanh toán phải lớn hơn 0.],
+  [8], [Không được xóa đặt phòng nếu đã thanh toán.],
+  [9], [Có thể hoàn tiền nếu người dùng yêu cầu trước 24 tiếng (2 ngày) kể từ ngày nhận phòng.],
+  [10], [Chỉ có #strong[Admin] mới có quyền duyệt hoàn trả.],
+  [11], [Mỗi đặt phòng có thể áp dụng tối đa một mã giảm giá (voucher).],
+  [12], [Mã giảm giá phải còn hạn sử dụng và chưa hết số lượng.],
+  [13], [Khách hàng có thể gọi dịch vụ đi kèm bất cứ lúc nào trong thời gian lưu trú.],
+  [14], [Chỉ những khách hàng đã thanh toán (PAID) và đã trả phòng mới được đánh giá.],
+  [15], [Mỗi đặt phòng chỉ được đánh giá một lần.],
+  [16], [Số sao đánh giá phải từ 1 đến 5.]
+),
+caption: [Các Quy Tắc Nghiệp Vụ]
+)
+```
 
 ### Miêu Tả Các Nghiệp Vụ (User Stories)
 
