@@ -77,6 +77,10 @@ Hệ thống áp dụng cơ chế phân quyền dựa trên vai trò (RBAC).
 
 #### RBAC (Role-Based Access Control) Cho Nhân Viên
 
+```{=typst}
+#co-warn[Mọi thao tác quản trị (Thêm phòng, Duyệt hoàn tiền...) đều phải đi qua hàm kiểm tra `F_CHECK_PERMISSION` để xác thực xem `AdminID` có sở hữu quyền (`PERMISSIONS.code`) tương ứng hay không.]
+```
+
 Hệ thống quản lý quyền hạn thông qua các bảng `ROLES`, `PERMISSIONS` và `ADMIN_ROLES`. Quyền truy cập không được gán cứng mà dựa trên vai trò và quyền hạn của *Admin* hoặc *Staff* (Nhân viên).
 
 Mô hình phân quyền:
