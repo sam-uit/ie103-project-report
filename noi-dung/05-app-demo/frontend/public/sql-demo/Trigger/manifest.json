@@ -2,7 +2,7 @@
       "demos": [
             "Demo_CheckTime",
             "Demo_AutoPrice",
-            "Demo_SyncStatus",
+            "TRG-03-SYNCSTATUS",
             "TRG-04-PAYMENT",
             "TRG-05-REFUND"
       ]

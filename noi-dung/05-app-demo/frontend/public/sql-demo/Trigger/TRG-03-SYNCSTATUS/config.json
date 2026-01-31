@@ -3,8 +3,8 @@
       "title": "Trigger 3: Đồng Bộ Trạng Thái Phòng",
       "type": "Trigger",
       "shortDesc": "Tự động cập nhật trạng thái phòng khi có thay đổi trong chi tiết đặt phòng",
-      "mdFile": "Trigger/Demo_SyncStatus/problem.html",
-      "sqlFile": "Trigger/Demo_SyncStatus/script.sql",
+      "mdFile": "Trigger/TRG-03-SYNCSTATUS/TRG-03-SYNCSTATUS.html",
+      "sqlFile": "Trigger/TRG-03-SYNCSTATUS/TRG-03-SYNCSTATUS.sql",
       "separateTables": [
             {
                   "name": "PHONG",
