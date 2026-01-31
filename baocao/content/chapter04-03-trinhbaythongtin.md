@@ -98,6 +98,6 @@ Các bước thực hiện:
 
 - Ta chọn kích cỡ A4 lanscape để in cho đẹp và đây đủ, chọn fit -> entrie view để hiển thị hết width height.
 
-![Báo Cáo 02 - Top Khách Hàng Chi Tiêu Nhiều Nhất - Design](./images/rpt2-10.png)
+![Report 2 - Màn Hình Design](./images/rpt2-10.png)
 
-![Báo Cáo 02 - Top Khách Hàng Chi Tiêu Nhiều Nhất - Preview](./images/rpt2-11.png)
+![Report 2 - Màn Hình Preview](./images/rpt2-11.png)

@@ -120,12 +120,12 @@ Các bước thực hiện:
 
 #figure(image("./images/rpt2-10.png"),
   caption: [
-    Báo Cáo 02 - Top Khách Hàng Chi Tiêu Nhiều Nhất - Design
+    Report 2 - Màn Hình Design
   ]
 )
 
 #figure(image("./images/rpt2-11.png"),
   caption: [
-    Báo Cáo 02 - Top Khách Hàng Chi Tiêu Nhiều Nhất - Preview
+    Report 2 - Màn Hình Preview
   ]
 )
