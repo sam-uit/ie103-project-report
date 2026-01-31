@@ -14,6 +14,8 @@ Nhóm thực hiện lựa chọn Microsoft SQL Server làm hệ quản trị cơ
 
 Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thành phần và cấu trúc của cơ sở dữ liệu, bao gồm các bảng, thuộc tính, loại dữ liệu, quan hệ giữa các bảng, và các ràng buộc toàn vẹn.
 
+<!-- Ghi Chú về Các Thủ Tục An Toàn Thông Tin -->
+
 ```{=typst}
 #co-note(title: [Ghi Chú về Các Thủ Tục An Toàn Thông Tin])[
 Trong phạm vi chương này, nhóm tập trung vào việc khởi tạo cấu trúc lưu trữ (DDL) và nạp dữ liệu tĩnh. 
