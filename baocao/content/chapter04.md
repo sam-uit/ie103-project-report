@@ -320,9 +320,10 @@ Sử dụng `INSTEAD OF` Trigger để:
 
 ![TRG-04-Payment - Kết quả](demo/TRG-04-PAYMENT.png)
 
-#### TG5: Refund
+#### TRG-05 - Kiểm Tra Hoàn Tiền
 
-- Xây dựng **Trigger** để quản lý quy trình hoàn tiền an toàn và chính xác.
+- Tên: `trg_REFUNDS_Insert_CheckAndUpdate`.
+- Mục đích: Quản lý quy trình hoàn tiền an toàn và chính xác.
 
 Khi xử lý hoàn tiền (`INSERT` vào bảng `REFUNDS`):
 
@@ -333,7 +334,7 @@ Khi xử lý hoàn tiền (`INSERT` vào bảng `REFUNDS`):
 Sử dụng `INSTEAD OF` Trigger để:
 
 - Kiểm tra `REFUNDS.so_tien_hoan <= PAYMENTS.so_tien`.
-- Tự động cập nhật trạng thái payment và booking.
+- Tự động cập nhật trạng thái trong `PAYMENTS` và `DATPHONG`.
 - Đảm bảo tính toàn vẹn dữ liệu.
 
 **Ví dụ thực hiện**:
