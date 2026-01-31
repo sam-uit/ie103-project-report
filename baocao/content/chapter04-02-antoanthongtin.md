@@ -124,23 +124,11 @@ Thủ tục kiểm tra quyền `F_CHECK_PERMISSION`:
 - Kiểm tra quyền bằng cách liên kết các bảng, và chỉ cho phép truy cập vào tài nguyên hệ thống nếu staff/admin có quyền truy cập vào tài nguyên đó.
 - Miêu tả nhanh như dưới đây.
 
-```sql
-BEGIN
-    DECLARE @IsAllowed BIT = 0;
-
-    IF EXISTS (
-        SELECT 1 
-        FROM ADMIN_ROLES ar
-        JOIN ROLES r ON ar.role_id = r.id
-        JOIN ROLE_PERMISSIONS rp ON r.id = rp.role_id
-        JOIN PERMISSIONS p ON rp.permission_id = p.id
-        WHERE ar.admin_id = @AdminId 
-          AND p.code = @RequiredPermissionCode
-    )
-    SET @IsAllowed = 1;
-
-    RETURN @IsAllowed;
-END;
+```{=typst}
+#figure(
+    raw(read("code/ch04-f_check_permission.sql"), lang: "sql", block: true),
+    caption: [An Toàn Thông Tin -- Hàm Kiểm Tra Quyền]
+)
 ```
 
 Luôn sử dụng hàm `F_CHECK_PERMISSION` trên mọi thao thác của *Nhân Viên*, để đảm bảo *Nhân Viên* có quyền thực hiện thao tác đó.
