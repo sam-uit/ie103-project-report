@@ -99,8 +99,18 @@ Mô hình phân quyền:
 #figure(
     table(
     columns: (10%, 20%, 70%),
-    align: (right, left, left),
-    [STT], [#strong[Vai Trò]], [#strong[Quyền Hạn]], [1], [Admin], [Quản lý tất cả], [2], [Staff], [Quản lý đặt phòng], [3], [End User], [Đặt phòng]
+    align: (right + bottom, left + bottom, left + bottom),
+    [STT], [#strong[Vai Trò]], [#strong[Quyền Hạn]],
+    [1], [`SUPER_ADMIN`], [Quản trị viên cấp cao],
+    [2], [`ADMIN`], [Quản trị viên],
+    [3], [`STAFF`], [Nhân viên],
+    [4], [`ACCOUNTANT`], [Kế toán],
+    [5], [`RECEPTIONIST`], [Lễ tân],
+    [6], [`MANAGER`], [Quản lý],
+    [7], [`MAINTENANCE`], [Bảo trì],
+    [8], [`MARKETING`], [Marketing],
+    [9], [`SUPPORT`], [Hỗ trợ],
+    [10], [`ANALYST`], [Phân tích]
     ),
     caption: [An Toàn Thông Tin - Bảng Phân Quyền]
 )
