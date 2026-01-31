@@ -92,7 +92,7 @@ END;
 ==== Kiểm Soát Truy Cập Dựa Trên Vai Trò (Data-Driven RBAC)
 <kiem-soat-truy-cap-dua-tren-vai-tro-data-driven-rbac>
 
-Hệ thống quản lý quyền hạn thông qua các bảng `ROLES`, `PERMISSIONS` và `ADMIN_ROLES`. Quyền truy cập không được gán cứng mà dựa trên vai trò và quyền hạn của `USERS`.
+Hệ thống quản lý quyền hạn thông qua các bảng `ROLES`, `PERMISSIONS` và `ADMIN_ROLES`. Quyền truy cập không được gán cứng mà dựa trên vai trò và quyền hạn của #emph[Admin] hoặc #emph[Staff] (Nhân viên).
 
 Mô hình phân quyền:
 

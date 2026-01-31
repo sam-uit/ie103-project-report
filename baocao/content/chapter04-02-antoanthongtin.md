@@ -80,7 +80,7 @@ END;
 
 #### Kiểm Soát Truy Cập Dựa Trên Vai Trò (Data-Driven RBAC)
 
-Hệ thống quản lý quyền hạn thông qua các bảng `ROLES`, `PERMISSIONS` và `ADMIN_ROLES`. Quyền truy cập không được gán cứng mà dựa trên vai trò và quyền hạn của `USERS`.
+Hệ thống quản lý quyền hạn thông qua các bảng `ROLES`, `PERMISSIONS` và `ADMIN_ROLES`. Quyền truy cập không được gán cứng mà dựa trên vai trò và quyền hạn của *Admin* hoặc *Staff* (Nhân viên).
 
 Mô hình phân quyền:
 
