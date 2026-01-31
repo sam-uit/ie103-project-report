@@ -14,3 +14,6 @@ There are also taxi and motorbike taxi services here, prices are transparent, yo
 
 This will be the place to stay that I recommend to you when coming to Vietnam.
 ]]
+#emph[NHÀ NGHỈ 999] -- tại Cừa -- Tân Kỳ -- Nghệ An, được hình thành từ tâm huyết của một người yêu xây dựng, mọi công đoạn từ ý tưởng, thiết kế đến xây dựng và hoàn thiện đều được chủ nhân thực hiện trực tiếp, với hình thức thẩm mỹ cao, và công năng sử dụng nhiều mục đích. Công trình đã đi vào hoạt động một thời gian, và nhận được đánh giá tích cực từ nhiều đợt khách hàng.
+
+Tuy nhiên, đặc thù thuộc một khu vực trung du miền núi, mật độ khách vãng lai hoặc du lịch không cao, kèm theo đó là mô hình quản lý còn thủ công, dựa trên sổ sách truyền thống, tạo nên một khoản cách nhất định để khách hàng có thể tiếp cận được dịch vụ của Nhà Nghỉ 999.
