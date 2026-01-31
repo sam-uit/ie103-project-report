@@ -43,23 +43,23 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 
 1. Chuột phải vào Database, chọn *Task* > *Back Up...*.
 
-![Backup - 01 - Task > Back Up.](images/backup-01.jpg)
+![Backup - 01 - Task > Back Up.](images/backup-01.jpg.jpeg)
 
 2. Chọn *Full* trong mục *Backup type*. Chọn *Destination* là *Disk*
 
-![Backup - 02 - Backup Type.](images/backup-02.jpg)
+![Backup - 02 - Backup Type.](images/backup-02.jpg.jpeg)
 
 3. Thêm đường dẫn thư mục lưu file backup.
 
-![Backup - 03 - Backup Destination.](images/backup-03.jpg)
+![Backup - 03 - Backup Destination.](images/backup-03.jpg.jpeg)
 
 4. Nhấn *OK*.
 
-![Backup - 04 - Xác Nhận.](images/backup-04.jpg)
+![Backup - 04 - Xác Nhận.](images/backup-04.jpg.jpeg)
 
 5. Thông báo Hoàn Thành.
 
-![Backup - 05 - Backup Hoàn Thành.](images/backup-05.jpg)
+![Backup - 05 - Backup Hoàn Thành.](images/backup-05.jpg.jpeg)
 
 **Restore:**
 

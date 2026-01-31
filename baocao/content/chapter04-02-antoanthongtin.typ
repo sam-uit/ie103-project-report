@@ -39,7 +39,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 
 + Chuột phải vào Database, chọn #emph[Task] \> #emph[Back Up…].
 
-#figure(image("images/backup-01.jpg"),
+#figure(image("images/backup-01.jpg.jpeg"),
   caption: [
     Backup - 01 - Task \> Back Up.
   ]
@@ -50,7 +50,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Chọn #emph[Full] trong mục #emph[Backup type]. Chọn #emph[Destination] là #emph[Disk]
 ]
 
-#figure(image("images/backup-02.jpg"),
+#figure(image("images/backup-02.jpg.jpeg"),
   caption: [
     Backup - 02 - Backup Type.
   ]
@@ -61,7 +61,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Thêm đường dẫn thư mục lưu file backup.
 ]
 
-#figure(image("images/backup-03.jpg"),
+#figure(image("images/backup-03.jpg.jpeg"),
   caption: [
     Backup - 03 - Backup Destination.
   ]
@@ -72,7 +72,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Nhấn #emph[OK].
 ]
 
-#figure(image("images/backup-04.jpg"),
+#figure(image("images/backup-04.jpg.jpeg"),
   caption: [
     Backup - 04 - Xác Nhận.
   ]
@@ -83,7 +83,7 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 + Thông báo Hoàn Thành.
 ]
 
-#figure(image("images/backup-05.jpg"),
+#figure(image("images/backup-05.jpg.jpeg"),
   caption: [
     Backup - 05 - Backup Hoàn Thành.
   ]
