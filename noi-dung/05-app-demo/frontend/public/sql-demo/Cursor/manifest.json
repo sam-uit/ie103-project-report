@@ -1,6 +1,6 @@
 {
       "demos": [
-            "Demo_UpdateStatusWhenOverdue",
-            "Demo_SyncRoomStatus"
+            "cs01_UpdateStatusWhenOverdue",
+            "cs02_SyncRoomStatus"
       ]
 }

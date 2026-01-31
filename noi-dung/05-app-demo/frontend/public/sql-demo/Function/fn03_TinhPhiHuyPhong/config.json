@@ -1,0 +1,25 @@
+{
+  "id": "demo-fn-tinh-phi-huy",
+  "title": "Function 3: Tính Phí Hủy Phòng",
+  "type": "Function",
+  "shortDesc": "Tính phí phạt (0%, 50%, 100%) dựa trên mốc 3 ngày.",
+  "mdFile": "Function/fn03_TinhPhiHuyPhong/fn03_TinhPhiHuyPhong.html",
+  "sqlFile": "Function/fn03_TinhPhiHuyPhong/fn03_TinhPhiHuyPhong.sql",
+  "separateTables": [
+  
+    {
+      "name": "KET_QUA",
+      "label": "💰 KẾT QUẢ TÍNH PHÍ",
+      "sqlFetchInitial": "SELECT '' AS [KetQua]",
+       
+      "sqlAfter": "SELECT FORMAT(dbo.fn_TinhPhiHuyPhong(@BookingID, CAST(@NgayBaoHuy AS DATETIME)), 'N0') + ' VNĐ' AS [KetQua]",
+      "columns": [
+        { "key": "KetQua", "label": "Số Tiền Phải Trả", "isPk": true }
+      ]
+    }
+  ],
+  "params": [
+    { "name": "@BookingID", "type": "int", "defaultValue": 3 },
+    { "name": "@NgayBaoHuy", "type": "datetime", "defaultValue": "2023-04-01 08:00:00" }
+  ]
+}

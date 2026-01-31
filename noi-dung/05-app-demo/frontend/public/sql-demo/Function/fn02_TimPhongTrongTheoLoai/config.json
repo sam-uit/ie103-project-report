@@ -1,0 +1,25 @@
+{
+  "id": "demo-fn-tim-phong",
+  "title": "Function 2: Tìm Phòng Trống Theo Loại",
+  "type": "Function",
+  "shortDesc": "Lọc danh sách phòng trống theo thời gian thực.",
+  "mdFile": "Function/fn02_TimPhongTrongTheoLoai/fn02_TimPhongTrongTheoLoai.html",
+  "sqlFile": "Function/fn02_TimPhongTrongTheoLoai/fn02_TimPhongTrongTheoLoai.sql",
+  "separateTables": [
+    
+    {
+      "name": "KET_QUA",
+      "label": "✅ KẾT QUẢ TÌM KIẾM",
+      "sqlAfter": "SELECT so_phong AS [SoPhong], N'✅ Còn trống' AS [TrangThai] FROM dbo.fn_TimPhongTrongTheoLoai(@LoaiPhongID, CAST(@CheckIn AS DATETIME), CAST(@CheckOut AS DATETIME))",
+      "columns": [
+        { "key": "SoPhong", "label": "Phòng Có Thể Đặt", "isPk": true },
+        { "key": "TrangThai", "label": "Trạng Thái" }
+      ]
+    }
+  ],
+  "params": [
+    { "name": "@LoaiPhongID", "type": "int", "defaultValue": 1 },
+    { "name": "@CheckIn", "type": "datetime", "defaultValue": "2023-04-04 14:00:00" },
+    { "name": "@CheckOut", "type": "datetime", "defaultValue": "2023-04-05 12:00:00" }
+  ]
+}

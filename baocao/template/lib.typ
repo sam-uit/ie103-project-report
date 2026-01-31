@@ -26,20 +26,28 @@
   ..args,
   body,
 ) = {
-  // Anchor/Móc cho nút Back to Top
+  // Anchor/Móc cho nút [Back to Top]
   [#metadata("top") <top>]
 
   // MARK: Page & Text Setup
+  // Cài đặt khoảng cách lề (margin) cho trang.
   set page(margin: 2.5cm)
+
+  // Cài đặt font chữ cho body.
   set text(
     font: body-font,
     size: 12pt,
     weight: "regular",
   )
+
+  // Cài đặt đoạn văn bản
   set par(
-    leading: 0.8em,
+    // leading: Khoảng cách dòng, mặc định 0.65em
+    // leading: 0.6em,
+    // justify: Căn lề, mặc định false
     justify: true,
-    spacing: 1.5em,
+    // spacing: Khoảng cách giữa các đoạn, mặc định 1.2em
+    // spacing: 1em,
   )
 
   // MARK: Citation Text Style
@@ -153,6 +161,7 @@
   show figure.where(kind: "todo"): it => it.body
 
   // MARK: Cover Page
+  // ----- BÌA CỨNG --------------------
   // No headers/footers, no numbering
   set page(header: none, footer: none, numbering: none)
   cover-page(
@@ -162,61 +171,13 @@
     author: author,
     assignment: assignment,
   )
+
+  // Ngắt trang sau trang bìa.
   pagebreak()
+  // Có thể bổ sung trang bìa mềm ở đây
+  // ----- BÌA MỀM --------------------
 
-  // MARK: Thesis Summary
-  if doc-type == "thesis" {
-    // No Header/Footer, No Numbering
-    set page(header: none, footer: none, numbering: none)
-    // No Heading Numbering, No Outlined
-    set heading(numbering: none, outlined: false)
-    // We place the thesis summary here
-    include "/content/summary.typ"
-  }
-
-  // PREAMBLE
-
-  // MARK: Forewords
-  if doc-type == "thesis" {
-    // No Header/Footer, No Numbering
-    set page(header: none, footer: none, numbering: none)
-    // No Heading Numbering, No Outlined
-    set heading(numbering: none, outlined: false)
-    // We place the forewords here
-    include "/content/preamble-forewords.typ"
-  }
-
-  // MARK: Acknowledgement
-  if doc-type == "thesis" {
-    // No Header/Footer, No Numbering
-    set page(header: none, footer: none, numbering: none)
-    // No Heading Numbering, No Outlined
-    set heading(numbering: none, outlined: false)
-    // We place the acknowledgement here
-    include "/content/preamble-ack.typ"
-  }
-
-  // MARK: Instructor's comment
-  if doc-type == "thesis" {
-    // No Header/Footer, No Numbering
-    set page(header: none, footer: none, numbering: none)
-    // No Heading Numbering, No Outlined
-    set heading(numbering: none, outlined: false)
-    // We place the instructor's comment here
-    include "/content/preamble-comment.typ"
-  }
-
-  // MARK: Report Author
-  if doc-type == "report" {
-    // No Header/Footer, No Numbering
-    set page(header: none, footer: none, numbering: none)
-    // No Heading Numbering, No Outlined
-    set heading(numbering: none, outlined: false)
-    // We place the author information here
-    include "/author/author.typ"
-  }
-
-  // MARK: Front Matter
+  // MARK: Preamble
   // Roman numbering, Header/Footer active
   counter(page).update(1)
 
@@ -232,6 +193,60 @@
       ]
     ],
   )
+
+  // MARK: Thesis Summary
+  if doc-type == "thesis" {
+    // No Header/Footer, No Numbering
+    // set page(header: none, footer: auto)
+    // No Heading Numbering, No Outlined
+    set heading(numbering: none, outlined: false)
+    // We place the thesis summary here
+    include "/content/summary.typ"
+    pagebreak()
+  }
+
+  // MARK: Forewords
+  if doc-type == "thesis" {
+    // No Header/Footer, No Numbering
+    // set page(header: none, footer: none, numbering: none)
+    // No Heading Numbering, No Outlined
+    set heading(numbering: none, outlined: false)
+    // We place the forewords here
+    include "/content/preamble-forewords.typ"
+    pagebreak()
+  }
+
+  // MARK: Acknowledgement
+  if doc-type == "thesis" {
+    // No Header/Footer, No Numbering
+    // set page(header: none, footer: none, numbering: none)
+    // No Heading Numbering, No Outlined
+    set heading(numbering: none, outlined: false)
+    // We place the acknowledgement here
+    include "/content/preamble-ack.typ"
+    pagebreak()
+  }
+
+  // MARK: Instructor's comment
+  if doc-type == "thesis" {
+    // No Header/Footer, No Numbering
+    // set page(header: none, footer: none, numbering: none)
+    // No Heading Numbering, No Outlined
+    set heading(numbering: none, outlined: false)
+    // We place the instructor's comment here
+    include "/content/preamble-comment.typ"
+    pagebreak()
+  }
+
+  // MARK: Report Author
+  if doc-type == "report" {
+    // No Header/Footer, No Numbering
+    // set page(header: none, footer: none, numbering: none)
+    // No Heading Numbering, No Outlined
+    set heading(numbering: none, outlined: false)
+    // We place the author information here
+    include "/author/author.typ"
+  }
 
   // MARK: TOC & Lists
   // Rename "Figure" supplements

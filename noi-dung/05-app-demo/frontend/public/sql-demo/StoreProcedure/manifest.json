@@ -1,11 +1,9 @@
 {
-      "demos": [
-            "Demo_BookingRoom",
-            "Demo_Payment",
-            "Demo_ReviewRoom",
-            "Demo_Service",
-            "Demo_ApplyVoucher",
-            "Demo_RegisterUser",
-            "Demo_Checkout"
-      ]
+    "demos": [
+        "SP_DATPHONG",
+        "SP_THANHTOAN",
+        "SP_DANHGIA",
+        "SP_AP_DUNG_VOUCHER",
+        "SP_SU_DUNG_DICH_VU"
+    ]
 }
