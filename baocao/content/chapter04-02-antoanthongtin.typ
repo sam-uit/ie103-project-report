@@ -143,7 +143,7 @@ Ví dụ 2: Trong thủ tục Hủy Đặt Phòng (giả sử), hệ thống b�
 === Sao Lưu & Phục Hồi
 <sao-luu-phuc-hoi>
 
-Chiến lược sao lưu dữ liệu được đề xuất:
+Để đảm bảo tính sẵn sàng (Availability) và liên tục (Business Contuinity) cũng như khả năng phục hồi sau thảm họa (Disaster Recovery), quy trình sao lưu dữ liệu được thực hiện định kỳ với chiến lược sao lưu dữ liệu được đề xuất sau đây.
 
 - Full Backup: Thực hiện định kỳ vào 00:00 Chủ Nhật hàng tuần.
   - Mỗi bản Full backup được lưu giữ trong 2 tuần.
