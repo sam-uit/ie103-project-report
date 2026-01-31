@@ -306,7 +306,7 @@ Khi khách hàng thanh toán (`INSERT` vào bảng `PAYMENTS`):
 2. **Cập nhật trạng thái**: Tự động chuyển trạng thái booking sang `PAID`.
 3. **Ngăn gian lận**: Không cho thanh toán sai số tiền.
 
-Sử dụng **INSTEAD OF Trigger** để:
+Sử dụng `INSTEAD OF` Trigger để:
 
 - Tính tổng tiền từ `CT_DATPHONG`.
 - So sánh với số tiền thanh toán.
@@ -316,7 +316,7 @@ Sử dụng **INSTEAD OF Trigger** để:
 
 ![TRG-04-Payment - Kết quả](demo/TRG-04-PAYMENT.png)
 
-#### TG4: Refund
+#### TG5: Refund
 
 - Xây dựng **Trigger** để quản lý quy trình hoàn tiền an toàn và chính xác.
 
