@@ -240,14 +240,6 @@ Sử dụng `INSTEAD OF` Trigger để:
 - So sánh với số tiền thanh toán.
 - Tự động cập nhật trạng thái nếu hợp lệ.
 
-#strong[Ví dụ thực hiện]:
-
-#figure(image("demo/TRG-04-PAYMENT.png"),
-  caption: [
-    TRG-04-Payment - Kết quả
-  ]
-)
-
 ==== TRG-05 - Kiểm Tra Hoàn Tiền
 <trg-05-kiem-tra-hoan-tien>
 

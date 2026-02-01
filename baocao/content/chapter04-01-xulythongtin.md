@@ -329,9 +329,9 @@ Sử dụng `INSTEAD OF` Trigger để:
 - So sánh với số tiền thanh toán.
 - Tự động cập nhật trạng thái nếu hợp lệ.
 
-**Ví dụ thực hiện**:
+<!-- **Ví dụ thực hiện**:
 
-![TRG-04-Payment - Kết quả](demo/TRG-04-PAYMENT.png)
+![TRG-04-Payment - Kết quả](demo/TRG-04-PAYMENT.png) -->
 
 #### TRG-05 - Kiểm Tra Hoàn Tiền
 
