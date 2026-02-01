@@ -668,28 +668,59 @@ stroke: (
 == Trình Bày Thông Tin - Thống Kê Doanh Thu
 <trinh-bay-thong-tin-thong-ke-doanh-thu>
 
-#figure(image("./images/rpt1-7.png"),
-  caption: [
-    Báo Cáo 01 - Thống Kê Doanh Thu.
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Thống kê doanh thu từng tháng trong năm, và doanh thu của từng phòng trong tháng.
+  - Thể hiện dưới dạng biểu đồ cột và bảng chi tiết.
+  - Để đánh giá xem phòng nào ít khách đặt để tìm ra lý do.
+  - Hoặc thay đổi loại phòng theo xu hướng của khách.
+  ],
+  [
+    #align(center)[
+      #figure(image("./images/rpt1-7.png"),
+      caption: [Báo Cáo 01 - Thống Kê Doanh Thu],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Trình Bày Thông Tin - Top Khách Hàng
 <trinh-bay-thong-tin-top-khach-hang>
 
-#figure(image("./images/rpt2-11.png"),
-  caption: [
-    Báo Cáo 02 - Top Khách Hàng Chi Tiêu.
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Top khách hàng chi tiêu nhiều nhất
+  - Đánh giá xem khách hàng thân thiết để tặng voucher hay là nâng hạng khách hàng.
+  - Thể hiện dưới dạng biểu đồ line và bảng chi tiết.
+  ],
+  [
+    #align(center)[
+      #figure(image("./images/rpt2-11.png"),
+      caption: [Báo Cáo 02 - Top Khách Hàng Chi Tiêu],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Trình Bày Thông Tin - Doanh Thu Dịch Vụ
 <trinh-bay-thong-tin-doanh-thu-dich-vu>
 
-#figure(image("./images/rpt3-9.png"),
-  caption: [
-    Báo Cáo 03 - Thống Kê Doanh Thu Dịch Vụ.
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Dịch vụ nào được ưa chuộng nhất" (Best Seller).
+  - Có kế hoạch nhập hàng và đẩy mạnh khuyến mãi.
+  - Thể hiện dưới dạng biểu đồ pie và bảng chi tiết.
+  ],
+  [
+    #align(center)[
+      #figure(image("./images/rpt3-9.png"),
+      caption: [Báo Cáo 03 - Thống Kê Doanh Thu Dịch Vụ],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Trình Bày Thông Tin - Top Voucher
