@@ -630,10 +630,20 @@ stroke: (
 == Xử Lý Thông Tin - (CR) Hoàn Tất Đặt Phòng
 <xu-ly-thong-tin-cr-hoan-tat-dat-phong>
 
-#figure(image("demo/C-UpdateStatusWhenOverdue02.png"),
-  caption: [
-    Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Tự động hoàn tất đơn đặt phòng khi quá hạn:
+    - Tự động hóa việc kết thúc quy trình đặt phòng.
+    - Quét các đơn đặt phòng đã quá hạn trả phòng (Check-out) nhưng trạng thái vẫn là CONFIRMED để chuyển sang COMPLETED và giải phóng phòng.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/C-UpdateStatusWhenOverdue02.png"),
+      caption: [(CR) Hoàn Tất Đặt Phòng],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (CR) Đồng Bộ Trạng Thái
