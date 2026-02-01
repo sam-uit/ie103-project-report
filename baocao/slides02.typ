@@ -68,18 +68,18 @@
 )
 
 // Set heading level 2
-#show heading.where(level: 2): it => [
-  #set align(left)
-  #set text(font: "Montserrat", size: 24pt, weight: "regular")
-  #block(
-    width: 100%,
-    // stroke: (bottom: 0.5pt + rgb("#808080")),
-    inset: (bottom: 0.5em),
-    below: 0.8em,
-  )[
-    #smallcaps[#it.body]
-  ]
-]
+// #show heading.where(level: 2): it => [
+//   #set align(left)
+//   #set text(font: "Montserrat", size: 24pt, weight: "regular")
+//   #block(
+//     width: 100%,
+//     // stroke: (bottom: 0.5pt + rgb("#808080")),
+//     inset: (bottom: 0.5em),
+//     below: 0.8em,
+//   )[
+//     #smallcaps[#it.body]
+//   ]
+// ]
 
 // Set font
 // #set text(font: "Montserrat", weight: "light")
