@@ -407,6 +407,27 @@ stroke: (
 == Xử Lý Thông Tin - (SP) Đánh Giá
 <xu-ly-thong-tin-sp-danh-gia>
 
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Thực hiện chức năng #emph[đánh giá] cho người dùng:
+    - Đảm bảo chỉ đánh giá khi đã ở xong.
+    - Mỗi đặt phòng chỉ được đánh giá #emph[1 lần].
+    - Lưu đánh giá ở trạng thái chờ duyệt (CHO_XU_LY).
+    - Hỗ trợ quản trị viên kiểm duyệt nội dung.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/SP_DANHGIA.png"),
+      caption: [(SP) Đánh Giá],
+      supplement: "Ảnh"
+      )]
+  ],
+)
+
+== Xử Lý Thông Tin - (SP) Đánh Giá
+<xu-ly-thong-tin-sp-danh-gia>
+
 #figure(image("demo/SP_DANHGIA.png"),
   caption: [
     SP\_DANHGIA - Đánh Giá đơn Đặt Phòng.
