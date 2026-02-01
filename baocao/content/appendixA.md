@@ -1,4 +1,10 @@
-# Phụ Lục A
+# Các Tài Nguyên Nộp Đồ Án
+
+## Báo Cáo PDF
+
+- Chính là file báo cáo này.
+- Được tạo ra từ mã nguồn Typst.
+- Lưu trữ tại: [Báo Cáo PDF](https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/thesis.pdf).
 
 ## Link Video Demo
 

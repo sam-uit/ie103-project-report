@@ -1,8 +1,15 @@
 #import "../template/lib.typ": *
 
-= Phụ Lục A
-<phu-luc-a>
+= Các Tài Nguyên Nộp Đồ Án
+<cac-tai-nguyen-nop-do-an>
 
+
+== Báo Cáo PDF
+<bao-cao-pdf>
+
+- Chính là file báo cáo này.
+- Được tạo ra từ mã nguồn Typst.
+- Lưu trữ tại: #link("https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/thesis.pdf")[Báo Cáo PDF].
 
 == Link Video Demo
 <link-video-demo>
