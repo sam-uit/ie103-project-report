@@ -189,6 +189,11 @@ stroke: (
     [], [- Hệ thống đánh giá & phản hồi sau khi hoàn tất thanh toán.],
 )
 
+== Các Thực Thể và Mối Quan Hệ
+<cac-thuc-the-va-moi-quan-he>
+
+#image("diagrams/entity-relationship.svg")
+
 == Mô Hình Quan Niệm - ERD (Tối Giản)
 <mo-hinh-er-quan-niem>
 
