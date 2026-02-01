@@ -2,6 +2,7 @@
 // #import themes.aqua: *
 #import "config/metadata.typ": *
 #import "themes/aqua.typ": *
+#import "template/fonts.typ": *
 
 #show: aqua-theme.with(
   aspect-ratio: "16-9",
@@ -21,6 +22,41 @@
     neutral-lightest: rgb("#FFFFFF"),
   ),
 )
+
+// Block code style with Line Numbering
+#show raw.where(block: true): it => align(start)[
+  #block(
+    radius: 8pt,
+    fill: luma(240),
+    inset: 0pt,
+    stroke: none,
+    breakable: false,
+    width: 100%,
+    clip: true,
+  )[
+    #text(font: code-font, size: 1em)[
+      #grid(
+        columns: (auto, 1fr),
+        inset: (x, y) => {
+          let v = 1em
+          let inner = 0.5em
+          let outer = 1.5em
+          if x == 0 { (top: v, bottom: v, left: outer, right: inner) } else {
+            (top: v, bottom: v, left: inner, right: outer)
+          }
+        },
+        stroke: (x, y) => if x == 0 { (right: 1pt + luma(300)) } else { none },
+        align: (right, left),
+        // Line number column
+        align(right, text(fill: gray)[
+          #for i in range(1, it.text.split("\n").len() + 1) [ #i \ ]
+        ]),
+        // Code content column
+        it,
+      )
+    ]
+  ]
+]
 
 // #set text(font: "Lora")
 
