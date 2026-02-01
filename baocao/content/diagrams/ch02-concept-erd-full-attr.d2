@@ -124,6 +124,16 @@ PERMISSIONS -- permissions_code: {style: {stroke: "#4682B4"; stroke-width: 1}}
 PERMISSIONS -- permissions_description: {style: {stroke: "#4682B4"; stroke-width: 1}}
 
 PHONG: {class: entity; label: "PHONG"}
+phong_id: {class: attr_pri; label: "ID Phòng"}
+phong_so_phong: {class: attr; label: "Số Phòng"}
+# phong_loai_phong_id: {class: attr_foreign_key; label: "loai_phong_id"; width: 120}
+phong_trang_thai: {class: attr; label: "Trạng Thái"}
+
+PHONG -- phong_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+PHONG -- phong_so_phong: {style: {stroke: "#4682B4"; stroke-width: 1}}
+# PHONG -- phong_loai_phong_id: {style: {stroke-width: 1; stroke: orange}}
+PHONG -- phong_trang_thai: {style: {stroke: "#4682B4"; stroke-width: 1}}
+
 REFUNDS: {class: entity; label: "REFUNDS"}
 REVIEWS: {class: entity; label: "REVIEWS"}
 ROLES: {class: entity; label: "ROLES"}
