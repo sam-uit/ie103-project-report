@@ -66,7 +66,7 @@
     "files": [
       {
         "id": "baocao_nhom2",
-        "name": "Báo Cáo Đồ Án",
+        "name": "Báo Cáo Đồ Án.",
         "type": "pdf",
         "size": "Cloud",
         "date": "Live",
@@ -75,7 +75,7 @@
       },
       {
         "id": "f5",
-        "name": "Slide Thuyết Trình",
+        "name": "Slide Thuyết Trình.",
         "type": "pdf",
         "size": "Cloud",
         "date": "Live",
@@ -84,7 +84,7 @@
       },
       {
         "id": "f7",
-        "name": "Video Demo",
+        "name": "Video Demo.",
         "type": "mp4",
         "size": "Cloud",
         "date": "Live",
