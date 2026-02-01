@@ -22,6 +22,8 @@
   ),
 )
 
+// #set text(font: "Lora")
+
 // List: Dùng marker là vòng tròn nhỏ có vòng.
 // TODO: Dùng gradient cho marker.
 #set list(
