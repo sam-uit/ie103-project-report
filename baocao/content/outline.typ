@@ -22,7 +22,7 @@ stroke: (
     right: none,
 ),
 [- Thạc Sĩ Nguyễn Thành Luân.],
-[- IE103 - Quản Lý Thông Tin.]
+[- IE103 -- Quản Lý Thông Tin.]
 )
 
 === Nhà Trường
