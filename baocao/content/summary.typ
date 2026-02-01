@@ -49,33 +49,26 @@
 
 == 3. Nội Dung Chi Tiết
 
-=== Mô Tả Bài Toán:
-
-+ Tổng Quan Về Đề Tài.
-+ Phạm Vi & Đối Tượng Nghiên Cứu.
-+ Mô Tả Quy Trình Nghiệp Vụ Thực Tế.
-
-=== Phân Tích Và Thiết Kế:
-
-+ Các Chức Năng Nghiệp Vụ.
-+ Quy Tắc Nghiệp Vụ & Xác Định Thực Thể.
-+ Mô Hình Mức Quan Niệm.
-+ Mô Hình Mức Logic.
-
-=== Cài Đặt -- Triển Khai:
-
-+ Môi Trường Cài Đặt.
-+ Cài Đặt Mô Hình Dữ Liệu (Mức Vật Lý).
-+ Khởi Tạo Cơ Sở Dữ Liệu.
-+ Thiết Lập Nền Tảng Quản Trị & Bảo Mật.
-+ Dữ Liệu Mẫu.
-
-=== Quản Lý Thông Tin
-
-+ Xử Lý Thông Tin.
-+ An Toàn Thông Tin.
-+ Trình Bày Thông Tin.
-+ Các Chức Năng Của Hệ Thống.
++ *Mô Tả Bài Toán:*
+  + Tổng Quan Về Đề Tài.
+  + Phạm Vi & Đối Tượng Nghiên Cứu.
+  + Mô Tả Quy Trình Nghiệp Vụ Thực Tế.
++ *Phân Tích Và Thiết Kế:*
+  + Các Chức Năng Nghiệp Vụ.
+  + Quy Tắc Nghiệp Vụ & Xác Định Thực Thể.
+  + Mô Hình Mức Quan Niệm.
+  + Mô Hình Mức Logic.
++ *Cài Đặt & Triển Khai:*
+  + Môi Trường Cài Đặt.
+  + Cài Đặt Mô Hình Dữ Liệu (Mức Vật Lý).
+  + Khởi Tạo Cơ Sở Dữ Liệu.
+  + Thiết Lập Nền Tảng Quản Trị & Bảo Mật.
+  + Dữ Liệu Mẫu.
++ *Quản Lý Thông Tin:*
+  + Xử Lý Thông Tin.
+  + An Toàn Thông Tin.
+  + Trình Bày Thông Tin.
+  + Các Chức Năng Của Hệ Thống.
 
 == 4. Phân Công Công Việc
 
