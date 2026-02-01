@@ -12,7 +12,7 @@ This will be the place to stay that I recommend to you when coming to Vietnam.
 ]]
 ```
 
-**NHÀ NGHỈ 999** (Tân Kỳ, Nghệ An) là tâm huyết của một người yêu xây dựng, được đầu tư bài bản về thẩm mỹ và công năng. Dù nhận được nhiều đánh giá tích cực từ khách hàng vãng lai, nhưng với đặc thù là doanh nghiệp hộ gia đình tại khu vực trung du, quy trình vận hành tại đây hiện vẫn hoàn toàn thủ công.
+[**NHÀ NGHỈ 999**](https://maps.app.goo.gl/SqGU3jcdY4S6ztTz8) (Tân Kỳ, Nghệ An) là tâm huyết của một người yêu xây dựng, được đầu tư bài bản về thẩm mỹ và công năng. Dù nhận được nhiều đánh giá tích cực từ khách hàng vãng lai, nhưng với đặc thù là doanh nghiệp hộ gia đình tại khu vực trung du, quy trình vận hành tại đây hiện vẫn hoàn toàn thủ công.
 
 Hiện trạng quản lý bộc lộ nhiều bất cập: thông tin lưu trú chủ yếu dựa trên sổ sách viết tay và các file Excel rời rạc; việc kiểm tra phòng trống hay báo giá phụ thuộc hoàn toàn vào các ứng dụng nhắn tin cá nhân như Zalo, Messenger.
 
