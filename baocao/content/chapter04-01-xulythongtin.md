@@ -308,9 +308,9 @@ Sử dụng `AFTER Trigger` với:
 - Bảng ảo `deleted`: Phòng vừa bị hủy.
 - Cập nhật trạng thái tự động.
 
-**Ví dụ thực hiện**:
+<!-- **Ví dụ thực hiện**:
 
-![TRG-03-SyncStatus - Đồng bộ trạng thái Phòng](demo/TRG-03-SYNCSTATUS.png)
+![TRG-03-SyncStatus - Đồng bộ trạng thái Phòng](demo/TRG-03-SYNCSTATUS.png) -->
 
 #### TRG-04 - Kiểm Tra Thanh Toán
 

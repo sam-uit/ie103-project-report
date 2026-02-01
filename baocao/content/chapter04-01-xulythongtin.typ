@@ -222,14 +222,6 @@ Sử dụng `AFTER Trigger` với:
 - Bảng ảo `deleted`: Phòng vừa bị hủy.
 - Cập nhật trạng thái tự động.
 
-#strong[Ví dụ thực hiện]:
-
-#figure(image("demo/TRG-03-SYNCSTATUS.png"),
-  caption: [
-    TRG-03-SyncStatus - Đồng bộ trạng thái Phòng
-  ]
-)
-
 ==== TRG-04 - Kiểm Tra Thanh Toán
 <trg-04-kiem-tra-thanh-toan>
 
