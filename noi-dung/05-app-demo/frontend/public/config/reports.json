@@ -6,72 +6,90 @@
     "files": [
       {
         "id": "f1",
-        "name": "Báo cáo doanh thu từng tháng trong năm 2024",
+        "name": "RPT 01 - Báo Cáo Doanh Thu Từng Tháng Trong Năm 2024.",
         "type": "pdf",
         "size": "184 KB",
         "date": "21/01/2026",
-        "thumbnailUrl": "https://static.vecteezy.com/system/resources/previews/056/693/603/non_2x/pdf-file-icon-with-red-pdf-text-and-a-distinctive-adobe-logo-representing-a-document-format-commonly-used-for-digital-content-and-e-books-free-vector.jpg",
-        "url": "https://drive.google.com/file/d/1yQX22_iIuXxa-qVx-JBBgxLl8W_qjBme/view?usp=drive_link"
+        "thumbnailUrl": "thumbnails/rpt1-7.png",
+        "url": "thumbnails/rpt1-7.png"
       },
       {
         "id": "f2",
-        "name": "Top 10 khách hàng mang lại doanh thu năm 2024",
+        "name": "RPT 02 - Top 10 Khách Hàng Mang Lại Doanh Thu Năm 2024.",
         "type": "pdf",
         "size": "216 KB",
         "date": "21/01/2026",
-        "thumbnailUrl": "https://static.vecteezy.com/system/resources/previews/056/693/603/non_2x/pdf-file-icon-with-red-pdf-text-and-a-distinctive-adobe-logo-representing-a-document-format-commonly-used-for-digital-content-and-e-books-free-vector.jpg",
-        "url": "https://drive.google.com/file/d/1jQvG-RE-N3p00kRkJWPoiZDKlanCKjzl/view?usp=drive_link"
+        "thumbnailUrl": "thumbnails/rpt2-11.png",
+        "url": "thumbnails/rpt2-11.png"
       },
       {
         "id": "f3",
-        "name": "Dịch vụ sử dụng phổ biến năm 2024",
+        "name": "RPT 03 - Dịch vụ Sử Dụng Phổ Biến Năm 2024.",
         "type": "pdf",
         "size": "143 KB",
         "date": "21/01/2026",
-        "thumbnailUrl": "https://static.vecteezy.com/system/resources/previews/056/693/603/non_2x/pdf-file-icon-with-red-pdf-text-and-a-distinctive-adobe-logo-representing-a-document-format-commonly-used-for-digital-content-and-e-books-free-vector.jpg",
-        "url": "https://drive.google.com/file/d/1Sy2JVRukKPcdlLnOLD58Vvpk0RH36ZlY/view?usp=drive_link"
+        "thumbnailUrl": "thumbnails/rpt3-9.png",
+        "url": "thumbnails/rpt3-9.png"
       },
       {
         "id": "f4",
-        "name": "Voucher sử dụng trong năm 2024",
+        "name": "RPT 04 - Voucher Sử Dụng Trong Năm 2024.",
         "type": "pdf",
         "size": "184 KB",
         "date": "21/01/2026",
-        "thumbnailUrl": "https://static.vecteezy.com/system/resources/previews/056/693/603/non_2x/pdf-file-icon-with-red-pdf-text-and-a-distinctive-adobe-logo-representing-a-document-format-commonly-used-for-digital-content-and-e-books-free-vector.jpg",
-        "url": "https://drive.google.com/file/d/1UPKT3SX-ESNaef7ZOtzG61DJHcgPKSCy/view?usp=drive_link "
+        "thumbnailUrl": "thumbnails/rpt4-6.png",
+        "url": "thumbnails/rpt4-6.png"
       }
      
     ]
   },
   {
     "id": "g2",
-    "title": "Thống kê",
-    "description": "Các báo cáo chi tiết đánh giá khách sạn, ...",
+    "title": "Thống Kê",
+    "description": "Các báo cáo chi tiết đánh giá khách sạn.",
     "files": [
      {
         "id": "f6",
-        "name": "Thống kê đánh giá các loại phòng khách sạn",
+        "name": "RPT 05 - Thống Kê Đánh Giá Các Loại Phòng Khách Sạn.",
         "type": "pdf",
         "size": "104 KB",
         "date": "21/01/2026",
-        "thumbnailUrl": "https://static.vecteezy.com/system/resources/previews/056/693/603/non_2x/pdf-file-icon-with-red-pdf-text-and-a-distinctive-adobe-logo-representing-a-document-format-commonly-used-for-digital-content-and-e-books-free-vector.jpg",
-        "url": "https://drive.google.com/file/d/1askP3tGb6o_MWe65S-H2D3QcTkH9tfE0/view?usp=drive_link"
+        "thumbnailUrl": "thumbnails/rpt5-6.png",
+        "url": "thumbnails/rpt5-6.png"
       }
     ]
   },
   {
     "id": "g3",
     "title": "Google Drive Folder",
-    "description": "Các tài liệu được lưu trữ trực tiếp trên Cloud.",
+    "description": "Các tài liệu được lưu trữ trực tiếp trên Google Cloud.",
     "files": [
       {
-        "id": "f5",
-        "name": "Slide Thuyết Trình",
+        "id": "baocao_nhom2",
+        "name": "Báo Cáo Đồ Án.",
         "type": "pdf",
         "size": "Cloud",
         "date": "Live",
-        "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo_%282020-present%29.svg",
-        "url": "https://drive.google.com/file/d/1Z_u7qGq-Y2jXgKk9-7zZqXq9ZqXq9ZqX/view?usp=sharing"
+        "thumbnailUrl": "thumbnails/baocao_thumb.png",
+        "url": "https://drive.google.com/file/d/13eDtAS46r0yHMm10UB6OA98nnGsuy0v7/view?usp=drive_link"
+      },
+      {
+        "id": "f5",
+        "name": "Slide Thuyết Trình.",
+        "type": "pdf",
+        "size": "Cloud",
+        "date": "Live",
+        "thumbnailUrl": "thumbnails/slides-cover.png",
+        "url": "https://drive.google.com/file/d/1S2Nky-rW8PK-52hY6SdVNo2aN78u2Ia8/view?usp=sharing"
+      },
+      {
+        "id": "f7",
+        "name": "Video Demo.",
+        "type": "mp4",
+        "size": "Cloud",
+        "date": "Live",
+        "thumbnailUrl": "thumbnails/SP_SU_DUNG_DICH_VU-01.png",
+        "url": "https://drive.google.com/file/d/1M29eL6PYr0rEj6oygfC1UhyogXYvmG8b/view?usp=drive_link"
       }
     ]
   }

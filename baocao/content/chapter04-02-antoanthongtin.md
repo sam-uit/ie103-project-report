@@ -190,86 +190,94 @@ Ví dụ 2: Trong thủ tục Hủy Đặt Phòng (giả sử), hệ thống b�
 **Backup:**
 
 1. Chuột phải vào Database, chọn *Task* > *Back Up...*.
-
-![Backup - 01 - Task > Back Up.](images/backup-01.jpg.jpeg)
-
 2. Chọn *Full* hoặc *Differential* trong mục *Backup type*. Chọn *Destination* là *Disk*
-
-![Backup - 02 - Backup Type.](images/backup-02.jpg.jpeg)
-
 3. Thêm đường dẫn thư mục lưu file backup.
-
-![Backup - 03 - Backup Destination.](images/backup-03.jpg.jpeg)
-
 4. Nhấn *OK*.
-
-![Backup - 04 - Xác Nhận.](images/backup-04.jpg.jpeg)
-
 5. Thông báo Hoàn Thành.
 
-![Backup - 05 - Backup Hoàn Thành.](images/backup-05.jpg.jpeg)
+<!-- ![Backup - 01 - Task > Back Up.](images/backup-01.jpg.jpeg) -->
+
+
+<!-- ![Backup - 02 - Backup Type.](images/backup-02.jpg.jpeg) -->
+
+
+<!-- ![Backup - 03 - Backup Destination.](images/backup-03.jpg.jpeg) -->
+
+
+<!-- ![Backup - 04 - Xác Nhận.](images/backup-04.jpg.jpeg) -->
+
+
+<!-- ![Backup - 05 - Backup Hoàn Thành.](images/backup-05.jpg.jpeg) -->
 
 **Restore:**
 
 1. Chuột phải vào mục Database của Server, chọn *Restore Database...*.
-
-![Restore - 01 - Restore Database.](images/restore-01.jpg.jpeg)
-
 2. Chọn *Source* là *Device* và chọn *File name* là file backup.
-
-![Restore - 02 - Source.](images/restore-02.jpg.jpeg)
-
 3. Chọn file `.bak` để khôi phục.
-
-![Restore - 03 - Destination.](images/restore-03.jpg.jpeg)
-
 4. Chọn *Destination* là *Database* và đặt tên *Database* là *BookingMS*.
-
-![Restore - 04 - Xác Nhận.](images/restore-04.jpg.jpeg)
-
 5. Thông báo Hoàn Thành.
-
-![Restore - 05 - Restore Hoàn Thành.](images/restore-05.jpg.jpeg)
-
 6. Kiểm tra các thành phần của Database vừa được khôi phục.
 
-![Restore - 06 - Kiểm Tra.](images/restore-06.jpg.jpeg)
+<!-- ![Restore - 01 - Restore Database.](images/restore-01.jpg.jpeg) -->
+
+
+<!-- ![Restore - 02 - Source.](images/restore-02.jpg.jpeg) -->
+
+
+<!-- ![Restore - 03 - Destination.](images/restore-03.jpg.jpeg) -->
+
+
+<!-- ![Restore - 04 - Xác Nhận.](images/restore-04.jpg.jpeg) -->
+
+
+<!-- ![Restore - 05 - Restore Hoàn Thành.](images/restore-05.jpg.jpeg) -->
+
+
+<!-- ![Restore - 06 - Kiểm Tra.](images/restore-06.jpg.jpeg) -->
 
 #### Export - Import Dữ Liệu
 
 **Export:**
 
 1. Chuột phải vào Database cần Export, chọn *Task* > *Export Data-Tier Application...*.
-
-![Export - 01 - Task > Export Data-Tier Application.](images/export-01.jpg.jpeg)
-
 2. Chọn *Next* ở trang *Introduction*.
+3. Ở trang *Export Settings*, mục *Save to local disk*, chỉ định đường dẫn lưu file `.bacpac`.
+4. Ở trang *Export Settings*, *Next* và chọn các thành phần (*tables*) cần export.
+5. Ở trang *Summary*, xác nhận thông tin và nhấn *Finish*.
+6. Kiểm tra tiến độ và kết quả ở trang *Results*.
+7. Kiểm tra kết quả và chắc chắn file `.bacpac` đã được tạo thành công.
+
+<!-- ![Export - 01 - Task > Export Data-Tier Application.](images/export-01.jpg.jpeg)
+
 
 ![Export - 02 - Introduction.](images/export-02.jpg.jpeg)
 
-3. Ở trang *Export Settings*, mục *Save to local disk*, chỉ định đường dẫn lưu file `.bacpac`.
 
 ![Export - 03 - Export Settings.](images/export-03.jpg.jpeg)
 
-4. Ở trang *Export Settings*, *Next* và chọn các thành phần (*tables*) cần export.
 
 ![Export - 04 - Export Settings.](images/export-04.jpg.jpeg)
 
-5. Ở trang *Summary*, xác nhận thông tin và nhấn *Finish*.
 
 ![Export - 05 - Summary.](images/export-05.jpg.jpeg)
 
-6. Kiểm tra tiến độ và kết quả ở trang *Results*.
 
 ![Export - 06 - Results.](images/export-06.jpg.jpeg)
 
-7. Kiểm tra kết quả và chắc chắn file `.bacpac` đã được tạo thành công.
 
-![Export - 07 - Kiểm Tra.](images/export-07.jpg.jpeg)
+![Export - 07 - Kiểm Tra.](images/export-07.jpg.jpeg) -->
 
 **Import:**
 
 1. Chuột phải vào Database cần Import, chọn *Import Data-Tier Application...*.
+2. Chọn *Next* ở trang *Introduction*.
+3. Chọn *Browse* để tìm file `.bacpac`.
+4. Ở trang *Database Settings*, đặt tên cho database tại *New database name*.
+5. Ở trang *Summary*, xác nhận thông tin và nhấn *Finish*.
+6. Kiểm tra tiến độ và kết quả ở trang *Results*.
+7. Kiểm tra kết quả bằng cách xem các thành phần của Database vừa được import.
+
+<!-- 1. Chuột phải vào Database cần Import, chọn *Import Data-Tier Application...*.
 
 ![Import - 01 - Import Data-Tier Application.](images/import-01.jpg.jpeg)
 
@@ -295,4 +303,4 @@ Ví dụ 2: Trong thủ tục Hủy Đặt Phòng (giả sử), hệ thống b�
 
 7. Kiểm tra kết quả bằng cách xem các thành phần của Database vừa được import.
 
-![Import - 07 - Kiểm Tra.](images/import-07.jpg.jpeg)
+![Import - 07 - Kiểm Tra.](images/import-07.jpg.jpeg) -->

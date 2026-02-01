@@ -69,13 +69,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
           {/* Navigation */}
           <nav className="flex-1 overflow-y-auto px-3 space-y-0.5">
-            <NavItem to="/" icon={<LayoutDashboard size={20} />} label="Tổng quan" isCollapsed={isCollapsed} />
+            <NavItem to="/" icon={<LayoutDashboard size={20} />} label="Tổng Quan" isCollapsed={isCollapsed} />
 
             {/* SQL Menu - Always Expanded */}
             <NavItem
               to="/scenarios"
               icon={<Database size={20} />}
-              label="Xử lý thông tin "
+              label="Xử Lý Thông Tin"
               isCollapsed={isCollapsed}
               badge="14"
             />
@@ -114,7 +114,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div>
             )}
 
-            <NavItem to="/reports" icon={<FileText size={20} />} label="Trình bày thông tin" isCollapsed={isCollapsed} />
+            <NavItem to="/reports" icon={<FileText size={20} />} label="Trình Bày Thông Tin" isCollapsed={isCollapsed} />
             <NavItem to="/logs" icon={<Users size={20} />} label="Thành Viên Nhóm" isCollapsed={isCollapsed} />
           </nav>
 
