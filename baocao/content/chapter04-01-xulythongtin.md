@@ -400,7 +400,7 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
 - Test Case: Tìm phòng Loại 1 trống trong ngày `02/04`.
 - Kết quả mong đợi: Chỉ hiển thị phòng `104`, `205`, `304`, `501`. Phòng `101` bị ẩn đi.
 
-![FN-02 - Tìm Phòng Trống Theo Loại - Kết quả](demo/FN-02-TimPhongTrongTheoLoai.png)
+<!-- ![FN-02 - Tìm Phòng Trống Theo Loại - Kết quả](demo/FN-02-TimPhongTrongTheoLoai.png) -->
 
 #### FN-03 - Tính Phí Hủy Phòng Động
 
