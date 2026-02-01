@@ -34,6 +34,22 @@ classes: {
 
 # --- 2. ENTITIES ---
 ADMINS: {class: entity; label: "ADMINS"}
+admin_id: {class: attr_pri; label: "ID Admin"}
+admin_email: {class: attr; label: "Email"}
+admin_password: {class: attr; label: "Mật Khẩu"}
+admin_full_name: {class: attr; label: "Tên Đầy Đủ"}
+admin_status: {class: attr; label: "Trạng Thái"}
+# admin_created_at: {class: attr; label: "created_at"; width: 110}
+# admin_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+ADMINS -- admin_id {style: {stroke: "#0d95de"; stroke-width: 1}}
+ADMINS -- admin_email {style: {stroke: "#4682B4"; stroke-width: 1}}
+ADMINS -- admin_password {style: {stroke: "#4682B4"; stroke-width: 1}}
+ADMINS -- admin_full_name {style: {stroke: "#4682B4"; stroke-width: 1}}
+ADMINS -- admin_status {style: {stroke: "#4682B4"; stroke-width: 1}}
+# ADMINS -- admin_created_at
+# ADMINS -- admin_updated_at
+
 DATPHONG: {class: entity; label: "DATPHONG"}
 DICHVU: {class: entity; label: "DICHVU"}
 LOAIPHONG: {class: entity; label: "LOAIPHONG"}
