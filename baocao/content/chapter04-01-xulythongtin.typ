@@ -204,12 +204,6 @@ Sử dụng `INSTEAD OF` Trigger để:
   - Đặt Phòng ID = 71.
   - Phòng ID = 8.
 
-#figure(image("demo/TRG-02-AUTOPRICE.png"),
-  caption: [
-    TRG-02-AutoPrice - Kết quả
-  ]
-)
-
 ==== TRG-03 - Đồng Bộ Trạng Thái Phòng
 <trg-03-dong-bo-trang-thai-phong>
 

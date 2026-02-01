@@ -289,7 +289,7 @@ Sử dụng `INSTEAD OF` Trigger để:
     - Đặt Phòng ID = 71.
     - Phòng ID = 8.
 
-![TRG-02-AutoPrice - Kết quả](demo/TRG-02-AUTOPRICE.png)
+<!-- ![TRG-02-AutoPrice - Kết quả](demo/TRG-02-AUTOPRICE.png) -->
 
 #### TRG-03 - Đồng Bộ Trạng Thái Phòng
 
