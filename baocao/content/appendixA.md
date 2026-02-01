@@ -6,6 +6,12 @@
 - Được tạo ra từ mã nguồn Typst.
 - Lưu trữ tại: [Báo Cáo PDF](https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/thesis.pdf).
 
+## Slides PDF
+
+- Mục đích: Trình bày báo cáo và Demo.
+- Được tạo ra từ mã nguồn Typst.
+- Lưu trữ tại: [Slides PDF](https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/slides.pdf).
+
 ## Link Video Demo
 
 - Mục đích: Tất cả các demo trong một video đầy đủ.
