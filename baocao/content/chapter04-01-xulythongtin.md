@@ -427,14 +427,14 @@ Case 1:
 - Hủy ngày `2023/04/01` (Trước 3 ngày).
 - Kết quả: `0 VNĐ`.
 
-![FN-03 - Tính Phí Hủy Phòng Động - Case 1.](demo/FN-03-TinhPhiHuyPhong-01.png)
+<!-- ![FN-03 - Tính Phí Hủy Phòng Động - Case 1.](demo/FN-03-TinhPhiHuyPhong-01.png) -->
 
 Case 2:
 
 - Hủy ngày `2023/04/04` (Trong ngày Check-in).
 - Kết quả: `600,000 VNĐ`.
 
-![FN-03 - Tính Phí Hủy Phòng Động - Case 2.](demo/FN-03-TinhPhiHuyPhong-02.png)
+<!-- ![FN-03 - Tính Phí Hủy Phòng Động - Case 2.](demo/FN-03-TinhPhiHuyPhong-02.png) -->
 
 ### Cursors (2)
 

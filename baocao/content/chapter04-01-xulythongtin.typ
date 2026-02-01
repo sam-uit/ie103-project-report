@@ -329,22 +329,10 @@ Case 1:
 - Hủy ngày `2023/04/01` (Trước 3 ngày).
 - Kết quả: `0 VNĐ`.
 
-#figure(image("demo/FN-03-TinhPhiHuyPhong-01.png"),
-  caption: [
-    FN-03 - Tính Phí Hủy Phòng Động - Case 1.
-  ]
-)
-
 Case 2:
 
 - Hủy ngày `2023/04/04` (Trong ngày Check-in).
 - Kết quả: `600,000 VNĐ`.
-
-#figure(image("demo/FN-03-TinhPhiHuyPhong-02.png"),
-  caption: [
-    FN-03 - Tính Phí Hủy Phòng Động - Case 2.
-  ]
-)
 
 === Cursors (2)
 <cursors-2>
