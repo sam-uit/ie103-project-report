@@ -46,7 +46,7 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 - Phòng ID = 30, Tên Phòng = 605, có Mã Vouher = 1:
     - Tạo ra đơn Đặt Phòng ID = 55, có Đơn Giá = 3,000,000.
 
-![SP_DATPHONG - Tạo mới đơn Đặt Phòng.](demo/SP_DATPHONG.png)
+<!-- ![SP_DATPHONG - Tạo mới đơn Đặt Phòng.](demo/SP_DATPHONG.png) -->
 
 #### SP2 - Thanh Toán Đặt Phòng
 
@@ -97,7 +97,12 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 **Ví dụ thực hiện**:
 
-- Một đơn Đặt Phòng có thể được thanh toán nhiều lần. Lần 1:
+- Một đơn Đặt Phòng có thể được thanh toán nhiều lần.
+    - Lần 1.
+    - Lần 2.
+    - Hoàn thành Thanh Toán: đơn Đặt Phòng chuyển trạng thái sang `COMPLETED`.
+
+<!-- - Lần 1:
 
 ![SP_THANHTOAN - Thanh Toán lần 1.](demo/SP_THANHTOAN-01.png)
 
@@ -107,7 +112,7 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 - Hoàn thành Thanh Toán: đơn Đặt Phòng chuyển trạng thái sang `COMPLETED`.
 
-![SP_THANHTOAN - Hoàn thành Thanh Toán.](demo/SP_THANHTOAN-03.png)
+![SP_THANHTOAN - Hoàn thành Thanh Toán.](demo/SP_THANHTOAN-03.png) -->
 
 #### SP3 - Đánh Giá
 
