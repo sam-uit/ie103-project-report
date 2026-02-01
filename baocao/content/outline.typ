@@ -189,11 +189,11 @@ stroke: (
     [], [- Hệ thống đánh giá & phản hồi sau khi hoàn tất thanh toán.],
 )
 
-== Mô Hình ER (Quan Niệm)
+== Mô Hình Quan Niệm - ERD (Tối Giản)
 <mo-hinh-er-quan-niem>
 
 #align(center)[
-    #image("diagrams/ch02-concept-erd.svg")
+    #image("diagrams/ch02-concept-erd-simplify.svg", height: 110%)
 ]
 
 == Mô Hình Logic - Bảng và Khóa
