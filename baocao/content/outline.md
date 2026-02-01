@@ -369,18 +369,24 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
 
 ## Phần Đã Đạt Được
 
-```{=typst}
-- #lorem(10)
-```
+- Chuẩn hóa quy trình nghiệp vụ.
+- Thiết kế bộ khung CSDL.
+- Xử lý thông tin tự động.
+- Cơ chế bảo mật đa lớp.
+- Khả năng sẵn sàng, sao lưu/dự phòng.
 
 ## Phần Chưa Đạt Được
 
-```{=typst}
-- #lorem(10)
-```
+- Giao diện cho người dùng cuối.
+- Các kênh thanh toán thực thế.
+- Quản lý vòng đời tài khoản/người dùng.
 
 ## Mở Rộng & Nâng Cấp
 
-```{=typst}
-- #lorem(10)
-```
+- **Web App**:
+    - *Nhân Viên* (*Bộ Phận Quản Lý/Lễ Tân*)
+    - Thao tác nghiệp vụ nhanh chóng và chính xác.
+- **Mobile App**:
+    - *Khách Hàng* (End User)
+    - *"điểm chạm số"*.
+    - Tìm phòng, đặt phòng và theo dõi lịch sử tích điểm ngay trên điện thoại.
