@@ -25,27 +25,30 @@
 - Lưu trữ tại Google Drive: #link("https://www.youtube.com/watch?v=dQw4w9WgXcQ")[Video Demo]
   - Phiên bản tại Youtube: #link("https://www.youtube.com/watch?v=dQw4w9WgXcQ")[Video Demo]
 
-== Repo Mã Nguồn
-<repo-ma-nguon>
+== Mã Nguồn
+<ma-nguon>
 
 
-=== Mã Nguồn Báo Cáo
-<ma-nguon-bao-cao>
-
-- Mục đích: Tái tạo báo cáo này từ mã nguồn Typst.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
-
-=== Mã Nguồn Ứng Dụng
-<ma-nguon-ung-dung>
-
-- Mục đích: Tái tạo ứng dụng được trình bày trong báo cáo.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
-
-=== Mã Nguồn SQL Projects
-<ma-nguon-sql-projects>
+=== Mã Nguồn SQL
+<ma-nguon-sql>
 
 - Mục đích: Tái tạo dự án SQL được trình bày trong báo cáo.
+- Lưu trữ tại Github: #link("https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/sql")[Mã Nguồn SQL].
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
+=== Mã Nguồn Ứng Dụng Demo
+<ma-nguon-ung-dung-demo>
+
+- Mục đích: Tái tạo ứng dụng được trình bày trong báo cáo.
+- Lưu trữ tại Github: #link("https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/app")[Mã Nguồn Ứng Dụng Demo].
+
+=== \(Tùy Chọn) Mã Nguồn Báo Cáo
+<tuy-chon-ma-nguon-bao-cao>
+
+- Mục đích: Tái tạo báo cáo này từ mã nguồn Typst.
+- Lưu trữ tại Github: #link("https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/report.typ")[Mã Nguồn Báo Cáo].
+
+=== \(Tùy Chọn) Mã Nguồn SQL Projects
+<tuy-chon-ma-nguon-sql-projects>
+
+- Mục đích: Tái tạo dự án SQL được trình bày trong báo cáo.
+- Lưu trữ tại Github: #link("https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/sql-projects")[Mã Nguồn SQL Projects].
