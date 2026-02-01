@@ -85,6 +85,18 @@ DICHVU -- dichvu_trang_thai {style: {stroke: "#4682B4"; stroke-width: 1}}
 # DICHVU -- dichvu_updated_at
 
 LOAIPHONG: {class: entity; label: "LOAIPHONG"}
+loaiphong_id: {class: attr_pri; label: "ID Loại Phòng"}
+loaiphong_ten_loai: {class: attr; label: "Tên Loại Phòng"}
+loaiphong_gia_co_ban: {class: attr; label: "Giá Cơ Bản"; width: 110}
+loaiphong_mo_ta: {class: attr; label: "Mô Tả"}
+loaiphong_suc_chua: {class: attr; label: "Sức Chứa"}
+
+LOAIPHONG -- loaiphong_id {style: {stroke: "#0d95de"; stroke-width: 1}}
+LOAIPHONG -- loaiphong_ten_loai {style: {stroke: "#4682B4"; stroke-width: 1}}
+LOAIPHONG -- loaiphong_gia_co_ban {style: {stroke: "#4682B4"; stroke-width: 1}}
+LOAIPHONG -- loaiphong_mo_ta {style: {stroke: "#4682B4"; stroke-width: 1}}
+LOAIPHONG -- loaiphong_suc_chua {style: {stroke: "#4682B4"; stroke-width: 1}}
+
 PAYMENTS: {class: entity; label: "PAYMENTS"}
 PERMISSIONS: {class: entity; label: "PERMISSIONS"}
 PHONG: {class: entity; label: "PHONG"}
