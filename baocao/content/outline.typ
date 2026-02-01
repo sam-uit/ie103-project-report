@@ -614,9 +614,9 @@ stroke: (
   rows: (auto),
   [Tính toán phí hủy dựa trên thời điểm hủy:
     - Tính khoảng cách ngày: Số ngày = Ngày Check-in - Ngày Báo Hủy.
-    - Hủy trước 1 ngayf 100%.
-    - Hủy trong vòng 1 - 3 ngày: 50%.
-    - Hủy sau 3 ngày: 0%.
+    - Trước 1 ngày: 100%.
+    - Trong vòng 1 - 3 ngày: 50%.
+    - Sau 3 ngày: 0%.
   ],
   [
     #align(center)[
