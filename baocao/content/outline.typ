@@ -582,7 +582,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/FN-01-TinhHangThanhVien-01.png"),
+      #figure(image("demo/FN-01-TinhHangThanhVien-slide.png"),
       caption: [(FN) Tính Hạng Thành Viên],
       supplement: "Ảnh"
       )]
