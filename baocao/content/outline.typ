@@ -549,10 +549,21 @@ stroke: (
 == Xử Lý Thông Tin - (TRG) Kiểm Tra Hoàn Tiền
 <xu-ly-thong-tin-trg-kiem-tra-hoan-tien>
 
-#figure(image("demo/TRG-05-REFUND.png"),
-  caption: [
-    TRG-05-Refund - Kiểm Tra Hoàn Tiền
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Quản lý quy trình hoàn tiền an toàn và chính xác:
+    - Không được vượt quá số tiền đã thanh toán.
+    - Không được hoàn tiền khi đặt phòng chưa thanh toán.
+    - Cập nhật PAYMENTS.trang_thai = 'REFUNDED' và DATPHONG.trang_thai = 'REFUNDED'.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/TRG-05-REFUND.png"),
+      caption: [(TRG) Kiểm Tra Hoàn Tiền],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (FN) Tính Hạng Thành Viên
