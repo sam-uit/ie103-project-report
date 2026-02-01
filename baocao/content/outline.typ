@@ -602,7 +602,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/FN-02-TimPhongTrongTheoLoai.png"),
+      #figure(image("demo/FN-02-TimPhongTrongTheoLoai-slide.png"),
       caption: [(FN) Tìm Phòng Trống],
       supplement: "Ảnh"
       )]
