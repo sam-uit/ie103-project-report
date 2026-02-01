@@ -94,4 +94,4 @@ Quy trình quản lý đặt phòng trong thực tế (Business Process) mà h�
 
 ## Tổng Kết Chương 1
 
-*Chương 01* đã trình bày tổng quan về bài toán **Quản Lý Đặt Phòng Khách Sạn**, xác định rõ những bất cập trong quy trình quản lý thủ công hiện tại và đề xuất giải pháp số hóa thông qua hệ thống BMS. Các yêu cầu về nghiệp vụ và phạm vi người dùng được xác định trong chương này sẽ là cơ sở quan trọng để tiến hành **Phân Tích và Thiết Kế Hệ Thống** chi tiết trong *Chương 02*.
+*Chương 01* đã trình bày tổng quan về bài toán **Quản Lý Đặt Phòng**, xác định rõ những bất cập trong quy trình quản lý thủ công hiện tại và đề xuất giải pháp số hóa thông qua hệ thống *BMS*. Các yêu cầu về nghiệp vụ và phạm vi người dùng được xác định trong chương này sẽ là cơ sở quan trọng để tiến hành **Phân Tích và Thiết Kế Hệ Thống** chi tiết trong *Chương 02*.
