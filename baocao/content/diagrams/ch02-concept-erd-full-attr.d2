@@ -42,11 +42,11 @@ admin_status: {class: attr; label: "Trạng Thái"}
 # admin_created_at: {class: attr; label: "created_at"; width: 110}
 # admin_updated_at: {class: attr; label: "updated_at"; width: 110}
 
-ADMINS -- admin_id {style: {stroke: "#0d95de"; stroke-width: 1}}
-ADMINS -- admin_email {style: {stroke: "#4682B4"; stroke-width: 1}}
-ADMINS -- admin_password {style: {stroke: "#4682B4"; stroke-width: 1}}
-ADMINS -- admin_full_name {style: {stroke: "#4682B4"; stroke-width: 1}}
-ADMINS -- admin_status {style: {stroke: "#4682B4"; stroke-width: 1}}
+ADMINS -- admin_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+ADMINS -- admin_email: {style: {stroke: "#4682B4"; stroke-width: 1}}
+ADMINS -- admin_password: {style: {stroke: "#4682B4"; stroke-width: 1}}
+ADMINS -- admin_full_name: {style: {stroke: "#4682B4"; stroke-width: 1}}
+ADMINS -- admin_status: {style: {stroke: "#4682B4"; stroke-width: 1}}
 # ADMINS -- admin_created_at
 # ADMINS -- admin_updated_at
 
@@ -59,12 +59,12 @@ datphong_check_out: {class: attr; label: "Ngày Trả Phòng"}
 datphong_trang_thai: {class: attr; label: "Trạng Thái"}
 # datphong_created_at: {class: attr; label: "created_at"; width: 110}
 
-DATPHONG -- datphong_id {style: {stroke: "#0d95de"; stroke-width: 1}}
+DATPHONG -- datphong_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
 # DATPHONG -- datphong_user_id
 # DATPHONG -- datphong_voucher_id
-DATPHONG -- datphong_check_in {style: {stroke: "#4682B4"; stroke-width: 1}}
-DATPHONG -- datphong_check_out {style: {stroke: "#4682B4"; stroke-width: 1}}
-DATPHONG -- datphong_trang_thai {style: {stroke: "#4682B4"; stroke-width: 1}}
+DATPHONG -- datphong_check_in: {style: {stroke: "#4682B4"; stroke-width: 1}}
+DATPHONG -- datphong_check_out: {style: {stroke: "#4682B4"; stroke-width: 1}}
+DATPHONG -- datphong_trang_thai: {style: {stroke: "#4682B4"; stroke-width: 1}}
 # DATPHONG -- datphong_created_at
 
 DICHVU: {class: entity; label: "DICHVU"}
@@ -76,11 +76,11 @@ dichvu_trang_thai: {class: attr; label: "Trạng Thái"}
 # dichvu_created_at: {class: attr; label: "created_at"}
 # dichvu_updated_at: {class: attr; label: "updated_at"}
 
-DICHVU -- dichvu_id {style: {stroke: "#0d95de"; stroke-width: 1}}
-DICHVU -- dichvu_ten_dich_vu {style: {stroke: "#4682B4"; stroke-width: 1}}
-DICHVU -- dichvu_don_gia {style: {stroke: "#4682B4"; stroke-width: 1}}
-DICHVU -- dichvu_don_vi_tinh {style: {stroke: "#4682B4"; stroke-width: 1}}
-DICHVU -- dichvu_trang_thai {style: {stroke: "#4682B4"; stroke-width: 1}}
+DICHVU -- dichvu_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+DICHVU -- dichvu_ten_dich_vu: {style: {stroke: "#4682B4"; stroke-width: 1}}
+DICHVU -- dichvu_don_gia: {style: {stroke: "#4682B4"; stroke-width: 1}}
+DICHVU -- dichvu_don_vi_tinh: {style: {stroke: "#4682B4"; stroke-width: 1}}
+DICHVU -- dichvu_trang_thai: {style: {stroke: "#4682B4"; stroke-width: 1}}
 # DICHVU -- dichvu_created_at
 # DICHVU -- dichvu_updated_at
 
@@ -91,11 +91,11 @@ loaiphong_gia_co_ban: {class: attr; label: "Giá Cơ Bản"; width: 110}
 loaiphong_mo_ta: {class: attr; label: "Mô Tả"}
 loaiphong_suc_chua: {class: attr; label: "Sức Chứa"}
 
-LOAIPHONG -- loaiphong_id {style: {stroke: "#0d95de"; stroke-width: 1}}
-LOAIPHONG -- loaiphong_ten_loai {style: {stroke: "#4682B4"; stroke-width: 1}}
-LOAIPHONG -- loaiphong_gia_co_ban {style: {stroke: "#4682B4"; stroke-width: 1}}
-LOAIPHONG -- loaiphong_mo_ta {style: {stroke: "#4682B4"; stroke-width: 1}}
-LOAIPHONG -- loaiphong_suc_chua {style: {stroke: "#4682B4"; stroke-width: 1}}
+LOAIPHONG -- loaiphong_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+LOAIPHONG -- loaiphong_ten_loai: {style: {stroke: "#4682B4"; stroke-width: 1}}
+LOAIPHONG -- loaiphong_gia_co_ban: {style: {stroke: "#4682B4"; stroke-width: 1}}
+LOAIPHONG -- loaiphong_mo_ta: {style: {stroke: "#4682B4"; stroke-width: 1}}
+LOAIPHONG -- loaiphong_suc_chua: {style: {stroke: "#4682B4"; stroke-width: 1}}
 
 PAYMENTS: {class: entity; label: "PAYMENTS"}
 payments_id: {class: attr_pri; label: "ID Thanh Toán"}
@@ -106,12 +106,12 @@ payments_phuong_thuc: {class: attr; label: "Phương Thức Thanh Toán"}
 payments_trang_thai: {class: attr; label: "Trạng Thái"}
 # payments_created_at: {class: attr; label: "created_at"; width: 110}
 
-PAYMENTS -- payments_id {style: {stroke: "#0d95de"; stroke-width: 1}}
+PAYMENTS -- payments_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
 # PAYMENTS -- payments_booking_id: {style: {stroke-width: 1; stroke: orange}}
 # PAYMENTS -- payments_user_id: {style: {stroke-width: 1; stroke: orange}}
-PAYMENTS -- payments_so_tien {style: {stroke: "#4682B4"; stroke-width: 1}}
-PAYMENTS -- payments_phuong_thuc {style: {stroke: "#4682B4"; stroke-width: 1}}
-PAYMENTS -- payments_trang_thai {style: {stroke: "#4682B4"; stroke-width: 1}}
+PAYMENTS -- payments_so_tien: {style: {stroke: "#4682B4"; stroke-width: 1}}
+PAYMENTS -- payments_phuong_thuc: {style: {stroke: "#4682B4"; stroke-width: 1}}
+PAYMENTS -- payments_trang_thai: {style: {stroke: "#4682B4"; stroke-width: 1}}
 # PAYMENTS -- payments_created_at
 
 PERMISSIONS: {class: entity; label: "PERMISSIONS"}
