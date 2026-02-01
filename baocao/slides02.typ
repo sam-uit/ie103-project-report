@@ -23,7 +23,7 @@
   ),
 )
 
-#set text(font: body-font)
+#set text(font: body-font, size: 20pt)
 
 // Block code style with Line Numbering
 #show raw.where(block: true): it => align(start)[
