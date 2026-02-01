@@ -3,8 +3,8 @@
 
 = BÁO CÁO TÓM TẮT
 
-== 1. Tiêu đề báo cáo: #upper[#data.assignment.subtitle]
-== 2. Danh sách thành viên
+== 1. Tiêu Đề Báo Cáo: #upper[#data.assignment.subtitle]
+== 2. Danh Sách Thành Viên
 
 #figure(
   align(center)[
@@ -47,27 +47,33 @@
   numbering: none, // Hides the "Table X:" prefix (optional)
 )
 
-== 3. Nội dung chi tiết
+== 3. Nội Dung Chi Tiết
 
-=== Nội dung 1:
-
-+ Đề mục 1:
-+ Đề mục 2:
-+ Đề mục 3:
-
-=== Nội dung 2:
+=== Mô Tả Bài Toán:
 
 + Đề mục 1:
 + Đề mục 2:
 + Đề mục 3:
 
-=== Nội dung 3:
+=== Phân Tích Và Thiết Kế:
 
 + Đề mục 1:
 + Đề mục 2:
 + Đề mục 3:
 
-== 4. Phân công công việc
+=== Cài Đặt -- Triển Khai:
+
++ Đề mục 1:
++ Đề mục 2:
++ Đề mục 3:
+
+=== Quản Lý Thông Tin
+
++ Đề mục 1:
++ Đề mục 2:
++ Đề mục 3:
+
+== 4. Phân Công Công Việc
 
 #figure(
   align(center)[
