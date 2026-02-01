@@ -337,6 +337,13 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
 
 ![FN-03 - Tính Phí Hủy Đặt Phòng - Hủy Quá Sớm.](demo/FN-03-TinhPhiHuyPhong-02.png)
 
+## Xử Lý Thông Tin - (CR) Hoàn Tất Đặt Phòng
+
+![Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn](demo/C-UpdateStatusWhenOverdue02.png)
+
+## Xử Lý Thông Tin - (CR) Đồng Bộ Trạng Thái
+
+![Tự Động Đồng Bộ Trạng Thái Phòng](demo/C-SyncRoomStatus04.png)
 
 ## Trình Bày Thông Tin
 

@@ -398,6 +398,24 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
   ]
 )
 
+== Xử Lý Thông Tin - (CR) Hoàn Tất Đặt Phòng
+<xu-ly-thong-tin-cr-hoan-tat-dat-phong>
+
+#figure(image("demo/C-UpdateStatusWhenOverdue02.png"),
+  caption: [
+    Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
+  ]
+)
+
+== Xử Lý Thông Tin - (CR) Đồng Bộ Trạng Thái
+<xu-ly-thong-tin-cr-dong-bo-trang-thai>
+
+#figure(image("demo/C-SyncRoomStatus04.png"),
+  caption: [
+    Tự Động Đồng Bộ Trạng Thái Phòng
+  ]
+)
+
 == Trình Bày Thông Tin
 <trinh-bay-thong-tin>
 
