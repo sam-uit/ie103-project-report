@@ -21,21 +21,65 @@ classes: {
     # width: 100; height: 50
     style: {fill: "#F0F8FF"; stroke: "#4682B4"; stroke-dash: 3}
   }
+  attr_pri: {
+    shape: oval
+    style: {
+      fill: "#F0F8FF"
+      stroke: "#0d95de"
+      stroke-width: 1
+      underline: true
+    }
+  }
 }
 
 # --- 2. ENTITIES ---
 ADMINS: {class: entity; label: "ADMINS"}
+admin_id: {class: attr_pri; label: "ID Admin"}
+ADMINS -- admin_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+
 DATPHONG: {class: entity; label: "DATPHONG"}
+datphong_id: {class: attr_pri; label: "ID Đặt Phòng"}
+DATPHONG -- datphong_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+
 DICHVU: {class: entity; label: "DICHVU"}
+dichvu_id: {class: attr_pri; label: "ID Dịch Vụ"}
+DICHVU -- dichvu_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+
 LOAIPHONG: {class: entity; label: "LOAIPHONG"}
+loaiphong_id: {class: attr_pri; label: "ID Loại Phòng"}
+LOAIPHONG -- loaiphong_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+
 PAYMENTS: {class: entity; label: "PAYMENTS"}
+payments_id: {class: attr_pri; label: "ID Thanh Toán"}
+PAYMENTS -- payments_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+
 PERMISSIONS: {class: entity; label: "PERMISSIONS"}
+permissions_id: {class: attr_pri; label: "ID Quyền Hạn"}
+PERMISSIONS -- permissions_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+
 PHONG: {class: entity; label: "PHONG"}
+phong_id: {class: attr_pri; label: "ID Phòng"}
+PHONG -- phong_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+
 REFUNDS: {class: entity; label: "REFUNDS"}
+refunds_id: {class: attr_pri; label: "ID Hoàn Tiền"}
+REFUNDS -- refunds_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+
 REVIEWS: {class: entity; label: "REVIEWS"}
+reviews_id: {class: attr_pri; label: "ID Đánh Giá"}
+REVIEWS -- reviews_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+
 ROLES: {class: entity; label: "ROLES"}
+roles_id: {class: attr_pri; label: "ID Vai Trò"}
+ROLES -- roles_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+
 USERS: {class: entity; label: "USERS"}
+users_id: {class: attr_pri; label: "ID Người Dùng"}
+USERS -- users_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+
 VOUCHERS: {class: entity; label: "VOUCHERS"}
+vouchers_id: {class: attr_pri; label: "ID Voucher"}
+VOUCHERS -- vouchers_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
 
 # --- 3. RELATIONSHIPS ---
 # ngôn ngữ "tự nhiên"
