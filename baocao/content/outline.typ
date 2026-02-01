@@ -243,7 +243,18 @@ Ví dụ về *Mô Hình Vật Lý* của một bảng trong CSDL.
 == Triển Khai
 <trien-khai>
 
-- #lorem(10)
+- Hệ Quản Trị CSDL: Microsoft SQL Server 2019.
+- Khai báo và khởi tạo bảng: tổng 16.
+
+#align(center + bottom)[
+Ví dụ về *Khởi Tạo Bảng* trong CSDL.
+#show table.cell: set text(size: 1em, weight: "light", font: body-font)
+#figure(
+    raw(read("code/slide-create-table-admins.sql"), lang: "sql", block: true),
+  caption: [Khởi Tạo CSDL: ADMINS],
+  supplement: "Mã Nguồn"
+)
+]
 
 = QUẢN LÝ THÔNG TIN
 <quan-ly-thong-tin>
