@@ -238,7 +238,7 @@ stroke: (
 == Mô Hình Vật Lý
 <mo-hinh-vat-ly>
 
-#show table.cell: set text(size: 1em, weight: "light", font: body-font)
+#show table.cell: set text(size: 1.5em, weight: "light", font: body-font)
 #table(
 columns: (100%),
 inset: (top: 0.6em, bottom: 0.6em),
@@ -252,11 +252,23 @@ stroke: (
 [- Hiện thực hóa mô hình logic.],
 [- Sẵn sàng triển khai trên Hệ Quản Trị CSDL cụ thể.]
 )
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (top: 0.6em, bottom: 0.6em),
+        align: (center),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [Ví dụ về *Mô Hình Vật Lý* của một bảng trong CSDL: ADMINS]
+    )
+]
 #align(center + bottom)[
-Ví dụ về *Mô Hình Vật Lý* của một bảng trong CSDL.
-#show table.cell: set text(size: 1em, weight: "light", font: body-font)
-#figure(
-  table(
+#show table.cell: set text(size: 0.9em, weight: "light", font: body-font)
+#table(
     columns: (20%, 20%, 30%, 30%),
     align: (left, left, left, left),
     stroke: (
@@ -267,8 +279,6 @@ Ví dụ về *Mô Hình Vật Lý* của một bảng trong CSDL.
     ),
     [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CONSTRAINT]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
   ),
-  caption: [Mô Hình Mức Vật Lý: ADMINS],
-)
 ]
 
 == Triển Khai
