@@ -16,7 +16,6 @@
 #show raw: set text(size: 0.8em)
 
 // Content goes here
-// #include "content/tasks.typ"
 #include "content/chapter01.typ"
 #include "content/chapter02.typ"
 #include "content/chapter03.typ"
@@ -34,4 +33,4 @@
 
 // Show bibliography
 #show: bibliography-page
-#bibliography("content/bibliography.bib", title: "Tài Liệu Tham Khảo")
+#bibliography("content/bibliography.yaml", title: "Tài Liệu Tham Khảo", style: "ieee")
