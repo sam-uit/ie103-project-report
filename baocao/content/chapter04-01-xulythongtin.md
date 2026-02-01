@@ -375,12 +375,12 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
 - User 1: Đã thanh toán tổng cộng `13,400,000 VNĐ`.
     - User 1: `GOLD`.
 
-![FN-01 - Tính Hạng Thành Viên - User 1.](demo/FN-01-TinhHangThanhVien-01.png)
+<!-- ![FN-01 - Tính Hạng Thành Viên - User 1.](demo/FN-01-TinhHangThanhVien-01.png) -->
 
 - User 3 : Đã thanh toán `4,300,000 VNĐ`.
     - User 3: `STANDARD`.
 
-![FN-01 - Tính Hạng Thành Viên - User 3.](demo/FN-01-TinhHangThanhVien-03.png)
+<!-- ![FN-01 - Tính Hạng Thành Viên - User 3.](demo/FN-01-TinhHangThanhVien-03.png) -->
 
 #### FN-02 - Tìm Phòng Trống Theo Loại
 

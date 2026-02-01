@@ -281,20 +281,8 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
 - User 1: Đã thanh toán tổng cộng `13,400,000 VNĐ`.
   - User 1: `GOLD`.
 
-#figure(image("demo/FN-01-TinhHangThanhVien-01.png"),
-  caption: [
-    FN-01 - Tính Hạng Thành Viên - User 1.
-  ]
-)
-
 - User 3 : Đã thanh toán `4,300,000 VNĐ`.
   - User 3: `STANDARD`.
-
-#figure(image("demo/FN-01-TinhHangThanhVien-03.png"),
-  caption: [
-    FN-01 - Tính Hạng Thành Viên - User 3.
-  ]
-)
 
 ==== FN-02 - Tìm Phòng Trống Theo Loại
 <fn-02-tim-phong-trong-theo-loai>
