@@ -50,7 +50,7 @@ Miêu tả:
 - Giúp thống kê được doanh thu của từng phòng để đánh giá xem phòng nào ít khách đặt để tìm ra lý do, hoặc thay đổi loại phòng theo xu hướng của khách.
 - Chúng ta sẽ có phần chart thể hiện tổng doanh thu của từng tháng, và phần hiển thị chi tiết tổng số lượt đặt và tổng số tiền đem về của từng phòng trong năm 2024.
 
-<!-- Các bước thực hiện:
+Các bước thực hiện:
 
 1. Tạo View tính tổng doanh thu và số lần đặt phòng của từng phòng trong từng tháng của năm 2024: `V_RPT_DOANHTHU_THEO_PHONG_2024`.
 2. Kết nối Tableau vào CSDL.
@@ -78,9 +78,9 @@ Miêu tả:
 7. Tạo dashboard để hiển thị report.
     - Hiển thị 2 sheet charts ở trên.
         - Dạng cột.
-        - Dạng bảng. -->
+        - Dạng bảng.
 
-<!-- ![Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Design.](./images/rpt1-6.png) -->
+![Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Design.](./images/rpt1-6.png)
 
 ![Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Preview.](./images/rpt1-7.png)
 
@@ -90,7 +90,7 @@ Mục đích:
 
 - Giúp đánh giá xem khách hàng thân thiết để tặng voucher hay là nâng hạng khách hàng lên Premium, VIP phục vụ cho CSKH, CRM.
 
-<!-- Các bước thực hiện:
+Các bước thực hiện:
 
 1. Tạo View lấy danh sách Khách Hàng VIP (`V_REPORT_USER_VIP_2024`).
 2. Kết nối Tableu vào database.
@@ -109,9 +109,9 @@ Mục đích:
     - Chọn Analysis $\to$ Total $\to$ show grands total và kéo về trái để hiển thị cột tổng.
 6. Màn hình design và preview dashboard.
 
-- Ta chọn kích cỡ A4 lanscape để in cho đẹp và đây đủ, chọn fit -> entrie view để hiển thị hết width height. -->
+- Ta chọn kích cỡ A4 lanscape để in cho đẹp và đây đủ, chọn fit -> entrie view để hiển thị hết width height.
 
-<!-- ![Báo Cáo 02 - Màn Hình Design.](./images/rpt2-10.png) -->
+![Báo Cáo 02 - Màn Hình Design.](./images/rpt2-10.png)
 
 ![Báo Cáo 02 - Màn Hình Preview.](./images/rpt2-11.png)
 
@@ -122,7 +122,7 @@ Miêu tả:
 - Để xác định "Dịch vụ nào được ưa chuộng nhất" (Best Seller) sẽ giúp quản lý có kế hoạch nhập hàng và đẩy mạnh khuyến mãi.
 - Vì mỗi dịch vụ thời giá sẽ khác nhau nên ở table chi tiết ta sẽ thống kê từng đơn giá của dịch vụ.
 
-<!-- Các bước thực hiện:
+Các bước thực hiện:
 
 1. Tạo View lấy danh sách Dịch Vụ Yêu Thích Nhất (`V_REPORT_TOP_SERVICE_2024`).
 2. Kết nối Tableu vào database.
@@ -132,7 +132,7 @@ Miêu tả:
 
 Màn hình design và preview dashboard:
 
-![Báo Cáo 03 - Màn Hình Design.](./images/rpt3-8.png) -->
+![Báo Cáo 03 - Màn Hình Design.](./images/rpt3-8.png)
 
 ![Báo Cáo 03 - Màn Hình Preview.](./images/rpt3-9.png)
 
@@ -145,7 +145,7 @@ Miêu tả:
 - Chỉ tính dòng trong bảng `PAYMENTS` có trạng thái `SUCCESS`, hiểu là thanh toán thành công.
 - Công thức tính số tiền giảm: (tiền thực / (100% - %giảm)) - tiền thực .
 
-<!-- Các bước thực hiện:
+Các bước thực hiện:
 
 1. Tạo View lấy danh sách Top Voucher Được Săn Đón Nhất & Số Tiền Đã Giảm Giá Năm 2024 (`V_REPORT_TOP_VOUCHER_2024`).
 2. Kết nối Tableu vào database.
@@ -155,7 +155,7 @@ Miêu tả:
 
 Màn hình design và preview dashboard:
 
-![Báo Cáo 04 - Màn Hình Design.](./images/rpt4-2.png) -->
+![Báo Cáo 04 - Màn Hình Design.](./images/rpt4-2.png)
 
 ![Báo Cáo 04 - Màn Hình Preview.](./images/rpt4-6.png)
 
@@ -166,7 +166,7 @@ Miêu tả:
 - Dựa trên số sao được khách hàng đánh giá, ta sẽ thống kê xem xem là loại phòng nào làm khách hàng thích nhất, để điều chỉnh phòng theo xu hướng của khách hàng, giúp đánh giá tăng doanh thu, thu hút khách.
 - Chúng ta chỉ lấy những reviews nào đã được admin duyệt(`trang_thai = 'APPROVED'`), vì có thể có những review spam hoặc rác.
 
-<!-- Các bước thực hiện:
+Các bước thực hiện:
 
 1. Tạo View lấy danh sách Top Loại Phòng Được Yêu Thích Nhất (`V_REPORT_ROOM_RATING`).
 2. Kết nối Tableu vào database.
@@ -176,6 +176,6 @@ Miêu tả:
 
 Màn hình design và preview dashboard:
 
-![Báo Cáo 05 - Màn Hình Design.](./images/rpt5-5.png) -->
+![Báo Cáo 05 - Màn Hình Design.](./images/rpt5-5.png)
 
 ![Báo Cáo 05 - Màn Hình Preview.](./images/rpt5-6.png)
