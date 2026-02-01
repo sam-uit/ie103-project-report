@@ -769,11 +769,18 @@ stroke: (
 = KẾT LUẬN
 <ket-luan>
 
-== Phần Đã Đạt Được
+== Đánh Giá Tổng Quan
 <phan-da-dat-duoc>
 
 #show table.cell: set text(size: 1.2em, weight: "light", font: body-font)
-#table(
+#grid(
+  columns: (50%, 50%),
+  rows: auto,
+  grid.header(
+    [*Phần Đã Đạt Được*],
+    [*Phần Chưa Đạt Được*],
+  ),
+table(
   columns: (100%),
   inset: (top: 0.6em, bottom: 0.6em),
   align: (left),
@@ -787,14 +794,9 @@ stroke: (
   [- Thiết kế bộ khung CSDL.],
   [- Xử lý thông tin tự động.],
   [- Cơ chế bảo mật đa lớp.],
-  [- Khả năng sẵn sàng, sao lưu/dự phòng.],
-)
-
-== Phần Chưa Đạt Được
-<phan-chua-dat-duoc>
-
-// #show table.cell: set text(size: 1.5em, weight: "light", font: body-font)
-#table(
+  [- Sao lưu/Phục hồi.],
+),
+table(
   columns: (100%),
   inset: (top: 0.6em, bottom: 0.6em),
   align: (left),
@@ -806,8 +808,28 @@ stroke: (
   ),
   [- Giao diện cho người dùng cuối.],
   [- Các kênh thanh toán thực tế.],
-  [- Quản lý vòng đời tài khoản/người dùng.]
+  [- Quản lý tài khoản/người dùng.]
 )
+)
+
+// == Phần Chưa Đạt Được
+// <phan-chua-dat-duoc>
+
+// // #show table.cell: set text(size: 1.5em, weight: "light", font: body-font)
+// #table(
+//   columns: (100%),
+//   inset: (top: 0.6em, bottom: 0.6em),
+//   align: (left),
+//   stroke: (
+//       bottom: 0.5pt + gradient.linear(red, blue, green),
+//       top: none,
+//       left: none,
+//       right: none,
+//   ),
+//   [- Giao diện cho người dùng cuối.],
+//   [- Các kênh thanh toán thực tế.],
+//   [- Quản lý vòng đời tài khoản/người dùng.]
+// )
 
 == Mở Rộng & Nâng Cấp
 <mo-rong-nang-cap>
