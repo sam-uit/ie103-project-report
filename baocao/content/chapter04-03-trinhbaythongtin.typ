@@ -104,22 +104,6 @@ Miêu tả:
 - Chỉ tính dòng trong bảng `PAYMENTS` có trạng thái `SUCCESS`, hiểu là thanh toán thành công.
 - Công thức tính số tiền giảm: (tiền thực / (100% - %giảm)) - tiền thực .
 
-Các bước thực hiện:
-
-+ Tạo View lấy danh sách Top Voucher Được Săn Đón Nhất & Số Tiền Đã Giảm Giá Năm 2024 (`V_REPORT_TOP_VOUCHER_2024`).
-+ Kết nối Tableu vào database.
-+ Kéo view `V_REPORT_TOP_VOUCHER_2024` vào Canvas.
-+ Mapping dữ liệu từ View `V_REPORT_TOP_VOUCHER_2024` để tạo chart line.
-+ Tạo Sheet hiển thị table chi tiết.
-
-Màn hình design và preview dashboard:
-
-#figure(image("./images/rpt4-2.png"),
-  caption: [
-    Báo Cáo 04 - Màn Hình Design.
-  ]
-)
-
 #figure(image("./images/rpt4-6.png"),
   caption: [
     Báo Cáo 04 - Màn Hình Preview.
