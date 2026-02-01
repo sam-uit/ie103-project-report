@@ -23,6 +23,8 @@
   ),
 )
 
+#set text(font: body-font)
+
 // Block code style with Line Numbering
 #show raw.where(block: true): it => align(start)[
   #block(
@@ -58,8 +60,6 @@
   ]
 ]
 
-// #set text(font: "Lora")
-
 // List: Dùng marker là vòng tròn nhỏ có vòng.
 // TODO: Dùng gradient cho marker.
 #set list(
@@ -82,7 +82,7 @@
 ]
 
 // Set font
-#set text(font: "Montserrat", weight: "light")
+// #set text(font: "Montserrat", weight: "light")
   // Set heading level 3
   #show heading.where(level: 3): it => [
     #set align(left)
