@@ -80,6 +80,6 @@
 #slide(self => [
   #align(center + horizon)[
     #set text(size: 3em, weight: "bold", fill: self.colors.primary)
-    THANK YOU.
+    Xin Cảm Ơn!
   ]
 ])
