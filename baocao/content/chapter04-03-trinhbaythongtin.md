@@ -122,7 +122,7 @@ Miêu tả:
 - Để xác định "Dịch vụ nào được ưa chuộng nhất" (Best Seller) sẽ giúp quản lý có kế hoạch nhập hàng và đẩy mạnh khuyến mãi.
 - Vì mỗi dịch vụ thời giá sẽ khác nhau nên ở table chi tiết ta sẽ thống kê từng đơn giá của dịch vụ.
 
-Các bước thực hiện:
+<!-- Các bước thực hiện:
 
 1. Tạo View lấy danh sách Dịch Vụ Yêu Thích Nhất (`V_REPORT_TOP_SERVICE_2024`).
 2. Kết nối Tableu vào database.
@@ -132,7 +132,7 @@ Các bước thực hiện:
 
 Màn hình design và preview dashboard:
 
-![Báo Cáo 03 - Màn Hình Design.](./images/rpt3-8.png)
+![Báo Cáo 03 - Màn Hình Design.](./images/rpt3-8.png) -->
 
 ![Báo Cáo 03 - Màn Hình Preview.](./images/rpt3-9.png)
 
