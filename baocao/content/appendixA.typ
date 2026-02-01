@@ -9,22 +9,21 @@
 
 - Chính là file báo cáo này.
 - Được tạo ra từ mã nguồn Typst.
-- Lưu trữ tại: #link("https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/thesis.pdf")[Báo Cáo PDF].
+- Lưu trữ tại Github: #link("https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/thesis.pdf")[Báo Cáo PDF].
 
 == Slides PDF
 <slides-pdf>
 
 - Mục đích: Trình bày báo cáo và Demo.
 - Được tạo ra từ mã nguồn Typst.
-- Lưu trữ tại: #link("https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/slides.pdf")[Slides PDF].
+- Lưu trữ tại Github: #link("https://github.com/lt20252cnttalpha/ie103-project-report/blob/main/baocao/slides.pdf")[Slides PDF].
 
-== Link Video Demo
-<link-video-demo>
+== Video Demo
+<video-demo>
 
 - Mục đích: Tất cả các demo trong một video đầy đủ.
-- #link("https://www.youtube.com/watch?v=dQw4w9WgXcQ")[Video Demo]
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
+- Lưu trữ tại Google Drive: #link("https://www.youtube.com/watch?v=dQw4w9WgXcQ")[Video Demo]
+  - Phiên bản tại Youtube: #link("https://www.youtube.com/watch?v=dQw4w9WgXcQ")[Video Demo]
 
 == Repo Mã Nguồn
 <repo-ma-nguon>
