@@ -769,18 +769,42 @@ stroke: (
 == Phần Đã Đạt Được
 <phan-da-dat-duoc>
 
-- Chuẩn hóa quy trình nghiệp vụ.
-- Thiết kế bộ khung CSDL.
-- Xử lý thông tin tự động.
-- Cơ chế bảo mật đa lớp.
-- Khả năng sẵn sàng, sao lưu/dự phòng.
+#show table.cell: set text(size: 1.5em, weight: "light", font: body-font)
+#table(
+columns: (100%),
+inset: (top: 0.6em, bottom: 0.6em),
+align: (left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- Chuẩn hóa quy trình nghiệp vụ.],
+[- Thiết kế bộ khung CSDL.],
+[- Xử lý thông tin tự động.],
+[- Cơ chế bảo mật đa lớp.],
+[- Khả năng sẵn sàng, sao lưu/dự phòng.],
+)
 
 == Phần Chưa Đạt Được
 <phan-chua-dat-duoc>
 
-- Giao diện cho người dùng cuối.
-- Các kênh thanh toán thực thế.
-- Quản lý vòng đời tài khoản/người dùng.
+// #show table.cell: set text(size: 1.5em, weight: "light", font: body-font)
+#table(
+columns: (100%),
+inset: (top: 0.6em, bottom: 0.6em),
+align: (left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- Giao diện cho người dùng cuối.],
+[- Các kênh thanh toán thực thế.],
+[- Quản lý vòng đời tài khoản/người dùng.]
+)
 
 == Mở Rộng & Nâng Cấp
 <mo-rong-nang-cap>
