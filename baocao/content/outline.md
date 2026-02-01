@@ -4,21 +4,17 @@
 
 ### Giảng Viên
 
-```{=typst}
-- #lorem(10)
-```
+- Thạc Sĩ Nguyễn Thành Luân.
+- IE103 - Quản Lý Thông Tin.
 
 ### Nhà Trường
 
-```{=typst}
-- #lorem(10)
-```
+- Trung Tâm Phát Triển Công Nghệ Thông Tin.
+- Trường Đại Học Công Nghệ Thông Tin.
 
-### Nhóm
+### Nhóm 02
 
-```{=typst}
-- #lorem(10)
-```
+- Các thành viên của Nhóm 02.
 
 ## Nhóm 02
 
