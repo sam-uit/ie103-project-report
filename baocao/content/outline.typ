@@ -76,7 +76,7 @@ stroke: (
     }
   }
   #table(
-    columns: (auto, auto, auto, auto, auto, auto),
+    columns: (5%, 15%, 25%, 5%, 15%, 35%),
     inset: (top: 1.2em, bottom: 1.2em),
     align: (right + bottom, right + bottom, left + bottom, right + bottom, right + bottom, left + bottom),
     stroke: (
