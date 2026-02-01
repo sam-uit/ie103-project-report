@@ -1,18 +1,13 @@
 #import "../template/lib.typ": *
 
-= Mô Hình ERD Đầy Đủ
-<mo-hinh-erd-day-du>
+= Mô Hình ER Đầy Đủ Thuộc Tính
+<mo-hinh-er-day-du-thuoc-tinh>
 
-TODO: Cập nhật phiên bản đầy đủ của ERD.
-
-== Dạng Ngang
-<dang-ngang>
+- Mã nguồn `.d2`: (Github link).
+- Phiên bản `.svg`: (Github link).
 
 #figure(image("diagrams/ch02-concept-erd-full-attr.svg"),
   caption: [
-    Mô Hình Thực Thể Quan Hệ Đầy Đủ (Dạng Ngang)
+    Phụ Lục -- Mô Hình ER Đầy Đủ Thuộc Tính
   ]
 )
-
-== Dạng Dọc
-<dang-doc>

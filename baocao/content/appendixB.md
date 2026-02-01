@@ -1,11 +1,8 @@
-# Mô Hình ERD Đầy Đủ
+# Mô Hình ER Đầy Đủ Thuộc Tính
 
-TODO: Cập nhật phiên bản đầy đủ của ERD.
+- Mã nguồn `.d2`: (Github link).
+- Phiên bản `.svg`: (Github link).
 
-## Dạng Ngang
-
-![Mô Hình Thực Thể Quan Hệ Đầy Đủ (Dạng Ngang)](diagrams/ch02-concept-erd-full-attr.svg)
-
-## Dạng Dọc
+![Phụ Lục -- Mô Hình ER Đầy Đủ Thuộc Tính](diagrams/ch02-concept-erd-full-attr.svg)
 
 <!-- ![Mô Hình Thực Thể Quan Hệ Đầy Đủ (Dạng Dọc)](diagrams/ch02-concept-erd-full-attr-vertical.svg) -->
