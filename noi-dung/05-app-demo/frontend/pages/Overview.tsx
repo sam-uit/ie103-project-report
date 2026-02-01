@@ -98,12 +98,12 @@ const Overview: React.FC = () => {
 
           <div className="pl-4 md:pl-16 space-y-6">
             {/* Problem Statement Card */}
-            <div className="relative group">ø
+            <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-primary-600/20 blur-xl rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative backdrop-blur-xl bg-white/90 dark:bg-dark-elevated/90 p-8 rounded-3xl border border-primary-200/50 dark:border-primary-500/30 shadow-xl hover:shadow-2xl transition-all">
                 <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-3 flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary-500 to-primary-600"></div>
-                  Phát biểu bài toán & Mục tiêu
+                  Phát Biểu Bài Toán & Mục Tiêu
                 </h3>
                 <p className="leading-relaxed text-base text-slate-700 dark:text-dark-text-primary font-medium">
                   {sec1.problemStatement}
