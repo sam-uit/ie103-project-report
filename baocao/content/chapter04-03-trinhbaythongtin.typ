@@ -43,65 +43,7 @@ Tóm tắt:
 Miêu tả:
 
 - Giúp thống kê được doanh thu của từng phòng để đánh giá xem phòng nào ít khách đặt để tìm ra lý do, hoặc thay đổi loại phòng theo xu hướng của khách.
-- Chúng ta sẽ có phần chart thể hiển tổng doanh thu của từng tháng, và phần hiển thị chi tiết tổng số lượt đặt và tổng số tiền đem về của từng phòng trong năm 2024.
-
-Các bước thực hiện:
-
-+ Tạo View tính tổng doanh thu và số lần đặt phòng của từng phòng trong từng tháng của năm 2024: `V_RPT_DOANHTHU_THEO_PHONG_2024`.
-+ Kết nối Tableau vào CSDL.
-+ Kéo view `V_RPT_DOANHTHU_THEO_PHONG_2024` vào Canvas.
-+ Sheet tạo chart bar, mapping dữ liệu từ View `V_RPT_DOANHTHU_THEO_PHONG_2024` để tạo report:
-  - `Thang` $arrow.r$ Columns, edit chọn #emph[Discrete] $arrow.r.double$ để hiển thị từng tháng theo cột.
-  - `Doanh Thu Phong` $arrow.r$ Rows $arrow.r.double$ để Tableau tự tính `SUM` doanh thu theo từng tháng tương ứng.
-  - Kéo thả vào mục Marks các trường trong view:
-    - `Doanh Thu Phong` $arrow.r$ Color $arrow.r.double$ để hiển thị màu phân biệt giá trị doanh thu.
-    - `Doanh Thu Phong` và `So Luot Dat` $arrow.r$ Label $arrow.r.double$ để hiển thị doanh thu, số lần đặt trên bar.
-    - Kéo `So Luot Dat` vào tooltip và edit thông tin để hiển thị khi rê chuột.
-    - Tạo calculated fields để hiển thị mã phòng - tên loại phòng.
-+ Màn hình design và preview chart bar.
-
-#figure(image("./images/rpt1-2.png"),
-  caption: [
-    Báo Cáo 01 - Màn hình Design Chart Bar.
-  ]
-)
-
-#figure(image("./images/rpt1-3.png"),
-  caption: [
-    Báo Cáo 01 - Màn hình Preview Chart Bar.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 6)
-+ Màn hình Design và Preview sheet hiển thị bảng chi tiết.
-]
-
-#figure(image("./images/rpt1-4.png"),
-  caption: [
-    Báo Cáo 01 - Màn hình Design Hiển Thị Bảng Chi Tiết.
-  ]
-)
-
-#figure(image("./images/rpt1-5.png"),
-  caption: [
-    Báo Cáo 01 - Màn hình Preview Hiển Thị Bảng Chi Tiết.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 7)
-+ Tạo dashboard để hiển thị report.
-  - Hiển thị 2 sheet charts ở trên.
-    - Dạng cột.
-    - Dạng bảng.
-]
-
-#figure(image("./images/rpt1-6.png"),
-  caption: [
-    Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Design.
-  ]
-)
+- Chúng ta sẽ có phần chart thể hiện tổng doanh thu của từng tháng, và phần hiển thị chi tiết tổng số lượt đặt và tổng số tiền đem về của từng phòng trong năm 2024.
 
 #figure(image("./images/rpt1-7.png"),
   caption: [

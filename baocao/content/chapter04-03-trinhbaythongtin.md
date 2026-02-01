@@ -48,9 +48,9 @@ Tóm tắt:
 Miêu tả:
 
 - Giúp thống kê được doanh thu của từng phòng để đánh giá xem phòng nào ít khách đặt để tìm ra lý do, hoặc thay đổi loại phòng theo xu hướng của khách.
-- Chúng ta sẽ có phần chart thể hiển tổng doanh thu của từng tháng, và phần hiển thị chi tiết tổng số lượt đặt và tổng số tiền đem về của từng phòng trong năm 2024.
+- Chúng ta sẽ có phần chart thể hiện tổng doanh thu của từng tháng, và phần hiển thị chi tiết tổng số lượt đặt và tổng số tiền đem về của từng phòng trong năm 2024.
 
-Các bước thực hiện:
+<!-- Các bước thực hiện:
 
 1. Tạo View tính tổng doanh thu và số lần đặt phòng của từng phòng trong từng tháng của năm 2024: `V_RPT_DOANHTHU_THEO_PHONG_2024`.
 2. Kết nối Tableau vào CSDL.
@@ -78,9 +78,9 @@ Các bước thực hiện:
 7. Tạo dashboard để hiển thị report.
     - Hiển thị 2 sheet charts ở trên.
         - Dạng cột.
-        - Dạng bảng.
+        - Dạng bảng. -->
 
-![Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Design.](./images/rpt1-6.png)
+<!-- ![Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Design.](./images/rpt1-6.png) -->
 
 ![Báo Cáo 01 - Dashboard Để Hiển Thị Teport - Preview.](./images/rpt1-7.png)
 
