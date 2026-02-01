@@ -365,10 +365,16 @@ stroke: (
 == Xử Lý Thông Tin - (SP) Đặt Phòng
 <xu-ly-thong-tin-sp-dat-phong>
 
-#figure(image("demo/SP_DATPHONG.png"),
-  caption: [
-    SP\_DATPHONG - Tạo mới đơn Đặt Phòng.
-  ]
+#grid(
+  columns: (30%, 70%),
+  rows: (auto),
+  [Thực hiện chức năng **đặt phòng** cho người dùng.
+    - Kiểm tra phòng tồn tại và khả dụng.
+    - Tạo bản ghi đặt phòng.
+    - Lưu chi tiết phòng.
+    - Cập nhật trạng thái phòng.],
+  [#align(center)[
+    #image("demo/SP_DATPHONG.png")]],
 )
 
 == Xử Lý Thông Tin - (SP) Thanh Toán
