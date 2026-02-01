@@ -61,8 +61,8 @@
     // Sử dụng block để tạo khung cho title và subtitle
     // Stroke: chỉ hiển thị ở phía trên và dưới
     #block(
-      radius: 12pt,
-      inset: 4em,
+      radius: 2pt,
+      inset: (left: 2em, right: 2em, top: 4em, bottom: 4em),
       stroke: (
         bottom: 2pt + gradient.linear(teal, blue, angle: 45deg),
         // left: 2pt + gradient.linear(teal, blue, angle: 45deg),
@@ -73,12 +73,12 @@
     )[
       #stack(
         dir: ttb,
-        spacing: 1.5em, // Khoảng cách (vspace) giữa title và subtitle
+        spacing: 2em, // Khoảng cách (vspace) giữa title và subtitle
         text(font: heading-font, size: 20pt, weight: "regular")[
           #smallcaps[#assignment.title]
         ],
         if assignment.subtitle != none and assignment.subtitle != "" {
-          text(size: 28pt, weight: "regular")[
+          text(font: heading-font, size: 28pt, weight: "regular")[
             #assignment.subtitle
           ]
         },
