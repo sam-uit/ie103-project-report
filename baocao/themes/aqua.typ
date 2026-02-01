@@ -41,8 +41,9 @@
         fill: self.colors.primary,
         align(
           left + horizon,
+          // VIẾT HOA heading level 2.
           h(1.5em)
-            + text(fill: white, utils.call-or-display(self, self.store.header)),
+            + text(fill: white, upper(utils.call-or-display(self, self.store.header))),
         ),
       ),
     )
