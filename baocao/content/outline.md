@@ -98,15 +98,28 @@ stroke: (
 
 ## Giới Thiệu Đề Tài
 
-### Đặt Vấn Đề
+<!-- ### Đặt Vấn Đề -->
 
 ```{=typst}
-#align(center)[Các Doanh Nghiệp vừa và nhỏ trong ngành Khách Sạn, Nhà Nghỉ.]
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (top: 0.6em, bottom: 0.6em),
+        align: (left),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [Các Doanh Nghiệp vừa và nhỏ trong ngành Khách Sạn, Du Lịch:]
+    )
+]
 ```
 
 ```{=typst}
 #table(
-columns: (40%, 60%),
+columns: (45%, 55%),
 inset: (top: 0.6em, bottom: 0.6em),
 align: (left, left),
 stroke: (
@@ -122,15 +135,27 @@ stroke: (
 )
 ```
 
-### Giới Thiệu Đề Tài
+<!-- ### Giới Thiệu Đề Tài -->
 
 ```{=typst}
-#align(center)[*Hệ Thống Quản Lý Đặt Phòng* #emph[(Booking Management System)].]
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (top: 0.6em, bottom: 0.6em),
+        align: (left),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [Hệ Thống Quản Lý Đặt Phòng #emph[(Booking Management System)]:]
+    )
+]
 ```
-
 ```{=typst}
 #table(
-columns: (50%, 50%),
+columns: (45%, 55%),
 inset: (top: 0.6em, bottom: 0.6em),
 align: (left, left),
 stroke: (
@@ -222,8 +247,22 @@ stroke: (
 
 ## Mô Hình Vật Lý
 
-- Hiện thực hóa mô hình logic.
-- Sẵn sàng triển khai trên Hệ Quản Trị CSDL cụ thể.
+```{=typst}
+#show table.cell: set text(size: 1em, weight: "light", font: body-font)
+#table(
+columns: (100%),
+inset: (top: 0.6em, bottom: 0.6em),
+align: (left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- Hiện thực hóa mô hình logic.],
+[- Sẵn sàng triển khai trên Hệ Quản Trị CSDL cụ thể.]
+)
+```
 
 ```{=typst}
 #align(center + bottom)[

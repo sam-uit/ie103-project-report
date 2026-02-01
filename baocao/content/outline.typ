@@ -101,13 +101,22 @@ stroke: (
 == Giới Thiệu Đề Tài
 <gioi-thieu-de-tai>
 
-
-=== Đặt Vấn Đề
-<dat-van-de>
-
-#align(center)[Các Doanh Nghiệp vừa và nhỏ trong ngành Khách Sạn, Nhà Nghỉ.]
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (top: 0.6em, bottom: 0.6em),
+        align: (left),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [Các Doanh Nghiệp vừa và nhỏ trong ngành Khách Sạn, Du Lịch:]
+    )
+]
 #table(
-columns: (40%, 60%),
+columns: (45%, 55%),
 inset: (top: 0.6em, bottom: 0.6em),
 align: (left, left),
 stroke: (
@@ -121,13 +130,22 @@ stroke: (
 [- Số hóa *hạn chế*.],
 [- Không có *điểm chạm* với khách hàng.]
 )
-
-=== Giới Thiệu Đề Tài
-<gioi-thieu-de-tai>
-
-#align(center)[*Hệ Thống Quản Lý Đặt Phòng* #emph[(Booking Management System)].]
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (top: 0.6em, bottom: 0.6em),
+        align: (left),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [Hệ Thống Quản Lý Đặt Phòng #emph[(Booking Management System)]:]
+    )
+]
 #table(
-columns: (50%, 50%),
+columns: (45%, 55%),
 inset: (top: 0.6em, bottom: 0.6em),
 align: (left, left),
 stroke: (
@@ -220,9 +238,20 @@ stroke: (
 == Mô Hình Vật Lý
 <mo-hinh-vat-ly>
 
-- Hiện thực hóa mô hình logic.
-- Sẵn sàng triển khai trên Hệ Quản Trị CSDL cụ thể.
-
+#show table.cell: set text(size: 1em, weight: "light", font: body-font)
+#table(
+columns: (100%),
+inset: (top: 0.6em, bottom: 0.6em),
+align: (left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- Hiện thực hóa mô hình logic.],
+[- Sẵn sàng triển khai trên Hệ Quản Trị CSDL cụ thể.]
+)
 #align(center + bottom)[
 Ví dụ về *Mô Hình Vật Lý* của một bảng trong CSDL.
 #show table.cell: set text(size: 1em, weight: "light", font: body-font)
