@@ -150,16 +150,6 @@ stroke: (
 ## Nghiệp Vụ
 
 ```{=typst}
-  #show table.cell: current_cell => {
-    if current_cell.x in (0,) {
-      text(
-        weight: "light",
-        fill: gray,
-      )[#current_cell]
-    } else {
-      current_cell
-    }
-  }
 #table(
   columns: (10%, 90%),
     inset: (top: 0.4em, bottom: 0.4em),
@@ -193,10 +183,37 @@ stroke: (
 ]
 ```
 
-## Mô Hình Logic
+## Mô Hình Logic - Bảng và Khóa
 
 ```{=typst}
-- #lorem(10)
+#show table.cell: set text(size: 0.8em, weight: "light", font: body-font)
+#table(
+  columns: (100%),
+    inset: (top: 0.4em, bottom: 0.4em),
+    align: (left),
+    stroke: (
+        bottom: 0.5pt + gradient.linear(red, blue, green),
+        top: none,
+        left: none,
+        right: none,
+    ),
+    [- ADMINS(#underline[id], email, password_hash, full_name, status, created_at, updated_at)],
+    [- DATPHONG(#underline[id], #emph[user_id], #emph[voucher_id], check_in, check_out, trang_thai, created_at)],
+    [- DICHVU(#underline[id], ten_dich_vu, don_gia, don_vi_tinh, trang_thai, created_at, updated_at)],
+    [- LOAIPHONG(#underline[id], ten_loai, gia_co_ban, mo_ta, suc_chua)],
+    [- PAYMENTS(#underline[id], #emph[booking_id], #emph[user_id], so_tien, phuong_thuc, trang_thai, created_at)],
+    [- PERMISSIONS(#underline[id], code, description)],
+    [- PHONG(#underline[id], so_phong, #emph[loai_phong_id], trang_thai)],
+    [- REFUNDS(#underline[id], #emph[payment_id], #emph[requested_by], #emph[approved_by], so_tien_hoan, ly_do, trang_thai, created_at, updated_at)],
+    [- REVIEWS(#underline[id], #emph[user_id], #emph[phong_id], #emph[datphong_id], so_sao, binh_luan, ngay_danh_gia, trang_thai, created_at, updated_at)],
+    [- ROLES(#underline[id], code, name, description)],
+    [- USERS(#underline[id], email, phone, password_hash, full_name, status, created_at, updated_at)],
+    [- VOUCHERS(#underline[id], ma_code, phan_tram_giam, ngay_het_han, so_tien_toi_thieu, so_lan_toi_da, so_lan_da_dung, trang_thai, created_at, updated_at)],
+    [- ADMIN_ROLES(#underline[admin_id], #underline[role_id])],
+    [- ROLE_PERMISSIONS(#underline[role_id], #underline[permission_id])],
+    [- CT_DATPHONG(#underline[id], #emph[datphong_id], #emph[phong_id], don_gia)],
+    [- CT_SUDUNG_DV(#underline[id], #emph[datphong_id], #emph[dichvu_id], so_luong, don_gia, thoi_diem_su_dung, ghi_chu, created_at)]
+)
 ```
 
 # CÀI ĐẶT VÀ TRIỂN KHAI
