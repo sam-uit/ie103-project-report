@@ -11,7 +11,7 @@ BEGIN
     SELECT @TongTienDaChi = SUM(so_tien) -- Cột tiền thực tế trong bảng Payments
     FROM dbo.PAYMENTS
     WHERE user_id = @UserID
-    AND status IN ('PAID', 'SUCCESS', 'APPROVED');
+    AND trang_thai IN ('PAID', 'SUCCESS', 'APPROVED');
 
     SET @TongTienDaChi = ISNULL(@TongTienDaChi, 0);
 
