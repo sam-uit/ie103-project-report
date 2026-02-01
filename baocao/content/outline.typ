@@ -649,10 +649,20 @@ stroke: (
 == Xử Lý Thông Tin - (CR) Đồng Bộ Trạng Thái
 <xu-ly-thong-tin-cr-dong-bo-trang-thai>
 
-#figure(image("demo/C-SyncRoomStatus04.png"),
-  caption: [
-    Tự Động Đồng Bộ Trạng Thái Phòng
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Đảm bảo tính nhất quán của dữ liệu giữa các module:
+    - Khi có thay đổi trong module đặt phòng (ví dụ: hủy đặt phòng), trạng thái phòng phải được cập nhật ngay lập tức.
+    - Tránh tình trạng dữ liệu không đồng bộ gây ra lỗi logic.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/C-SyncRoomStatus04.png"),
+      caption: [(CR) Đồng Bộ Trạng Thái],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Trình Bày Thông Tin - Thống Kê Doanh Thu
