@@ -589,7 +589,27 @@ stroke: (
 == Xử Lý Thông Tin - (FN) Tìm Phòng Trống
 <xu-ly-thong-tin-fn-tim-phong-trong>
 
-#figure(image("demo/FN-02-TimPhongTrongTheoLoai.png"),
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Tìm kiếm phòng trống dựa trên loại phòng trong khoảng thời gian yêu cầu:
+    - Chỉ hiển thị phòng có trạng thái AVAILABLE.
+    - Lấy thông tin từ bảng LOAIPHONG và PHONG.
+    - Bỏ qua các đơn đặt phòng đã bị Hủy hoặc Hoàn tiền.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/FN-02-TimPhongTrongTheoLoai.png"),
+      caption: [(FN) Tìm Phòng Trống],
+      supplement: "Ảnh"
+      )]
+  ],
+)
+
+== Xử Lý Thông Tin - (FN) Phí Hủy Đặt Phòng
+<xu-ly-thong-tin-fn-phi-huy-dat-phong>
+
+#figure(image("demo/FN-03-TinhPhiHuyPhong-02.png"),
   caption: [
     FN-02 - Tìm Phòng Trống Theo Loại
   ]
