@@ -446,22 +446,24 @@ stroke: (
   ],
 )
 
-== Xử Lý Thông Tin - (SP) Áp Dụng Voucher
-<xu-ly-thong-tin-sp-ap-dung-voucher>
-
-#figure(image("demo/SP_AP_DUNG_VOUCHER-02.png"),
-  caption: [
-    SP\_AP\_DUNG\_VOUCHER - Áp Dụng Voucher
-  ]
-)
-
 == Xử Lý Thông Tin - (SP) Sử Dụng Dịch Vụ
 <xu-ly-thong-tin-sp-su-dung-dich-vu>
 
-#figure(image("demo/SP_SU_DUNG_DICH_VU-02.png"),
-  caption: [
-    SP\_SU\_DUNG\_DICH\_VU - Sử Dụng Dịch Vụ
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Ghi nhận việc khách hàng sử dụng dịch vụ đi kèm trong thời gian lưu trú.:
+    - Khách hàng có thể gọi dịch vụ đi kèm bất cứ lúc nào trong thời gian lưu trú.
+    - Mỗi lần gọi dịch vụ được ghi nhận riêng biệt.
+    - Đơn giá được lưu lại tại thời điểm sử dụng (tránh thay đổi giá sau này ảnh hưởng đến hóa đơn).
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/SP_SU_DUNG_DICH_VU-02.png"),
+      caption: [(SP) Sử Dụng Dịch Vụ],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (TRG) Kiểm Tra Thời Gian
