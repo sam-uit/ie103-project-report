@@ -51,27 +51,31 @@
 
 === Mô Tả Bài Toán:
 
-+ Đề mục 1:
-+ Đề mục 2:
-+ Đề mục 3:
++ Tổng Quan Về Đề Tài.
++ Phạm Vi & Đối Tượng Nghiên Cứu.
++ Mô Tả Quy Trình Nghiệp Vụ Thực Tế.
 
 === Phân Tích Và Thiết Kế:
 
-+ Đề mục 1:
-+ Đề mục 2:
-+ Đề mục 3:
++ Các Chức Năng Nghiệp Vụ.
++ Quy Tắc Nghiệp Vụ & Xác Định Thực Thể.
++ Mô Hình Mức Quan Niệm.
++ Mô Hình Mức Logic.
 
 === Cài Đặt -- Triển Khai:
 
-+ Đề mục 1:
-+ Đề mục 2:
-+ Đề mục 3:
++ Môi Trường Cài Đặt.
++ Cài Đặt Mô Hình Dữ Liệu (Mức Vật Lý).
++ Khởi Tạo Cơ Sở Dữ Liệu.
++ Thiết Lập Nền Tảng Quản Trị & Bảo Mật.
++ Dữ Liệu Mẫu.
 
 === Quản Lý Thông Tin
 
-+ Đề mục 1:
-+ Đề mục 2:
-+ Đề mục 3:
++ Xử Lý Thông Tin.
++ An Toàn Thông Tin.
++ Trình Bày Thông Tin.
++ Các Chức Năng Của Hệ Thống.
 
 == 4. Phân Công Công Việc
 
