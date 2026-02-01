@@ -8,7 +8,7 @@ TODO: Cập nhật phiên bản đầy đủ của ERD.
 == Dạng Ngang
 <dang-ngang>
 
-#figure(image("diagrams/ch02-ER-full-elk.svg"),
+#figure(image("diagrams/ch02-concept-erd-full-attr.svg"),
   caption: [
     Mô Hình Thực Thể Quan Hệ Đầy Đủ (Dạng Ngang)
   ]
@@ -16,9 +16,3 @@ TODO: Cập nhật phiên bản đầy đủ của ERD.
 
 == Dạng Dọc
 <dang-doc>
-
-#figure(image("diagrams/ch02-ER-full-dagre.svg"),
-  caption: [
-    Mô Hình Thực Thể Quan Hệ Đầy Đủ (Dạng Dọc)
-  ]
-)
