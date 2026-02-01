@@ -129,28 +129,8 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 #strong[Ví dụ sử dụng]:
 
 - Đặt Phòng ID số 4 hiện chưa có voucher.
-
-#figure(image("demo/SP_AP_DUNG_VOUCHER-01.png"),
-  caption: [
-    SP\_AP\_DUNG\_VOUCHER - Trước khi thực hiện
-  ]
-)
-
 - Thực thi SP áp dụng voucher.
-
-#figure(image("demo/SP_AP_DUNG_VOUCHER-02.png"),
-  caption: [
-    SP\_AP\_DUNG\_VOUCHER - Áp Dụng Voucher
-  ]
-)
-
 - Đặt Phòng ID số 4 hiện đã có voucher áp dụng.
-
-#figure(image("demo/SP_AP_DUNG_VOUCHER-03.png"),
-  caption: [
-    SP\_AP\_DUNG\_VOUCHER - Kết quả
-  ]
-)
 
 ==== SP5 - Sử Dụng Dịch Vụ
 <sp5-su-dung-dich-vu>

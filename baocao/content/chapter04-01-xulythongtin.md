@@ -192,6 +192,10 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 **Ví dụ sử dụng**:
 
 - Đặt Phòng ID số 4 hiện chưa có voucher.
+- Thực thi SP áp dụng voucher.
+- Đặt Phòng ID số 4 hiện đã có voucher áp dụng.
+
+<!-- - Đặt Phòng ID số 4 hiện chưa có voucher.
 
 ![SP_AP_DUNG_VOUCHER - Trước khi thực hiện](demo/SP_AP_DUNG_VOUCHER-01.png)
 
@@ -201,7 +205,7 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 - Đặt Phòng ID số 4 hiện đã có voucher áp dụng.
 
-![SP_AP_DUNG_VOUCHER - Kết quả](demo/SP_AP_DUNG_VOUCHER-03.png)
+![SP_AP_DUNG_VOUCHER - Kết quả](demo/SP_AP_DUNG_VOUCHER-03.png) -->
 
 #### SP5 - Sử Dụng Dịch Vụ
 
