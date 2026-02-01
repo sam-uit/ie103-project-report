@@ -46,16 +46,16 @@
     ]
   },
   "section3": {
-    "title": "3. Cài đặt & Dữ liệu",
+    "title": "3. Cài Đặt & Dữ liệu",
     "dbSystem": "Microsoft SQL Server",
     "features": [
       {
-        "title": "Cấu trúc bảng",
+        "title": "Cấu Trúc Bảng",
         "desc": "Định nghĩa đầy đủ Primary Key, Foreign Key, và các ràng buộc toàn vẹn dữ liệu."
       },
       {
-        "title": "Dữ liệu mẫu",
-        "desc": "Hơn 1000 dòng dữ liệu mô phỏng thực tế bao gồm Lịch sử đặt phòng, Thanh toán."
+        "title": "Dữ Liệu Mẫu",
+        "desc": "Hơn 1000 dòng dữ liệu mô phỏng thực tế bao gồm Lịch Sử Đặt Phòng, Thanh Toán."
       },
       {
         "title": "Script Automation",
@@ -64,7 +64,7 @@
     ]
   },
   "section4": {
-    "title": "4. Quản lý thông tin",
+    "title": "4. Quản Lý Thông Tin",
     "stats": [
       {
         "label": "Stored Procedures",
@@ -89,15 +89,15 @@
     ],
     "security": [
       {
-        "label": "Bảo mật",
+        "label": "Bảo Mật",
         "desc": "Phân quyền RBAC, Mã hóa mật khẩu."
       },
       {
-        "label": "Sao lưu",
+        "label": "Sao Lưu",
         "desc": "Cơ chế Backup & Restore định kỳ."
       },
       {
-        "label": "Báo cáo",
+        "label": "Báo Cáo",
         "desc": "5 biểu mẫu báo cáo quản trị trực quan."
       }
     ]
