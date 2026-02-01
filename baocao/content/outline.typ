@@ -776,40 +776,44 @@ stroke: (
 #grid(
   columns: (50%, 50%),
   rows: auto,
-  grid.header(
-    [*Phần Đã Đạt Được*],
-    [*Phần Chưa Đạt Được*],
-  ),
-table(
-  columns: (100%),
-  inset: (top: 0.6em, bottom: 0.6em),
-  align: (left),
-  stroke: (
-      bottom: 0.5pt + gradient.linear(red, blue, green),
-      top: none,
-      left: none,
-      right: none,
-  ),
-  [- Chuẩn hóa quy trình nghiệp vụ.],
-  [- Thiết kế bộ khung CSDL.],
-  [- Xử lý thông tin tự động.],
-  [- Cơ chế bảo mật đa lớp.],
-  [- Sao lưu/Phục hồi.],
-),
-table(
-  columns: (100%),
-  inset: (top: 0.6em, bottom: 0.6em),
-  align: (left),
-  stroke: (
-      bottom: 0.5pt + gradient.linear(red, blue, green),
-      top: none,
-      left: none,
-      right: none,
-  ),
-  [- Giao diện cho người dùng cuối.],
-  [- Các kênh thanh toán thực tế.],
-  [- Quản lý tài khoản/người dùng.]
-)
+  // grid.header(
+  //   [=== Kết Quả Đạt Được],
+  //   [=== Hạn Chế],
+  // ),
+  [
+  === Kết Quả Đạt Được
+  #table(
+    columns: (100%),
+    inset: (top: 0.6em, bottom: 0.6em),
+    align: (left),
+    stroke: (
+        bottom: 0.5pt + gradient.linear(red, blue, green),
+        top: none,
+        left: none,
+        right: none,
+    ),
+    [- Chuẩn hóa quy trình nghiệp vụ.],
+    [- Thiết kế bộ khung CSDL.],
+    [- Xử lý thông tin tự động.],
+    [- Cơ chế bảo mật đa lớp.],
+    [- Sao lưu/Phục hồi.],
+  )],[
+  === Hạn Chế
+  #table(
+    columns: (100%),
+    inset: (top: 0.6em, bottom: 0.6em),
+    align: (left),
+    stroke: (
+        bottom: 0.5pt + gradient.linear(red, blue, green),
+        top: none,
+        left: none,
+        right: none,
+    ),
+    [- Giao diện cho người dùng cuối.],
+    [- Các kênh thanh toán thực tế.],
+    [- Quản lý tài khoản/người dùng.]
+    )
+  ]
 )
 
 // == Phần Chưa Đạt Được
