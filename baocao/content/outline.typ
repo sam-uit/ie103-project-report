@@ -326,123 +326,50 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
   ]
 )
 
-=== Stored Procedures - `SP_DATPHONG`
-<stored-procedures-sp-datphong>
+== Xử Lý Thông Tin - (TRG) Kiểm Tra Thời Gian
+<xu-ly-thong-tin-trg-kiem-tra-thoi-gian>
 
+#figure(image("demo/TRG-01-CHECKTIME.png"),
+  caption: [
+    TRG-01-CheckTime - Thời gian check-out lớn hơn check-in
+  ]
+)
 
-==== SP1: ApplyVoucher
-<sp1-applyvoucher>
+== Xử Lý Thông Tin - (TRG) Tính Đơn Giá
+<xu-ly-thong-tin-trg-tinh-don-gia>
 
-- #lorem(10)
-#pagebreak()
+#figure(image("demo/TRG-02-AUTOPRICE.png"),
+  caption: [
+    TRG-02-AutoPrice - Tự Động Tính Đơn Giá
+  ]
+)
 
-==== SP2: BookingRoom
-<sp2-bookingroom>
+== Xử Lý Thông Tin - (TRG) Đồng Bộ Trạng Thái
+<xu-ly-thong-tin-trg-dong-bo-trang-thai>
 
-- #lorem(10)
-#pagebreak()
+#figure(image("demo/TRG-03-SYNCSTATUS.png"),
+  caption: [
+    TRG-03-SyncStatus - Đồng bộ trạng thái Phòng
+  ]
+)
 
-==== SP3: Checkout
-<sp3-checkout>
+== Xử Lý Thông Tin - (TRG) Kiểm Tra Thanh Toán
+<xu-ly-thong-tin-trg-kiem-tra-thanh-toan>
 
-- #lorem(10)
-#pagebreak()
+#figure(image("demo/TRG-04-PAYMENT.png"),
+  caption: [
+    TRG-04-Payment - Kiểm Tra Khi Thanh Toán
+  ]
+)
 
-==== SP4: Payment
-<sp4-payment>
+== Xử Lý Thông Tin - (TRG) Kiểm Tra Hoàn Tiền
+<xu-ly-thong-tin-trg-kiem-tra-hoan-tien>
 
-- #lorem(10)
-#pagebreak()
-
-==== SP5: RegisterUser
-<sp5-registeruser>
-
-- #lorem(10)
-#pagebreak()
-
-==== SPx: Review Room
-<spx-review-room>
-
-- #lorem(10)
-#pagebreak()
-
-==== SPx: Service
-<spx-service>
-
-- #lorem(10)
-#pagebreak()
-
-=== Triggers (5)
-<triggers-5>
-
-
-==== TG1: AutoPrice
-<tg1-autoprice>
-
-- #lorem(10)
-#pagebreak()
-
-==== TG2: CheckTime
-<tg2-checktime>
-
-- #lorem(10)
-#pagebreak()
-
-==== TG3: Payment
-<tg3-payment>
-
-- #lorem(10)
-#pagebreak()
-
-==== TG4: Refund
-<tg4-refund>
-
-- #lorem(10)
-#pagebreak()
-
-==== TG5: SyncStatus
-<tg5-syncstatus>
-
-- #lorem(10)
-#pagebreak()
-
-=== Functions (3)
-<functions-3>
-
-
-==== F1: CheckRoomAvailable
-<f1-checkroomavailable>
-
-- #lorem(10)
-#pagebreak()
-
-==== F2: RevertCreateError
-<f2-revertcreateerror>
-
-- #lorem(10)
-#pagebreak()
-
-==== F3
-<f3>
-
-- #lorem(10)
-#pagebreak()
-
-=== Cursors (2)
-<cursors-2>
-
-
-==== C1: SyncRoomStatus
-<c1-syncroomstatus>
-
-- #lorem(10)
-#pagebreak()
-
-==== C2: UpdateStatusWhenOverdue
-<c2-updatestatuswhenoverdue>
-
-- #lorem(10)
-#pagebreak()
+#figure(image("demo/TRG-05-REFUND.png"),
+  caption: [
+    TRG-05-Refund - Kiểm Tra Hoàn Tiền
+  ]
+)
 
 == Trình Bày Thông Tin
 <trinh-bay-thong-tin>

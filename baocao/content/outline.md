@@ -305,132 +305,25 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
 
 ![SP_SU_DUNG_DICH_VU - Sử Dụng Dịch Vụ](demo/SP_SU_DUNG_DICH_VU-02.png)
 
-### Stored Procedures - `SP_DATPHONG`
+## Xử Lý Thông Tin - (TRG) Kiểm Tra Thời Gian
 
-#### SP1: ApplyVoucher
+![TRG-01-CheckTime - Thời gian check-out lớn hơn check-in](demo/TRG-01-CHECKTIME.png)
 
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
+## Xử Lý Thông Tin - (TRG) Tính Đơn Giá
 
-#### SP2: BookingRoom
+![TRG-02-AutoPrice - Tự Động Tính Đơn Giá](demo/TRG-02-AUTOPRICE.png)
 
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
+## Xử Lý Thông Tin - (TRG) Đồng Bộ Trạng Thái
 
-#### SP3: Checkout
+![TRG-03-SyncStatus - Đồng bộ trạng thái Phòng](demo/TRG-03-SYNCSTATUS.png)
 
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
+## Xử Lý Thông Tin - (TRG) Kiểm Tra Thanh Toán
 
-#### SP4: Payment
+![TRG-04-Payment - Kiểm Tra Khi Thanh Toán](demo/TRG-04-PAYMENT.png)
 
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
+## Xử Lý Thông Tin - (TRG) Kiểm Tra Hoàn Tiền
 
-#### SP5: RegisterUser
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-#### SPx: Review Room
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-#### SPx: Service
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-### Triggers (5)
-
-#### TG1: AutoPrice
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-#### TG2: CheckTime
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-#### TG3: Payment
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-#### TG4: Refund
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-#### TG5: SyncStatus
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-### Functions (3)
-
-#### F1: CheckRoomAvailable
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-#### F2: RevertCreateError
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-#### F3
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-### Cursors (2)
-
-#### C1: SyncRoomStatus
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
-
-#### C2: UpdateStatusWhenOverdue
-
-```{=typst}
-- #lorem(10)
-#pagebreak()
-```
+![TRG-05-Refund - Kiểm Tra Hoàn Tiền](demo/TRG-05-REFUND.png)
 
 ## Trình Bày Thông Tin
 
