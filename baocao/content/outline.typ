@@ -425,13 +425,25 @@ stroke: (
   ],
 )
 
-== Xử Lý Thông Tin - (SP) Đánh Giá
-<xu-ly-thong-tin-sp-danh-gia>
+== Xử Lý Thông Tin - (SP) Áp Dụng Voucher
+<xu-ly-thong-tin-sp-ap-dung-voucher>
 
-#figure(image("demo/SP_DANHGIA.png"),
-  caption: [
-    SP\_DANHGIA - Đánh Giá đơn Đặt Phòng.
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Áp dụng mã giảm giá (voucher) cho một đặt phòng và tự động tính toán số tiền giảm giá:
+    - Mỗi đặt phòng chỉ có thể áp dụng tối đa một mã giảm giá.
+    - Mã giảm giá phải còn hạn sử dụng và chưa hết số lượng.
+    - Tổng tiền đặt phòng phải đạt mức tối thiểu để áp dụng voucher.
+    - Chỉ áp dụng được khi đặt phòng ở trạng thái PENDING.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/SP_AP_DUNG_VOUCHER-02.png"),
+      caption: [(SP) Áp Dụng Voucher],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (SP) Áp Dụng Voucher
