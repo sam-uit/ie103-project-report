@@ -68,6 +68,22 @@ DATPHONG -- datphong_trang_thai {style: {stroke: "#4682B4"; stroke-width: 1}}
 # DATPHONG -- datphong_created_at
 
 DICHVU: {class: entity; label: "DICHVU"}
+dichvu_id: {class: attr_pri; label: "ID Dịch Vụ"}
+dichvu_ten_dich_vu: {class: attr; label: "Tên Dịch Vụ"}
+dichvu_don_gia: {class: attr; label: "Đơn Giá"}
+dichvu_don_vi_tinh: {class: attr; label: "Đơn Vị Tính"}
+dichvu_trang_thai: {class: attr; label: "Trạng Thái"}
+# dichvu_created_at: {class: attr; label: "created_at"}
+# dichvu_updated_at: {class: attr; label: "updated_at"}
+
+DICHVU -- dichvu_id {style: {stroke: "#0d95de"; stroke-width: 1}}
+DICHVU -- dichvu_ten_dich_vu {style: {stroke: "#4682B4"; stroke-width: 1}}
+DICHVU -- dichvu_don_gia {style: {stroke: "#4682B4"; stroke-width: 1}}
+DICHVU -- dichvu_don_vi_tinh {style: {stroke: "#4682B4"; stroke-width: 1}}
+DICHVU -- dichvu_trang_thai {style: {stroke: "#4682B4"; stroke-width: 1}}
+# DICHVU -- dichvu_created_at
+# DICHVU -- dichvu_updated_at
+
 LOAIPHONG: {class: entity; label: "LOAIPHONG"}
 PAYMENTS: {class: entity; label: "PAYMENTS"}
 PERMISSIONS: {class: entity; label: "PERMISSIONS"}
