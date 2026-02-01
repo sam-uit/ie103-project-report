@@ -190,6 +190,24 @@ ROLES -- roles_name: {style: {stroke: "#4682B4"; stroke-width: 1}}
 ROLES -- roles_description: {style: {stroke: "#4682B4"; stroke-width: 1}}
 
 USERS: {class: entity; label: "USERS"}
+users_id: {class: attr_pri; label: "ID Người Dùng"}
+users_email: {class: attr; label: "Email"}
+users_password_hash: {class: attr; label: "Mật Khẩu"}
+users_phone: {class: attr; label: "Số Điện Thoại"}
+users_full_name: {class: attr; label: "Tên Đầy Đủ"}
+users_status: {class: attr; label: "Trạng Thái"}
+# users_created_at: {class: attr; label: "created_at"; width: 110}
+# users_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+USERS -- users_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+USERS -- users_email: {style: {stroke: "#4682B4"; stroke-width: 1}}
+USERS -- users_password_hash: {style: {stroke: "#4682B4"; stroke-width: 1}}
+USERS -- users_full_name: {style: {stroke: "#4682B4"; stroke-width: 1}}
+USERS -- users_phone: {style: {stroke: "#4682B4"; stroke-width: 1}}
+USERS -- users_status: {style: {stroke: "#4682B4"; stroke-width: 1}}
+# USERS -- users_created_at
+# USERS -- users_updated_at
+
 VOUCHERS: {class: entity; label: "VOUCHERS"}
 
 # --- 3. RELATIONSHIPS ---
