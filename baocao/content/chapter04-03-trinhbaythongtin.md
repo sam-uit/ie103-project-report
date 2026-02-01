@@ -90,7 +90,7 @@ Mục đích:
 
 - Giúp đánh giá xem khách hàng thân thiết để tặng voucher hay là nâng hạng khách hàng lên Premium, VIP phục vụ cho CSKH, CRM.
 
-Các bước thực hiện:
+<!-- Các bước thực hiện:
 
 1. Tạo View lấy danh sách Khách Hàng VIP (`V_REPORT_USER_VIP_2024`).
 2. Kết nối Tableu vào database.
@@ -109,9 +109,9 @@ Các bước thực hiện:
     - Chọn Analysis $\to$ Total $\to$ show grands total và kéo về trái để hiển thị cột tổng.
 6. Màn hình design và preview dashboard.
 
-- Ta chọn kích cỡ A4 lanscape để in cho đẹp và đây đủ, chọn fit -> entrie view để hiển thị hết width height.
+- Ta chọn kích cỡ A4 lanscape để in cho đẹp và đây đủ, chọn fit -> entrie view để hiển thị hết width height. -->
 
-![Báo Cáo 02 - Màn Hình Design.](./images/rpt2-10.png)
+<!-- ![Báo Cáo 02 - Màn Hình Design.](./images/rpt2-10.png) -->
 
 ![Báo Cáo 02 - Màn Hình Preview.](./images/rpt2-11.png)
 
