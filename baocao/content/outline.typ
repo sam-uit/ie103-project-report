@@ -642,7 +642,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/C-UpdateStatusWhenOverdue02.png"),
+      #figure(image("demo/C-UpdateStatusWhenOverdue-slide.png"),
       caption: [(CR) Hoàn Tất Đặt Phòng],
       supplement: "Ảnh"
       )]
@@ -661,7 +661,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/C-SyncRoomStatus04.png"),
+      #figure(image("demo/C-SyncRoomStatus-slide.png"),
       caption: [(CR) Đồng Bộ Trạng Thái],
       supplement: "Ảnh"
       )]
