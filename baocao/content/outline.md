@@ -285,23 +285,23 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
 
 # QUẢN LÝ THÔNG TIN
 
-## Xử Lý Thông Tin - Đặt Phòng
+## Xử Lý Thông Tin - (SP) Đặt Phòng
 
 ![SP_DATPHONG - Tạo mới đơn Đặt Phòng.](demo/SP_DATPHONG.png)
 
-## Xử Lý Thông Tin - Thanh Toán
+## Xử Lý Thông Tin - (SP) Thanh Toán
 
 ![SP_THANHTOAN - Hoàn thành Thanh Toán.](demo/SP_THANHTOAN-03.png)
 
-## Xử Lý Thông Tin - Đánh Giá
+## Xử Lý Thông Tin - (SP) Đánh Giá
 
 ![SP_DANHGIA - Đánh Giá đơn Đặt Phòng.](demo/SP_DANHGIA.png)
 
-## Xử Lý Thông Tin - Áp Dụng Voucher
+## Xử Lý Thông Tin - (SP) Áp Dụng Voucher
 
 ![SP_AP_DUNG_VOUCHER - Áp Dụng Voucher](demo/SP_AP_DUNG_VOUCHER-02.png)
 
-## Xử Lý Thông Tin - Sử Dụng Dịch Vụ
+## Xử Lý Thông Tin - (SP) Sử Dụng Dịch Vụ
 
 ![SP_SU_DUNG_DICH_VU - Sử Dụng Dịch Vụ](demo/SP_SU_DUNG_DICH_VU-02.png)
 

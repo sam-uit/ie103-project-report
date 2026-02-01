@@ -281,8 +281,8 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
 <quan-ly-thong-tin>
 
 
-== Xử Lý Thông Tin - Đặt Phòng
-<xu-ly-thong-tin-dat-phong>
+== Xử Lý Thông Tin - (SP) Đặt Phòng
+<xu-ly-thong-tin-sp-dat-phong>
 
 #figure(image("demo/SP_DATPHONG.png"),
   caption: [
@@ -290,8 +290,8 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
   ]
 )
 
-== Xử Lý Thông Tin - Thanh Toán
-<xu-ly-thong-tin-thanh-toan>
+== Xử Lý Thông Tin - (SP) Thanh Toán
+<xu-ly-thong-tin-sp-thanh-toan>
 
 #figure(image("demo/SP_THANHTOAN-03.png"),
   caption: [
@@ -299,8 +299,8 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
   ]
 )
 
-== Xử Lý Thông Tin - Đánh Giá
-<xu-ly-thong-tin-danh-gia>
+== Xử Lý Thông Tin - (SP) Đánh Giá
+<xu-ly-thong-tin-sp-danh-gia>
 
 #figure(image("demo/SP_DANHGIA.png"),
   caption: [
@@ -308,8 +308,8 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
   ]
 )
 
-== Xử Lý Thông Tin - Áp Dụng Voucher
-<xu-ly-thong-tin-ap-dung-voucher>
+== Xử Lý Thông Tin - (SP) Áp Dụng Voucher
+<xu-ly-thong-tin-sp-ap-dung-voucher>
 
 #figure(image("demo/SP_AP_DUNG_VOUCHER-02.png"),
   caption: [
@@ -317,8 +317,8 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
   ]
 )
 
-== Xử Lý Thông Tin - Sử Dụng Dịch Vụ
-<xu-ly-thong-tin-su-dung-dich-vu>
+== Xử Lý Thông Tin - (SP) Sử Dụng Dịch Vụ
+<xu-ly-thong-tin-sp-su-dung-dich-vu>
 
 #figure(image("demo/SP_SU_DUNG_DICH_VU-02.png"),
   caption: [
