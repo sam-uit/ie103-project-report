@@ -240,32 +240,32 @@ Ví dụ 2: Trong thủ tục Hủy Đặt Phòng (giả sử), hệ thống b�
 **Export:**
 
 1. Chuột phải vào Database cần Export, chọn *Task* > *Export Data-Tier Application...*.
-
-![Export - 01 - Task > Export Data-Tier Application.](images/export-01.jpg.jpeg)
-
 2. Chọn *Next* ở trang *Introduction*.
+3. Ở trang *Export Settings*, mục *Save to local disk*, chỉ định đường dẫn lưu file `.bacpac`.
+4. Ở trang *Export Settings*, *Next* và chọn các thành phần (*tables*) cần export.
+5. Ở trang *Summary*, xác nhận thông tin và nhấn *Finish*.
+6. Kiểm tra tiến độ và kết quả ở trang *Results*.
+7. Kiểm tra kết quả và chắc chắn file `.bacpac` đã được tạo thành công.
+
+<!-- ![Export - 01 - Task > Export Data-Tier Application.](images/export-01.jpg.jpeg)
+
 
 ![Export - 02 - Introduction.](images/export-02.jpg.jpeg)
 
-3. Ở trang *Export Settings*, mục *Save to local disk*, chỉ định đường dẫn lưu file `.bacpac`.
 
 ![Export - 03 - Export Settings.](images/export-03.jpg.jpeg)
 
-4. Ở trang *Export Settings*, *Next* và chọn các thành phần (*tables*) cần export.
 
 ![Export - 04 - Export Settings.](images/export-04.jpg.jpeg)
 
-5. Ở trang *Summary*, xác nhận thông tin và nhấn *Finish*.
 
 ![Export - 05 - Summary.](images/export-05.jpg.jpeg)
 
-6. Kiểm tra tiến độ và kết quả ở trang *Results*.
 
 ![Export - 06 - Results.](images/export-06.jpg.jpeg)
 
-7. Kiểm tra kết quả và chắc chắn file `.bacpac` đã được tạo thành công.
 
-![Export - 07 - Kiểm Tra.](images/export-07.jpg.jpeg)
+![Export - 07 - Kiểm Tra.](images/export-07.jpg.jpeg) -->
 
 **Import:**
 

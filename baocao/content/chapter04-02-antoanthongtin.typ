@@ -175,78 +175,12 @@ Ví dụ 2: Trong thủ tục Hủy Đặt Phòng (giả sử), hệ thống b�
 #strong[Export:]
 
 + Chuột phải vào Database cần Export, chọn #emph[Task] \> #emph[Export Data-Tier Application…].
-
-#figure(image("images/export-01.jpg.jpeg"),
-  caption: [
-    Export - 01 - Task \> Export Data-Tier Application.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 2)
 + Chọn #emph[Next] ở trang #emph[Introduction].
-]
-
-#figure(image("images/export-02.jpg.jpeg"),
-  caption: [
-    Export - 02 - Introduction.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 3)
 + Ở trang #emph[Export Settings], mục #emph[Save to local disk], chỉ định đường dẫn lưu file `.bacpac`.
-]
-
-#figure(image("images/export-03.jpg.jpeg"),
-  caption: [
-    Export - 03 - Export Settings.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 4)
 + Ở trang #emph[Export Settings], #emph[Next] và chọn các thành phần (#emph[tables]) cần export.
-]
-
-#figure(image("images/export-04.jpg.jpeg"),
-  caption: [
-    Export - 04 - Export Settings.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 5)
 + Ở trang #emph[Summary], xác nhận thông tin và nhấn #emph[Finish].
-]
-
-#figure(image("images/export-05.jpg.jpeg"),
-  caption: [
-    Export - 05 - Summary.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 6)
 + Kiểm tra tiến độ và kết quả ở trang #emph[Results].
-]
-
-#figure(image("images/export-06.jpg.jpeg"),
-  caption: [
-    Export - 06 - Results.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 7)
 + Kiểm tra kết quả và chắc chắn file `.bacpac` đã được tạo thành công.
-]
-
-#figure(image("images/export-07.jpg.jpeg"),
-  caption: [
-    Export - 07 - Kiểm Tra.
-  ]
-)
 
 #strong[Import:]
 
