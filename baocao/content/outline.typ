@@ -472,7 +472,7 @@ stroke: (
 #grid(
   columns: (40%, 60%),
   rows: (auto),
-  [Kiểm tra thời gian check-out lớn hơn check-in: 
+  [Kiểm tra thời gian check-out lớn hơn check-in:
     - Đảm bảo thời gian check-out lớn hơn check-in.
     - Ngăn chặn dữ liệu không hợp lệ được lưu vào cơ sở dữ liệu.
     - Báo lỗi rõ ràng cho người dùng khi nhập sai.
@@ -492,7 +492,7 @@ stroke: (
 #grid(
   columns: (40%, 60%),
   rows: (auto),
-  [Tự động tính đơn giá khi đặt phòng: 
+  [Tự động tính đơn giá khi đặt phòng:
     - Chỉ cho phép đặt phòng có trạng thái AVAILABLE.
     - Lấy giá từ bảng LOAIPHONG và tính đơn giá.
     - Đảm bảo tính nhất quán của dữ liệu.
@@ -512,7 +512,7 @@ stroke: (
 #grid(
   columns: (40%, 60%),
   rows: (auto),
-  [Đồng bộ trạng thái phòng khi có thay đổi trong chi tiết đặt phòng: 
+  [Đồng bộ trạng thái phòng khi có thay đổi trong chi tiết đặt phòng:
     - Phòng được đặt $\to$ Cần chuyển trạng thái sang OCCUPIED.
     - Phòng bị hủy đặt $\to$ Cần trả về trạng thái AVAILABLE.
     - Đảm bảo đồng bộ thời gian thực.
@@ -529,10 +529,21 @@ stroke: (
 == Xử Lý Thông Tin - (TRG) Kiểm Tra Thanh Toán
 <xu-ly-thong-tin-trg-kiem-tra-thanh-toan>
 
-#figure(image("demo/TRG-04-PAYMENT.png"),
-  caption: [
-    TRG-04-Payment - Kiểm Tra Khi Thanh Toán
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Đảm bảo tính chính xác của số tiền thanh toán:
+    - Số tiền thanh toán phải bằng tổng đơn giá các phòng đã đặt.
+    - Tự động chuyển trạng thái đặt phòng sang PAID.
+    - Không cho thanh toán sai số tiền.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/TRG-04-PAYMENT.png"),
+      caption: [(TRG) Kiểm Tra Thanh Toán],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (TRG) Kiểm Tra Hoàn Tiền
