@@ -771,20 +771,20 @@ stroke: (
 
 #show table.cell: set text(size: 1.5em, weight: "light", font: body-font)
 #table(
-columns: (100%),
-inset: (top: 0.6em, bottom: 0.6em),
-align: (left),
-stroke: (
-    bottom: 0.5pt + gradient.linear(red, blue, green),
-    top: none,
-    left: none,
-    right: none,
-),
-[- Chuẩn hóa quy trình nghiệp vụ.],
-[- Thiết kế bộ khung CSDL.],
-[- Xử lý thông tin tự động.],
-[- Cơ chế bảo mật đa lớp.],
-[- Khả năng sẵn sàng, sao lưu/dự phòng.],
+  columns: (100%),
+  inset: (top: 0.6em, bottom: 0.6em),
+  align: (left),
+  stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+  ),
+  [- Chuẩn hóa quy trình nghiệp vụ.],
+  [- Thiết kế bộ khung CSDL.],
+  [- Xử lý thông tin tự động.],
+  [- Cơ chế bảo mật đa lớp.],
+  [- Khả năng sẵn sàng, sao lưu/dự phòng.],
 )
 
 == Phần Chưa Đạt Được
@@ -792,27 +792,51 @@ stroke: (
 
 // #show table.cell: set text(size: 1.5em, weight: "light", font: body-font)
 #table(
-columns: (100%),
-inset: (top: 0.6em, bottom: 0.6em),
-align: (left),
-stroke: (
-    bottom: 0.5pt + gradient.linear(red, blue, green),
-    top: none,
-    left: none,
-    right: none,
-),
-[- Giao diện cho người dùng cuối.],
-[- Các kênh thanh toán thực thế.],
-[- Quản lý vòng đời tài khoản/người dùng.]
+  columns: (100%),
+  inset: (top: 0.6em, bottom: 0.6em),
+  align: (left),
+  stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+  ),
+  [- Giao diện cho người dùng cuối.],
+  [- Các kênh thanh toán thực thế.],
+  [- Quản lý vòng đời tài khoản/người dùng.]
 )
 
 == Mở Rộng & Nâng Cấp
 <mo-rong-nang-cap>
 
-- #strong[Web App]:
-  - #emph[Nhân Viên] (#emph[Bộ Phận Quản Lý/Lễ Tân])
-  - Thao tác nghiệp vụ nhanh chóng và chính xác.
-- #strong[Mobile App]:
-  - #emph[Khách Hàng] (End User)
-  - #emph["điểm chạm số"].
-  - Tìm phòng, đặt phòng và theo dõi lịch sử tích điểm ngay trên điện thoại.
+=== Web App
+
+#table(
+  columns: (100%),
+  inset: (top: 0.6em, bottom: 0.6em),
+  align: (left),
+  stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+  ),
+  [- #emph[Nhân Viên] (#emph[Bộ Phận Quản Lý/Lễ Tân])],
+  [- Thao tác nghiệp vụ nhanh chóng và chính xác.],
+)
+
+=== Mobile App
+#table(
+  columns: (100%),
+  inset: (top: 0.6em, bottom: 0.6em),
+  align: (left),
+  stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+  ),
+  [- #emph[Khách Hàng] (End User)],
+  [- #emph["điểm chạm số"].],
+  [- Tìm phòng, đặt phòng và tích điểm ngay trên điện thoại.],
+)
