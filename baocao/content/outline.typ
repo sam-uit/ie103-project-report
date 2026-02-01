@@ -416,14 +416,50 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
   ]
 )
 
-== Trình Bày Thông Tin
-<trinh-bay-thong-tin>
+== Trình Bày Thông Tin - Thống Kê Doanh Thu
+<trinh-bay-thong-tin-thong-ke-doanh-thu>
 
+#figure(image("./images/rpt1-7.png"),
+  caption: [
+    Báo Cáo 01 - Thống Kê Doanh Thu.
+  ]
+)
 
-=== Report
-<report>
+== Trình Bày Thông Tin - Top Khách Hàng
+<trinh-bay-thong-tin-top-khach-hang>
 
-- #lorem(10)
+#figure(image("./images/rpt2-11.png"),
+  caption: [
+    Báo Cáo 02 - Top Khách Hàng Chi Tiêu.
+  ]
+)
+
+== Trình Bày Thông Tin - Doanh Thu Dịch Vụ
+<trinh-bay-thong-tin-doanh-thu-dich-vu>
+
+#figure(image("./images/rpt3-9.png"),
+  caption: [
+    Báo Cáo 03 - Thống Kê Doanh Thu Dịch Vụ.
+  ]
+)
+
+== Trình Bày Thông Tin - Top Voucher
+<trinh-bay-thong-tin-top-voucher>
+
+#figure(image("./images/rpt4-6.png"),
+  caption: [
+    Báo Cáo 04 - Thống Kê Top Voucher.
+  ]
+)
+
+== Trình Bày Thông Tin - Top Loại Phòng
+<trinh-bay-thong-tin-top-loai-phong>
+
+#figure(image("./images/rpt5-6.png"),
+  caption: [
+    Báo Cáo 05 - Top Loại Phòng Được Yêu Thích Nhất.
+  ]
+)
 
 = KẾT LUẬN
 <ket-luan>

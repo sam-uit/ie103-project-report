@@ -345,13 +345,25 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
 
 ![Tự Động Đồng Bộ Trạng Thái Phòng](demo/C-SyncRoomStatus04.png)
 
-## Trình Bày Thông Tin
+## Trình Bày Thông Tin - Thống Kê Doanh Thu
 
-### Report
+![Báo Cáo 01 - Thống Kê Doanh Thu.](./images/rpt1-7.png)
 
-```{=typst}
-- #lorem(10)
-```
+## Trình Bày Thông Tin - Top Khách Hàng
+
+![Báo Cáo 02 - Top Khách Hàng Chi Tiêu.](./images/rpt2-11.png)
+
+## Trình Bày Thông Tin - Doanh Thu Dịch Vụ
+
+![Báo Cáo 03 - Thống Kê Doanh Thu Dịch Vụ.](./images/rpt3-9.png)
+
+## Trình Bày Thông Tin - Top Voucher
+
+![Báo Cáo 04 - Thống Kê Top Voucher.](./images/rpt4-6.png)
+
+## Trình Bày Thông Tin - Top Loại Phòng
+
+![Báo Cáo 05 - Top Loại Phòng Được Yêu Thích Nhất.](./images/rpt5-6.png)
 
 # KẾT LUẬN
 
