@@ -99,7 +99,9 @@ stroke: (
 
 ### Đặt Vấn Đề
 
-Các Doanh Nghiệp vừa và nhỏ trong ngành Khách Sạn, Nhà Nghỉ.
+```{=typst}
+#align(center)[Các Doanh Nghiệp vừa và nhỏ trong ngành Khách Sạn, Nhà Nghỉ.]
+```
 
 ```{=typst}
 #table(
@@ -121,7 +123,9 @@ stroke: (
 
 ### Giới Thiệu Đề Tài
 
-Hệ Thống Quản Lý Đặt Phòng (*Booking Management System*).
+```{=typst}
+#align(center)[*Hệ Thống Quản Lý Đặt Phòng* #emph[(Booking Management System)].]
+```
 
 ```{=typst}
 #table(
