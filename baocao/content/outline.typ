@@ -805,7 +805,7 @@ stroke: (
       right: none,
   ),
   [- Giao diện cho người dùng cuối.],
-  [- Các kênh thanh toán thực thế.],
+  [- Các kênh thanh toán thực tế.],
   [- Quản lý vòng đời tài khoản/người dùng.]
 )
 
