@@ -170,7 +170,7 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 - Sau khi hoàn thành thanh toán, và trạng thái đơn Đặt Phòng là `COMPLETED`, người dùng có thể thực hiện đánh giá.
 
-![SP_DANHGIA - Đánh Giá đơn Đặt Phòng.](demo/SP_DANHGIA.png)
+<!-- ![SP_DANHGIA - Đánh Giá đơn Đặt Phòng.](demo/SP_DANHGIA.png) -->
 
 #### SP4 - Áp Dụng Voucher
 
