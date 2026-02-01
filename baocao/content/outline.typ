@@ -166,7 +166,6 @@ stroke: (
 == Chức Năng Nghiệp Vụ
 <chuc-nang-nghiep-vu>
 
-#show table.cell: set text(size: 0.9em, weight: "light", font: body-font)
 #table(
   columns: (10%, 90%),
     inset: (top: 0.4em, bottom: 0.4em),
@@ -188,7 +187,6 @@ stroke: (
     [], [- Hệ thống khuyến mãi & mã giảm giá (Vouchers).],
     [], [- Quản lý dịch vụ đi kèm như ăn sáng, giặt ủi, đưa đón sân bay.],
     [], [- Hệ thống đánh giá & phản hồi sau khi hoàn tất thanh toán.],
-    [], [- Thanh toán trực tuyến (mô phỏng).],
 )
 
 == Mô Hình ER (Quan Niệm)
