@@ -11,16 +11,6 @@ CREATE TABLE [dbo].[CT_DATPHONG] (
 );
 GO
 
-ALTER TABLE [dbo].[CT_DATPHONG]
-    ADD CONSTRAINT [UQ_CT_DATPHONG] UNIQUE NONCLUSTERED ([datphong_id] ASC, [phong_id] ASC);
-GO
-
-ALTER TABLE [dbo].[CT_DATPHONG]
-    ADD CONSTRAINT [CK_CT_DATPHONG_DON_GIA] CHECK ([don_gia]>(0));
-GO
-
-
-
 -- Tạo trigger mới
 CREATE TRIGGER dbo.trg_CTDP_Insert_ValidatePrice
 ON dbo.CT_DATPHONG

@@ -17,16 +17,6 @@ CREATE TABLE [dbo].[REFUNDS] (
 );
 GO
 
-ALTER TABLE [dbo].[REFUNDS]
-    ADD CONSTRAINT [CK_REFUNDS_SO_TIEN_HOAN] CHECK ([so_tien_hoan]>(0));
-GO
-
-ALTER TABLE [dbo].[REFUNDS]
-    ADD CONSTRAINT [CK_REFUNDS_TRANG_THAI] CHECK ([trang_thai]='COMPLETED' OR [trang_thai]='REJECTED' OR [trang_thai]='APPROVED' OR [trang_thai]='REQUESTED');
-GO
-
-
-
 -- Tạo trigger mới
 CREATE TRIGGER dbo.trg_REFUNDS_Insert_CheckAndUpdate
 ON dbo.REFUNDS

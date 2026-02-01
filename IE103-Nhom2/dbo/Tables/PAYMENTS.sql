@@ -15,20 +15,6 @@ CREATE TABLE [dbo].[PAYMENTS] (
 );
 GO
 
-ALTER TABLE [dbo].[PAYMENTS]
-    ADD CONSTRAINT [CK_PAYMENTS_PHUONG_THUC] CHECK ([phuong_thuc]='ONLINE' OR [phuong_thuc]='THE' OR [phuong_thuc]='CHUYEN_KHOAN' OR [phuong_thuc]='TIEN_MAT' OR [phuong_thuc] IS NULL);
-GO
-
-ALTER TABLE [dbo].[PAYMENTS]
-    ADD CONSTRAINT [CK_PAYMENTS_SO_TIEN] CHECK ([so_tien]>(0));
-GO
-
-ALTER TABLE [dbo].[PAYMENTS]
-    ADD CONSTRAINT [CK_PAYMENTS_TRANG_THAI] CHECK ([trang_thai]='REFUNDED' OR [trang_thai]='UNPAID' OR [trang_thai]='PAID' OR [trang_thai]='CANCELLED' OR [trang_thai]='FAILED' OR [trang_thai]='SUCCESS' OR [trang_thai]='PENDING');
-GO
-
-
-
 -- Tạo trigger mới
 CREATE TRIGGER dbo.trg_PAYMENTS_Insert_CheckAndPaid
 ON dbo.PAYMENTS
