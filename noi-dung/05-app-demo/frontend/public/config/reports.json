@@ -72,6 +72,15 @@
         "date": "Live",
         "thumbnailUrl": "thumbnails/slides-cover.png",
         "url": "files/Slides_Nhom2.pdf"
+      },
+      {
+        "id": "f7",
+        "name": "Video Demo",
+        "type": "mp4",
+        "size": "Cloud",
+        "date": "Live",
+        "thumbnailUrl": "thumbnails/SP_SU_DUNG_DICH_VU-01.png",
+        "url": "https://drive.google.com/file/d/1M29eL6PYr0rEj6oygfC1UhyogXYvmG8b/view?usp=drive_link"
       }
     ]
   }
