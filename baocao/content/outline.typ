@@ -284,38 +284,78 @@ stroke: (
 == Triển Khai
 <trien-khai>
 
-- Hệ Quản Trị CSDL: Microsoft SQL Server 2019.
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (bottom: 0.6em),
+        align: (left),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [- Hệ Quản Trị CSDL: Microsoft SQL Server 2019.]
+    )
+]
 
 === Khởi Tạo Database
 <khoi-tao-database>
 
-- Khởi tạo: Database, tên `ROOM_BOOKING_SYSTEM`.
-
-#v(4em)
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (bottom: 0.6em),
+        align: (left),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [- Khởi tạo: Database, tên `ROOM_BOOKING_SYSTEM`.]
+    )
+]
+#v(2em)
 #align(center)[
 #show raw: set text(size: 1em, weight: "light", font: "Iosevka")
-#figure(
-    raw(read("code/slide-create-database.sql"), lang: "sql", block: true),
-  caption: [Khởi Tạo Database: `ROOM_BOOKING_SYSTEM`],
-  supplement: "Mã Nguồn"
-)
+#raw(read("code/slide-create-database.sql"), lang: "sql", block: true)
 ]
-
-#pagebreak()
 
 === Khởi Tạo Các Bảng
 <khoi-tao-cac-bang>
 
-- Khai báo và khởi tạo bảng: tổng 16.
-
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (bottom: 0.6em),
+        align: (left),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [- Khai báo và khởi tạo bảng: tổng 16.]
+    )
+]
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (bottom: 0.6em),
+        align: (center),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [Ví dụ về *Khởi Tạo Bảng*: ADMINS.]
+    )
+]
 #align(center + bottom)[
-Ví dụ về *Khởi Tạo Bảng*: ADMINS.
-#show raw: set text(size: 1em, weight: "light", font: "Iosevka")
-#figure(
-    raw(read("code/slide-create-table-admins.sql"), lang: "sql", block: true),
-  caption: [Khởi Tạo CSDL: ADMINS],
-  supplement: "Mã Nguồn"
-)
+#show raw: set text(size: 0.9em, weight: "light", font: "Iosevka")
+#raw(read("code/slide-create-table-admins.sql"), lang: "sql", block: true)
 ]
 
 = QUẢN LÝ THÔNG TIN
