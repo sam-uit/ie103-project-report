@@ -19,6 +19,12 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Tên Đầy Đủ
 - Trạng Thái (Hoạt Động, Không Hoạt Động).
 
+#figure(image("diagrams/ch02-concept-admins.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: ADMINS
+  ]
+)
+
 ==== DATPHONG (Đặt Phòng)
 <datphong-dat-phong>
 
@@ -26,6 +32,12 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Ngày Nhận Phòng
 - Ngày Trả Phòng
 - Trạng Thái (Đang Chờ, Đã Xác Nhận, Đã Hủy, Đã Hoàn Thành).
+
+#figure(image("diagrams/ch02-concept-datphong.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: DATPHONG
+  ]
+)
 
 ==== DICHVU (Dịch Vụ)
 <dichvu-dich-vu>
@@ -36,6 +48,12 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Đơn Vị Tính (Mặc định 'Lần', có thể là 'Kg', 'Giờ', …)
 - Trạng Thái (Hoạt Động, Không Hoạt Động).
 
+#figure(image("diagrams/ch02-concept-dichvu.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: DICHVU
+  ]
+)
+
 ==== LOAIPHONG (Loại Phòng)
 <loaiphong-loai-phong>
 
@@ -45,6 +63,12 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Mô Tả
 - Sức Chứa (Mặc định là 2).
 
+#figure(image("diagrams/ch02-concept-loaiphong.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: LOAIPHONG
+  ]
+)
+
 ==== PAYMENTS (Thanh Toán)
 <payments-thanh-toan>
 
@@ -53,12 +77,24 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Phương Thức Thanh Toán (Tiền Mặt, Chuyển Khoản, Thẻ, Online)
 - Trạng Thái (Đang Chờ, Thành Công, Gặp Lỗi, Đã Hủy, Đã Thanh Toán, Chưa Thanh Toán, Đã Hoàn Trả).
 
+#figure(image("diagrams/ch02-concept-payments.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: PAYMENTS
+  ]
+)
+
 ==== PERMISSIONS (Quyền Hạn)
 <permissions-quyen-han>
 
 - ID Quyền Hạn (Thuộc tính định danh, duy nhất).
 - Mã Quyền Hạn
 - Miêu Tả
+
+#figure(image("diagrams/ch02-concept-permissions.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: PERMISSIONS
+  ]
+)
 
 ==== PHONG (Phòng)
 <phong-phong>
@@ -67,6 +103,12 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Số Phòng (101, 102, …).
 - Trạng Thái (Trống, Đang Ở, Bảo Trì, Đã Đặt).
 
+#figure(image("diagrams/ch02-concept-phong.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: PHONG
+  ]
+)
+
 ==== REFUNDS (Hoàn Tiền)
 <refunds-hoan-tien>
 
@@ -74,6 +116,12 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Số Tiền Hoàn
 - Trạng Thái (Đã Yêu Cầu, Đã Duyệt, Từ Chối, Đã Hoàn Thành).
 - Lý Do
+
+#figure(image("diagrams/ch02-concept-refunds.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: REFUNDS
+  ]
+)
 
 ==== REVIEWS (Đánh Giá)
 <reviews-danh-gia>
@@ -84,6 +132,12 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Ngày Đánh Giá
 - Trạng Thái (Đang Chờ, Đã Duyệt, Từ Chối).
 
+#figure(image("diagrams/ch02-concept-reviews.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: REVIEWS
+  ]
+)
+
 ==== ROLES (Vai Trò)
 <roles-vai-tro>
 
@@ -91,6 +145,12 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Mã Vai Trò
 - Tên Vai Trò
 - Miêu Tả
+
+#figure(image("diagrams/ch02-concept-roles.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: ROLES
+  ]
+)
 
 ==== USERS (Người Dùng)
 <users-nguoi-dung>
@@ -101,6 +161,12 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Số Điện Thoại
 - Tên Đầy Đủ
 - Trạng Thái (Hoạt Động, Không Hoạt Động).
+
+#figure(image("diagrams/ch02-concept-users.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: USERS
+  ]
+)
 
 ==== VOUCHERS (Mã Giảm Giá)
 <vouchers-ma-giam-gia>
@@ -113,6 +179,12 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - Số Tiền Tối Đa
 - Số Lần Đã Dùng
 - Trạng Thái (Hoạt Động, Không Hoạt Động).
+
+#figure(image("diagrams/ch02-concept-vouchers.svg"),
+  caption: [
+    Thực Thể và Thuộc Tính: VOUCHERS
+  ]
+)
 
 === Các Mối Quan Hệ
 <cac-moi-quan-he>
