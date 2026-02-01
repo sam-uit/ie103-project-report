@@ -509,10 +509,21 @@ stroke: (
 == Xử Lý Thông Tin - (TRG) Đồng Bộ Trạng Thái
 <xu-ly-thong-tin-trg-dong-bo-trang-thai>
 
-#figure(image("demo/TRG-03-SYNCSTATUS.png"),
-  caption: [
-    TRG-03-SyncStatus - Đồng bộ trạng thái Phòng
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Đồng bộ trạng thái phòng khi có thay đổi trong chi tiết đặt phòng: 
+    - Phòng được đặt $\to$ Cần chuyển trạng thái sang OCCUPIED.
+    - Phòng bị hủy đặt $\to$ Cần trả về trạng thái AVAILABLE.
+    - Đảm bảo đồng bộ thời gian thực.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/TRG-03-SYNCSTATUS.png"),
+      caption: [(TRG) Đồng Bộ Trạng Thái],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (TRG) Kiểm Tra Thanh Toán
