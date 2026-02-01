@@ -145,13 +145,44 @@ stroke: (
 )
 ```
 
-
 # PHÂN TÍCH VÀ THIẾT KẾ
 
 ## Nghiệp Vụ
 
 ```{=typst}
-- #lorem(10)
+  #show table.cell: current_cell => {
+    if current_cell.x in (0,) {
+      text(
+        weight: "light",
+        fill: gray,
+      )[#current_cell]
+    } else {
+      current_cell
+    }
+  }
+#table(
+  columns: (10%, 90%),
+    inset: (top: 0.4em, bottom: 0.4em),
+    align: (right, left),
+    stroke: (
+        bottom: 0.5pt + gradient.linear(red, blue, green),
+        top: none,
+        left: none,
+        right: none,
+    ),
+    [], [- Quản lý phòng và loại phòng (BMS).],
+    [], [- Quản lý khách hàng (BMS).],
+    [], [- Quản lý đặt phòng (BMS).],
+    [], [- Kiểm tra phòng trống (BMS & Khách Hàng).],
+    [], [- Đặt phòng và hủy đặt phòng (Khách Hàng).],
+    [], [- Hoàn tiền và hủy giao dịch theo chính sách.],
+    [], [- Quản lý và phân quyền người dùng (Admin / Staff / End User).],
+    [], [- Hiển thị trạng thái đặt phòng và thanh toán (Khách Hàng).],
+    [], [- Hệ thống khuyến mãi & mã giảm giá (Vouchers).],
+    [], [- Quản lý dịch vụ đi kèm như ăn sáng, giặt ủi, đưa đón sân bay.],
+    [], [- Hệ thống đánh giá & phản hồi sau khi hoàn tất thanh toán.],
+    [], [- Thanh toán trực tuyến (mô phỏng).],
+)
 ```
 
 ## Mô Hình Quan Niệm
