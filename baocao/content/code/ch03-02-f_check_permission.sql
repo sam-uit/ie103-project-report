@@ -1,13 +1,3 @@
-CREATE OR ALTER FUNCTION F_CHECK_PERMISSION
-(
-    @AdminId INT,
-    @PermissionCode NVARCHAR(100)
-)
-RETURNS BIT
-AS
-BEGIN
-    DECLARE @IsAllowed BIT = 0;
-
     -- Kiểm tra sự tồn tại của quyền trong chuỗi liên kết:
     -- Admin -> Admin_Roles -> Roles -> Role_Permissions -> Permissions
     IF EXISTS (
@@ -20,7 +10,3 @@ BEGIN
           AND p.code = @PermissionCode
     )
     SET @IsAllowed = 1;
-
-    RETURN @IsAllowed;
-END;
-GO
