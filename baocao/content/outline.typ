@@ -469,19 +469,41 @@ stroke: (
 == Xử Lý Thông Tin - (TRG) Kiểm Tra Thời Gian
 <xu-ly-thong-tin-trg-kiem-tra-thoi-gian>
 
-#figure(image("demo/TRG-01-CHECKTIME.png"),
-  caption: [
-    TRG-01-CheckTime - Thời gian check-out lớn hơn check-in
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Kiểm tra thời gian check-out lớn hơn check-in: 
+    - Đảm bảo thời gian check-out lớn hơn check-in.
+    - Ngăn chặn dữ liệu không hợp lệ được lưu vào cơ sở dữ liệu.
+    - Báo lỗi rõ ràng cho người dùng khi nhập sai.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/TRG-01-CHECKTIME.png"),
+      caption: [(TRG) Kiểm Tra Thời Gian],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (TRG) Tính Đơn Giá
 <xu-ly-thong-tin-trg-tinh-don-gia>
 
-#figure(image("demo/TRG-02-AUTOPRICE.png"),
-  caption: [
-    TRG-02-AutoPrice - Tự Động Tính Đơn Giá
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Tự động tính đơn giá khi đặt phòng: 
+    - Chỉ cho phép đặt phòng có trạng thái AVAILABLE.
+    - Lấy giá từ bảng LOAIPHONG và tính đơn giá.
+    - Đảm bảo tính nhất quán của dữ liệu.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/TRG-02-AUTOPRICE.png"),
+      caption: [(TRG) Tính Đơn Giá],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (TRG) Đồng Bộ Trạng Thái
