@@ -281,13 +281,53 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
 <quan-ly-thong-tin>
 
 
-== Xử Lý Thông Tin
-<xu-ly-thong-tin>
+== Xử Lý Thông Tin - Đặt Phòng
+<xu-ly-thong-tin-dat-phong>
 
-\(Mỗi mục sau sẽ được chuyển thành slide riêng)
+#figure(image("demo/SP_DATPHONG.png"),
+  caption: [
+    SP\_DATPHONG - Tạo mới đơn Đặt Phòng.
+  ]
+)
 
-=== Stored Procedures (5)
-<stored-procedures-5>
+== Xử Lý Thông Tin - Thanh Toán
+<xu-ly-thong-tin-thanh-toan>
+
+#figure(image("demo/SP_THANHTOAN-03.png"),
+  caption: [
+    SP\_THANHTOAN - Hoàn thành Thanh Toán.
+  ]
+)
+
+== Xử Lý Thông Tin - Đánh Giá
+<xu-ly-thong-tin-danh-gia>
+
+#figure(image("demo/SP_DANHGIA.png"),
+  caption: [
+    SP\_DANHGIA - Đánh Giá đơn Đặt Phòng.
+  ]
+)
+
+== Xử Lý Thông Tin - Áp Dụng Voucher
+<xu-ly-thong-tin-ap-dung-voucher>
+
+#figure(image("demo/SP_AP_DUNG_VOUCHER-02.png"),
+  caption: [
+    SP\_AP\_DUNG\_VOUCHER - Áp Dụng Voucher
+  ]
+)
+
+== Xử Lý Thông Tin - Sử Dụng Dịch Vụ
+<xu-ly-thong-tin-su-dung-dich-vu>
+
+#figure(image("demo/SP_SU_DUNG_DICH_VU-02.png"),
+  caption: [
+    SP\_SU\_DUNG\_DICH\_VU - Sử Dụng Dịch Vụ
+  ]
+)
+
+=== Stored Procedures - `SP_DATPHONG`
+<stored-procedures-sp-datphong>
 
 
 ==== SP1: ApplyVoucher

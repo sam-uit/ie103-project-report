@@ -285,11 +285,27 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
 
 # QUẢN LÝ THÔNG TIN
 
-## Xử Lý Thông Tin
+## Xử Lý Thông Tin - Đặt Phòng
 
-(Mỗi mục sau sẽ được chuyển thành slide riêng)
+![SP_DATPHONG - Tạo mới đơn Đặt Phòng.](demo/SP_DATPHONG.png)
 
-### Stored Procedures (5)
+## Xử Lý Thông Tin - Thanh Toán
+
+![SP_THANHTOAN - Hoàn thành Thanh Toán.](demo/SP_THANHTOAN-03.png)
+
+## Xử Lý Thông Tin - Đánh Giá
+
+![SP_DANHGIA - Đánh Giá đơn Đặt Phòng.](demo/SP_DANHGIA.png)
+
+## Xử Lý Thông Tin - Áp Dụng Voucher
+
+![SP_AP_DUNG_VOUCHER - Áp Dụng Voucher](demo/SP_AP_DUNG_VOUCHER-02.png)
+
+## Xử Lý Thông Tin - Sử Dụng Dịch Vụ
+
+![SP_SU_DUNG_DICH_VU - Sử Dụng Dịch Vụ](demo/SP_SU_DUNG_DICH_VU-02.png)
+
+### Stored Procedures - `SP_DATPHONG`
 
 #### SP1: ApplyVoucher
 
