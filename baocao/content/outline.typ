@@ -371,6 +371,33 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
   ]
 )
 
+== Xử Lý Thông Tin - (FN) Tính Hạng Thành Viên
+<xu-ly-thong-tin-fn-tinh-hang-thanh-vien>
+
+#figure(image("demo/FN-01-TinhHangThanhVien-01.png"),
+  caption: [
+    FN-01 - Tính Hạng Thành Viên - User 1.
+  ]
+)
+
+== Xử Lý Thông Tin - (FN) Tìm Phòng Trống
+<xu-ly-thong-tin-fn-tim-phong-trong>
+
+#figure(image("demo/FN-02-TimPhongTrongTheoLoai.png"),
+  caption: [
+    FN-02 - Tìm Phòng Trống Theo Loại
+  ]
+)
+
+== Xử Lý Thông Tin - (FN) Phí Hủy Đặt Phòng
+<xu-ly-thong-tin-fn-phi-huy-dat-phong>
+
+#figure(image("demo/FN-03-TinhPhiHuyPhong-02.png"),
+  caption: [
+    FN-03 - Tính Phí Hủy Đặt Phòng - Hủy Quá Sớm.
+  ]
+)
+
 == Trình Bày Thông Tin
 <trinh-bay-thong-tin>
 

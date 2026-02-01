@@ -325,6 +325,19 @@ Ví dụ về *Khởi Tạo Bảng*: ADMINS.
 
 ![TRG-05-Refund - Kiểm Tra Hoàn Tiền](demo/TRG-05-REFUND.png)
 
+## Xử Lý Thông Tin - (FN) Tính Hạng Thành Viên
+
+![FN-01 - Tính Hạng Thành Viên - User 1.](demo/FN-01-TinhHangThanhVien-01.png)
+
+## Xử Lý Thông Tin - (FN) Tìm Phòng Trống
+
+![FN-02 - Tìm Phòng Trống Theo Loại](demo/FN-02-TimPhongTrongTheoLoai.png)
+
+## Xử Lý Thông Tin - (FN) Phí Hủy Đặt Phòng
+
+![FN-03 - Tính Phí Hủy Đặt Phòng - Hủy Quá Sớm.](demo/FN-03-TinhPhiHuyPhong-02.png)
+
+
 ## Trình Bày Thông Tin
 
 ### Report
