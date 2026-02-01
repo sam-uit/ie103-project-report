@@ -20,4 +20,4 @@ Hiện trạng quản lý bộc lộ nhiều bất cập: thông tin lưu trú c
 
 Những bất cập thực tế tại Nhà Nghỉ 999 chính là động lực để Nhóm 02 lựa chọn đề tài #strong["Hệ Thống Quản Lý Đặt Phòng (Booking Management System)"].
 
-Trong đồ án môn học #emph[IE103 - Quản Lý Dữ Liệu] này, Nhóm 02 tập trung nghiên cứu và xây dựng giải pháp nhằm số hóa quy trình quản lý, đảm bảo tính nhất quán dữ liệu và mở ra kênh tương tác hiệu quả hơn với khách hàng. Đây không chỉ là bài toán kỹ thuật, mà còn là nỗ lực mang #emph[chuyển đổi số] đến gần hơn với các doanh nghiệp quy mô vừa và nhỏ.
+Trong đồ án môn học #emph[IE103 - Quản Lý Dữ Liệu] (#cite(<ie103>, form: "prose")) này, Nhóm 02 tập trung nghiên cứu và xây dựng giải pháp nhằm số hóa quy trình quản lý, đảm bảo tính nhất quán dữ liệu và mở ra kênh tương tác hiệu quả hơn với khách hàng. Đây không chỉ là bài toán kỹ thuật, mà còn là nỗ lực mang #emph[chuyển đổi số] đến gần hơn với các doanh nghiệp quy mô vừa và nhỏ.
