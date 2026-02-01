@@ -623,7 +623,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/FN-03-TinhPhiHuyPhong-02.png"),
+      #figure(image("demo/FN-03-TinhPhiHuyPhong-slide.png"),
       caption: [(FN) Tính Phí Hủy Đặt Phòng],
       supplement: "Ảnh"
       )]
