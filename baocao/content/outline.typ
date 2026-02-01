@@ -386,10 +386,22 @@ stroke: (
 == Xử Lý Thông Tin - (SP) Thanh Toán
 <xu-ly-thong-tin-sp-thanh-toan>
 
-#figure(image("demo/SP_THANHTOAN-03.png"),
-  caption: [
-    SP\_THANHTOAN - Hoàn thành Thanh Toán.
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Thực hiện chức năng #emph[thanh toán] cho người dùng:
+    - Kiểm tra booking hợp lệ.
+    - Kiểm tra số tiền thanh toán có đúng với số tiền cần trả.
+    - Lưu lịch sử thanh toán.
+    - Cập nhật trạng thái booking khi thanh toán hoàn tất.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/SP_THANHTOAN-03.png"),
+      caption: [(SP) Thanh Toán],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (SP) Đánh Giá
