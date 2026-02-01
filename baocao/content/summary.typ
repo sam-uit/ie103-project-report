@@ -126,6 +126,7 @@
           - Function, x3.],
       [7], [25410247], [Lê Kim Long], [
         - Phân Tích & Thiết Kế
+          - Khảo Sát Thực Tế.
           - Hiện Thực ERD.
         - Cài Đặt & Triển Khai
           - Mô Hình CSDL Vật Lý.
