@@ -97,9 +97,9 @@ stroke: (
 
 ## Giới Thiệu Đề Tài
 
-Các Doanh Nghiệp vừa và nhỏ trong ngành Khách Sạn, Nhà Nghỉ.
-
 ### Đặt Vấn Đề
+
+Các Doanh Nghiệp vừa và nhỏ trong ngành Khách Sạn, Nhà Nghỉ.
 
 ```{=typst}
 #table(
@@ -121,6 +121,8 @@ stroke: (
 
 ### Giới Thiệu Đề Tài
 
+Hệ Thống Quản Lý Đặt Phòng (*Booking Management System*).
+
 ```{=typst}
 #table(
 columns: (50%, 50%),
@@ -132,8 +134,6 @@ stroke: (
     left: none,
     right: none,
 ),
-[- Hệ Thống Quản Lý Đặt Phòng.],
-[(#emph[Booking Management System])],
 [- *Số hóa* quy trình quản lý.],
 [- *Chuyển đổi số* cách làm dịch vụ.],
 [- Xây dựng *điểm chạm* số.],
