@@ -11,22 +11,58 @@
 === Giảng Viên
 <giang-vien>
 
-- #lorem(10)
+- Thạc Sĩ Nguyễn Thành Luân.
+- IE103 - Quản Lý Thông Tin.
 
 === Nhà Trường
 <nha-truong>
 
-- #lorem(10)
+- Trung Tâm Phát Triển Công Nghệ Thông Tin.
+- Trường Đại Học Công Nghệ Thông Tin.
 
-=== Nhóm
-<nhom>
+=== Nhóm 02
+<nhom-02>
 
-- #lorem(10)
+- Các thành viên của Nhóm 02.
 
 == Nhóm 02
 <nhom-02>
 
-- #lorem(10)
+#align(center)[
+  #show table.cell: current_cell => {
+    if current_cell.x in (0, 1, 3, 4) {
+      text(
+        //font: code-font,
+        weight: "light",
+        //size: 0.9em,
+        fill: gray,
+      )[#current_cell]
+    } else {
+      current_cell
+    }
+  }
+  #table(
+    columns: (auto, auto, auto, auto, auto, auto),
+    inset: (top: 1.2em, bottom: 1.2em),
+    align: (right + bottom, right + bottom, left + bottom, right + bottom, right + bottom, left + bottom),
+    stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+    ),
+      [1], [25410247], [Lê Kim Long],
+      [2], [25410291], [Đinh Xuân Sâm],
+      [3], [25410319], [Đặng Hữu Toàn],
+      [4], [25410321], [Nguyễn Điền Triết],
+      [5], [25410204], [Trương Xuân Hậu],
+      [6], [25410338], [Lê Anh Vũ],
+      [7], [25410176], [Trần Sơn Bình],
+      [8], [25410337], [La Anh Vũ],
+      [9], [25410209], [Lê Ngọc Hiệp],
+      [10], [25410271], [Nguyễn Thị Ngọc Nhung],
+  )
+]
 
 == Giới Thiệu Đề Tài
 <gioi-thieu-de-tai>
