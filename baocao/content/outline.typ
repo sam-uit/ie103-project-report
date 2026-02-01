@@ -502,7 +502,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/TRG-02-AUTOPRICE.png"),
+      #figure(image("demo/TRG-02-AUTOPRICE-slide.png"),
       caption: [(TRG) Tính Đơn Giá],
       supplement: "Ảnh"
       )]
@@ -522,7 +522,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/TRG-03-SYNCSTATUS.png"),
+      #figure(image("demo/TRG-03-SYNCSTATUS-slide.png"),
       caption: [(TRG) Đồng Bộ Trạng Thái],
       supplement: "Ảnh"
       )]
@@ -542,7 +542,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/TRG-04-PAYMENT.png"),
+      #figure(image("demo/TRG-04-PAYMENT-slide.png"),
       caption: [(TRG) Kiểm Tra Thanh Toán],
       supplement: "Ảnh"
       )]
@@ -562,7 +562,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/TRG-05-REFUND.png"),
+      #figure(image("demo/TRG-05-REFUND-slide.png"),
       caption: [(TRG) Kiểm Tra Hoàn Tiền],
       supplement: "Ảnh"
       )]
