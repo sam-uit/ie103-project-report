@@ -22,8 +22,21 @@ stroke: (
 
 ### Nhà Trường
 
-- Trung Tâm Phát Triển Công Nghệ Thông Tin.
-- Trường Đại Học Công Nghệ Thông Tin.
+```{=typst}
+#table(
+columns: (100%),
+inset: (top: 0.6em, bottom: 0.6em),
+align: (left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- Trung Tâm Phát Triển Công Nghệ Thông Tin.],
+[- Trường Đại Học Công Nghệ Thông Tin.]
+)
+```
 
 ### Nhóm 02
 
