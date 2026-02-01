@@ -97,9 +97,9 @@ stroke: (
 
 ## Giới Thiệu Đề Tài
 
-### Đặt Vấn Đề
+Các Doanh Nghiệp vừa và nhỏ trong ngành Khách Sạn, Nhà Nghỉ.
 
-Các Doanh Nghiệp vừa và nhỏ:
+### Đặt Vấn Đề
 
 ```{=typst}
 #table(

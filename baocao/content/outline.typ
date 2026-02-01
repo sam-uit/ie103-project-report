@@ -100,11 +100,10 @@ stroke: (
 == Giới Thiệu Đề Tài
 <gioi-thieu-de-tai>
 
+Các Doanh Nghiệp vừa và nhỏ trong ngành Khách Sạn, Nhà Nghỉ.
 
 === Đặt Vấn Đề
 <dat-van-de>
-
-Các Doanh Nghiệp vừa và nhỏ:
 
 #table(
 columns: (40%, 60%),
