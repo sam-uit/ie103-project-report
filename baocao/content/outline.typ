@@ -400,7 +400,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/SP_THANHTOAN-03.png"),
+      #figure(image("demo/SP_THANHTOAN-slide.png"),
       caption: [(SP) Thanh Toán],
       supplement: "Ảnh"
       )]
