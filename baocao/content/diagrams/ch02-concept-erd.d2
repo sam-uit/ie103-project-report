@@ -88,100 +88,100 @@ VOUCHERS -- vouchers_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
 # Admins có thể duyệt tối thiểu 0 và tối đa n lần hoàn tiền.
 # Một hoàn tiền có và chỉ có 1 admin duyệt.
 admins_refunds: {class: rel; label: "duyệt"}
-ADMINS -- admins_refunds: (0, n)
-admins_refunds -- REFUNDS: (1, 1)
+ADMINS -- admins_refunds: {target-arrowhead.label: "(0, n)"}
+admins_refunds -- REFUNDS: {source-arrowhead.label: "(1, 1)"}
 
 # ADMINS -> ROLES: được cấp (n-n)
 # n - n: viền cam
 # Một admin phải có tối thiểu 1 và tối đa n role được gán.
 # Một role có tối thiểu 0 và tối đa n admin được gán.
 admins_roles: {class: rel; label: "được cấp"; style: {stroke: orange}}
-ADMINS -- admins_roles: (1, n)
-admins_roles -- ROLES: (0, n)
+ADMINS -- admins_roles: {target-arrowhead.label: "(1, n)"}
+admins_roles -- ROLES: {source-arrowhead.label: "(0, n)"}
 
 # DATPHONG -> DICHVU: sử dụng (n-n)
 # Một đơn đặt phòng có thể có tối thiểu 0 và tối đa n dịch vụ đi kèm.
 # Một dịch vụ đi kèm có thể được sử dụng tối thiểu 0 và tối đa n đơn đặt phòng.
 datphong_dichvu: {class: rel; label: "sử dụng"; style: {stroke: orange}}
-DATPHONG -- datphong_dichvu: (0, n)
-datphong_dichvu -- DICHVU: (0, n)
+DATPHONG -- datphong_dichvu: {target-arrowhead.label: "(0, n)"}
+datphong_dichvu -- DICHVU: {source-arrowhead.label: "(0, n)"}
 
 # DATPHONG -> PAYMENTS: được (1-n)
 # Một đơn đặt phòng có tối thiểu 0 và tối đa n thanh toán.
 # Một thanh toán có và chỉ có 1 đơn đặt phòng.
 datphong_payments: {class: rel; label: "được"}
-DATPHONG -- datphong_payments: (0, n)
-datphong_payments -- PAYMENTS: (1, 1)
+DATPHONG -- datphong_payments: {target-arrowhead.label: "(0, n)"}
+datphong_payments -- PAYMENTS: {source-arrowhead.label: "(1, 1)"}
 
 # DATPHONG -> PHONG: bao gồm (1-n)
 # Một đơn đặt phòng có tối thiểu 1 và tối đa n phòng.
 # Một phòng có tối thiểu 0 và tối đa n đơn đặt phòng.
 datphong_phong: {class: rel; label: "bao gồm"; style: {stroke: orange}}
-DATPHONG -- datphong_phong: (1, n)
-datphong_phong -- PHONG: (0, n)
+DATPHONG -- datphong_phong: {target-arrowhead.label: "(1, n)"}
+datphong_phong -- PHONG: {source-arrowhead.label: "(0, n)"}
 
 # DATPHONG -> REVIEWS: được (1-1)
 # Một đơn đặt phòng có tối thiểu 0 và tối đa 1 đánh giá.
 # Một đánh giá thuộc và chỉ thuộc 1 đơn đặt phòng.
 datphong_reviews: {class: rel; label: "được"}
-DATPHONG -- datphong_reviews: (0, 1)
-datphong_reviews -- REVIEWS: (1, 1)
+DATPHONG -- datphong_reviews: {target-arrowhead.label: "(0, 1)"}
+datphong_reviews -- REVIEWS: {source-arrowhead.label: "(1, 1)"}
 
 # LOAIPHONG <- PHONG: thuộc
 # Một loại phòng có tối thiểu 0 và tối đa n phòng.
 # Một phòng thuộc và chỉ thuộc 1 loại phòng.
 loaiphong_phong: {class: rel; label: "bao gồm"}
-LOAIPHONG -- loaiphong_phong: (0, n)
-loaiphong_phong -- PHONG: (1, 1)
+LOAIPHONG -- loaiphong_phong: {target-arrowhead.label: "(0, n)"}
+loaiphong_phong -- PHONG: {source-arrowhead.label: "(1, 1)"}
 
 # PAYMENTS -> REFUNDS: được
 # Một thanh toán có tối thiểu 0 và tối đa n hoàn tiền.
 # Một hoàn tiền được và chỉ được tạo từ 1 thanh toán.
 payments_refunds: {class: rel; label: "được"}
-PAYMENTS -- payments_refunds: (0, n)
-payments_refunds -- REFUNDS: (1, 1)
+PAYMENTS -- payments_refunds: {target-arrowhead.label: "(0, n)"}
+payments_refunds -- REFUNDS: {source-arrowhead.label: "(1, 1)"}
 
 # ROLES -> PERMISSIONS: có gán (n-n)
 # Một vai trò có tối thiểu 0 và tối đa n quyền hạn.
 # Một quyền hạn có tối thiểu 0 và tối đa n vai trò.
 roles_permissions: {class: rel; label: "có gán"; style: {stroke: orange}}
-ROLES -- roles_permissions: (0, n)
-roles_permissions -- PERMISSIONS: (0, n)
+ROLES -- roles_permissions: {target-arrowhead.label: "(0, n)"}
+roles_permissions -- PERMISSIONS: {source-arrowhead.label: "(0, n)"}
 
 # USERS -> DATPHONG: thực hiện (1-n)
 # Một user có tối thiểu 0, và tối đa n đặt phòng
 # Một đặt phòng có và chỉ có 1 user
 users_datphong: {class: rel; label: "thực hiện"}
-USERS -- users_datphong: (0, n)
-users_datphong -- DATPHONG: (1, 1)
+USERS -- users_datphong: {target-arrowhead.label: "(0, n)"}
+users_datphong -- DATPHONG: {source-arrowhead.label: "(1, 1)"}
 
 # USERS -> PAYMENTS: thực hiện (1-n)
 # Một user có tối thiểu 0, và tối đa n thanh toán.
 # Một thanh toán có và chỉ có 1 user
 users_payment: {class: rel; label: "thực hiện"}
-USERS -- users_payment: (0, n)
-users_payment -- PAYMENTS: (1, 1)
+USERS -- users_payment: {target-arrowhead.label: "(0, n)"}
+users_payment -- PAYMENTS: {source-arrowhead.label: "(1, 1)"}
 
 # USERS -> REFUNDS: yêu cầu (1-n)
 # Một user có tối thiểu 0, và tối đa n yêu cầu hoàn tiền.
 # Một yêu cầu hoàn tiền có và chỉ có 1 user.
 users_refunds: {class: rel; label: "yêu cầu"}
-USERS -- users_refunds: (0, n)
-users_refunds -- REFUNDS: (1, 1)
+USERS -- users_refunds: {target-arrowhead.label: "(0, n)"}
+users_refunds -- REFUNDS: {source-arrowhead.label: "(1, 1)"}
 
 # USERS -> REVIEWS: viết (1-n)
 # Một user có tối thiểu 0, và tối đa n đánh giá.
 # Một đánh giá có tối thiểu 1 tối đa 1 user.
 users_reviews: {class: rel; label: "viết"}
-USERS -- users_reviews: (0, n)
-users_reviews -- REVIEWS: (1, 1)
+USERS -- users_reviews: {target-arrowhead.label: "(0, n)"}
+users_reviews -- REVIEWS: {source-arrowhead.label: "(1, 1)"}
 
 # VOUCHERS -> DATPHONG: áp dụng (1-n)
 # Một mã giảm giá có tối thiểu 0, và tối đa n đơn đặt phòng.
 # Một đơn đặt phòng có tối thiểu 0, và tối đa 1 mã giảm giá áp dụng.
 vouchers_datphong: {class: rel; label: "áp dụng"}
-VOUCHERS -- vouchers_datphong: (0, n)
-vouchers_datphong -- DATPHONG: (0, 1)
+VOUCHERS -- vouchers_datphong: {target-arrowhead.label: "(0, n)"}
+vouchers_datphong -- DATPHONG: {source-arrowhead.label: "(0, 1)"}
 
 # 4. Bảng Số
 # Tách riêng cho dễ cập nhật và quản lý.
