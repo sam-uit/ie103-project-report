@@ -28,7 +28,7 @@
     #table(
       columns: (10%, 15%, 35%, 40%),
       align: (right, right, left, left),
-      table.header([No], [MSSV], [Họ và Tên], [Phụ Trách]),
+      table.header([*No*], [*MSSV*], [*Họ và Tên*], [*Ghi Chú*]),
       table.hline(),
       [1],
       [25410291],
