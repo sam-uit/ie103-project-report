@@ -135,6 +135,26 @@ PHONG -- phong_so_phong: {style: {stroke: "#4682B4"; stroke-width: 1}}
 PHONG -- phong_trang_thai: {style: {stroke: "#4682B4"; stroke-width: 1}}
 
 REFUNDS: {class: entity; label: "REFUNDS"}
+refunds_id: {class: attr_pri; label: "ID Hoàn Tiền"}
+# refunds_payment_id: {class: attr_foreign_key; label: "payment_id"; width: 120}
+refunds_so_tien_hoan: {class: attr; label: "Số Tiền Hoàn"}
+refunds_trang_thai: {class: attr; label: "Trạng Thái"}
+refunds_ly_do: {class: attr; label: "Lý Do"}
+# refunds_requested_by: {class: attr_foreign_key; label: "requested_by"; width: 120}
+# refunds_approved_by: {class: attr_foreign_key; label: "approved_by"; width: 120}
+# refunds_created_at: {class: attr; label: "created_at"; width: 110}
+# refunds_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+REFUNDS -- refunds_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+# REFUNDS -- refunds_payment_id: {style: {stroke-width: 1; stroke: orange}}
+REFUNDS -- refunds_so_tien_hoan: {style: {stroke: "#4682B4"; stroke-width: 1}}
+REFUNDS -- refunds_trang_thai: {style: {stroke: "#4682B4"; stroke-width: 1}}
+REFUNDS -- refunds_ly_do: {style: {stroke: "#4682B4"; stroke-width: 1}}
+# REFUNDS -- refunds_requested_by: {style: {stroke-width: 1; stroke: orange}}
+# REFUNDS -- refunds_approved_by: {style: {stroke-width: 1; stroke: orange}}
+# REFUNDS -- refunds_created_at
+# REFUNDS -- refunds_updated_at
+
 REVIEWS: {class: entity; label: "REVIEWS"}
 ROLES: {class: entity; label: "ROLES"}
 USERS: {class: entity; label: "USERS"}
