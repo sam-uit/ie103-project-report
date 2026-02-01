@@ -473,11 +473,26 @@ stroke: (
 
 ## Phần Đã Đạt Được
 
-- Chuẩn hóa quy trình nghiệp vụ.
-- Thiết kế bộ khung CSDL.
-- Xử lý thông tin tự động.
-- Cơ chế bảo mật đa lớp.
-- Khả năng sẵn sàng, sao lưu/dự phòng.
+```{=typst}
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (bottom: 0.6em),
+        align: (left),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [- Chuẩn hóa quy trình nghiệp vụ.],
+        [- Thiết kế bộ khung CSDL.],
+        [- Xử lý thông tin tự động.],
+        [- Cơ chế bảo mật đa lớp.],
+        [- Khả năng sẵn sàng, sao lưu/dự phòng.],
+    )
+]
+```
 
 ## Phần Chưa Đạt Được
 
