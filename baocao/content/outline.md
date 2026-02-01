@@ -119,13 +119,13 @@ stroke: (
 )
 ```
 
-### Tên Đề Tài
+### Giới Thiệu Đề Tài
 
 ```{=typst}
 #table(
-columns: (100%),
+columns: (50%, 50%),
 inset: (top: 0.6em, bottom: 0.6em),
-align: (left),
+align: (left, left),
 stroke: (
     bottom: 0.5pt + gradient.linear(red, blue, green),
     top: none,
@@ -133,7 +133,11 @@ stroke: (
     right: none,
 ),
 [- Hệ Thống Quản Lý Đặt Phòng.],
-[- Các Doanh Nghiệp vừa và nhỏ.]
+[(#emph[Booking Management System])],
+[- *Số hóa* quy trình quản lý.],
+[- *Chuyển đổi số* cách làm dịch vụ.],
+[- Xây dựng *điểm chạm* số.],
+[- Tìm kiếm, sử dụng, đánh giá.]
 )
 ```
 
