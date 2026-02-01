@@ -65,6 +65,15 @@
     "description": "Các tài liệu được lưu trữ trực tiếp trên Cloud.",
     "files": [
       {
+        "id": "baocao_nhom2",
+        "name": "Báo Cáo Đồ Án",
+        "type": "pdf",
+        "size": "Cloud",
+        "date": "Live",
+        "thumbnailUrl": "thumbnails/baocao_thumb.png",
+        "url": "https://drive.google.com/file/d/13eDtAS46r0yHMm10UB6OA98nnGsuy0v7/view?usp=drive_link"
+      },
+      {
         "id": "f5",
         "name": "Slide Thuyết Trình",
         "type": "pdf",
