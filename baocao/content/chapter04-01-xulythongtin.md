@@ -224,6 +224,10 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 **Ví dụ sử dụng**:
 
 - Đặt Phòng ID số 2 hiện chưa có dịch vụ sử dụng.
+- Thực thi SP sử dụng dịch vụ: Dịch Vụ ID = 1, Coca Cola.
+- Đặt Phòng ID số 2 hiện đã có dịch vụ sử dụng.
+
+<!-- - Đặt Phòng ID số 2 hiện chưa có dịch vụ sử dụng.
 
 ![SP_SU_DUNG_DICH_VU - Trước khi thực hiện](demo/SP_SU_DUNG_DICH_VU-01.png)
 
@@ -233,7 +237,7 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 - Đặt Phòng ID số 2 hiện đã có dịch vụ sử dụng.
 
-![SP_SU_DUNG_DICH_VU - Kết quả](demo/SP_SU_DUNG_DICH_VU-03.png)
+![SP_SU_DUNG_DICH_VU - Kết quả](demo/SP_SU_DUNG_DICH_VU-03.png) -->
 
 ### Triggers (5)
 

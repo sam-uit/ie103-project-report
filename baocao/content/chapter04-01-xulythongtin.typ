@@ -150,28 +150,8 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 #strong[Ví dụ sử dụng]:
 
 - Đặt Phòng ID số 2 hiện chưa có dịch vụ sử dụng.
-
-#figure(image("demo/SP_SU_DUNG_DICH_VU-01.png"),
-  caption: [
-    SP\_SU\_DUNG\_DICH\_VU - Trước khi thực hiện
-  ]
-)
-
 - Thực thi SP sử dụng dịch vụ: Dịch Vụ ID = 1, Coca Cola.
-
-#figure(image("demo/SP_SU_DUNG_DICH_VU-02.png"),
-  caption: [
-    SP\_SU\_DUNG\_DICH\_VU - Sử Dụng Dịch Vụ
-  ]
-)
-
 - Đặt Phòng ID số 2 hiện đã có dịch vụ sử dụng.
-
-#figure(image("demo/SP_SU_DUNG_DICH_VU-03.png"),
-  caption: [
-    SP\_SU\_DUNG\_DICH\_VU - Kết quả
-  ]
-)
 
 === Triggers (5)
 <triggers-5>
