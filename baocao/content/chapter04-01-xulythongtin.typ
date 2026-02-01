@@ -181,12 +181,6 @@ Sử dụng `AFTER Trigger` trên bảng `DATPHONG` để:
 
 - Thời gian check-out lớn hơn check-in, nên thực hiện thành công.
 
-#figure(image("demo/TRG-01-CHECKTIME.png"),
-  caption: [
-    TRG-01-CheckTime - Kết quả
-  ]
-)
-
 ==== TRG-02 - Tự Động Tính Đơn Giá Khi Đặt Phòng
 <trg-02-tu-dong-tinh-don-gia-khi-dat-phong>
 
