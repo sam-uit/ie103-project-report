@@ -185,75 +185,9 @@ Ví dụ 2: Trong thủ tục Hủy Đặt Phòng (giả sử), hệ thống b�
 #strong[Import:]
 
 + Chuột phải vào Database cần Import, chọn #emph[Import Data-Tier Application…].
-
-#figure(image("images/import-01.jpg.jpeg"),
-  caption: [
-    Import - 01 - Import Data-Tier Application.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 2)
 + Chọn #emph[Next] ở trang #emph[Introduction].
-]
-
-#figure(image("images/import-02.jpg.jpeg"),
-  caption: [
-    Import - 02 - Introduction.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 3)
 + Chọn #emph[Browse] để tìm file `.bacpac`.
-]
-
-#figure(image("images/import-03.jpg.jpeg"),
-  caption: [
-    Import - 03 - Browse.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 4)
 + Ở trang #emph[Database Settings], đặt tên cho database tại #emph[New database name].
-]
-
-#figure(image("images/import-04.jpg.jpeg"),
-  caption: [
-    Import - 04 - Database Settings.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 5)
 + Ở trang #emph[Summary], xác nhận thông tin và nhấn #emph[Finish].
-]
-
-#figure(image("images/import-05.jpg.jpeg"),
-  caption: [
-    Import - 05 - Summary.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 6)
 + Kiểm tra tiến độ và kết quả ở trang #emph[Results].
-]
-
-#figure(image("images/import-06.jpg.jpeg"),
-  caption: [
-    Import - 06 - Results.
-  ]
-)
-
-#block[
-#set enum(numbering: "1.", start: 7)
 + Kiểm tra kết quả bằng cách xem các thành phần của Database vừa được import.
-]
-
-#figure(image("images/import-07.jpg.jpeg"),
-  caption: [
-    Import - 07 - Kiểm Tra.
-  ]
-)

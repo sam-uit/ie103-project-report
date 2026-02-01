@@ -270,6 +270,14 @@ Ví dụ 2: Trong thủ tục Hủy Đặt Phòng (giả sử), hệ thống b�
 **Import:**
 
 1. Chuột phải vào Database cần Import, chọn *Import Data-Tier Application...*.
+2. Chọn *Next* ở trang *Introduction*.
+3. Chọn *Browse* để tìm file `.bacpac`.
+4. Ở trang *Database Settings*, đặt tên cho database tại *New database name*.
+5. Ở trang *Summary*, xác nhận thông tin và nhấn *Finish*.
+6. Kiểm tra tiến độ và kết quả ở trang *Results*.
+7. Kiểm tra kết quả bằng cách xem các thành phần của Database vừa được import.
+
+<!-- 1. Chuột phải vào Database cần Import, chọn *Import Data-Tier Application...*.
 
 ![Import - 01 - Import Data-Tier Application.](images/import-01.jpg.jpeg)
 
@@ -295,4 +303,4 @@ Ví dụ 2: Trong thủ tục Hủy Đặt Phòng (giả sử), hệ thống b�
 
 7. Kiểm tra kết quả bằng cách xem các thành phần của Database vừa được import.
 
-![Import - 07 - Kiểm Tra.](images/import-07.jpg.jpeg)
+![Import - 07 - Kiểm Tra.](images/import-07.jpg.jpeg) -->
