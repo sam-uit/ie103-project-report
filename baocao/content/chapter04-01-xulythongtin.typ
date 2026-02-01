@@ -384,20 +384,8 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 - Phòng 102: Đang có khách ở thực tế nhưng hiển thị là `AVAILABLE` (sai).
 - Phòng 503: Đang bảo trì (`MAINTENANCE`), không có khách (đúng).
 
-#figure(image("demo/C-SyncRoomStatus03.png"),
-  caption: [
-    Cursor - SyncRoomStatus 01
-  ]
-)
-
 #strong[Kiểm Thử: Kết quả.]
 
 - Phòng 101: Giữ nguyên trạng thái (`AVAILABLE`).
 - Phòng 102: Cập nhật sang Đang có khách (`OCCUPIED`).
 - Phòng 503: Giữ nguyên trạng thái (`MAINTENANCE`).
-
-#figure(image("demo/C-SyncRoomStatus04.png"),
-  caption: [
-    Cursor - SyncRoomStatus 02
-  ]
-)
