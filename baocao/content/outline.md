@@ -5,6 +5,7 @@
 ### Giảng Viên
 
 ```{=typst}
+#show table.cell: set text(weight: "light", font: body-font)
 #table(
 columns: (100%),
 inset: (top: 0.6em, bottom: 0.6em),
