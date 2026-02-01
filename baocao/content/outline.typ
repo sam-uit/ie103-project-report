@@ -45,7 +45,18 @@ stroke: (
 === Nhóm 02
 <nhom-02>
 
-- Các thành viên của Nhóm 02.
+#table(
+columns: (100%),
+inset: (top: 0.6em, bottom: 0.6em),
+align: (left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- Các thành viên của Nhóm 02.],
+)
 
 == Nhóm 02
 <nhom-02>
