@@ -772,7 +772,7 @@ stroke: (
 == Phần Đã Đạt Được
 <phan-da-dat-duoc>
 
-#show table.cell: set text(size: 1.5em, weight: "light", font: body-font)
+#show table.cell: set text(size: 1.2em, weight: "light", font: body-font)
 #table(
   columns: (100%),
   inset: (top: 0.6em, bottom: 0.6em),
