@@ -11,8 +11,19 @@
 === Giảng Viên
 <giang-vien>
 
-- Thạc Sĩ Nguyễn Thành Luân.
-- IE103 - Quản Lý Thông Tin.
+#table(
+columns: (100%),
+inset: (top: 0.6em, bottom: 0.6em),
+align: (left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- Thạc Sĩ Nguyễn Thành Luân.],
+[- IE103 - Quản Lý Thông Tin.]
+)
 
 === Nhà Trường
 <nha-truong>
