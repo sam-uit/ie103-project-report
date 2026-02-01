@@ -199,33 +199,33 @@ stroke: (
 == Mô Hình Logic - Bảng và Khóa
 <mo-hinh-logic-bang-va-khoa>
 
-#show table.cell: set text(size: 0.6em, weight: "light", font: body-font)
+#show table.cell: set text(size: 0.9em, weight: "light", font: body-font)
 #table(
   columns: (5%, 95%),
     inset: (top: 0.5em, bottom: 0.5em),
-    align: (right, left),
+    align: (right + bottom, left + bottom),
     stroke: (
         bottom: 0.5pt + gradient.linear(red, blue, green),
         top: none,
         left: none,
         right: none,
     ),
-    [1], [ADMINS(#underline[id], email, password_hash, full_name, status, created_at, updated_at)],
-    [2], [DATPHONG(#underline[id], #emph[user_id], #emph[voucher_id], check_in, check_out, trang_thai, created_at)],
-    [3], [DICHVU(#underline[id], ten_dich_vu, don_gia, don_vi_tinh, trang_thai, created_at, updated_at)],
-    [4], [LOAIPHONG(#underline[id], ten_loai, gia_co_ban, mo_ta, suc_chua)],
-    [5], [PAYMENTS(#underline[id], #emph[booking_id], #emph[user_id], so_tien, phuong_thuc, trang_thai, created_at)],
-    [6], [PERMISSIONS(#underline[id], code, description)],
-    [7], [PHONG(#underline[id], so_phong, #emph[loai_phong_id], trang_thai)],
-    [8], [REFUNDS(#underline[id], #emph[payment_id], #emph[requested_by], #emph[approved_by], so_tien_hoan, ly_do, trang_thai, created_at, updated_at)],
-    [9], [REVIEWS(#underline[id], #emph[user_id], #emph[phong_id], #emph[datphong_id], so_sao, binh_luan, ngay_danh_gia, trang_thai, created_at, updated_at)],
-    [10], [ROLES(#underline[id], code, name, description)],
-    [11], [USERS(#underline[id], email, phone, password_hash, full_name, status, created_at, updated_at)],
-    [12], [VOUCHERS(#underline[id], ma_code, phan_tram_giam, ngay_het_han, so_tien_toi_thieu, so_lan_toi_da, so_lan_da_dung, trang_thai, created_at, updated_at)],
-    [13], [ADMIN_ROLES(#underline[admin_id], #underline[role_id])],
-    [14], [ROLE_PERMISSIONS(#underline[role_id], #underline[permission_id])],
-    [15], [CT_DATPHONG(#underline[id], #emph[datphong_id], #emph[phong_id], don_gia)],
-    [16], [CT_SUDUNG_DV(#underline[id], #emph[datphong_id], #emph[dichvu_id], so_luong, don_gia, thoi_diem_su_dung, ghi_chu, created_at)]
+    [1], [*ADMINS*(#underline[id], email, password_hash, full_name, status, created_at, updated_at)],
+    [2], [*DATPHONG*(#underline[id], #emph[user_id], #emph[voucher_id], check_in, check_out, trang_thai, created_at)],
+    [3], [*DICHVU*(#underline[id], ten_dich_vu, don_gia, don_vi_tinh, trang_thai, created_at, updated_at)],
+    [4], [*LOAIPHONG*(#underline[id], ten_loai, gia_co_ban, mo_ta, suc_chua)],
+    [5], [*PAYMENTS*(#underline[id], #emph[booking_id], #emph[user_id], so_tien, phuong_thuc, trang_thai, created_at)],
+    [6], [*PERMISSIONS*(#underline[id], code, description)],
+    [7], [*PHONG*(#underline[id], so_phong, #emph[loai_phong_id], trang_thai)],
+    [8], [*REFUNDS*(#underline[id], #emph[payment_id], #emph[requested_by], #emph[approved_by], so_tien_hoan, ly_do, trang_thai, created_at, updated_at)],
+    [9], [*REVIEWS*(#underline[id], #emph[user_id], #emph[phong_id], #emph[datphong_id], so_sao, binh_luan, ngay_danh_gia, trang_thai, created_at, updated_at)],
+    [10], [*ROLES*(#underline[id], code, name, description)],
+    [11], [*USERS*(#underline[id], email, phone, password_hash, full_name, status, created_at, updated_at)],
+    [12], [*VOUCHERS*(#underline[id], ma_code, phan_tram_giam, ngay_het_han, so_tien_toi_thieu, so_lan_toi_da, so_lan_da_dung, trang_thai, created_at, updated_at)],
+    [13], [*ADMIN_ROLES*(#underline[admin_id], #underline[role_id])],
+    [14], [*ROLE_PERMISSIONS*(#underline[role_id], #underline[permission_id])],
+    [15], [*CT_DATPHONG*(#underline[id], #emph[datphong_id], #emph[phong_id], don_gia)],
+    [16], [*CT_SUDUNG_DV*(#underline[id], #emph[datphong_id], #emph[dichvu_id], so_luong, don_gia, thoi_diem_su_dung, ghi_chu, created_at)]
 )
 
 = CÀI ĐẶT VÀ TRIỂN KHAI
