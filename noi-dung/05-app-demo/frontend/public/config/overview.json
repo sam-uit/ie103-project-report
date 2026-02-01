@@ -1,38 +1,38 @@
 {
   "header": {
-    "title": "Hệ thống Quản lý Đặt phòng Khách sạn (BMS)",
+    "title": "Hệ Thống Quản Lý Đặt Phòng Khách Sạn (BMS)",
     "subtitle": "IE103.F12.LT.CNTT - Nhóm 2 - OMEGA",
-    "subject": "Quản lý thông tin",
+    "subject": "Quản Lý Thông Tin",
     "teacher": "ThS. Nguyễn Thành Luân"
   },
   "section1": {
-    "title": "1. Mô tả bài toán",
+    "title": "1. Mô Tả Bài Toán",
     "problemStatement": "Xây dựng hệ thống phần mềm hỗ trợ quản lý toàn diện quy trình kinh doanh của khách sạn quy mô vừa và nhỏ. Mục tiêu giúp tối ưu hóa quy trình đặt phòng, quản lý dịch vụ, kiểm soát doanh thu chặt chẽ và nâng cao trải nghiệm khách hàng thông qua tự động hóa.",
     "steps": [
       {
         "step": "1",
-        "title": "Đặt phòng",
-        "desc": "Khách tìm kiếm & đặt phòng"
+        "title": "Đặt Phòng",
+        "desc": "Khách tìm kiếm & đặt phòng."
       },
       {
         "step": "2",
         "title": "Check-in",
-        "desc": "Lễ tân giao phòng & xác nhận"
+        "desc": "Lễ tân giao phòng & xác nhận."
       },
       {
         "step": "3",
-        "title": "Lưu trú",
-        "desc": "Sử dụng dịch vụ & tiện ích"
+        "title": "Lưu Trú",
+        "desc": "Sử dụng dịch vụ & tiện ích."
       },
       {
         "step": "4",
         "title": "Check-out",
-        "desc": "Thanh toán & trả phòng"
+        "desc": "Thanh toán & trả phòng."
       }
     ]
   },
   "section2": {
-    "title": "2. Phân tích và thiết kế",
+    "title": "2. Phân Tích Và Thiết Kế",
     "erdHighlights": [
       "Phòng & Loại phòng: Quản lý danh mục, giá và trạng thái.",
       "Booking: Thực thể trung tâm kết nối khách và phòng.",
