@@ -240,7 +240,7 @@ stroke: (
 == Mô Hình Vật Lý
 <mo-hinh-vat-ly>
 
-#show table.cell: set text(size: 1.5em, weight: "light", font: body-font)
+#show table.cell: set text(size: 1em, weight: "light", font: body-font)
 #table(
 columns: (100%),
 inset: (bottom: 0.6em),
@@ -268,8 +268,9 @@ stroke: (
         [Ví dụ về *Mô Hình Vật Lý* của một bảng trong CSDL: ADMINS]
     )
 ]
+
 #align(center + bottom)[
-#show table.cell: set text(size: 0.9em, weight: "light", font: body-font)
+#show table.cell: set text(size: 0.8em, weight: "light", font: body-font)
 #table(
     columns: (20%, 20%, 30%, 30%),
     align: (left, left, left, left),
