@@ -1,0 +1,3 @@
+CREATE USER [BMS_App_User] FOR LOGIN [BMS_App_User];
+GO
+
