@@ -51,6 +51,22 @@ ADMINS -- admin_status {style: {stroke: "#4682B4"; stroke-width: 1}}
 # ADMINS -- admin_updated_at
 
 DATPHONG: {class: entity; label: "DATPHONG"}
+datphong_id: {class: attr_pri; label: "ID Đặt Phòng"}
+# datphong_user_id: {class: attr; label: "user_id"}
+# datphong_voucher_id: {class: attr; label: "voucher_id"}
+datphong_check_in: {class: attr; label: "Ngày Nhận Phòng"}
+datphong_check_out: {class: attr; label: "Ngày Trả Phòng"}
+datphong_trang_thai: {class: attr; label: "Trạng Thái"}
+# datphong_created_at: {class: attr; label: "created_at"; width: 110}
+
+DATPHONG -- datphong_id {style: {stroke: "#0d95de"; stroke-width: 1}}
+# DATPHONG -- datphong_user_id
+# DATPHONG -- datphong_voucher_id
+DATPHONG -- datphong_check_in {style: {stroke: "#4682B4"; stroke-width: 1}}
+DATPHONG -- datphong_check_out {style: {stroke: "#4682B4"; stroke-width: 1}}
+DATPHONG -- datphong_trang_thai {style: {stroke: "#4682B4"; stroke-width: 1}}
+# DATPHONG -- datphong_created_at
+
 DICHVU: {class: entity; label: "DICHVU"}
 LOAIPHONG: {class: entity; label: "LOAIPHONG"}
 PAYMENTS: {class: entity; label: "PAYMENTS"}
