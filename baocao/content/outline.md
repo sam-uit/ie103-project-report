@@ -147,9 +147,10 @@ stroke: (
 
 # PHÂN TÍCH VÀ THIẾT KẾ
 
-## Nghiệp Vụ
+## Chức Năng Nghiệp Vụ
 
 ```{=typst}
+#show table.cell: set text(size: 0.9em, weight: "light", font: body-font)
 #table(
   columns: (10%, 90%),
     inset: (top: 0.4em, bottom: 0.4em),

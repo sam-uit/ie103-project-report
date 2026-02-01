@@ -145,9 +145,10 @@ stroke: (
 <phan-tich-va-thiet-ke>
 
 
-== Nghiệp Vụ
-<nghiep-vu>
+== Chức Năng Nghiệp Vụ
+<chuc-nang-nghiep-vu>
 
+#show table.cell: set text(size: 0.9em, weight: "light", font: body-font)
 #table(
   columns: (10%, 90%),
     inset: (top: 0.4em, bottom: 0.4em),
