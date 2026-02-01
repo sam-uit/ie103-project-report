@@ -609,10 +609,22 @@ stroke: (
 == Xử Lý Thông Tin - (FN) Phí Hủy Đặt Phòng
 <xu-ly-thong-tin-fn-phi-huy-dat-phong>
 
-#figure(image("demo/FN-03-TinhPhiHuyPhong-02.png"),
-  caption: [
-    FN-02 - Tìm Phòng Trống Theo Loại
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Tính toán phí hủy dựa trên thời điểm hủy:
+    - Tính khoảng cách ngày: Số ngày = Ngày Check-in - Ngày Báo Hủy.
+    - Hủy trước 1 ngayf 100%.
+    - Hủy trong vòng 1 - 3 ngày: 50%.
+    - Hủy sau 3 ngày: 0%.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/FN-03-TinhPhiHuyPhong-02.png"),
+      caption: [(FN) Tính Phí Hủy Đặt Phòng],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (FN) Phí Hủy Đặt Phòng
