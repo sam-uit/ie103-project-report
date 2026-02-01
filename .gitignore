@@ -1,3 +1,5 @@
 *.mov
 *.mp4
 .DS_Store
+/IE103-Nhom2/obj
+/IE103-Nhom2/bin
