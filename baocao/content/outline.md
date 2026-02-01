@@ -251,7 +251,7 @@ stroke: (
 #show table.cell: set text(size: 1.5em, weight: "light", font: body-font)
 #table(
 columns: (100%),
-inset: (top: 0.6em, bottom: 0.6em),
+inset: (bottom: 0.6em),
 align: (left),
 stroke: (
     bottom: 0.5pt + gradient.linear(red, blue, green),
@@ -268,7 +268,7 @@ stroke: (
 #align(center)[
     #table(
         columns: (100%),
-        inset: (top: 0.6em, bottom: 0.6em),
+        inset: (bottom: 0.6em),
         align: (center),
         stroke: (
             bottom: 0.5pt + gradient.linear(red, blue, green),
@@ -294,7 +294,7 @@ stroke: (
         right: none,
     ),
     [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CONSTRAINT]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
-  ),
+  )
 ]
 ```
 
