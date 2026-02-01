@@ -97,9 +97,46 @@ stroke: (
 
 ## Giới Thiệu Đề Tài
 
+### Đặt Vấn Đề
+
+Các Doanh Nghiệp vừa và nhỏ:
+
 ```{=typst}
-- #lorem(10)
+#table(
+columns: (40%, 60%),
+inset: (top: 0.6em, bottom: 0.6em),
+align: (left, left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- Quản lý *thủ công*.],
+[- *Khó khăn* trong thống kê/báo cáo.],
+[- Số hóa *hạn chế*.],
+[- Không có *điểm chạm* với khách hàng.]
+)
 ```
+
+### Tên Đề Tài
+
+```{=typst}
+#table(
+columns: (100%),
+inset: (top: 0.6em, bottom: 0.6em),
+align: (left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- Hệ Thống Quản Lý Đặt Phòng.],
+[- Các Doanh Nghiệp vừa và nhỏ.]
+)
+```
+
 
 # PHÂN TÍCH VÀ THIẾT KẾ
 
