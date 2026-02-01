@@ -115,6 +115,14 @@ PAYMENTS -- payments_trang_thai {style: {stroke: "#4682B4"; stroke-width: 1}}
 # PAYMENTS -- payments_created_at
 
 PERMISSIONS: {class: entity; label: "PERMISSIONS"}
+permissions_id: {class: attr_pri; label: "ID Quyền Hạn"}
+permissions_code: {class: attr; label: "Mã Quyền Hạn"}
+permissions_description: {class: attr; label: "Miêu Tả"}
+
+PERMISSIONS -- permissions_id: {style: {stroke: "#0d95de"; stroke-width: 1}}
+PERMISSIONS -- permissions_code: {style: {stroke: "#4682B4"; stroke-width: 1}}
+PERMISSIONS -- permissions_description: {style: {stroke: "#4682B4"; stroke-width: 1}}
+
 PHONG: {class: entity; label: "PHONG"}
 REFUNDS: {class: entity; label: "REFUNDS"}
 REVIEWS: {class: entity; label: "REVIEWS"}
