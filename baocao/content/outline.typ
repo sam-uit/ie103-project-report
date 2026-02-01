@@ -569,10 +569,21 @@ stroke: (
 == Xử Lý Thông Tin - (FN) Tính Hạng Thành Viên
 <xu-ly-thong-tin-fn-tinh-hang-thanh-vien>
 
-#figure(image("demo/FN-01-TinhHangThanhVien-01.png"),
-  caption: [
-    FN-01 - Tính Hạng Thành Viên - User 1.
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Tính toán và cập nhật hạng thành viên dựa trên tổng chi tiêu:
+    - < 5.000.000 VNĐ: *STANDARD*.
+    - 5.000.000 - 20.000.000 VNĐ: *GOLD*.
+    - > 20.000.000 VNĐ: *PLATINUM*.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/FN-01-TinhHangThanhVien-01.png"),
+      caption: [(FN) Tính Hạng Thành Viên],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (FN) Tìm Phòng Trống
