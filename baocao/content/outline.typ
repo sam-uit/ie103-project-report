@@ -681,7 +681,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("./images/rpt1-7.png"),
+      #figure(image("./images/rpt1-7-slide.png"),
       caption: [Báo Cáo 01 - Thống Kê Doanh Thu],
       supplement: "Ảnh"
       )]
@@ -700,7 +700,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("./images/rpt2-11.png"),
+      #figure(image("./images/rpt2-11-slide.png"),
       caption: [Báo Cáo 02 - Top Khách Hàng Chi Tiêu],
       supplement: "Ảnh"
       )]
@@ -719,7 +719,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("./images/rpt3-9.png"),
+      #figure(image("./images/rpt3-9-slide.png"),
       caption: [Báo Cáo 03 - Thống Kê Doanh Thu Dịch Vụ],
       supplement: "Ảnh"
       )]
@@ -739,7 +739,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("./images/rpt4-6.png"),
+      #figure(image("./images/rpt4-6-slide.png"),
       caption: [Báo Cáo 04 - Thống Kê Top Voucher],
       supplement: "Ảnh"
       )]
@@ -759,8 +759,8 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("./images/rpt5-6.png"),
-      caption: [Báo Cáo 05 - Thống Kê Top Loại Phòng],
+      #figure(image("./images/rpt5-6-slide.png"),
+      caption: [Báo Cáo 05 - Top Loại Phòng],
       supplement: "Ảnh"
       )]
   ],
