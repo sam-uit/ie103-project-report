@@ -166,7 +166,7 @@ Miêu tả:
 - Dựa trên số sao được khách hàng đánh giá, ta sẽ thống kê xem xem là loại phòng nào làm khách hàng thích nhất, để điều chỉnh phòng theo xu hướng của khách hàng, giúp đánh giá tăng doanh thu, thu hút khách.
 - Chúng ta chỉ lấy những reviews nào đã được admin duyệt(`trang_thai = 'APPROVED'`), vì có thể có những review spam hoặc rác.
 
-Các bước thực hiện:
+<!-- Các bước thực hiện:
 
 1. Tạo View lấy danh sách Top Loại Phòng Được Yêu Thích Nhất (`V_REPORT_ROOM_RATING`).
 2. Kết nối Tableu vào database.
@@ -176,6 +176,6 @@ Các bước thực hiện:
 
 Màn hình design và preview dashboard:
 
-![Báo Cáo 05 - Màn Hình Design.](./images/rpt5-5.png)
+![Báo Cáo 05 - Màn Hình Design.](./images/rpt5-5.png) -->
 
 ![Báo Cáo 05 - Màn Hình Preview.](./images/rpt5-6.png)
