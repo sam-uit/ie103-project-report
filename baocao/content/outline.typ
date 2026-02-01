@@ -442,7 +442,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/SP_AP_DUNG_VOUCHER-02.png"),
+      #figure(image("demo/SP_AP_DUNG_VOUCHER-slide.png"),
       caption: [(SP) Áp Dụng Voucher],
       supplement: "Ảnh"
       )]
