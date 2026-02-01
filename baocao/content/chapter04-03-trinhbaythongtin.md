@@ -88,7 +88,7 @@ Các bước thực hiện:
 
 Mục đích:
 
-- Giúp đánh giá xem khách hàng thân thiết để tặng voucher hay là nâng hạng khách hàng lên Premium,VIP phục vụ cho CSKH, CRM.
+- Giúp đánh giá xem khách hàng thân thiết để tặng voucher hay là nâng hạng khách hàng lên Premium, VIP phục vụ cho CSKH, CRM.
 
 Các bước thực hiện:
 
