@@ -350,9 +350,9 @@ Sử dụng `INSTEAD OF` Trigger để:
 - Tự động cập nhật trạng thái trong `PAYMENTS` và `DATPHONG`.
 - Đảm bảo tính toàn vẹn dữ liệu.
 
-**Ví dụ thực hiện**:
+<!-- **Ví dụ thực hiện**:
 
-![TRG-05-Refund - Kết quả](demo/TRG-05-REFUND.png)
+![TRG-05-Refund - Kết quả](demo/TRG-05-REFUND.png) -->
 
 ### Functions (3)
 
