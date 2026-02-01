@@ -462,7 +462,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/SP_SU_DUNG_DICH_VU-02.png"),
+      #figure(image("demo/SP_SU_DUNG_DICH_VU-slide.png"),
       caption: [(SP) Sử Dụng Dịch Vụ],
       supplement: "Ảnh"
       )]
