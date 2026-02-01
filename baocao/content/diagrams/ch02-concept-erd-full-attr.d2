@@ -98,6 +98,22 @@ LOAIPHONG -- loaiphong_mo_ta {style: {stroke: "#4682B4"; stroke-width: 1}}
 LOAIPHONG -- loaiphong_suc_chua {style: {stroke: "#4682B4"; stroke-width: 1}}
 
 PAYMENTS: {class: entity; label: "PAYMENTS"}
+payments_id: {class: attr_pri; label: "ID Thanh Toán"}
+# payments_booking_id: {class: attr_foreign_key; label: "booking_id"}
+# payments_user_id: {class: attr_foreign_key; label: "user_id"}
+payments_so_tien: {class: attr; label: "Số Tiền"}
+payments_phuong_thuc: {class: attr; label: "Phương Thức Thanh Toán"}
+payments_trang_thai: {class: attr; label: "Trạng Thái"}
+# payments_created_at: {class: attr; label: "created_at"; width: 110}
+
+PAYMENTS -- payments_id {style: {stroke: "#0d95de"; stroke-width: 1}}
+# PAYMENTS -- payments_booking_id: {style: {stroke-width: 1; stroke: orange}}
+# PAYMENTS -- payments_user_id: {style: {stroke-width: 1; stroke: orange}}
+PAYMENTS -- payments_so_tien {style: {stroke: "#4682B4"; stroke-width: 1}}
+PAYMENTS -- payments_phuong_thuc {style: {stroke: "#4682B4"; stroke-width: 1}}
+PAYMENTS -- payments_trang_thai {style: {stroke: "#4682B4"; stroke-width: 1}}
+# PAYMENTS -- payments_created_at
+
 PERMISSIONS: {class: entity; label: "PERMISSIONS"}
 PHONG: {class: entity; label: "PHONG"}
 REFUNDS: {class: entity; label: "REFUNDS"}
