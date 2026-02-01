@@ -6,7 +6,7 @@
     "files": [
       {
         "id": "f1",
-        "name": "Báo cáo doanh thu từng tháng trong năm 2024",
+        "name": "RPT 01 - Báo Cáo Doanh Thu Từng Tháng Trong Năm 2024.",
         "type": "pdf",
         "size": "184 KB",
         "date": "21/01/2026",
@@ -15,7 +15,7 @@
       },
       {
         "id": "f2",
-        "name": "Top 10 khách hàng mang lại doanh thu năm 2024",
+        "name": "RPT 02 - Top 10 Khách Hàng Mang Lại Doanh Thu Năm 2024.",
         "type": "pdf",
         "size": "216 KB",
         "date": "21/01/2026",
@@ -24,7 +24,7 @@
       },
       {
         "id": "f3",
-        "name": "Dịch vụ sử dụng phổ biến năm 2024",
+        "name": "RPT 03 - Dịch vụ Sử Dụng Phổ Biến Năm 2024.",
         "type": "pdf",
         "size": "143 KB",
         "date": "21/01/2026",
@@ -33,7 +33,7 @@
       },
       {
         "id": "f4",
-        "name": "Voucher sử dụng trong năm 2024",
+        "name": "RPT 04 - Voucher Sử Dụng Trong Năm 2024.",
         "type": "pdf",
         "size": "184 KB",
         "date": "21/01/2026",
@@ -46,11 +46,11 @@
   {
     "id": "g2",
     "title": "Thống Kê",
-    "description": "Các báo cáo chi tiết đánh giá khách sạn, ...",
+    "description": "Các báo cáo chi tiết đánh giá khách sạn.",
     "files": [
      {
         "id": "f6",
-        "name": "Thống kê đánh giá các loại phòng khách sạn",
+        "name": "RPT 05 - Thống Kê Đánh Giá Các Loại Phòng Khách Sạn.",
         "type": "pdf",
         "size": "104 KB",
         "date": "21/01/2026",
@@ -62,7 +62,7 @@
   {
     "id": "g3",
     "title": "Google Drive Folder",
-    "description": "Các tài liệu được lưu trữ trực tiếp trên Cloud.",
+    "description": "Các tài liệu được lưu trữ trực tiếp trên Google Cloud.",
     "files": [
       {
         "id": "baocao_nhom2",
