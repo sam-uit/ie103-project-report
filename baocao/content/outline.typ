@@ -421,7 +421,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/SP_DANHGIA.png"),
+      #figure(image("demo/SP_DANHGIA-slide.png"),
       caption: [(SP) Đánh Giá],
       supplement: "Ảnh"
       )]
