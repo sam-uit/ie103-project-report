@@ -726,24 +726,45 @@ stroke: (
 == Trình Bày Thông Tin - Top Voucher
 <trinh-bay-thong-tin-top-voucher>
 
-#figure(image("./images/rpt4-6.png"),
-  caption: [
-    Báo Cáo 04 - Thống Kê Top Voucher.
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Thống kê có bao nhiêu mã giảm giá.
+  - Mã giảm giá nào khách xài nhiều nhất
+  - Tổng số tiền của voucher nào sử dụng nhiều nhất.
+  - Thể hiện dưới dạng biểu đồ cột và bảng chi tiết.
+  ],
+  [
+    #align(center)[
+      #figure(image("./images/rpt4-6.png"),
+      caption: [Báo Cáo 04 - Thống Kê Top Voucher],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Trình Bày Thông Tin - Top Loại Phòng
 <trinh-bay-thong-tin-top-loai-phong>
 
-#figure(image("./images/rpt5-6.png"),
-  caption: [
-    Báo Cáo 05 - Top Loại Phòng Được Yêu Thích Nhất.
-  ]
+#grid(
+  columns: (40%, 60%),
+  rows: (auto),
+  [Thống kê các loại phòng được yêu thích nhất.
+  - Dựa trên số sao được khách hàng đánh giá.
+  - Nhằm điều chỉnh phòng theo xu hướng của khách hàng
+  - Chỉ lấy những reviews nào đã được admin duyệt.
+  ],
+  [
+    #align(center)[
+      #figure(image("./images/rpt5-6.png"),
+      caption: [Báo Cáo 05 - Thống Kê Top Loại Phòng],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 = KẾT LUẬN
 <ket-luan>
-
 
 == Phần Đã Đạt Được
 <phan-da-dat-duoc>
