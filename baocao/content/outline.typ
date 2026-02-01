@@ -366,15 +366,21 @@ stroke: (
 <xu-ly-thong-tin-sp-dat-phong>
 
 #grid(
-  columns: (30%, 70%),
+  columns: (40%, 60%),
   rows: (auto),
-  [Thực hiện chức năng **đặt phòng** cho người dùng.
+  [Thực hiện chức năng #emph[đặt phòng] cho người dùng:
     - Kiểm tra phòng tồn tại và khả dụng.
     - Tạo bản ghi đặt phòng.
     - Lưu chi tiết phòng.
-    - Cập nhật trạng thái phòng.],
-  [#align(center)[
-    #image("demo/SP_DATPHONG.png")]],
+    - Cập nhật trạng thái phòng.
+  ],
+  [
+    #align(center)[
+      #figure(image("demo/SP_DATPHONG.png"),
+      caption: [(SP) Đặt Phòng],
+      supplement: "Ảnh"
+      )]
+  ],
 )
 
 == Xử Lý Thông Tin - (SP) Thanh Toán
