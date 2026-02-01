@@ -482,7 +482,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/TRG-01-CHECKTIME.png"),
+      #figure(image("demo/TRG-01-CHECKTIME-slide.png"),
       caption: [(TRG) Kiểm Tra Thời Gian],
       supplement: "Ảnh"
       )]
