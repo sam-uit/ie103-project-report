@@ -185,10 +185,12 @@ stroke: (
 )
 ```
 
-## Mô Hình Quan Niệm
+## Mô Hình ER (Quan Niệm)
 
 ```{=typst}
-- #lorem(10)
+#align(center)[
+    #image("diagrams/ch02-concept-erd.svg")
+]
 ```
 
 ## Mô Hình Logic

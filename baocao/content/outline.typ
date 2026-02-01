@@ -182,10 +182,12 @@ stroke: (
     [], [- Thanh toán trực tuyến (mô phỏng).],
 )
 
-== Mô Hình Quan Niệm
-<mo-hinh-quan-niem>
+== Mô Hình ER (Quan Niệm)
+<mo-hinh-er-quan-niem>
 
-- #lorem(10)
+#align(center)[
+    #image("diagrams/ch02-concept-erd.svg")
+]
 
 == Mô Hình Logic
 <mo-hinh-logic>
