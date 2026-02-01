@@ -627,15 +627,6 @@ stroke: (
   ],
 )
 
-== Xử Lý Thông Tin - (FN) Phí Hủy Đặt Phòng
-<xu-ly-thong-tin-fn-phi-huy-dat-phong>
-
-#figure(image("demo/FN-03-TinhPhiHuyPhong-02.png"),
-  caption: [
-    FN-03 - Tính Phí Hủy Đặt Phòng - Hủy Quá Sớm.
-  ]
-)
-
 == Xử Lý Thông Tin - (CR) Hoàn Tất Đặt Phòng
 <xu-ly-thong-tin-cr-hoan-tat-dat-phong>
 
