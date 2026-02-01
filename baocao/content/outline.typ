@@ -720,7 +720,7 @@ stroke: (
   [
     #align(center)[
       #figure(image("./images/rpt3-9-slide.png"),
-      caption: [Báo Cáo 03 - Thống Kê Doanh Thu Dịch Vụ],
+      caption: [Báo Cáo 03 - Doanh Thu Dịch Vụ],
       supplement: "Ảnh"
       )]
   ],
