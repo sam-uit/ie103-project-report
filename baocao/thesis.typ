@@ -18,6 +18,11 @@
 // Content goes here
 #include "content/chapter01.typ"
 #include "content/chapter02.typ"
+#include "content/chapter02-01-chucnangnghiepvu.typ"
+#include "content/chapter02-02-quytacnghiepvu.typ"
+#include "content/chapter02-03-mohinhquanniem.typ"
+#include "content/chapter02-04-mohinhlogic.typ"
+#include "content/chapter02-05-ketluan.typ"
 #include "content/chapter03.typ"
 #include "content/chapter04.typ"
 #include "content/chapter04-01-xulythongtin.typ"
