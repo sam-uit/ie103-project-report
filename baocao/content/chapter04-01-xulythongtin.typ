@@ -5,7 +5,7 @@
 
 Hệ thống sử dụng các đối tượng lập trình cơ sở dữ liệu (Database Programmability) để đảm bảo tính nhất quán và thực thi các nghiệp vụ phức tạp.
 
-#co-warn(title: [Lưu Ý Về Cách Trình Bày])[Các mục trong phần này mục đích miêu tả các quy cách xử lý thông tin, hiện thực các yêu cầu nghiệp vụ và chức năng của hệ thống nhưng chưa nhằm đảm bảo tính #emph[An Toàn Thông Tin] vì chưa sử dụng hàm kiểm tra quyền.]
+#co-warn(title: [Lưu Ý Về Cách Trình Bày])[Các mục trong phần này mục đích miêu tả các quy cách xử lý thông tin, hiện thực các yêu cầu nghiệp vụ và chức năng của hệ thống nhưng chưa bổ sung các yêu cầu được miêu tả trong mục #emph[An Toàn Thông Tin].]
 
 === Stored Procedures (5)
 <stored-procedures-5>
