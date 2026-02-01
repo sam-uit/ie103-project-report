@@ -379,7 +379,7 @@ stroke: (
   ],
   [
     #align(center)[
-      #figure(image("demo/SP_DATPHONG.png"),
+      #figure(image("demo/SP_DATPHONG-slide.png"),
       caption: [(SP) Đặt Phòng],
       supplement: "Ảnh"
       )]
