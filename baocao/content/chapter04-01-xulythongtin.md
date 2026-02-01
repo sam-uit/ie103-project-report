@@ -458,13 +458,13 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 
 - Các phòng có trạng thái `CONFIRMED`.
 
-![Cursor - UpdateStatusWhenOverdue 01](demo/C-UpdateStatusWhenOverdue01.png)
+<!-- ![Cursor - UpdateStatusWhenOverdue 01](demo/C-UpdateStatusWhenOverdue01.png) -->
 
 **Kiểm Thử: Kết quả.**
 
 - Các phòng có trạng thái `AVAILABLE`.
 
-![Cursor - UpdateStatusWhenOverdue 02](demo/C-UpdateStatusWhenOverdue02.png)
+<!-- ![Cursor - UpdateStatusWhenOverdue 02](demo/C-UpdateStatusWhenOverdue02.png) -->
 
 #### CS-02 - Đồng Bộ Trạng Thái Phòng Thực Tế
 

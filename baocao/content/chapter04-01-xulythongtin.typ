@@ -358,21 +358,9 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 
 - Các phòng có trạng thái `CONFIRMED`.
 
-#figure(image("demo/C-UpdateStatusWhenOverdue01.png"),
-  caption: [
-    Cursor - UpdateStatusWhenOverdue 01
-  ]
-)
-
 #strong[Kiểm Thử: Kết quả.]
 
 - Các phòng có trạng thái `AVAILABLE`.
-
-#figure(image("demo/C-UpdateStatusWhenOverdue02.png"),
-  caption: [
-    Cursor - UpdateStatusWhenOverdue 02
-  ]
-)
 
 ==== CS-02 - Đồng Bộ Trạng Thái Phòng Thực Tế
 <cs-02-dong-bo-trang-thai-phong-thuc-te>
