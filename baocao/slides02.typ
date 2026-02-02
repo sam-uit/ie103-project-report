@@ -135,7 +135,7 @@
             left: none,
             right: none,
         ),
-        [*2x PowerEdge 760*: MORE Performance; LESS space, LESS power consumption.]
+        [*2x PowerEdge 760*: #text(fill: orange)[#sym.arrow.t#sym.arrow.t] Performance; #text(fill: orange)[#sym.arrow.b] space, #text(fill: orange)[#sym.arrow.b] power consumption.]
     )
 ]
 
@@ -157,5 +157,4 @@ stroke: (
 [- 2x 32GB FC ports HBA]
 )
 
-#image("dell-per670.png")
-
+#image("content/dell/dell-per670.png")
