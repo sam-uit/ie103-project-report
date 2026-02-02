@@ -232,9 +232,10 @@ stroke: (
 == Metro Volume on PowerStore
 
 #table(
-columns: (50%, 50%),
+columns: (49%, 51%),
 inset: (bottom: 0.4em),
 align: (center, center),
+gutter: 10pt,
 stroke: (
     bottom: 0.5pt + gradient.linear(red, blue, green),
     top: none,
