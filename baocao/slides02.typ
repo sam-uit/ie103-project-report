@@ -296,12 +296,18 @@ stroke: (
   columns: (40%, 20%, 40%),
   gutter: 0.4em,
   align: (center, center, center),
+  // stroke: (
+  //   bottom: 0.5pt + gradient.linear(red, blue, green),
+  //   top: none,
+  //   left: none,
+  //   right: none,
+  // ),
   [Intel], [*vs*], [AMD],
-    [#image("content/dell/powerstore-500T.png", height: 14%)],[2 Sockets - 2U],[#image("content/dell/powerstore-500T.png", height: 14%)],
-    [#image("content/dell/powerstore-500T.png", height: 14%)],[2 Sockets - 2U],[#image("content/dell/powerstore-500T.png", height: 14%)],
-    [#image("content/dell/powerstore-500T.png", height: 14%)],[2 Sockets - 1U],[#image("content/dell/powerstore-500T.png", height: 14%)],
-    [#image("content/dell/powerstore-500T.png", height: 14%)],[1 Socket - 2U],[#image("content/dell/powerstore-500T.png", height: 14%)],
-    [#image("content/dell/powerstore-500T.png", height: 14%)],[1 Socket - 1U],[#image("content/dell/powerstore-500T.png", height: 14%)],
+  [#image("content/dell/powerstore-500T.png", height: 14%)],[2 Sockets - 2U],[#image("content/dell/powerstore-500T.png", height: 14%)],
+  [#image("content/dell/powerstore-500T.png", height: 14%)],[2 Sockets - 2U],[#image("content/dell/powerstore-500T.png", height: 14%)],
+  [#image("content/dell/powerstore-500T.png", height: 14%)],[2 Sockets - 1U],[#image("content/dell/powerstore-500T.png", height: 14%)],
+  [#image("content/dell/powerstore-500T.png", height: 14%)],[1 Socket - 2U],[#image("content/dell/powerstore-500T.png", height: 14%)],
+  [#image("content/dell/powerstore-500T.png", height: 14%)],[1 Socket - 1U],[#image("content/dell/powerstore-500T.png", height: 14%)],
   // grid.cell(colspan: 3)[#text(size: 10pt)[\*: Usable capacity is the capacity available after RAID & operation overhead. With a Data Reduction Ratio of 1.61:1, 20.06 TB x 1.61 gives approximately #text(fill: orange)[32.36 TB] of #emph[effective capacity]. This means we can store up to #text(fill: orange)[32.36 TB] of data.]]
 )
 
