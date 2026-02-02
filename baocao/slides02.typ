@@ -231,6 +231,30 @@ stroke: (
 
 == Metro Volume on PowerStore
 
+#table(
+columns: (50%, 50%),
+inset: (bottom: 0.4em),
+align: (center, center),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[*Normal Operation*],
+[*Metro Volume 1 Failure*],
+)
+
+#align(center)[
+  #image("content/dell/powerstore-metro-volumes.png")
+]
+
+#grid(
+  columns: (100%),
+  gutter: 0.4em,
+  [#text(size: 0.8em)[- PowerStore Metro Volume provides #emph[active-active], #emph[high-availability] storage across two PowerStore systems.]],
+  [#text(size: 0.8em)[- If one PowerStore goes down, the hosts can #emph[still access the volume from the other system].]]
+)
 
 = Data Protection
 
