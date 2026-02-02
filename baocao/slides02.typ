@@ -153,7 +153,7 @@ stroke: (
 #align(center)[
     #table(
         columns: (100%),
-        inset: (top: 0.6em, bottom: 0.6em),
+        inset: (bottom: 0.6em),
         align: (left),
         stroke: (
             bottom: 0.5pt + gradient.linear(red, blue, green),
@@ -161,15 +161,17 @@ stroke: (
             left: none,
             right: none,
         ),
-        [*2x PowerStore 500*: #text(fill: orange)[#sym.arrow.t#sym.arrow.t] Performance; #text(fill: orange)[#sym.arrow.b] space, #text(fill: orange)[#sym.arrow.b] power consumption.]
+        [*2x PowerStore 500T*: Fast and Reliable.]
     )
+    #image("content/dell/powerstore-500T.png", height: 29%)
 ]
 
 #grid(
   columns: (40%, 60%),
+  gutter: 0.4em,
   table(
     columns: (100%),
-    inset: (bottom: 0.6em),
+    inset: (bottom: 0.4em),
     align: (left, left),
     stroke: (
         bottom: 0.5pt + gradient.linear(red, blue, green),
@@ -178,14 +180,29 @@ stroke: (
         right: none,
     ),
     [- 2U],
-    [- 2x Xeon 6 6517P],
     [- 6x 32GB DDR5 (192GB)],
     [- 15x 1.92TB NVMe SSDs],
     [- 4x 10/25GbE],
     [- 4x 32GbE FC ports]
-  )
+  ),
+  table(
+  columns: (50%, 30%, 20%),
+  inset: (bottom: 0.4em),
+  align: (left, right, left),
+  stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+  ),
+  [- Effective Capacity\*], [32.36], [TB],
+  [- Usable Capacity], [20.06], [TB],
+  [- Raw Capacity], [28.67], [TB],
+  [- Data Reduction], [1.61:1], [],
+  [- Total Drive Count], [15], [drives]
+  ),
+  grid.cell(colspan: 2)[#text(size: 10pt)[\*: Usable capacity is the capacity available after RAID & operation overhead. With a Data Reduction Ratio of 1.61:1, 20.06 TB x 1.61 gives approximately #text(fill: orange)[32.36 TB] of #emph[effective capacity]. This means we can store up to #text(fill: orange)[32.36 TB] of data.]]
 )
-
 
 
 == Metro Volume on PowerStore
