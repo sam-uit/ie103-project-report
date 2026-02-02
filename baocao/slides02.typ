@@ -224,7 +224,10 @@ stroke: (
 [- *All features included*], [#emph[NO additional licenses] required]
 )
 
-#align(center)[#image("content/dell/powerstore-500T-02.png", height: 30%)]
+#align(center)[
+  #image("content/dell/powerstore-500T-02.png", height: 30%)
+  #smallcaps[Designed for *99.9999% availability*]
+]
 
 == Metro Volume on PowerStore
 
