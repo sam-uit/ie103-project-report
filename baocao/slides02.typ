@@ -204,6 +204,27 @@ stroke: (
   grid.cell(colspan: 2)[#text(size: 10pt)[\*: Usable capacity is the capacity available after RAID & operation overhead. With a Data Reduction Ratio of 1.61:1, 20.06 TB x 1.61 gives approximately #text(fill: orange)[32.36 TB] of #emph[effective capacity]. This means we can store up to #text(fill: orange)[32.36 TB] of data.]]
 )
 
+== PowerStore -- Key Features Overview
+
+#table(
+columns: (50%, 50%),
+inset: (bottom: 0.4em),
+align: (left, left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- *All-Flash NVMe*], [#emph[ultra-low latency] & #emph[high performance]],
+[- *Active-active controllers (A/B)*], [with #emph[load-balanced] data paths],
+[- *No downtime upgrades*], [for #emph[both] hardware and software],
+[- *Up to 5:1*], [Data Reduction Ratio, more #emph[space]],
+[- *Scale-up and scale-out*], [more #emph[flexibility], non-disruptive scaling],
+[- *All features included*], [#emph[NO additional licenses] required]
+)
+
+#align(center)[#image("content/dell/powerstore-500T-02.png", height: 30%)]
 
 == Metro Volume on PowerStore
 
