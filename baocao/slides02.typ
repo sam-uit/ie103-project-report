@@ -8,10 +8,10 @@
   aspect-ratio: "16-9",
   // Thông tin, đề tài
   config-info(
-    title: [BÁO CÁO ĐỒ ÁN],
-    subtitle: [HỆ THỐNG QUẢN LÝ ĐẶT PHÒNG],
-    author: [NHÓM 02],
-    date: "Tháng 01, 2026",
+    title: [Dell Data Center Infrastructure],
+    subtitle: [Performance, Reliable, & Handy Operation],
+    author: [Minh Nguyen - Enterprise Engineer],
+    date: "01/2026",
     institution: [TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN],
   ),
   // Màu sắc, theming
@@ -99,28 +99,15 @@
 
 #title-slide()
 
-#include "content/outline.typ"
+= Topology
 
-// #outline-slide()
+= Storage
 
-// = The Section
+== PowerStore - An Enterprise Ready Storage
 
-// == Slide Title
+== Metro Volume on PowerStore
 
-// #lorem(40)
-
-// #focus-slide[
-//   Another variant with primary color in background...
-// ]
-
-== Cảm Ơn
-
-#slide(self => [
-  #align(center + horizon)[
-    #set text(size: 3em, weight: "bold", fill: self.colors.primary)
-    Xin Cảm Ơn!
-  ]
-])
+= Server
 
 == PowerEdge R760
 
@@ -158,3 +145,35 @@ stroke: (
 )
 
 #image("content/dell/dell-per670.png")
+
+= Data Protection
+
+= Operation
+
+== Centralized Monitoring with Dell AIOps
+
+== Licenses & Services
+
+// #include "content/outline.typ"
+
+// #outline-slide()
+
+// = The Section
+
+// == Slide Title
+
+// #lorem(40)
+
+// #focus-slide[
+//   Another variant with primary color in background...
+// ]
+
+== Thank You
+
+#slide(self => [
+  #align(center + horizon)[
+    #text(size: 3em, weight: "bold", fill: self.colors.primary)[Xin Cảm Ơn!]
+    #line(length: 30%, stroke: 0.5pt + gradient.linear(red, blue, green))
+    #text(size: 2em, weight: "bold", fill: self.colors.primary)[Q&A?]
+  ]
+])
