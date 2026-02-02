@@ -101,15 +101,15 @@
 
 = Topology
 
-= Storage
+== A No Single Point Of Failure Environment
 
-== PowerStore - An Enterprise Ready Storage
-
-== Metro Volume on PowerStore
+#align(center)[
+  #image("content/dell/01-topology.png", height: auto)
+]
 
 = Server
 
-== PowerEdge R760
+== PowerEdge R670
 
 #align(center)[
     #table(
@@ -145,6 +145,51 @@ stroke: (
 )
 
 #image("content/dell/dell-per670.png")
+
+= Storage
+
+== PowerStore - An Enterprise Ready Storage
+
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (top: 0.6em, bottom: 0.6em),
+        align: (left),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [*2x PowerStore 500*: #text(fill: orange)[#sym.arrow.t#sym.arrow.t] Performance; #text(fill: orange)[#sym.arrow.b] space, #text(fill: orange)[#sym.arrow.b] power consumption.]
+    )
+]
+
+#grid(
+  columns: (40%, 60%),
+  table(
+    columns: (100%),
+    inset: (bottom: 0.6em),
+    align: (left, left),
+    stroke: (
+        bottom: 0.5pt + gradient.linear(red, blue, green),
+        top: none,
+        left: none,
+        right: none,
+    ),
+    [- 2U],
+    [- 2x Xeon 6 6517P],
+    [- 6x 32GB DDR5 (192GB)],
+    [- 15x 1.92TB NVMe SSDs],
+    [- 4x 10/25GbE],
+    [- 4x 32GbE FC ports]
+  )
+)
+
+
+
+== Metro Volume on PowerStore
+
 
 = Data Protection
 
