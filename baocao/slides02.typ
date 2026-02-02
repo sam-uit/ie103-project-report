@@ -288,3 +288,59 @@ stroke: (
     #text(size: 2em, weight: "bold", fill: self.colors.primary)[Q&A?]
   ]
 ])
+
+= So Sánh
+== Intel vs AMD Platforms - An Overview
+
+#grid(
+  columns: (40%, 20%, 40%),
+  gutter: 0.4em,
+  align: (center, center, center),
+  [Intel], [*vs*], [AMD],
+    [#image("content/dell/powerstore-500T.png", height: 14%)],[2 Sockets - 2U],[#image("content/dell/powerstore-500T.png", height: 14%)],
+    [#image("content/dell/powerstore-500T.png", height: 14%)],[2 Sockets - 2U],[#image("content/dell/powerstore-500T.png", height: 14%)],
+    [#image("content/dell/powerstore-500T.png", height: 14%)],[2 Sockets - 1U],[#image("content/dell/powerstore-500T.png", height: 14%)],
+    [#image("content/dell/powerstore-500T.png", height: 14%)],[1 Socket - 2U],[#image("content/dell/powerstore-500T.png", height: 14%)],
+    [#image("content/dell/powerstore-500T.png", height: 14%)],[1 Socket - 1U],[#image("content/dell/powerstore-500T.png", height: 14%)],
+  // grid.cell(colspan: 3)[#text(size: 10pt)[\*: Usable capacity is the capacity available after RAID & operation overhead. With a Data Reduction Ratio of 1.61:1, 20.06 TB x 1.61 gives approximately #text(fill: orange)[32.36 TB] of #emph[effective capacity]. This means we can store up to #text(fill: orange)[32.36 TB] of data.]]
+)
+
+== 1U Entry Level - R470 vs R7615
+
+#table(
+columns: (49%, 51%),
+inset: (bottom: 0.4em),
+align: (center, center),
+gutter: 10pt,
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[*R470*],
+[*R7615*],
+)
+
+#table(
+columns: (50%, 50%),
+inset: (bottom: 0.6em),
+align: (left, left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- ABC], [- ABC],
+[- XYZ], [- XYZ],
+[- HKL], [- HKL]
+)
+
+== 2U Mid Range - R570 vs R7715
+
+#lorem(10)
+
+== 2U High-End - R570 vs R7715
+
+#lorem(10)
