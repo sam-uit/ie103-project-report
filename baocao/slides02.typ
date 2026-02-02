@@ -121,3 +121,41 @@
     Xin Cảm Ơn!
   ]
 ])
+
+== PowerEdge R760
+
+#align(center)[
+    #table(
+        columns: (100%),
+        inset: (top: 0.6em, bottom: 0.6em),
+        align: (left),
+        stroke: (
+            bottom: 0.5pt + gradient.linear(red, blue, green),
+            top: none,
+            left: none,
+            right: none,
+        ),
+        [*2x PowerEdge 760*: MORE Performance; LESS space, LESS power consumption.]
+    )
+]
+
+#table(
+columns: (45%, 55%),
+inset: (bottom: 0.6em),
+align: (left, left),
+stroke: (
+    bottom: 0.5pt + gradient.linear(red, blue, green),
+    top: none,
+    left: none,
+    right: none,
+),
+[- 1U],
+[- 2x Xeon 6 6517P (3.2GHz, 16C/32T)],
+[- 8x 32GB DDR5 (256GB)],
+[- 2x 480GB Enterprise-grade SSDs],
+[- 4x 10/25GbE],
+[- 2x 32GB FC ports HBA]
+)
+
+#image("dell-per670.png")
+
