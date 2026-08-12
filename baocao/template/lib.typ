@@ -201,7 +201,7 @@
     // No Header/Footer, No Numbering
     // set page(header: none, footer: auto)
     // No Heading Numbering, No Outlined
-    set heading(numbering: none, outlined: false)
+    set heading(numbering: none, outlined: true)
     // We place the thesis summary here
     include "/content/preamble-summary.typ"
     pagebreak()
@@ -212,7 +212,7 @@
     // No Header/Footer, No Numbering
     // set page(header: none, footer: none, numbering: none)
     // No Heading Numbering, No Outlined
-    set heading(numbering: none, outlined: false)
+    set heading(numbering: none, outlined: true)
     // We place the forewords here
     include "/content/preamble-forewords.typ"
     pagebreak()
@@ -223,7 +223,7 @@
     // No Header/Footer, No Numbering
     // set page(header: none, footer: none, numbering: none)
     // No Heading Numbering, No Outlined
-    set heading(numbering: none, outlined: false)
+    set heading(numbering: none, outlined: true)
     // We place the acknowledgement here
     include "/content/preamble-ack.typ"
     pagebreak()
@@ -234,7 +234,7 @@
     // No Header/Footer, No Numbering
     // set page(header: none, footer: none, numbering: none)
     // No Heading Numbering, No Outlined
-    set heading(numbering: none, outlined: false)
+    set heading(numbering: none, outlined: true)
     // We place the instructor's comment here
     include "/content/preamble-comment.typ"
     pagebreak()
@@ -245,7 +245,7 @@
     // No Header/Footer, No Numbering
     // set page(header: none, footer: none, numbering: none)
     // No Heading Numbering, No Outlined
-    set heading(numbering: none, outlined: false)
+    set heading(numbering: none, outlined: true)
     // We place the author information here
     include "/author/author.typ"
   }
