@@ -22,6 +22,8 @@
   assignment: (:),
   // Lớp/Loại tài liệu, mặc định là report
   doc-type: "report",
+  // TODO: optional preamble component/parameters
+  preamble: (summary: true, acknowledgement: true, comment: true, forewords: true),
   acronyms: none,
   ..args,
   body,
@@ -195,18 +197,18 @@
   )
 
   // MARK: Thesis Summary
-  if doc-type == "thesis" {
+  if preamble.summary {
     // No Header/Footer, No Numbering
     // set page(header: none, footer: auto)
     // No Heading Numbering, No Outlined
     set heading(numbering: none, outlined: false)
     // We place the thesis summary here
-    include "/content/summary.typ"
+    include "/content/preamble-summary.typ"
     pagebreak()
   }
 
   // MARK: Forewords
-  if doc-type == "thesis" {
+  if preamble.forewords {
     // No Header/Footer, No Numbering
     // set page(header: none, footer: none, numbering: none)
     // No Heading Numbering, No Outlined
@@ -217,7 +219,7 @@
   }
 
   // MARK: Acknowledgement
-  if doc-type == "thesis" {
+  if preamble.acknowledgement {
     // No Header/Footer, No Numbering
     // set page(header: none, footer: none, numbering: none)
     // No Heading Numbering, No Outlined
@@ -228,7 +230,7 @@
   }
 
   // MARK: Instructor's comment
-  if doc-type == "thesis" {
+  if preamble.comment {
     // No Header/Footer, No Numbering
     // set page(header: none, footer: none, numbering: none)
     // No Heading Numbering, No Outlined

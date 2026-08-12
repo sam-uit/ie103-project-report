@@ -3,13 +3,23 @@
 
 // Import template and metadata
 #import "template/lib.typ": *
+// TODO: Use YAML instead of Typst code
 #import "config/metadata.typ": data
 
 // Load acronyms
 #let acronyms = csv("content/acronyms.csv")
 
 // Show document with thesis type
-#show: document.with(..data, acronyms: acronyms, doc-type: "thesis")
+#show: document.with(..data,
+    acronyms: acronyms,
+    doc-type: "thesis",
+    preamble: (
+        summary: false,
+        acknowledgement: true,
+        comment: true,
+        forewords: true
+    )
+)
 
 // Đặt font cho code ở 0.8 để tiết kiệm không gian.
 // TODO: Cập nhật raw text size vào template.
