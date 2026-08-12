@@ -78,7 +78,7 @@
           #smallcaps[#assignment.title]
         ],
         if assignment.subtitle != none and assignment.subtitle != "" {
-          text(font: heading-font, size: 28pt, weight: "regular")[
+          text(font: heading-font, size: 2em, weight: "regular")[
             #assignment.subtitle
           ]
         },
@@ -87,7 +87,7 @@
   ]
 
   // Thêm khoảng trống (vspace) giữa title và summary box
-  v(4em)
+  v(1fr)
 
   // MARK: Summary Box
   block(
@@ -115,7 +115,8 @@
           [Tên Môn:],
           [Lớp:],
           [Giảng Viên:],
-          [Thực Hiện:],
+          [MSSV:],
+          [Sinh Viên:]
         )
       ],
       // Cột bên phải chứa giá trị
@@ -126,6 +127,7 @@
           [#course.name],
           [#course.class],
           [#instructor],
+          [#author.id],
           [#author.name],
         )
       ],
