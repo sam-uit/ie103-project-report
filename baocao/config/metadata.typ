@@ -9,13 +9,14 @@
     logo: "uit.jpeg",
   ),
   course: (
-    id: "IE103",
-    name: "Quản Lý Thông Tin",
-    class: "LT.K2025.2.CNTT",
+    id: "IE203",
+    name: "Hệ Thống Quản Trị Qui Trình Nghiệp Vụ",
+    class: "IE203.F34.LT.CNTT",
   ),
-  instructor: "Ths. Nguyễn Thành Luân ",
+  instructor: "Ths. Hà Lê Hoài Trung",
   author: (
-    name: "Nhóm 02",
+    name: "Đinh Xuân Sâm",
+    id: "25410291",
     members: (
       (
         name: lorem(3),
@@ -28,10 +29,10 @@
     ),
   ),
   assignment: (
-    title: "BÁO CÁO ĐỒ ÁN QUẢN LÝ THÔNG TIN",
-    subtitle: "Hệ Thống Quản Lý Đặt Phòng",
+    title: "BÁO CÁO ĐỒ ÁN CUỐI KỲ",
+    subtitle: "Hệ Thống Quản Lý Quy Trình Nghiệp Vụ Tại Công Ty Cổ Phần Thương Mại Hồng Hà",
     type: "Luận Án",
-    date: "TP. Hồ Chí Minh, tháng 01 năm 2026",
+    date: "TP. Hồ Chí Minh, tháng 08 năm 2026",
     duration: "15 phút",
   ),
   company: "A Limited Company Name",
