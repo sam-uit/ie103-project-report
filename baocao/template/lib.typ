@@ -31,6 +31,21 @@
   // Anchor/Móc cho nút [Back to Top]
   [#metadata("top") <top>]
 
+  // PDF METADATA
+
+  set std.document(
+    title: if "title" in assignment { assignment.title } else { "" }
+      + if "subtitle" in assignment { ": " + assignment.subtitle } else { "" },
+    author: if "name" in author { author.name } else { "" }
+      + if "id" in author { " (" + author.id + ")" } else { "" },
+    // subject: if "name" in course {course.name } else {""},
+    keywords: (
+      if "id" in course { course.id } else { "" },
+      if "name" in course { course.name } else { "" },
+    ),
+    date: datetime.today(),
+  )
+
   // MARK: Page & Text Setup
   // Cài đặt khoảng cách lề (margin) cho trang.
   set page(margin: 2.5cm)
