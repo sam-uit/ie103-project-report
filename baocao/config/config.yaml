@@ -1,0 +1,24 @@
+theme:
+
+metadata:
+  university:
+    name: "Đại Học Quốc Gia Thành Phố Hồ Chí Minh"
+    college: "Trường Đại Học Công Nghệ Thông Tin"
+    center: "Trung Tâm Phát Triển Công Nghệ Thông Tin"
+    faculty: "Khoa Khoa Học Và Kỹ Thuật Thông Tin"
+    logo: "uit.jpeg"
+  course:
+    id: "IE000"
+    name: "Lorem Ipsum Dolor Sit Amet"
+    class: "123.ABC.456"
+  instructor: "Lorem Ipsum Dolor"
+  author:
+    name: "Lorem Ipsum Dolor"
+    id: "12345678"
+  assignment:
+    title: "Lorem Ipsum Dolor Sit Amet"
+    subtitle: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit"
+    type: "thesis"
+    date: "Lorem Ipsum Dolor, August 2026"
+    duration: "3 weeks"
+  company: "None"

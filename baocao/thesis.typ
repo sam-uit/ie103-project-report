@@ -3,14 +3,29 @@
 
 // Import template and metadata
 #import "template/lib.typ": *
+
 // TODO: Use YAML instead of Typst code
-#import "config/metadata.typ": data
+// #import "config/metadata.typ": data
+#let properties = yaml("config/config.yaml")
+
+// document metada
+#let metadata = properties.at("metadata")
+#let university = metadata.at("university")
+#let course = metadata.at("course")
+#let instructor = metadata.at("instructor")
+#let author = metadata.at("author")
+#let assignment = metadata.at("assignment")
 
 // Load acronyms
 #let acronyms = csv("content/acronyms.csv")
 
 // Show document with thesis type
-#show: document.with(..data,
+#show: document.with(
+    university: university,
+    course: course,
+    instructor: instructor,
+    author: author,
+    assignment: assignment,
     acronyms: acronyms,
     doc-type: "thesis",
     preamble: (
