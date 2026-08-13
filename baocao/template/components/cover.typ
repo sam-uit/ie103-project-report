@@ -74,8 +74,8 @@
       #stack(
         dir: ttb,
         spacing: 2em, // Khoảng cách (vspace) giữa title và subtitle
-        text(font: heading-font, size: 20pt, weight: "regular")[
-          #smallcaps[#assignment.title]
+        text(font: heading-font, size: 2em, weight: "regular")[
+          #upper[#assignment.title]
         ],
         if assignment.subtitle != none and assignment.subtitle != "" {
           text(font: heading-font, size: 2em, weight: "regular")[
